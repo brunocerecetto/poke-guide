@@ -1,14 +1,14 @@
 //
-//  pokemon_guideTests.swift
-//  pokemon guideTests
+//  PokemonGuideTests.swift
+//  PokemonGuideTests
 //
 //  Created by Bruno Cerecetto on 6/4/26.
 //
 
 import Testing
-@testable import pokemon_guide
+@testable import PokemonGuide
 
-struct pokemon_guideTests {
+struct PokemonGuideTests {
 
     @Test func example() async throws {
         // Write your test here and use APIs like `#expect(...)` to check expected conditions.

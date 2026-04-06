@@ -8,19 +8,19 @@ A SwiftUI iOS app — a Pokémon FireRed walkthrough/guide with progress trackin
 
 ## Build & Run
 
-Open `pokemon guide.xcodeproj` in Xcode and build (Cmd+B) / run (Cmd+R). No package managers or build scripts — pure Xcode project.
+Open `PokemonGuide.xcodeproj` in Xcode and build (Cmd+B) / run (Cmd+R). No package managers or build scripts — pure Xcode project.
 
 ```bash
 # Build from CLI
-xcodebuild -project "pokemon guide.xcodeproj" -scheme "pokemon guide" -destination 'platform=iOS Simulator,name=iPhone 17 Pro' build
+xcodebuild -project "PokemonGuide.xcodeproj" -scheme "PokemonGuide" -destination 'platform=iOS Simulator,name=iPhone 17 Pro' build
 
 # Run tests
-xcodebuild -project "pokemon guide.xcodeproj" -scheme "pokemon guide" -destination 'platform=iOS Simulator,name=iPhone 17 Pro' test
+xcodebuild -project "PokemonGuide.xcodeproj" -scheme "PokemonGuide" -destination 'platform=iOS Simulator,name=iPhone 17 Pro' test
 ```
 
 ## Architecture
 
-- **Entry point**: `pokemon_guideApp.swift` — injects `ProgressManager` as `@EnvironmentObject`
+- **Entry point**: `PokemonGuideApp.swift` — injects `ProgressManager` as `@EnvironmentObject`
 - **ProgressManager** (`ProgressManager.swift`): `ObservableObject` that persists all checklist progress to `UserDefaults`. Tracks gyms, route steps, league, pre-league, postgame (as `Set<String>`), and Pokédex statuses (as `[Int: PokemonStatus]`). Passed via `.environmentObject()` throughout the app.
 - **GameData** (`GameData.swift`): All static game data — model structs (`Gym`, `TeamMember`, `Capture`, `RouteStep`, etc.) and static arrays/methods on `GameData`.
 - **PokedexData** (`PokedexData.swift`): 151 Kanto Pokémon entries with types, stats, and locations. Defines `PokemonType` enum and `PokemonStatus` enum.
