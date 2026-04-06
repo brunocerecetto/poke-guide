@@ -89,6 +89,11 @@ struct LeagueView: View {
         .navigationTitle("Liga Pokémon")
         .navigationBarTitleDisplayMode(.large)
         .toolbarBackground(.automatic, for: .navigationBar)
+        .task(id: celebrateLeague) {
+            guard celebrateLeague else { return }
+            try? await Task.sleep(for: .seconds(2))
+            celebrateLeague = false
+        }
     }
 
     private func sectionHeader(title: String, icon: String) -> some View {
@@ -112,9 +117,6 @@ struct LeagueView: View {
             }
             if progress.completedLeague.count == GameData.eliteFour.count {
                 celebrateLeague = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    celebrateLeague = false
-                }
             }
         } label: {
             HStack(spacing: 14) {

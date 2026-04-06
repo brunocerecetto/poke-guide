@@ -7,7 +7,7 @@ import SwiftUI
 
 struct RouteView: View {
     @EnvironmentObject var progress: ProgressManager
-    private let sections = GameData.routeSections()
+    private let sections = GameData.routeSections
 
     var body: some View {
         ZStack {

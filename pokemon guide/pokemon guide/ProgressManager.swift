@@ -38,12 +38,12 @@ class ProgressManager: ObservableObject {
     }
 
     init() {
-        self.completedGyms = Self.load(forKey: gymKey)
-        self.completedRouteSteps = Self.load(forKey: routeKey)
-        self.completedLeague = Self.load(forKey: leagueKey)
-        self.completedPreLeague = Self.load(forKey: preLeagueKey)
-        self.completedPostgame = Self.load(forKey: postgameKey)
-        self.pokemonStatuses = Self.loadPokedex(forKey: pokedexKey)
+        _completedGyms = Published(initialValue: Self.load(forKey: gymKey))
+        _completedRouteSteps = Published(initialValue: Self.load(forKey: routeKey))
+        _completedLeague = Published(initialValue: Self.load(forKey: leagueKey))
+        _completedPreLeague = Published(initialValue: Self.load(forKey: preLeagueKey))
+        _completedPostgame = Published(initialValue: Self.load(forKey: postgameKey))
+        _pokemonStatuses = Published(initialValue: Self.loadPokedex(forKey: pokedexKey))
     }
 
     // MARK: - Gym toggles
@@ -135,7 +135,7 @@ class ProgressManager: ObservableObject {
 
     var totalCheckable: Int {
         GameData.gyms.count
-        + GameData.routeSections().flatMap(\.steps).count
+        + GameData.routeSections.flatMap(\.steps).count
         + GameData.eliteFour.count
         + GameData.preLeagueChecklist.count
         + GameData.postgame.count

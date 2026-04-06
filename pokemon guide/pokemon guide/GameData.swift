@@ -167,7 +167,7 @@ struct GameData {
         RouteStep(id: "post7", text: "Completar Pokédex Nacional"),
     ]
 
-    static func routeSections() -> [RouteSection] {
+    static let routeSections: [RouteSection] =
         [
             RouteSection(title: "1) Pallet Town → Pewter City", steps: [
                 RouteStep(id: "r1a", text: "Elegir Squirtle como starter"),
@@ -308,5 +308,4 @@ struct GameData {
                 RouteStep(id: "r9j", text: "Verificar el Checklist Pre-Liga (sección Liga Pokémon) antes de entrar"),
             ]),
         ]
-    }
 }

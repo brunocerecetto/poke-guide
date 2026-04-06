@@ -67,6 +67,11 @@ struct GymView: View {
         .navigationTitle("Gimnasios")
         .navigationBarTitleDisplayMode(.large)
         .toolbarBackground(.automatic, for: .navigationBar)
+        .task(id: celebrateAll) {
+            guard celebrateAll else { return }
+            try? await Task.sleep(for: .seconds(2))
+            celebrateAll = false
+        }
     }
 
     private func gymCard(_ gym: Gym, index: Int) -> some View {
@@ -76,12 +81,8 @@ struct GymView: View {
             withAnimation(.spring(response: 0.4, dampingFraction: 0.6)) {
                 progress.toggleGym(gym.name)
             }
-            // Check if all gyms just got completed
             if progress.completedGyms.count == GameData.gyms.count {
                 celebrateAll = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    celebrateAll = false
-                }
             }
         } label: {
             HStack(spacing: 14) {

@@ -77,6 +77,7 @@ struct PixelBackground: View {
                     }
                 }
             }
+            .drawingGroup()
         }
         .ignoresSafeArea()
     }

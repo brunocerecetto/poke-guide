@@ -70,22 +70,6 @@ extension View {
         ))
     }
 
-    // Keep liquidGlass as alias for softCard so existing views don't break
-    func liquidGlass(
-        cornerRadius: CGFloat = 20,
-        tint: Color = .white,
-        tintOpacity: Double = 0.06,
-        borderOpacity: Double = 0.25,
-        shadowRadius: CGFloat = 10,
-        intensity: Double = 1.0
-    ) -> some View {
-        modifier(SoftCard(
-            cornerRadius: cornerRadius,
-            tint: tint,
-            shadowOpacity: 0.08 * intensity,
-            shadowRadius: shadowRadius
-        ))
-    }
 }
 
 // MARK: - Glow Text (lighter for light mode)
@@ -254,8 +238,12 @@ struct ConfettiView: View {
                     .rotationEffect(.degrees(isAnimating ? p.rotation : 0))
             }
         }
-        .onChange(of: trigger) { _, newValue in
-            if newValue { spawnParticles() }
+        .task(id: trigger) {
+            guard trigger else { return }
+            spawnParticles()
+            try? await Task.sleep(for: .seconds(1.4))
+            particles = []
+            isAnimating = false
         }
     }
 
@@ -267,6 +255,5 @@ struct ConfettiView: View {
         }
         isAnimating = false
         withAnimation(.easeOut(duration: 1.2)) { isAnimating = true }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.4) { particles = []; isAnimating = false }
     }
 }

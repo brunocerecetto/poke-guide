@@ -149,17 +149,23 @@ struct TeamView: View {
         .buttonStyle(.plain)
     }
 
+    private static let moveColors: [String: Color] = [
+        "Surf": .fireBlue, "Ice Beam": .fireBlue,
+        "Thunderbolt": .fireYellow, "Shock Wave": .fireYellow, "Double Kick": .pink,
+        "Flamethrower": .fireOrange, "Bite": .fireOrange, "Flame Wheel": .fireOrange,
+        "Earthquake": .brown, "Dig": .brown, "Brick Break": .brown,
+        "Strength": .brown, "Return": .brown,
+        "Psychic": .purple, "Giga Drain": .purple, "Sleep Powder": .purple, "Stun Spore": .purple,
+        "Body Slam": .fireTextSecondary, "Yawn": .fireTextSecondary,
+        "Rest": .fireTextSecondary, "Shadow Ball": .fireTextSecondary,
+        "Aerial Ace": .pink,
+        "Protect": .fireGreen,
+    ]
+
     private func moveColor(_ move: String) -> Color {
-        let m = move.lowercased()
-        if m.contains("surf") || m.contains("ice") || m.contains("water") { return .fireBlue }
-        if m.contains("thunder") || m.contains("shock") { return .fireYellow }
-        if m.contains("flame") || m.contains("fire") || m.contains("bite") { return .fireOrange }
-        if m.contains("earthquake") || m.contains("dig") || m.contains("brick") || m.contains("strength") || m.contains("return") { return .brown }
-        if m.contains("psychic") || m.contains("giga") || m.contains("sleep") || m.contains("stun") || m.contains("leech") { return .purple }
-        if m.contains("body") || m.contains("yawn") || m.contains("rest") || m.contains("shadow") { return .fireTextSecondary }
-        if m.contains("double") || m.contains("aerial") { return .pink }
-        if m.contains("protect") { return .fireGreen }
-        return .fireTextPrimary
+        // Handle composite moves like "Protect / Strength" — match on first option
+        let primary = move.components(separatedBy: " / ").first ?? move
+        return Self.moveColors[primary] ?? .fireTextPrimary
     }
 }
 

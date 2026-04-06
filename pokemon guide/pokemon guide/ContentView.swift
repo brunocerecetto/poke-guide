@@ -117,7 +117,7 @@ struct ContentView: View {
         return LazyVGrid(columns: columns, spacing: 12) {
             ForEach(Array(primaryItems.enumerated()), id: \.element.title) { index, item in
                 NavigationLink {
-                    item.destination
+                    destinationView(for: item.destination)
                 } label: {
                     bigCard(item: item)
                 }
@@ -162,7 +162,7 @@ struct ContentView: View {
         VStack(spacing: 8) {
             ForEach(Array(secondaryItems.enumerated()), id: \.element.title) { index, item in
                 NavigationLink {
-                    item.destination
+                    destinationView(for: item.destination)
                 } label: {
                     slimCard(item: item)
                 }
@@ -221,30 +221,48 @@ struct ContentView: View {
 
     // MARK: - Data
 
+    private enum Destination: Hashable {
+        case gyms, team, route, pokedex, captures, hmtm, tips, league
+    }
+
     private struct MenuItem: Identifiable {
         var id: String { title }
         let icon: String
         let title: String
         let subtitle: String
         let color: Color
-        let destination: AnyView
+        let destination: Destination
+    }
+
+    @ViewBuilder
+    private func destinationView(for destination: Destination) -> some View {
+        switch destination {
+        case .gyms: GymView()
+        case .team: TeamView()
+        case .route: RouteView()
+        case .pokedex: PokedexView()
+        case .captures: CapturesView()
+        case .hmtm: HMTMView()
+        case .tips: TipsView()
+        case .league: LeagueView()
+        }
     }
 
     private var primaryItems: [MenuItem] {
         [
-            MenuItem(icon: "shield.checkered", title: "Gimnasios", subtitle: "\(progress.completedGyms.count)/8 badges", color: .fireRed, destination: AnyView(GymView())),
-            MenuItem(icon: "person.3.fill", title: "Equipo Final", subtitle: "6 pokémon + movesets", color: .fireBlue, destination: AnyView(TeamView())),
-            MenuItem(icon: "map.fill", title: "Ruta Completa", subtitle: "Paso a paso", color: .fireGreen, destination: AnyView(RouteView())),
-            MenuItem(icon: "book.closed.fill", title: "Pokédex", subtitle: "\(progress.pokemonStatuses.filter { $0.value.rawValue >= 2 }.count)/151 capturados", color: Color(red: 0.85, green: 0.25, blue: 0.25), destination: AnyView(PokedexView())),
+            MenuItem(icon: "shield.checkered", title: "Gimnasios", subtitle: "\(progress.completedGyms.count)/8 badges", color: .fireRed, destination: .gyms),
+            MenuItem(icon: "person.3.fill", title: "Equipo Final", subtitle: "6 pokémon + movesets", color: .fireBlue, destination: .team),
+            MenuItem(icon: "map.fill", title: "Ruta Completa", subtitle: "Paso a paso", color: .fireGreen, destination: .route),
+            MenuItem(icon: "book.closed.fill", title: "Pokédex", subtitle: "\(progress.pokemonStatuses.filter { $0.value.rawValue >= 2 }.count)/151 capturados", color: Color(red: 0.85, green: 0.25, blue: 0.25), destination: .pokedex),
         ]
     }
 
     private var secondaryItems: [MenuItem] {
         [
-            MenuItem(icon: "scope", title: "Capturas Clave", subtitle: "5 pokémon esenciales", color: .purple, destination: AnyView(CapturesView())),
-            MenuItem(icon: "arrow.triangle.swap", title: "HMs & TMs", subtitle: "Reparto y compras", color: .teal, destination: AnyView(HMTMView())),
-            MenuItem(icon: "lightbulb.fill", title: "Tips & Tricks", subtitle: "Reglas de evolución y más", color: .fireYellow, destination: AnyView(TipsView())),
-            MenuItem(icon: "trophy.fill", title: "Liga Pokémon", subtitle: "Plan + checklist final", color: .fireOrange, destination: AnyView(LeagueView())),
+            MenuItem(icon: "scope", title: "Capturas Clave", subtitle: "5 pokémon esenciales", color: .purple, destination: .captures),
+            MenuItem(icon: "arrow.triangle.swap", title: "HMs & TMs", subtitle: "Reparto y compras", color: .teal, destination: .hmtm),
+            MenuItem(icon: "lightbulb.fill", title: "Tips & Tricks", subtitle: "Reglas de evolución y más", color: .fireYellow, destination: .tips),
+            MenuItem(icon: "trophy.fill", title: "Liga Pokémon", subtitle: "Plan + checklist final", color: .fireOrange, destination: .league),
         ]
     }
 }
