@@ -9,12 +9,13 @@ import SwiftUI
 
 struct PokedexDetailView: View {
     @EnvironmentObject var progress: ProgressManager
+    @Environment(\.themeColors) private var theme
     let entry: PokemonEntry
     @State private var appeared = false
     @State private var spriteScale: CGFloat = 0.5
 
     private var status: PokemonStatus { progress.pokemonStatus(for: entry.id) }
-    private var primaryColor: Color { entry.types.first?.color ?? .fireRed }
+    private var primaryColor: Color { entry.types.first?.color ?? theme.accent }
 
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -73,7 +74,7 @@ struct PokedexDetailView: View {
                     case .failure:
                         Image(systemName: "questionmark.circle.fill").font(.system(size: 50)).foregroundColor(.fireTextSecondary)
                     case .empty:
-                        ProgressView().tint(.fireRed)
+                        ProgressView().tint(theme.accent)
                     @unknown default: EmptyView()
                     }
                 }
@@ -163,7 +164,7 @@ struct PokedexDetailView: View {
     private var statsSection: some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack(spacing: 6) {
-                Image(systemName: "chart.bar.fill").foregroundColor(.fireRed)
+                Image(systemName: "chart.bar.fill").foregroundColor(theme.accent)
                 Text("Estadísticas Base")
                     .font(.system(size: 14, weight: .bold, design: .rounded))
                     .foregroundColor(.fireTextPrimary)
@@ -177,14 +178,14 @@ struct PokedexDetailView: View {
             }
 
             statBar(label: "HP", value: entry.stats.hp, color: .fireGreen)
-            statBar(label: "ATK", value: entry.stats.attack, color: .fireRed)
+            statBar(label: "ATK", value: entry.stats.attack, color: theme.accent)
             statBar(label: "DEF", value: entry.stats.defense, color: .fireOrange)
             statBar(label: "SP.A", value: entry.stats.spAttack, color: .fireBlue)
             statBar(label: "SP.D", value: entry.stats.spDefense, color: Color(red: 0.45, green: 0.75, blue: 0.78))
             statBar(label: "VEL", value: entry.stats.speed, color: .fireYellow)
         }
         .padding(16)
-        .softCard(cornerRadius: 18, tint: .fireRed, shadowRadius: 10)
+        .softCard(cornerRadius: 18, tint: theme.accent, shadowRadius: 10)
     }
 
     private func statBar(label: String, value: Int, color: Color) -> some View {
@@ -216,29 +217,73 @@ struct PokedexDetailView: View {
     // MARK: - Location
 
     private var locationSection: some View {
-        HStack(spacing: 12) {
-            ZStack {
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color.fireRed.opacity(0.08))
-                    .frame(width: 38, height: 38)
-                Image(systemName: "mappin.and.ellipse")
-                    .font(.system(size: 16))
-                    .foregroundColor(.fireRed)
+        VStack(spacing: 0) {
+            HStack(spacing: 12) {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(theme.accent.opacity(0.08))
+                        .frame(width: 38, height: 38)
+                    Image(systemName: "mappin.and.ellipse")
+                        .font(.system(size: 16))
+                        .foregroundColor(theme.accent)
+                }
+
+                VStack(alignment: .leading, spacing: 3) {
+                    Text("UBICACIÓN")
+                        .font(.system(size: 9, weight: .heavy, design: .rounded))
+                        .foregroundColor(.fireTextSecondary)
+                        .tracking(2)
+                    Text(entry.location)
+                        .font(.system(size: 15, weight: .semibold, design: .rounded))
+                        .foregroundColor(.fireTextPrimary)
+                }
+                Spacer()
+
+                availabilityBadge
             }
 
-            VStack(alignment: .leading, spacing: 3) {
-                Text("UBICACIÓN")
-                    .font(.system(size: 9, weight: .heavy, design: .rounded))
-                    .foregroundColor(.fireTextSecondary)
-                    .tracking(2)
-                Text(entry.location)
-                    .font(.system(size: 15, weight: .semibold, design: .rounded))
-                    .foregroundColor(.fireTextPrimary)
+            if let version = entry.availability {
+                HStack(spacing: 4) {
+                    Image(systemName: "exclamationmark.triangle.fill")
+                        .font(.system(size: 9))
+                    Text("Solo disponible en \(version.shortName)")
+                        .font(.system(size: 11, weight: .medium, design: .rounded))
+                }
+                .foregroundColor(version.accentColor)
+                .padding(.top, 8)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.leading, 50)
             }
-            Spacer()
         }
         .padding(14)
-        .softCard(cornerRadius: 16, tint: .fireRed)
+        .softCard(cornerRadius: 16, tint: theme.accent)
+    }
+
+    private var availabilityBadge: some View {
+        Group {
+            if let version = entry.availability {
+                Text(version == .fireRed ? "FR" : "LG")
+                    .font(.system(size: 10, weight: .heavy, design: .rounded))
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 4)
+                    .background(Capsule().fill(version.accentColor))
+            } else {
+                HStack(spacing: 3) {
+                    Text("FR")
+                        .font(.system(size: 9, weight: .heavy, design: .rounded))
+                        .foregroundColor(Color.fireRed)
+                    Text("·")
+                        .foregroundColor(.fireTextSecondary)
+                    Text("LG")
+                        .font(.system(size: 9, weight: .heavy, design: .rounded))
+                        .foregroundColor(Color.leafGreen)
+                }
+                .padding(.horizontal, 8)
+                .padding(.vertical, 4)
+                .background(Capsule().fill(Color.black.opacity(0.05)))
+            }
+        }
     }
 }
 

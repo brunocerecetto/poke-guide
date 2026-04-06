@@ -9,7 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var progress: ProgressManager
+    @EnvironmentObject var gameConfig: GameConfig
+    @Environment(\.themeColors) private var theme
     @State private var showResetAlert = false
+    @State private var showChangeGameAlert = false
     @State private var appeared = false
 
     var body: some View {
@@ -35,21 +38,30 @@ struct ContentView: View {
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     HStack(spacing: 5) {
-                        Image(systemName: "flame.fill")
+                        Image(systemName: gameConfig.version.icon)
                             .font(.system(size: 11))
-                            .foregroundColor(.fireRed)
-                        Text("POKÉMON FIRERED")
+                            .foregroundColor(theme.accent)
+                        Text(gameConfig.version.displayName)
                             .font(.system(size: 13, weight: .heavy, design: .rounded))
-                            .foregroundColor(.fireRed)
+                            .foregroundColor(theme.accent)
                             .tracking(2)
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        showResetAlert = true
+                    Menu {
+                        Button {
+                            showChangeGameAlert = true
+                        } label: {
+                            Label("Cambiar juego/starter", systemImage: "arrow.triangle.2.circlepath")
+                        }
+                        Button(role: .destructive) {
+                            showResetAlert = true
+                        } label: {
+                            Label("Resetear progreso", systemImage: "arrow.counterclockwise")
+                        }
                     } label: {
-                        Image(systemName: "arrow.counterclockwise")
-                            .font(.system(size: 13, weight: .semibold))
+                        Image(systemName: "ellipsis.circle")
+                            .font(.system(size: 15, weight: .semibold))
                             .foregroundColor(.fireTextSecondary)
                     }
                 }
@@ -59,6 +71,14 @@ struct ContentView: View {
                 Button("Resetear", role: .destructive) { progress.resetAll() }
             } message: {
                 Text("Se van a borrar todos los checks. ¿Estás seguro?")
+            }
+            .alert("Cambiar juego/starter", isPresented: $showChangeGameAlert) {
+                Button("Cancelar", role: .cancel) { }
+                Button("Cambiar", role: .destructive) {
+                    gameConfig.unconfigure()
+                }
+            } message: {
+                Text("Vas a volver a la pantalla de selección. Tu progreso actual se guarda y podés volver a esta configuración.")
             }
             .onAppear {
                 withAnimation(.spring(response: 0.7, dampingFraction: 0.8)) { appeared = true }
@@ -75,10 +95,10 @@ struct ContentView: View {
             VStack(spacing: 5) {
                 Text("GUÍA DEFINITIVA")
                     .font(.system(size: 10, weight: .heavy, design: .rounded))
-                    .foregroundColor(.fireOrange)
+                    .foregroundColor(theme.secondary)
                     .tracking(4)
 
-                Text("Squirtle Run")
+                Text("\(gameConfig.starter.displayName) Run")
                     .font(.system(size: 30, weight: .heavy, design: .rounded))
                     .foregroundColor(.fireTextPrimary)
             }
@@ -105,7 +125,7 @@ struct ContentView: View {
             Spacer().frame(height: 4)
         }
         .frame(maxWidth: .infinity)
-        .softCard(cornerRadius: 24, tint: .fireRed, shadowRadius: 14)
+        .softCard(cornerRadius: 24, tint: theme.accent, shadowRadius: 14)
         .padding(.horizontal)
     }
 
@@ -209,7 +229,7 @@ struct ContentView: View {
 
     private var footerBadge: some View {
         HStack(spacing: 5) {
-            Image(systemName: "flame.fill")
+            Image(systemName: gameConfig.version.icon)
                 .font(.system(size: 9))
             Text("Gen I — Kanto")
                 .font(.system(size: 10, weight: .semibold, design: .rounded))
@@ -250,7 +270,7 @@ struct ContentView: View {
 
     private var primaryItems: [MenuItem] {
         [
-            MenuItem(icon: "shield.checkered", title: "Gimnasios", subtitle: "\(progress.completedGyms.count)/8 badges", color: .fireRed, destination: .gyms),
+            MenuItem(icon: "shield.checkered", title: "Gimnasios", subtitle: "\(progress.completedGyms.count)/8 badges", color: theme.accent, destination: .gyms),
             MenuItem(icon: "person.3.fill", title: "Equipo Final", subtitle: "6 pokémon + movesets", color: .fireBlue, destination: .team),
             MenuItem(icon: "map.fill", title: "Ruta Completa", subtitle: "Paso a paso", color: .fireGreen, destination: .route),
             MenuItem(icon: "book.closed.fill", title: "Pokédex", subtitle: "\(progress.pokemonStatuses.filter { $0.value.rawValue >= 2 }.count)/151 capturados", color: Color(red: 0.85, green: 0.25, blue: 0.25), destination: .pokedex),
@@ -262,7 +282,7 @@ struct ContentView: View {
             MenuItem(icon: "scope", title: "Capturas Clave", subtitle: "5 pokémon esenciales", color: .purple, destination: .captures),
             MenuItem(icon: "arrow.triangle.swap", title: "HMs & TMs", subtitle: "Reparto y compras", color: .teal, destination: .hmtm),
             MenuItem(icon: "lightbulb.fill", title: "Tips & Tricks", subtitle: "Reglas de evolución y más", color: .fireYellow, destination: .tips),
-            MenuItem(icon: "trophy.fill", title: "Liga Pokémon", subtitle: "Plan + checklist final", color: .fireOrange, destination: .league),
+            MenuItem(icon: "trophy.fill", title: "Liga Pokémon", subtitle: "Plan + checklist final", color: theme.secondary, destination: .league),
         ]
     }
 }
@@ -270,4 +290,5 @@ struct ContentView: View {
 #Preview {
     ContentView()
         .environmentObject(ProgressManager())
+        .environmentObject(GameConfig())
 }

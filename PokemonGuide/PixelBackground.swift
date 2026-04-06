@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct PixelBackground: View {
+    @Environment(\.themeColors) private var theme
+
     var body: some View {
         ZStack {
             // Base warm gradient
@@ -24,8 +26,8 @@ struct PixelBackground: View {
             // Subtle warm accent at top
             EllipticalGradient(
                 colors: [
-                    Color.fireRed.opacity(0.06),
-                    Color.fireOrange.opacity(0.03),
+                    theme.accent.opacity(0.06),
+                    theme.secondary.opacity(0.03),
                     Color.clear
                 ],
                 center: .top,
@@ -51,7 +53,7 @@ struct PixelBackground: View {
                             var topPath = Path()
                             topPath.addArc(center: CGPoint(x: cx, y: cy), radius: r, startAngle: .degrees(180), endAngle: .degrees(0), clockwise: false)
                             topPath.closeSubpath()
-                            context.fill(topPath, with: .color(Color.fireRed.opacity(0.04)))
+                            context.fill(topPath, with: .color(theme.accent.opacity(0.04)))
 
                             // Bottom half
                             var bottomPath = Path()

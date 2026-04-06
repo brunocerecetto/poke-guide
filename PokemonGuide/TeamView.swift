@@ -14,6 +14,8 @@ struct TeamView: View {
 
             ScrollView {
                 VStack(spacing: 12) {
+                    GuideDisclaimerBanner()
+
                     // Team overview bar
                     HStack(spacing: 0) {
                         ForEach(GameData.team) { member in

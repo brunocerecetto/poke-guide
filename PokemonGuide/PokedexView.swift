@@ -9,6 +9,8 @@ import SwiftUI
 
 struct PokedexView: View {
     @EnvironmentObject var progress: ProgressManager
+    @EnvironmentObject var gameConfig: GameConfig
+    @Environment(\.themeColors) private var theme
     @State private var searchText = ""
     @State private var selectedType: PokemonType? = nil
     @State private var selectedStatus: PokemonStatus? = nil
@@ -146,6 +148,7 @@ struct PokedexView: View {
 
     private func pokemonRow(_ entry: PokemonEntry) -> some View {
         let status = progress.pokemonStatus(for: entry.id)
+        let isAvailable = entry.isAvailable(in: gameConfig.version)
 
         return NavigationLink {
             PokedexDetailView(entry: entry)
@@ -155,6 +158,7 @@ struct PokedexView: View {
                     switch phase {
                     case .success(let image):
                         image.interpolation(.none).resizable().scaledToFit().frame(width: 40, height: 40)
+                            .saturation(isAvailable ? 1 : 0.3)
                     case .failure:
                         Image(systemName: status.icon).font(.system(size: 18)).foregroundColor(status.color)
                             .frame(width: 40, height: 40)
@@ -171,9 +175,20 @@ struct PokedexView: View {
                     .frame(width: 38, alignment: .leading)
 
                 VStack(alignment: .leading, spacing: 3) {
-                    Text(entry.name)
-                        .font(.system(size: 14, weight: .semibold, design: .rounded))
-                        .foregroundColor(status == .notSeen ? .fireTextSecondary : .fireTextPrimary)
+                    HStack(spacing: 5) {
+                        Text(entry.name)
+                            .font(.system(size: 14, weight: .semibold, design: .rounded))
+                            .foregroundColor(status == .notSeen ? .fireTextSecondary : .fireTextPrimary)
+
+                        if !isAvailable, let version = entry.availability {
+                            Text(version == .fireRed ? "FR" : "LG")
+                                .font(.system(size: 8, weight: .heavy, design: .rounded))
+                                .foregroundColor(.white)
+                                .padding(.horizontal, 5)
+                                .padding(.vertical, 2)
+                                .background(Capsule().fill(version.accentColor.opacity(0.7)))
+                        }
+                    }
 
                     HStack(spacing: 4) {
                         ForEach(entry.types, id: \.self) { type in
@@ -204,7 +219,7 @@ struct PokedexView: View {
             }
             .padding(10)
             .softCard(cornerRadius: 14, tint: status == .notSeen ? .clear : status.color, shadowRadius: 4)
-            .opacity(status == .notSeen ? 0.6 : 1)
+            .opacity(isAvailable ? (status == .notSeen ? 0.6 : 1) : 0.45)
         }
         .buttonStyle(.plain)
     }
@@ -212,6 +227,8 @@ struct PokedexView: View {
 
 #Preview {
     NavigationStack {
-        PokedexView().environmentObject(ProgressManager())
+        PokedexView()
+            .environmentObject(ProgressManager())
+            .environmentObject(GameConfig())
     }
 }

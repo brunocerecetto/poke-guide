@@ -6,18 +6,22 @@
 import SwiftUI
 
 struct CapturesView: View {
+    @Environment(\.themeColors) private var theme
+
     var body: some View {
         ZStack {
             Color.fireBg.ignoresSafeArea()
 
             ScrollView {
                 VStack(spacing: 12) {
+                    GuideDisclaimerBanner()
+
                     ForEach(GameData.captures) { capture in
                         HStack(spacing: 14) {
                             // Pokéball icon
                             ZStack {
                                 Circle()
-                                    .fill(Color.fireRed.gradient)
+                                    .fill(theme.accent.gradient)
                                     .frame(width: 44, height: 44)
                                 Image(systemName: "circle.circle.fill")
                                     .font(.title3)

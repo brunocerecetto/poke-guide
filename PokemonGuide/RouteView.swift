@@ -7,6 +7,7 @@ import SwiftUI
 
 struct RouteView: View {
     @EnvironmentObject var progress: ProgressManager
+    @Environment(\.themeColors) private var theme
     private let sections = GameData.routeSections
 
     var body: some View {
@@ -15,10 +16,13 @@ struct RouteView: View {
 
             ScrollView {
                 VStack(spacing: 16) {
+                    GuideDisclaimerBanner()
+                        .padding(.top, 4)
+
                     // Route progress
                     routeProgress
                         .padding(.horizontal)
-                        .padding(.top, 8)
+                        .padding(.top, 0)
 
                     ForEach(sections) { section in
                         sectionView(section)
@@ -55,7 +59,7 @@ struct RouteView: View {
 
                     RoundedRectangle(cornerRadius: 4)
                         .fill(
-                            LinearGradient(colors: [.fireRed, .fireOrange], startPoint: .leading, endPoint: .trailing)
+                            LinearGradient(colors: [theme.accent, theme.secondary], startPoint: .leading, endPoint: .trailing)
                         )
                         .frame(width: totalSteps > 0 ? geo.size.width * CGFloat(completedSteps) / CGFloat(totalSteps) : 0, height: 8)
                         .animation(.spring(response: 0.5), value: completedSteps)

@@ -2,7 +2,7 @@
 //  Theme.swift
 //  pokemon guide
 //
-//  Paleta FireRed Light Mode + componentes reutilizables
+//  Paleta de colores + componentes reutilizables. Soporta FireRed y LeafGreen.
 //
 
 import SwiftUI
@@ -10,12 +10,17 @@ import SwiftUI
 // MARK: - FireRed Color Palette (Light Mode)
 
 extension Color {
-    // Accent colors
+    // FireRed accent colors
     static let fireRed = Color(red: 0.88, green: 0.18, blue: 0.12)
     static let fireOrange = Color(red: 0.93, green: 0.50, blue: 0.10)
     static let fireYellow = Color(red: 0.98, green: 0.78, blue: 0.15)
     static let fireBlue = Color(red: 0.22, green: 0.48, blue: 0.85)
     static let fireGreen = Color(red: 0.20, green: 0.72, blue: 0.35)
+
+    // LeafGreen accent colors
+    static let leafGreen = Color(red: 0.18, green: 0.65, blue: 0.32)
+    static let leafTeal = Color(red: 0.15, green: 0.55, blue: 0.52)
+    static let leafYellow = Color(red: 0.70, green: 0.82, blue: 0.20)
 
     // Surfaces
     static let fireBg = Color(red: 0.96, green: 0.95, blue: 0.93)       // warm cream bg
@@ -30,6 +35,77 @@ extension Color {
     static let fireDark = fireBg
     static let fireGray = Color(red: 0.93, green: 0.92, blue: 0.90)
     static let fireLightGray = fireTextSecondary
+}
+
+// MARK: - GameVersion + Color (SwiftUI layer)
+
+extension GameVersion {
+    var accentColor: Color {
+        switch self {
+        case .fireRed:   return .fireRed
+        case .leafGreen: return .leafGreen
+        }
+    }
+
+    var secondaryColor: Color {
+        switch self {
+        case .fireRed:   return .fireOrange
+        case .leafGreen: return .leafTeal
+        }
+    }
+}
+
+extension Starter {
+    var type: PokemonType {
+        switch self {
+        case .bulbasaur:  return .grass
+        case .charmander: return .fire
+        case .squirtle:   return .water
+        }
+    }
+}
+
+// MARK: - Dynamic Theme Colors (per GameVersion)
+
+struct ThemeColors {
+    let accent: Color
+    let secondary: Color
+    let icon: String
+    let gradientColors: [Color]
+
+    static let fireRed = ThemeColors(
+        accent: .fireRed,
+        secondary: .fireOrange,
+        icon: "flame.fill",
+        gradientColors: [.fireRed, .fireOrange, .fireYellow, .fireOrange, .fireRed]
+    )
+
+    static let leafGreen = ThemeColors(
+        accent: .leafGreen,
+        secondary: .leafTeal,
+        icon: "leaf.fill",
+        gradientColors: [.leafGreen, .leafTeal, .leafYellow, .leafTeal, .leafGreen]
+    )
+
+    static func forVersion(_ version: GameVersion) -> ThemeColors {
+        switch version {
+        case .fireRed:   return .fireRed
+        case .leafGreen: return .leafGreen
+        }
+    }
+}
+
+// MARK: - Theme Environment Key
+
+private struct ThemeColorsKey: EnvironmentKey {
+    static let defaultValue = ThemeColors.fireRed
+}
+
+extension EnvironmentValues {
+    var themeColors: ThemeColors {
+        get { self[ThemeColorsKey.self] }
+        set { self[ThemeColorsKey.self] = newValue }
+    }
 }
 
 // MARK: - Soft Card Modifier
@@ -117,15 +193,16 @@ struct AnimatedCheck: View {
 struct FireRedSectionHeader: View {
     let title: String
     let icon: String
+    @Environment(\.themeColors) private var theme
 
     var body: some View {
         HStack(spacing: 8) {
             Image(systemName: icon)
-                .foregroundColor(.fireRed)
+                .foregroundColor(theme.accent)
             Text(title)
                 .font(.system(.subheadline, design: .rounded))
                 .fontWeight(.bold)
-                .foregroundColor(.fireRed)
+                .foregroundColor(theme.accent)
         }
         .textCase(nil)
     }
@@ -135,6 +212,7 @@ struct FireRedSectionHeader: View {
 
 struct PokeballProgress: View {
     let progress: Double
+    @Environment(\.themeColors) private var theme
     @State private var animatedProgress: Double = 0
 
     var body: some View {
@@ -149,20 +227,20 @@ struct PokeballProgress: View {
                 .trim(from: 0, to: animatedProgress)
                 .stroke(
                     AngularGradient(
-                        colors: [.fireRed, .fireOrange, .fireYellow, .fireOrange, .fireRed],
+                        colors: theme.gradientColors,
                         center: .center
                     ),
                     style: StrokeStyle(lineWidth: 10, lineCap: .round)
                 )
                 .frame(width: 130, height: 130)
                 .rotationEffect(.degrees(-90))
-                .shadow(color: .fireRed.opacity(0.2), radius: 6)
+                .shadow(color: theme.accent.opacity(0.2), radius: 6)
 
             // Center
             VStack(spacing: 2) {
                 Text("\(Int(progress * 100))%")
                     .font(.system(size: 32, weight: .heavy, design: .rounded))
-                    .foregroundColor(.fireRed)
+                    .foregroundColor(theme.accent)
                 Text("completado")
                     .font(.system(size: 10, weight: .semibold, design: .rounded))
                     .foregroundColor(.fireTextSecondary)
@@ -208,6 +286,42 @@ struct FireRedCard<Content: View>: View {
     }
 }
 
+// MARK: - Guide Disclaimer Banner
+
+struct GuideDisclaimerBanner: View {
+    @EnvironmentObject var gameConfig: GameConfig
+    @Environment(\.themeColors) private var theme
+
+    var isMatchingGuide: Bool {
+        gameConfig.version == .fireRed && gameConfig.starter == .squirtle
+    }
+
+    var body: some View {
+        if !isMatchingGuide {
+            HStack(spacing: 10) {
+                Image(systemName: "info.circle.fill")
+                    .font(.system(size: 16))
+                    .foregroundColor(theme.accent)
+
+                Text("Esta guía está optimizada para **Fire Red + Squirtle**. Los pasos son similares pero pueden variar exclusivos y evoluciones.")
+                    .font(.system(size: 11, weight: .medium, design: .rounded))
+                    .foregroundColor(.fireTextSecondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .padding(12)
+            .background(
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(theme.accent.opacity(0.06))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(theme.accent.opacity(0.15), lineWidth: 1)
+                    )
+            )
+            .padding(.horizontal)
+        }
+    }
+}
+
 // MARK: - Shake Effect
 
 struct ShakeEffect: GeometryEffect {
@@ -224,6 +338,7 @@ struct ShakeEffect: GeometryEffect {
 struct ConfettiView: View {
     @State private var particles: [(id: Int, x: CGFloat, y: CGFloat, color: Color, rotation: Double)] = []
     @State private var isAnimating = false
+    @Environment(\.themeColors) private var theme
     let trigger: Bool
 
     var body: some View {
@@ -248,7 +363,7 @@ struct ConfettiView: View {
     }
 
     private func spawnParticles() {
-        let colors: [Color] = [.fireRed, .fireOrange, .fireYellow, .fireGreen, .fireBlue]
+        let colors: [Color] = theme.gradientColors + [.fireGreen, .fireBlue]
         particles = (0..<25).map { i in
             (id: i, x: CGFloat.random(in: -120...120), y: CGFloat.random(in: -160 ... -30),
              color: colors.randomElement()!, rotation: Double.random(in: 180...720))

@@ -7,6 +7,7 @@ import SwiftUI
 
 struct LeagueView: View {
     @EnvironmentObject var progress: ProgressManager
+    @Environment(\.themeColors) private var theme
     @State private var celebrateLeague = false
 
     var body: some View {
@@ -15,6 +16,7 @@ struct LeagueView: View {
 
             ScrollView {
                 VStack(spacing: 16) {
+                    GuideDisclaimerBanner()
 
                     // Pre-league checklist
                     sectionHeader(title: "CHECKLIST PRE-LIGA", icon: "checklist")
@@ -123,7 +125,7 @@ struct LeagueView: View {
                 // Status circle
                 ZStack {
                     Circle()
-                        .fill(completed ? Color.fireGreen.gradient : Color.fireRed.gradient)
+                        .fill(completed ? Color.fireGreen.gradient : theme.accent.gradient)
                         .frame(width: 44, height: 44)
 
                     if completed {
@@ -146,7 +148,7 @@ struct LeagueView: View {
 
                         Spacer()
 
-                        TypeBadge(text: "Nv. \(member.levels)", color: completed ? .fireGreen : .fireRed)
+                        TypeBadge(text: "Nv. \(member.levels)", color: completed ? .fireGreen : theme.accent)
                     }
 
                     Text(member.strategy)

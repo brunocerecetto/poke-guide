@@ -21,6 +21,9 @@ struct HMTMView: View {
                 .pickerStyle(.segmented)
                 .padding()
 
+                GuideDisclaimerBanner()
+                    .padding(.horizontal)
+
                 ScrollView {
                     if selectedTab == 0 {
                         hmList

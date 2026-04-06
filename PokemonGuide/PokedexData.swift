@@ -121,6 +121,17 @@ struct PokemonEntry: Identifiable {
     let stats: PokemonStats
     let location: String
     let description: String
+    let availability: GameVersion? // nil = ambas versiones
+
+    init(id: Int, name: String, types: [PokemonType], stats: PokemonStats, location: String, description: String, availability: GameVersion? = nil) {
+        self.id = id
+        self.name = name
+        self.types = types
+        self.stats = stats
+        self.location = location
+        self.description = description
+        self.availability = availability
+    }
 
     var dexString: String {
         String(format: "#%03d", id)
@@ -128,6 +139,10 @@ struct PokemonEntry: Identifiable {
 
     var spriteURL: URL? {
         URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(id).png")
+    }
+
+    func isAvailable(in version: GameVersion) -> Bool {
+        availability == nil || availability == version
     }
 }
 
@@ -157,12 +172,12 @@ struct PokedexData {
         PokemonEntry(id: 20, name: "Raticate", types: [.normal], stats: PokemonStats(hp: 55, attack: 81, defense: 60, spAttack: 50, spDefense: 70, speed: 97), location: "Evolucionar Rattata", description: "Rata gigante mordaz y territorial."),
         PokemonEntry(id: 21, name: "Spearow", types: [.normal, .flying], stats: PokemonStats(hp: 40, attack: 60, defense: 30, spAttack: 31, spDefense: 31, speed: 70), location: "Ruta 3, Ruta 4", description: "Pájaro pequeño voraz y agresivo."),
         PokemonEntry(id: 22, name: "Fearow", types: [.normal, .flying], stats: PokemonStats(hp: 65, attack: 90, defense: 65, spAttack: 61, spDefense: 61, speed: 100), location: "Evolucionar Spearow", description: "Halcón grande cazador de presas rápidas."),
-        PokemonEntry(id: 23, name: "Ekans", types: [.poison], stats: PokemonStats(hp: 35, attack: 60, defense: 44, spAttack: 40, spDefense: 54, speed: 55), location: "Ruta 4, Ruta 8", description: "Serpiente venenosa reptil escupidora."),
-        PokemonEntry(id: 24, name: "Arbok", types: [.poison], stats: PokemonStats(hp: 60, attack: 95, defense: 69, spAttack: 65, spDefense: 79, speed: 80), location: "Evolucionar Ekans", description: "Cobra grande capaz escupidor venenoso."),
+        PokemonEntry(id: 23, name: "Ekans", types: [.poison], stats: PokemonStats(hp: 35, attack: 60, defense: 44, spAttack: 40, spDefense: 54, speed: 55), location: "Ruta 4, Ruta 8", description: "Serpiente venenosa reptil escupidora.", availability: .fireRed),
+        PokemonEntry(id: 24, name: "Arbok", types: [.poison], stats: PokemonStats(hp: 60, attack: 95, defense: 69, spAttack: 65, spDefense: 79, speed: 80), location: "Evolucionar Ekans", description: "Cobra grande capaz escupidor venenoso.", availability: .fireRed),
         PokemonEntry(id: 25, name: "Pikachu", types: [.electric], stats: PokemonStats(hp: 35, attack: 55, defense: 40, spAttack: 50, spDefense: 50, speed: 90), location: "Ruta 2, Bosque Verde", description: "Ratón eléctrico emblemático descarga fulgor."),
         PokemonEntry(id: 26, name: "Raichu", types: [.electric], stats: PokemonStats(hp: 60, attack: 90, defense: 55, spAttack: 90, spDefense: 80, speed: 110), location: "Evolucionar Pikachu", description: "Rata eléctrica gigante poder devastador."),
-        PokemonEntry(id: 27, name: "Sandshrew", types: [.ground], stats: PokemonStats(hp: 50, attack: 75, defense: 85, spAttack: 20, spDefense: 30, speed: 40), location: "Ruta 3, Ruta 4", description: "Topo terrestre excavador con garras."),
-        PokemonEntry(id: 28, name: "Sandslash", types: [.ground], stats: PokemonStats(hp: 75, attack: 100, defense: 110, spAttack: 45, spDefense: 55, speed: 65), location: "Evolucionar Sandshrew", description: "Topo gigante armado pinchos tierra."),
+        PokemonEntry(id: 27, name: "Sandshrew", types: [.ground], stats: PokemonStats(hp: 50, attack: 75, defense: 85, spAttack: 20, spDefense: 30, speed: 40), location: "Ruta 3, Ruta 4", description: "Topo terrestre excavador con garras.", availability: .leafGreen),
+        PokemonEntry(id: 28, name: "Sandslash", types: [.ground], stats: PokemonStats(hp: 75, attack: 100, defense: 110, spAttack: 45, spDefense: 55, speed: 65), location: "Evolucionar Sandshrew", description: "Topo gigante armado pinchos tierra.", availability: .leafGreen),
         PokemonEntry(id: 29, name: "Nidoran♀", types: [.poison], stats: PokemonStats(hp: 55, attack: 47, defense: 52, spAttack: 40, spDefense: 40, speed: 41), location: "Ruta 3, Ruta 4", description: "Pequeña hembra venenosa de púas."),
         PokemonEntry(id: 30, name: "Nidorina", types: [.poison], stats: PokemonStats(hp: 70, attack: 62, defense: 67, spAttack: 55, spDefense: 55, speed: 56), location: "Evolucionar Nidoran♀", description: "Hembra intermedia venenosa defensiva."),
         PokemonEntry(id: 31, name: "Nidoqueen", types: [.poison, .ground], stats: PokemonStats(hp: 90, attack: 92, defense: 87, spAttack: 75, spDefense: 85, speed: 76), location: "Evolucionar Nidorina", description: "Reina venenosa subterránea devastadora."),
@@ -171,15 +186,15 @@ struct PokedexData {
         PokemonEntry(id: 34, name: "Nidoking", types: [.poison, .ground], stats: PokemonStats(hp: 81, attack: 102, defense: 77, spAttack: 85, spDefense: 75, speed: 85), location: "Evolucionar Nidorino", description: "Rey venenoso subterráneo poderoso."),
         PokemonEntry(id: 35, name: "Clefairy", types: [.normal], stats: PokemonStats(hp: 70, attack: 73, defense: 60, spAttack: 73, spDefense: 60, speed: 35), location: "Cueva Luna", description: "Hada lunar de poderes mágicos."),
         PokemonEntry(id: 36, name: "Clefable", types: [.normal], stats: PokemonStats(hp: 95, attack: 70, defense: 73, spAttack: 60, spDefense: 73, speed: 60), location: "Evolucionar Clefairy", description: "Hada encantadora de magia suprema."),
-        PokemonEntry(id: 37, name: "Vulpix", types: [.fire], stats: PokemonStats(hp: 38, attack: 41, defense: 40, spAttack: 50, spDefense: 65, speed: 65), location: "Ruta 7, Ruta 8", description: "Zorro pequeño de seis colas ardientes."),
-        PokemonEntry(id: 38, name: "Ninetales", types: [.fire], stats: PokemonStats(hp: 73, attack: 76, defense: 75, spAttack: 81, spDefense: 100, speed: 100), location: "Evolucionar Vulpix", description: "Zorro antiguo nueve colas fuego."),
+        PokemonEntry(id: 37, name: "Vulpix", types: [.fire], stats: PokemonStats(hp: 38, attack: 41, defense: 40, spAttack: 50, spDefense: 65, speed: 65), location: "Ruta 7, Ruta 8", description: "Zorro pequeño de seis colas ardientes.", availability: .leafGreen),
+        PokemonEntry(id: 38, name: "Ninetales", types: [.fire], stats: PokemonStats(hp: 73, attack: 76, defense: 75, spAttack: 81, spDefense: 100, speed: 100), location: "Evolucionar Vulpix", description: "Zorro antiguo nueve colas fuego.", availability: .leafGreen),
         PokemonEntry(id: 39, name: "Jigglypuff", types: [.normal], stats: PokemonStats(hp: 115, attack: 40, defense: 20, spAttack: 45, spDefense: 25, speed: 20), location: "Ruta 5, Ruta 6, Ruta 7, Ruta 8", description: "Globo rosa cantante adormilador."),
         PokemonEntry(id: 40, name: "Wigglytuff", types: [.normal], stats: PokemonStats(hp: 140, attack: 70, defense: 45, spAttack: 75, spDefense: 50, speed: 45), location: "Evolucionar Jigglypuff", description: "Bola gigante cantante sedante."),
         PokemonEntry(id: 41, name: "Zubat", types: [.poison, .flying], stats: PokemonStats(hp: 40, attack: 45, defense: 35, spAttack: 30, spDefense: 40, speed: 55), location: "Cueva Celeste, Cueva Pokémon", description: "Murciélago pequeño venenoso ciego."),
         PokemonEntry(id: 42, name: "Golbat", types: [.poison, .flying], stats: PokemonStats(hp: 75, attack: 80, defense: 75, spAttack: 70, spDefense: 75, speed: 90), location: "Evolucionar Zubat", description: "Murciélago gigante chupasangre oscuro."),
-        PokemonEntry(id: 43, name: "Oddish", types: [.grass, .poison], stats: PokemonStats(hp: 45, attack: 50, defense: 55, spAttack: 75, spDefense: 65, speed: 30), location: "Ruta 1, Ruta 5, Ruta 6", description: "Monstruo planta pequeño raro venenoso."),
-        PokemonEntry(id: 44, name: "Gloom", types: [.grass, .poison], stats: PokemonStats(hp: 60, attack: 65, defense: 70, spAttack: 85, spDefense: 75, speed: 40), location: "Evolucionar Oddish", description: "Flor intermedia maloliente venenosa."),
-        PokemonEntry(id: 45, name: "Vileplume", types: [.grass, .poison], stats: PokemonStats(hp: 75, attack: 80, defense: 85, spAttack: 100, spDefense: 90, speed: 50), location: "Evolucionar Gloom", description: "Flor gigante aromática venenosa."),
+        PokemonEntry(id: 43, name: "Oddish", types: [.grass, .poison], stats: PokemonStats(hp: 45, attack: 50, defense: 55, spAttack: 75, spDefense: 65, speed: 30), location: "Ruta 1, Ruta 5, Ruta 6", description: "Monstruo planta pequeño raro venenoso.", availability: .fireRed),
+        PokemonEntry(id: 44, name: "Gloom", types: [.grass, .poison], stats: PokemonStats(hp: 60, attack: 65, defense: 70, spAttack: 85, spDefense: 75, speed: 40), location: "Evolucionar Oddish", description: "Flor intermedia maloliente venenosa.", availability: .fireRed),
+        PokemonEntry(id: 45, name: "Vileplume", types: [.grass, .poison], stats: PokemonStats(hp: 75, attack: 80, defense: 85, spAttack: 100, spDefense: 90, speed: 50), location: "Evolucionar Gloom", description: "Flor gigante aromática venenosa.", availability: .fireRed),
         PokemonEntry(id: 46, name: "Paras", types: [.bug, .grass], stats: PokemonStats(hp: 35, attack: 70, defense: 55, spAttack: 55, spDefense: 55, speed: 25), location: "Bosque Verde, Ruta 2", description: "Araña pequeña con setas hongo."),
         PokemonEntry(id: 47, name: "Parasect", types: [.bug, .grass], stats: PokemonStats(hp: 60, attack: 95, defense: 80, spAttack: 60, spDefense: 80, speed: 30), location: "Evolucionar Paras", description: "Araña gigante dominada por hongo."),
         PokemonEntry(id: 48, name: "Venonat", types: [.bug, .poison], stats: PokemonStats(hp: 60, attack: 55, defense: 50, spAttack: 40, spDefense: 55, speed: 45), location: "Bosque Verde", description: "Insecto pequeño venenoso nocturno."),
@@ -188,12 +203,12 @@ struct PokedexData {
         PokemonEntry(id: 51, name: "Dugtrio", types: [.ground], stats: PokemonStats(hp: 35, attack: 80, defense: 50, spAttack: 50, spDefense: 70, speed: 120), location: "Evolucionar Diglett", description: "Trío topos subterráneos rápidos."),
         PokemonEntry(id: 52, name: "Meowth", types: [.normal], stats: PokemonStats(hp: 40, attack: 45, defense: 35, spAttack: 40, spDefense: 40, speed: 90), location: "Ruta 5, Ruta 6, Ruta 7, Ruta 8", description: "Gato pequeño voraz moneda dorada."),
         PokemonEntry(id: 53, name: "Persian", types: [.normal], stats: PokemonStats(hp: 65, attack: 70, defense: 60, spAttack: 65, spDefense: 65, speed: 115), location: "Evolucionar Meowth", description: "Gato noble ágil cazador refinado."),
-        PokemonEntry(id: 54, name: "Psyduck", types: [.water], stats: PokemonStats(hp: 50, attack: 52, defense: 48, spAttack: 65, spDefense: 50, speed: 55), location: "Ruta 5, Ruta 6, Ruta 8", description: "Pato confundido psíquico raro."),
-        PokemonEntry(id: 55, name: "Golduck", types: [.water], stats: PokemonStats(hp: 80, attack: 82, defense: 78, spAttack: 95, spDefense: 80, speed: 85), location: "Evolucionar Psyduck", description: "Pato inteligente poderoso psíquico."),
+        PokemonEntry(id: 54, name: "Psyduck", types: [.water], stats: PokemonStats(hp: 50, attack: 52, defense: 48, spAttack: 65, spDefense: 50, speed: 55), location: "Ruta 5, Ruta 6, Ruta 8", description: "Pato confundido psíquico raro.", availability: .fireRed),
+        PokemonEntry(id: 55, name: "Golduck", types: [.water], stats: PokemonStats(hp: 80, attack: 82, defense: 78, spAttack: 95, spDefense: 80, speed: 85), location: "Evolucionar Psyduck", description: "Pato inteligente poderoso psíquico.", availability: .fireRed),
         PokemonEntry(id: 56, name: "Mankey", types: [.fighting], stats: PokemonStats(hp: 40, attack: 80, defense: 35, spAttack: 35, spDefense: 35, speed: 70), location: "Ruta 3, Ruta 4", description: "Mono pequeño agresivo puños rápidos."),
         PokemonEntry(id: 57, name: "Primeape", types: [.fighting], stats: PokemonStats(hp: 65, attack: 105, defense: 60, spAttack: 60, spDefense: 60, speed: 95), location: "Evolucionar Mankey", description: "Mono furioso golpeador devastador."),
-        PokemonEntry(id: 58, name: "Growlithe", types: [.fire], stats: PokemonStats(hp: 55, attack: 70, defense: 45, spAttack: 70, spDefense: 50, speed: 60), location: "Ruta 7, Ruta 8", description: "Cachorro fogoso leal guardia."),
-        PokemonEntry(id: 59, name: "Arcanine", types: [.fire], stats: PokemonStats(hp: 90, attack: 110, defense: 80, spAttack: 100, spDefense: 80, speed: 95), location: "Evolucionar Growlithe", description: "Perro legendario fuego majestuoso."),
+        PokemonEntry(id: 58, name: "Growlithe", types: [.fire], stats: PokemonStats(hp: 55, attack: 70, defense: 45, spAttack: 70, spDefense: 50, speed: 60), location: "Ruta 7, Ruta 8", description: "Cachorro fogoso leal guardia.", availability: .fireRed),
+        PokemonEntry(id: 59, name: "Arcanine", types: [.fire], stats: PokemonStats(hp: 90, attack: 110, defense: 80, spAttack: 100, spDefense: 80, speed: 95), location: "Evolucionar Growlithe", description: "Perro legendario fuego majestuoso.", availability: .fireRed),
         PokemonEntry(id: 60, name: "Poliwag", types: [.water], stats: PokemonStats(hp: 40, attack: 50, defense: 40, spAttack: 40, spDefense: 40, speed: 90), location: "Ruta 5, Ruta 6, Ruta 8", description: "Renacuajo acuático ondulante simple."),
         PokemonEntry(id: 61, name: "Poliwhirl", types: [.water], stats: PokemonStats(hp: 65, attack: 65, defense: 65, spAttack: 80, spDefense: 80, speed: 90), location: "Evolucionar Poliwag", description: "Renacuajo espiral acuático intermedio."),
         PokemonEntry(id: 62, name: "Poliwrath", types: [.water, .fighting], stats: PokemonStats(hp: 90, attack: 95, defense: 95, spAttack: 70, spDefense: 90, speed: 70), location: "Evolucionar Poliwhirl", description: "Rana azul campeona lucha acuática."),
@@ -203,9 +218,9 @@ struct PokedexData {
         PokemonEntry(id: 66, name: "Machop", types: [.fighting], stats: PokemonStats(hp: 70, attack: 80, defense: 50, spAttack: 35, spDefense: 35, speed: 35), location: "Ruta 3, Ruta 4", description: "Luchador pequeño músculos entrenados."),
         PokemonEntry(id: 67, name: "Machoke", types: [.fighting], stats: PokemonStats(hp: 80, attack: 100, defense: 70, spAttack: 50, spDefense: 60, speed: 45), location: "Evolucionar Machop", description: "Luchador intermedio fuerza bruta."),
         PokemonEntry(id: 68, name: "Machamp", types: [.fighting], stats: PokemonStats(hp: 90, attack: 130, defense: 80, spAttack: 65, spDefense: 85, speed: 55), location: "Evolucionar Machoke", description: "Titán cuatro brazos poder absoluto."),
-        PokemonEntry(id: 69, name: "Bellsprout", types: [.grass, .poison], stats: PokemonStats(hp: 50, attack: 75, defense: 35, spAttack: 70, spDefense: 30, speed: 40), location: "Ruta 5, Ruta 6", description: "Planta pequeña venenosa látigo."),
-        PokemonEntry(id: 70, name: "Weepinbell", types: [.grass, .poison], stats: PokemonStats(hp: 65, attack: 90, defense: 50, spAttack: 85, spDefense: 45, speed: 55), location: "Evolucionar Bellsprout", description: "Trampa venenosa carnívora intermedia."),
-        PokemonEntry(id: 71, name: "Victreebel", types: [.grass, .poison], stats: PokemonStats(hp: 80, attack: 105, defense: 65, spAttack: 100, spDefense: 70, speed: 70), location: "Evolucionar Weepinbell", description: "Planta gigante carnívora insaciable."),
+        PokemonEntry(id: 69, name: "Bellsprout", types: [.grass, .poison], stats: PokemonStats(hp: 50, attack: 75, defense: 35, spAttack: 70, spDefense: 30, speed: 40), location: "Ruta 5, Ruta 6", description: "Planta pequeña venenosa látigo.", availability: .leafGreen),
+        PokemonEntry(id: 70, name: "Weepinbell", types: [.grass, .poison], stats: PokemonStats(hp: 65, attack: 90, defense: 50, spAttack: 85, spDefense: 45, speed: 55), location: "Evolucionar Bellsprout", description: "Trampa venenosa carnívora intermedia.", availability: .leafGreen),
+        PokemonEntry(id: 71, name: "Victreebel", types: [.grass, .poison], stats: PokemonStats(hp: 80, attack: 105, defense: 65, spAttack: 100, spDefense: 70, speed: 70), location: "Evolucionar Weepinbell", description: "Planta gigante carnívora insaciable.", availability: .leafGreen),
         PokemonEntry(id: 72, name: "Tentacool", types: [.water, .poison], stats: PokemonStats(hp: 40, attack: 40, defense: 35, spAttack: 50, spDefense: 100, speed: 70), location: "Ruta 5, Ruta 6", description: "Medusa pequeña tentáculos venenosos."),
         PokemonEntry(id: 73, name: "Tentacruel", types: [.water, .poison], stats: PokemonStats(hp: 80, attack: 70, defense: 65, spAttack: 80, spDefense: 120, speed: 100), location: "Evolucionar Tentacool", description: "Medusa gigante tentáculos poderosos."),
         PokemonEntry(id: 74, name: "Geodude", types: [.rock, .ground], stats: PokemonStats(hp: 40, attack: 80, defense: 100, spAttack: 30, spDefense: 30, speed: 20), location: "Ruta 3, Ruta 4, Cueva Pokémon", description: "Roca levitante pequeña viviente."),
@@ -213,8 +228,8 @@ struct PokedexData {
         PokemonEntry(id: 76, name: "Golem", types: [.rock, .ground], stats: PokemonStats(hp: 80, attack: 120, defense: 130, spAttack: 55, spDefense: 65, speed: 45), location: "Evolucionar Graveler", description: "Fortaleza rocosa defensa impenetrable."),
         PokemonEntry(id: 77, name: "Ponyta", types: [.fire], stats: PokemonStats(hp: 50, attack: 85, defense: 55, spAttack: 65, spDefense: 55, speed: 90), location: "Ruta 7, Ruta 8", description: "Caballo pequeño crines flameantes."),
         PokemonEntry(id: 78, name: "Rapidash", types: [.fire], stats: PokemonStats(hp: 65, attack: 100, defense: 70, spAttack: 80, spDefense: 70, speed: 105), location: "Evolucionar Ponyta", description: "Centauro fuego velocidad galopante."),
-        PokemonEntry(id: 79, name: "Slowpoke", types: [.water, .psychic], stats: PokemonStats(hp: 90, attack: 65, defense: 65, spAttack: 40, spDefense: 40, speed: 15), location: "Ruta 5, Ruta 6, Ruta 8", description: "Pez simple tardío muy confundido."),
-        PokemonEntry(id: 80, name: "Slowbro", types: [.water, .psychic], stats: PokemonStats(hp: 95, attack: 75, defense: 110, spAttack: 100, spDefense: 80, speed: 30), location: "Evolucionar Slowpoke", description: "Caballito marino psíquico con cangrejo."),
+        PokemonEntry(id: 79, name: "Slowpoke", types: [.water, .psychic], stats: PokemonStats(hp: 90, attack: 65, defense: 65, spAttack: 40, spDefense: 40, speed: 15), location: "Ruta 5, Ruta 6, Ruta 8", description: "Pez simple tardío muy confundido.", availability: .leafGreen),
+        PokemonEntry(id: 80, name: "Slowbro", types: [.water, .psychic], stats: PokemonStats(hp: 95, attack: 75, defense: 110, spAttack: 100, spDefense: 80, speed: 30), location: "Evolucionar Slowpoke", description: "Caballito marino psíquico con cangrejo.", availability: .leafGreen),
         PokemonEntry(id: 81, name: "Magnemite", types: [.electric, .steel], stats: PokemonStats(hp: 25, attack: 35, defense: 70, spAttack: 95, spDefense: 55, speed: 45), location: "Ruta 5, Ruta 6", description: "Imán eléctrico pequeño flotante."),
         PokemonEntry(id: 82, name: "Magneton", types: [.electric, .steel], stats: PokemonStats(hp: 50, attack: 60, defense: 95, spAttack: 120, spDefense: 70, speed: 70), location: "Evolucionar Magnemite", description: "Trío imanes eléctricos unidos."),
         PokemonEntry(id: 83, name: "Farfetch'd", types: [.normal, .flying], stats: PokemonStats(hp: 52, attack: 90, defense: 55, spAttack: 58, spDefense: 62, speed: 60), location: "Ruta 12, Ruta 13", description: "Pato extraño espada verdura."),
@@ -224,8 +239,8 @@ struct PokedexData {
         PokemonEntry(id: 87, name: "Dewgong", types: [.water, .ice], stats: PokemonStats(hp: 90, attack: 70, defense: 80, spAttack: 70, spDefense: 95, speed: 70), location: "Evolucionar Seel", description: "Foca hielo elegancia nieve marina."),
         PokemonEntry(id: 88, name: "Grimer", types: [.poison], stats: PokemonStats(hp: 80, attack: 80, defense: 50, spAttack: 40, spDefense: 50, speed: 25), location: "Ruta 11, Cueva Pokémon", description: "Lodo venenoso repugnante putrefacto."),
         PokemonEntry(id: 89, name: "Muk", types: [.poison], stats: PokemonStats(hp: 105, attack: 105, defense: 75, spAttack: 65, spDefense: 100, speed: 50), location: "Evolucionar Grimer", description: "Montaña lodo tóxico infeccioso."),
-        PokemonEntry(id: 90, name: "Shellder", types: [.water], stats: PokemonStats(hp: 30, attack: 65, defense: 100, spAttack: 45, spDefense: 25, speed: 40), location: "Ruta 10, Ruta 11", description: "Ostra cerrada defensa impenetrable."),
-        PokemonEntry(id: 91, name: "Cloyster", types: [.water, .ice], stats: PokemonStats(hp: 50, attack: 95, defense: 180, spAttack: 85, spDefense: 45, speed: 70), location: "Evolucionar Shellder", description: "Ostra acorazada hielo defensor."),
+        PokemonEntry(id: 90, name: "Shellder", types: [.water], stats: PokemonStats(hp: 30, attack: 65, defense: 100, spAttack: 45, spDefense: 25, speed: 40), location: "Ruta 10, Ruta 11", description: "Ostra cerrada defensa impenetrable.", availability: .fireRed),
+        PokemonEntry(id: 91, name: "Cloyster", types: [.water, .ice], stats: PokemonStats(hp: 50, attack: 95, defense: 180, spAttack: 85, spDefense: 45, speed: 70), location: "Evolucionar Shellder", description: "Ostra acorazada hielo defensor.", availability: .fireRed),
         PokemonEntry(id: 92, name: "Gastly", types: [.ghost, .poison], stats: PokemonStats(hp: 30, attack: 35, defense: 30, spAttack: 100, spDefense: 35, speed: 80), location: "Casa Pokémon, Mansión Fantasma", description: "Fantasma gaseoso espectro venenoso."),
         PokemonEntry(id: 93, name: "Haunter", types: [.ghost, .poison], stats: PokemonStats(hp: 45, attack: 50, defense: 45, spAttack: 115, spDefense: 55, speed: 95), location: "Evolucionar Gastly", description: "Espíritu flotante congelador tóxico."),
         PokemonEntry(id: 94, name: "Gengar", types: [.ghost, .poison], stats: PokemonStats(hp: 60, attack: 65, defense: 60, spAttack: 130, spDefense: 75, speed: 110), location: "Evolucionar Haunter", description: "Sombra demoníaca poder paranormal."),
@@ -254,14 +269,14 @@ struct PokedexData {
         PokemonEntry(id: 117, name: "Seadra", types: [.water], stats: PokemonStats(hp: 55, attack: 65, defense: 95, spAttack: 95, spDefense: 45, speed: 85), location: "Evolucionar Horsea", description: "Dragón marino espinas venenosas."),
         PokemonEntry(id: 118, name: "Goldeen", types: [.water], stats: PokemonStats(hp: 45, attack: 67, defense: 60, spAttack: 35, spDefense: 50, speed: 63), location: "Ruta 6, Ruta 12, Ruta 13", description: "Pez dorado aletas bailarín."),
         PokemonEntry(id: 119, name: "Seaking", types: [.water], stats: PokemonStats(hp: 80, attack: 92, defense: 65, spAttack: 65, spDefense: 80, speed: 68), location: "Evolucionar Goldeen", description: "Rey pez rojo poderoso territorial."),
-        PokemonEntry(id: 120, name: "Staryu", types: [.water], stats: PokemonStats(hp: 30, attack: 45, defense: 55, spAttack: 70, spDefense: 55, speed: 85), location: "Ruta 5, Ruta 6", description: "Estrella marina común regeneradora."),
-        PokemonEntry(id: 121, name: "Starmie", types: [.water, .psychic], stats: PokemonStats(hp: 60, attack: 75, defense: 85, spAttack: 100, spDefense: 85, speed: 115), location: "Evolucionar Staryu", description: "Joya psíquica marina brillante."),
+        PokemonEntry(id: 120, name: "Staryu", types: [.water], stats: PokemonStats(hp: 30, attack: 45, defense: 55, spAttack: 70, spDefense: 55, speed: 85), location: "Ruta 5, Ruta 6", description: "Estrella marina común regeneradora.", availability: .leafGreen),
+        PokemonEntry(id: 121, name: "Starmie", types: [.water, .psychic], stats: PokemonStats(hp: 60, attack: 75, defense: 85, spAttack: 100, spDefense: 85, speed: 115), location: "Evolucionar Staryu", description: "Joya psíquica marina brillante.", availability: .leafGreen),
         PokemonEntry(id: 122, name: "Mr. Mime", types: [.psychic], stats: PokemonStats(hp: 40, attack: 45, defense: 65, spAttack: 100, spDefense: 120, speed: 90), location: "Silph Co. (regalo)", description: "Mimo psíquico ilusión invisible muro."),
-        PokemonEntry(id: 123, name: "Scyther", types: [.bug, .flying], stats: PokemonStats(hp: 70, attack: 110, defense: 80, spAttack: 55, spDefense: 80, speed: 105), location: "Ruta 14", description: "Mantis insecto segadores metálicos."),
+        PokemonEntry(id: 123, name: "Scyther", types: [.bug, .flying], stats: PokemonStats(hp: 70, attack: 110, defense: 80, spAttack: 55, spDefense: 80, speed: 105), location: "Ruta 14", description: "Mantis insecto segadores metálicos.", availability: .fireRed),
         PokemonEntry(id: 124, name: "Jynx", types: [.ice, .psychic], stats: PokemonStats(hp: 65, attack: 50, defense: 35, spAttack: 115, spDefense: 95, speed: 95), location: "Ruta 17", description: "Humanoides hielo psíquica sedutora."),
-        PokemonEntry(id: 125, name: "Electabuzz", types: [.electric], stats: PokemonStats(hp: 65, attack: 83, defense: 57, spAttack: 95, spDefense: 85, speed: 105), location: "Ruta 11", description: "Titán eléctrico puños rayos."),
-        PokemonEntry(id: 126, name: "Magmar", types: [.fire], stats: PokemonStats(hp: 65, attack: 95, defense: 57, spAttack: 100, spDefense: 85, speed: 93), location: "Casa Pokémon", description: "Titán fuego aliento magma ardiente."),
-        PokemonEntry(id: 127, name: "Pinsir", types: [.bug], stats: PokemonStats(hp: 65, attack: 125, defense: 100, spAttack: 55, spDefense: 70, speed: 85), location: "Ruta 14", description: "Ciervo insecto tenazas mortales."),
+        PokemonEntry(id: 125, name: "Electabuzz", types: [.electric], stats: PokemonStats(hp: 65, attack: 83, defense: 57, spAttack: 95, spDefense: 85, speed: 105), location: "Ruta 11", description: "Titán eléctrico puños rayos.", availability: .fireRed),
+        PokemonEntry(id: 126, name: "Magmar", types: [.fire], stats: PokemonStats(hp: 65, attack: 95, defense: 57, spAttack: 100, spDefense: 85, speed: 93), location: "Casa Pokémon", description: "Titán fuego aliento magma ardiente.", availability: .leafGreen),
+        PokemonEntry(id: 127, name: "Pinsir", types: [.bug], stats: PokemonStats(hp: 65, attack: 125, defense: 100, spAttack: 55, spDefense: 70, speed: 85), location: "Ruta 14", description: "Ciervo insecto tenazas mortales.", availability: .leafGreen),
         PokemonEntry(id: 128, name: "Tauros", types: [.normal], stats: PokemonStats(hp: 75, attack: 100, defense: 95, spAttack: 40, spDefense: 70, speed: 110), location: "Ruta 16, Ruta 17", description: "Toro salvaje cuernos embestidor."),
         PokemonEntry(id: 129, name: "Magikarp", types: [.water], stats: PokemonStats(hp: 20, attack: 10, defense: 55, spAttack: 15, spDefense: 20, speed: 80), location: "Ruta 5, Ruta 6", description: "Pez rojo inútil débil saltarín."),
         PokemonEntry(id: 130, name: "Gyarados", types: [.water, .flying], stats: PokemonStats(hp: 95, attack: 125, defense: 79, spAttack: 60, spDefense: 100, speed: 81), location: "Evolucionar Magikarp", description: "Dragón acuático destructor cataclismo."),

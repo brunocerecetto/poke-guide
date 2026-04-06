@@ -3,6 +3,7 @@
 //  pokemon guide
 //
 //  Persiste todo el progreso offline usando UserDefaults.
+//  Las keys están namespaceadas por GameVersion + Starter.
 //
 
 import Foundation
@@ -10,12 +11,14 @@ import Combine
 
 class ProgressManager: ObservableObject {
     private let defaults = UserDefaults.standard
-    private let gymKey = "completedGyms"
-    private let routeKey = "completedRouteSteps"
-    private let leagueKey = "completedLeague"
-    private let preLeagueKey = "completedPreLeague"
-    private let postgameKey = "completedPostgame"
-    private let pokedexKey = "pokemonStatuses"
+    private var prefix: String
+
+    private var gymKey: String { "\(prefix)_completedGyms" }
+    private var routeKey: String { "\(prefix)_completedRouteSteps" }
+    private var leagueKey: String { "\(prefix)_completedLeague" }
+    private var preLeagueKey: String { "\(prefix)_completedPreLeague" }
+    private var postgameKey: String { "\(prefix)_completedPostgame" }
+    private var pokedexKey: String { "\(prefix)_pokemonStatuses" }
 
     @Published var completedGyms: Set<String> {
         didSet { save(completedGyms, forKey: gymKey) }
@@ -37,13 +40,43 @@ class ProgressManager: ObservableObject {
         didSet { savePokedex() }
     }
 
-    init() {
-        _completedGyms = Published(initialValue: Self.load(forKey: gymKey))
-        _completedRouteSteps = Published(initialValue: Self.load(forKey: routeKey))
-        _completedLeague = Published(initialValue: Self.load(forKey: leagueKey))
-        _completedPreLeague = Published(initialValue: Self.load(forKey: preLeagueKey))
-        _completedPostgame = Published(initialValue: Self.load(forKey: postgameKey))
-        _pokemonStatuses = Published(initialValue: Self.loadPokedex(forKey: pokedexKey))
+    init(prefix: String = "fireRed_squirtle") {
+        self.prefix = prefix
+
+        let gymK = "\(prefix)_completedGyms"
+        let routeK = "\(prefix)_completedRouteSteps"
+        let leagueK = "\(prefix)_completedLeague"
+        let preLeagueK = "\(prefix)_completedPreLeague"
+        let postgameK = "\(prefix)_completedPostgame"
+        let pokedexK = "\(prefix)_pokemonStatuses"
+
+        // Migrate legacy unnamespaced keys if namespaced keys don't exist yet
+        if prefix == "fireRed_squirtle" {
+            Self.migrateIfNeeded(from: "completedGyms", to: gymK)
+            Self.migrateIfNeeded(from: "completedRouteSteps", to: routeK)
+            Self.migrateIfNeeded(from: "completedLeague", to: leagueK)
+            Self.migrateIfNeeded(from: "completedPreLeague", to: preLeagueK)
+            Self.migrateIfNeeded(from: "completedPostgame", to: postgameK)
+            Self.migrateIfNeeded(from: "pokemonStatuses", to: pokedexK)
+        }
+
+        _completedGyms = Published(initialValue: Self.load(forKey: gymK))
+        _completedRouteSteps = Published(initialValue: Self.load(forKey: routeK))
+        _completedLeague = Published(initialValue: Self.load(forKey: leagueK))
+        _completedPreLeague = Published(initialValue: Self.load(forKey: preLeagueK))
+        _completedPostgame = Published(initialValue: Self.load(forKey: postgameK))
+        _pokemonStatuses = Published(initialValue: Self.loadPokedex(forKey: pokedexK))
+    }
+
+    /// Reload progress for a different game config
+    func switchConfig(prefix newPrefix: String) {
+        prefix = newPrefix
+        completedGyms = Self.load(forKey: gymKey)
+        completedRouteSteps = Self.load(forKey: routeKey)
+        completedLeague = Self.load(forKey: leagueKey)
+        completedPreLeague = Self.load(forKey: preLeagueKey)
+        completedPostgame = Self.load(forKey: postgameKey)
+        pokemonStatuses = Self.loadPokedex(forKey: pokedexKey)
     }
 
     // MARK: - Gym toggles
@@ -194,5 +227,15 @@ class ProgressManager: ObservableObject {
                 result[dexNum] = status
             }
         }
+    }
+
+    // MARK: - Migration
+
+    private static func migrateIfNeeded(from oldKey: String, to newKey: String) {
+        let defaults = UserDefaults.standard
+        guard defaults.object(forKey: newKey) == nil,
+              let oldValue = defaults.object(forKey: oldKey) else { return }
+        defaults.set(oldValue, forKey: newKey)
+        defaults.removeObject(forKey: oldKey)
     }
 }

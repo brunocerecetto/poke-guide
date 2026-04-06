@@ -12,6 +12,8 @@ struct TipsView: View {
 
             ScrollView {
                 VStack(spacing: 12) {
+                    GuideDisclaimerBanner()
+
                     ForEach(GameData.tips) { tip in
                         VStack(alignment: .leading, spacing: 8) {
                             Text(tip.pokemon)
