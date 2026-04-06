@@ -2,8 +2,8 @@
 //  TypeEffectiveness.swift
 //  PokemonGuide
 //
-//  Datos de efectividad de tipos Gen 3 (sin Dark, con Steel).
-//  Fuente canónica para TeamBuilderView y futuro TypeChartView.
+//  Datos de efectividad de tipos Gen 6+ (18 tipos incluyendo Dark y Fairy).
+//  Fuente canónica para TeamBuilderView y TypeChartView.
 //
 
 import Foundation
@@ -45,7 +45,7 @@ struct TypeEffectiveness {
         defendingTypes.reduce(1.0) { $0 * multiplier(attacking: attackingType, defending: $1) }
     }
 
-    // MARK: - Gen 3 Type Chart (16 types, no Dark)
+    // MARK: - Gen 6+ Type Chart (18 types, with Dark and Fairy)
 
     /// Only stores non-1.0 multipliers for compactness. Missing entries default to 1.0.
     private static let chart: [PokemonType: [PokemonType: Double]] = [
@@ -76,11 +76,11 @@ struct TypeEffectiveness {
         .fighting: [
             .normal: 2.0, .ice: 2.0, .poison: 0.5, .flying: 0.5,
             .psychic: 0.5, .bug: 0.5, .rock: 2.0, .ghost: 0.0,
-            .steel: 2.0
+            .dark: 2.0, .steel: 2.0, .fairy: 0.5
         ],
         .poison: [
             .grass: 2.0, .poison: 0.5, .ground: 0.5, .rock: 0.5,
-            .ghost: 0.5, .steel: 0.0
+            .ghost: 0.5, .steel: 0.0, .fairy: 2.0
         ],
         .ground: [
             .fire: 2.0, .electric: 2.0, .grass: 0.5, .poison: 2.0,
@@ -91,25 +91,35 @@ struct TypeEffectiveness {
             .rock: 0.5, .steel: 0.5
         ],
         .psychic: [
-            .fighting: 2.0, .poison: 2.0, .psychic: 0.5, .steel: 0.5
+            .fighting: 2.0, .poison: 2.0, .psychic: 0.5, .dark: 0.0,
+            .steel: 0.5
         ],
         .bug: [
             .fire: 0.5, .grass: 2.0, .fighting: 0.5, .poison: 0.5,
-            .flying: 0.5, .psychic: 2.0, .ghost: 0.5, .steel: 0.5
+            .flying: 0.5, .psychic: 2.0, .ghost: 0.5, .dark: 2.0,
+            .steel: 0.5, .fairy: 0.5
         ],
         .rock: [
             .fire: 2.0, .ice: 2.0, .fighting: 0.5, .ground: 0.5,
             .flying: 2.0, .bug: 2.0, .steel: 0.5
         ],
         .ghost: [
-            .normal: 0.0, .psychic: 2.0, .ghost: 2.0, .steel: 0.5
+            .normal: 0.0, .psychic: 2.0, .ghost: 2.0, .dark: 0.5
         ],
         .dragon: [
-            .dragon: 2.0, .steel: 0.5
+            .dragon: 2.0, .steel: 0.5, .fairy: 0.0
+        ],
+        .dark: [
+            .fighting: 0.5, .psychic: 2.0, .ghost: 2.0, .dark: 0.5,
+            .fairy: 0.5
         ],
         .steel: [
             .fire: 0.5, .water: 0.5, .electric: 0.5, .ice: 2.0,
-            .rock: 2.0, .steel: 0.5
+            .rock: 2.0, .steel: 0.5, .fairy: 2.0
+        ],
+        .fairy: [
+            .fire: 0.5, .fighting: 2.0, .poison: 0.5, .dragon: 2.0,
+            .dark: 2.0, .steel: 0.5
         ]
     ]
 }

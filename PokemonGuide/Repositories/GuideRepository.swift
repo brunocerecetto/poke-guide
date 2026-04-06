@@ -1,0 +1,475 @@
+//
+//  GuideRepository.swift
+//  PokemonGuide
+//
+//  Repository layer for querying game guide content from Core Data.
+//  Covers games, gyms, routes, elite four, tips, captures, HM/TM,
+//  team recommendations, rival encounters, and checklists.
+//
+
+import Foundation
+import CoreData
+import Combine
+
+// MARK: - DTOs
+
+struct GameDTO: Identifiable, Equatable {
+    let id: String
+    let name: String
+    let generation: Int
+    let region: String
+    let releaseYear: Int
+    let platform: String
+    let accentColorHex: String
+    let secondaryColorHex: String
+    let iconName: String
+    let starterDexNumbers: [Int]
+    let gymCount: Int
+    let hasEliteFour: Bool
+    let hasChampion: Bool
+}
+
+struct GymDTO: Identifiable, Equatable {
+    let id: Int
+    let name: String
+    let leader: String
+    let levelRange: String
+    let note: String
+    let badge: String
+}
+
+struct RouteSectionDTO: Identifiable, Equatable {
+    let id: Int
+    let title: String
+    let steps: [RouteStepDTO]
+}
+
+struct RouteStepDTO: Identifiable, Equatable {
+    let id: String
+    let text: String
+}
+
+struct EliteFourMemberDTO: Identifiable, Equatable {
+    let id: Int
+    let name: String
+    let strategy: String
+    let levels: String
+}
+
+struct TipDTO: Identifiable, Equatable {
+    let id: Int
+    let pokemon: String
+    let rule: String
+}
+
+struct KeyCaptureDTO: Identifiable, Equatable {
+    let id: Int
+    let pokemon: String
+    let location: String
+    let note: String
+}
+
+struct HMEntryDTO: Identifiable, Equatable {
+    let id: Int
+    let hm: String
+    let pokemon: String
+    let location: String
+}
+
+struct TMEntryDTO: Identifiable, Equatable {
+    let id: Int
+    let tm: String
+    let target: String
+    let origin: String
+}
+
+struct TeamRecommendationDTO: Equatable {
+    let starterCondition: String
+    let members: [TeamMemberDTO]
+}
+
+struct TeamMemberDTO: Identifiable, Equatable {
+    let id: Int
+    let name: String
+    let moves: [String]
+    let notes: String
+    let emoji: String
+}
+
+struct RivalEncounterDTO: Identifiable, Equatable {
+    let id: Int
+    let location: String
+    let iconName: String
+    let team: [RivalPokemonDTO]
+}
+
+struct RivalPokemonDTO: Identifiable, Equatable {
+    let id: Int
+    let name: String
+    let level: Int
+    let dexNumber: Int
+    let starterCondition: String?
+}
+
+struct ChecklistStepDTO: Identifiable, Equatable {
+    let id: String
+    let text: String
+}
+
+// MARK: - Repository
+
+class GuideRepository: ObservableObject {
+    private let context: NSManagedObjectContext
+
+    init(context: NSManagedObjectContext) {
+        self.context = context
+    }
+
+    // MARK: - Games
+
+    func allGames() -> [GameDTO] {
+        let request = NSFetchRequest<NSManagedObject>(entityName: "Game")
+        request.sortDescriptors = [
+            NSSortDescriptor(key: "generation", ascending: true),
+            NSSortDescriptor(key: "releaseYear", ascending: true),
+        ]
+
+        guard let results = try? context.fetch(request) else { return [] }
+        return results.compactMap { mapToGameDTO($0) }
+    }
+
+    func allGames(generation: Int) -> [GameDTO] {
+        let request = NSFetchRequest<NSManagedObject>(entityName: "Game")
+        request.predicate = NSPredicate(format: "generation == %d", generation)
+        request.sortDescriptors = [NSSortDescriptor(key: "releaseYear", ascending: true)]
+
+        guard let results = try? context.fetch(request) else { return [] }
+        return results.compactMap { mapToGameDTO($0) }
+    }
+
+    func game(id: String) -> GameDTO? {
+        let request = NSFetchRequest<NSManagedObject>(entityName: "Game")
+        request.predicate = NSPredicate(format: "id == %@", id)
+        request.fetchLimit = 1
+
+        guard let result = try? context.fetch(request).first else { return nil }
+        return mapToGameDTO(result)
+    }
+
+    func generations() -> [Int] {
+        let request = NSFetchRequest<NSManagedObject>(entityName: "Game")
+        request.propertiesToFetch = ["generation"]
+        request.returnsDistinctResults = true
+        request.resultType = .dictionaryResultType
+
+        guard let results = try? context.fetch(request) as? [[String: Any]] else { return [] }
+        return results
+            .compactMap { $0["generation"] as? Int }
+            .sorted()
+    }
+
+    // MARK: - Gyms
+
+    func gyms(gameId: String) -> [GymDTO] {
+        let request = NSFetchRequest<NSManagedObject>(entityName: "Gym")
+        request.predicate = NSPredicate(format: "game.id == %@", gameId)
+        request.sortDescriptors = [NSSortDescriptor(key: "orderIndex", ascending: true)]
+
+        guard let results = try? context.fetch(request) else { return [] }
+        return results.compactMap { mapToGymDTO($0) }
+    }
+
+    // MARK: - Route sections & steps
+
+    func routeSections(gameId: String) -> [RouteSectionDTO] {
+        let request = NSFetchRequest<NSManagedObject>(entityName: "RouteSection")
+        request.predicate = NSPredicate(format: "game.id == %@", gameId)
+        request.sortDescriptors = [NSSortDescriptor(key: "orderIndex", ascending: true)]
+
+        guard let results = try? context.fetch(request) else { return [] }
+        return results.compactMap { mapToRouteSectionDTO($0) }
+    }
+
+    // MARK: - Elite Four
+
+    func eliteFour(gameId: String) -> [EliteFourMemberDTO] {
+        let request = NSFetchRequest<NSManagedObject>(entityName: "EliteFourMember")
+        request.predicate = NSPredicate(format: "game.id == %@", gameId)
+        request.sortDescriptors = [NSSortDescriptor(key: "orderIndex", ascending: true)]
+
+        guard let results = try? context.fetch(request) else { return [] }
+        return results.compactMap { mapToEliteFourMemberDTO($0) }
+    }
+
+    // MARK: - Tips
+
+    func tips(gameId: String) -> [TipDTO] {
+        let request = NSFetchRequest<NSManagedObject>(entityName: "Tip")
+        request.predicate = NSPredicate(format: "game.id == %@", gameId)
+        request.sortDescriptors = [NSSortDescriptor(key: "orderIndex", ascending: true)]
+
+        guard let results = try? context.fetch(request) else { return [] }
+        return results.compactMap { mapToTipDTO($0) }
+    }
+
+    // MARK: - Key captures
+
+    func captures(gameId: String) -> [KeyCaptureDTO] {
+        let request = NSFetchRequest<NSManagedObject>(entityName: "KeyCapture")
+        request.predicate = NSPredicate(format: "game.id == %@", gameId)
+        request.sortDescriptors = [NSSortDescriptor(key: "orderIndex", ascending: true)]
+
+        guard let results = try? context.fetch(request) else { return [] }
+        return results.compactMap { mapToKeyCaptureDTO($0) }
+    }
+
+    // MARK: - HM / TM entries
+
+    func hmEntries(gameId: String) -> [HMEntryDTO] {
+        let request = NSFetchRequest<NSManagedObject>(entityName: "HMEntry")
+        request.predicate = NSPredicate(format: "game.id == %@", gameId)
+        request.sortDescriptors = [NSSortDescriptor(key: "orderIndex", ascending: true)]
+
+        guard let results = try? context.fetch(request) else { return [] }
+        return results.compactMap { mapToHMEntryDTO($0) }
+    }
+
+    func tmEntries(gameId: String) -> [TMEntryDTO] {
+        let request = NSFetchRequest<NSManagedObject>(entityName: "TMEntry")
+        request.predicate = NSPredicate(format: "game.id == %@", gameId)
+        request.sortDescriptors = [NSSortDescriptor(key: "orderIndex", ascending: true)]
+
+        guard let results = try? context.fetch(request) else { return [] }
+        return results.compactMap { mapToTMEntryDTO($0) }
+    }
+
+    // MARK: - Team recommendations
+
+    func teamRecommendation(gameId: String, starter: String) -> TeamRecommendationDTO? {
+        let request = NSFetchRequest<NSManagedObject>(entityName: "TeamRecommendation")
+        request.predicate = NSPredicate(
+            format: "game.id == %@ AND starterCondition == %@", gameId, starter
+        )
+        request.fetchLimit = 1
+
+        guard let result = try? context.fetch(request).first else { return nil }
+        return mapToTeamRecommendationDTO(result)
+    }
+
+    // MARK: - Rival encounters
+
+    func rivalEncounters(gameId: String) -> [RivalEncounterDTO] {
+        let request = NSFetchRequest<NSManagedObject>(entityName: "RivalEncounter")
+        request.predicate = NSPredicate(format: "game.id == %@", gameId)
+        request.sortDescriptors = [NSSortDescriptor(key: "orderIndex", ascending: true)]
+
+        guard let results = try? context.fetch(request) else { return [] }
+        return results.compactMap { mapToRivalEncounterDTO($0) }
+    }
+
+    // MARK: - Pre-league / Postgame checklists
+
+    func preLeagueChecklist(gameId: String) -> [ChecklistStepDTO] {
+        let request = NSFetchRequest<NSManagedObject>(entityName: "PreLeagueStep")
+        request.predicate = NSPredicate(format: "game.id == %@", gameId)
+        request.sortDescriptors = [NSSortDescriptor(key: "orderIndex", ascending: true)]
+
+        guard let results = try? context.fetch(request) else { return [] }
+        return results.compactMap { mapToChecklistStepDTO($0) }
+    }
+
+    func postgameChecklist(gameId: String) -> [ChecklistStepDTO] {
+        let request = NSFetchRequest<NSManagedObject>(entityName: "PostgameStep")
+        request.predicate = NSPredicate(format: "game.id == %@", gameId)
+        request.sortDescriptors = [NSSortDescriptor(key: "orderIndex", ascending: true)]
+
+        guard let results = try? context.fetch(request) else { return [] }
+        return results.compactMap { mapToChecklistStepDTO($0) }
+    }
+
+    // MARK: - Mapping helpers
+
+    private func mapToGameDTO(_ object: NSManagedObject) -> GameDTO? {
+        guard let id = object.value(forKey: "id") as? String,
+              let name = object.value(forKey: "name") as? String
+        else { return nil }
+
+        return GameDTO(
+            id: id,
+            name: name,
+            generation: object.value(forKey: "generation") as? Int ?? 1,
+            region: object.value(forKey: "region") as? String ?? "",
+            releaseYear: object.value(forKey: "releaseYear") as? Int ?? 0,
+            platform: object.value(forKey: "platform") as? String ?? "",
+            accentColorHex: object.value(forKey: "accentColorHex") as? String ?? "#FF0000",
+            secondaryColorHex: object.value(forKey: "secondaryColorHex") as? String ?? "#0000FF",
+            iconName: object.value(forKey: "iconName") as? String ?? "",
+            starterDexNumbers: decodeJSONIntArray(object.value(forKey: "starterDexNumbersJSON") as? Data),
+            gymCount: object.value(forKey: "gymCount") as? Int ?? 8,
+            hasEliteFour: object.value(forKey: "hasEliteFour") as? Bool ?? true,
+            hasChampion: object.value(forKey: "hasChampion") as? Bool ?? true
+        )
+    }
+
+    private func mapToGymDTO(_ object: NSManagedObject) -> GymDTO? {
+        guard let orderIndex = object.value(forKey: "orderIndex") as? Int else { return nil }
+
+        return GymDTO(
+            id: orderIndex,
+            name: object.value(forKey: "name") as? String ?? "",
+            leader: object.value(forKey: "leader") as? String ?? "",
+            levelRange: object.value(forKey: "levelRange") as? String ?? "",
+            note: object.value(forKey: "note") as? String ?? "",
+            badge: object.value(forKey: "badge") as? String ?? ""
+        )
+    }
+
+    private func mapToRouteSectionDTO(_ object: NSManagedObject) -> RouteSectionDTO? {
+        guard let orderIndex = object.value(forKey: "orderIndex") as? Int else { return nil }
+
+        let stepsSet = object.value(forKey: "steps") as? NSSet ?? NSSet()
+        let stepsArray = stepsSet.allObjects as? [NSManagedObject] ?? []
+
+        let steps = stepsArray
+            .sorted { ($0.value(forKey: "orderIndex") as? Int ?? 0) < ($1.value(forKey: "orderIndex") as? Int ?? 0) }
+            .compactMap { step -> RouteStepDTO? in
+                guard let stepId = step.value(forKey: "stepId") as? String else { return nil }
+                return RouteStepDTO(
+                    id: stepId,
+                    text: step.value(forKey: "text") as? String ?? ""
+                )
+            }
+
+        return RouteSectionDTO(
+            id: orderIndex,
+            title: object.value(forKey: "title") as? String ?? "",
+            steps: steps
+        )
+    }
+
+    private func mapToEliteFourMemberDTO(_ object: NSManagedObject) -> EliteFourMemberDTO? {
+        guard let orderIndex = object.value(forKey: "orderIndex") as? Int else { return nil }
+
+        return EliteFourMemberDTO(
+            id: orderIndex,
+            name: object.value(forKey: "name") as? String ?? "",
+            strategy: object.value(forKey: "strategy") as? String ?? "",
+            levels: object.value(forKey: "levels") as? String ?? ""
+        )
+    }
+
+    private func mapToTipDTO(_ object: NSManagedObject) -> TipDTO? {
+        guard let orderIndex = object.value(forKey: "orderIndex") as? Int else { return nil }
+
+        return TipDTO(
+            id: orderIndex,
+            pokemon: object.value(forKey: "pokemon") as? String ?? "",
+            rule: object.value(forKey: "rule") as? String ?? ""
+        )
+    }
+
+    private func mapToKeyCaptureDTO(_ object: NSManagedObject) -> KeyCaptureDTO? {
+        guard let orderIndex = object.value(forKey: "orderIndex") as? Int else { return nil }
+
+        return KeyCaptureDTO(
+            id: orderIndex,
+            pokemon: object.value(forKey: "pokemon") as? String ?? "",
+            location: object.value(forKey: "location") as? String ?? "",
+            note: object.value(forKey: "note") as? String ?? ""
+        )
+    }
+
+    private func mapToHMEntryDTO(_ object: NSManagedObject) -> HMEntryDTO? {
+        guard let orderIndex = object.value(forKey: "orderIndex") as? Int else { return nil }
+
+        return HMEntryDTO(
+            id: orderIndex,
+            hm: object.value(forKey: "hm") as? String ?? "",
+            pokemon: object.value(forKey: "pokemon") as? String ?? "",
+            location: object.value(forKey: "location") as? String ?? ""
+        )
+    }
+
+    private func mapToTMEntryDTO(_ object: NSManagedObject) -> TMEntryDTO? {
+        guard let orderIndex = object.value(forKey: "orderIndex") as? Int else { return nil }
+
+        return TMEntryDTO(
+            id: orderIndex,
+            tm: object.value(forKey: "tm") as? String ?? "",
+            target: object.value(forKey: "target") as? String ?? "",
+            origin: object.value(forKey: "origin") as? String ?? ""
+        )
+    }
+
+    private func mapToTeamRecommendationDTO(_ object: NSManagedObject) -> TeamRecommendationDTO? {
+        let starterCondition = object.value(forKey: "starterCondition") as? String ?? ""
+        let membersSet = object.value(forKey: "members") as? NSSet ?? NSSet()
+        let membersArray = membersSet.allObjects as? [NSManagedObject] ?? []
+
+        let members = membersArray
+            .sorted { ($0.value(forKey: "orderIndex") as? Int ?? 0) < ($1.value(forKey: "orderIndex") as? Int ?? 0) }
+            .compactMap { member -> TeamMemberDTO? in
+                guard let orderIndex = member.value(forKey: "orderIndex") as? Int else { return nil }
+                return TeamMemberDTO(
+                    id: orderIndex,
+                    name: member.value(forKey: "name") as? String ?? "",
+                    moves: decodeJSONStringArray(member.value(forKey: "movesJSON") as? Data),
+                    notes: member.value(forKey: "notes") as? String ?? "",
+                    emoji: member.value(forKey: "emoji") as? String ?? ""
+                )
+            }
+
+        return TeamRecommendationDTO(
+            starterCondition: starterCondition,
+            members: members
+        )
+    }
+
+    private func mapToRivalEncounterDTO(_ object: NSManagedObject) -> RivalEncounterDTO? {
+        guard let orderIndex = object.value(forKey: "orderIndex") as? Int else { return nil }
+
+        let pokemonSet = object.value(forKey: "team") as? NSSet ?? NSSet()
+        let pokemonArray = pokemonSet.allObjects as? [NSManagedObject] ?? []
+
+        let team = pokemonArray
+            .sorted { ($0.value(forKey: "orderIndex") as? Int ?? 0) < ($1.value(forKey: "orderIndex") as? Int ?? 0) }
+            .compactMap { pkmn -> RivalPokemonDTO? in
+                guard let dexNumber = pkmn.value(forKey: "dexNumber") as? Int else { return nil }
+                return RivalPokemonDTO(
+                    id: dexNumber,
+                    name: pkmn.value(forKey: "name") as? String ?? "",
+                    level: pkmn.value(forKey: "level") as? Int ?? 0,
+                    dexNumber: dexNumber,
+                    starterCondition: pkmn.value(forKey: "starterCondition") as? String
+                )
+            }
+
+        return RivalEncounterDTO(
+            id: orderIndex,
+            location: object.value(forKey: "location") as? String ?? "",
+            iconName: object.value(forKey: "iconName") as? String ?? "",
+            team: team
+        )
+    }
+
+    private func mapToChecklistStepDTO(_ object: NSManagedObject) -> ChecklistStepDTO? {
+        guard let stepId = object.value(forKey: "stepId") as? String else { return nil }
+
+        return ChecklistStepDTO(
+            id: stepId,
+            text: object.value(forKey: "text") as? String ?? ""
+        )
+    }
+
+    // MARK: - JSON decoding
+
+    private func decodeJSONStringArray(_ data: Data?) -> [String] {
+        guard let data else { return [] }
+        return (try? JSONDecoder().decode([String].self, from: data)) ?? []
+    }
+
+    private func decodeJSONIntArray(_ data: Data?) -> [Int] {
+        guard let data else { return [] }
+        return (try? JSONDecoder().decode([Int].self, from: data)) ?? []
+    }
+}

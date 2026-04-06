@@ -2,12 +2,12 @@
 //  TypeChartView.swift
 //  PokemonGuide
 //
-//  Tabla de efectividad de tipos — Gen 3 (FireRed/LeafGreen).
+//  Tabla de efectividad de tipos — Gen 6+ (18 tipos).
 //
 
 import SwiftUI
 
-// MARK: - Type Effectiveness Data (Gen 3 / FRLG)
+// MARK: - Type Effectiveness Data (Gen 6+)
 
 /// Multiplier when `attacker` hits `defender`.
 /// Only non-1.0 matchups are stored; missing = 1.0 (neutral).
@@ -38,10 +38,11 @@ private let typeEffectiveness: [PokemonType: [PokemonType: Double]] = {
         ],
         .fighting: [
             .normal: s, .ice: s, .poison: n, .flying: n, .psychic: n, .bug: n,
-            .rock: s, .ghost: z, .steel: s
+            .rock: s, .ghost: z, .dark: s, .steel: s, .fairy: n
         ],
         .poison: [
-            .grass: s, .poison: n, .ground: n, .rock: n, .ghost: n, .steel: z
+            .grass: s, .poison: n, .ground: n, .rock: n, .ghost: n, .steel: z,
+            .fairy: s
         ],
         .ground: [
             .fire: s, .electric: s, .grass: n, .poison: s, .flying: z, .bug: n, .rock: s, .steel: s
@@ -50,22 +51,29 @@ private let typeEffectiveness: [PokemonType: [PokemonType: Double]] = {
             .grass: s, .electric: n, .fighting: s, .bug: s, .rock: n, .steel: n
         ],
         .psychic: [
-            .fighting: s, .poison: s, .psychic: n, .steel: n
+            .fighting: s, .poison: s, .psychic: n, .dark: z, .steel: n
         ],
         .bug: [
-            .fire: n, .grass: s, .fighting: n, .poison: n, .flying: n, .psychic: s, .ghost: n, .steel: n
+            .fire: n, .grass: s, .fighting: n, .poison: n, .flying: n, .psychic: s, .ghost: n,
+            .dark: s, .steel: n, .fairy: n
         ],
         .rock: [
             .fire: s, .ice: s, .fighting: n, .ground: n, .flying: s, .bug: s, .steel: n
         ],
         .ghost: [
-            .normal: z, .psychic: s, .ghost: s, .steel: n
+            .normal: z, .psychic: s, .ghost: s, .dark: n
         ],
         .dragon: [
-            .dragon: s, .steel: n
+            .dragon: s, .steel: n, .fairy: z
+        ],
+        .dark: [
+            .fighting: n, .psychic: s, .ghost: s, .dark: n, .fairy: n
         ],
         .steel: [
-            .fire: n, .water: n, .electric: n, .ice: s, .rock: s, .steel: n
+            .fire: n, .water: n, .electric: n, .ice: s, .rock: s, .steel: n, .fairy: s
+        ],
+        .fairy: [
+            .fire: n, .fighting: s, .poison: n, .dragon: s, .dark: s, .steel: n
         ],
     ]
 }()
@@ -90,7 +98,9 @@ extension PokemonType {
         case .rock:     return "Roca"
         case .ghost:    return "Fantasma"
         case .dragon:   return "Dragón"
+        case .dark:     return "Siniestro"
         case .steel:    return "Acero"
+        case .fairy:    return "Hada"
         }
     }
 
@@ -112,7 +122,9 @@ extension PokemonType {
         case .rock:     return "ROC"
         case .ghost:    return "FAN"
         case .dragon:   return "DRA"
+        case .dark:     return "SIN"
         case .steel:    return "ACE"
+        case .fairy:    return "HAD"
         }
     }
 }

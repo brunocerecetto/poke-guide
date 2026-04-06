@@ -12,7 +12,7 @@ import SwiftUI
 enum PokemonType: String, CaseIterable {
     case normal, fire, water, grass, electric, ice
     case fighting, poison, ground, flying, psychic
-    case bug, rock, ghost, dragon, steel
+    case bug, rock, ghost, dragon, dark, steel, fairy
 
     var color: Color {
         switch self {
@@ -31,7 +31,9 @@ enum PokemonType: String, CaseIterable {
         case .rock:     return Color(red: 0.71, green: 0.63, blue: 0.38)
         case .ghost:    return Color(red: 0.44, green: 0.34, blue: 0.58)
         case .dragon:   return Color(red: 0.44, green: 0.21, blue: 0.99)
+        case .dark:     return Color(red: 0.44, green: 0.34, blue: 0.26)
         case .steel:    return Color(red: 0.72, green: 0.72, blue: 0.82)
+        case .fairy:    return Color(red: 0.93, green: 0.52, blue: 0.90)
         }
     }
 
@@ -52,7 +54,9 @@ enum PokemonType: String, CaseIterable {
         case .rock: return "diamond.fill"
         case .ghost: return "aqi.medium"
         case .dragon: return "flame.fill"
+        case .dark: return "moon.fill"
         case .steel: return "shield.fill"
+        case .fairy: return "sparkles"
         }
     }
 }
