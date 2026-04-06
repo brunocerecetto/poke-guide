@@ -94,6 +94,35 @@ extension Starter {
     }
 }
 
+// MARK: - Color from Hex String
+
+extension Color {
+    /// Parse a hex color string (e.g. "#E02D28", "E02D28", "#FF00FF80").
+    /// Supports 6-char (RGB) and 8-char (RGBA) hex strings.
+    init(hex: String) {
+        let cleaned = hex.trimmingCharacters(in: .whitespacesAndNewlines)
+            .replacingOccurrences(of: "#", with: "")
+
+        var rgb: UInt64 = 0
+        Scanner(string: cleaned).scanHexInt64(&rgb)
+
+        if cleaned.count == 8 {
+            self.init(
+                red: Double((rgb >> 24) & 0xFF) / 255.0,
+                green: Double((rgb >> 16) & 0xFF) / 255.0,
+                blue: Double((rgb >> 8) & 0xFF) / 255.0,
+                opacity: Double(rgb & 0xFF) / 255.0
+            )
+        } else {
+            self.init(
+                red: Double((rgb >> 16) & 0xFF) / 255.0,
+                green: Double((rgb >> 8) & 0xFF) / 255.0,
+                blue: Double(rgb & 0xFF) / 255.0
+            )
+        }
+    }
+}
+
 // MARK: - Dynamic Theme Colors (per GameVersion)
 
 struct ThemeColors {
@@ -116,11 +145,38 @@ struct ThemeColors {
         gradientColors: [.leafGreen, .leafTeal, .leafYellow, .leafTeal, .leafGreen]
     )
 
+    /// Legacy: create theme from a GameVersion enum
     static func forVersion(_ version: GameVersion) -> ThemeColors {
         switch version {
         case .fireRed:   return .fireRed
         case .leafGreen: return .leafGreen
         }
+    }
+
+    /// Create theme colors from hex strings for any game.
+    /// Gradient is derived automatically by interpolating accent and secondary.
+    static func fromHex(accent: String, secondary: String, icon: String) -> ThemeColors {
+        let accentColor = Color(hex: accent)
+        let secondaryColor = Color(hex: secondary)
+        return ThemeColors(
+            accent: accentColor,
+            secondary: secondaryColor,
+            icon: icon,
+            gradientColors: [accentColor, secondaryColor, accentColor.opacity(0.7), secondaryColor, accentColor]
+        )
+    }
+
+    /// Create theme from a GameConfig instance (data-driven).
+    static func forConfig(_ config: GameConfig) -> ThemeColors {
+        // Use hardcoded presets for legacy games to preserve exact palette
+        if let legacy = config.legacyVersion {
+            return forVersion(legacy)
+        }
+        return fromHex(
+            accent: config.accentColorHex,
+            secondary: config.secondaryColorHex,
+            icon: config.iconName
+        )
     }
 }
 

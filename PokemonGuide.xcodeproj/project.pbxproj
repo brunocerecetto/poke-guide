@@ -23,10 +23,16 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXBuildFile section */
+		AA000001AAAA000000000001 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = AA000002AAAA000000000001 /* Resources */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
-		68579BF12F83B810007C0026 /* PokemonGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PokemonGuide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		68579C002F83B811007C0026 /* PokemonGuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PokemonGuideTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		68579C0A2F83B811007C0026 /* PokemonGuideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PokemonGuideUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		681FBC5A2F842B6600E8025A /* pokemon guide.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "pokemon guide.xcodeproj"; sourceTree = "<group>"; };
+		68579BF12F83B810007C0026 /* PokemonGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		68579C002F83B811007C0026 /* PokemonGuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokemonGuideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		68579C0A2F83B811007C0026 /* PokemonGuideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokemonGuideUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA000002AAAA000000000001 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -37,12 +43,12 @@
 		};
 		68579C032F83B811007C0026 /* PokemonGuideTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "PokemonGuideTests";
+			path = PokemonGuideTests;
 			sourceTree = "<group>";
 		};
 		68579C0D2F83B811007C0026 /* PokemonGuideUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "PokemonGuideUITests";
+			path = PokemonGuideUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -72,10 +78,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		681FBC612F842B6600E8025A /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 		68579BE82F83B810007C0026 = {
 			isa = PBXGroup;
 			children = (
 				68579BF32F83B810007C0026 /* PokemonGuide */,
+				AA000002AAAA000000000001 /* Resources */,
 				68579C032F83B811007C0026 /* PokemonGuideTests */,
 				68579C0D2F83B811007C0026 /* PokemonGuideUITests */,
 				68579BF22F83B810007C0026 /* Products */,
@@ -133,10 +145,10 @@
 			fileSystemSynchronizedGroups = (
 				68579C032F83B811007C0026 /* PokemonGuideTests */,
 			);
-			name = "PokemonGuideTests";
+			name = PokemonGuideTests;
 			packageProductDependencies = (
 			);
-			productName = "PokemonGuideTests";
+			productName = PokemonGuideTests;
 			productReference = 68579C002F83B811007C0026 /* PokemonGuideTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -156,10 +168,10 @@
 			fileSystemSynchronizedGroups = (
 				68579C0D2F83B811007C0026 /* PokemonGuideUITests */,
 			);
-			name = "PokemonGuideUITests";
+			name = PokemonGuideUITests;
 			packageProductDependencies = (
 			);
-			productName = "PokemonGuideUITests";
+			productName = PokemonGuideUITests;
 			productReference = 68579C0A2F83B811007C0026 /* PokemonGuideUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
@@ -198,6 +210,12 @@
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 68579BF22F83B810007C0026 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 681FBC612F842B6600E8025A /* Products */;
+					ProjectRef = 681FBC5A2F842B6600E8025A /* pokemon guide.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				68579BF02F83B810007C0026 /* PokemonGuide */,
@@ -212,6 +230,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA000001AAAA000000000001 /* Resources in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

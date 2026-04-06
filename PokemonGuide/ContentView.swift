@@ -15,6 +15,37 @@ struct ContentView: View {
     @State private var showChangeGameAlert = false
     @State private var appeared = false
 
+    // MARK: - Data-Driven Helpers
+
+    private var displayGameName: String {
+        if !gameConfig.gameName.isEmpty { return gameConfig.gameName }
+        return gameConfig.version.displayName
+    }
+
+    private var displayIconName: String {
+        if !gameConfig.iconName.isEmpty { return gameConfig.iconName }
+        return gameConfig.version.icon
+    }
+
+    private var starterName: String {
+        let starterNames: [Int: String] = [
+            1: "Bulbasaur", 4: "Charmander", 7: "Squirtle", 25: "Pikachu",
+            152: "Chikorita", 155: "Cyndaquil", 158: "Totodile",
+            252: "Treecko", 255: "Torchic", 258: "Mudkip",
+            387: "Turtwig", 390: "Chimchar", 393: "Piplup",
+            495: "Snivy", 498: "Tepig", 501: "Oshawott",
+            650: "Chespin", 653: "Fennekin", 656: "Froakie",
+            722: "Rowlet", 725: "Litten", 728: "Popplio",
+            810: "Grookey", 813: "Scorbunny", 816: "Sobble",
+            906: "Sprigatito", 909: "Fuecoco", 912: "Quaxly",
+            133: "Eevee",
+        ]
+        if gameConfig.starterDex > 0, let name = starterNames[gameConfig.starterDex] {
+            return name
+        }
+        return gameConfig.legacyStarter?.displayName ?? "Starter"
+    }
+
     var body: some View {
         NavigationStack {
             ScrollView(showsIndicators: false) {
@@ -38,10 +69,10 @@ struct ContentView: View {
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     HStack(spacing: 5) {
-                        Image(systemName: gameConfig.version.icon)
+                        Image(systemName: displayIconName)
                             .font(.system(size: 11))
                             .foregroundColor(theme.accent)
-                        Text(gameConfig.version.displayName)
+                        Text(displayGameName)
                             .font(.system(size: 13, weight: .heavy, design: .rounded))
                             .foregroundColor(theme.accent)
                             .tracking(2)
@@ -98,7 +129,7 @@ struct ContentView: View {
                     .foregroundColor(theme.secondary)
                     .tracking(4)
 
-                Text("\(gameConfig.starter.displayName) Run")
+                Text("\(starterName) Run")
                     .font(.system(size: 30, weight: .heavy, design: .rounded))
                     .foregroundColor(.fireTextPrimary)
             }
@@ -229,7 +260,7 @@ struct ContentView: View {
 
     private var footerBadge: some View {
         HStack(spacing: 5) {
-            Image(systemName: gameConfig.version.icon)
+            Image(systemName: displayIconName)
                 .font(.system(size: 9))
             Text("Gen I — Kanto")
                 .font(.system(size: 10, weight: .semibold, design: .rounded))

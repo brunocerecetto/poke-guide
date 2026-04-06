@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import CoreData
 
 @main
 struct PokemonGuideApp: App {
     @StateObject private var gameConfig: GameConfig
     @StateObject private var progress: ProgressManager
+    let persistenceController = PersistenceController.shared
 
     init() {
         let config = GameConfig()
@@ -24,12 +26,13 @@ struct PokemonGuideApp: App {
                 if gameConfig.isConfigured {
                     ContentView()
                 } else {
-                    GameSelectionView()
+                    GameListView()
                 }
             }
             .environmentObject(gameConfig)
             .environmentObject(progress)
-            .environment(\.themeColors, ThemeColors.forVersion(gameConfig.version))
+            .environment(\.themeColors, ThemeColors.forConfig(gameConfig))
+            .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
