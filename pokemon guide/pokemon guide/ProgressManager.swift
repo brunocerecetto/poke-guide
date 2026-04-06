@@ -1,0 +1,198 @@
+//
+//  ProgressManager.swift
+//  pokemon guide
+//
+//  Persiste todo el progreso offline usando UserDefaults.
+//
+
+import Foundation
+import Combine
+
+class ProgressManager: ObservableObject {
+    private let defaults = UserDefaults.standard
+    private let gymKey = "completedGyms"
+    private let routeKey = "completedRouteSteps"
+    private let leagueKey = "completedLeague"
+    private let preLeagueKey = "completedPreLeague"
+    private let postgameKey = "completedPostgame"
+    private let pokedexKey = "pokemonStatuses"
+
+    @Published var completedGyms: Set<String> {
+        didSet { save(completedGyms, forKey: gymKey) }
+    }
+    @Published var completedRouteSteps: Set<String> {
+        didSet { save(completedRouteSteps, forKey: routeKey) }
+    }
+    @Published var completedLeague: Set<String> {
+        didSet { save(completedLeague, forKey: leagueKey) }
+    }
+    @Published var completedPreLeague: Set<String> {
+        didSet { save(completedPreLeague, forKey: preLeagueKey) }
+    }
+    @Published var completedPostgame: Set<String> {
+        didSet { save(completedPostgame, forKey: postgameKey) }
+    }
+
+    @Published var pokemonStatuses: [Int: PokemonStatus] {
+        didSet { savePokedex() }
+    }
+
+    init() {
+        self.completedGyms = Self.load(forKey: gymKey)
+        self.completedRouteSteps = Self.load(forKey: routeKey)
+        self.completedLeague = Self.load(forKey: leagueKey)
+        self.completedPreLeague = Self.load(forKey: preLeagueKey)
+        self.completedPostgame = Self.load(forKey: postgameKey)
+        self.pokemonStatuses = Self.loadPokedex(forKey: pokedexKey)
+    }
+
+    // MARK: - Gym toggles
+
+    func isGymCompleted(_ name: String) -> Bool {
+        completedGyms.contains(name)
+    }
+
+    func toggleGym(_ name: String) {
+        if completedGyms.contains(name) {
+            completedGyms.remove(name)
+        } else {
+            completedGyms.insert(name)
+        }
+    }
+
+    // MARK: - Route step toggles
+
+    func isRouteStepCompleted(_ id: String) -> Bool {
+        completedRouteSteps.contains(id)
+    }
+
+    func toggleRouteStep(_ id: String) {
+        if completedRouteSteps.contains(id) {
+            completedRouteSteps.remove(id)
+        } else {
+            completedRouteSteps.insert(id)
+        }
+    }
+
+    // MARK: - League toggles
+
+    func isLeagueCompleted(_ name: String) -> Bool {
+        completedLeague.contains(name)
+    }
+
+    func toggleLeague(_ name: String) {
+        if completedLeague.contains(name) {
+            completedLeague.remove(name)
+        } else {
+            completedLeague.insert(name)
+        }
+    }
+
+    // MARK: - Pre-league checklist
+
+    func isPreLeagueCompleted(_ id: String) -> Bool {
+        completedPreLeague.contains(id)
+    }
+
+    func togglePreLeague(_ id: String) {
+        if completedPreLeague.contains(id) {
+            completedPreLeague.remove(id)
+        } else {
+            completedPreLeague.insert(id)
+        }
+    }
+
+    // MARK: - Postgame
+
+    func isPostgameCompleted(_ id: String) -> Bool {
+        completedPostgame.contains(id)
+    }
+
+    func togglePostgame(_ id: String) {
+        if completedPostgame.contains(id) {
+            completedPostgame.remove(id)
+        } else {
+            completedPostgame.insert(id)
+        }
+    }
+
+    // MARK: - Pokédex
+
+    func pokemonStatus(for dexNumber: Int) -> PokemonStatus {
+        pokemonStatuses[dexNumber] ?? .notSeen
+    }
+
+    func cyclePokemonStatus(for dexNumber: Int) {
+        let current = pokemonStatus(for: dexNumber)
+        pokemonStatuses[dexNumber] = current.next
+    }
+
+    func setPokemonStatus(for dexNumber: Int, to status: PokemonStatus) {
+        pokemonStatuses[dexNumber] = status
+    }
+
+    // MARK: - Overall progress
+
+    var totalCheckable: Int {
+        GameData.gyms.count
+        + GameData.routeSections().flatMap(\.steps).count
+        + GameData.eliteFour.count
+        + GameData.preLeagueChecklist.count
+        + GameData.postgame.count
+    }
+
+    var totalCompleted: Int {
+        completedGyms.count
+        + completedRouteSteps.count
+        + completedLeague.count
+        + completedPreLeague.count
+        + completedPostgame.count
+    }
+
+    var progressFraction: Double {
+        guard totalCheckable > 0 else { return 0 }
+        return Double(totalCompleted) / Double(totalCheckable)
+    }
+
+    // MARK: - Reset
+
+    func resetAll() {
+        completedGyms.removeAll()
+        completedRouteSteps.removeAll()
+        completedLeague.removeAll()
+        completedPreLeague.removeAll()
+        completedPostgame.removeAll()
+        pokemonStatuses.removeAll()
+    }
+
+    // MARK: - Persistence helpers
+
+    private func save(_ set: Set<String>, forKey key: String) {
+        defaults.set(Array(set), forKey: key)
+    }
+
+    private static func load(forKey key: String) -> Set<String> {
+        let array = UserDefaults.standard.stringArray(forKey: key) ?? []
+        return Set(array)
+    }
+
+    // MARK: - Pokédex persistence
+
+    private func savePokedex() {
+        let dict = pokemonStatuses.reduce(into: [String: Int]()) { result, pair in
+            result[String(pair.key)] = pair.value.rawValue
+        }
+        defaults.set(dict, forKey: pokedexKey)
+    }
+
+    private static func loadPokedex(forKey key: String) -> [Int: PokemonStatus] {
+        guard let dict = UserDefaults.standard.dictionary(forKey: key) as? [String: Int] else {
+            return [:]
+        }
+        return dict.reduce(into: [Int: PokemonStatus]()) { result, pair in
+            if let dexNum = Int(pair.key), let status = PokemonStatus(rawValue: pair.value) {
+                result[dexNum] = status
+            }
+        }
+    }
+}
