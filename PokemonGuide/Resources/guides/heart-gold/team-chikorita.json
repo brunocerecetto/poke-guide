@@ -1,0 +1,40 @@
+{
+  "members": [
+    {
+      "name": "Meganium",
+      "moves": ["Energy Ball", "Body Slam", "Light Screen", "Synthesis"],
+      "notes": "Tu starter Planta. Evoluciona a Bayleef (16), Meganium (32). Defensivamente sólido con Light Screen y Synthesis. Energy Ball (TM53) es mejor STAB que Razor Leaf en HGSS. Complementa con el resto del equipo ofensivo.",
+      "emoji": "🌿"
+    },
+    {
+      "name": "Ho-Oh",
+      "moves": ["Sacred Fire", "Brave Bird", "Earthquake", "Recover"],
+      "notes": "Captura en Tin Tower Lv. 45 (HeartGold exclusivo temprano). Sacred Fire es devastador con 50% de quemadura. Brave Bird STAB Volador potente. Stats totales de 680. Domina el juego desde el momento que lo capturas.",
+      "emoji": "🌈"
+    },
+    {
+      "name": "Ampharos",
+      "moves": ["Thunderbolt", "Signal Beam", "Power Gem", "Thunder Wave"],
+      "notes": "Mareep en Route 32. Thunderbolt STAB. Signal Beam cubre Psíquico y Siniestro. Power Gem para Voladores de Hielo. Thunder Wave para paralizar y facilitar capturas.",
+      "emoji": "⚡"
+    },
+    {
+      "name": "Espeon",
+      "moves": ["Psychic", "Shadow Ball", "Signal Beam", "Morning Sun"],
+      "notes": "Eevee de Bill en Goldenrod. Felicidad de día. Psychic STAB devastador. Shadow Ball para Fantasmas. Signal Beam para Siniestros. Resuelve Bruno y Koga.",
+      "emoji": "🔮"
+    },
+    {
+      "name": "Gyarados",
+      "moves": ["Waterfall", "Ice Fang", "Dragon Dance", "Earthquake"],
+      "notes": "Gyarados Rojo shiny en Lake of Rage (Lv. 30). En HGSS, Waterfall es físico (perfecto para Gyarados). Dragon Dance + Waterfall barre. Ice Fang para Dragones.",
+      "emoji": "🐲"
+    },
+    {
+      "name": "Heracross",
+      "moves": ["Megahorn", "Close Combat", "Stone Edge", "Night Slash"],
+      "notes": "Headbutt en Azalea. En HGSS tiene acceso a Close Combat (mejor que Brick Break). Stone Edge para Voladores. Clave contra Whitney, Karen y Will.",
+      "emoji": "🪲"
+    }
+  ]
+}

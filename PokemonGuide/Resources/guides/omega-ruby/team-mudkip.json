@@ -1,0 +1,10 @@
+{
+  "members": [
+    { "name": "Mega Swampert", "moves": ["Surf", "Terremoto", "Rayo Hielo", "Cascada"], "notes": "Tu starter. Mega Swampert gana Nado Rápido — brutal bajo lluvia. Solo débil a Planta.", "emoji": "💧" },
+    { "name": "Swellow", "moves": ["Pájaro Osado", "Fachada", "Ida y Vuelta", "Esfuerzo"], "notes": "Atrapa Taillow en la Ruta 104. Cobertura Volador rápida.", "emoji": "🐦" },
+    { "name": "Breloom", "moves": ["Puño Semilla", "Gancho Alto", "Espora", "Demolición"], "notes": "Atrapa Shroomish en el Bosque Petalia. Espora sigue siendo increíble.", "emoji": "🍄" },
+    { "name": "Mega Manectric", "moves": ["Rayo", "Voltio Cruel", "Lanzallamas", "Onda Voltio"], "notes": "Atrapa Electrike en la Ruta 110. Mega Evolución con Intimidación.", "emoji": "⚡" },
+    { "name": "Mega Gardevoir", "moves": ["Psíquico", "Fuerza Lunar", "Bola Sombra", "Paz Mental"], "notes": "Atrapa Ralts en la Ruta 102. Mega Gardevoir es Psíquico/Hada brutal.", "emoji": "🔮" },
+    { "name": "Camerupt", "moves": ["Terremoto", "Erupción", "Pedrada", "Lanzallamas"], "notes": "Atrapa Numel en la Ruta 112. Cobertura Fuego. Puede Mega Evolucionar.", "emoji": "🌋" }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "members": [
+    {
+      "name": "Typhlosion",
+      "moves": ["Flamethrower", "Focus Blast", "Thunderpunch", "Eruption"],
+      "notes": "Tu starter Fuego. Evoluciona a Quilava (14), Typhlosion (36). Eruption a HP completo destroza. Flamethrower STAB estable. Thunderpunch cubre Agua. Special Attack excelente.",
+      "emoji": "🔥"
+    },
+    {
+      "name": "Lugia",
+      "moves": ["Aeroblast", "Surf", "Ice Beam", "Rain Dance"],
+      "notes": "Whirl Islands Lv. 45 (SoulSilver). Tanque especial definitivo. Surf STAB y HM. Ice Beam contra Lance. Rain Dance potencia Surf y debilita Fuego enemigo.",
+      "emoji": "🌊"
+    },
+    {
+      "name": "Ampharos",
+      "moves": ["Thunderbolt", "Signal Beam", "Power Gem", "Thunder Wave"],
+      "notes": "Mareep en Route 32. Thunderbolt STAB. Thunder Wave utilidad. Eléctrico estable.",
+      "emoji": "⚡"
+    },
+    {
+      "name": "Espeon",
+      "moves": ["Psychic", "Shadow Ball", "Signal Beam", "Morning Sun"],
+      "notes": "Eevee de Bill. Felicidad de día. Psychic STAB con SpAtk altísimo. Resuelve Bruno y Koga.",
+      "emoji": "🔮"
+    },
+    {
+      "name": "Heracross",
+      "moves": ["Megahorn", "Close Combat", "Stone Edge", "Night Slash"],
+      "notes": "Headbutt en Azalea. Close Combat brutal. Megahorn para Psíquicos. Clave contra Whitney, Karen, Will.",
+      "emoji": "🪲"
+    },
+    {
+      "name": "Donphan",
+      "moves": ["Earthquake", "Stone Edge", "Ice Shard", "Rapid Spin"],
+      "notes": "Phanpy en Route 45. Earthquake STAB potentísimo. Ice Shard (prioridad) para Dragones. Stone Edge para Voladores. Defensa física bestial.",
+      "emoji": "🐘"
+    }
+  ]
+}

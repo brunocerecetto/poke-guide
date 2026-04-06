@@ -1,0 +1,12 @@
+{
+  "gyms": [
+    { "name": "Pewter", "leader": "Brock", "levelRange": "10-12", "note": "Pikachu es INÚTIL. Nidoran♂ con Double Kick o Mankey con Low Kick.", "badge": "🪨" },
+    { "name": "Cerulean", "leader": "Misty", "levelRange": "18-21", "note": "Pikachu Thunderbolt barre. Bulbasaur Vine Whip también sirve.", "badge": "💧" },
+    { "name": "Vermilion", "leader": "Lt. Surge", "levelRange": "28", "note": "Solo Raichu nv 28. Nidoking con Dig lo destruye. Pikachu no puede.", "badge": "⚡" },
+    { "name": "Celadon", "leader": "Erika", "levelRange": "30-32", "note": "Tipo Grass. Charmeleon/Charizard con Fire moves barre.", "badge": "🌿" },
+    { "name": "Fuchsia", "leader": "Koga", "levelRange": "44-50", "note": "Venonat x3 + Venomoth. Niveles altos en Yellow. Psychic y Ground son clave.", "badge": "☠️" },
+    { "name": "Saffron", "leader": "Sabrina", "levelRange": "50", "note": "Abra/Kadabra/Alakazam todos nv 50. Snorlax tanquea, Nidoking con Earthquake.", "badge": "🔮" },
+    { "name": "Cinnabar", "leader": "Blaine", "levelRange": "48-54", "note": "Ninetales/Rapidash/Arcanine. Blastoise Surf arrasa todo.", "badge": "🔥" },
+    { "name": "Viridian", "leader": "Giovanni", "levelRange": "53-55", "note": "Niveles altos. Water y Grass son clave. Blastoise y Venusaur brillan.", "badge": "🌍" }
+  ]
+}

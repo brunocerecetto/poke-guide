@@ -1,0 +1,10 @@
+{
+  "members": [
+    { "name": "Eevee (compañero)", "moves": ["Acuaondas", "Ardiendo", "Frigoláser", "Voltaje Veloz"], "notes": "Tu compañero Eevee no evoluciona pero aprende movimientos de todos los tipos. Muy versátil.", "emoji": "🦊" },
+    { "name": "Venusaur", "moves": ["Bomba Lodo", "Rayo Solar", "Terremoto", "Danza Espada"], "notes": "Bulbasaur de regalo en Ciudad Celeste. Planta/Veneno.", "emoji": "🌿" },
+    { "name": "Charizard", "moves": ["Lanzallamas", "Vuelo", "Garra Dragón", "Danza Espada"], "notes": "Charmander de regalo en la Ruta 24. Puedes montarlo.", "emoji": "🔥" },
+    { "name": "Lapras", "moves": ["Surf", "Rayo Hielo", "Rayo", "Psíquico"], "notes": "Regalo en la Silph Co. Excelente cobertura especial.", "emoji": "🐋" },
+    { "name": "Snorlax", "moves": ["Golpe Cuerpo", "Terremoto", "Roca Afilada", "Descanso"], "notes": "Despiértalo con la Poké Flauta. Tanque enorme.", "emoji": "😴" },
+    { "name": "Alolan Muk", "moves": ["Lanzamugre", "Triturar", "Puñetazo Fuego", "Puñetazo Hielo"], "notes": "Grimer Alola intercambiado en Ciudad Carmín. Veneno/Siniestro.", "emoji": "🟣" }
+  ]
+}

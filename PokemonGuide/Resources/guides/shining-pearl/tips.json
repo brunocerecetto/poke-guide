@@ -1,0 +1,12 @@
+{
+  "tips": [
+    { "pokemon": "Grandes Subterráneos", "rule": "Excava fósiles y gemas. Pokémon raros de Gen 1-4 en cuevas subterráneas." },
+    { "pokemon": "MOs", "rule": "Ya no necesitas enseñar MOs. Se usan automáticamente con Pokémon salvaje." },
+    { "pokemon": "Misdreavus", "rule": "Exclusivo de SP. Bosque Vetusta de noche. Mismagius con Piedra Noche." },
+    { "pokemon": "Shieldon", "rule": "Exclusivo de SP. Fósil Coraza en los Grandes Subterráneos. Bastiodon defensivo." },
+    { "pokemon": "Palkia", "rule": "Legendario de SP nivel 47 en la Columna Lanza. Agua/Dragón." },
+    { "pokemon": "Cinthia", "rule": "La Liga es MÁS DIFÍCIL que en los originales. EV entrenadas y objetos competitivos." },
+    { "pokemon": "Gible", "rule": "Cueva Extravío bajo la Ruta Bici. Garchomp sigue siendo el rey." },
+    { "pokemon": "Rematch Liga", "rule": "Tras la primera victoria, nivel 75+ con equipos competitivos. Prepárate bien." }
+  ]
+}

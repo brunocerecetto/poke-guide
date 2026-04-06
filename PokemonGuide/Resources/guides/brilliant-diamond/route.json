@@ -1,0 +1,117 @@
+{
+  "sections": [
+    {
+      "title": "Pueblo Hojaverde → Pueblo Arena",
+      "steps": [
+        { "id": "r1a", "text": "Mira la TV con tu rival sobre Pokémon del lago" },
+        { "id": "r1b", "text": "Ve al Lago Veraz — el Profesor Serbal deja su maletín" },
+        { "id": "r1c", "text": "Elige tu starter: Turtwig, Chimchar o Piplup (ahora en 3D chibi)" },
+        { "id": "r1d", "text": "Derrota al Pokémon salvaje y salva al profesor" },
+        { "id": "r1e", "text": "Recibe tu Pokédex en Pueblo Arena" },
+        { "id": "r1f", "text": "Obtén las Zapatillas de tu madre" },
+        { "id": "r1g", "text": "La función de autoguardado está disponible en ajustes" }
+      ]
+    },
+    {
+      "title": "Ciudad Jubileo → Ciudad Pirita",
+      "steps": [
+        { "id": "r2a", "text": "Dirígete a Ciudad Jubileo por la Ruta 202" },
+        { "id": "r2b", "text": "Conoce al Profesor Serbal y a Cinthia" },
+        { "id": "r2c", "text": "Ruta 203 — combate contra tu rival" },
+        { "id": "r2d", "text": "Atraviesa la Puerta de Pirita" },
+        { "id": "r2e", "text": "Entrena en la Mina de Pirita — ahora con efectos visuales mejorados" },
+        { "id": "r2f", "text": "Derrota a Roco en el Gimnasio de tipo Roca" },
+        { "id": "r2g", "text": "Recibe la Medalla Lignito" },
+        { "id": "r2h", "text": "Desbloquea los Grandes Subterráneos (nuevo sistema de excavación)" }
+      ]
+    },
+    {
+      "title": "Ciudad Vetusta",
+      "steps": [
+        { "id": "r3a", "text": "Rescata al hombre del Team Galaxia en el Bosque Vetusta" },
+        { "id": "r3b", "text": "Atrapa Pokémon en el Bosque — ahora con encuentros visibles" },
+        { "id": "r3c", "text": "Derrota a Gardenia en el Gimnasio de tipo Planta" },
+        { "id": "r3d", "text": "Recibe la Medalla Bosque y la MO Corte (ahora usable sin enseñar)" },
+        { "id": "r3e", "text": "Enfrenta al Comandante Jupiter del Team Galaxia" },
+        { "id": "r3f", "text": "Obtén la Bicicleta" },
+        { "id": "r3g", "text": "Explora los Grandes Subterráneos para Pokémon raros" }
+      ]
+    },
+    {
+      "title": "Ciudad Corazón → Ciudad Rocavelo",
+      "steps": [
+        { "id": "r4a", "text": "Cruza el Monte Coronet hacia Ciudad Corazón" },
+        { "id": "r4b", "text": "Concursos Pokémon actualizados (ahora con Super Concursos)" },
+        { "id": "r4c", "text": "Toma la Ruta 209 hacia Ciudad Rocavelo" },
+        { "id": "r4d", "text": "Derrota a Brega en el Gimnasio de tipo Lucha" },
+        { "id": "r4e", "text": "Recibe la Medalla Adoquín" },
+        { "id": "r4f", "text": "Enfrenta al Team Galaxia en el almacén" },
+        { "id": "r4g", "text": "Recibe la MO Vuelo" },
+        { "id": "r4h", "text": "Entrena en los Grandes Subterráneos para más variedad" }
+      ]
+    },
+    {
+      "title": "Ciudad Pradera → Ciudad Corazón (Fantasma)",
+      "steps": [
+        { "id": "r5a", "text": "Dirígete a Ciudad Pradera" },
+        { "id": "r5b", "text": "Derrota a Mananti en el Gimnasio de tipo Agua" },
+        { "id": "r5c", "text": "Recibe la Medalla Pantano" },
+        { "id": "r5d", "text": "Persigue al Team Galaxia hasta Ciudad Corazón" },
+        { "id": "r5e", "text": "Derrota a Fantina en el Gimnasio de tipo Fantasma" },
+        { "id": "r5f", "text": "Recibe la Medalla Relicto" },
+        { "id": "r5g", "text": "Obtén la MO Surf" }
+      ]
+    },
+    {
+      "title": "Ciudad Canal → Ciudad Puntaneva",
+      "steps": [
+        { "id": "r6a", "text": "Surfea hacia Ciudad Canal" },
+        { "id": "r6b", "text": "Derrota a Acerón en el Gimnasio de tipo Acero" },
+        { "id": "r6c", "text": "Recibe la Medalla Mina" },
+        { "id": "r6d", "text": "Lago Valor — enfrenta al Team Galaxia" },
+        { "id": "r6e", "text": "Viaja a Pueblo Caelestis" },
+        { "id": "r6f", "text": "Dirígete a Ciudad Puntaneva" },
+        { "id": "r6g", "text": "Derrota a Inverna en el Gimnasio de tipo Hielo" },
+        { "id": "r6h", "text": "Recibe la Medalla Témpano" }
+      ]
+    },
+    {
+      "title": "Ciudad Marina → Columna Lanza",
+      "steps": [
+        { "id": "r7a", "text": "Libera el Lago Agudeza" },
+        { "id": "r7b", "text": "Dirígete a Ciudad Marina" },
+        { "id": "r7c", "text": "Derrota a Lectro en el Gimnasio de tipo Eléctrico" },
+        { "id": "r7d", "text": "Recibe la Medalla Faro" },
+        { "id": "r7e", "text": "Infiltra el edificio del Team Galaxia" },
+        { "id": "r7f", "text": "Sube la Columna Lanza" },
+        { "id": "r7g", "text": "Captura a Dialga (nivel 47) — cinemática mejorada" },
+        { "id": "r7h", "text": "Derrota a Helio" }
+      ]
+    },
+    {
+      "title": "Liga Pokémon",
+      "steps": [
+        { "id": "r8a", "text": "Obtén la MO Cascada en Ciudad Marina" },
+        { "id": "r8b", "text": "Atraviesa el Camino Victoria" },
+        { "id": "r8c", "text": "Derrota a tu rival" },
+        { "id": "r8d", "text": "Abastécete — la Liga es más dura que en los originales" },
+        { "id": "r8e", "text": "Entrena hasta nivel 58-65" },
+        { "id": "r8f", "text": "Derrota al Alto Mando — ahora con objetos y estrategias mejoradas" },
+        { "id": "r8g", "text": "Derrota a Cinthia — su Garchomp tiene EV entrenadas" },
+        { "id": "r8h", "text": "¡Campeón de Sinnoh!" }
+      ]
+    },
+    {
+      "title": "Postgame",
+      "steps": [
+        { "id": "r9a", "text": "Obtén la Pokédex Nacional" },
+        { "id": "r9b", "text": "Captura a Giratina en la Cueva Retorno (nivel 70)" },
+        { "id": "r9c", "text": "Nuevas áreas en los Grandes Subterráneos con Pokémon de todas las generaciones" },
+        { "id": "r9d", "text": "Captura a Heatran en Isla Dura" },
+        { "id": "r9e", "text": "Captura a Cresselia (vaga por Sinnoh)" },
+        { "id": "r9f", "text": "Rematch de la Liga — equipos nivel 75+ con Pokémon competitivos" },
+        { "id": "r9g", "text": "Completa la Pokédex Nacional" }
+      ]
+    }
+  ]
+}

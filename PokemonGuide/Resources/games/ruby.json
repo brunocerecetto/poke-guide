@@ -1,0 +1,40 @@
+{
+  "id": "ruby",
+  "name": "Pokémon Ruby",
+  "generation": 3,
+  "region": "Hoenn",
+  "releaseYear": 2002,
+  "platform": "GBA",
+  "accentColor": "#A81818",
+  "secondaryColor": "#7A1010",
+  "icon": "flame.fill",
+  "starters": [
+    { "dexNumber": 252, "name": "Treecko" },
+    { "dexNumber": 255, "name": "Torchic" },
+    { "dexNumber": 258, "name": "Mudkip" }
+  ],
+  "gymCount": 8,
+  "hasEliteFour": true,
+  "hasChampion": true,
+  "regionalDex": [
+    { "regionalNumber": 1, "nationalDex": 252, "location": "Pueblo Raíz (inicial)" },
+    { "regionalNumber": 2, "nationalDex": 253, "location": "Evolucionar Treecko" },
+    { "regionalNumber": 3, "nationalDex": 254, "location": "Evolucionar Grovyle" },
+    { "regionalNumber": 4, "nationalDex": 255, "location": "Pueblo Raíz (inicial)" },
+    { "regionalNumber": 5, "nationalDex": 256, "location": "Evolucionar Torchic" },
+    { "regionalNumber": 6, "nationalDex": 257, "location": "Evolucionar Combusken" },
+    { "regionalNumber": 7, "nationalDex": 258, "location": "Pueblo Raíz (inicial)" },
+    { "regionalNumber": 8, "nationalDex": 259, "location": "Evolucionar Mudkip" },
+    { "regionalNumber": 9, "nationalDex": 260, "location": "Evolucionar Marshtomp" },
+    { "regionalNumber": 10, "nationalDex": 261, "location": "Ruta 101" },
+    { "regionalNumber": 11, "nationalDex": 262, "location": "Evolucionar Poochyena" },
+    { "regionalNumber": 12, "nationalDex": 263, "location": "Ruta 101" },
+    { "regionalNumber": 13, "nationalDex": 264, "location": "Evolucionar Zigzagoon" },
+    { "regionalNumber": 14, "nationalDex": 265, "location": "Ruta 101" },
+    { "regionalNumber": 15, "nationalDex": 266, "location": "Evolucionar Wurmple" }
+  ],
+  "versionExclusives": {
+    "ruby": [273, 274, 275, 303, 335, 338, 383],
+    "sapphire": [270, 271, 272, 302, 336, 337, 382]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "members": [
+    { "name": "Aarón", "strategy": "Tipo Fuego o Volador. Cuidado con Drapion — es Veneno/Siniestro, no Bicho.", "levels": "53-57" },
+    { "name": "Bertha", "strategy": "Tipo Agua y Planta. Hippowdon activa Tormenta de Arena. Surf barre.", "levels": "55-59" },
+    { "name": "Fausto", "strategy": "Tipo Agua o Tierra. Solo 2 Pokémon de Fuego reales. Tiene Drifblim y Lopunny.", "levels": "57-61" },
+    { "name": "Delos", "strategy": "Tipo Siniestro o Fantasma. Bronzong resiste casi todo — usa Fuego.", "levels": "59-63" },
+    { "name": "Cinthia (Campeona)", "strategy": "La campeona más dura. Garchomp nivel 66 es legendario — Rayo Hielo obligatorio. Spiritomb sin debilidades en Gen 4. Milotic con Recuperación.", "levels": "61-66" }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "captures": [
+    { "pokemon": "Starly", "location": "Ruta 201", "note": "Staraptor es el mejor pájaro regional. A Bocajarro." },
+    { "pokemon": "Shinx", "location": "Ruta 202", "note": "Luxray con Intimidación." },
+    { "pokemon": "Eevee", "location": "Ciudad Corazón (regalo de Bec)", "note": "Evoluciona a múltiples formas. Glaceon, Leafeon o Espeon recomendados." },
+    { "pokemon": "Ralts", "location": "Ruta 208", "note": "Nuevo en Platinum. Gallade o Gardevoir." },
+    { "pokemon": "Houndour", "location": "Ruta 214", "note": "Nuevo en Platinum. Houndoom Fuego/Siniestro." },
+    { "pokemon": "Gible", "location": "Cueva Extravío (bajo Ruta Bici)", "note": "Garchomp — el mejor no legendario." },
+    { "pokemon": "Giratina", "location": "Mundo Distorsión", "note": "Nivel 47. Forma Origen exclusiva de Platinum." },
+    { "pokemon": "Dialga", "location": "Columna Lanza (postgame)", "note": "Nivel 70. Acero/Dragón." },
+    { "pokemon": "Palkia", "location": "Columna Lanza (postgame)", "note": "Nivel 70. Agua/Dragón." },
+    { "pokemon": "Regigigas", "location": "Templo Snowpoint", "note": "Necesitas los 3 Regis. Nivel 1 con Inicio Lento." }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "captures": [
+    { "pokemon": "Mareep", "location": "Route 32", "note": "Eléctrico esencial. Evoluciona a Ampharos (Lv. 30) con Thunderbolt." },
+    { "pokemon": "Heracross", "location": "Árboles de Azalea Town (Headbutt)", "note": "Bicho/Lucha con Attack brutal. Clave contra Whitney y Karen." },
+    { "pokemon": "Eevee", "location": "Bill en Goldenrod City (regalo)", "note": "Evoluciona a Espeon (día + felicidad). Mejor Psíquico disponible." },
+    { "pokemon": "Suicune", "location": "Tin Tower, Ecruteak (Clear Bell)", "note": "Exclusivo de Crystal. Agua Lv. 40. Tanque especial con Surf e Ice Beam." },
+    { "pokemon": "Gyarados Rojo", "location": "Lake of Rage", "note": "Shiny garantizado Lv. 30. Excelente Agua/Volador." },
+    { "pokemon": "Sudowoodo", "location": "Route 36 (Squirtbottle)", "note": "Único en el juego. Tipo Roca. Captura obligatoria." },
+    { "pokemon": "Celebi", "location": "Ilex Forest (evento GS Ball, 3DS VC)", "note": "Legendario Psíquico/Planta Lv. 30. Solo disponible en Crystal vía evento." },
+    { "pokemon": "Dratini", "location": "Dragon's Den (pesca o regalo del Sabio)", "note": "Evoluciona a Dragonite (Lv. 55). Inversión a largo plazo." }
+  ]
+}

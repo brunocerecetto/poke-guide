@@ -1,0 +1,20 @@
+{
+  "gyms": [
+    { "name": "Violet City", "leader": "Falkner", "levelRange": "7–9", "note": "Tipo Volador. Pidgeotto usa Gust. Cyndaquil o tipo Roca lo barren.", "badge": "🪶" },
+    { "name": "Azalea Town", "leader": "Bugsy", "levelRange": "14–16", "note": "Tipo Bicho. Scyther con Fury Cutter sube daño. Fuego o Volador son clave.", "badge": "🐛" },
+    { "name": "Goldenrod City", "leader": "Whitney", "levelRange": "18–20", "note": "Tipo Normal. Miltank con Rollout y Milk Drink es devastador. Paralízala o usa tipo Lucha.", "badge": "🌸" },
+    { "name": "Ecruteak City", "leader": "Morty", "levelRange": "21–25", "note": "Tipo Fantasma. Gengar es rápido con Shadow Ball. Usa Siniestro o Psíquico.", "badge": "👻" },
+    { "name": "Cianwood City", "leader": "Chuck", "levelRange": "27–30", "note": "Tipo Lucha. Poliwrath con Hypnosis + DynamicPunch. Volador o Psíquico.", "badge": "🥊" },
+    { "name": "Olivine City", "leader": "Jasmine", "levelRange": "30–35", "note": "Tipo Acero. Steelix tanque, débil a Fuego, Agua y Lucha.", "badge": "🔩" },
+    { "name": "Mahogany Town", "leader": "Pryce", "levelRange": "27–31", "note": "Tipo Hielo. Piloswine Hielo/Tierra. Agua o Lucha superefectivos.", "badge": "❄️" },
+    { "name": "Blackthorn City", "leader": "Clair", "levelRange": "37–40", "note": "Tipo Dragón. Kingdra solo débil a Dragón. Ice Beam para Dragonair.", "badge": "🐉" },
+    { "name": "Vermilion City", "leader": "Lt. Surge", "levelRange": "44–46", "note": "Tipo Eléctrico. Kanto gym. Earthquake lo destruye.", "badge": "⚡" },
+    { "name": "Saffron City", "leader": "Sabrina", "levelRange": "46–48", "note": "Tipo Psíquico. Kanto gym. Siniestro, Fantasma o Bicho.", "badge": "🔮" },
+    { "name": "Celadon City", "leader": "Erika", "levelRange": "42–46", "note": "Tipo Planta. Kanto gym. Fuego o Volador barren.", "badge": "🌿" },
+    { "name": "Fuchsia City", "leader": "Janine", "levelRange": "36–39", "note": "Tipo Veneno. Reemplaza a Koga. Psíquico o Tierra.", "badge": "☠️" },
+    { "name": "Cerulean City", "leader": "Misty", "levelRange": "42–47", "note": "Tipo Agua. Encuéntrala en Route 25. Eléctrico o Planta.", "badge": "💧" },
+    { "name": "Pewter City", "leader": "Brock", "levelRange": "41–44", "note": "Tipo Roca. Agua o Planta lo destruyen.", "badge": "🪨" },
+    { "name": "Seafoam Islands", "leader": "Blaine", "levelRange": "45–50", "note": "Tipo Fuego. Gimnasio mudado de Cinnabar. Agua o Tierra.", "badge": "🔥" },
+    { "name": "Viridian City", "leader": "Blue", "levelRange": "56–58", "note": "Tipo mixto. Ex-campeón. Equipo variado: prepárate para todo.", "badge": "🌍" }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "members": [
+    { "name": "Emboar", "moves": ["Llamarada", "Onda Certera", "Roca Afilada", "Terremoto"], "notes": "Tu inicial Fuego/Lucha. Gran atacante mixto.", "emoji": "🐗" },
+    { "name": "Simipour", "moves": ["Surf", "Rayo Hielo", "Escaldar", "Acróbata"], "notes": "Recibe Panpour gratis en el Jardín de los Sueños si eliges Tepig.", "emoji": "💧" },
+    { "name": "Lilligant", "moves": ["Danza Pétalo", "Paz Mental", "Energibola", "Día Soleado"], "notes": "Danza Pétalo + Clorofila es devastador. Petilil en la Ruta 6.", "emoji": "🌸" },
+    { "name": "Krookodile", "moves": ["Terremoto", "Triturar", "Roca Afilada", "Danza Dragón"], "notes": "Sandile en la Ruta 4. Excelente cobertura ofensiva.", "emoji": "🐊" },
+    { "name": "Galvantula", "moves": ["Rayo", "Zumbido", "Voltio Cruel", "Energibola"], "notes": "Rápido y útil. Captura Joltik en la Cueva Chargestone.", "emoji": "🕷️" },
+    { "name": "Braviary", "moves": ["Pájaro Osado", "Fuerza Bruta", "Roca Afilada", "Ida y Vuelta"], "notes": "Rufflet aparece en la Ruta 10 (solo Black). Potente volador.", "emoji": "🦅" }
+  ]
+}

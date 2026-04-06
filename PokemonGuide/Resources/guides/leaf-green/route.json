@@ -1,0 +1,158 @@
+{
+  "sections": [
+    {
+      "title": "1) Pueblo Paleta → Ciudad Plateada",
+      "steps": [
+        { "id": "r1a", "text": "Elegir tu starter en el laboratorio del Prof. Oak" },
+        { "id": "r1b", "text": "Rival fight 1: solo tiene su starter. Tackle spam." },
+        { "id": "r1c", "text": "Levelear en Route 1 hasta nv 7-8 antes de ir a Viridian" },
+        { "id": "r1d", "text": "Comprar Poké Balls en Viridian (al menos 10)" },
+        { "id": "r1e", "text": "Entregar el paquete de Oak, recibir la Pokédex" },
+        { "id": "r1f", "text": "Route 2 → Viridian Forest: grindear hasta nv 12-13" },
+        { "id": "r1g", "text": "Squirtle aprende Bubble al 7 y Water Gun al 13" },
+        { "id": "r1h", "text": "No perder tiempo capturando pokémon extra en este punto" },
+        { "id": "r1i", "text": "BROCK: Geodude 12 / Onix 14. Water Gun o Bubble destroza todo." },
+        { "id": "r1j", "text": "Recibir TM39 Rock Tomb (no la necesitás)" }
+      ]
+    },
+    {
+      "title": "2) Pewter → Mt. Moon → Cerulean",
+      "steps": [
+        { "id": "r2a", "text": "Route 3: pelear contra todos los trainers para XP" },
+        { "id": "r2b", "text": "CAPTURA: Nidoran♂ en Route 3 (~15%). Futuro Nidoking." },
+        { "id": "r2c", "text": "Entrenar Nidoran♂ contra los trainers de Route 3" },
+        { "id": "r2d", "text": "Mt. Moon: levantar Rare Candy, TM09 Bullet Seed, Star Piece, Moon Stone" },
+        { "id": "r2e", "text": "IMPORTANTE: Agarrar al menos una Moon Stone (piso B2). Guardarla para Nidorino." },
+        { "id": "r2f", "text": "Derrotar al Super Nerd del fósil — elegir Helix o Dome" },
+        { "id": "r2g", "text": "Nidoran♂ aprende Double Kick al 12 — ya empieza a ser útil" },
+        { "id": "r2h", "text": "Salir de Mt. Moon. Curar en Cerulean City" },
+        { "id": "r2i", "text": "Rival fight 2 en Nugget Bridge" },
+        { "id": "r2j", "text": "Nugget Bridge: 5 trainers + Rocket Grunt. Buena XP y $$$" },
+        { "id": "r2k", "text": "Ir a casa de Bill (Route 25). Ayudarlo → S.S. Ticket" },
+        { "id": "r2l", "text": "MISTY: Staryu 18 / Starmie 21. Wartortle con Bite (nv 18) es clave. TM03 Water Pulse de premio." }
+      ]
+    },
+    {
+      "title": "3) Cerulean → Vermilion City",
+      "steps": [
+        { "id": "r3a", "text": "Derrotar al Rocket Grunt en la casa robada al norte de Cerulean" },
+        { "id": "r3b", "text": "Recompensa: TM28 Dig — moveazo para mid game" },
+        { "id": "r3c", "text": "Nidoran♂ → Nidorino (nv 16). Esperar a Horn Attack (22) antes de Moon Stone" },
+        { "id": "r3d", "text": "Una vez que Nidorino aprende Horn Attack 22: Moon Stone → Nidoking" },
+        { "id": "r3e", "text": "Enseñarle Dig a Nidoking inmediatamente" },
+        { "id": "r3f", "text": "Route 5 → Underground Path → Route 6 → Vermilion City" },
+        { "id": "r3g", "text": "S.S. Anne: pelear contra todos los trainers (mucha XP)" },
+        { "id": "r3h", "text": "Rival fight 3 en el S.S. Anne" },
+        { "id": "r3i", "text": "Recibir HM01 Cut del capitán. Levantar TM31 Brick Break en el barco." },
+        { "id": "r3j", "text": "Enseñar Cut a un pokémon temporal (NO a tu core)" },
+        { "id": "r3k", "text": "LT. SURGE: Voltorb 21 / Pikachu 18 / Raichu 24. Nidoking con Dig los destroza." },
+        { "id": "r3l", "text": "Premio: TM34 Shock Wave. Guardarla para Jolteon." }
+      ]
+    },
+    {
+      "title": "4) Rock Tunnel → Lavender → Celadon",
+      "steps": [
+        { "id": "r4a", "text": "Route 9 hacia Rock Tunnel" },
+        { "id": "r4b", "text": "Opcional: HM05 Flash del aide de Oak (10 pokémon registrados)" },
+        { "id": "r4c", "text": "Rock Tunnel: Nidoking con Dig limpia casi todo" },
+        { "id": "r4d", "text": "Salir a Lavender Town. No podés subir Pokémon Tower sin Silph Scope." },
+        { "id": "r4e", "text": "Route 8 → Underground Path → Route 7 → Celadon City" },
+        { "id": "r4f", "text": "CAPTURA: Vulpix en Route 7-8 (exclusivo de LeafGreen)" },
+        { "id": "r4g", "text": "Celadon Mansion (entrada trasera, último piso): recibir Eevee nv 25" },
+        { "id": "r4h", "text": "Celadon Mansion planta baja: recibir Tea (abre Saffron)" },
+        { "id": "r4i", "text": "Fire Stone ($2,100) para Vulpix → Ninetales. Thunder Stone para Eevee → Jolteon." },
+        { "id": "r4j", "text": "Game Corner: 12.000+ monedas para las TMs clave" },
+        { "id": "r4k", "text": "Rocket Hideout bajo el Game Corner: limpiar 4 pisos" },
+        { "id": "r4l", "text": "Derrotar a Giovanni → Silph Scope" },
+        { "id": "r4m", "text": "ERIKA: Victreebel 29 / Tangela 24 / Vileplume 29. Ninetales o Vulpix barren." },
+        { "id": "r4n", "text": "Premio: TM19 Giga Drain → guardar para Exeggutor" }
+      ]
+    },
+    {
+      "title": "5) Evoluciones y Game Corner",
+      "steps": [
+        { "id": "r5a", "text": "Eevee → Jolteon con Thunder Stone. Enseñarle Shock Wave (TM34)." },
+        { "id": "r5b", "text": "Jolteon aprende Double Kick al nv 30 — entrenalo para llegar" },
+        { "id": "r5c", "text": "Vulpix: evolucionar con Fire Stone cuando quieras. Ninetales tiene buen SpAtk." },
+        { "id": "r5d", "text": "Ninetales: Flamethrower (TM35), Confuse Ray, Will-O-Wisp son útiles" },
+        { "id": "r5e", "text": "COMPRAS Game Corner (Prize Exchange):" },
+        { "id": "r5f", "text": "  1ro: TM24 Thunderbolt (4.000 monedas) → Jolteon [PRIORIDAD MÁXIMA]" },
+        { "id": "r5g", "text": "  2do: TM13 Ice Beam (4.000 monedas) → Blastoise" },
+        { "id": "r5h", "text": "  3ro: TM35 Flamethrower (4.000 monedas) → Ninetales [si te sobra]" },
+        { "id": "r5i", "text": "No comprar Shadow Ball todavía — es lujo" }
+      ]
+    },
+    {
+      "title": "6) Pokémon Tower → Fuchsia City",
+      "steps": [
+        { "id": "r6a", "text": "Volver a Lavender Town con el Silph Scope" },
+        { "id": "r6b", "text": "Pokémon Tower: identificar Gastly/Haunter/Cubone" },
+        { "id": "r6c", "text": "Rival fight 4 en el segundo piso" },
+        { "id": "r6d", "text": "Piso 7: derrotar el fantasma Marowak (nv 30)" },
+        { "id": "r6e", "text": "Rescatar a Mr. Fuji → Poké Flute" },
+        { "id": "r6f", "text": "CAPTURA: Snorlax (nv 30) en Route 12 o 16. GUARDAR ANTES." },
+        { "id": "r6g", "text": "Route 16: HM02 Fly en la casa escondida" },
+        { "id": "r6h", "text": "Llegar a Fuchsia City" },
+        { "id": "r6i", "text": "Safari Zone — 3 objetivos: HM03 Surf, Gold Teeth, capturar Exeggcute" },
+        { "id": "r6j", "text": "Devolver Gold Teeth al Warden → HM04 Strength" },
+        { "id": "r6k", "text": "Enseñar Surf a Blastoise. Strength a Snorlax o Nidoking." },
+        { "id": "r6l", "text": "Exeggcute: NO Leaf Stone antes de Sleep Powder (nv 37)" },
+        { "id": "r6m", "text": "KOGA: Koffing 37 / Muk 39 / Koffing 37 / Weezing 43. Earthquake barre." }
+      ]
+    },
+    {
+      "title": "7) Saffron City (Silph Co + Sabrina)",
+      "steps": [
+        { "id": "r7a", "text": "Con la Tea, entrar a Saffron City" },
+        { "id": "r7b", "text": "Mr. Psychic (al sur): TM29 Psychic GRATIS → guardar para Exeggutor" },
+        { "id": "r7c", "text": "Silph Co: 11 pisos. Card Key en piso 5." },
+        { "id": "r7d", "text": "Piso 7: Lapras gratis del científico" },
+        { "id": "r7e", "text": "Rival fight 5 en Silph Co. Equipo ~nv 35-40." },
+        { "id": "r7f", "text": "Piso 11: Giovanni → Master Ball" },
+        { "id": "r7g", "text": "MASTER BALL: guardarla para Mewtwo postgame" },
+        { "id": "r7h", "text": "SABRINA: Kadabra 38 / Mr. Mime 37 / Venomoth 38 / Alakazam 43. Snorlax tanquea." },
+        { "id": "r7i", "text": "VS Seeker (Route 6): te deja repelear trainers para grindear" }
+      ]
+    },
+    {
+      "title": "8) Cinnabar Island + Viridian Gym",
+      "steps": [
+        { "id": "r8a", "text": "Surfear desde Fuchsia o Pallet Town hacia Cinnabar" },
+        { "id": "r8b", "text": "Pokémon Mansion: Secret Key para el gym" },
+        { "id": "r8c", "text": "Levantar TM14 Blizzard y TM22 Solar Beam" },
+        { "id": "r8d", "text": "BLAINE: Growlithe 42 / Ponyta 40 / Rapidash 42 / Arcanine 47. Blastoise Surf arrasa." },
+        { "id": "r8e", "text": "Volar a Viridian City" },
+        { "id": "r8f", "text": "GIOVANNI: Rhyhorn 45 / Dugtrio 42 / Nidoqueen 44 / Nidoking 45 / Rhyhorn 50. Surf/Ice Beam limpia." },
+        { "id": "r8g", "text": "Premio: TM26 Earthquake → Nidoking INMEDIATAMENTE" },
+        { "id": "r8h", "text": "Equipo final: Blastoise, Nidoking, Jolteon, Ninetales, Snorlax, Exeggutor" }
+      ]
+    },
+    {
+      "title": "9) Victory Road → Liga Pokémon",
+      "steps": [
+        { "id": "r9a", "text": "Route 22: Rival fight 6. Último antes de la Liga." },
+        { "id": "r9b", "text": "Route 23: necesitás las 8 badges" },
+        { "id": "r9c", "text": "Victory Road: Surf y Strength necesarios" },
+        { "id": "r9d", "text": "Si el equipo está bajo de nivel, grindear en Victory Road (nv 40-48)" },
+        { "id": "r9e", "text": "Objetivo: todo el equipo nv 52+ antes de entrar" },
+        { "id": "r9f", "text": "Indigo Plateau: última chance de items" },
+        { "id": "r9g", "text": "Comprar 15-20 Hyper Potions o Full Restores, 10+ Revives" },
+        { "id": "r9h", "text": "Full Heals o Awakenings para Agatha" },
+        { "id": "r9i", "text": "GUARDAR antes de entrar" },
+        { "id": "r9j", "text": "Lorelei → Bruno → Agatha → Lance → Champion. ¡Sos el campeón!" }
+      ]
+    },
+    {
+      "title": "10) Postgame — Sevii Islands",
+      "steps": [
+        { "id": "r10a", "text": "Ir a Sevii Islands — One Island, hablar con Celio" },
+        { "id": "r10b", "text": "Rock Smash en Kindle Road (One Island)" },
+        { "id": "r10c", "text": "Waterfall en Icefall Cave (Four Island)" },
+        { "id": "r10d", "text": "Completar la quest del Ruby y Sapphire para Celio" },
+        { "id": "r10e", "text": "Desbloquear Cerulean Cave → capturar Mewtwo" },
+        { "id": "r10f", "text": "Revancha Elite Four (equipos mejorados, nv 60+)" },
+        { "id": "r10g", "text": "Completar Pokédex Nacional" }
+      ]
+    }
+  ]
+}

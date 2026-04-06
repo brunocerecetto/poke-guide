@@ -1,0 +1,12 @@
+{
+  "tips": [
+    { "pokemon": "General", "rule": "Solo aparecen Pokémon de Unova hasta completar la historia principal — aprovecha para conocerlos." },
+    { "pokemon": "Darmanitan", "rule": "Captura Darumaka temprano en la Ruta 4. Tiene una de las mejores estadísticas de Ataque del juego." },
+    { "pokemon": "Krookodile", "rule": "Sandile (Ruta 4) evoluciona en un atacante físico excepcional con gran cobertura de tipos." },
+    { "pokemon": "Eelektross", "rule": "Tynamo es difícil de entrenar pero Eelektross no tiene debilidades gracias a Levitación." },
+    { "pokemon": "Volcarona", "rule": "Encontrarás un Larvesta nivel 1 como huevo en la Ruta 18. También Volcarona nivel 70 en las Ruinas del Castillo." },
+    { "pokemon": "Haxorus", "rule": "Axew aparece en la Cueva Giro. Es lento de entrenar pero Haxorus es devastador." },
+    { "pokemon": "Lucky Egg", "rule": "Consigue el Huevo Suerte en Chargestone Cave — duplica la experiencia ganada." },
+    { "pokemon": "Zorua", "rule": "Puedes recibir un Zorua como regalo en Ciudad Castelia. Tipo Siniestro con habilidad Ilusión." }
+  ]
+}

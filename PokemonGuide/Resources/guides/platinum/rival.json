@@ -1,0 +1,54 @@
+{
+  "encounters": [
+    {
+      "location": "Lago Veraz",
+      "icon": "figure.walk",
+      "team": [
+        { "name": "Turtwig", "level": 5, "dexNumber": 387, "starterCondition": "Si elegiste Chimchar" },
+        { "name": "Chimchar", "level": 5, "dexNumber": 390, "starterCondition": "Si elegiste Piplup" },
+        { "name": "Piplup", "level": 5, "dexNumber": 393, "starterCondition": "Si elegiste Turtwig" }
+      ]
+    },
+    {
+      "location": "Ruta 203",
+      "icon": "figure.walk",
+      "team": [
+        { "name": "Starly", "level": 7, "dexNumber": 396, "starterCondition": null },
+        { "name": "Turtwig/Chimchar/Piplup", "level": 9, "dexNumber": 387, "starterCondition": "Depende de tu starter" }
+      ]
+    },
+    {
+      "location": "Ciudad Corazón",
+      "icon": "figure.walk",
+      "team": [
+        { "name": "Staravia", "level": 25, "dexNumber": 397, "starterCondition": null },
+        { "name": "Buizel", "level": 22, "dexNumber": 418, "starterCondition": null },
+        { "name": "Roselia", "level": 23, "dexNumber": 315, "starterCondition": null },
+        { "name": "Grotle/Monferno/Prinplup", "level": 27, "dexNumber": 388, "starterCondition": "Depende de tu starter" }
+      ]
+    },
+    {
+      "location": "Ciudad Canal",
+      "icon": "figure.walk",
+      "team": [
+        { "name": "Staraptor", "level": 36, "dexNumber": 398, "starterCondition": null },
+        { "name": "Floatzel", "level": 34, "dexNumber": 419, "starterCondition": null },
+        { "name": "Roserade", "level": 35, "dexNumber": 407, "starterCondition": null },
+        { "name": "Heracross", "level": 36, "dexNumber": 214, "starterCondition": null },
+        { "name": "Torterra/Infernape/Empoleon", "level": 38, "dexNumber": 389, "starterCondition": "Depende de tu starter" }
+      ]
+    },
+    {
+      "location": "Liga Pokémon",
+      "icon": "figure.walk",
+      "team": [
+        { "name": "Staraptor", "level": 49, "dexNumber": 398, "starterCondition": null },
+        { "name": "Floatzel", "level": 48, "dexNumber": 419, "starterCondition": null },
+        { "name": "Roserade", "level": 48, "dexNumber": 407, "starterCondition": null },
+        { "name": "Heracross", "level": 50, "dexNumber": 214, "starterCondition": null },
+        { "name": "Snorlax", "level": 49, "dexNumber": 143, "starterCondition": null },
+        { "name": "Torterra/Infernape/Empoleon", "level": 53, "dexNumber": 389, "starterCondition": "Depende de tu starter" }
+      ]
+    }
+  ]
+}

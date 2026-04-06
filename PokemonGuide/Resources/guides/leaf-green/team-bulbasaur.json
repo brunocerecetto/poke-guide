@@ -1,0 +1,10 @@
+{
+  "members": [
+    { "name": "Venusaur", "moves": ["Giga Drain", "Sleep Powder", "Sludge Bomb", "Leech Seed"], "notes": "Tu starter. Sleep Powder + Leech Seed combo defensivo. Giga Drain (TM19, premio Erika) STAB.", "emoji": "🌿" },
+    { "name": "Nidoking", "moves": ["Earthquake", "Brick Break", "Dig", "Sludge Bomb"], "notes": "Nidoran♂ Route 3. Coverage insano con TMs. Earthquake late game.", "emoji": "🦏" },
+    { "name": "Ninetales", "moves": ["Flamethrower", "Confuse Ray", "Will-O-Wisp", "Dig"], "notes": "Vulpix Route 7 (exclusivo LeafGreen). Confuse Ray es utilísimo. Flamethrower (TM35).", "emoji": "🦊" },
+    { "name": "Jolteon", "moves": ["Thunderbolt", "Double Kick", "Dig", "Shock Wave"], "notes": "Eevee en Celadon → Thunder Stone. Thunderbolt (TM24) prioridad de compra.", "emoji": "⚡" },
+    { "name": "Lapras", "moves": ["Surf", "Ice Beam", "Thunderbolt", "Body Slam"], "notes": "Regalo en Silph Co. Tu Water type principal. Ice Beam CLAVE para Lance.", "emoji": "🐋" },
+    { "name": "Snorlax", "moves": ["Body Slam", "Yawn", "Rest", "Shadow Ball"], "notes": "Route 12/16. Tanque bruto. Clave contra Agatha y Sabrina.", "emoji": "😴" }
+  ]
+}

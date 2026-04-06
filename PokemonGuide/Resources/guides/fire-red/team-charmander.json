@@ -1,0 +1,10 @@
+{
+  "members": [
+    { "name": "Charizard", "moves": ["Flamethrower", "Slash", "Dig", "Aerial Ace"], "notes": "Tu starter. Evoluciona a Charmeleon 16, Charizard 36. Flamethrower a nv 46 o con TM35. Slash tiene buen critical rate.", "emoji": "🔥" },
+    { "name": "Nidoking", "moves": ["Earthquake", "Brick Break", "Dig", "Sludge Bomb"], "notes": "Nidoran♂ Route 3. Moon Stone después de Horn Attack (22). Coverage brutal.", "emoji": "🦏" },
+    { "name": "Vaporeon", "moves": ["Surf", "Ice Beam", "Bite", "Acid Armor"], "notes": "Eevee en Celadon → Water Stone. Tu Water type principal. Gran bulk. Ice Beam para Lance.", "emoji": "💧" },
+    { "name": "Jolteon", "moves": ["Thunderbolt", "Double Kick", "Thunder Wave", "Shock Wave"], "notes": "Alternativa: si usás Vaporeon, conseguí Jolteon de otro Eevee... o usá Pikachu/Magneton como Electric.", "emoji": "⚡" },
+    { "name": "Snorlax", "moves": ["Body Slam", "Yawn", "Rest", "Shadow Ball"], "notes": "Route 12/16. Tanque bruto. Shadow Ball para Agatha.", "emoji": "😴" },
+    { "name": "Exeggutor", "moves": ["Psychic", "Giga Drain", "Sleep Powder", "Stun Spore"], "notes": "Safari Zone. Sleep Powder (nv 37) + Psychic (TM29) + Giga Drain (TM19).", "emoji": "🌴" }
+  ]
+}

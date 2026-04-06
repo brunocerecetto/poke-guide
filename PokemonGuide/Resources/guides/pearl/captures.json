@@ -1,0 +1,14 @@
+{
+  "captures": [
+    { "pokemon": "Shinx", "location": "Ruta 202", "note": "Luxray con Intimidación. Buen Eléctrico." },
+    { "pokemon": "Starly", "location": "Ruta 201", "note": "Staraptor — mejor pájaro regional. Intimidación + A Bocajarro." },
+    { "pokemon": "Misdreavus", "location": "Bosque Vetusta (noche)", "note": "Exclusivo Pearl. Mismagius con Piedra Noche." },
+    { "pokemon": "Budew", "location": "Ruta 204", "note": "Roserade es top atacante especial Planta/Veneno." },
+    { "pokemon": "Ponyta", "location": "Ruta 211", "note": "Rapidash si no elegiste Chimchar." },
+    { "pokemon": "Gible", "location": "Cueva Extravío (bajo Ruta Bici)", "note": "Garchomp es el mejor no legendario del juego." },
+    { "pokemon": "Rotom", "location": "Viejo Chateau (TV, de noche)", "note": "Múltiples formas de electrodomésticos." },
+    { "pokemon": "Palkia", "location": "Columna Lanza", "note": "Legendario nivel 47. Agua/Dragón con Corte Espacial." },
+    { "pokemon": "Heatran", "location": "Isla Dura (postgame)", "note": "Legendario Fuego/Acero nivel 70." },
+    { "pokemon": "Giratina", "location": "Cueva Retorno (postgame)", "note": "Nivel 70. Fantasma/Dragón." }
+  ]
+}

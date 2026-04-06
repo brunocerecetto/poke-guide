@@ -1,0 +1,10 @@
+{
+  "members": [
+    { "name": "Meowscarada", "moves": ["Truco de Flor", "Tajo Umbrío", "Ida y Vuelta", "Danza Espada"], "notes": "Tu inicial Planta/Siniestro. Rápido con Mutatipo (habilidad oculta).", "emoji": "🌸" },
+    { "name": "Ceruledge", "moves": ["Espada Sombría", "Psíquico", "Energibola", "Paz Mental"], "notes": "Exclusivo de Violet. Fuego/Psíquico con Espada Sombría potente.", "emoji": "🔥" },
+    { "name": "Palafin", "moves": ["Acua Jet", "Puño Drenaje", "Rayo Hielo", "Carantoña"], "notes": "Finizen en el océano. Forma Héroe tiene Ataque enorme (necesita salir/entrar de combate).", "emoji": "🐬" },
+    { "name": "Garchomp", "moves": ["Terremoto", "Garra Dragón", "Roca Afilada", "Danza Espada"], "notes": "Gible en cuevas del sur. Tierra/Dragón pseudo-legendario.", "emoji": "🦈" },
+    { "name": "Tinkaton", "moves": ["Carantoña", "Mazazo Gigante", "Golpe Roca", "Danza Espada"], "notes": "Tinkatink en ruinas. Hada/Acero con movimiento de 160 de potencia.", "emoji": "🔨" },
+    { "name": "Kilowattrel", "moves": ["Rayo", "Vendaval", "Ida y Vuelta", "Voltio Cruel"], "notes": "Wattrel en las costas. Eléctrico/Volador rápido.", "emoji": "⚡" }
+  ]
+}

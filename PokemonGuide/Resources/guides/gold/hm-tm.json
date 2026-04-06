@@ -1,0 +1,21 @@
+{
+  "hms": [
+    { "hm": "HM01 Cut", "pokemon": "Farfetch'd / Scyther", "location": "Ilex Forest (después de atrapar a los Farfetch'd)" },
+    { "hm": "HM02 Fly", "pokemon": "Crobat / Pidgeot", "location": "Esposa de Chuck, afuera del Gimnasio de Cianwood" },
+    { "hm": "HM03 Surf", "pokemon": "Feraligatr / Gyarados / Quagsire", "location": "Ecruteak City (evento en Dance Theater)" },
+    { "hm": "HM04 Strength", "pokemon": "Machamp / Ursaring / Steelix", "location": "Hiker en Route 42 (al lado de Mahogany)" },
+    { "hm": "HM05 Flash", "pokemon": "Ampharos / Togetic", "location": "Sprout Tower (Sage al final)" },
+    { "hm": "HM06 Whirlpool", "pokemon": "Feraligatr / Gyarados", "location": "Lance en Team Rocket HQ (Mahogany)" },
+    { "hm": "HM07 Waterfall", "pokemon": "Feraligatr / Gyarados", "location": "Ice Path (dentro de la cueva)" }
+  ],
+  "tms": [
+    { "tm": "TM13 Ice Beam", "target": "Gyarados / Feraligatr", "origin": "Game Corner de Goldenrod (10.000 monedas)" },
+    { "tm": "TM24 DragonBreath", "target": "Gyarados / Dragonite", "origin": "Premio de Clair (Blackthorn Gym)" },
+    { "tm": "TM26 Earthquake", "target": "Nidoking / Typhlosion / Quagsire", "origin": "Victory Road" },
+    { "tm": "TM29 Psychic", "target": "Espeon / Alakazam", "origin": "Mr. Psychic en Saffron City (Kanto)" },
+    { "tm": "TM30 Shadow Ball", "target": "Espeon / Gengar", "origin": "Premio de Morty (Ecruteak Gym)" },
+    { "tm": "TM35 Flamethrower", "target": "Typhlosion / Arcanine", "origin": "Game Corner de Goldenrod (10.000 monedas)" },
+    { "tm": "TM45 Attract", "target": "Cualquiera", "origin": "Premio de Whitney (Goldenrod Gym)" },
+    { "tm": "TM49 Fury Cutter", "target": "Scyther / Heracross", "origin": "Premio de Bugsy (Azalea Gym)" }
+  ]
+}

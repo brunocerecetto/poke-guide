@@ -1,0 +1,12 @@
+{
+  "captures": [
+    { "pokemon": "Mareep", "location": "Route 32", "note": "Eléctrico esencial. Ampharos (Lv. 30) con Thunderbolt. Disponible muy temprano." },
+    { "pokemon": "Ho-Oh", "location": "Tin Tower, Ecruteak (Rainbow Wing)", "note": "Legendario Fuego/Volador Lv. 45. Disponible ANTES de la Liga en HeartGold. Stats 680." },
+    { "pokemon": "Gyarados Rojo", "location": "Lake of Rage", "note": "Shiny garantizado Lv. 30. Waterfall físico en Gen 4 lo hace brutal." },
+    { "pokemon": "Heracross", "location": "Árboles de Azalea Town (Headbutt)", "note": "Bicho/Lucha. Close Combat disponible en HGSS. Clave contra varios gimnasios." },
+    { "pokemon": "Eevee", "location": "Bill en Goldenrod City (regalo)", "note": "Espeon (felicidad de día) o Umbreon (noche). Glaceon y Leafeon también posibles en HGSS." },
+    { "pokemon": "Lugia", "location": "Whirl Islands (Silver Wing post-Kanto)", "note": "Disponible Lv. 70 en HeartGold (post-E4). Psíquico/Volador tanque especial." },
+    { "pokemon": "Groudon", "location": "Embedded Tower (Red Orb)", "note": "Exclusivo de HeartGold. Lv. 50 post-Kanto. Tierra con Drought." },
+    { "pokemon": "Sudowoodo", "location": "Route 36 (Squirtbottle)", "note": "Único. Tipo Roca Lv. 20. Captura obligatoria para completar." }
+  ]
+}

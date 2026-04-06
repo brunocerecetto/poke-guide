@@ -1,0 +1,9 @@
+{
+  "members": [
+    { "name": "Sidney", "strategy": "Tipo Lucha arrasa. Breloom o Blaziken son ideales. Cuidado con Absol que pega duro con Tajo Umbrío.", "levels": "46-48" },
+    { "name": "Phoebe", "strategy": "Tipo Siniestro es la clave. Absol o Sharpedo funcionan. Sus Dusclops tienen mucha defensa, usa ataques especiales.", "levels": "48-51" },
+    { "name": "Glacia", "strategy": "Tipo Fuego o Lucha. Blaziken es perfecto. Cuidado con los Glalie que usan Granizo + Ventisca.", "levels": "50-53" },
+    { "name": "Drake", "strategy": "Tipo Hielo es devastador. Rayo Hielo en cualquier Pokémon fuerte funciona. Su Salamence es peligroso nivel 55.", "levels": "52-55" },
+    { "name": "Steven (Campeón)", "strategy": "Equipo variado de tipo Acero/Roca. Usa Terremoto, Surf y tipo Fuego. Su Metagross nivel 58 es brutal — debilita con Fuego o Tierra.", "levels": "55-58" }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "members": [
+    {
+      "name": "Will — Psíquico",
+      "strategy": "Usa tipos Siniestro o Bicho. Tiene 2 Xatu, Jynx, Exeggutor y Slowbro. Xatu es rápido con Psychic y Confuse Ray. Jynx cae fácil con Fuego o Roca. Siniestro es inmune a Psíquico — Umbreon o Sneasel brillan aquí.",
+      "levels": "40–42"
+    },
+    {
+      "name": "Koga — Veneno",
+      "strategy": "Usa tipos Psíquico o Tierra. Ariados, Forretress, Muk, Venomoth y Crobat. Cuidado con Toxic + stall. Forretress puede poner Spikes. Crobat es rápido. Earthquake barre a la mayoría. Psychic para Venomoth y Muk.",
+      "levels": "40–43"
+    },
+    {
+      "name": "Bruno — Lucha",
+      "strategy": "Usa tipos Volador o Psíquico. Hitmontop, Hitmonlee, Hitmonchan, Onix y Machamp. Machamp con Cross Chop es brutal. Onix es Roca/Tierra — Surf lo destruye. Fly o Psychic barren a los fighters.",
+      "levels": "40–43"
+    },
+    {
+      "name": "Karen — Siniestro",
+      "strategy": "Usa tipos Lucha o Bicho. Umbreon, Vileplume, Gengar, Murkrow y Houndoom. Umbreon es tanque puro — usa Lucha. Gengar es Fantasma/Veneno, no Siniestro. Houndoom es Fuego/Siniestro — Surf o Earthquake. Heracross brilla aquí.",
+      "levels": "42–45"
+    },
+    {
+      "name": "Lance — Campeón (Dragón)",
+      "strategy": "Ice Beam es CLAVE. Tiene 3 Dragonite (Lv. 47, 47, 50), Gyarados, Charizard y Aerodactyl. Thunderbolt para Gyarados. Los Dragonite caen con Ice Beam. Charizard es débil a Roca y Eléctrico. Aerodactyl cae con Surf o Ice Beam.",
+      "levels": "44–50"
+    }
+  ]
+}

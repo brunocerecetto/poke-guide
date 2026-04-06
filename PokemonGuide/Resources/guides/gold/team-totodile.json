@@ -1,0 +1,40 @@
+{
+  "members": [
+    {
+      "name": "Feraligatr",
+      "moves": ["Surf", "Ice Punch", "Earthquake", "Slash"],
+      "notes": "Tu starter Agua. Totodile evoluciona a Croconaw (18) y Feraligatr (30). Surf como STAB principal y HM. Ice Punch (tutor en Goldenrod) destroza Dragones y Planta. Earthquake para Eléctricos. Slash tiene alto ratio de crítico. Attack alto.",
+      "emoji": "🐊"
+    },
+    {
+      "name": "Arcanine",
+      "moves": ["Flamethrower", "ExtremeSpeed", "Bite", "Iron Tail"],
+      "notes": "Growlithe en Route 36/37 (Gold exclusivo). Fire Stone para evolucionar. Flamethrower STAB devastador. ExtremeSpeed con prioridad. Bite para Fantasmas. Complementa perfectamente a Feraligatr cubriendo Planta y Bicho.",
+      "emoji": "🐕‍🦺"
+    },
+    {
+      "name": "Ampharos",
+      "moves": ["Thunderbolt", "Thunder Wave", "Fire Punch", "Light Screen"],
+      "notes": "Mareep en Route 32. Thunderbolt STAB potente. Thunder Wave para paralizar. Fire Punch da coverage. Cubre la debilidad de Feraligatr al Eléctrico con resistencias complementarias.",
+      "emoji": "⚡"
+    },
+    {
+      "name": "Espeon",
+      "moves": ["Psychic", "Shadow Ball", "Bite", "Morning Sun"],
+      "notes": "Eevee de Bill en Goldenrod. Felicidad de día para evolucionar. Psychic STAB con Special Attack 130. Shadow Ball para Fantasmas. Clave contra Bruno (Lucha) y Koga (Veneno) en el Alto Mando.",
+      "emoji": "🔮"
+    },
+    {
+      "name": "Heracross",
+      "moves": ["Megahorn", "Brick Break", "Earthquake", "Rock Slide"],
+      "notes": "Headbutt en árboles de Azalea Town. Bicho/Lucha con Attack 125. Megahorn y Brick Break son STABs brutales. Whitney, Pryce, Karen — todos caen ante Heracross.",
+      "emoji": "🪲"
+    },
+    {
+      "name": "Crobat",
+      "moves": ["Fly", "Sludge Bomb", "Bite", "Confuse Ray"],
+      "notes": "Zubat en cualquier cueva temprano. Evoluciona con felicidad. Velocidad 130 base. Fly como STAB y HM. Sludge Bomb para Planta. Ideal scout con Confuse Ray. Cubre la debilidad Planta de Feraligatr.",
+      "emoji": "🦇"
+    }
+  ]
+}

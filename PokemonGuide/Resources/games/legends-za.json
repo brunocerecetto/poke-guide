@@ -1,0 +1,17 @@
+{
+  "id": "legends-za",
+  "name": "Pokémon Legends: Z-A",
+  "generation": 9,
+  "region": "Kalos",
+  "releaseYear": 2025,
+  "platform": "Switch 2",
+  "accentColor": "#2E8B57",
+  "secondaryColor": "#1C6B3F",
+  "icon": "sparkles",
+  "starters": [],
+  "gymCount": 0,
+  "hasEliteFour": false,
+  "hasChampion": false,
+  "regionalDex": [],
+  "versionExclusives": {}
+}

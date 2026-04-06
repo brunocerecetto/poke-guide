@@ -1,0 +1,19 @@
+{
+  "hms": [
+    { "hm": "Cut", "pokemon": "Slot temporal", "location": "SS Anne (capitán)" },
+    { "hm": "Fly", "pokemon": "Slot temporal", "location": "Route 16 (casa escondida)" },
+    { "hm": "Surf", "pokemon": "Blastoise / Lapras", "location": "Safari Zone (Secret House)" },
+    { "hm": "Strength", "pokemon": "Snorlax / Nidoking", "location": "Warden (Gold Teeth)" },
+    { "hm": "Flash", "pokemon": "Opcional", "location": "Aide de Oak (10 pokémon registrados)" }
+  ],
+  "tms": [
+    { "tm": "TM24 Thunderbolt", "target": "Jolteon / Nidoking", "origin": "Game Corner (4.000 monedas)" },
+    { "tm": "TM13 Ice Beam", "target": "Blastoise / Lapras", "origin": "Game Corner (4.000 monedas)" },
+    { "tm": "TM26 Earthquake", "target": "Nidoking", "origin": "Silph Co." },
+    { "tm": "TM29 Psychic", "target": "Exeggutor / Alakazam", "origin": "Mr. Psychic (Saffron, gratis)" },
+    { "tm": "TM28 Dig", "target": "Nidoking", "origin": "Rocket Grunt (Cerulean)" },
+    { "tm": "TM14 Blizzard", "target": "Lapras", "origin": "Pokémon Mansion (Cinnabar)" },
+    { "tm": "TM38 Fire Blast", "target": "Ninetales / Charizard", "origin": "Cinnabar Gym (premio Blaine)" },
+    { "tm": "TM21 Mega Drain", "target": "Exeggutor / Venusaur", "origin": "Celadon Gym (premio Erika)" }
+  ]
+}

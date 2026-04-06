@@ -1,0 +1,10 @@
+{
+  "members": [
+    { "name": "Blaziken", "moves": ["Patada Ígnea", "Tajo Cruzado", "Envite Ígneo", "Corpulencia"], "notes": "Tu starter. Fuego/Lucha devastador. Evoluciona nivel 36.", "emoji": "🔥" },
+    { "name": "Swellow", "moves": ["Golpe Aéreo", "Fachada", "Ala de Acero", "Esfuerzo"], "notes": "Atrapa Taillow en la Ruta 104. Velocidad pura.", "emoji": "🐦" },
+    { "name": "Ludicolo", "moves": ["Surf", "Gigadrenado", "Rayo Hielo", "Danza Lluvia"], "notes": "Atrapa Lotad en la Ruta 102. Agua/Planta versátil y divertido.", "emoji": "🌺" },
+    { "name": "Aggron", "moves": ["Cabeza de Hierro", "Terremoto", "Avalancha", "Corpulencia"], "notes": "Atrapa Aron en la Cueva Granito. Tanque defensivo top.", "emoji": "🦏" },
+    { "name": "Gardevoir", "moves": ["Psíquico", "Paz Mental", "Bola Sombra", "Rayo"], "notes": "Atrapa Ralts en la Ruta 102. Atacante especial brutal.", "emoji": "🔮" },
+    { "name": "Flygon", "moves": ["Terremoto", "Garra Dragón", "Lanzallamas", "Triturar"], "notes": "Atrapa Trapinch en el desierto Ruta 111. Tierra/Dragón excelente.", "emoji": "🐲" }
+  ]
+}

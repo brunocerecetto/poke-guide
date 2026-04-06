@@ -1,0 +1,10 @@
+{
+  "members": [
+    { "name": "Swampert", "moves": ["Surf", "Terremoto", "Rayo Hielo", "Avalancha"], "notes": "Tu starter. Solo débil a Planta. El mejor starter de Hoenn. Evoluciona nivel 36.", "emoji": "💧" },
+    { "name": "Swellow", "moves": ["Golpe Aéreo", "Fachada", "Ala de Acero", "Esfuerzo"], "notes": "Atrapa Taillow en la Ruta 104. Rápido con Agallas.", "emoji": "🐦" },
+    { "name": "Breloom", "moves": ["Puño Semilla", "Gancho Alto", "Espora", "Demolición"], "notes": "Atrapa Shroomish en el Bosque Petalia. Espora es increíble.", "emoji": "🍄" },
+    { "name": "Manectric", "moves": ["Rayo", "Onda Voltio", "Mordisco", "Aullido"], "notes": "Atrapa Electrike en la Ruta 110. Cobertura Eléctrica.", "emoji": "⚡" },
+    { "name": "Gardevoir", "moves": ["Psíquico", "Paz Mental", "Bola Sombra", "Rayo"], "notes": "Atrapa Ralts en la Ruta 102. Ataque especial devastador.", "emoji": "🔮" },
+    { "name": "Camerupt", "moves": ["Terremoto", "Erupción", "Pedrada", "Lanzallamas"], "notes": "Atrapa Numel en la Ruta 112. Cobertura Fuego/Tierra.", "emoji": "🌋" }
+  ]
+}

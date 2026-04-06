@@ -1,0 +1,12 @@
+{
+  "tips": [
+    { "pokemon": "General", "rule": "No hay gimnasios ni Liga Pokémon. El objetivo es completar el Pokédex estudiando cada Pokémon en profundidad." },
+    { "pokemon": "Pokédex", "rule": "Cada Pokémon tiene tareas de investigación: capturar X veces, usar movimiento Y, ver movimiento Z, etc. Completa 10 puntos por entrada." },
+    { "pokemon": "Sigilo", "rule": "Puedes acercarte sigilosamente y capturar Pokémon sin combate. Usa hierba alta, humo y bayas como distracción." },
+    { "pokemon": "Estilos", "rule": "Los movimientos tienen Estilo Ágil (ataca rápido, menos daño) y Estilo Fuerte (más daño, ataca lento). Úsalos estratégicamente." },
+    { "pokemon": "Alfa Pokémon", "rule": "Los Pokémon Alfa son más grandes, fuertes y agresivos. Capturarlos da más puntos de investigación." },
+    { "pokemon": "Crafteo", "rule": "Crea Pokéballs, pociones, bálsamos y más con materiales recolectados. Fundamental para la exploración." },
+    { "pokemon": "Distorsiones", "rule": "Las Distorsiones Espaciotemporales aparecen aleatoriamente y contienen Pokémon raros de otras eras (iniciales, fósiles, etc.)." },
+    { "pokemon": "Volo", "rule": "El combate contra Volo en postgame es uno de los más difíciles de la saga: 6 Pokémon + Giratina sin curación. Prepárate bien." }
+  ]
+}

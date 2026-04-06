@@ -1,0 +1,9 @@
+{
+  "members": [
+    { "name": "Lorelei", "strategy": "Jolteon Thunderbolt barre Dewgong (54), Cloyster (51), Slowbro (54) y Lapras (54). Jynx (51) es rápida — Ninetales Flamethrower o Nidoking Earthquake.", "levels": "51-54" },
+    { "name": "Bruno", "strategy": "Blastoise Surf destroza Onix (51, 54). Exeggutor Psychic one-shotea Hitmonchan (53), Hitmonlee (53) y Machamp (56).", "levels": "51-56" },
+    { "name": "Agatha", "strategy": "Snorlax es tu ancla — inmune a Ghost. Body Slam a Gengar (54, 58) y Haunter (53). Nidoking Earthquake para Arbok (54) y Golbat (56).", "levels": "53-58" },
+    { "name": "Lance", "strategy": "Blastoise Ice Beam one-shotea Dragonairs (54, 54) y Dragonite (60). Jolteon Thunderbolt a Gyarados (56). Aerodactyl (58) cae con Ice Beam.", "levels": "54-60" },
+    { "name": "Blue (Campeón)", "strategy": "Pidgeot 59: Jolteon Thunderbolt. Alakazam 57: Snorlax Body Slam. Rhydon 59: Blastoise Surf. Gyarados 61: Jolteon Thunderbolt. Su starter 63: type advantage.", "levels": "57-63" }
+  ]
+}

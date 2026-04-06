@@ -1,0 +1,9 @@
+{
+  "members": [
+    { "name": "Malva", "strategy": "Tipo Fuego. Agua, Tierra o Roca son eficaces. Talonflame es rápido — cuidado con la prioridad.", "levels": "63-65" },
+    { "name": "Siebold", "strategy": "Tipo Agua. Planta o Eléctrico. Gyarados con Mega Evolución potencial. Barbaracle es Roca/Agua.", "levels": "63-65" },
+    { "name": "Wikstrom", "strategy": "Tipo Acero. Fuego, Tierra o Lucha. Aegislash cambia entre formas — ataca cuando está en Forma Espada.", "levels": "63-65" },
+    { "name": "Drasna", "strategy": "Tipo Dragón. Hielo, Hada o Dragón. Dragalge es Veneno/Dragón — Tierra o Psíquico también sirven.", "levels": "63-65" },
+    { "name": "Diantha (Campeona)", "strategy": "Equipo variado. Mega Gardevoir es su as — usa Acero o Veneno. Hawlucha y Goodra son peligrosos.", "levels": "64-68" }
+  ]
+}

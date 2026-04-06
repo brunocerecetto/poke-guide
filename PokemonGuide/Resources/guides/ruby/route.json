@@ -1,0 +1,116 @@
+{
+  "sections": [
+    {
+      "title": "Pueblo Raíz → Pueblo Escaso",
+      "steps": [
+        { "id": "r1a", "text": "Elige tu starter: Treecko, Torchic o Mudkip" },
+        { "id": "r1b", "text": "Salva al Profesor Birch del Pokémon salvaje" },
+        { "id": "r1c", "text": "Regresa al laboratorio y recibe tu Pokédex" },
+        { "id": "r1d", "text": "Visita a tu madre para obtener las Zapatillas" },
+        { "id": "r1e", "text": "Dirígete al norte por la Ruta 101 hacia Pueblo Escaso" },
+        { "id": "r1f", "text": "Encuentra a tu rival y ten tu primer combate" }
+      ]
+    },
+    {
+      "title": "Ciudad Petalia → Ciudad Férrica",
+      "steps": [
+        { "id": "r2a", "text": "Pasa por Ciudad Petalia y habla con el Líder Norman (tu padre)" },
+        { "id": "r2b", "text": "Atrapa Pokémon en la Ruta 102 para completar el equipo" },
+        { "id": "r2c", "text": "Atraviesa el Bosque Petalia — cuidado con los Entrenadores" },
+        { "id": "r2d", "text": "Llega a Ciudad Férrica y entrena hasta nivel 14-16" },
+        { "id": "r2e", "text": "Derrota a Roxanne en el Gimnasio de tipo Roca" },
+        { "id": "r2f", "text": "Recibe la Medalla Piedra y la MO Corte" },
+        { "id": "r2g", "text": "Rescata las Devon Goods del Team Magma en el túnel" }
+      ]
+    },
+    {
+      "title": "Ciudad Portual → Isla Dewford",
+      "steps": [
+        { "id": "r3a", "text": "Viaja en barco desde Ciudad Portual hasta Isla Dewford" },
+        { "id": "r3b", "text": "Explora la Cueva Granito para encontrar a Steven" },
+        { "id": "r3c", "text": "Entrena en la cueva hasta nivel 18-20" },
+        { "id": "r3d", "text": "Derrota a Brawly en el Gimnasio de tipo Lucha" },
+        { "id": "r3e", "text": "Recibe la Medalla Puño" },
+        { "id": "r3f", "text": "Entrega la carta a Steven en lo profundo de la cueva" }
+      ]
+    },
+    {
+      "title": "Ciudad Portual → Ciudad Malvalona",
+      "steps": [
+        { "id": "r4a", "text": "Navega de Dewford a Ciudad Portual y entrega las Devon Goods" },
+        { "id": "r4b", "text": "Visita el Museo Oceánico y enfrenta al Team Magma" },
+        { "id": "r4c", "text": "Toma la Ruta 110 hacia Ciudad Malvalona" },
+        { "id": "r4d", "text": "Derrota a tu rival en la Ruta 110" },
+        { "id": "r4e", "text": "Obtén la Bici Acro o la Bici Rápida en la Tienda de Bicis" },
+        { "id": "r4f", "text": "Entrena hasta nivel 22-24 para el gimnasio" },
+        { "id": "r4g", "text": "Derrota a Wattson en el Gimnasio de tipo Eléctrico" },
+        { "id": "r4h", "text": "Recibe la Medalla Dinamo" }
+      ]
+    },
+    {
+      "title": "Pueblo Lavacalda",
+      "steps": [
+        { "id": "r5a", "text": "Sube por la Ruta 111 y atraviesa la Ruta 112" },
+        { "id": "r5b", "text": "Pasa por el Teleférico del Monte Cenizo" },
+        { "id": "r5c", "text": "Enfrenta al Team Magma en el Monte Cenizo" },
+        { "id": "r5d", "text": "Baja a Pueblo Lavacalda y entrena hasta nivel 26-28" },
+        { "id": "r5e", "text": "Derrota a Flannery en el Gimnasio de tipo Fuego" },
+        { "id": "r5f", "text": "Recibe la Medalla Calor y las Gafas Protectoras" },
+        { "id": "r5g", "text": "Regresa a Ciudad Petalia para el gimnasio de Norman" }
+      ]
+    },
+    {
+      "title": "Ciudad Petalia → Ciudad Arborada",
+      "steps": [
+        { "id": "r6a", "text": "Derrota a Norman en el Gimnasio de tipo Normal (nivel 28-30)" },
+        { "id": "r6b", "text": "Recibe la Medalla Balance y la MO Surf" },
+        { "id": "r6c", "text": "Usa Surf para explorar nuevas rutas acuáticas" },
+        { "id": "r6d", "text": "Pasa por la Ruta 118 y la Ruta 119 bajo la lluvia" },
+        { "id": "r6e", "text": "Rescata al investigador del clima del Team Magma" },
+        { "id": "r6f", "text": "Recibe la MO Vuelo y Castform" },
+        { "id": "r6g", "text": "Llega a Ciudad Arborada y entrena hasta nivel 32-34" },
+        { "id": "r6h", "text": "Derrota a Winona en el Gimnasio de tipo Volador" },
+        { "id": "r6i", "text": "Recibe la Medalla Pluma" }
+      ]
+    },
+    {
+      "title": "Ciudad Calagua → Ciudad Algaria",
+      "steps": [
+        { "id": "r7a", "text": "Dirígete a Ciudad Calagua por la Ruta 121" },
+        { "id": "r7b", "text": "Enfrenta al Team Magma en el Monte Pírico" },
+        { "id": "r7c", "text": "Consigue la Master Ball en la Base del Team Magma" },
+        { "id": "r7d", "text": "Surfea hacia Ciudad Algaria por las Rutas 124-125" },
+        { "id": "r7e", "text": "Entrena hasta nivel 38-40 para el gimnasio" },
+        { "id": "r7f", "text": "Derrota a Tate y Liza en el Gimnasio de tipo Psíquico (combate doble)" },
+        { "id": "r7g", "text": "Recibe la Medalla Mente" },
+        { "id": "r7h", "text": "Obtén la MO Buceo de Steven" }
+      ]
+    },
+    {
+      "title": "Ciudad Arrecípolis",
+      "steps": [
+        { "id": "r8a", "text": "Usa Buceo en la Ruta 128 para encontrar la Cueva Ancestral" },
+        { "id": "r8b", "text": "Sigue al Team Magma hasta la cueva submarina" },
+        { "id": "r8c", "text": "Groudon despierta y causa una sequía intensa" },
+        { "id": "r8d", "text": "Ve a Ciudad Arrecípolis y entra a la Cueva Origen" },
+        { "id": "r8e", "text": "Captura o derrota a Groudon (nivel 45)" },
+        { "id": "r8f", "text": "Entrena hasta nivel 42-44 para el último gimnasio" },
+        { "id": "r8g", "text": "Derrota a Wallace en el Gimnasio de tipo Agua" },
+        { "id": "r8h", "text": "Recibe la Medalla Lluvia" }
+      ]
+    },
+    {
+      "title": "Liga Pokémon",
+      "steps": [
+        { "id": "r9a", "text": "Surfea hacia la Ruta 128 y luego a la Ruta 129" },
+        { "id": "r9b", "text": "Llega a Pueblo Pardal y al Camino Victoria" },
+        { "id": "r9c", "text": "Atraviesa el Camino Victoria con MOs (Surf, Fuerza, Cascada)" },
+        { "id": "r9d", "text": "Derrota a tu rival en la entrada de la Liga" },
+        { "id": "r9e", "text": "Abastécete: Restaurar Todo, Revivir, Máx. Poción" },
+        { "id": "r9f", "text": "Entrena tu equipo hasta nivel 50-55" },
+        { "id": "r9g", "text": "Enfrenta al Alto Mando y al Campeón Steven" },
+        { "id": "r9h", "text": "¡Conviértete en el nuevo Campeón de Hoenn!" }
+      ]
+    }
+  ]
+}

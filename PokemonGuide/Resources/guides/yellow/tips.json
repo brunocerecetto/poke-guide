@@ -1,0 +1,16 @@
+{
+  "tips": [
+    { "pokemon": "⚡ Pikachu", "rule": "NO puede evolucionar a Raichu en Yellow. Se niega a usar Thunder Stone. Thunderbolt por nivel a nv 26." },
+    { "pokemon": "🌿 Bulbasaur", "rule": "Regalo en Cerulean si Pikachu está feliz. Hablale seguido y no lo dejes debilitarse para subir la felicidad." },
+    { "pokemon": "🔥 Charmander", "rule": "Regalo en Route 24 de un entrenador. Levelealo rápido — Charizard llega tarde pero es bestia." },
+    { "pokemon": "🐢 Squirtle", "rule": "Regalo de Oficial Jenny en Vermilion DESPUÉS de ganar la badge de Surge. No te lo pierdas." },
+    { "pokemon": "🦏 Nidoking", "rule": "Capturá Nidoran♂ en Route 22 ANTES de Brock. Double Kick es tu única chance contra Geodude/Onix." },
+    { "pokemon": "👾 Jessie & James", "rule": "Aparecen en Mt. Moon, Rocket Hideout, Pokémon Tower y Silph Co. Tienen Ekans/Arbok, Koffing/Weezing, Meowth." },
+    { "pokemon": "🎮 Eevee del rival", "rule": "La evolución del Eevee de tu rival depende de tus resultados: si ganás los primeros fights evoluciona a Jolteon." },
+    { "pokemon": "😴 Snorlax", "rule": "Esencial para Sabrina (nv 50 en Yellow). Body Slam tanquea Psychic sin problemas." },
+    { "pokemon": "🧊 Ice Beam", "rule": "Comprá Ice Beam en el Game Corner para Blastoise. CLAVE para Lance — sus Dragon son nivel 56-62 en Yellow." },
+    { "pokemon": "💪 Niveles", "rule": "Los gym leaders y Elite Four tienen niveles MÁS ALTOS que en Red/Blue. Subí a nv 55+ antes de la Liga." },
+    { "pokemon": "🐦 Pidgeotto", "rule": "En Yellow, Pidgeotto aparece en Viridian Forest (raro). Es más útil temprano que en Red/Blue." },
+    { "pokemon": "🎒 Surfing Pikachu", "rule": "Si tenés Pikachu con Surf (evento especial), podés jugar el minijuego en la playa de Fuchsia." }
+  ]
+}

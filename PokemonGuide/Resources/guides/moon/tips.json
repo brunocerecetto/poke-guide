@@ -1,0 +1,12 @@
+{
+  "tips": [
+    { "pokemon": "General", "rule": "No hay gimnasios en Alola — en su lugar hay Pruebas de Isla con Pokémon Dominantes y Grandes Pruebas contra Kahunas." },
+    { "pokemon": "Movimientos Z", "rule": "Cada tipo tiene un Cristal Z. Algunos Pokémon tienen Movimientos Z exclusivos. Úsalos en combates difíciles." },
+    { "pokemon": "Mimikyu", "rule": "Fantasma/Hada con habilidad Disfraz que absorbe un golpe gratis. Disponible en el Supermercado Abandonado." },
+    { "pokemon": "Wishiwashi", "rule": "En Forma Escuela (nivel 20+) tiene estadísticas de pseudo-legendario. Débil cuando baja de 25% PV." },
+    { "pokemon": "Alolan Forms", "rule": "Muchos Pokémon de Kanto tienen formas de Alola con tipos diferentes. Vulpix es Hielo, Marowak es Fuego/Fantasma, etc." },
+    { "pokemon": "Lunala", "rule": "Legendario Psíquico/Fantasma (Sun). Guardia Espectral le da inmunidad a movimientos no super efectivos en PV llenos." },
+    { "pokemon": "Pokémon Llamada", "rule": "Los Pokémon salvajes pueden llamar aliados (SOS). Esto permite encontrar Pokémon con habilidades ocultas y shinies." },
+    { "pokemon": "Poké Pelago", "rule": "Desarrolla islas para entrenar Pokémon, cultivar bayas y encontrar objetos mientras no juegas." }
+  ]
+}

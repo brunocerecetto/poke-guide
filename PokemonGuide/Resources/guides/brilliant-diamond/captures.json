@@ -1,0 +1,14 @@
+{
+  "captures": [
+    { "pokemon": "Starly", "location": "Ruta 201", "note": "Staraptor — Intimidación + A Bocajarro. Top pájaro." },
+    { "pokemon": "Shinx", "location": "Ruta 202", "note": "Luxray con Intimidación." },
+    { "pokemon": "Murkrow", "location": "Bosque Vetusta (noche)", "note": "Exclusivo BD. Honchkrow potente." },
+    { "pokemon": "Budew", "location": "Ruta 204", "note": "Roserade — atacante especial Planta/Veneno." },
+    { "pokemon": "Ponyta", "location": "Ruta 211", "note": "Rapidash si no elegiste Chimchar." },
+    { "pokemon": "Gible", "location": "Cueva Extravío", "note": "Garchomp — pseudo-legendario brutal." },
+    { "pokemon": "Pokémon subterráneos", "location": "Grandes Subterráneos", "note": "Pokémon de Gen 1-4 en cuevas subterráneas tras cada medalla." },
+    { "pokemon": "Dialga", "location": "Columna Lanza", "note": "Legendario nivel 47. Acero/Dragón." },
+    { "pokemon": "Giratina", "location": "Cueva Retorno (postgame)", "note": "Nivel 70. Fantasma/Dragón." },
+    { "pokemon": "Heatran", "location": "Isla Dura (postgame)", "note": "Nivel 70. Fuego/Acero." }
+  ]
+}

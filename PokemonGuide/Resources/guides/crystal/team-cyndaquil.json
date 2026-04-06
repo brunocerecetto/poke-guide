@@ -1,0 +1,40 @@
+{
+  "members": [
+    {
+      "name": "Typhlosion",
+      "moves": ["Flamethrower", "ThunderPunch", "Earthquake", "Swift"],
+      "notes": "Tu starter Fuego. Evoluciona a Quilava (14) y Typhlosion (36). Flamethrower STAB brutal. ThunderPunch cubre Agua. Earthquake para Roca. Special Attack altísimo.",
+      "emoji": "🔥"
+    },
+    {
+      "name": "Suicune",
+      "moves": ["Surf", "Ice Beam", "Rain Dance", "Roar"],
+      "notes": "Captura en Tin Tower (Crystal exclusivo, Lv. 40). Tanque especial con Surf STAB y HM. Ice Beam contra los Dragonite de Lance. Rain Dance potencia Surf.",
+      "emoji": "💎"
+    },
+    {
+      "name": "Ampharos",
+      "moves": ["Thunderbolt", "Thunder Wave", "Fire Punch", "Light Screen"],
+      "notes": "Mareep en Route 32. Thunderbolt STAB. Thunder Wave para paralizar. Coverage sólido contra Agua y Volador.",
+      "emoji": "⚡"
+    },
+    {
+      "name": "Espeon",
+      "moves": ["Psychic", "Shadow Ball", "Bite", "Morning Sun"],
+      "notes": "Eevee de Bill. Felicidad de día. Psychic STAB con Special Attack altísimo. Resuelve a Koga y Bruno en el Alto Mando.",
+      "emoji": "🔮"
+    },
+    {
+      "name": "Heracross",
+      "moves": ["Megahorn", "Brick Break", "Earthquake", "Rock Slide"],
+      "notes": "Headbutt en Azalea. Attack 125. Megahorn y Brick Break STABs. Clave contra Whitney (Miltank), Karen (Umbreon) y Will.",
+      "emoji": "🪲"
+    },
+    {
+      "name": "Crobat",
+      "moves": ["Fly", "Sludge Bomb", "Bite", "Confuse Ray"],
+      "notes": "Zubat en cuevas temprano. Felicidad para evolucionar. Velocidad 130. Fly STAB y HM. Sludge Bomb para Planta. Scout con Confuse Ray.",
+      "emoji": "🦇"
+    }
+  ]
+}

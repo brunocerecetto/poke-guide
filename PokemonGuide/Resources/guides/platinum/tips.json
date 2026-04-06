@@ -1,0 +1,12 @@
+{
+  "tips": [
+    { "pokemon": "Giratina", "rule": "Nivel 47 en el Mundo Distorsión. Forma Origen es exclusiva de Platinum con el Orbe Platino." },
+    { "pokemon": "Eevee", "rule": "Disponible más temprano en Platinum. Bec le regala uno en Ciudad Corazón." },
+    { "pokemon": "Ralts", "rule": "Ahora disponible en la Ruta 208. Gallade con Piedra Alba es excelente." },
+    { "pokemon": "Houndour", "rule": "Nuevo en Platinum en la Ruta 214. Houndoom es gran tipo Fuego/Siniestro." },
+    { "pokemon": "Gible", "rule": "Cueva Extravío bajo la Ruta Bici. Garchomp sigue siendo el rey no legendario." },
+    { "pokemon": "Dialga/Palkia", "rule": "Ambos capturables nivel 70 en la Columna Lanza en postgame." },
+    { "pokemon": "Batalla Frontera", "rule": "5 instalaciones de batalla en postgame. Palmer (padre de tu rival) es un Cerebro Frontera." },
+    { "pokemon": "Rotom", "rule": "Viejo Chateau de noche. En Platinum puedes cambiar sus formas en el laboratorio del Team Galaxia." }
+  ]
+}

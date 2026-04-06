@@ -1,0 +1,9 @@
+{
+  "members": [
+    { "name": "Sidney", "strategy": "Tipo Lucha y Hada. Mega Absol es peligroso con Espada Santa. Breloom o Blaziken.", "levels": "50-52" },
+    { "name": "Phoebe", "strategy": "Tipo Siniestro. Tiene Dusknoir ahora. Ataques especiales Siniestro son clave.", "levels": "51-54" },
+    { "name": "Glacia", "strategy": "Tipo Fuego o Lucha. Mega Glalie es nueva amenaza. Cuidado con Ventisca.", "levels": "52-54" },
+    { "name": "Drake", "strategy": "Tipo Hielo y Hada. Rayo Hielo o Fuerza Lunar. Su Salamence nivel 55.", "levels": "53-55" },
+    { "name": "Steven (Campeón)", "strategy": "Mega Metagross es su as. Usa Fuego, Tierra o Fantasma. Skarmory, Claydol y Armaldo completan su equipo.", "levels": "55-59" }
+  ]
+}

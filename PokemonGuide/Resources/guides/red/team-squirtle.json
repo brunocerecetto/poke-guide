@@ -1,0 +1,10 @@
+{
+  "members": [
+    { "name": "Blastoise", "moves": ["Surf", "Ice Beam", "Bite", "Earthquake"], "notes": "Tu starter y tanque Water/Ice. Ice Beam es crítico para Lance. Surf como STAB principal.", "emoji": "🐢" },
+    { "name": "Nidoking", "moves": ["Earthquake", "Thunderbolt", "Ice Beam", "Horn Drill"], "notes": "Nidoran♂ en Route 3. Moon Stone después de Horn Attack (22). Coverage brutal con TMs.", "emoji": "🦏" },
+    { "name": "Arcanine", "moves": ["Flamethrower", "Body Slam", "Dig", "Fire Blast"], "notes": "Growlithe en Route 7-8 (exclusivo Red). Fire Stone después de aprender Flamethrower.", "emoji": "🐕" },
+    { "name": "Jolteon", "moves": ["Thunderbolt", "Thunder Wave", "Pin Missile", "Double Kick"], "notes": "Eevee en Celadon → Thunder Stone. 130 Speed base. Thunderbolt es compra #1 del Game Corner.", "emoji": "⚡" },
+    { "name": "Snorlax", "moves": ["Body Slam", "Earthquake", "Rest", "Self-Destruct"], "notes": "Route 12/16. Tanque bruto. Body Slam STAB principal. Clave contra Agatha.", "emoji": "😴" },
+    { "name": "Exeggutor", "moves": ["Psychic", "Sleep Powder", "Mega Drain", "Stun Spore"], "notes": "Exeggcute en Safari Zone. Sleep Powder + Psychic es combo consistente para la Liga.", "emoji": "🌴" }
+  ]
+}

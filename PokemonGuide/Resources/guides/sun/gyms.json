@@ -1,0 +1,14 @@
+{
+  "gyms": [
+    { "name": "Prueba de Ilima", "leader": "Ilima", "levelRange": "11-12", "note": "Prueba de tipo Normal en Cueva Verdant. Dominante: Gumshoos. Tipo Lucha recomendado.", "badge": "Cristal Z Normal" },
+    { "name": "Gran Prueba de Hala", "leader": "Kahuna Hala", "levelRange": "14-15", "note": "Tipo Lucha. Crabrawler es su as. Volador, Psíquico o Hada.", "badge": "Cristal Z Lucha" },
+    { "name": "Prueba de Lana", "leader": "Lana", "levelRange": "18-20", "note": "Tipo Agua en Estanque Brooklet. Dominante: Wishiwashi Escuela. Planta o Eléctrico.", "badge": "Cristal Z Agua" },
+    { "name": "Prueba de Kiawe", "leader": "Kiawe", "levelRange": "22-22", "note": "Tipo Fuego en Volcán Wela. Dominante: Salazzle. Tierra, Agua o Roca.", "badge": "Cristal Z Fuego" },
+    { "name": "Prueba de Mallow", "leader": "Mallow", "levelRange": "24-24", "note": "Tipo Planta en Jungla Lush. Dominante: Lurantis. Fuego o Volador.", "badge": "Cristal Z Planta" },
+    { "name": "Gran Prueba de Olivia", "leader": "Kahuna Olivia", "levelRange": "26-27", "note": "Tipo Roca. Lycanroc Mediodía es su as. Agua, Planta o Lucha.", "badge": "Cristal Z Roca" },
+    { "name": "Prueba de Sophocles", "leader": "Sophocles", "levelRange": "29-29", "note": "Tipo Eléctrico en Observatorio Hokulani. Dominante: Togedemaru. Tipo Tierra.", "badge": "Cristal Z Eléctrico" },
+    { "name": "Prueba de Acerola", "leader": "Acerola", "levelRange": "33-33", "note": "Tipo Fantasma en Supermercado Abandonado. Dominante: Mimikyu. Fantasma o Siniestro.", "badge": "Cristal Z Fantasma" },
+    { "name": "Gran Prueba de Nanu", "leader": "Kahuna Nanu", "levelRange": "38-39", "note": "Tipo Siniestro. Alolan Persian es molesto. Lucha, Bicho o Hada.", "badge": "Cristal Z Siniestro" },
+    { "name": "Gran Prueba de Hapu", "leader": "Kahuna Hapu", "levelRange": "47-48", "note": "Tipo Tierra. Mudsdale es tanque. Agua, Planta o Hielo.", "badge": "Cristal Z Tierra" }
+  ]
+}

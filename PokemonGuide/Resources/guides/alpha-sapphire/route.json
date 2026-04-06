@@ -1,0 +1,114 @@
+{
+  "sections": [
+    {
+      "title": "Pueblo Raíz → Pueblo Escaso",
+      "steps": [
+        { "id": "r1a", "text": "Elige tu starter: Treecko, Torchic o Mudkip" },
+        { "id": "r1b", "text": "Salva al Profesor Birch — cinemática 3D" },
+        { "id": "r1c", "text": "Recibe tu Pokédex y el PokéNav Plus (DexNav, BuzNav, AreaNav)" },
+        { "id": "r1d", "text": "Obtén las Zapatillas de tu madre" },
+        { "id": "r1e", "text": "Usa el DexNav para encontrar Pokémon con habilidades ocultas" },
+        { "id": "r1f", "text": "Combate contra tu rival en la Ruta 103" }
+      ]
+    },
+    {
+      "title": "Ciudad Petalia → Ciudad Férrica",
+      "steps": [
+        { "id": "r2a", "text": "Pasa por Ciudad Petalia — Norman te espera" },
+        { "id": "r2b", "text": "Atrapa Lotad en la Ruta 102 (exclusivo de Alpha Sapphire)" },
+        { "id": "r2c", "text": "Atraviesa el Bosque Petalia — encuentro con Team Aqua" },
+        { "id": "r2d", "text": "Entrena hasta nivel 14-16 en Ciudad Férrica" },
+        { "id": "r2e", "text": "Derrota a Roxanne en el Gimnasio de tipo Roca" },
+        { "id": "r2f", "text": "Recibe la Medalla Piedra y la MO Corte" },
+        { "id": "r2g", "text": "Persigue al Team Aqua por el túnel" }
+      ]
+    },
+    {
+      "title": "Isla Dewford → Ciudad Portual",
+      "steps": [
+        { "id": "r3a", "text": "Viaja en barco a Isla Dewford con Mr. Briney" },
+        { "id": "r3b", "text": "Explora la Cueva Granito — busca Mega Piedras" },
+        { "id": "r3c", "text": "Derrota a Brawly en el Gimnasio de tipo Lucha" },
+        { "id": "r3d", "text": "Recibe la Medalla Puño" },
+        { "id": "r3e", "text": "Entrega la carta a Steven en la cueva" },
+        { "id": "r3f", "text": "Navega a Ciudad Portual — eventos del Team Aqua" },
+        { "id": "r3g", "text": "Visita el Museo Oceánico — confrontación con Team Aqua" }
+      ]
+    },
+    {
+      "title": "Ciudad Malvalona → Pueblo Lavacalda",
+      "steps": [
+        { "id": "r4a", "text": "Ruta 110 — derrota a tu rival" },
+        { "id": "r4b", "text": "Obtén la Bici Acro o Rápida — puedes tener ambas luego" },
+        { "id": "r4c", "text": "Derrota a Wattson en el Gimnasio de tipo Eléctrico" },
+        { "id": "r4d", "text": "Recibe la Medalla Dinamo" },
+        { "id": "r4e", "text": "Sube al Monte Cenizo — confrontación con Team Aqua" },
+        { "id": "r4f", "text": "Baja a Pueblo Lavacalda" },
+        { "id": "r4g", "text": "Derrota a Flannery en el Gimnasio de tipo Fuego" },
+        { "id": "r4h", "text": "Recibe la Medalla Calor" }
+      ]
+    },
+    {
+      "title": "Ciudad Petalia → Ciudad Arborada",
+      "steps": [
+        { "id": "r5a", "text": "Derrota a Norman en el Gimnasio de tipo Normal" },
+        { "id": "r5b", "text": "Recibe la Medalla Balance y la MO Surf" },
+        { "id": "r5c", "text": "Explora rutas acuáticas con Surf" },
+        { "id": "r5d", "text": "Ruta 119 — derrota a tu rival otra vez" },
+        { "id": "r5e", "text": "Rescata al investigador del clima del Team Aqua" },
+        { "id": "r5f", "text": "Recibe la MO Vuelo y Castform" },
+        { "id": "r5g", "text": "Derrota a Winona — cuidado con su Mega Altaria" },
+        { "id": "r5h", "text": "Recibe la Medalla Pluma" }
+      ]
+    },
+    {
+      "title": "Ciudad Calagua → Ciudad Algaria",
+      "steps": [
+        { "id": "r6a", "text": "Dirígete a Ciudad Calagua" },
+        { "id": "r6b", "text": "Enfrenta al Team Aqua en el Monte Pírico" },
+        { "id": "r6c", "text": "Infiltra la base del Team Aqua — obtén la Master Ball" },
+        { "id": "r6d", "text": "Surfea a Ciudad Algaria" },
+        { "id": "r6e", "text": "Derrota a Tate y Liza en combate doble" },
+        { "id": "r6f", "text": "Recibe la Medalla Mente" },
+        { "id": "r6g", "text": "Obtén la MO Buceo" }
+      ]
+    },
+    {
+      "title": "Kyogre Primigenio",
+      "steps": [
+        { "id": "r7a", "text": "Sigue al Team Aqua a la cueva submarina" },
+        { "id": "r7b", "text": "Kyogre sufre Reversión Primigenia — lluvia torrencial" },
+        { "id": "r7c", "text": "Ve a Ciudad Arrecípolis — Cueva Origen" },
+        { "id": "r7d", "text": "Captura a Kyogre Primigenio (nivel 45) — tipo Agua potenciado" },
+        { "id": "r7e", "text": "Derrota a Wallace en el Gimnasio de tipo Agua" },
+        { "id": "r7f", "text": "Recibe la Medalla Lluvia" },
+        { "id": "r7g", "text": "Obtén la Eon Flauta de Latias — Vuelo Eón desbloqueado" }
+      ]
+    },
+    {
+      "title": "Liga Pokémon",
+      "steps": [
+        { "id": "r8a", "text": "Atraviesa el Camino Victoria" },
+        { "id": "r8b", "text": "Derrota a tu rival antes de la Liga" },
+        { "id": "r8c", "text": "Abastécete en el Centro Pokémon" },
+        { "id": "r8d", "text": "Entrena hasta nivel 55-60" },
+        { "id": "r8e", "text": "Derrota al Alto Mando con Mega Evoluciones" },
+        { "id": "r8f", "text": "Derrota al Campeón Steven y su Mega Metagross" },
+        { "id": "r8g", "text": "¡Campeón de Hoenn!" }
+      ]
+    },
+    {
+      "title": "Postgame — Episodio Delta",
+      "steps": [
+        { "id": "r9a", "text": "Comienza el Episodio Delta — historia exclusiva de ORAS" },
+        { "id": "r9b", "text": "Sigue a Zinnia y la historia de Mega Rayquaza" },
+        { "id": "r9c", "text": "Captura a Rayquaza en el Pilar Celeste (nivel 70)" },
+        { "id": "r9d", "text": "Enseña Ascenso Draco a Rayquaza para Mega Evolución" },
+        { "id": "r9e", "text": "Combate contra Deoxys en el espacio (nivel 80)" },
+        { "id": "r9f", "text": "Captura legendarios en portales con Vuelo Eón" },
+        { "id": "r9g", "text": "Busca todas las Mega Piedras de Hoenn" },
+        { "id": "r9h", "text": "Completa la Pokédex Nacional" }
+      ]
+    }
+  ]
+}

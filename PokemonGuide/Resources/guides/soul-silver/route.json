@@ -1,0 +1,142 @@
+{
+  "sections": [
+    {
+      "title": "New Bark Town — Tu aventura comienza",
+      "steps": [
+        { "id": "r1a", "text": "Habla con el Profesor Elm y elige tu starter (Chikorita, Cyndaquil o Totodile)." },
+        { "id": "r1b", "text": "Tu Pokémon te sigue fuera de la Poké Ball (mecánica exclusiva de HGSS)." },
+        { "id": "r1c", "text": "Recibe el Pokégear de tu madre. Sal hacia Route 29." }
+      ]
+    },
+    {
+      "title": "Cherrygrove City → Mr. Pokémon",
+      "steps": [
+        { "id": "r2a", "text": "El guía te enseña la ciudad. Cura en el Centro Pokémon." },
+        { "id": "r2b", "text": "Avanza por Route 30 hasta Mr. Pokémon. Recibe el Mystery Egg." },
+        { "id": "r2c", "text": "El Profesor Oak te da la Pokédex." },
+        { "id": "r2d", "text": "Vuelve. Pelea con tu Rival en Route 29." },
+        { "id": "r2e", "text": "Entrega el Mystery Egg a Elm." }
+      ]
+    },
+    {
+      "title": "Route 30–31 → Violet City",
+      "steps": [
+        { "id": "r3a", "text": "Captura Pokémon en Route 30 y 31." },
+        { "id": "r3b", "text": "Llega a Violet City. Sube Sprout Tower para entrenar." },
+        { "id": "r3c", "text": "Enfrenta a Falkner (Volador). Pidgeotto Lv. 13 con Roost." },
+        { "id": "r3d", "text": "Gana la Zephyr Badge. Recibe TM51 Roost." }
+      ]
+    },
+    {
+      "title": "Route 32–33 → Azalea Town",
+      "steps": [
+        { "id": "r4a", "text": "Recibe el Egg del asistente de Elm (Togepi)." },
+        { "id": "r4b", "text": "Baja por Route 32. Atraviesa Union Cave." },
+        { "id": "r4c", "text": "Azalea Town. Slowpoke Well — derrota al Team Rocket." },
+        { "id": "r4d", "text": "Enfrenta a Bugsy (Bicho). Scyther Lv. 17 con U-turn." },
+        { "id": "r4e", "text": "Gana Hive Badge. Recibe TM89 U-turn." }
+      ]
+    },
+    {
+      "title": "Ilex Forest → Goldenrod City",
+      "steps": [
+        { "id": "r5a", "text": "Rival te desafía al salir del gimnasio." },
+        { "id": "r5b", "text": "Ilex Forest: Farfetch'd. Recibe HM01 Cut." },
+        { "id": "r5c", "text": "Goldenrod City. Dept. Store, Game Corner, Radio Tower." },
+        { "id": "r5d", "text": "Bike gratis. Pokéathlon Dome disponible." }
+      ]
+    },
+    {
+      "title": "Goldenrod Gym — Whitney",
+      "steps": [
+        { "id": "r6a", "text": "Whitney (Normal). Miltank Lv. 19 con Rollout, Stomp, Milk Drink, Attract." },
+        { "id": "r6b", "text": "Machop del trade en Dept. Store ayuda. Paralizar antes de Rollout." },
+        { "id": "r6c", "text": "Gana Plain Badge. Espera que deje de llorar." },
+        { "id": "r6d", "text": "Recibe TM45 Attract." }
+      ]
+    },
+    {
+      "title": "Route 35–36 → Ecruteak City",
+      "steps": [
+        { "id": "r7a", "text": "Squirtbottle en Route 36 para Sudowoodo (Lv. 20). ¡Solo uno!" },
+        { "id": "r7b", "text": "Ecruteak City. Burned Tower." },
+        { "id": "r7c", "text": "Raikou, Entei y Suicune huyen." },
+        { "id": "r7d", "text": "Pelea contra tu Rival." }
+      ]
+    },
+    {
+      "title": "Ecruteak Gym → Olivine y Cianwood",
+      "steps": [
+        { "id": "r8a", "text": "Morty (Fantasma). Gengar Lv. 25 con Shadow Ball y Sucker Punch." },
+        { "id": "r8b", "text": "Fog Badge. TM30 Shadow Ball. Puedes usar Surf." },
+        { "id": "r8c", "text": "Olivine City. Jasmine y el Ampharos enfermo." },
+        { "id": "r8d", "text": "Surfea a Cianwood. Chuck (Lucha). Poliwrath Lv. 31." },
+        { "id": "r8e", "text": "HM02 Fly y SecretPotion." }
+      ]
+    },
+    {
+      "title": "Olivine Gym → Lake of Rage",
+      "steps": [
+        { "id": "r9a", "text": "Entrega medicina. Jasmine (Acero). Steelix Lv. 35." },
+        { "id": "r9b", "text": "Mineral Badge. TM23 Iron Tail." },
+        { "id": "r9c", "text": "Mahogany por Route 42. Lake of Rage." },
+        { "id": "r9d", "text": "Gyarados Shiny (Lv. 30). Lance aparece." },
+        { "id": "r9e", "text": "Escondite Rocket con Lance." }
+      ]
+    },
+    {
+      "title": "Mahogany Gym → Radio Tower",
+      "steps": [
+        { "id": "r10a", "text": "Pryce (Hielo). Piloswine Lv. 34. Glacier Badge." },
+        { "id": "r10b", "text": "Team Rocket toma Radio Tower. Vuela a Goldenrod." },
+        { "id": "r10c", "text": "Despeja Radio Tower. Derrota a Ariana y Archer." },
+        { "id": "r10d", "text": "Recibe la Silver Wing (SoulSilver). ¡Puedes capturar a Lugia ANTES de la Liga!" }
+      ]
+    },
+    {
+      "title": "Lugia — Whirl Islands (SoulSilver)",
+      "steps": [
+        { "id": "r10e", "text": "Con la Silver Wing y Tidal Bell, ve a Whirl Islands (entre Olivine y Cianwood)." },
+        { "id": "r10f", "text": "Necesitas Surf, Whirlpool, Strength y Flash." },
+        { "id": "r10g", "text": "Lugia te espera en lo profundo (Lv. 45). Psíquico/Volador con Aeroblast." },
+        { "id": "r10h", "text": "Timer Balls y Dusk Balls (es cueva) son ideales. Pokémon con estado ayudan." }
+      ]
+    },
+    {
+      "title": "Ice Path → Blackthorn City",
+      "steps": [
+        { "id": "r11a", "text": "Route 44 al este desde Mahogany. Ice Path." },
+        { "id": "r11b", "text": "HM07 Waterfall en Ice Path." },
+        { "id": "r11c", "text": "Blackthorn City. Clair (Dragón). Kingdra Lv. 41." },
+        { "id": "r11d", "text": "Dragon's Den. Rising Badge. TM59 Dragon Pulse." }
+      ]
+    },
+    {
+      "title": "Victory Road → Liga Pokémon",
+      "steps": [
+        { "id": "r12a", "text": "Surfea desde New Bark al este. Route 27 y 26." },
+        { "id": "r12b", "text": "Victory Road. Tu Rival te desafía." },
+        { "id": "r12c", "text": "Alto Mando: Will → Koga → Bruno → Karen → Lance." },
+        { "id": "r12d", "text": "¡Campeón de Johto!" }
+      ]
+    },
+    {
+      "title": "Postgame — Kanto",
+      "steps": [
+        { "id": "r13a", "text": "SS Aqua a Vermilion. Explora Kanto." },
+        { "id": "r13b", "text": "8 medallas: Lt. Surge, Sabrina, Erika, Janine, Misty, Brock, Blaine, Blue." },
+        { "id": "r13c", "text": "Ho-Oh disponible en Tin Tower (Lv. 70 en SoulSilver, post-Kanto)." },
+        { "id": "r13d", "text": "Kyogre disponible en Embedded Tower con Blue Orb (Mr. Pokémon, post-Kanto)." }
+      ]
+    },
+    {
+      "title": "Mt. Silver — Red",
+      "steps": [
+        { "id": "r14a", "text": "Con 16 medallas, accede a Mt. Silver." },
+        { "id": "r14b", "text": "Red: Pikachu (88), Lapras (80), Snorlax (82), Venusaur (84), Charizard (84), Blastoise (84)." },
+        { "id": "r14c", "text": "Niveles Lv. 80-88. Sube a Lv. 75+ mínimo." },
+        { "id": "r14d", "text": "¡Derrota a Red para completar el juego!" }
+      ]
+    }
+  ]
+}

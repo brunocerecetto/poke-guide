@@ -1,0 +1,78 @@
+{
+  "sections": [
+    {
+      "title": "Isla Melemele — Inicio",
+      "steps": [
+        { "id": "r1a", "text": "Llegas a Alola. Conoce al Profesor Kukui y elige tu inicial: Rowlet, Litten o Popplio." },
+        { "id": "r1b", "text": "Conoce a Lillie y Nebulilla en el puente de la Ruta 1." },
+        { "id": "r1c", "text": "Recibe la Pokédex Rotom — ahora con Roto-Poderes mejorados." },
+        { "id": "r1d", "text": "Explora la Ruta 1 — captura Pikipek, Yungoos y Grubbin." },
+        { "id": "r1e", "text": "Completa la Prueba de Ilima en la Cueva Verdant (tipo Normal)." },
+        { "id": "r1f", "text": "Gran Prueba contra Hala (tipo Lucha)." },
+        { "id": "r1g", "text": "Recibe la Pulsera Z mejorada." },
+        { "id": "r1h", "text": "Los Ultra Recon Squad aparecen — nueva subtrama sobre Necrozma." }
+      ]
+    },
+    {
+      "title": "Isla Akala — Pruebas",
+      "steps": [
+        { "id": "r2a", "text": "Navega a la Isla Akala — explora Ciudad Heahea." },
+        { "id": "r2b", "text": "Completa la Prueba de Lana: Dominante Araquanid (antes era Wishiwashi)." },
+        { "id": "r2c", "text": "Completa la Prueba de Kiawe: Dominante Alolan Marowak (nuevo)." },
+        { "id": "r2d", "text": "Completa la Prueba de Mallow: Dominante Lurantis." },
+        { "id": "r2e", "text": "Gran Prueba contra Olivia (tipo Roca)." },
+        { "id": "r2f", "text": "Los Ultra Recon Squad hablan más sobre Necrozma y la luz perdida." },
+        { "id": "r2g", "text": "Visita el Centro de Surf Mantine entre islas para puntos extra." }
+      ]
+    },
+    {
+      "title": "Isla Ula'ula — Pruebas",
+      "steps": [
+        { "id": "r3a", "text": "Llega a Ciudad Malie. Nuevo contenido en el jardín." },
+        { "id": "r3b", "text": "Completa la Prueba de Sophocles: Dominante Togedemaru." },
+        { "id": "r3c", "text": "Completa la Prueba de Acerola: Dominante Mimikyu." },
+        { "id": "r3d", "text": "Enfrenta al Equipo Skull en Po Town." },
+        { "id": "r3e", "text": "Gran Prueba contra Nanu (tipo Siniestro)." },
+        { "id": "r3f", "text": "Eventos con Necrozma se intensifican." },
+        { "id": "r3g", "text": "Coliseo de Batalla disponible en la Avenida Real — nueva zona." },
+        { "id": "r3h", "text": "Visita el Parque de Fotos Alola para fotos con tus Pokémon." }
+      ]
+    },
+    {
+      "title": "Fundación Aether y Ultra Megalópolis",
+      "steps": [
+        { "id": "r4a", "text": "Infiltra el Paraíso Aether — Lusamine sigue siendo la villana." },
+        { "id": "r4b", "text": "Necrozma absorbe a Lunala — se transforma en Necrozma Alas del Alba (Ultra Moon)." },
+        { "id": "r4c", "text": "Viaja al Ultra Espacio a través del Ultra Wormhole." },
+        { "id": "r4d", "text": "Llega a Ultra Megalópolis — ciudad sin luz." },
+        { "id": "r4e", "text": "Combate y captura a Ultra Necrozma — ¡nivel 60 y muy peligroso!" },
+        { "id": "r4f", "text": "Consejo: usa Mimikyu con Maldición o un Pokémon con Tóxico + resistencia." },
+        { "id": "r4g", "text": "La luz vuelve a Alola tras la derrota de Ultra Necrozma." }
+      ]
+    },
+    {
+      "title": "Isla Poni → Liga Pokémon",
+      "steps": [
+        { "id": "r5a", "text": "Completa la Gran Prueba de Hapu (tipo Tierra) en la Isla Poni." },
+        { "id": "r5b", "text": "Prueba del Cañón Vast Poni: Dominante Kommo-o." },
+        { "id": "r5c", "text": "Sube el Monte Lanakila — entrena al nivel 58+." },
+        { "id": "r5d", "text": "Derrota al Alto Mando: Molayne (Acero), Olivia, Acerola, Kahili." },
+        { "id": "r5e", "text": "Combate final contra Hau — ¡ahora él es el retador final!" },
+        { "id": "r5f", "text": "Te conviertes en Campeón de Alola." }
+      ]
+    },
+    {
+      "title": "Postgame — Ultra Wormholes y Team Rainbow Rocket",
+      "steps": [
+        { "id": "r6a", "text": "Explora los Ultra Wormholes montando Lunala/Lunala." },
+        { "id": "r6b", "text": "Captura Ultraentes y legendarios de todas las generaciones en los wormholes." },
+        { "id": "r6c", "text": "El Team Rainbow Rocket invade el Paraíso Aether." },
+        { "id": "r6d", "text": "Enfrenta a los líderes villanos de todas las generaciones: Giovanni, Maxie, Archie, Cyrus, Ghetsis, Lysandre." },
+        { "id": "r6e", "text": "Cada líder tiene su legendario — prepara equipos específicos." },
+        { "id": "r6f", "text": "Derrota a Giovanni con Mewtwo como combate final." },
+        { "id": "r6g", "text": "Captura los Pokémon Tapus guardianes de cada isla." },
+        { "id": "r6h", "text": "Surf Mantine, Mansión de Batalla y completar el Pokédex." }
+      ]
+    }
+  ]
+}

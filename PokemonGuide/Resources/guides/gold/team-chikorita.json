@@ -1,0 +1,40 @@
+{
+  "members": [
+    {
+      "name": "Meganium",
+      "moves": ["Razor Leaf", "Body Slam", "PoisonPowder", "Synthesis"],
+      "notes": "Tu starter Planta. Chikorita evoluciona a Bayleef (16) y Meganium (32). Defensivamente sólido pero ofensivamente limitado. Razor Leaf es tu STAB principal. PoisonPowder ayuda contra tanques. Body Slam para coverage neutral. Síntesis para recuperarse.",
+      "emoji": "🌿"
+    },
+    {
+      "name": "Arcanine",
+      "moves": ["Flamethrower", "ExtremeSpeed", "Bite", "Iron Tail"],
+      "notes": "Growlithe en Route 36/37 (Gold exclusivo). Necesitas Fire Stone para evolucionar. Flamethrower es STAB brutal (aprende como Growlithe o TM). ExtremeSpeed tiene prioridad. Bite para Fantasmas. Cubre la debilidad de Meganium al Hielo y Bicho.",
+      "emoji": "🐕‍🦺"
+    },
+    {
+      "name": "Ampharos",
+      "moves": ["Thunderbolt", "Thunder Wave", "Fire Punch", "Light Screen"],
+      "notes": "Mareep en Route 32 muy temprano. Evoluciona: Flaaffy (15), Ampharos (30). Thunderbolt es STAB potente. Thunder Wave paraliza para facilitar capturas. Fire Punch (tutor en Goldenrod) da coverage. Fundamental contra Agua y Volador.",
+      "emoji": "⚡"
+    },
+    {
+      "name": "Espeon",
+      "moves": ["Psychic", "Shadow Ball", "Bite", "Morning Sun"],
+      "notes": "Eevee de Bill en Goldenrod. Evoluciona con felicidad de día. Psychic es STAB devastador con su Special Attack alto. Shadow Ball y Bite cubren Fantasma y Psíquico. Morning Sun para recovery. Velocidad excelente.",
+      "emoji": "🔮"
+    },
+    {
+      "name": "Gyarados",
+      "moves": ["Surf", "Ice Beam", "Dragon Dance", "Earthquake"],
+      "notes": "Gyarados Rojo shiny gratis en Lake of Rage (Lv. 30). O Magikarp con Old Rod muy temprano. Surf como STAB y HM. Ice Beam para Dragones (clave contra Lance). Dragon Dance sube Atk y Speed. Earthquake para Eléctricos.",
+      "emoji": "🐲"
+    },
+    {
+      "name": "Heracross",
+      "moves": ["Megahorn", "Brick Break", "Earthquake", "Rock Slide"],
+      "notes": "Headbutt en árboles de Route 33 o Azalea Town. Bicho/Lucha con Attack brutal. Megahorn destroza Psíquicos. Brick Break para Normal, Roca, Acero. Earthquake para coverage. Clave contra Whitney y Karen.",
+      "emoji": "🪲"
+    }
+  ]
+}

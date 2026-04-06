@@ -1,0 +1,12 @@
+{
+  "gyms": [
+    { "name": "Gimnasio de Santalune", "leader": "Viola", "levelRange": "10-12", "note": "Tipo Bicho. Vivillon con Vendaval puede confundir. Fuego o Volador recomendado.", "badge": "Medalla Bicho" },
+    { "name": "Gimnasio de Cyllage", "leader": "Grant", "levelRange": "25-25", "note": "Tipo Roca. Tyrunt y Amaura. Agua, Planta o Lucha eficaces.", "badge": "Medalla Muro" },
+    { "name": "Gimnasio de Shalour", "leader": "Korrina", "levelRange": "29-32", "note": "Tipo Lucha. Lucario Mega Evoluciona. Volador, Psíquico o Hada.", "badge": "Medalla Lid" },
+    { "name": "Gimnasio de Coumarine", "leader": "Ramos", "levelRange": "30-34", "note": "Tipo Planta. Gogoat es su as. Fuego, Hielo o Volador.", "badge": "Medalla Planta" },
+    { "name": "Gimnasio de Lumiose", "leader": "Clemont", "levelRange": "35-37", "note": "Tipo Eléctrico. Heliolisk es rápido. Tipo Tierra es inmune.", "badge": "Medalla Voltaje" },
+    { "name": "Gimnasio de Laverre", "leader": "Valerie", "levelRange": "38-42", "note": "Tipo Hada. Sylveon es peligroso. Acero o Veneno son ideales.", "badge": "Medalla Hada" },
+    { "name": "Gimnasio de Anistar", "leader": "Olympia", "levelRange": "44-48", "note": "Tipo Psíquico. Meowstic con doble pantalla. Siniestro, Fantasma o Bicho.", "badge": "Medalla Psique" },
+    { "name": "Gimnasio de Snowbelle", "leader": "Wulfric", "levelRange": "56-59", "note": "Tipo Hielo. Avalugg es un tanque. Fuego, Lucha o Acero.", "badge": "Medalla Iceberg" }
+  ]
+}

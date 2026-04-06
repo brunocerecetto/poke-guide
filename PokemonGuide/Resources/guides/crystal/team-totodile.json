@@ -1,0 +1,40 @@
+{
+  "members": [
+    {
+      "name": "Feraligatr",
+      "moves": ["Surf", "Ice Punch", "Earthquake", "Slash"],
+      "notes": "Tu starter Agua. Evoluciona a Croconaw (18) y Feraligatr (30). Surf STAB y HM. Ice Punch destroza Dragones. Earthquake para Eléctricos. Attack alto.",
+      "emoji": "🐊"
+    },
+    {
+      "name": "Arcanine",
+      "moves": ["Flamethrower", "ExtremeSpeed", "Bite", "Iron Tail"],
+      "notes": "Growlithe en Route 36/37 (disponible en Crystal). Fire Stone evoluciona. Flamethrower STAB. ExtremeSpeed prioridad. Cubre debilidad Planta de Feraligatr.",
+      "emoji": "🐕‍🦺"
+    },
+    {
+      "name": "Ampharos",
+      "moves": ["Thunderbolt", "Thunder Wave", "Fire Punch", "Light Screen"],
+      "notes": "Mareep en Route 32. Thunderbolt STAB. Thunder Wave paraliza. Coverage sólido.",
+      "emoji": "⚡"
+    },
+    {
+      "name": "Espeon",
+      "moves": ["Psychic", "Shadow Ball", "Bite", "Morning Sun"],
+      "notes": "Eevee de Bill. Felicidad de día. Psychic STAB Special Attack 130. Clave contra Bruno y Koga.",
+      "emoji": "🔮"
+    },
+    {
+      "name": "Heracross",
+      "moves": ["Megahorn", "Brick Break", "Earthquake", "Rock Slide"],
+      "notes": "Headbutt en Azalea. Bicho/Lucha Attack 125. STABs brutales. Whitney, Karen, Will — todos caen.",
+      "emoji": "🪲"
+    },
+    {
+      "name": "Donphan",
+      "moves": ["Earthquake", "Rock Slide", "Rapid Spin", "Defense Curl"],
+      "notes": "Phanpy en Route 45 (disponible en Crystal). Earthquake STAB. Rock Slide para Voladores. Defensa física enorme. Resistencia Eléctrica complementa a Feraligatr.",
+      "emoji": "🐘"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "members": [
+    {
+      "name": "Meganium",
+      "moves": ["Razor Leaf", "Body Slam", "PoisonPowder", "Synthesis"],
+      "notes": "Tu starter Planta. Evoluciona a Bayleef (16) y Meganium (32). Defensivo pero limitado ofensivamente. Razor Leaf STAB. Synthesis para sustain. PoisonPowder para desgaste.",
+      "emoji": "🌿"
+    },
+    {
+      "name": "Arcanine",
+      "moves": ["Flamethrower", "ExtremeSpeed", "Bite", "Iron Tail"],
+      "notes": "Growlithe en Route 36/37 (disponible en Crystal). Fire Stone para evolucionar. Flamethrower STAB. ExtremeSpeed prioridad. Cubre debilidades Hielo y Bicho de Meganium.",
+      "emoji": "🐕‍🦺"
+    },
+    {
+      "name": "Ampharos",
+      "moves": ["Thunderbolt", "Thunder Wave", "Fire Punch", "Light Screen"],
+      "notes": "Mareep en Route 32 temprano. Thunderbolt STAB. Thunder Wave para paralizar. Fire Punch tutor en Goldenrod. Esencial contra Agua y Volador.",
+      "emoji": "⚡"
+    },
+    {
+      "name": "Suicune",
+      "moves": ["Surf", "Ice Beam", "Rain Dance", "Roar"],
+      "notes": "Captura obligatoria en Tin Tower (Crystal exclusivo, Lv. 40). Agua con defensa especial brutal. Surf STAB y HM. Ice Beam contra Lance. Reemplaza la necesidad de otro Agua.",
+      "emoji": "💎"
+    },
+    {
+      "name": "Espeon",
+      "moves": ["Psychic", "Shadow Ball", "Bite", "Morning Sun"],
+      "notes": "Eevee de Bill en Goldenrod. Felicidad de día. Psychic STAB devastador. Shadow Ball y Bite para coverage. Resuelve Bruno y Koga.",
+      "emoji": "🔮"
+    },
+    {
+      "name": "Heracross",
+      "moves": ["Megahorn", "Brick Break", "Earthquake", "Rock Slide"],
+      "notes": "Headbutt en árboles de Azalea. Bicho/Lucha con Attack 125. Megahorn y Brick Break STABs brutales. Clave contra Whitney, Karen y Will.",
+      "emoji": "🪲"
+    }
+  ]
+}

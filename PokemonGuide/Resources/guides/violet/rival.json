@@ -1,0 +1,30 @@
+{
+  "encounters": [
+    { "location": "Mesagoza (inicio)", "icon": "graduationcap.fill", "team": [
+      { "name": "Quaxly", "level": 5, "dexNumber": 912, "starterCondition": "Si elegiste Sprigatito" },
+      { "name": "Sprigatito", "level": 5, "dexNumber": 906, "starterCondition": "Si elegiste Fuecoco" },
+      { "name": "Fuecoco", "level": 5, "dexNumber": 909, "starterCondition": "Si elegiste Quaxly" }
+    ]},
+    { "location": "Mesagoza (mitad)", "icon": "graduationcap.fill", "team": [
+      { "name": "Lycanroc", "level": 21, "dexNumber": 745, "starterCondition": null },
+      { "name": "Pawmo", "level": 21, "dexNumber": 922, "starterCondition": null },
+      { "name": "Evolución inicial Nemona", "level": 23, "dexNumber": 0, "starterCondition": "Ventaja sobre tu inicial" }
+    ]},
+    { "location": "Mesagoza (pre-Liga)", "icon": "graduationcap.fill", "team": [
+      { "name": "Lycanroc", "level": 55, "dexNumber": 745, "starterCondition": null },
+      { "name": "Pawmot", "level": 55, "dexNumber": 923, "starterCondition": null },
+      { "name": "Goodra", "level": 55, "dexNumber": 706, "starterCondition": null },
+      { "name": "Dudunsparce", "level": 56, "dexNumber": 982, "starterCondition": null },
+      { "name": "Orthworm", "level": 56, "dexNumber": 968, "starterCondition": null },
+      { "name": "Inicial final Nemona", "level": 58, "dexNumber": 0, "starterCondition": "Ventaja sobre tu inicial" }
+    ]},
+    { "location": "Mesagoza (post-Liga)", "icon": "trophy.fill", "team": [
+      { "name": "Lycanroc", "level": 65, "dexNumber": 745, "starterCondition": null },
+      { "name": "Pawmot", "level": 65, "dexNumber": 923, "starterCondition": null },
+      { "name": "Goodra", "level": 65, "dexNumber": 706, "starterCondition": null },
+      { "name": "Dudunsparce", "level": 66, "dexNumber": 982, "starterCondition": null },
+      { "name": "Orthworm", "level": 66, "dexNumber": 968, "starterCondition": null },
+      { "name": "Inicial final Nemona (Tera)", "level": 68, "dexNumber": 0, "starterCondition": "Ventaja sobre tu inicial + Terastalización" }
+    ]}
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "encounters": [
+    {
+      "location": "Laboratorio de Oak",
+      "icon": "flask.fill",
+      "team": [
+        { "name": "Eevee", "level": 5, "dexNumber": 133 }
+      ]
+    },
+    {
+      "location": "Ruta 22",
+      "icon": "figure.walk",
+      "team": [
+        { "name": "Spearow", "level": 9, "dexNumber": 21 },
+        { "name": "Eevee", "level": 8, "dexNumber": 133 }
+      ]
+    },
+    {
+      "location": "Cerulean City",
+      "icon": "building.2.fill",
+      "team": [
+        { "name": "Spearow", "level": 18, "dexNumber": 21 },
+        { "name": "Sandshrew", "level": 15, "dexNumber": 27 },
+        { "name": "Rattata", "level": 15, "dexNumber": 19 },
+        { "name": "Eevee", "level": 17, "dexNumber": 133 }
+      ]
+    },
+    {
+      "location": "SS Anne",
+      "icon": "ferry.fill",
+      "team": [
+        { "name": "Fearow", "level": 25, "dexNumber": 22 },
+        { "name": "Shellder", "level": 23, "dexNumber": 90 },
+        { "name": "Sandshrew", "level": 23, "dexNumber": 27 },
+        { "name": "Vulpix", "level": 23, "dexNumber": 37 },
+        { "name": "Eevee", "level": 25, "dexNumber": 133 }
+      ]
+    },
+    {
+      "location": "Torre Pokémon",
+      "icon": "building.columns.fill",
+      "team": [
+        { "name": "Fearow", "level": 25, "dexNumber": 22 },
+        { "name": "Shellder", "level": 23, "dexNumber": 90 },
+        { "name": "Sandslash", "level": 23, "dexNumber": 28 },
+        { "name": "Vulpix", "level": 23, "dexNumber": 37 },
+        { "name": "Flareon", "level": 25, "dexNumber": 136, "starterCondition": "default" }
+      ]
+    },
+    {
+      "location": "Silph Co.",
+      "icon": "building.fill",
+      "team": [
+        { "name": "Fearow", "level": 37, "dexNumber": 22 },
+        { "name": "Cloyster", "level": 35, "dexNumber": 91 },
+        { "name": "Sandslash", "level": 35, "dexNumber": 28 },
+        { "name": "Ninetales", "level": 35, "dexNumber": 38 },
+        { "name": "Kadabra", "level": 35, "dexNumber": 64 },
+        { "name": "Jolteon", "level": 40, "dexNumber": 135, "starterCondition": "default" }
+      ]
+    },
+    {
+      "location": "Ruta 22 (2do encuentro)",
+      "icon": "figure.walk",
+      "team": [
+        { "name": "Fearow", "level": 47, "dexNumber": 22 },
+        { "name": "Cloyster", "level": 45, "dexNumber": 91 },
+        { "name": "Sandslash", "level": 47, "dexNumber": 28 },
+        { "name": "Ninetales", "level": 47, "dexNumber": 38 },
+        { "name": "Kadabra", "level": 45, "dexNumber": 64 },
+        { "name": "Jolteon", "level": 50, "dexNumber": 135, "starterCondition": "default" }
+      ]
+    },
+    {
+      "location": "Campeón",
+      "icon": "trophy.fill",
+      "team": [
+        { "name": "Sandslash", "level": 61, "dexNumber": 28 },
+        { "name": "Ninetales", "level": 59, "dexNumber": 38 },
+        { "name": "Cloyster", "level": 61, "dexNumber": 91 },
+        { "name": "Alakazam", "level": 59, "dexNumber": 65 },
+        { "name": "Magneton", "level": 59, "dexNumber": 82 },
+        { "name": "Jolteon", "level": 65, "dexNumber": 135, "starterCondition": "default" }
+      ]
+    }
+  ]
+}

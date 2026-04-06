@@ -1,0 +1,10 @@
+{
+  "members": [
+    { "name": "Venusaur", "moves": ["Razor Leaf", "Sleep Powder", "Body Slam", "Swords Dance"], "notes": "Tu starter. Razor Leaf tiene alto critical en Gen 1. Sleep Powder + Swords Dance es combo letal.", "emoji": "🌿" },
+    { "name": "Nidoking", "moves": ["Earthquake", "Thunderbolt", "Ice Beam", "Horn Drill"], "notes": "Nidoran♂ en Route 3. Moon Stone después de Horn Attack (22). TMs le dan coverage insano.", "emoji": "🦏" },
+    { "name": "Ninetales", "moves": ["Flamethrower", "Confuse Ray", "Fire Spin", "Dig"], "notes": "Vulpix en Route 7-8 (exclusivo Blue). Fire Stone después de Flamethrower (35). Confuse Ray es útil.", "emoji": "🦊" },
+    { "name": "Lapras", "moves": ["Surf", "Ice Beam", "Thunderbolt", "Body Slam"], "notes": "Regalo en Silph Co. Tanque Water/Ice excelente para la Liga.", "emoji": "🐋" },
+    { "name": "Snorlax", "moves": ["Body Slam", "Earthquake", "Rest", "Self-Destruct"], "notes": "Captura en Route 12/16 con Poké Flute. Tanque bruto con Rest.", "emoji": "😴" },
+    { "name": "Jolteon", "moves": ["Thunderbolt", "Thunder Wave", "Pin Missile", "Double Kick"], "notes": "Eevee en Celadon Mansion → Thunder Stone. 130 Speed base. Thunderbolt prioridad #1.", "emoji": "⚡" }
+  ]
+}

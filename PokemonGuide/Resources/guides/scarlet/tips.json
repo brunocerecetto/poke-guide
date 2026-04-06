@@ -1,0 +1,12 @@
+{
+  "tips": [
+    { "pokemon": "Mundo Abierto", "rule": "Paldea es completamente abierta. Puedes hacer gimnasios, titanes y bases Star en cualquier orden, pero los niveles son fijos." },
+    { "pokemon": "Orden recomendado", "rule": "Sigue el nivel de los líderes: Katy→Brassius→Iono→Kofu→Larry→Ryme→Tulip→Grusha. Intercala con Titanes y bases Star." },
+    { "pokemon": "Terastalización", "rule": "Cambia el tipo de tu Pokémon al tipo Tera. Potencia ataques del mismo tipo. Recarga en Centros Pokémon o cristales Tera." },
+    { "pokemon": "Let's Go", "rule": "Envía a tu Pokémon líder a combatir automáticamente con R. Perfecto para farmear experiencia y materiales." },
+    { "pokemon": "Koraidon", "rule": "Tu legendario es tu montura desde el inicio. Desbloquea habilidades (nadar, escalar, planear) derrotando Titanes." },
+    { "pokemon": "Palafin", "rule": "Finizen evoluciona en Palafin en modo multijugador. Su Forma Héroe tiene 160 de Ataque — uno de los más altos." },
+    { "pokemon": "Tinkaton", "rule": "Hada/Acero con Mazazo Gigante (160 potencia, tipo Acero). Impreciso pero devastador." },
+    { "pokemon": "Pokémon Paradoja", "rule": "Formas antiguas exclusivas de Scarlet en el Área Cero: Great Tusk, Brute Bonnet, Flutter Mane, etc." }
+  ]
+}

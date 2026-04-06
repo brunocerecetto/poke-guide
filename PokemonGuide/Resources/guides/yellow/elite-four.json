@@ -1,0 +1,9 @@
+{
+  "members": [
+    { "name": "Lorelei", "strategy": "Dewgong 54, Cloyster 53, Slowbro 54, Jynx 56, Lapras 56. Pikachu Thunderbolt barre los Water. Venusaur para Slowbro. Charizard para Jynx.", "levels": "53-56" },
+    { "name": "Bruno", "strategy": "Onix 53, Hitmonchan 55, Hitmonlee 55, Onix 56, Machamp 58. Blastoise Surf para Onix. Venusaur/Exeggutor Psychic para Fighting types.", "levels": "53-58" },
+    { "name": "Agatha", "strategy": "Gengar 56, Golbat 56, Haunter 55, Arbok 58, Gengar 60. Snorlax tanquea Ghost. Nidoking Earthquake para Poison. Awakenings para Hypnosis.", "levels": "55-60" },
+    { "name": "Lance", "strategy": "Gyarados 58, Dragonair 56, Dragonair 56, Aerodactyl 60, Dragonite 62. Blastoise Ice Beam es LA clave. Pikachu Thunderbolt para Gyarados.", "levels": "56-62" },
+    { "name": "Rival (Campeón)", "strategy": "Sandslash, Ninetales, Cloyster, Alakazam, Magneton, Jolteon. El equipo del rival varía según tus resultados previos. Nidoking Earthquake para Jolteon/Magneton. Blastoise Surf para Ninetales/Sandslash.", "levels": "61-65" }
+  ]
+}

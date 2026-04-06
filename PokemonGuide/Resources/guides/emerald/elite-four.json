@@ -1,0 +1,9 @@
+{
+  "members": [
+    { "name": "Sidney", "strategy": "Tipo Lucha es ideal. Breloom o Blaziken barren. Su Absol tiene Espada Santa.", "levels": "46-49" },
+    { "name": "Phoebe", "strategy": "Tipo Siniestro. Sus Dusclops usan Maldición y Presión. Ataques especiales Siniestro.", "levels": "48-51" },
+    { "name": "Glacia", "strategy": "Tipo Fuego o Lucha. Granizo constante. Cuidado con sus dos Glalie.", "levels": "50-53" },
+    { "name": "Drake", "strategy": "Tipo Hielo es devastador. Rayo Hielo barre todo. Su Salamence nivel 55 es la mayor amenaza.", "levels": "52-55" },
+    { "name": "Wallace (Campeón)", "strategy": "Tipo Eléctrico y Planta. Su Milotic es durísimo con Recuperación. Usa Rayo o Gigadrenado. Su equipo incluye Gyarados y Whiscash.", "levels": "55-58" }
+  ]
+}

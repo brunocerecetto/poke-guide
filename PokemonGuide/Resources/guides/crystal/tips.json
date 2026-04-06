@@ -1,0 +1,14 @@
+{
+  "tips": [
+    { "pokemon": "⚡ Ampharos", "rule": "Captura Mareep en Route 32 lo antes posible. Evoluciona temprano y cubre Agua y Volador todo el juego." },
+    { "pokemon": "🐄 Miltank de Whitney", "rule": "Miltank con Rollout es devastadora. Geodude con Magnitude o Thunder Wave antes de Rollout." },
+    { "pokemon": "💎 Suicune", "rule": "En Crystal, Suicune te espera en Tin Tower (Lv. 40) tras obtener la Clear Bell. No necesitas perseguirlo como a Raikou/Entei." },
+    { "pokemon": "👤 Kris", "rule": "Crystal introduce la primera protagonista femenina. No afecta gameplay pero es un hito de la serie." },
+    { "pokemon": "🌟 Gyarados Shiny", "rule": "Gyarados Rojo del Lake of Rage (Lv. 30) es gratis y shiny garantizado. Excelente adición." },
+    { "pokemon": "🐕 Eevee de Bill", "rule": "Bill regala Eevee en Goldenrod. Espeon (felicidad de día) es ideal por Special Attack y velocidad." },
+    { "pokemon": "❄️ Ice Beam para Lance", "rule": "Ice Beam o Ice Punch son CRÍTICOS para los 3 Dragonite de Lance. Suicune con Ice Beam es perfecto." },
+    { "pokemon": "📱 Pokémon móvil", "rule": "Crystal fue el primer juego con eventos online (Mobile Adapter). La versión Virtual Console en 3DS restaura el evento de Celebi." },
+    { "pokemon": "🏔️ Red en Mt. Silver", "rule": "Red tiene Pokémon Lv. 73-81. Necesitas 16 medallas. Sube a Lv. 70+ mínimo." },
+    { "pokemon": "🌳 Odd Egg", "rule": "En Crystal, el Odd Egg del Day Care tiene alta probabilidad de eclosionar shiny. Puede ser Pichu, Cleffa, Igglybuff, Tyrogue, Smoochum, Elekid o Magby." }
+  ]
+}

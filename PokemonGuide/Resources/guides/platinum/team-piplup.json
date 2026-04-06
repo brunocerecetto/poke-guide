@@ -1,0 +1,10 @@
+{
+  "members": [
+    { "name": "Empoleon", "moves": ["Surf", "Destello Cañón", "Rayo Hielo", "Agilidad"], "notes": "Tu starter. Agua/Acero con muchas resistencias. Evoluciona nivel 36.", "emoji": "🐧" },
+    { "name": "Staraptor", "moves": ["A Bocajarro", "Pájaro Osado", "Ida y Vuelta", "Danza Espada"], "notes": "Atrapa Starly en la Ruta 201. El pájaro regional más fuerte.", "emoji": "🦅" },
+    { "name": "Houndoom", "moves": ["Lanzallamas", "Tajo Umbrío", "Onda Certera", "Pulso Umbrío"], "notes": "Nuevo en Platinum. Houndour en la Ruta 214. Fuego/Siniestro.", "emoji": "🔥" },
+    { "name": "Roserade", "moves": ["Gigadrenado", "Bomba Lodo", "Bola Sombra", "Danza Pétalo"], "notes": "Budew en la Ruta 204. Planta/Veneno especial.", "emoji": "🌹" },
+    { "name": "Garchomp", "moves": ["Terremoto", "Garra Dragón", "Roca Afilada", "Danza Espada"], "notes": "Gible en la Cueva Extravío. Dragón/Tierra devastador.", "emoji": "🦈" },
+    { "name": "Gallade", "moves": ["Psicocorte", "A Bocajarro", "Tajo Umbrío", "Danza Espada"], "notes": "Ralts en la Ruta 208. Psíquico/Lucha físico.", "emoji": "⚔️" }
+  ]
+}

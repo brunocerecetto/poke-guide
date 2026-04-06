@@ -1,0 +1,9 @@
+{
+  "members": [
+    { "name": "Molayne", "strategy": "Tipo Acero (reemplaza a Hala en USUM). Fuego, Tierra o Lucha. Metagross es peligroso.", "levels": "56-57" },
+    { "name": "Olivia", "strategy": "Tipo Roca. Agua, Planta o Lucha. Lycanroc Mediodía con Roca Acelerada.", "levels": "56-57" },
+    { "name": "Acerola", "strategy": "Tipo Fantasma. Siniestro o Fantasma. Palossand es Fantasma/Tierra.", "levels": "56-57" },
+    { "name": "Kahili", "strategy": "Tipo Volador. Eléctrico, Roca o Hielo. Toucannon con Pico Cañón.", "levels": "56-57" },
+    { "name": "Hau (Campeón)", "strategy": "Equipo variado con Raichu Alola y el inicial fuerte contra el tuyo. Más fácil que Kukui en SM.", "levels": "58-59" }
+  ]
+}

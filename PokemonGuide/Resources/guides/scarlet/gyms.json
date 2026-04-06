@@ -1,0 +1,12 @@
+{
+  "gyms": [
+    { "name": "Gimnasio de Cortondo", "leader": "Katy", "levelRange": "14-15", "note": "Tipo Bicho. Teddiursa Tera Bicho es su as. Fuego, Volador o Roca.", "badge": "Medalla Bicho" },
+    { "name": "Gimnasio de Artazon", "leader": "Brassius", "levelRange": "16-17", "note": "Tipo Planta. Sudowoodo Tera Planta. Fuego, Hielo o Volador.", "badge": "Medalla Planta" },
+    { "name": "Gimnasio de Levincia", "leader": "Iono", "levelRange": "23-24", "note": "Tipo Eléctrico. Mismagius Tera Eléctrico. Tipo Tierra es inmune.", "badge": "Medalla Eléctrico" },
+    { "name": "Gimnasio de Cascarrafa", "leader": "Kofu", "levelRange": "29-30", "note": "Tipo Agua. Crabominable Tera Agua. Planta o Eléctrico.", "badge": "Medalla Agua" },
+    { "name": "Gimnasio de Medali", "leader": "Larry", "levelRange": "35-36", "note": "Tipo Normal. Staraptor Tera Normal. Lucha es super efectivo.", "badge": "Medalla Normal" },
+    { "name": "Gimnasio de Montenevera", "leader": "Ryme", "levelRange": "41-42", "note": "Tipo Fantasma. Toxtricity Tera Fantasma. Siniestro o Normal (inmune).", "badge": "Medalla Fantasma" },
+    { "name": "Gimnasio de Alfornada", "leader": "Tulip", "levelRange": "44-45", "note": "Tipo Psíquico. Florges Tera Psíquico. Bicho, Fantasma o Siniestro.", "badge": "Medalla Psíquico" },
+    { "name": "Gimnasio de Glaseado", "leader": "Grusha", "levelRange": "47-48", "note": "Tipo Hielo. Altaria Tera Hielo. Fuego, Lucha, Roca o Acero.", "badge": "Medalla Hielo" }
+  ]
+}

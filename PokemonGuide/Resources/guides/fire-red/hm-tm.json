@@ -1,0 +1,21 @@
+{
+  "hms": [
+    { "hm": "Surf", "pokemon": "Blastoise (fijo)", "location": "Safari Zone" },
+    { "hm": "Strength", "pokemon": "Snorlax / Nidoking", "location": "Warden (Gold Teeth)" },
+    { "hm": "Cut", "pokemon": "Slot temporal", "location": "SS Anne" },
+    { "hm": "Fly", "pokemon": "Slot temporal", "location": "Route 16" },
+    { "hm": "Flash", "pokemon": "Opcional", "location": "Aide de Oak (10 spp)" },
+    { "hm": "Rock Smash", "pokemon": "Postgame", "location": "Sevii Islands" },
+    { "hm": "Waterfall", "pokemon": "Postgame", "location": "Sevii Islands" }
+  ],
+  "tms": [
+    { "tm": "TM24 Thunderbolt", "target": "Jolteon", "origin": "Game Corner (4.000 monedas)" },
+    { "tm": "TM13 Ice Beam", "target": "Blastoise", "origin": "Game Corner (4.000 monedas)" },
+    { "tm": "TM35 Flamethrower", "target": "Arcanine", "origin": "Game Corner (4.000 monedas, después de TB+IB)" },
+    { "tm": "TM29 Psychic", "target": "Exeggutor", "origin": "Gratis en Saffron" },
+    { "tm": "TM19 Giga Drain", "target": "Exeggutor", "origin": "Premio de Erika" },
+    { "tm": "TM26 Earthquake", "target": "Nidoking", "origin": "Premio de Giovanni" },
+    { "tm": "TM31 Brick Break", "target": "Nidoking / Snorlax", "origin": "SS Anne / Celadon" },
+    { "tm": "TM30 Shadow Ball", "target": "Snorlax", "origin": "Game Corner (4.500 monedas, lujo)" }
+  ]
+}

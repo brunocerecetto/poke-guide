@@ -1,0 +1,10 @@
+{
+  "members": [
+    { "name": "Infernape", "moves": ["A Bocajarro", "Llamarada", "Puño Trueno", "Onda Certera"], "notes": "Tu starter. Fuego/Lucha rápido y versátil. El mejor starter de Sinnoh.", "emoji": "🔥" },
+    { "name": "Staraptor", "moves": ["A Bocajarro", "Pájaro Osado", "Ida y Vuelta", "Danza Espada"], "notes": "Atrapa Starly en la Ruta 201. Cobertura Volador.", "emoji": "🦅" },
+    { "name": "Roserade", "moves": ["Gigadrenado", "Bomba Lodo", "Bola Sombra", "Danza Pétalo"], "notes": "Atrapa Budew en la Ruta 204. Atacante especial top.", "emoji": "🌹" },
+    { "name": "Gyarados", "moves": ["Cascada", "Terremoto", "Rayo Hielo", "Danza Dragón"], "notes": "Pesca Magikarp. Intimidación + Danza Dragón.", "emoji": "🐉" },
+    { "name": "Garchomp", "moves": ["Terremoto", "Garra Dragón", "Roca Afilada", "Danza Espada"], "notes": "Gible en la Cueva Extravío. El pseudo-legendario de Sinnoh.", "emoji": "🦈" },
+    { "name": "Gallade", "moves": ["Psicocorte", "A Bocajarro", "Tajo Umbrío", "Danza Espada"], "notes": "Ralts en la Ruta 208. Cobertura Psíquico/Lucha.", "emoji": "⚔️" }
+  ]
+}

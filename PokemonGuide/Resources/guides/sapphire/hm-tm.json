@@ -1,0 +1,22 @@
+{
+  "hms": [
+    { "hm": "MO01 Corte", "pokemon": "Breloom / Linoone", "location": "Ciudad Férrica (tras derrotar a Roxanne)" },
+    { "hm": "MO02 Vuelo", "pokemon": "Swellow / Tropius", "location": "Ruta 119 (tras derrotar al Team Aqua)" },
+    { "hm": "MO03 Surf", "pokemon": "Swampert / Walrein", "location": "Ciudad Petalia (tras derrotar a Norman)" },
+    { "hm": "MO04 Fuerza", "pokemon": "Aggron / Hariyama", "location": "Cueva Granito (con Destello)" },
+    { "hm": "MO05 Destello", "pokemon": "Linoone / Beautifly", "location": "Cueva Granito (hombre cerca de la entrada)" },
+    { "hm": "MO06 Golpe Roca", "pokemon": "Aggron / Geodude", "location": "Pueblo Escaso (hombre en una casa)" },
+    { "hm": "MO07 Cascada", "pokemon": "Gyarados / Walrein", "location": "Cueva Origen" },
+    { "hm": "MO08 Buceo", "pokemon": "Walrein / Tentacruel", "location": "Ciudad Algaria (Steven)" }
+  ],
+  "tms": [
+    { "tm": "MT04 Paz Mental", "target": "Gardevoir / Alakazam", "origin": "Ciudad Algaria (tras derrotar a Tate y Liza)" },
+    { "tm": "MT13 Rayo Hielo", "target": "Swampert / Walrein", "origin": "Casino de Ciudad Malvalona" },
+    { "tm": "MT24 Rayo", "target": "Manectric / Gardevoir", "origin": "Casino de Ciudad Malvalona" },
+    { "tm": "MT26 Terremoto", "target": "Swampert / Camerupt", "origin": "Cueva Paseo (piso más profundo)" },
+    { "tm": "MT29 Psíquico", "target": "Gardevoir / Alakazam", "origin": "Centro Comercial de Ciudad Calagua" },
+    { "tm": "MT35 Lanzallamas", "target": "Blaziken / Camerupt", "origin": "Casino de Ciudad Malvalona" },
+    { "tm": "MT36 Bomba Lodo", "target": "Crobat / Tentacruel", "origin": "Ruta 123 (tras Surf)" },
+    { "tm": "MT37 Tormenta de Arena", "target": "Camerupt / Claydol", "origin": "Desierto de la Ruta 111" }
+  ]
+}

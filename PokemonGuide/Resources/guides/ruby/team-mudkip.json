@@ -1,0 +1,10 @@
+{
+  "members": [
+    { "name": "Swampert", "moves": ["Surf", "Terremoto", "Rayo Hielo", "Avalancha"], "notes": "Tu starter. Solo debilidad a Planta. Evoluciona a Marshtomp nivel 16, Swampert nivel 36.", "emoji": "💧" },
+    { "name": "Swellow", "moves": ["Golpe Aéreo", "Fachada", "Ala de Acero", "Esfuerzo"], "notes": "Atrapa Taillow en la Ruta 104. Velocidad y poder aéreo para el equipo.", "emoji": "🐦" },
+    { "name": "Breloom", "moves": ["Puño Semilla", "Gancho Alto", "Espora", "Demolición"], "notes": "Atrapa Shroomish en el Bosque Petalia. Espora + Puño Semilla es letal.", "emoji": "🍄" },
+    { "name": "Manectric", "moves": ["Rayo", "Onda Voltio", "Mordisco", "Aullido"], "notes": "Atrapa Electrike en la Ruta 110. Cobertura eléctrica para tipos Agua y Volador.", "emoji": "⚡" },
+    { "name": "Camerupt", "moves": ["Terremoto", "Erupción", "Pedrada", "Lanzallamas"], "notes": "Atrapa Numel en la Ruta 112. Tipo Fuego/Tierra complementa bien a Swampert.", "emoji": "🌋" },
+    { "name": "Gardevoir", "moves": ["Psíquico", "Paz Mental", "Bola Sombra", "Rayo"], "notes": "Atrapa Ralts en la Ruta 102. Ataque especial brutal tras Paz Mental.", "emoji": "🔮" }
+  ]
+}

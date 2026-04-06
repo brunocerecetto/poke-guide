@@ -1,0 +1,31 @@
+{
+  "encounters": [
+    { "location": "Pueblo Aspertia", "icon": "house.fill", "team": [
+      { "name": "Tepig", "level": 5, "dexNumber": 498, "starterCondition": "Si elegiste Snivy" },
+      { "name": "Oshawott", "level": 5, "dexNumber": 501, "starterCondition": "Si elegiste Tepig" },
+      { "name": "Snivy", "level": 5, "dexNumber": 495, "starterCondition": "Si elegiste Oshawott" }
+    ]},
+    { "location": "Ruta 20", "icon": "figure.walk", "team": [
+      { "name": "Inicial de Hugh", "level": 8, "dexNumber": 0, "starterCondition": "Ventaja sobre tu inicial" },
+      { "name": "Purrloin", "level": 8, "dexNumber": 509, "starterCondition": null }
+    ]},
+    { "location": "Ciudad Castelia", "icon": "building.2.fill", "team": [
+      { "name": "Evolución inicial Hugh", "level": 20, "dexNumber": 0, "starterCondition": "Ventaja sobre tu inicial" },
+      { "name": "Tranquill", "level": 18, "dexNumber": 520, "starterCondition": null },
+      { "name": "Simipour/Simisage/Simisear", "level": 18, "dexNumber": 0, "starterCondition": "Depende de tu inicial" }
+    ]},
+    { "location": "Ruta 6", "icon": "figure.walk", "team": [
+      { "name": "Evolución inicial Hugh", "level": 33, "dexNumber": 0, "starterCondition": "Ventaja sobre tu inicial" },
+      { "name": "Unfezant", "level": 31, "dexNumber": 521, "starterCondition": null },
+      { "name": "Simipour/Simisage/Simisear", "level": 31, "dexNumber": 0, "starterCondition": "Depende de tu inicial" },
+      { "name": "Bouffalant", "level": 31, "dexNumber": 626, "starterCondition": null }
+    ]},
+    { "location": "Ruta de la Victoria", "icon": "mountain.2.fill", "team": [
+      { "name": "Inicial final Hugh", "level": 50, "dexNumber": 0, "starterCondition": "Ventaja sobre tu inicial" },
+      { "name": "Unfezant", "level": 48, "dexNumber": 521, "starterCondition": null },
+      { "name": "Simipour/Simisage/Simisear", "level": 48, "dexNumber": 0, "starterCondition": "Depende de tu inicial" },
+      { "name": "Bouffalant", "level": 48, "dexNumber": 626, "starterCondition": null },
+      { "name": "Eelektross", "level": 49, "dexNumber": 604, "starterCondition": null }
+    ]}
+  ]
+}

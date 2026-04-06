@@ -1,0 +1,90 @@
+{
+  "sections": [
+    {
+      "title": "Pueblo Postwick → Ciudad Motostoke",
+      "steps": [
+        { "id": "r1a", "text": "Elige tu inicial: Grookey, Scorbunny o Sobble." },
+        { "id": "r1b", "text": "Conoce a Hop (tu rival) y al Campeón Leon, su hermano." },
+        { "id": "r1c", "text": "Encuentra a un Pokémon misterioso en el Bosque Slumbering." },
+        { "id": "r1d", "text": "Recibe tu endoso para el Desafío de Gimnasios de Leon." },
+        { "id": "r1e", "text": "Avanza por la Ruta 1 y la Ruta 2 — captura Pokémon variados." },
+        { "id": "r1f", "text": "Llega a la Área Silvestre — zona abierta con Pokémon de todos los niveles." },
+        { "id": "r1g", "text": "¡Cuidado! Los Pokémon de nivel alto en el Área Silvestre pueden destruirte." },
+        { "id": "r1h", "text": "Llega a Ciudad Motostoke para la ceremonia de apertura." }
+      ]
+    },
+    {
+      "title": "Turffield → Hulbury",
+      "steps": [
+        { "id": "r2a", "text": "Atraviesa la Mina de Galar hacia Turffield." },
+        { "id": "r2b", "text": "Derrota a Milo en el Gimnasio de tipo Planta — primer combate Dynamax." },
+        { "id": "r2c", "text": "Recibe tu Pulsera Dynamax después del combate." },
+        { "id": "r2d", "text": "Avanza por la Ruta 5 hacia Hulbury." },
+        { "id": "r2e", "text": "Derrota a Nessa en el Gimnasio de tipo Agua." },
+        { "id": "r2f", "text": "Nessa Dynamaxea su Drednaw — usa Planta o Eléctrico." },
+        { "id": "r2g", "text": "Combate contra Hop en la salida de la ciudad." }
+      ]
+    },
+    {
+      "title": "Motostoke → Stow-on-Side",
+      "steps": [
+        { "id": "r3a", "text": "Derrota a Kabu en el Gimnasio de tipo Fuego en Motostoke." },
+        { "id": "r3b", "text": "Kabu es el primer desafío real — su Centiskorch Gigamax es peligroso." },
+        { "id": "r3c", "text": "Cruza el Área Silvestre hacia Hammerlocke." },
+        { "id": "r3d", "text": "Explora Hammerlocke — la ciudad del dragón." },
+        { "id": "r3e", "text": "Atraviesa la Ruta 6 hacia Stow-on-Side." },
+        { "id": "r3f", "text": "Derrota a Bea (Sword - tipo Lucha) en el Gimnasio." },
+        { "id": "r3g", "text": "Bea Dynamaxea Machamp — usa Volador o Psíquico." },
+        { "id": "r3h", "text": "Encuentro con Bede — rival problemático." }
+      ]
+    },
+    {
+      "title": "Ballonlea → Circhester",
+      "steps": [
+        { "id": "r4a", "text": "Atraviesa el Bosque Glimwood Tangle — captura Pokémon Hada." },
+        { "id": "r4b", "text": "Derrota a Opal en el Gimnasio de tipo Hada en Ballonlea." },
+        { "id": "r4c", "text": "Opal hace preguntas durante el combate — responde bien para bonificaciones." },
+        { "id": "r4d", "text": "Avanza por la Ruta 7 hacia Circhester." },
+        { "id": "r4e", "text": "Derrota a Gordie (Sword - tipo Roca) en el Gimnasio." },
+        { "id": "r4f", "text": "Gordie Dynamaxea Coalossal — Agua es super efectivo (x4)." },
+        { "id": "r4g", "text": "Descubre más sobre la leyenda de los héroes y los Pokémon legendarios." }
+      ]
+    },
+    {
+      "title": "Spikemuth → Hammerlocke",
+      "steps": [
+        { "id": "r5a", "text": "Avanza hacia Spikemuth — ciudad sin estadio." },
+        { "id": "r5b", "text": "Derrota a Piers en el Gimnasio de tipo Siniestro — no hay Dynamax aquí." },
+        { "id": "r5c", "text": "Piers usa Obstagoon — tipo Lucha es ideal." },
+        { "id": "r5d", "text": "Derrota a Raihan en el Gimnasio de tipo Dragón en Hammerlocke." },
+        { "id": "r5e", "text": "Raihan usa clima (Tormenta de Arena) con Dynamax. Difícil." },
+        { "id": "r5f", "text": "Necesitas Hielo o Hada para sus Dragones." },
+        { "id": "r5g", "text": "Desbloqueas la Copa del Campeón." }
+      ]
+    },
+    {
+      "title": "Copa del Campeón → Clímax",
+      "steps": [
+        { "id": "r6a", "text": "Participa en las semifinales de la Copa del Campeón." },
+        { "id": "r6b", "text": "Derrota a Marnie y Hop en las eliminatorias." },
+        { "id": "r6c", "text": "El Presidente Rose desata el Darkest Day — Eternatus se libera." },
+        { "id": "r6d", "text": "Sube la Torre de Energía — enfrenta a Rose." },
+        { "id": "r6e", "text": "Captura a Eternatus — Veneno/Dragón. Captura garantizada." },
+        { "id": "r6f", "text": "Combate final contra el Campeón Leon." },
+        { "id": "r6g", "text": "Leon tiene un equipo variado. Su Charizard Gigamax es su as.", "id": "r6g" },
+        { "id": "r6h", "text": "¡Te conviertes en el nuevo Campeón de Galar!" }
+      ]
+    },
+    {
+      "title": "Postgame",
+      "steps": [
+        { "id": "r7a", "text": "Completa la historia de los hermanos legendarios." },
+        { "id": "r7b", "text": "Captura a Zacian (Sword) con la Espada Oxidada." },
+        { "id": "r7c", "text": "Participa en torneos del Campeonato — retadores aleatorios." },
+        { "id": "r7d", "text": "Explora el Área Silvestre — Raids Dynamax para Pokémon raros." },
+        { "id": "r7e", "text": "Completa el Pokédex de Galar (400 Pokémon)." },
+        { "id": "r7f", "text": "DLC: Isla de la Armadura y Las Nieves de la Corona (contenido adicional)." }
+      ]
+    }
+  ]
+}

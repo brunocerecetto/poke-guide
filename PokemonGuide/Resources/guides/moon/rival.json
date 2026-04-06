@@ -1,0 +1,25 @@
+{
+  "encounters": [
+    { "location": "Ruta 1", "icon": "figure.walk", "team": [
+      { "name": "Popplio", "level": 5, "dexNumber": 728, "starterCondition": "Si elegiste Rowlet" },
+      { "name": "Rowlet", "level": 5, "dexNumber": 722, "starterCondition": "Si elegiste Litten" },
+      { "name": "Litten", "level": 5, "dexNumber": 725, "starterCondition": "Si elegiste Popplio" }
+    ]},
+    { "location": "Ciudad Heahea", "icon": "building.2.fill", "team": [
+      { "name": "Pikachu", "level": 15, "dexNumber": 25, "starterCondition": null },
+      { "name": "Evolución inicial Hau", "level": 16, "dexNumber": 0, "starterCondition": "Débil a tu inicial" }
+    ]},
+    { "location": "Ciudad Malie", "icon": "building.2.fill", "team": [
+      { "name": "Raichu Alola", "level": 28, "dexNumber": 26, "starterCondition": null },
+      { "name": "Flareon/Vaporeon/Leafeon", "level": 28, "dexNumber": 0, "starterCondition": "Depende de tu inicial" },
+      { "name": "Evolución inicial Hau", "level": 29, "dexNumber": 0, "starterCondition": "Débil a tu inicial" }
+    ]},
+    { "location": "Monte Lanakila", "icon": "mountain.2.fill", "team": [
+      { "name": "Raichu Alola", "level": 53, "dexNumber": 26, "starterCondition": null },
+      { "name": "Flareon/Vaporeon/Leafeon", "level": 53, "dexNumber": 0, "starterCondition": "Depende de tu inicial" },
+      { "name": "Crabominable", "level": 53, "dexNumber": 740, "starterCondition": null },
+      { "name": "Tauros", "level": 53, "dexNumber": 128, "starterCondition": null },
+      { "name": "Inicial final Hau", "level": 55, "dexNumber": 0, "starterCondition": "Débil a tu inicial" }
+    ]}
+  ]
+}

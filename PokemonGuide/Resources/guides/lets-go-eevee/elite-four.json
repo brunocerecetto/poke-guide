@@ -1,0 +1,9 @@
+{
+  "members": [
+    { "name": "Lorelei", "strategy": "Tipo Hielo. Eléctrico, Lucha o Roca. Lapras es Agua/Hielo — usa Planta o Eléctrico.", "levels": "51-52" },
+    { "name": "Bruno", "strategy": "Tipo Lucha. Psíquico, Volador o Hada. Sus dos Onix son débiles a Agua o Planta.", "levels": "52-53" },
+    { "name": "Agatha", "strategy": "Tipo Fantasma (Veneno). Tierra o Psíquico son muy efectivos. Gengar es rápido.", "levels": "53-54" },
+    { "name": "Lance", "strategy": "Tipo Dragón. Hielo es super efectivo contra casi todo su equipo. Rayo Hielo o Ventisca.", "levels": "54-55" },
+    { "name": "Trace (Rival)", "strategy": "Equipo variado con Eevee compañero como as. Eevee usa movimientos exclusivos de múltiples tipos.", "levels": "56-57" }
+  ]
+}

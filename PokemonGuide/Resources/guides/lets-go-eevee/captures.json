@@ -1,0 +1,14 @@
+{
+  "captures": [
+    { "pokemon": "Bulbasaur", "location": "Ciudad Celeste (regalo)", "note": "Necesitas haber capturado cierta cantidad de Pokémon. Planta/Veneno." },
+    { "pokemon": "Charmander", "location": "Ruta 24 (regalo)", "note": "Fuego. Evoluciona en Charizard — puedes montarlo para volar." },
+    { "pokemon": "Squirtle", "location": "Agente Jenny en Ciudad Carmín (regalo)", "note": "Agua. Blastoise es un tanque sólido." },
+    { "pokemon": "Pikachu salvaje", "location": "Bosque Viridian", "note": "Puedes capturar Pikachu salvajes además de tu compañero." },
+    { "pokemon": "Alolan Forms", "location": "Intercambios en Centros Pokémon", "note": "Intercambia Pokémon Kanto por sus formas Alola en varias ciudades." },
+    { "pokemon": "Snorlax", "location": "Ruta 12 / Ruta 16", "note": "Despiértalo con la Poké Flauta. Tanque Normal." },
+    { "pokemon": "Lapras", "location": "Silph Co. (regalo)", "note": "Agua/Hielo. Excelente cobertura especial." },
+    { "pokemon": "Articuno", "location": "Islas Espuma", "note": "Legendario Hielo/Volador." },
+    { "pokemon": "Zapdos", "location": "Central Eléctrica", "note": "Legendario Eléctrico/Volador." },
+    { "pokemon": "Mewtwo", "location": "Cueva Celeste (postgame)", "note": "Legendario Psíquico. El Pokémon más fuerte del juego." }
+  ]
+}

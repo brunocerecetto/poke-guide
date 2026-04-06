@@ -1,0 +1,10 @@
+{
+  "members": [
+    { "name": "Swampert", "moves": ["Surf", "Terremoto", "Rayo Hielo", "Avalancha"], "notes": "Tu starter. Solo débil a Planta. Evoluciona a Marshtomp nivel 16, Swampert nivel 36.", "emoji": "💧" },
+    { "name": "Swellow", "moves": ["Golpe Aéreo", "Fachada", "Ala de Acero", "Esfuerzo"], "notes": "Atrapa Taillow en la Ruta 104. Rápido y potente.", "emoji": "🐦" },
+    { "name": "Breloom", "moves": ["Puño Semilla", "Gancho Alto", "Espora", "Demolición"], "notes": "Atrapa Shroomish en el Bosque Petalia. Espora es el mejor movimiento de estado.", "emoji": "🍄" },
+    { "name": "Manectric", "moves": ["Rayo", "Onda Voltio", "Mordisco", "Aullido"], "notes": "Atrapa Electrike en la Ruta 110. Cobertura Eléctrica.", "emoji": "⚡" },
+    { "name": "Sableye", "moves": ["Bola Sombra", "Tajo Umbrío", "Puño Fuego", "Recuperación"], "notes": "Exclusivo de Sapphire. Sin debilidades en Gen 3. Encuéntralo en la Cueva Granito.", "emoji": "💎" },
+    { "name": "Gardevoir", "moves": ["Psíquico", "Paz Mental", "Bola Sombra", "Rayo"], "notes": "Atrapa Ralts en la Ruta 102. Poderoso atacante especial.", "emoji": "🔮" }
+  ]
+}

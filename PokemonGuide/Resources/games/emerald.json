@@ -1,0 +1,37 @@
+{
+  "id": "emerald",
+  "name": "Pokémon Emerald",
+  "generation": 3,
+  "region": "Hoenn",
+  "releaseYear": 2004,
+  "platform": "GBA",
+  "accentColor": "#2E8B57",
+  "secondaryColor": "#1C6B3F",
+  "icon": "sparkles",
+  "starters": [
+    { "dexNumber": 252, "name": "Treecko" },
+    { "dexNumber": 255, "name": "Torchic" },
+    { "dexNumber": 258, "name": "Mudkip" }
+  ],
+  "gymCount": 8,
+  "hasEliteFour": true,
+  "hasChampion": true,
+  "regionalDex": [
+    { "regionalNumber": 1, "nationalDex": 252, "location": "Pueblo Raíz (inicial)" },
+    { "regionalNumber": 2, "nationalDex": 253, "location": "Evolucionar Treecko" },
+    { "regionalNumber": 3, "nationalDex": 254, "location": "Evolucionar Grovyle" },
+    { "regionalNumber": 4, "nationalDex": 255, "location": "Pueblo Raíz (inicial)" },
+    { "regionalNumber": 5, "nationalDex": 256, "location": "Evolucionar Torchic" },
+    { "regionalNumber": 6, "nationalDex": 257, "location": "Evolucionar Combusken" },
+    { "regionalNumber": 7, "nationalDex": 258, "location": "Pueblo Raíz (inicial)" },
+    { "regionalNumber": 8, "nationalDex": 259, "location": "Evolucionar Mudkip" },
+    { "regionalNumber": 9, "nationalDex": 260, "location": "Evolucionar Marshtomp" },
+    { "regionalNumber": 10, "nationalDex": 261, "location": "Ruta 101" },
+    { "regionalNumber": 11, "nationalDex": 262, "location": "Evolucionar Poochyena" },
+    { "regionalNumber": 12, "nationalDex": 263, "location": "Ruta 101" },
+    { "regionalNumber": 13, "nationalDex": 264, "location": "Evolucionar Zigzagoon" },
+    { "regionalNumber": 14, "nationalDex": 265, "location": "Ruta 101" },
+    { "regionalNumber": 15, "nationalDex": 266, "location": "Evolucionar Wurmple" }
+  ],
+  "versionExclusives": {}
+}

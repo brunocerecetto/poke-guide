@@ -1,0 +1,40 @@
+{
+  "id": "leaf-green",
+  "name": "Pokémon Leaf Green",
+  "generation": 1,
+  "region": "Kanto",
+  "releaseYear": 2004,
+  "platform": "GBA",
+  "accentColor": "#3DA542",
+  "secondaryColor": "#1B7A20",
+  "icon": "leaf.fill",
+  "starters": [
+    { "dexNumber": 1, "name": "Bulbasaur" },
+    { "dexNumber": 4, "name": "Charmander" },
+    { "dexNumber": 7, "name": "Squirtle" }
+  ],
+  "gymCount": 8,
+  "hasEliteFour": true,
+  "hasChampion": true,
+  "regionalDex": [
+    { "regionalNumber": 1, "nationalDex": 1, "location": "Pueblo Paleta (inicial)" },
+    { "regionalNumber": 2, "nationalDex": 2, "location": "Evolucionar Bulbasaur" },
+    { "regionalNumber": 3, "nationalDex": 3, "location": "Evolucionar Ivysaur" },
+    { "regionalNumber": 4, "nationalDex": 4, "location": "Pueblo Paleta (inicial)" },
+    { "regionalNumber": 5, "nationalDex": 5, "location": "Evolucionar Charmander" },
+    { "regionalNumber": 6, "nationalDex": 6, "location": "Evolucionar Charmeleon" },
+    { "regionalNumber": 7, "nationalDex": 7, "location": "Pueblo Paleta (inicial)" },
+    { "regionalNumber": 8, "nationalDex": 8, "location": "Evolucionar Squirtle" },
+    { "regionalNumber": 9, "nationalDex": 9, "location": "Evolucionar Wartortle" },
+    { "regionalNumber": 10, "nationalDex": 10, "location": "Bosque Verde" },
+    { "regionalNumber": 11, "nationalDex": 11, "location": "Evolucionar Caterpie" },
+    { "regionalNumber": 12, "nationalDex": 12, "location": "Evolucionar Metapod" },
+    { "regionalNumber": 13, "nationalDex": 13, "location": "Bosque Verde" },
+    { "regionalNumber": 14, "nationalDex": 14, "location": "Evolucionar Weedle" },
+    { "regionalNumber": 15, "nationalDex": 15, "location": "Evolucionar Kakuna" }
+  ],
+  "versionExclusives": {
+    "leaf-green": [27, 28, 37, 38, 69, 70, 71, 79, 80, 120, 121, 126, 127],
+    "fire-red": [23, 24, 43, 44, 45, 54, 55, 58, 59, 90, 91, 123, 125]
+  }
+}

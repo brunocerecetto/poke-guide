@@ -1,0 +1,10 @@
+{
+  "members": [
+    { "name": "Venusaur", "moves": ["Razor Leaf", "Sleep Powder", "Body Slam", "Swords Dance"], "notes": "Tu starter. Razor Leaf tiene alto critical en Gen 1. Sleep Powder + Swords Dance es combo letal.", "emoji": "🌿" },
+    { "name": "Nidoking", "moves": ["Earthquake", "Thunderbolt", "Ice Beam", "Horn Drill"], "notes": "Nidoran♂ en Route 3. Moon Stone después de Horn Attack (22). Coverage increíble con TMs.", "emoji": "🦏" },
+    { "name": "Arcanine", "moves": ["Flamethrower", "Body Slam", "Dig", "Fire Blast"], "notes": "Growlithe en Route 7-8 (exclusivo Red). Fire Stone después de Flamethrower (50) o usar TM.", "emoji": "🐕" },
+    { "name": "Lapras", "moves": ["Surf", "Ice Beam", "Thunderbolt", "Body Slam"], "notes": "Regalo en Silph Co. Excelente coverage Water/Ice. Tanque especial para la Liga.", "emoji": "🐋" },
+    { "name": "Snorlax", "moves": ["Body Slam", "Earthquake", "Rest", "Self-Destruct"], "notes": "Captura en Route 12/16 con Poké Flute. Tanque bruto. Rest para curación.", "emoji": "😴" },
+    { "name": "Jolteon", "moves": ["Thunderbolt", "Thunder Wave", "Pin Missile", "Double Kick"], "notes": "Eevee en Celadon Mansion → Thunder Stone. El más rápido del equipo. Pin Missile para Exeggutor.", "emoji": "⚡" }
+  ]
+}

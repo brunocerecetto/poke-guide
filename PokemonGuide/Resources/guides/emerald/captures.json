@@ -1,0 +1,14 @@
+{
+  "captures": [
+    { "pokemon": "Ralts", "location": "Ruta 102", "note": "4% de aparición. Gardevoir es top tier." },
+    { "pokemon": "Shroomish", "location": "Bosque Petalia", "note": "Breloom con Espora es imprescindible." },
+    { "pokemon": "Aron", "location": "Cueva Granito", "note": "Aggron es un tanque físico brutal." },
+    { "pokemon": "Electrike", "location": "Ruta 110", "note": "Manectric — mejor Eléctrico temprano." },
+    { "pokemon": "Trapinch", "location": "Desierto Ruta 111", "note": "Flygon es Tierra/Dragón excelente." },
+    { "pokemon": "Spheal", "location": "Cueva Paseo", "note": "Walrein es un tanque Agua/Hielo." },
+    { "pokemon": "Bagon", "location": "Cueva Meteoro", "note": "Salamence es brutal. Evoluciona nivel 50." },
+    { "pokemon": "Rayquaza", "location": "Pilar Celeste", "note": "Nivel 70. Tipo Dragón/Volador legendario." },
+    { "pokemon": "Groudon", "location": "Terra Cave (postgame)", "note": "Nivel 70. Aparece cuando hay sol intenso en una ruta." },
+    { "pokemon": "Kyogre", "location": "Marine Cave (postgame)", "note": "Nivel 70. Aparece cuando hay lluvia intensa en una ruta." }
+  ]
+}

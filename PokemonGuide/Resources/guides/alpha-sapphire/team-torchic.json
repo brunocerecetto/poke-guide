@@ -1,0 +1,10 @@
+{
+  "members": [
+    { "name": "Mega Blaziken", "moves": ["Patada Ígnea", "A Bocajarro", "Patada Salto Alta", "Danza Espada"], "notes": "Tu starter. Mega con Impulso. Fuego/Lucha devastador.", "emoji": "🔥" },
+    { "name": "Swellow", "moves": ["Pájaro Osado", "Fachada", "Ida y Vuelta", "Esfuerzo"], "notes": "Atrapa Taillow en la Ruta 104. Velocidad pura.", "emoji": "🐦" },
+    { "name": "Ludicolo", "moves": ["Surf", "Gigadrenado", "Rayo Hielo", "Danza Lluvia"], "notes": "Exclusivo de Alpha Sapphire. Lotad en Ruta 102. Agua/Planta.", "emoji": "🌺" },
+    { "name": "Mega Aggron", "moves": ["Cabeza de Hierro", "Terremoto", "Avalancha", "Corpulencia"], "notes": "Atrapa Aron en la Cueva Granito. Tanque con Filtro.", "emoji": "🦏" },
+    { "name": "Gardevoir", "moves": ["Psíquico", "Fuerza Lunar", "Bola Sombra", "Paz Mental"], "notes": "Atrapa Ralts en la Ruta 102. Psíquico/Hada. Puede Mega.", "emoji": "🔮" },
+    { "name": "Flygon", "moves": ["Terremoto", "Garra Dragón", "Lanzallamas", "Ida y Vuelta"], "notes": "Atrapa Trapinch en la Ruta 111. Tierra/Dragón con Levitación.", "emoji": "🐲" }
+  ]
+}

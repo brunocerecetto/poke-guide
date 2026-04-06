@@ -1,0 +1,10 @@
+{
+  "members": [
+    { "name": "Pikachu", "moves": ["Thunderbolt", "Thunder Wave", "Quick Attack", "Slam"], "notes": "Tu starter fijo. NO puede evolucionar a Raichu en Yellow. Thunderbolt por nivel (26). Rápido pero frágil. Thunder Wave paraliza todo.", "emoji": "⚡" },
+    { "name": "Venusaur", "moves": ["Razor Leaf", "Sleep Powder", "Body Slam", "Swords Dance"], "notes": "Bulbasaur regalo en Cerulean (Pikachu feliz). Razor Leaf tiene alto critical en Gen 1. Sleep Powder es clutch.", "emoji": "🌿" },
+    { "name": "Charizard", "moves": ["Flamethrower", "Slash", "Dig", "Fire Blast"], "notes": "Charmander regalo en Route 24. Flamethrower a nv 46. Slash tiene alto critical. Coverage Fire/Ground.", "emoji": "🔥" },
+    { "name": "Blastoise", "moves": ["Surf", "Ice Beam", "Body Slam", "Earthquake"], "notes": "Squirtle regalo de Oficial Jenny (después de badge de Surge). Ice Beam CLAVE para Lance.", "emoji": "🐢" },
+    { "name": "Nidoking", "moves": ["Earthquake", "Thunderbolt", "Ice Beam", "Horn Drill"], "notes": "Nidoran♂ en Route 22. Coverage legendario con TMs. Core del equipo desde temprano.", "emoji": "🦏" },
+    { "name": "Snorlax", "moves": ["Body Slam", "Earthquake", "Rest", "Self-Destruct"], "notes": "Route 12/16. Tanque bruto. Clave contra Sabrina y Agatha. Rest para curación.", "emoji": "😴" }
+  ]
+}

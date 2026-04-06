@@ -1,0 +1,99 @@
+{
+  "sections": [
+    {
+      "title": "Isla Melemele — Inicio",
+      "steps": [
+        { "id": "r1a", "text": "Llegas a Alola desde Kanto. Conoce al Profesor Kukui." },
+        { "id": "r1b", "text": "Elige tu inicial: Rowlet, Litten o Popplio." },
+        { "id": "r1c", "text": "Conoce a Lillie y Nebulilla (Cosmog) en el puente." },
+        { "id": "r1d", "text": "Recibe tu Pokédex Rotom del Profesor Kukui." },
+        { "id": "r1e", "text": "Explora la Ruta 1 y la Escuela de Entrenadores." },
+        { "id": "r1f", "text": "Captura Pokémon en la hierba — Pikipek y Yungoos disponibles." },
+        { "id": "r1g", "text": "Recibe la Pulsera Z del Kahuna Hala." }
+      ]
+    },
+    {
+      "title": "Isla Melemele — Pruebas",
+      "steps": [
+        { "id": "r2a", "text": "Completa la Prueba de Ilima en la Cueva Verdant: tipo Normal." },
+        { "id": "r2b", "text": "Derrota al Pokémon Dominante Raticate Alola (Moon) o Gumshoos (Sun)." },
+        { "id": "r2c", "text": "Recibe el Cristal Z de tipo Normal: Giga-Impacto Z." },
+        { "id": "r2d", "text": "Enfrenta al Equipo Skull por primera vez." },
+        { "id": "r2e", "text": "Combate contra el Kahuna Hala (tipo Lucha) — Gran Prueba de Melemele." },
+        { "id": "r2f", "text": "Recibe el Cristal Z de Lucha y desbloqueas montar Tauros." },
+        { "id": "r2g", "text": "Navega hacia la Isla Akala." }
+      ]
+    },
+    {
+      "title": "Isla Akala — Pruebas",
+      "steps": [
+        { "id": "r3a", "text": "Llega a Ciudad Heahea. Conoce a Olivia y Mallow." },
+        { "id": "r3b", "text": "Completa la Prueba de Lana en el Estanque Brooklet: tipo Agua." },
+        { "id": "r3c", "text": "Derrota al Dominante Wishiwashi (forma Escuela) — tiene muchos PV." },
+        { "id": "r3d", "text": "Completa la Prueba de Kiawe en el Volcán Wela: tipo Fuego." },
+        { "id": "r3e", "text": "Derrota al Dominante Salazzle — cuidado con Veneno." },
+        { "id": "r3f", "text": "Completa la Prueba de Mallow en la Jungla Lush: tipo Planta." },
+        { "id": "r3g", "text": "Derrota al Dominante Lurantis — sorprendentemente fuerte." },
+        { "id": "r3h", "text": "Gran Prueba contra Olivia (tipo Roca). Agua o Planta recomendado." }
+      ]
+    },
+    {
+      "title": "Isla Ula'ula — Pruebas",
+      "steps": [
+        { "id": "r4a", "text": "Llega a la Isla Ula'ula. Explora Ciudad Malie." },
+        { "id": "r4b", "text": "Combate contra el rival Hau en el jardín de Ciudad Malie." },
+        { "id": "r4c", "text": "Completa la Prueba de Sophocles en el Observatorio Hokulani: tipo Eléctrico." },
+        { "id": "r4d", "text": "Derrota al Dominante Togedemaru — Acero/Eléctrico." },
+        { "id": "r4e", "text": "Completa la Prueba de Acerola en el Supermercado Abandonado: tipo Fantasma." },
+        { "id": "r4f", "text": "Derrota al Dominante Mimikyu — cuidado con su Disfraz." },
+        { "id": "r4g", "text": "Enfrenta al Equipo Skull en Po Town." },
+        { "id": "r4h", "text": "Gran Prueba contra Nanu (tipo Siniestro). Lucha, Bicho o Hada." }
+      ]
+    },
+    {
+      "title": "Fundación Aether",
+      "steps": [
+        { "id": "r5a", "text": "Visita el Paraíso Aether — algo no está bien." },
+        { "id": "r5b", "text": "Descubre los planes de Lusamine con los Ultraentes." },
+        { "id": "r5c", "text": "Rescata a Nebulilla del laboratorio secreto." },
+        { "id": "r5d", "text": "Enfrenta a Gladion — hijo de Lusamine." },
+        { "id": "r5e", "text": "Lusamine abre un Ultra Wormhole y desaparece." },
+        { "id": "r5f", "text": "Nebulilla evoluciona en Lunala (Moon) o Lunala (Moon)." }
+      ]
+    },
+    {
+      "title": "Isla Poni y Ultra Espacio",
+      "steps": [
+        { "id": "r6a", "text": "Llega a la Isla Poni — la isla más salvaje." },
+        { "id": "r6b", "text": "Toca la Flauta Solar/Lunar en el Altar del Sol/Luna." },
+        { "id": "r6c", "text": "Captura a Lunala (Moon) — tipo Psíquico/Acero." },
+        { "id": "r6d", "text": "Viaja al Ultra Espacio para rescatar a Lusamine." },
+        { "id": "r6e", "text": "Derrota a Lusamine fusionada con Nihilego." },
+        { "id": "r6f", "text": "Gran Prueba contra Hapu (tipo Tierra) — última Kahuna." },
+        { "id": "r6g", "text": "Completa la Prueba del Cañón Vast Poni: tipo Dragón." },
+        { "id": "r6h", "text": "Derrota al Dominante Kommo-o — Hada es super efectivo (x4)." }
+      ]
+    },
+    {
+      "title": "Liga Pokémon",
+      "steps": [
+        { "id": "r7a", "text": "Sube el Monte Lanakila — entrena al nivel 55+." },
+        { "id": "r7b", "text": "Derrota al Alto Mando: Hala, Olivia, Acerola y Kahili." },
+        { "id": "r7c", "text": "El combate final es contra el Profesor Kukui — ¡él es el último desafío!" },
+        { "id": "r7d", "text": "Te conviertes en el primer Campeón de Alola." },
+        { "id": "r7e", "text": "Créditos y desbloqueo del postgame." }
+      ]
+    },
+    {
+      "title": "Postgame",
+      "steps": [
+        { "id": "r8a", "text": "Completa las misiones de los Ultraentes con Looker y Anabel." },
+        { "id": "r8b", "text": "Captura los Ultraentes: Nihilego, Buzzwole (Sun) / Pheromosa (Moon), Xurkitree, Kartana (Sun) / Celesteela (Moon), Guzzlord." },
+        { "id": "r8c", "text": "Captura a los Pokémon Tapus: Tapu Koko, Tapu Lele, Tapu Bulu, Tapu Fini." },
+        { "id": "r8d", "text": "Captura a Necrozma en el Monte Lanakila." },
+        { "id": "r8e", "text": "Defiende tu título de Campeón contra retadores." },
+        { "id": "r8f", "text": "Completa el Pokédex de Alola para obtener el Amuleto Oval." }
+      ]
+    }
+  ]
+}

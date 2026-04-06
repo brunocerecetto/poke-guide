@@ -1,0 +1,14 @@
+{
+  "captures": [
+    { "pokemon": "Pikipek", "location": "Ruta 1", "note": "Evoluciona en Toucannon. Normal/Volador con Pico Cañón (causa quemadura)." },
+    { "pokemon": "Grubbin", "location": "Ruta 1", "note": "Evoluciona en Vikavolt — Bicho/Eléctrico con alto Ataque Especial." },
+    { "pokemon": "Growlithe", "location": "Ruta 2", "note": "Evoluciona en Arcanine con Piedra Fuego. Tipo Fuego fiable." },
+    { "pokemon": "Mudbray", "location": "Ruta 4", "note": "Evoluciona en Mudsdale. Tanque físico de Tierra con Resistencia." },
+    { "pokemon": "Fomantis", "location": "Ruta 5", "note": "Evoluciona en Lurantis (subir nivel de día). Tipo Planta puro." },
+    { "pokemon": "Salandit", "location": "Ruta 8", "note": "Solo las hembras evolucionan en Salazzle (Veneno/Fuego). 12.5% probabilidad hembra." },
+    { "pokemon": "Mimikyu", "location": "Supermercado Abandonado", "note": "Hada/Fantasma. Disfraz absorbe un golpe. Muy útil." },
+    { "pokemon": "Jangmo-o", "location": "Cañón Vast Poni", "note": "Evoluciona en Kommo-o — pseudo-legendario Dragón/Lucha." },
+    { "pokemon": "Lunala", "location": "Altar de la Luna", "note": "Legendario de la trama (Sun). Psíquico/Fantasma." },
+    { "pokemon": "Tapu Koko", "location": "Ruinas de la Guerra (postgame)", "note": "Guardián de Melemele. Eléctrico/Hada con Campo Eléctrico." }
+  ]
+}

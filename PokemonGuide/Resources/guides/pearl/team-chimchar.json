@@ -1,0 +1,10 @@
+{
+  "members": [
+    { "name": "Infernape", "moves": ["A Bocajarro", "Llamarada", "Puño Trueno", "Onda Certera"], "notes": "Tu starter. Fuego/Lucha rápido. Evoluciona nivel 36.", "emoji": "🔥" },
+    { "name": "Staraptor", "moves": ["A Bocajarro", "Pájaro Osado", "Ida y Vuelta", "Danza Espada"], "notes": "Atrapa Starly en la Ruta 201. Cobertura Volador.", "emoji": "🦅" },
+    { "name": "Roserade", "moves": ["Gigadrenado", "Bomba Lodo", "Bola Sombra", "Danza Pétalo"], "notes": "Atrapa Budew en la Ruta 204. Atacante especial top.", "emoji": "🌹" },
+    { "name": "Gyarados", "moves": ["Cascada", "Terremoto", "Rayo Hielo", "Danza Dragón"], "notes": "Pesca Magikarp. Intimidación + Danza Dragón.", "emoji": "🐉" },
+    { "name": "Luxray", "moves": ["Colmillo Rayo", "Triturar", "Voltio Cruel", "Carga Salvaje"], "notes": "Atrapa Shinx en la Ruta 202. Tipo Eléctrico sólido.", "emoji": "⚡" },
+    { "name": "Mismagius", "moves": ["Bola Sombra", "Energibola", "Onda Voltio", "Fuego Fatuo"], "notes": "Exclusivo de Pearl. Misdreavus de noche en Bosque Vetusta.", "emoji": "👻" }
+  ]
+}

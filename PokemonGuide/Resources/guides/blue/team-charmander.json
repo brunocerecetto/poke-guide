@@ -1,0 +1,10 @@
+{
+  "members": [
+    { "name": "Charizard", "moves": ["Flamethrower", "Slash", "Dig", "Fire Blast"], "notes": "Tu starter. Slash tiene alto critical en Gen 1. Flamethrower a nv 46.", "emoji": "🔥" },
+    { "name": "Nidoking", "moves": ["Earthquake", "Thunderbolt", "Ice Beam", "Horn Drill"], "notes": "Nidoran♂ en Route 3. Coverage brutal con TMs. Earthquake late game.", "emoji": "🦏" },
+    { "name": "Vaporeon", "moves": ["Surf", "Ice Beam", "Body Slam", "Acid Armor"], "notes": "Eevee en Celadon → Water Stone. Tu Water type principal. Gran bulk.", "emoji": "💧" },
+    { "name": "Snorlax", "moves": ["Body Slam", "Earthquake", "Rest", "Self-Destruct"], "notes": "Route 12/16. Tanque Normal con stats brutales.", "emoji": "😴" },
+    { "name": "Exeggutor", "moves": ["Psychic", "Sleep Powder", "Mega Drain", "Stun Spore"], "notes": "Safari Zone. NO evolucionar antes de Sleep Powder (nv 37).", "emoji": "🌴" },
+    { "name": "Jynx", "moves": ["Blizzard", "Psychic", "Lovely Kiss", "Body Slam"], "notes": "Canje en Cerulean (dar Poliwhirl). Ice/Psychic para Lance. Lovely Kiss sleep 75%.", "emoji": "💋" }
+  ]
+}

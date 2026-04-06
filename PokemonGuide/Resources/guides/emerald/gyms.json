@@ -1,0 +1,12 @@
+{
+  "gyms": [
+    { "name": "Gimnasio de Ciudad Férrica", "leader": "Roxanne", "levelRange": "12-15", "note": "Usa tipo Agua, Planta o Lucha. Su Nosepass tiene Bloqueo.", "badge": "Medalla Piedra" },
+    { "name": "Gimnasio de Isla Dewford", "leader": "Brawly", "levelRange": "16-19", "note": "Usa tipo Volador o Psíquico. Su Makuhita puede ser peligroso.", "badge": "Medalla Puño" },
+    { "name": "Gimnasio de Ciudad Malvalona", "leader": "Wattson", "levelRange": "20-24", "note": "Usa tipo Tierra. Su Manectric es más fuerte que en Ruby/Sapphire.", "badge": "Medalla Dinamo" },
+    { "name": "Gimnasio de Pueblo Lavacalda", "leader": "Flannery", "levelRange": "24-29", "note": "Usa tipo Agua o Roca. Su Torkoal usa Sofoco y Maldición.", "badge": "Medalla Calor" },
+    { "name": "Gimnasio de Ciudad Petalia", "leader": "Norman", "levelRange": "28-31", "note": "Usa tipo Lucha. Sus Slaking con Fachada son devastadores.", "badge": "Medalla Balance" },
+    { "name": "Gimnasio de Ciudad Arborada", "leader": "Winona", "levelRange": "30-33", "note": "Usa tipo Eléctrico o Hielo. Su Altaria con Danza Dragón es peligrosa.", "badge": "Medalla Pluma" },
+    { "name": "Gimnasio de Ciudad Algaria", "leader": "Tate y Liza", "levelRange": "36-42", "note": "Combate doble. Tienen Claydol y Xatu además de Solrock/Lunatone.", "badge": "Medalla Mente" },
+    { "name": "Gimnasio de Ciudad Arrecípolis", "leader": "Juan", "levelRange": "40-46", "note": "Reemplaza a Wallace como líder. Usa tipo Eléctrico o Planta. Su Kingdra es duro.", "badge": "Medalla Lluvia" }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "gyms": [
+    { "name": "Gimnasio de Ciudad Plateada", "leader": "Brock", "levelRange": "11-12", "note": "Tipo Roca. Geodude y Onix. Necesitas Planta o Agua — Pikachu no es efectivo.", "badge": "Medalla Roca" },
+    { "name": "Gimnasio de Ciudad Celeste", "leader": "Misty", "levelRange": "18-19", "note": "Tipo Agua. Starmie es fuerte. Pikachu brilla aquí con Eléctrico.", "badge": "Medalla Cascada" },
+    { "name": "Gimnasio de Ciudad Carmín", "leader": "Lt. Surge", "levelRange": "25-26", "note": "Tipo Eléctrico. Raichu es su as. Tipo Tierra es inmune.", "badge": "Medalla Trueno" },
+    { "name": "Gimnasio de Ciudad Azulona", "leader": "Erika", "levelRange": "33-34", "note": "Tipo Planta. Vileplume es molesto con polvo. Fuego, Hielo o Volador.", "badge": "Medalla Arcoíris" },
+    { "name": "Gimnasio de Ciudad Fucsia", "leader": "Koga", "levelRange": "43-44", "note": "Tipo Veneno. Muk y Weezing. Tierra o Psíquico recomendado.", "badge": "Medalla Alma" },
+    { "name": "Gimnasio de Ciudad Azafrán", "leader": "Sabrina", "levelRange": "43-44", "note": "Tipo Psíquico. Alakazam es devastador. Bicho, Fantasma o Siniestro.", "badge": "Medalla Pantano" },
+    { "name": "Gimnasio de Isla Canela", "leader": "Blaine", "levelRange": "47-48", "note": "Tipo Fuego. Rapidash y Arcanine. Agua, Tierra o Roca.", "badge": "Medalla Volcán" },
+    { "name": "Gimnasio de Ciudad Viridian", "leader": "Giovanni", "levelRange": "49-50", "note": "Tipo Tierra. Rhydon es su as. Agua o Planta son ideales.", "badge": "Medalla Tierra" }
+  ]
+}

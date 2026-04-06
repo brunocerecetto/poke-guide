@@ -1,0 +1,10 @@
+{
+  "members": [
+    { "name": "Torterra", "moves": ["Terremoto", "Lluevehojas", "Triturar", "Maldición"], "notes": "Tu starter. Planta/Tierra tanque. Evoluciona nivel 32.", "emoji": "🌳" },
+    { "name": "Staraptor", "moves": ["A Bocajarro", "Pájaro Osado", "Ida y Vuelta", "Danza Espada"], "notes": "Atrapa Starly en la Ruta 201. Intimidación.", "emoji": "🦅" },
+    { "name": "Rapidash", "moves": ["Llamarada", "Megacuerno", "Nitrocarga", "Triturar"], "notes": "Atrapa Ponyta en la Ruta 211. Cobertura Fuego.", "emoji": "🐴" },
+    { "name": "Luxray", "moves": ["Colmillo Rayo", "Triturar", "Voltio Cruel", "Carga Salvaje"], "notes": "Atrapa Shinx en la Ruta 202. Intimidación.", "emoji": "⚡" },
+    { "name": "Gyarados", "moves": ["Cascada", "Terremoto", "Rayo Hielo", "Danza Dragón"], "notes": "Pesca Magikarp. Danza Dragón lo hace imparable.", "emoji": "🐉" },
+    { "name": "Honchkrow", "moves": ["Tajo Umbrío", "Pájaro Osado", "Golpe Bajo", "Descanso"], "notes": "Exclusivo de BD. Murkrow en Bosque Vetusta de noche. Piedra Noche.", "emoji": "🌙" }
+  ]
+}

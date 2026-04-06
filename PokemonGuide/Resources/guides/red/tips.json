@@ -1,0 +1,14 @@
+{
+  "tips": [
+    { "pokemon": "⚡ Jolteon", "rule": "No gastes TM24 Thunderbolt fuera de Jolteon. Con 130 Speed outspeeds casi todo. Thunderbolt es la compra #1 del Game Corner." },
+    { "pokemon": "🦏 Nidoking", "rule": "Nidoking aprende casi cualquier TM. Earthquake + Thunderbolt + Ice Beam le da coverage contra todo el juego." },
+    { "pokemon": "🐕 Growlithe", "rule": "Exclusivo de Red. Flamethrower lo aprende a nv 50. Si no querés esperar, usá TM38 Fire Blast." },
+    { "pokemon": "🌴 Exeggcute", "rule": "NO uses Leaf Stone antes de Sleep Powder (nv 37). Exeggutor no aprende moves por nivel." },
+    { "pokemon": "💰 Dinero", "rule": "Vas a necesitar mucho dinero para monedas del Game Corner. Peleá contra todos los trainers que puedas." },
+    { "pokemon": "🔄 Critical Hits", "rule": "En Gen 1, critical rate se basa en Speed. Pokémon rápidos como Persian (Slash) o Jolteon critean seguido." },
+    { "pokemon": "🧊 Ice Beam", "rule": "Ice Beam y Blizzard son CLAVE para Lance. Sin Ice coverage, Dragonite es una pesadilla." },
+    { "pokemon": "😴 Snorlax", "rule": "Capturá a Snorlax sin falta. Body Slam + Earthquake + Rest lo hace un tanque imbatible." },
+    { "pokemon": "🎒 Items clave", "rule": "No vendas: Moon Stone, piedras evolutivas, Poké Flute, Master Ball (para Mewtwo)." },
+    { "pokemon": "🐛 MissingNo", "rule": "El glitch de Old Man en Cinnabar duplica items (6to slot). Usá con cuidado — puede corromper datos." }
+  ]
+}

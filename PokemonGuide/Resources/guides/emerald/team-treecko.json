@@ -1,0 +1,10 @@
+{
+  "members": [
+    { "name": "Sceptile", "moves": ["Hoja Afilada", "Garra Dragón", "Terremoto", "Agilidad"], "notes": "Tu starter. Rápido y fuerte especialmente. Evoluciona nivel 36.", "emoji": "🌿" },
+    { "name": "Swellow", "moves": ["Golpe Aéreo", "Fachada", "Ala de Acero", "Esfuerzo"], "notes": "Atrapa Taillow en la Ruta 104. Agallas + Fachada es letal.", "emoji": "🐦" },
+    { "name": "Aggron", "moves": ["Cabeza de Hierro", "Terremoto", "Avalancha", "Corpulencia"], "notes": "Atrapa Aron en la Cueva Granito. Muro físico impresionante.", "emoji": "🦏" },
+    { "name": "Manectric", "moves": ["Rayo", "Onda Voltio", "Mordisco", "Aullido"], "notes": "Atrapa Electrike en la Ruta 110. Cobertura Eléctrica esencial.", "emoji": "⚡" },
+    { "name": "Walrein", "moves": ["Surf", "Rayo Hielo", "Cuerpo Pesado", "Granizo"], "notes": "Atrapa Spheal en la Cueva Paseo. Tanque Agua/Hielo resistente.", "emoji": "🧊" },
+    { "name": "Camerupt", "moves": ["Terremoto", "Erupción", "Pedrada", "Lanzallamas"], "notes": "Atrapa Numel en la Ruta 112. Fuego/Tierra complementa al equipo.", "emoji": "🌋" }
+  ]
+}

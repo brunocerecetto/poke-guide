@@ -1,0 +1,37 @@
+{
+  "id": "legends-arceus",
+  "name": "Pokémon Legends: Arceus",
+  "generation": 8,
+  "region": "Hisui",
+  "releaseYear": 2022,
+  "platform": "Switch",
+  "accentColor": "#DAA520",
+  "secondaryColor": "#1A3D7A",
+  "icon": "sparkles",
+  "starters": [
+    { "dexNumber": 722, "name": "Rowlet" },
+    { "dexNumber": 155, "name": "Cyndaquil" },
+    { "dexNumber": 501, "name": "Oshawott" }
+  ],
+  "gymCount": 0,
+  "hasEliteFour": false,
+  "hasChampion": false,
+  "regionalDex": [
+    { "regionalNumber": 1, "nationalDex": 722, "location": "Villa Jubileo (inicial)" },
+    { "regionalNumber": 2, "nationalDex": 723, "location": "Evolucionar Rowlet" },
+    { "regionalNumber": 3, "nationalDex": 724, "location": "Evolucionar Dartrix (Forma Hisui)" },
+    { "regionalNumber": 4, "nationalDex": 155, "location": "Villa Jubileo (inicial)" },
+    { "regionalNumber": 5, "nationalDex": 156, "location": "Evolucionar Cyndaquil" },
+    { "regionalNumber": 6, "nationalDex": 157, "location": "Evolucionar Quilava (Forma Hisui)" },
+    { "regionalNumber": 7, "nationalDex": 501, "location": "Villa Jubileo (inicial)" },
+    { "regionalNumber": 8, "nationalDex": 502, "location": "Evolucionar Oshawott" },
+    { "regionalNumber": 9, "nationalDex": 503, "location": "Evolucionar Dewott (Forma Hisui)" },
+    { "regionalNumber": 10, "nationalDex": 399, "location": "Pradera Obsidiana" },
+    { "regionalNumber": 11, "nationalDex": 400, "location": "Pradera Obsidiana" },
+    { "regionalNumber": 12, "nationalDex": 396, "location": "Pradera Obsidiana" },
+    { "regionalNumber": 13, "nationalDex": 397, "location": "Evolucionar Starly" },
+    { "regionalNumber": 14, "nationalDex": 398, "location": "Evolucionar Staravia" },
+    { "regionalNumber": 15, "nationalDex": 403, "location": "Pradera Obsidiana" }
+  ],
+  "versionExclusives": {}
+}

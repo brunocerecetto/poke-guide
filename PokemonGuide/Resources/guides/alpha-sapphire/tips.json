@@ -1,0 +1,12 @@
+{
+  "tips": [
+    { "pokemon": "DexNav", "rule": "Usa el DexNav para Pokémon con habilidades ocultas y movimientos huevo." },
+    { "pokemon": "Mega Piedras", "rule": "Busca Mega Piedras después de cada gimnasio — aparecen como destellos." },
+    { "pokemon": "Kyogre Primigenio", "rule": "Nivel 45 en la Cueva Origen. Reversión Primigenia potencia ataques de Agua enormemente." },
+    { "pokemon": "Sableye", "rule": "Exclusivo de Alpha Sapphire. Mega Sableye tiene Espejo Mágico — refleja estados." },
+    { "pokemon": "Latias", "rule": "La recibes gratis durante la historia. Mega Evoluciona y permite Vuelo Eón." },
+    { "pokemon": "Deoxys", "rule": "Capturable en el Episodio Delta nivel 80. Combate épico en el espacio." },
+    { "pokemon": "Rayquaza", "rule": "Nivel 70 en el Pilar Celeste. Mega Evoluciona sin piedra con Ascenso Draco." },
+    { "pokemon": "Legendarios portales", "rule": "En Vuelo Eón encuentras portales con legendarios de otras generaciones." }
+  ]
+}

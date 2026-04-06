@@ -1,0 +1,12 @@
+{
+  "gyms": [
+    { "name": "Gimnasio de Turffield", "leader": "Milo", "levelRange": "19-20", "note": "Tipo Planta. Eldegoss Dynamax. Fuego, Hielo o Volador.", "badge": "Medalla Planta" },
+    { "name": "Gimnasio de Hulbury", "leader": "Nessa", "levelRange": "22-24", "note": "Tipo Agua. Drednaw Dynamax (Agua/Roca). Planta es super efectivo.", "badge": "Medalla Agua" },
+    { "name": "Gimnasio de Motostoke", "leader": "Kabu", "levelRange": "25-27", "note": "Tipo Fuego. Centiskorch Gigamax. Agua o Roca. Primer reto real.", "badge": "Medalla Fuego" },
+    { "name": "Gimnasio de Stow-on-Side", "leader": "Bea", "levelRange": "34-36", "note": "Tipo Lucha (Sword). Machamp Gigamax. Volador, Psíquico o Hada.", "badge": "Medalla Lucha" },
+    { "name": "Gimnasio de Ballonlea", "leader": "Opal", "levelRange": "36-38", "note": "Tipo Hada. Alcremie Gigamax. Acero o Veneno. Responde bien sus preguntas.", "badge": "Medalla Hada" },
+    { "name": "Gimnasio de Circhester", "leader": "Gordie", "levelRange": "40-42", "note": "Tipo Roca (Sword). Coalossal Gigamax. Agua (x4), Planta o Lucha.", "badge": "Medalla Roca" },
+    { "name": "Gimnasio de Spikemuth", "leader": "Piers", "levelRange": "44-46", "note": "Tipo Siniestro. Sin Dynamax. Obstagoon es su as. Lucha, Bicho o Hada.", "badge": "Medalla Siniestro" },
+    { "name": "Gimnasio de Hammerlocke", "leader": "Raihan", "levelRange": "46-48", "note": "Tipo Dragón con clima (Tormenta de Arena). Duraludon Gigamax. Hielo o Hada.", "badge": "Medalla Dragón" }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "members": [
+    { "name": "Decidueye", "moves": ["Puntada Sombría", "Hoja Aguda", "Vuelo Audaz", "Danza Espada"], "notes": "Tu inicial Planta/Fantasma. Buen atacante con movimiento Z exclusivo.", "emoji": "🦉" },
+    { "name": "Arcanine", "moves": ["Llamarada", "Velocidad Extrema", "Triturar", "Envite Ígneo"], "notes": "Growlithe en la Ruta 2. Sólido tipo Fuego desde temprano.", "emoji": "🔥" },
+    { "name": "Wishiwashi", "moves": ["Surf", "Rayo Hielo", "Terremoto", "Acua Cola"], "notes": "Forma Escuela con estadísticas enormes. Captura en el Estanque Brooklet.", "emoji": "🐟" },
+    { "name": "Alolan Raichu", "moves": ["Psíquico", "Rayo", "Surf", "Maldad"], "notes": "Evoluciona Pikachu con Piedra Trueno en Alola. Eléctrico/Psíquico.", "emoji": "⚡" },
+    { "name": "Mudsdale", "moves": ["Terremoto", "Cuerpo Pesado", "Roca Afilada", "A Bocajarro"], "notes": "Mudbray en la Ruta 4. Tanque físico con Resistencia.", "emoji": "🐴" },
+    { "name": "Mimikyu", "moves": ["Carantoña", "Garra Sombra", "Danza Espada", "Garra Umbría"], "notes": "Supermercado Abandonado. Hada/Fantasma con Disfraz — turno gratis.", "emoji": "👻" }
+  ]
+}

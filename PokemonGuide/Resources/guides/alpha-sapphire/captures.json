@@ -1,0 +1,14 @@
+{
+  "captures": [
+    { "pokemon": "Lotad", "location": "Ruta 102", "note": "Exclusivo de Alpha Sapphire. Ludicolo es versátil Agua/Planta." },
+    { "pokemon": "Ralts", "location": "Ruta 102", "note": "Gardevoir o Gallade. Ambos Mega Evolucionan." },
+    { "pokemon": "Sableye", "location": "Cueva Granito", "note": "Exclusivo. Mega Sableye con Espejo Mágico." },
+    { "pokemon": "Aron", "location": "Cueva Granito", "note": "Mega Aggron con Filtro es impenetrable." },
+    { "pokemon": "Electrike", "location": "Ruta 110", "note": "Mega Manectric con Intimidación." },
+    { "pokemon": "Trapinch", "location": "Desierto Ruta 111", "note": "Flygon es excelente Tierra/Dragón." },
+    { "pokemon": "Kyogre", "location": "Cueva Origen", "note": "Nivel 45. Reversión Primigenia potencia tipo Agua." },
+    { "pokemon": "Latias", "location": "Historia principal", "note": "Gratis. Mega Evoluciona. Vuelo Eón." },
+    { "pokemon": "Rayquaza", "location": "Pilar Celeste (Episodio Delta)", "note": "Nivel 70. Mega sin piedra con Ascenso Draco." },
+    { "pokemon": "Deoxys", "location": "Espacio (Episodio Delta)", "note": "Nivel 80. Final del Episodio Delta." }
+  ]
+}

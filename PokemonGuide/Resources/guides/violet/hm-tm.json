@@ -1,0 +1,21 @@
+{
+  "hms": [
+    { "name": "Miraidon: Carrera", "location": "Disponible desde el inicio — montura terrestre" },
+    { "name": "Miraidon: Surf", "location": "Tras derrotar al Titán Piedra Rodante — navegar por agua" },
+    { "name": "Miraidon: Salto Alto", "location": "Tras derrotar al Titán del Cielo Abierto — salto mejorado" },
+    { "name": "Miraidon: Planeo", "location": "Tras derrotar al Titán de Acero — planear desde alturas" },
+    { "name": "Miraidon: Escalar", "location": "Tras derrotar al Titán Falso Dragón — escalar paredes" }
+  ],
+  "tms": [
+    { "name": "MT149 Terremoto", "location": "Asalto al Cuartel de la Cuna del Team Star (Tierra)" },
+    { "name": "MT166 Rayo", "location": "Gimnasio de Levincia (premio)" },
+    { "name": "MT141 Llamarada", "location": "Raid Teracristal 5 estrellas" },
+    { "name": "MT143 Ventisca", "location": "Gimnasio de Glaseado (premio)" },
+    { "name": "MT163 Hiperrayo", "location": "Tienda de MTs — requiere Liga completada" },
+    { "name": "MT167 A Bocajarro", "location": "Encontrada en Alfornada" },
+    { "name": "MT171 Teracristal", "location": "Misión especial" },
+    { "name": "MT152 Giga Impacto", "location": "Tienda de MTs — requiere Liga completada" },
+    { "name": "MT130 Refuerzo", "location": "Raid Teracristal 4 estrellas" },
+    { "name": "MT089 Golpe Cuerpo", "location": "Gimnasio de Medali (premio)" }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "members": [
+    { "name": "Hala", "strategy": "Tipo Lucha. Volador, Psíquico o Hada. Crabominable es Lucha/Hielo — cuidado con su cobertura.", "levels": "54-55" },
+    { "name": "Olivia", "strategy": "Tipo Roca. Agua, Planta, Lucha o Tierra. Lycanroc Mediodía es rápido y pega fuerte.", "levels": "54-55" },
+    { "name": "Acerola", "strategy": "Tipo Fantasma. Siniestro o Fantasma. Palossand es Fantasma/Tierra — Agua es ideal contra él.", "levels": "54-55" },
+    { "name": "Kahili", "strategy": "Tipo Volador. Eléctrico, Roca o Hielo. Toucannon con Pico Cañón causa quemadura.", "levels": "54-55" },
+    { "name": "Profesor Kukui (Desafío final)", "strategy": "Equipo variado. Lycanroc Mediodía, Magnezone, Snorlax, Braviary, Ninetales Alola e inicial fuerte contra el tuyo. Lleva cobertura amplia.", "levels": "56-58" }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "tips": [
+    { "pokemon": "Captura", "rule": "No hay combates salvajes — las capturas usan mecánica de Pokémon GO. Cadenas de captura del mismo Pokémon aumentan la probabilidad de shinies y IVs altos." },
+    { "pokemon": "Eevee compañero", "rule": "Tu Eevee aprende movimientos exclusivos de tipos Agua, Fuego, Hielo y más. Visita tutores en los Centros Pokémon." },
+    { "pokemon": "Iniciales de Kanto", "rule": "Recibes Bulbasaur, Charmander y Squirtle como regalos durante la aventura si capturas suficientes Pokémon." },
+    { "pokemon": "Candies", "rule": "Los caramelos de las capturas mejoran las estadísticas permanentemente. Usa esto para potenciar a tu equipo." },
+    { "pokemon": "Monturas", "rule": "Puedes montar Pokémon grandes (Arcanine, Onix, Charizard) para moverte por el mapa." },
+    { "pokemon": "Pokémon GO", "rule": "Conecta con Pokémon GO para transferir Pokémon al Parque GO en Ciudad Fucsia." },
+    { "pokemon": "Maestros Entrenadores", "rule": "Postgame: un Maestro Entrenador por cada Pokémon. Derrótalos usando solo ese Pokémon para conseguir el título." },
+    { "pokemon": "Cadenas de Combos", "rule": "Captura el mismo Pokémon consecutivamente para encontrar shinies (1/315 en cadena 31+)." }
+  ]
+}

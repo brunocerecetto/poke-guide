@@ -1,0 +1,12 @@
+{
+  "gyms": [
+    { "name": "Gimnasio de Ciudad Pirita", "leader": "Roco", "levelRange": "12-14", "note": "Tipo Roca. Usa Agua, Planta o Lucha. Su Cranidos es fuerte.", "badge": "Medalla Lignito" },
+    { "name": "Gimnasio de Ciudad Vetusta", "leader": "Gardenia", "levelRange": "19-22", "note": "Tipo Planta. Usa Fuego o Volador. Su Roserade usa Bola Meteorito.", "badge": "Medalla Bosque" },
+    { "name": "Gimnasio de Ciudad Corazón", "leader": "Fantina", "levelRange": "24-26", "note": "Tipo Fantasma (ahora 3er gimnasio). Usa Siniestro. Su Mismagius es nivel 26.", "badge": "Medalla Relicto" },
+    { "name": "Gimnasio de Ciudad Rocavelo", "leader": "Brega", "levelRange": "28-32", "note": "Tipo Lucha. Usa Volador o Psíquico. Su Lucario es rápido y fuerte.", "badge": "Medalla Adoquín" },
+    { "name": "Gimnasio de Ciudad Pradera", "leader": "Mananti", "levelRange": "33-37", "note": "Tipo Agua (ahora 5to gimnasio). Usa Eléctrico o Planta. Floatzel es rápido.", "badge": "Medalla Pantano" },
+    { "name": "Gimnasio de Ciudad Canal", "leader": "Acerón", "levelRange": "36-39", "note": "Tipo Acero. Usa Fuego, Lucha o Tierra. Bastiodon resiste mucho.", "badge": "Medalla Mina" },
+    { "name": "Gimnasio de Ciudad Puntaneva", "leader": "Inverna", "levelRange": "38-42", "note": "Tipo Hielo. Usa Fuego o Lucha. Froslass es nueva adición — rápida.", "badge": "Medalla Témpano" },
+    { "name": "Gimnasio de Ciudad Marina", "leader": "Lectro", "levelRange": "46-50", "note": "Tipo Eléctrico. Usa Tierra. Equipo renovado con Electivire.", "badge": "Medalla Faro" }
+  ]
+}

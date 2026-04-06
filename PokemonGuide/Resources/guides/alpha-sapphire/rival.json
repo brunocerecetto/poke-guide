@@ -1,0 +1,44 @@
+{
+  "encounters": [
+    {
+      "location": "Ruta 103",
+      "icon": "figure.walk",
+      "team": [
+        { "name": "Treecko", "level": 5, "dexNumber": 252, "starterCondition": "Si elegiste Torchic" },
+        { "name": "Torchic", "level": 5, "dexNumber": 255, "starterCondition": "Si elegiste Mudkip" },
+        { "name": "Mudkip", "level": 5, "dexNumber": 258, "starterCondition": "Si elegiste Treecko" }
+      ]
+    },
+    {
+      "location": "Ruta 110",
+      "icon": "figure.walk",
+      "team": [
+        { "name": "Slugma", "level": 18, "dexNumber": 218, "starterCondition": null },
+        { "name": "Wingull", "level": 18, "dexNumber": 278, "starterCondition": null },
+        { "name": "Shroomish", "level": 18, "dexNumber": 285, "starterCondition": null },
+        { "name": "Grovyle/Combusken/Marshtomp", "level": 20, "dexNumber": 253, "starterCondition": "Depende de tu starter" }
+      ]
+    },
+    {
+      "location": "Ruta 119",
+      "icon": "figure.walk",
+      "team": [
+        { "name": "Magcargo", "level": 31, "dexNumber": 219, "starterCondition": null },
+        { "name": "Pelipper", "level": 31, "dexNumber": 279, "starterCondition": null },
+        { "name": "Breloom", "level": 31, "dexNumber": 286, "starterCondition": null },
+        { "name": "Sceptile/Blaziken/Swampert", "level": 33, "dexNumber": 254, "starterCondition": "Depende de tu starter" }
+      ]
+    },
+    {
+      "location": "Camino Victoria",
+      "icon": "figure.walk",
+      "team": [
+        { "name": "Magcargo", "level": 48, "dexNumber": 219, "starterCondition": null },
+        { "name": "Pelipper", "level": 48, "dexNumber": 279, "starterCondition": null },
+        { "name": "Breloom", "level": 48, "dexNumber": 286, "starterCondition": null },
+        { "name": "Raichu", "level": 46, "dexNumber": 26, "starterCondition": null },
+        { "name": "Mega Sceptile/Mega Blaziken/Mega Swampert", "level": 50, "dexNumber": 254, "starterCondition": "Depende de tu starter" }
+      ]
+    }
+  ]
+}

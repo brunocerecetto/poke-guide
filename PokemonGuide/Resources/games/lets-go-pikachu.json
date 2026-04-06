@@ -1,0 +1,38 @@
+{
+  "id": "lets-go-pikachu",
+  "name": "Pokémon Let's Go, Pikachu!",
+  "generation": 7,
+  "region": "Kanto",
+  "releaseYear": 2018,
+  "platform": "Switch",
+  "accentColor": "#FFD733",
+  "secondaryColor": "#C6A600",
+  "icon": "bolt.fill",
+  "starters": [
+    { "dexNumber": 25, "name": "Pikachu" }
+  ],
+  "gymCount": 8,
+  "hasEliteFour": true,
+  "hasChampion": true,
+  "regionalDex": [
+    { "regionalNumber": 1, "nationalDex": 1, "location": "Pueblo Paleta (regalo)" },
+    { "regionalNumber": 2, "nationalDex": 2, "location": "Evolucionar Bulbasaur" },
+    { "regionalNumber": 3, "nationalDex": 3, "location": "Evolucionar Ivysaur" },
+    { "regionalNumber": 4, "nationalDex": 4, "location": "Pueblo Paleta (regalo)" },
+    { "regionalNumber": 5, "nationalDex": 5, "location": "Evolucionar Charmander" },
+    { "regionalNumber": 6, "nationalDex": 6, "location": "Evolucionar Charmeleon" },
+    { "regionalNumber": 7, "nationalDex": 7, "location": "Pueblo Paleta (regalo)" },
+    { "regionalNumber": 8, "nationalDex": 8, "location": "Evolucionar Squirtle" },
+    { "regionalNumber": 9, "nationalDex": 9, "location": "Evolucionar Wartortle" },
+    { "regionalNumber": 10, "nationalDex": 10, "location": "Bosque Verde" },
+    { "regionalNumber": 11, "nationalDex": 11, "location": "Evolucionar Caterpie" },
+    { "regionalNumber": 12, "nationalDex": 12, "location": "Evolucionar Metapod" },
+    { "regionalNumber": 13, "nationalDex": 13, "location": "Bosque Verde" },
+    { "regionalNumber": 14, "nationalDex": 14, "location": "Evolucionar Weedle" },
+    { "regionalNumber": 15, "nationalDex": 15, "location": "Evolucionar Kakuna" }
+  ],
+  "versionExclusives": {
+    "lets-go-pikachu": [23, 24, 43, 44, 45, 56, 57, 58, 59, 88, 89, 123, 125],
+    "lets-go-eevee": [27, 28, 37, 38, 69, 70, 71, 52, 53, 108, 127, 126]
+  }
+}

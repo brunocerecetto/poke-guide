@@ -1,0 +1,10 @@
+{
+  "members": [
+    { "name": "Blastoise", "moves": ["Surf", "Ice Beam", "Bite", "Protect"], "notes": "Tu starter y tanque Water/Ice. Ice Beam (TM13) es crítico para Lance. Surf como STAB principal.", "emoji": "🐢" },
+    { "name": "Nidoking", "moves": ["Earthquake", "Brick Break", "Dig", "Sludge Bomb"], "notes": "Nidoran♂ Route 3. Dig para mid game, Earthquake (TM26) late game. Coverage brutal.", "emoji": "🦏" },
+    { "name": "Jolteon", "moves": ["Thunderbolt", "Double Kick", "Dig", "Shock Wave"], "notes": "Eevee en Celadon → Thunder Stone. 130 Speed base. Thunderbolt (TM24) PRIORIDAD #1.", "emoji": "⚡" },
+    { "name": "Ninetales", "moves": ["Flamethrower", "Confuse Ray", "Will-O-Wisp", "Dig"], "notes": "Vulpix Route 7 (LeafGreen exclusivo). Fire Stone cuando quieras. Confuse Ray + Will-O-Wisp debilitan.", "emoji": "🦊" },
+    { "name": "Snorlax", "moves": ["Body Slam", "Yawn", "Rest", "Shadow Ball"], "notes": "Route 12/16 con Poké Flute. Tanque bruto (160 HP). Shadow Ball (TM30) para Agatha.", "emoji": "😴" },
+    { "name": "Exeggutor", "moves": ["Psychic", "Giga Drain", "Sleep Powder", "Stun Spore"], "notes": "Safari Zone. Sleep Powder (nv 37) + Leaf Stone. TM29 Psychic gratis en Saffron.", "emoji": "🌴" }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "x",
+  "name": "Pokémon X",
+  "generation": 6,
+  "region": "Kalos",
+  "releaseYear": 2013,
+  "platform": "3DS",
+  "accentColor": "#025DA6",
+  "secondaryColor": "#01437A",
+  "icon": "xmark",
+  "starters": [
+    { "dexNumber": 650, "name": "Chespin" },
+    { "dexNumber": 653, "name": "Fennekin" },
+    { "dexNumber": 656, "name": "Froakie" }
+  ],
+  "gymCount": 8,
+  "hasEliteFour": true,
+  "hasChampion": true,
+  "regionalDex": [
+    { "regionalNumber": 1, "nationalDex": 650, "location": "Pueblo Aquacorde (inicial)" },
+    { "regionalNumber": 2, "nationalDex": 651, "location": "Evolucionar Chespin" },
+    { "regionalNumber": 3, "nationalDex": 652, "location": "Evolucionar Quilladin" },
+    { "regionalNumber": 4, "nationalDex": 653, "location": "Pueblo Aquacorde (inicial)" },
+    { "regionalNumber": 5, "nationalDex": 654, "location": "Evolucionar Fennekin" },
+    { "regionalNumber": 6, "nationalDex": 655, "location": "Evolucionar Braixen" },
+    { "regionalNumber": 7, "nationalDex": 656, "location": "Pueblo Aquacorde (inicial)" },
+    { "regionalNumber": 8, "nationalDex": 657, "location": "Evolucionar Froakie" },
+    { "regionalNumber": 9, "nationalDex": 658, "location": "Evolucionar Frogadier" },
+    { "regionalNumber": 10, "nationalDex": 659, "location": "Ruta 2" },
+    { "regionalNumber": 11, "nationalDex": 660, "location": "Evolucionar Bunnelby" },
+    { "regionalNumber": 12, "nationalDex": 661, "location": "Ruta 2" },
+    { "regionalNumber": 13, "nationalDex": 662, "location": "Evolucionar Fletchling" },
+    { "regionalNumber": 14, "nationalDex": 663, "location": "Evolucionar Fletchinder" },
+    { "regionalNumber": 15, "nationalDex": 664, "location": "Bosque Santalune" }
+  ],
+  "versionExclusives": {
+    "x": [538, 612, 684, 685, 716],
+    "y": [539, 621, 682, 683, 717]
+  }
+}

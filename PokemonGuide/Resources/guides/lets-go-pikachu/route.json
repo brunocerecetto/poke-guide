@@ -1,0 +1,83 @@
+{
+  "sections": [
+    {
+      "title": "Pueblo Paleta → Ciudad Plateada",
+      "steps": [
+        { "id": "r1a", "text": "Recibes a Pikachu como tu compañero — no puede evolucionar pero aprende movimientos especiales." },
+        { "id": "r1b", "text": "Tu rival (Trace) elige a Eevee." },
+        { "id": "r1c", "text": "Captura Pokémon en la Ruta 1 usando mecánica de Pokémon GO (sin combates salvajes)." },
+        { "id": "r1d", "text": "Atraviesa el Bosque Viridian hacia Ciudad Plateada." },
+        { "id": "r1e", "text": "Captura un Oddish, Bellsprout o Bulbasaur para el gimnasio de Roca." },
+        { "id": "r1f", "text": "Derrota a Brock en el Gimnasio de tipo Roca." },
+        { "id": "r1g", "text": "Pikachu puede aprender Surf Pikachu (movimiento exclusivo) — tipo Agua." },
+        { "id": "r1h", "text": "Avanza por la Ruta 3 hacia el Monte Moon." }
+      ]
+    },
+    {
+      "title": "Monte Moon → Ciudad Celeste",
+      "steps": [
+        { "id": "r2a", "text": "Atraviesa el Monte Moon — elige entre el fósil Helix y el fósil Domo." },
+        { "id": "r2b", "text": "Llega a Ciudad Celeste." },
+        { "id": "r2c", "text": "Derrota a Misty en el Gimnasio de tipo Agua." },
+        { "id": "r2d", "text": "Pikachu con Pikachu Descarga (movimiento exclusivo Eléctrico) es muy útil aquí." },
+        { "id": "r2e", "text": "Rescata al Sr. Director del Team Rocket." },
+        { "id": "r2f", "text": "Recibe el SS. Anne ticket y navega hacia Ciudad Carmín." }
+      ]
+    },
+    {
+      "title": "Ciudad Carmín → Ciudad Azulona",
+      "steps": [
+        { "id": "r3a", "text": "Sube al SS. Anne — explora el barco y combate entrenadores." },
+        { "id": "r3b", "text": "Derrota a Lt. Surge en el Gimnasio de tipo Eléctrico." },
+        { "id": "r3c", "text": "Nota: Pikachu no es tan útil aquí — usa un tipo Tierra." },
+        { "id": "r3d", "text": "Atraviesa el Túnel Roca con la Técnica Secreta Destello." },
+        { "id": "r3e", "text": "Llega a Ciudad Lavanda — la Torre Pokémon está ocupada por fantasmas." },
+        { "id": "r3f", "text": "Consigue el Visor Silph en Ciudad Azulona." },
+        { "id": "r3g", "text": "Derrota a Erika en el Gimnasio de tipo Planta." },
+        { "id": "r3h", "text": "Infiltra el Casino del Team Rocket." }
+      ]
+    },
+    {
+      "title": "Ciudad Lavanda → Ciudad Fucsia",
+      "steps": [
+        { "id": "r4a", "text": "Vuelve a la Torre Pokémon — rescata al Sr. Fuji." },
+        { "id": "r4b", "text": "Recibe la Poké Flauta para despertar a Snorlax." },
+        { "id": "r4c", "text": "Avanza hacia Ciudad Fucsia por la Ruta Ciclista o la ruta marina." },
+        { "id": "r4d", "text": "Derrota a Koga en el Gimnasio de tipo Veneno." },
+        { "id": "r4e", "text": "Visita la Zona Safari — captura Pokémon raros como Chansey." },
+        { "id": "r4f", "text": "Recibe la Técnica Secreta Surf." }
+      ]
+    },
+    {
+      "title": "Silph Co. → Gimnasios restantes",
+      "steps": [
+        { "id": "r5a", "text": "Infiltra la Torre Silph en Ciudad Azafrán." },
+        { "id": "r5b", "text": "Derrota a Giovanni (líder del Team Rocket) en la Silph Co." },
+        { "id": "r5c", "text": "Recibe un Lapras de regalo en la Silph Co." },
+        { "id": "r5d", "text": "Derrota a Sabrina en el Gimnasio de tipo Psíquico." },
+        { "id": "r5e", "text": "Derrota a Blaine en el Gimnasio de tipo Fuego en Isla Canela." },
+        { "id": "r5f", "text": "Derrota a Giovanni en el Gimnasio de tipo Tierra en Ciudad Viridian." }
+      ]
+    },
+    {
+      "title": "Liga Pokémon",
+      "steps": [
+        { "id": "r6a", "text": "Atraviesa la Ruta de la Victoria — nivel 50+ recomendado." },
+        { "id": "r6b", "text": "Derrota al Alto Mando: Lorelei (Hielo), Bruno (Lucha), Agatha (Fantasma), Lance (Dragón)." },
+        { "id": "r6c", "text": "Combate final contra tu rival Trace." },
+        { "id": "r6d", "text": "Créditos — ¡eres el Campeón!" }
+      ]
+    },
+    {
+      "title": "Postgame",
+      "steps": [
+        { "id": "r7a", "text": "Los Maestros Entrenadores aparecen — uno por cada Pokémon. Derrota a cada uno con ese Pokémon." },
+        { "id": "r7b", "text": "Captura a Mewtwo en la Cueva Celeste." },
+        { "id": "r7c", "text": "Combate contra Red y Blue (entrenadores legendarios)." },
+        { "id": "r7d", "text": "Combate contra Green en Ciudad Celeste." },
+        { "id": "r7e", "text": "Captura las aves legendarias: Articuno, Zapdos y Moltres." },
+        { "id": "r7f", "text": "Conecta con Pokémon GO para transferir Pokémon al Parque GO." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "members": [
+    { "name": "Aarón", "strategy": "Tipo Fuego o Volador. Drapion es Veneno/Siniestro. En rematch tiene equipo nivel 75+.", "levels": "53-57" },
+    { "name": "Bertha", "strategy": "Tipo Agua y Planta. Hippowdon con Tormenta de Arena. Surf barre.", "levels": "55-59" },
+    { "name": "Fausto", "strategy": "Solo 2 tipo Fuego reales. Drifblim y Lopunny. Usa Agua o Tierra.", "levels": "57-61" },
+    { "name": "Delos", "strategy": "Tipo Siniestro. Bronzong resiste todo excepto Fuego.", "levels": "59-63" },
+    { "name": "Cinthia (Campeona)", "strategy": "MUY difícil en BDSP. Garchomp nivel 66 con EV — Rayo Hielo x4 obligatorio. Spiritomb sin debilidades. Milotic con Resto + Habla Dormida. Prepara bien tu equipo.", "levels": "61-66" }
+  ]
+}

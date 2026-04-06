@@ -1,0 +1,29 @@
+{
+  "encounters": [
+    { "location": "Pueblo Postwick", "icon": "house.fill", "team": [
+      { "name": "Sobble", "level": 5, "dexNumber": 816, "starterCondition": "Si elegiste Grookey" },
+      { "name": "Grookey", "level": 5, "dexNumber": 810, "starterCondition": "Si elegiste Scorbunny" },
+      { "name": "Scorbunny", "level": 5, "dexNumber": 813, "starterCondition": "Si elegiste Sobble" }
+    ]},
+    { "location": "Ruta 3", "icon": "figure.walk", "team": [
+      { "name": "Wooloo", "level": 11, "dexNumber": 831, "starterCondition": null },
+      { "name": "Rookidee", "level": 12, "dexNumber": 821, "starterCondition": null },
+      { "name": "Evolución inicial Hop", "level": 14, "dexNumber": 0, "starterCondition": "Ventaja sobre tu inicial" }
+    ]},
+    { "location": "Hammerlocke", "icon": "building.2.fill", "team": [
+      { "name": "Dubwool", "level": 34, "dexNumber": 832, "starterCondition": null },
+      { "name": "Corvisquire", "level": 34, "dexNumber": 822, "starterCondition": null },
+      { "name": "Pincurchin", "level": 34, "dexNumber": 871, "starterCondition": null },
+      { "name": "Snorlax", "level": 35, "dexNumber": 143, "starterCondition": null },
+      { "name": "Evolución inicial Hop", "level": 36, "dexNumber": 0, "starterCondition": "Ventaja sobre tu inicial" }
+    ]},
+    { "location": "Copa del Campeón", "icon": "trophy.fill", "team": [
+      { "name": "Dubwool", "level": 59, "dexNumber": 832, "starterCondition": null },
+      { "name": "Corviknight", "level": 58, "dexNumber": 823, "starterCondition": null },
+      { "name": "Pincurchin", "level": 58, "dexNumber": 871, "starterCondition": null },
+      { "name": "Snorlax", "level": 58, "dexNumber": 143, "starterCondition": null },
+      { "name": "Cramorant", "level": 58, "dexNumber": 845, "starterCondition": null },
+      { "name": "Inicial final Hop", "level": 60, "dexNumber": 0, "starterCondition": "Ventaja sobre tu inicial" }
+    ]}
+  ]
+}

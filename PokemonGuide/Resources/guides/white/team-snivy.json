@@ -1,0 +1,10 @@
+{
+  "members": [
+    { "name": "Serperior", "moves": ["Hoja Aguda", "Enrosque", "Gigadrenaje", "Acróbata"], "notes": "Tu inicial Planta. Enrosque lo hace imparable si configuras bien.", "emoji": "🌿" },
+    { "name": "Darmanitan", "moves": ["Llamarada", "Demolición", "Terremoto", "Ida y Vuelta"], "notes": "Potencia bruta. Captura Darumaka en la Ruta 4.", "emoji": "🔥" },
+    { "name": "Krookodile", "moves": ["Terremoto", "Triturar", "Roca Afilada", "Danza Dragón"], "notes": "Captura Sandile en la Ruta 4. Cubre Eléctrico y Psíquico.", "emoji": "🐊" },
+    { "name": "Reuniclus", "moves": ["Psíquico", "Energibola", "Onda Trueno", "Recuperación"], "notes": "Especial tanque. Consigue Solosis en la Ruta 5.", "emoji": "🧬" },
+    { "name": "Eelektross", "moves": ["Rayo", "Ácido", "Lanzallamas", "Ida y Vuelta"], "notes": "Sin debilidades gracias a Levitación. Captura Tynamo en la Cueva Chargestone.", "emoji": "⚡" },
+    { "name": "Carracosta", "moves": ["Surf", "Roca Afilada", "Terremoto", "Concha Filo"], "notes": "Revive el fósil Tapa en Ciudad Nacrene. Tanque físico sólido.", "emoji": "🐢" }
+  ]
+}

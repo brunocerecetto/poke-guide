@@ -1,0 +1,90 @@
+{
+  "encounters": [
+    {
+      "location": "Cherrygrove City (Route 29)",
+      "icon": "figure.walk",
+      "team": [
+        { "name": "Chikorita", "level": 5, "dexNumber": 152, "starterCondition": "totodile" },
+        { "name": "Cyndaquil", "level": 5, "dexNumber": 155, "starterCondition": "chikorita" },
+        { "name": "Totodile", "level": 5, "dexNumber": 158, "starterCondition": "cyndaquil" }
+      ]
+    },
+    {
+      "location": "Azalea Town",
+      "icon": "leaf.fill",
+      "team": [
+        { "name": "Gastly", "level": 12, "dexNumber": 92, "starterCondition": null },
+        { "name": "Zubat", "level": 14, "dexNumber": 41, "starterCondition": null },
+        { "name": "Bayleef", "level": 16, "dexNumber": 153, "starterCondition": "totodile" },
+        { "name": "Quilava", "level": 16, "dexNumber": 156, "starterCondition": "chikorita" },
+        { "name": "Croconaw", "level": 16, "dexNumber": 159, "starterCondition": "cyndaquil" }
+      ]
+    },
+    {
+      "location": "Burned Tower (Ecruteak City)",
+      "icon": "flame.fill",
+      "team": [
+        { "name": "Haunter", "level": 20, "dexNumber": 93, "starterCondition": null },
+        { "name": "Magnemite", "level": 18, "dexNumber": 81, "starterCondition": null },
+        { "name": "Zubat", "level": 20, "dexNumber": 41, "starterCondition": null },
+        { "name": "Bayleef", "level": 22, "dexNumber": 153, "starterCondition": "totodile" },
+        { "name": "Quilava", "level": 22, "dexNumber": 156, "starterCondition": "chikorita" },
+        { "name": "Croconaw", "level": 22, "dexNumber": 159, "starterCondition": "cyndaquil" }
+      ]
+    },
+    {
+      "location": "Olivine City",
+      "icon": "building.2.fill",
+      "team": [
+        { "name": "Haunter", "level": 26, "dexNumber": 93, "starterCondition": null },
+        { "name": "Magnemite", "level": 24, "dexNumber": 81, "starterCondition": null },
+        { "name": "Golbat", "level": 26, "dexNumber": 42, "starterCondition": null },
+        { "name": "Sneasel", "level": 22, "dexNumber": 215, "starterCondition": null },
+        { "name": "Meganium", "level": 28, "dexNumber": 154, "starterCondition": "totodile" },
+        { "name": "Typhlosion", "level": 28, "dexNumber": 157, "starterCondition": "chikorita" },
+        { "name": "Feraligatr", "level": 28, "dexNumber": 160, "starterCondition": "cyndaquil" }
+      ]
+    },
+    {
+      "location": "Goldenrod Underground",
+      "icon": "arrow.down.circle.fill",
+      "team": [
+        { "name": "Golbat", "level": 30, "dexNumber": 42, "starterCondition": null },
+        { "name": "Magnemite", "level": 28, "dexNumber": 81, "starterCondition": null },
+        { "name": "Haunter", "level": 30, "dexNumber": 93, "starterCondition": null },
+        { "name": "Sneasel", "level": 28, "dexNumber": 215, "starterCondition": null },
+        { "name": "Meganium", "level": 32, "dexNumber": 154, "starterCondition": "totodile" },
+        { "name": "Typhlosion", "level": 32, "dexNumber": 157, "starterCondition": "chikorita" },
+        { "name": "Feraligatr", "level": 32, "dexNumber": 160, "starterCondition": "cyndaquil" }
+      ]
+    },
+    {
+      "location": "Victory Road",
+      "icon": "flag.checkered",
+      "team": [
+        { "name": "Sneasel", "level": 34, "dexNumber": 215, "starterCondition": null },
+        { "name": "Golbat", "level": 36, "dexNumber": 42, "starterCondition": null },
+        { "name": "Magneton", "level": 35, "dexNumber": 82, "starterCondition": null },
+        { "name": "Gengar", "level": 35, "dexNumber": 94, "starterCondition": null },
+        { "name": "Kadabra", "level": 35, "dexNumber": 64, "starterCondition": null },
+        { "name": "Meganium", "level": 38, "dexNumber": 154, "starterCondition": "totodile" },
+        { "name": "Typhlosion", "level": 38, "dexNumber": 157, "starterCondition": "chikorita" },
+        { "name": "Feraligatr", "level": 38, "dexNumber": 160, "starterCondition": "cyndaquil" }
+      ]
+    },
+    {
+      "location": "Indigo Plateau (rematch)",
+      "icon": "trophy.fill",
+      "team": [
+        { "name": "Sneasel", "level": 41, "dexNumber": 215, "starterCondition": null },
+        { "name": "Crobat", "level": 43, "dexNumber": 169, "starterCondition": null },
+        { "name": "Magneton", "level": 41, "dexNumber": 82, "starterCondition": null },
+        { "name": "Gengar", "level": 43, "dexNumber": 94, "starterCondition": null },
+        { "name": "Alakazam", "level": 41, "dexNumber": 65, "starterCondition": null },
+        { "name": "Meganium", "level": 45, "dexNumber": 154, "starterCondition": "totodile" },
+        { "name": "Typhlosion", "level": 45, "dexNumber": 157, "starterCondition": "chikorita" },
+        { "name": "Feraligatr", "level": 45, "dexNumber": 160, "starterCondition": "cyndaquil" }
+      ]
+    }
+  ]
+}

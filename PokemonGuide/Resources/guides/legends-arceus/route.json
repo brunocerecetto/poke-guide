@@ -1,0 +1,85 @@
+{
+  "sections": [
+    {
+      "title": "Villa Jubileo — Inicio",
+      "steps": [
+        { "id": "r1a", "text": "Caes del cielo a la antigua Hisui (futura Sinnoh). Conoce al Profesor Laventon." },
+        { "id": "r1b", "text": "Elige tu inicial: Rowlet, Cyndaquil u Oshawott." },
+        { "id": "r1c", "text": "Demuestra tu valía capturando Pokémon — mecánica de acción en tiempo real." },
+        { "id": "r1d", "text": "Únete al Equipo Galaxia como miembro del Cuerpo de Reconocimiento." },
+        { "id": "r1e", "text": "Aprende a crear Pokéballs y objetos en el sistema de crafteo." },
+        { "id": "r1f", "text": "Tu misión: completar el primer Pokédex de Hisui." },
+        { "id": "r1g", "text": "Sube de rango completando tareas del Pokédex (capturar, usar movimientos, etc.)." }
+      ]
+    },
+    {
+      "title": "Pradera Obsidiana",
+      "steps": [
+        { "id": "r2a", "text": "Explora la primera zona abierta — pradera con muchos Pokémon." },
+        { "id": "r2b", "text": "Completa misiones secundarias para los aldeanos." },
+        { "id": "r2c", "text": "Captura y estudia Pokémon para completar entradas del Pokédex." },
+        { "id": "r2d", "text": "Cuidado con los Pokémon Alfa — más grandes y agresivos." },
+        { "id": "r2e", "text": "Enfrenta al Noble Kleavor — primer jefe del juego." },
+        { "id": "r2f", "text": "Lanza Bálsamos calmantes mientras esquivas ataques — mecánica de acción." },
+        { "id": "r2g", "text": "Desbloqueas la montura Wyrdeer para moverte más rápido." }
+      ]
+    },
+    {
+      "title": "Pantano Carmesí",
+      "steps": [
+        { "id": "r3a", "text": "Explora la zona pantanosa — nuevos Pokémon disponibles." },
+        { "id": "r3b", "text": "Captura Pokémon de pantano como Croagunk y Tangela." },
+        { "id": "r3c", "text": "Enfrenta al Noble Lilligant Hisuian — Planta/Lucha." },
+        { "id": "r3d", "text": "Esquiva sus saltos y usa los bálsamos cuando esté aturdido." },
+        { "id": "r3e", "text": "Desbloqueas la montura Ursaluna para buscar tesoros enterrados." },
+        { "id": "r3f", "text": "Completa tareas del Pokédex para subir de rango." }
+      ]
+    },
+    {
+      "title": "Costa Cobalto",
+      "steps": [
+        { "id": "r4a", "text": "Zona costera con playas e islas." },
+        { "id": "r4b", "text": "Captura Pokémon acuáticos y voladores." },
+        { "id": "r4c", "text": "Enfrenta al Noble Arcanine Hisuian — Fuego/Roca." },
+        { "id": "r4d", "text": "Desbloqueas la montura Basculegion para navegar por agua." },
+        { "id": "r4e", "text": "Explora las islas para encontrar Pokémon raros." },
+        { "id": "r4f", "text": "Unown escondidos por toda la zona — colecciona los 28." }
+      ]
+    },
+    {
+      "title": "Monte Corona",
+      "steps": [
+        { "id": "r5a", "text": "Zona montañosa en el centro de Hisui." },
+        { "id": "r5b", "text": "Enfrenta al Noble Electrode Hisuian — Eléctrico/Planta." },
+        { "id": "r5c", "text": "Desbloqueas la montura Sneasler para escalar acantilados." },
+        { "id": "r5d", "text": "Explora las cuevas del Monte Corona." },
+        { "id": "r5e", "text": "Captura Pokémon de montaña como Bronzor y Gligar." },
+        { "id": "r5f", "text": "La trama se intensifica — tensiones entre clanes Diamante y Perla." }
+      ]
+    },
+    {
+      "title": "Tundra Alba",
+      "steps": [
+        { "id": "r6a", "text": "Zona nevada y gélida — lleva Pokémon de Fuego." },
+        { "id": "r6b", "text": "Enfrenta al Noble Avalugg Hisuian — Hielo/Roca." },
+        { "id": "r6c", "text": "Desbloqueas la montura Braviary Hisuian para volar." },
+        { "id": "r6d", "text": "Explora desde el aire — muchos Pokémon y objetos ocultos." },
+        { "id": "r6e", "text": "Captura Pokémon de hielo como Snorunt y Swinub." },
+        { "id": "r6f", "text": "Prepárate para el clímax de la historia." }
+      ]
+    },
+    {
+      "title": "Clímax — Dialga/Palkia y Arceus",
+      "steps": [
+        { "id": "r7a", "text": "La Grieta Espaciotemporal amenaza con destruir Hisui." },
+        { "id": "r7b", "text": "Reúne las placas legendarias." },
+        { "id": "r7c", "text": "Enfrenta a Dialga Origen o Palkia Origen como jefe final." },
+        { "id": "r7d", "text": "Captura al legendario derrotado." },
+        { "id": "r7e", "text": "Créditos — pero la aventura continúa." },
+        { "id": "r7f", "text": "Postgame: captura al otro legendario y a los genios del lago." },
+        { "id": "r7g", "text": "Completa todas las entradas del Pokédex para enfrentar a Arceus." },
+        { "id": "r7h", "text": "Combate y captura a Arceus — el Dios Pokémon. Requiere Pokédex completo." }
+      ]
+    }
+  ]
+}

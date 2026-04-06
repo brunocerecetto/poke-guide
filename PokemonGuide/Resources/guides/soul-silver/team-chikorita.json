@@ -1,0 +1,40 @@
+{
+  "members": [
+    {
+      "name": "Meganium",
+      "moves": ["Energy Ball", "Body Slam", "Light Screen", "Synthesis"],
+      "notes": "Tu starter Planta. Evoluciona a Bayleef (16), Meganium (32). Defensivo con Light Screen y Synthesis. Energy Ball (TM53) es mejor STAB que Razor Leaf en HGSS.",
+      "emoji": "🌿"
+    },
+    {
+      "name": "Lugia",
+      "moves": ["Aeroblast", "Psychic", "Ice Beam", "Rain Dance"],
+      "notes": "Whirl Islands Lv. 45 (SoulSilver exclusivo temprano). Tanque especial con Defense 130 y SpDef 154. Aeroblast STAB con alto ratio de crítico. Psychic coverage. Ice Beam contra Lance.",
+      "emoji": "🌊"
+    },
+    {
+      "name": "Ampharos",
+      "moves": ["Thunderbolt", "Signal Beam", "Power Gem", "Thunder Wave"],
+      "notes": "Mareep en Route 32. Thunderbolt STAB. Signal Beam coverage. Thunder Wave utilidad. Eléctrico estable todo el juego.",
+      "emoji": "⚡"
+    },
+    {
+      "name": "Arcanine",
+      "moves": ["Flare Blitz", "ExtremeSpeed", "Crunch", "Thunder Fang"],
+      "notes": "Growlithe en Route 36/37. Flare Blitz STAB físico brutal. ExtremeSpeed prioridad +2. Crunch para Fantasmas. Cubre debilidades de Meganium.",
+      "emoji": "🐕‍🦺"
+    },
+    {
+      "name": "Espeon",
+      "moves": ["Psychic", "Shadow Ball", "Signal Beam", "Morning Sun"],
+      "notes": "Eevee de Bill. Felicidad de día. Psychic STAB devastador. Clave contra Bruno y Koga.",
+      "emoji": "🔮"
+    },
+    {
+      "name": "Heracross",
+      "moves": ["Megahorn", "Close Combat", "Stone Edge", "Night Slash"],
+      "notes": "Headbutt en Azalea. Close Combat en HGSS. Attack 125 con doble STAB. Whitney, Karen, Will — todos caen.",
+      "emoji": "🪲"
+    }
+  ]
+}

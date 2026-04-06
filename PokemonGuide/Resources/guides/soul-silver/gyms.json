@@ -1,0 +1,20 @@
+{
+  "gyms": [
+    { "name": "Violet City", "leader": "Falkner", "levelRange": "9–13", "note": "Tipo Volador. Pidgeotto con Roost. Eléctrico o Roca barren.", "badge": "🪶" },
+    { "name": "Azalea Town", "leader": "Bugsy", "levelRange": "15–17", "note": "Tipo Bicho. Scyther con U-turn. Fuego o Volador.", "badge": "🐛" },
+    { "name": "Goldenrod City", "leader": "Whitney", "levelRange": "17–19", "note": "Tipo Normal. Miltank Lv. 19 con Rollout + Milk Drink + Attract. Lucha o paralizar.", "badge": "🌸" },
+    { "name": "Ecruteak City", "leader": "Morty", "levelRange": "21–25", "note": "Tipo Fantasma. Gengar con Shadow Ball y Sucker Punch. Siniestro.", "badge": "👻" },
+    { "name": "Cianwood City", "leader": "Chuck", "levelRange": "29–31", "note": "Tipo Lucha. Poliwrath con Focus Punch. Volador o Psíquico.", "badge": "🥊" },
+    { "name": "Olivine City", "leader": "Jasmine", "levelRange": "30–35", "note": "Tipo Acero. Steelix Lv. 35. Fuego, Agua, Lucha o Tierra.", "badge": "🔩" },
+    { "name": "Mahogany Town", "leader": "Pryce", "levelRange": "30–34", "note": "Tipo Hielo. Piloswine Lv. 34. Agua, Lucha o Fuego.", "badge": "❄️" },
+    { "name": "Blackthorn City", "leader": "Clair", "levelRange": "38–41", "note": "Tipo Dragón. Kingdra Lv. 41 solo débil a Dragón. Ice Beam para Dragonair.", "badge": "🐉" },
+    { "name": "Vermilion City", "leader": "Lt. Surge", "levelRange": "51–54", "note": "Tipo Eléctrico. Kanto. Earthquake lo destruye.", "badge": "⚡" },
+    { "name": "Saffron City", "leader": "Sabrina", "levelRange": "48–53", "note": "Tipo Psíquico. Kanto. Siniestro o Bicho.", "badge": "🔮" },
+    { "name": "Celadon City", "leader": "Erika", "levelRange": "51–56", "note": "Tipo Planta. Kanto. Fuego o Volador.", "badge": "🌿" },
+    { "name": "Fuchsia City", "leader": "Janine", "levelRange": "47–50", "note": "Tipo Veneno. Kanto. Psíquico o Tierra.", "badge": "☠️" },
+    { "name": "Cerulean City", "leader": "Misty", "levelRange": "49–54", "note": "Tipo Agua. Route 25 primero. Eléctrico o Planta.", "badge": "💧" },
+    { "name": "Pewter City", "leader": "Brock", "levelRange": "51–55", "note": "Tipo Roca. Kanto. Agua, Planta o Lucha.", "badge": "🪨" },
+    { "name": "Seafoam Islands", "leader": "Blaine", "levelRange": "54–59", "note": "Tipo Fuego. Kanto. Agua, Tierra o Roca.", "badge": "🔥" },
+    { "name": "Viridian City", "leader": "Blue", "levelRange": "55–67", "note": "Tipo mixto. Ex-campeón. Equipo variado. Niveles altos.", "badge": "🌍" }
+  ]
+}

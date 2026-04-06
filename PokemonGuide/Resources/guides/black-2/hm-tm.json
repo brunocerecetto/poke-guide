@@ -1,0 +1,22 @@
+{
+  "hms": [
+    { "name": "MO01 Corte", "location": "Ciudad Virbank — regalo de Roxie" },
+    { "name": "MO02 Vuelo", "location": "Ciudad Driftveil — regalo de Bel" },
+    { "name": "MO03 Surf", "location": "Ruta 6 — regalo del guardabosques" },
+    { "name": "MO04 Fuerza", "location": "Ruta 22 — cerca de la victoria" },
+    { "name": "MO05 Cascada", "location": "Ruta 23 — Ruta de la Victoria" },
+    { "name": "MO06 Buceo", "location": "Ciudad Humilau — regalo" }
+  ],
+  "tms": [
+    { "name": "MT26 Terremoto", "location": "Ruta de la Victoria" },
+    { "name": "MT24 Rayo", "location": "Gimnasio de Nimbasa (premio)" },
+    { "name": "MT35 Lanzallamas", "location": "Paso Reverso" },
+    { "name": "MT13 Rayo Hielo", "location": "Cueva Gigante" },
+    { "name": "MT15 Hiperrayo", "location": "Centro Comercial Lacunosa" },
+    { "name": "MT52 Onda Certera", "location": "Gimnasio de Driftveil" },
+    { "name": "MT36 Bomba Lodo", "location": "Ruta 8" },
+    { "name": "MT71 Roca Afilada", "location": "Gimnasio de Mistralton (premio)" },
+    { "name": "MT53 Energibola", "location": "Ruta 12" },
+    { "name": "MT02 Garra Dragón", "location": "Gimnasio de Opelucid (premio)" }
+  ]
+}

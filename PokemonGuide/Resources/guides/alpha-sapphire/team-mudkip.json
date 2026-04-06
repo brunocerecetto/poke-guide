@@ -1,0 +1,10 @@
+{
+  "members": [
+    { "name": "Mega Swampert", "moves": ["Surf", "Terremoto", "Rayo Hielo", "Cascada"], "notes": "Tu starter. Mega con Nado Rápido. Brutal bajo lluvia.", "emoji": "💧" },
+    { "name": "Swellow", "moves": ["Pájaro Osado", "Fachada", "Ida y Vuelta", "Esfuerzo"], "notes": "Atrapa Taillow en la Ruta 104. Agallas + Fachada.", "emoji": "🐦" },
+    { "name": "Breloom", "moves": ["Puño Semilla", "Gancho Alto", "Espora", "Demolición"], "notes": "Atrapa Shroomish en el Bosque Petalia. Espora es increíble.", "emoji": "🍄" },
+    { "name": "Mega Manectric", "moves": ["Rayo", "Voltio Cruel", "Lanzallamas", "Onda Voltio"], "notes": "Atrapa Electrike en la Ruta 110. Mega con Intimidación.", "emoji": "⚡" },
+    { "name": "Sableye", "moves": ["Bola Sombra", "Juego Sucio", "Puño Fuego", "Recuperación"], "notes": "Exclusivo de Alpha Sapphire. Puede Mega Evolucionar. Sin debilidades.", "emoji": "💎" },
+    { "name": "Mega Gardevoir", "moves": ["Psíquico", "Fuerza Lunar", "Bola Sombra", "Paz Mental"], "notes": "Atrapa Ralts en la Ruta 102. Mega Psíquico/Hada.", "emoji": "🔮" }
+  ]
+}

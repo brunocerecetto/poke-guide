@@ -1,0 +1,12 @@
+{
+  "captures": [
+    { "pokemon": "Nidoran♂", "location": "Route 3", "note": "Core desde temprano. Moon Stone → Nidoking." },
+    { "pokemon": "Growlithe", "location": "Route 7", "note": "Exclusivo FireRed. Evoluciona con Fire Stone a Arcanine." },
+    { "pokemon": "Eevee", "location": "Celadon Mansion", "note": "Regalo nv 25 → Jolteon (Thunder Stone)." },
+    { "pokemon": "Exeggcute", "location": "Safari Zone", "note": "Entrenar sin piedra hasta nv 37 (Sleep Powder)." },
+    { "pokemon": "Snorlax", "location": "Route 12 o 16", "note": "Guardar antes, capturar uno con Poké Flute." },
+    { "pokemon": "Lapras", "location": "Silph Co. (piso 7)", "note": "Regalo. Backup Water/Ice excelente." },
+    { "pokemon": "Electabuzz", "location": "Power Plant", "note": "Exclusivo FireRed. Alternativa Electric." },
+    { "pokemon": "Scyther", "location": "Safari Zone", "note": "Exclusivo FireRed. Bug/Flying rápido." }
+  ]
+}

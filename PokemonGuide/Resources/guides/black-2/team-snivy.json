@@ -1,0 +1,10 @@
+{
+  "members": [
+    { "name": "Serperior", "moves": ["Hoja Aguda", "Enrosque", "Gigadrenaje", "Acróbata"], "notes": "Tu inicial Planta. Enrosque sigue siendo excelente.", "emoji": "🌿" },
+    { "name": "Arcanine", "moves": ["Llamarada", "Velocidad Extrema", "Triturar", "Envite Ígneo"], "notes": "Growlithe disponible en la Ruta de Virbank. Gran tipo Fuego.", "emoji": "🔥" },
+    { "name": "Azumarill", "moves": ["Acua Cola", "Carantoña", "Surf", "Chorro de Agua"], "notes": "Azurill en la Ruta 20. Con Potencia Enorme es devastador.", "emoji": "💧" },
+    { "name": "Lucario", "moves": ["A Bocajarro", "Esfera Aural", "Pulso Umbrío", "Danza Espada"], "notes": "Riolu disponible en la Granja de Flocessy. Versátil y potente.", "emoji": "🥊" },
+    { "name": "Magnezone", "moves": ["Rayo", "Destello", "Señal de Voltio", "Tritriturón"], "notes": "Magnemite en el Complejo de Virbank. Sin debilidad a Tierra en evolución.", "emoji": "🧲" },
+    { "name": "Flygon", "moves": ["Terremoto", "Garra Dragón", "Ida y Vuelta", "Roca Afilada"], "notes": "Trapinch en la Ruta 4 (desierto). Tierra/Dragón con Levitación.", "emoji": "🐉" }
+  ]
+}

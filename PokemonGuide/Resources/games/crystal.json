@@ -1,0 +1,37 @@
+{
+  "id": "crystal",
+  "name": "Pokémon Crystal",
+  "generation": 2,
+  "region": "Johto",
+  "releaseYear": 2000,
+  "platform": "GBC",
+  "accentColor": "#4FD1C5",
+  "secondaryColor": "#2C7A7B",
+  "icon": "diamond.fill",
+  "starters": [
+    { "dexNumber": 152, "name": "Chikorita" },
+    { "dexNumber": 155, "name": "Cyndaquil" },
+    { "dexNumber": 158, "name": "Totodile" }
+  ],
+  "gymCount": 16,
+  "hasEliteFour": true,
+  "hasChampion": true,
+  "regionalDex": [
+    { "regionalNumber": 1, "nationalDex": 152, "location": "Pueblo New Bark (inicial)" },
+    { "regionalNumber": 2, "nationalDex": 153, "location": "Evolucionar Chikorita" },
+    { "regionalNumber": 3, "nationalDex": 154, "location": "Evolucionar Bayleef" },
+    { "regionalNumber": 4, "nationalDex": 155, "location": "Pueblo New Bark (inicial)" },
+    { "regionalNumber": 5, "nationalDex": 156, "location": "Evolucionar Cyndaquil" },
+    { "regionalNumber": 6, "nationalDex": 157, "location": "Evolucionar Quilava" },
+    { "regionalNumber": 7, "nationalDex": 158, "location": "Pueblo New Bark (inicial)" },
+    { "regionalNumber": 8, "nationalDex": 159, "location": "Evolucionar Totodile" },
+    { "regionalNumber": 9, "nationalDex": 160, "location": "Evolucionar Croconaw" },
+    { "regionalNumber": 10, "nationalDex": 16, "location": "Ruta 29" },
+    { "regionalNumber": 11, "nationalDex": 17, "location": "Evolucionar Pidgey" },
+    { "regionalNumber": 12, "nationalDex": 18, "location": "Evolucionar Pidgeotto" },
+    { "regionalNumber": 13, "nationalDex": 163, "location": "Ruta 29 (noche)" },
+    { "regionalNumber": 14, "nationalDex": 164, "location": "Evolucionar Hoothoot" },
+    { "regionalNumber": 15, "nationalDex": 19, "location": "Ruta 29" }
+  ],
+  "versionExclusives": {}
+}

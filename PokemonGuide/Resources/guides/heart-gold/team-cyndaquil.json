@@ -1,0 +1,40 @@
+{
+  "members": [
+    {
+      "name": "Typhlosion",
+      "moves": ["Flamethrower", "Focus Blast", "Thunderpunch", "Eruption"],
+      "notes": "Tu starter Fuego. Evoluciona a Quilava (14), Typhlosion (36). Eruption a HP completo es devastador. Flamethrower STAB estable. Focus Blast para Roca. Thunderpunch (tutor) para Agua. Special Attack excelente.",
+      "emoji": "🔥"
+    },
+    {
+      "name": "Ho-Oh",
+      "moves": ["Sacred Fire", "Brave Bird", "Earthquake", "Recover"],
+      "notes": "Tin Tower Lv. 45 (HeartGold). Sacred Fire con 50% quemadura. Stats de 680. Complementa a Typhlosion con Brave Bird STAB Volador y coverage Tierra.",
+      "emoji": "🌈"
+    },
+    {
+      "name": "Gyarados",
+      "moves": ["Waterfall", "Ice Fang", "Dragon Dance", "Earthquake"],
+      "notes": "Gyarados Rojo en Lake of Rage. Waterfall es físico en Gen 4. Dragon Dance + sweep. Ice Fang para Lance. Cubre debilidad Roca de Typhlosion.",
+      "emoji": "🐲"
+    },
+    {
+      "name": "Ampharos",
+      "moves": ["Thunderbolt", "Signal Beam", "Power Gem", "Thunder Wave"],
+      "notes": "Mareep en Route 32. Thunderbolt STAB. Signal Beam coverage. Thunder Wave utilidad. Estable todo el juego.",
+      "emoji": "⚡"
+    },
+    {
+      "name": "Espeon",
+      "moves": ["Psychic", "Shadow Ball", "Signal Beam", "Morning Sun"],
+      "notes": "Eevee de Bill. Felicidad de día. Psychic STAB. Shadow Ball para Fantasmas. Velocidad y Special Attack altísimos.",
+      "emoji": "🔮"
+    },
+    {
+      "name": "Heracross",
+      "moves": ["Megahorn", "Close Combat", "Stone Edge", "Night Slash"],
+      "notes": "Headbutt en Azalea. Close Combat en HGSS es brutal. Megahorn para Psíquicos. Clave contra Whitney, Karen, Will.",
+      "emoji": "🪲"
+    }
+  ]
+}

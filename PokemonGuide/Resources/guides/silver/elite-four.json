@@ -1,0 +1,29 @@
+{
+  "members": [
+    {
+      "name": "Will — Psíquico",
+      "strategy": "Usa tipos Siniestro o Bicho. Tiene 2 Xatu, Jynx, Exeggutor y Slowbro. Xatu es rápido. Siniestro es inmune a Psíquico — Umbreon o Sneasel brillan.",
+      "levels": "40–42"
+    },
+    {
+      "name": "Koga — Veneno",
+      "strategy": "Usa tipos Psíquico o Tierra. Ariados, Forretress, Muk, Venomoth y Crobat. Toxic + stall es peligroso. Earthquake barre a la mayoría.",
+      "levels": "40–43"
+    },
+    {
+      "name": "Bruno — Lucha",
+      "strategy": "Usa tipos Volador o Psíquico. Hitmontop, Hitmonlee, Hitmonchan, Onix y Machamp. Machamp con Cross Chop pega brutal. Fly o Psychic barren.",
+      "levels": "40–43"
+    },
+    {
+      "name": "Karen — Siniestro",
+      "strategy": "Usa tipos Lucha o Bicho. Umbreon, Vileplume, Gengar, Murkrow y Houndoom. Umbreon es tanque — Lucha lo resuelve. Houndoom cae con Surf o Earthquake.",
+      "levels": "42–45"
+    },
+    {
+      "name": "Lance — Campeón (Dragón)",
+      "strategy": "Ice Beam es CLAVE. 3 Dragonite (47, 47, 50), Gyarados, Charizard, Aerodactyl. Thunderbolt para Gyarados. Ice Beam barre Dragonite.",
+      "levels": "44–50"
+    }
+  ]
+}

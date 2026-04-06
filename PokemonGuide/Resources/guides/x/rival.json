@@ -1,0 +1,21 @@
+{
+  "encounters": [
+    { "location": "Pueblo Boceto", "icon": "house.fill", "team": [
+      { "name": "Froakie", "level": 5, "dexNumber": 656, "starterCondition": "Si elegiste Chespin" },
+      { "name": "Chespin", "level": 5, "dexNumber": 650, "starterCondition": "Si elegiste Fennekin" },
+      { "name": "Fennekin", "level": 5, "dexNumber": 653, "starterCondition": "Si elegiste Froakie" }
+    ]},
+    { "location": "Ruta 7", "icon": "figure.walk", "team": [
+      { "name": "Meowstic", "level": 28, "dexNumber": 678, "starterCondition": null },
+      { "name": "Absol", "level": 28, "dexNumber": 359, "starterCondition": null },
+      { "name": "Evolución inicial rival", "level": 30, "dexNumber": 0, "starterCondition": "Ventaja sobre tu inicial" }
+    ]},
+    { "location": "Ruta de la Victoria", "icon": "mountain.2.fill", "team": [
+      { "name": "Meowstic", "level": 57, "dexNumber": 678, "starterCondition": null },
+      { "name": "Absol", "level": 59, "dexNumber": 359, "starterCondition": null },
+      { "name": "Altaria", "level": 57, "dexNumber": 334, "starterCondition": null },
+      { "name": "Vaporeon/Flareon/Jolteon", "level": 57, "dexNumber": 0, "starterCondition": "Depende de tu inicial" },
+      { "name": "Inicial final rival", "level": 61, "dexNumber": 0, "starterCondition": "Ventaja sobre tu inicial" }
+    ]}
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "sections": [
+    {
+      "title": "Pueblo Aspertia → Ciudad Virbank",
+      "steps": [
+        { "id": "r1a", "text": "Elige tu inicial: Snivy, Tepig u Oshawott de Bel." },
+        { "id": "r1b", "text": "Combate rival contra Hugh — tu vecino y compañero de viaje." },
+        { "id": "r1c", "text": "Desafía a Cheren en el Gimnasio de Pueblo Aspertia (tipo Normal)." },
+        { "id": "r1d", "text": "Avanza por la Ruta 20 y el Complejo de la Ruta 20." },
+        { "id": "r1e", "text": "Captura Pokémon de generaciones anteriores — B2W2 mezcla Pokémon viejos y nuevos." },
+        { "id": "r1f", "text": "Llega a Ciudad Virbank." },
+        { "id": "r1g", "text": "Derrota a Roxie en el Gimnasio de tipo Veneno." },
+        { "id": "r1h", "text": "Participa en la escena del rodaje de PokéStar Studios." }
+      ]
+    },
+    {
+      "title": "Ciudad Castelia → Ciudad Nimbasa",
+      "steps": [
+        { "id": "r2a", "text": "Navega en barco hasta Ciudad Castelia." },
+        { "id": "r2b", "text": "Explora las alcantarillas de Castelia — nuevo área subterránea." },
+        { "id": "r2c", "text": "Derrota a Burgh en el Gimnasio de tipo Bicho." },
+        { "id": "r2d", "text": "Avanza por la Ruta 4 hacia Ciudad Nimbasa." },
+        { "id": "r2e", "text": "El desierto ahora tiene construcciones nuevas." },
+        { "id": "r2f", "text": "Derrota a Elesa en su gimnasio rediseñado (tipo Eléctrico)." },
+        { "id": "r2g", "text": "Combate contra Hugh en la salida de la ciudad." }
+      ]
+    },
+    {
+      "title": "Ciudad Driftveil → Ciudad Mistralton",
+      "steps": [
+        { "id": "r3a", "text": "Cruza la Ruta 5 hacia Ciudad Driftveil." },
+        { "id": "r3b", "text": "Explora el Torneo Mundial Pokémon — nuevo edificio de combates." },
+        { "id": "r3c", "text": "Derrota a Clay en el Gimnasio de tipo Tierra." },
+        { "id": "r3d", "text": "Atraviesa la Cueva Chargestone hacia Ciudad Mistralton." },
+        { "id": "r3e", "text": "Derrota a Skyla en el Gimnasio de tipo Volador." },
+        { "id": "r3f", "text": "Ayuda a Skyla en la Torre Celestial." },
+        { "id": "r3g", "text": "Captura Litwick en la Torre Celestial para un gran Fantasma/Fuego." },
+        { "id": "r3h", "text": "Vuela con Skyla hacia la siguiente área." }
+      ]
+    },
+    {
+      "title": "Ciudad Lentimas → Ciudad Opelucid",
+      "steps": [
+        { "id": "r4a", "text": "Llega a Ciudad Lentimas — nueva ciudad volcánica." },
+        { "id": "r4b", "text": "Explora el Paso Reverso — área con Pokémon ocultos." },
+        { "id": "r4c", "text": "Avanza por la Ruta 6 hacia Ciudad Drayden." },
+        { "id": "r4d", "text": "Derrota a Drayden en el Gimnasio de tipo Dragón." },
+        { "id": "r4e", "text": "El Equipo Plasma ataca Ciudad Opelucid con el barco volador." },
+        { "id": "r4f", "text": "Persigue al Equipo Plasma por las calles congeladas." },
+        { "id": "r4g", "text": "Recupera la Llave ADN robada." }
+      ]
+    },
+    {
+      "title": "Ciudad Humilau → Fragata Plasma",
+      "steps": [
+        { "id": "r5a", "text": "Navega por la Ruta 21 hacia Ciudad Humilau." },
+        { "id": "r5b", "text": "Derrota a Marlon en el Gimnasio de tipo Agua." },
+        { "id": "r5c", "text": "Persigue la Fragata Plasma." },
+        { "id": "r5d", "text": "Infiltra la Fragata Plasma — combate secuaces." },
+        { "id": "r5e", "text": "Enfrenta a Zinzolin y los científicos del Equipo Plasma." },
+        { "id": "r5f", "text": "Avanza hacia la Cueva Gigante y la Ruta de la Victoria." }
+      ]
+    },
+    {
+      "title": "Ruta de la Victoria → Liga Pokémon",
+      "steps": [
+        { "id": "r6a", "text": "Entrena en la Ruta de la Victoria — nivel 50+ recomendado." },
+        { "id": "r6b", "text": "Recoge objetos valiosos en las cuevas." },
+        { "id": "r6c", "text": "Hugh te ayuda en un combate doble contra el Equipo Plasma." },
+        { "id": "r6d", "text": "Prepara tu equipo con cobertura variada de tipos." },
+        { "id": "r6e", "text": "Derrota al Alto Mando: Shauntal, Grimsley, Caitlin y Marshal." },
+        { "id": "r6f", "text": "Enfrenta a la Campeona Iris." },
+        { "id": "r6g", "text": "Iris tiene un equipo variado — Haxorus es su as. Tipo Hielo recomendado." }
+      ]
+    },
+    {
+      "title": "Postgame — Exploración",
+      "steps": [
+        { "id": "r7a", "text": "Desbloquea nuevas áreas de Unova." },
+        { "id": "r7b", "text": "Captura los legendarios: Regirock, Regice, Registeel." },
+        { "id": "r7c", "text": "Captura a Latios (Black 2) o Latias (White 2)." },
+        { "id": "r7d", "text": "Explora el Árbol Hueco (Black 2) o el Árbol Hueco (Black 2)." },
+        { "id": "r7e", "text": "Participa en el Torneo Mundial Pokémon — enfrenta líderes de todas las regiones." },
+        { "id": "r7f", "text": "Completa el Pokédex Nacional ahora disponible." }
+      ]
+    }
+  ]
+}

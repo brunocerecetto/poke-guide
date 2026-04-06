@@ -1,0 +1,18 @@
+{
+  "hms": [
+    { "name": "Bicicleta Rotom", "location": "Ruta 5 — regalo. Se actualiza para navegar por agua en la Ruta 9." },
+    { "name": "Taxi Corviknight", "location": "Tras el primer gimnasio — vuelo rápido a cualquier ciudad visitada" }
+  ],
+  "tms": [
+    { "name": "MT26 Cara Susto", "location": "Ciudad Motostoke — Tienda" },
+    { "name": "MT99 Ráfaga Plasma", "location": "Gimnasio de Hammerlocke (premio)" },
+    { "name": "MT43 Demolición", "location": "Centro Pokémon de Motostoke" },
+    { "name": "MT76 Canon", "location": "Gimnasio de Turffield (premio)" },
+    { "name": "MT36 Remolino", "location": "Gimnasio de Hulbury (premio)" },
+    { "name": "MT38 Fuego Fatuo", "location": "Gimnasio de Motostoke (premio)" },
+    { "name": "MT27 Viento Helado", "location": "Área Silvestre — vendedor ambulante" },
+    { "name": "MT02 Garra Metal", "location": "Ruta 3" },
+    { "name": "MT14 Onda Trueno", "location": "Ruta 4" },
+    { "name": "MT79 Represalia", "location": "Hammerlocke — Tienda" }
+  ]
+}

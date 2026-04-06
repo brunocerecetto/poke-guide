@@ -1,0 +1,10 @@
+{
+  "members": [
+    { "name": "Blaziken", "moves": ["Patada Ígnea", "Tajo Cruzado", "Envite Ígneo", "Corpulencia"], "notes": "Tu starter. Tipo Fuego/Lucha devastador. Evoluciona a Combusken nivel 16, Blaziken nivel 36.", "emoji": "🔥" },
+    { "name": "Swellow", "moves": ["Golpe Aéreo", "Fachada", "Ala de Acero", "Esfuerzo"], "notes": "Atrapa Taillow en la Ruta 104. Cubre tipo Volador y es muy rápido.", "emoji": "🐦" },
+    { "name": "Breloom", "moves": ["Puño Semilla", "Gancho Alto", "Espora", "Demolición"], "notes": "Atrapa Shroomish en el Bosque Petalia. Espora es increíble para capturar Pokémon.", "emoji": "🍄" },
+    { "name": "Gyarados", "moves": ["Surf", "Terremoto", "Danza Dragón", "Rayo Hielo"], "notes": "Atrapa Magikarp pescando. Tras evolucionar nivel 20, es una bestia física.", "emoji": "🐉" },
+    { "name": "Aggron", "moves": ["Cabeza de Hierro", "Terremoto", "Avalancha", "Corpulencia"], "notes": "Atrapa Aron en la Cueva Granito. Muro defensivo con gran ataque.", "emoji": "🦏" },
+    { "name": "Gardevoir", "moves": ["Psíquico", "Paz Mental", "Bola Sombra", "Rayo"], "notes": "Atrapa Ralts en la Ruta 102. Difícil de encontrar pero vale la pena.", "emoji": "🔮" }
+  ]
+}

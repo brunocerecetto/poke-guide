@@ -1,0 +1,12 @@
+{
+  "tips": [
+    { "pokemon": "General", "rule": "B2W2 mezcla Pokémon de todas las generaciones desde el inicio — más variedad que BW." },
+    { "pokemon": "Lucario", "rule": "Riolu está disponible muy temprano en la Granja de Flocessy. Evoluciona con amistad de día." },
+    { "pokemon": "Arcanine", "rule": "Growlithe en la Ruta de Virbank es uno de los mejores Fuego disponibles temprano." },
+    { "pokemon": "Magnezone", "rule": "Magnemite en el Complejo de Virbank. Evoluciona en Cueva Chargestone automáticamente." },
+    { "pokemon": "Braviary/Mandibuzz", "rule": "Braviary en Black 2, Mandibuzz en White 2. Disponibles los jueves/lunes en la Ruta 4." },
+    { "pokemon": "PWT", "rule": "El Torneo Mundial Pokémon te permite enfrentar a líderes de todas las generaciones. Gran lugar para entrenar." },
+    { "pokemon": "Shiny Charm", "rule": "Completa el Pokédex Nacional para recibir el Amuleto Iris — triplica las probabilidades de shiny." },
+    { "pokemon": "Eevee", "rule": "Eevee disponible en las alcantarillas de Castelia. Todas sus evoluciones son viables." }
+  ]
+}

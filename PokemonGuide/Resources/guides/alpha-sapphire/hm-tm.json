@@ -1,0 +1,21 @@
+{
+  "hms": [
+    { "hm": "MO01 Corte", "pokemon": "Breloom / Linoone", "location": "Ciudad Férrica (tras derrotar a Roxanne)" },
+    { "hm": "MO02 Vuelo", "pokemon": "Swellow / Latias", "location": "Ruta 119 (tras el Instituto del Clima)" },
+    { "hm": "MO03 Surf", "pokemon": "Swampert / Walrein", "location": "Ciudad Petalia (tras derrotar a Norman)" },
+    { "hm": "MO04 Fuerza", "pokemon": "Aggron / Hariyama", "location": "Cueva Granito" },
+    { "hm": "MO05 Cascada", "pokemon": "Gyarados / Walrein", "location": "Cueva Origen" },
+    { "hm": "MO06 Golpe Roca", "pokemon": "Aggron / Geodude", "location": "Pueblo Escaso" },
+    { "hm": "MO07 Buceo", "pokemon": "Walrein / Tentacruel", "location": "Ciudad Algaria (Steven)" }
+  ],
+  "tms": [
+    { "tm": "MT04 Paz Mental", "target": "Gardevoir / Gallade", "origin": "Ciudad Algaria (tras Tate y Liza)" },
+    { "tm": "MT13 Rayo Hielo", "target": "Swampert / Walrein", "origin": "Cueva Paseo" },
+    { "tm": "MT24 Rayo", "target": "Manectric / Gardevoir", "origin": "Centro Comercial de Ciudad Calagua" },
+    { "tm": "MT26 Terremoto", "target": "Swampert / Flygon", "origin": "Cueva Paseo (piso profundo)" },
+    { "tm": "MT29 Psíquico", "target": "Gardevoir / Gallade", "origin": "Centro Comercial de Ciudad Calagua" },
+    { "tm": "MT35 Lanzallamas", "target": "Blaziken / Camerupt", "origin": "Centro Comercial de Ciudad Calagua" },
+    { "tm": "MT55 Escaldar", "target": "Walrein / Swampert", "origin": "Pueblo Lavacalda" },
+    { "tm": "MT99 Brillo Mágico", "target": "Gardevoir / Altaria", "origin": "Tienda de Ciudad Calagua" }
+  ]
+}

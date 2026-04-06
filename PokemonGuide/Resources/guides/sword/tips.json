@@ -1,0 +1,12 @@
+{
+  "tips": [
+    { "pokemon": "Dynamax", "rule": "Solo puedes hacer Dynamax en estadios y Raids. Dura 3 turnos. Los Max Moves tienen efectos secundarios (clima, terreno, etc.)." },
+    { "pokemon": "Área Silvestre", "rule": "Zona abierta con Pokémon de todos los niveles. El clima cambia diariamente y afecta qué Pokémon aparecen." },
+    { "pokemon": "Raids Dynamax", "rule": "Participa en Raids de 4 jugadores para capturar Pokémon con habilidades ocultas y Gigamax." },
+    { "pokemon": "Toxtricity", "rule": "Toxel de regalo en la Ruta 5 evoluciona según su naturaleza: Amped (agresivas) o Low Key (tranquilas)." },
+    { "pokemon": "Corviknight", "rule": "Rookidee evoluciona en uno de los mejores tanques del juego. Volador/Acero con muchas resistencias." },
+    { "pokemon": "Exp. Candy", "rule": "Las Raids dan Caramelos de Experiencia — la forma más rápida de subir de nivel." },
+    { "pokemon": "Zacian", "rule": "Legendario Hada (Sword). Con Espada Oxidada se convierte en Hada/Acero — uno de los Pokémon más fuertes jamás creados." },
+    { "pokemon": "Exclusivos Sword", "rule": "Sword tiene: Bea (Lucha), Gordie (Roca), Sirfetch'd, Passimian, Turtonator, Solrock." }
+  ]
+}

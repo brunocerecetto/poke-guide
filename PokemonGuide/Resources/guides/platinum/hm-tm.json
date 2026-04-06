@@ -1,0 +1,22 @@
+{
+  "hms": [
+    { "hm": "MO01 Corte", "pokemon": "Roserade / Bibarel", "location": "Ciudad Vetusta (tras derrotar a Gardenia)" },
+    { "hm": "MO02 Vuelo", "pokemon": "Staraptor / Togekiss", "location": "Ciudad Rocavelo (almacén del Team Galaxia)" },
+    { "hm": "MO03 Surf", "pokemon": "Gyarados / Empoleon", "location": "Ciudad Corazón (anciano en la iglesia)" },
+    { "hm": "MO04 Fuerza", "pokemon": "Bibarel / Machamp", "location": "Torre Perdida (Ruta 209)" },
+    { "hm": "MO05 Niebla", "pokemon": "Tentacruel / Gyarados", "location": "Gran Pantano (Ciudad Pradera)" },
+    { "hm": "MO06 Golpe Roca", "pokemon": "Bibarel / Geodude", "location": "Puerta de Pirita" },
+    { "hm": "MO07 Cascada", "pokemon": "Gyarados / Empoleon", "location": "Ciudad Marina (playa)" },
+    { "hm": "MO08 Trepar", "pokemon": "Bibarel / Lucario", "location": "Ruta 217 (casa en la nieve)" }
+  ],
+  "tms": [
+    { "tm": "MT13 Rayo Hielo", "target": "Gyarados / Empoleon", "origin": "Casino de Ciudad Rocavelo" },
+    { "tm": "MT24 Rayo", "target": "Luxray / Empoleon", "origin": "Casino de Ciudad Rocavelo" },
+    { "tm": "MT26 Terremoto", "target": "Garchomp / Torterra", "origin": "Camino Victoria" },
+    { "tm": "MT29 Psíquico", "target": "Gallade / Gardevoir", "origin": "Casino de Ciudad Rocavelo" },
+    { "tm": "MT35 Lanzallamas", "target": "Infernape / Houndoom", "origin": "Casino de Ciudad Rocavelo" },
+    { "tm": "MT36 Bomba Lodo", "target": "Roserade / Tentacruel", "origin": "Ruta 212 (pantano)" },
+    { "tm": "MT52 Onda Certera", "target": "Infernape / Lucario", "origin": "Centro Comercial de Ciudad Rocavelo" },
+    { "tm": "MT71 Roca Afilada", "target": "Garchomp / Rampardos", "origin": "Casino de Ciudad Rocavelo" }
+  ]
+}
