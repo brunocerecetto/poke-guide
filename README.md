@@ -24,11 +24,11 @@ Built with the FireRed color palette — warm cream backgrounds, soft cards, and
 
 ## Build & Run
 
-Open `pokemon guide/pokemon guide.xcodeproj` in Xcode and press Cmd+R.
+Open `pokemon guide.xcodeproj` in Xcode and press Cmd+R.
 
 ```bash
 # CLI build
-xcodebuild -project "pokemon guide/pokemon guide.xcodeproj" \
+xcodebuild -project "pokemon guide.xcodeproj" \
   -scheme "pokemon guide" \
   -destination 'platform=iOS Simulator,name=iPhone 17 Pro' \
   build

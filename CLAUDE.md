@@ -8,14 +8,14 @@ A SwiftUI iOS app — a Pokémon FireRed walkthrough/guide with progress trackin
 
 ## Build & Run
 
-Open `pokemon guide/pokemon guide.xcodeproj` in Xcode and build (Cmd+B) / run (Cmd+R). No package managers or build scripts — pure Xcode project.
+Open `pokemon guide.xcodeproj` in Xcode and build (Cmd+B) / run (Cmd+R). No package managers or build scripts — pure Xcode project.
 
 ```bash
 # Build from CLI
-xcodebuild -project "pokemon guide/pokemon guide.xcodeproj" -scheme "pokemon guide" -destination 'platform=iOS Simulator,name=iPhone 16' build
+xcodebuild -project "pokemon guide.xcodeproj" -scheme "pokemon guide" -destination 'platform=iOS Simulator,name=iPhone 17 Pro' build
 
 # Run tests
-xcodebuild -project "pokemon guide/pokemon guide.xcodeproj" -scheme "pokemon guide" -destination 'platform=iOS Simulator,name=iPhone 16' test
+xcodebuild -project "pokemon guide.xcodeproj" -scheme "pokemon guide" -destination 'platform=iOS Simulator,name=iPhone 17 Pro' test
 ```
 
 ## Architecture
