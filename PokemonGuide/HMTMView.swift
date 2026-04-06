@@ -6,6 +6,7 @@
 import SwiftUI
 
 struct HMTMView: View {
+    @EnvironmentObject var bridge: GameDataBridge
     @State private var selectedTab = 0
 
     var body: some View {
@@ -40,7 +41,7 @@ struct HMTMView: View {
 
     private var hmList: some View {
         VStack(spacing: 8) {
-            ForEach(GameData.hms) { entry in
+            ForEach(bridge.hmEntries) { entry in
                 HStack(spacing: 12) {
                     Text(entry.hm)
                         .font(.system(size: 14, weight: .bold, design: .rounded))
@@ -88,7 +89,7 @@ struct HMTMView: View {
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .padding(.horizontal)
 
-            ForEach(GameData.tms) { entry in
+            ForEach(bridge.tmEntries) { entry in
                 HStack(spacing: 12) {
                     VStack(alignment: .leading, spacing: 4) {
                         HStack {
@@ -122,5 +123,6 @@ struct HMTMView: View {
 #Preview {
     NavigationStack {
         HMTMView()
+            .environmentObject(GameDataBridge(gameId: "fireRed", starterDex: 7, context: nil))
     }
 }

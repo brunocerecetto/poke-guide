@@ -6,6 +6,7 @@
 import SwiftUI
 
 struct CapturesView: View {
+    @EnvironmentObject var bridge: GameDataBridge
     @Environment(\.themeColors) private var theme
 
     var body: some View {
@@ -16,7 +17,7 @@ struct CapturesView: View {
                 VStack(spacing: 12) {
                     GuideDisclaimerBanner()
 
-                    ForEach(GameData.captures) { capture in
+                    ForEach(bridge.captures) { capture in
                         HStack(spacing: 14) {
                             // Pokéball icon
                             ZStack {
@@ -63,5 +64,6 @@ struct CapturesView: View {
 #Preview {
     NavigationStack {
         CapturesView()
+            .environmentObject(GameDataBridge(gameId: "fireRed", starterDex: 7, context: nil))
     }
 }

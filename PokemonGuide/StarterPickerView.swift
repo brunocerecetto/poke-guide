@@ -73,6 +73,8 @@ extension MockStarter {
 struct StarterPickerView: View {
     let game: MockGame
     @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject var gameConfig: GameConfig
+    @EnvironmentObject var progress: ProgressManager
 
     @State private var selectedStarter: MockStarter?
     @State private var appeared = false
@@ -125,7 +127,16 @@ struct StarterPickerView: View {
         .alert("Empezar aventura", isPresented: $showConfirmation) {
             Button("Cancelar", role: .cancel) { }
             Button("Empezar") {
-                // TODO: Wire up GameConfig.configure(gameId:starterDex:...)
+                guard let starter = selectedStarter else { return }
+                gameConfig.configure(
+                    gameId: game.id,
+                    starterDex: starter.id,
+                    gameName: game.name,
+                    accentColorHex: game.accentHex,
+                    secondaryColorHex: game.secondaryHex,
+                    iconName: game.icon
+                )
+                progress.switchConfig(prefix: gameConfig.progressPrefix)
             }
         } message: {
             if let starter = selectedStarter {
@@ -308,4 +319,6 @@ struct StarterPickerView: View {
             game: MockGame.mockGames.first { $0.id == "firered" }!
         )
     }
+    .environmentObject(GameConfig())
+    .environmentObject(ProgressManager())
 }

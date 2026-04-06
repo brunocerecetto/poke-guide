@@ -10,7 +10,10 @@ import SwiftUI
 struct RivalView: View {
     @EnvironmentObject var gameConfig: GameConfig
     @EnvironmentObject var progress: ProgressManager
+    @EnvironmentObject var bridge: GameDataBridge
     @Environment(\.themeColors) private var theme
+
+    private var encounters: [RivalEncounterDTO] { bridge.rivalEncounters }
 
     var body: some View {
         ZStack {
@@ -22,12 +25,9 @@ struct RivalView: View {
                         .padding(.horizontal)
                         .padding(.top, 8)
 
-                    ForEach(RivalData.encounters) { encounter in
-                        RivalEncounterCard(
-                            encounter: encounter,
-                            starter: gameConfig.starter
-                        )
-                        .padding(.horizontal)
+                    ForEach(encounters) { encounter in
+                        RivalEncounterCard(encounter: encounter)
+                            .padding(.horizontal)
                     }
                 }
                 .padding(.bottom, 30)
@@ -64,10 +64,10 @@ struct RivalView: View {
             Spacer()
 
             // Encounter count
-            let completed = RivalData.encounters.filter {
-                progress.isRouteStepCompleted($0.id)
+            let completed = encounters.filter {
+                progress.isRouteStepCompleted(bridge.rivalEncounterProgressId(for: $0))
             }.count
-            Text("\(completed)/\(RivalData.encounters.count)")
+            Text("\(completed)/\(encounters.count)")
                 .font(.system(size: 15, weight: .bold, design: .rounded))
                 .foregroundColor(theme.accent)
         }
@@ -79,15 +79,16 @@ struct RivalView: View {
 // MARK: - Encounter Card
 
 private struct RivalEncounterCard: View {
-    let encounter: RivalEncounter
-    let starter: Starter
+    let encounter: RivalEncounterDTO
 
     @EnvironmentObject var progress: ProgressManager
+    @EnvironmentObject var bridge: GameDataBridge
     @Environment(\.themeColors) private var theme
     @State private var isExpanded = false
 
-    private var team: [RivalPokemon] { encounter.team(starter) }
-    private var isCompleted: Bool { progress.isRouteStepCompleted(encounter.id) }
+    private var team: [RivalPokemonDTO] { encounter.team }
+    private var encounterId: String { bridge.rivalEncounterProgressId(for: encounter) }
+    private var isCompleted: Bool { progress.isRouteStepCompleted(encounterId) }
 
     var body: some View {
         VStack(spacing: 0) {
@@ -117,13 +118,13 @@ private struct RivalEncounterCard: View {
                 // Check toggle
                 Button {
                     withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) {
-                        progress.toggleRouteStep(encounter.id)
+                        progress.toggleRouteStep(encounterId)
                     }
                 } label: {
                     AnimatedCheck(isCompleted: isCompleted, size: 22)
                 }
 
-                Image(systemName: encounter.icon)
+                Image(systemName: encounter.iconName)
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundColor(theme.accent)
 
@@ -143,7 +144,7 @@ private struct RivalEncounterCard: View {
             // Sprite row (compact preview)
             HStack(spacing: 6) {
                 ForEach(team) { pokemon in
-                    AsyncImage(url: pokemon.spriteURL) { image in
+                    AsyncImage(url: Self.spriteURL(dex: pokemon.dexNumber)) { image in
                         image.interpolation(.none).resizable().scaledToFit()
                     } placeholder: {
                         RoundedRectangle(cornerRadius: 4)
@@ -174,9 +175,13 @@ private struct RivalEncounterCard: View {
         }
     }
 
-    private func pokemonRow(_ pokemon: RivalPokemon) -> some View {
+    private static func spriteURL(dex: Int) -> URL? {
+        URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(dex).png")
+    }
+
+    private func pokemonRow(_ pokemon: RivalPokemonDTO) -> some View {
         HStack(spacing: 10) {
-            AsyncImage(url: pokemon.spriteURL) { image in
+            AsyncImage(url: Self.spriteURL(dex: pokemon.dexNumber)) { image in
                 image.interpolation(.none).resizable().scaledToFit()
             } placeholder: {
                 ProgressView()
@@ -209,5 +214,6 @@ private struct RivalEncounterCard: View {
         RivalView()
             .environmentObject(GameConfig())
             .environmentObject(ProgressManager())
+            .environmentObject(GameDataBridge(gameId: "fireRed", starterDex: 7, context: nil))
     }
 }

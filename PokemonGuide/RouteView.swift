@@ -7,8 +7,8 @@ import SwiftUI
 
 struct RouteView: View {
     @EnvironmentObject var progress: ProgressManager
+    @EnvironmentObject var bridge: GameDataBridge
     @Environment(\.themeColors) private var theme
-    private let sections = GameData.routeSections
 
     var body: some View {
         ZStack {
@@ -24,7 +24,7 @@ struct RouteView: View {
                         .padding(.horizontal)
                         .padding(.top, 0)
 
-                    ForEach(sections) { section in
+                    ForEach(bridge.routeSections) { section in
                         sectionView(section)
                     }
                 }
@@ -37,8 +37,8 @@ struct RouteView: View {
     }
 
     private var routeProgress: some View {
-        let totalSteps = sections.flatMap(\.steps).count
-        let completedSteps = sections.flatMap(\.steps).filter { progress.isRouteStepCompleted($0.id) }.count
+        let totalSteps = bridge.routeSections.flatMap(\.steps).count
+        let completedSteps = bridge.routeSections.flatMap(\.steps).filter { progress.isRouteStepCompleted($0.id) }.count
 
         return VStack(spacing: 6) {
             HStack {
@@ -74,7 +74,7 @@ struct RouteView: View {
         )
     }
 
-    private func sectionView(_ section: RouteSection) -> some View {
+    private func sectionView(_ section: RouteSectionDTO) -> some View {
         let sectionCompleted = section.steps.allSatisfy { progress.isRouteStepCompleted($0.id) }
 
         return VStack(alignment: .leading, spacing: 0) {
@@ -103,7 +103,7 @@ struct RouteView: View {
         }
     }
 
-    private func stepRow(_ step: RouteStep, isLast: Bool) -> some View {
+    private func stepRow(_ step: RouteStepDTO, isLast: Bool) -> some View {
         let completed = progress.isRouteStepCompleted(step.id)
 
         return Button {
@@ -163,5 +163,6 @@ struct RouteView: View {
     NavigationStack {
         RouteView()
             .environmentObject(ProgressManager())
+            .environmentObject(GameDataBridge(gameId: "fireRed", starterDex: 7, context: nil))
     }
 }

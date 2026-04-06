@@ -6,7 +6,8 @@
 import SwiftUI
 
 struct TeamView: View {
-    @State private var expandedId: UUID?
+    @EnvironmentObject var bridge: GameDataBridge
+    @State private var expandedId: Int?
 
     var body: some View {
         ZStack {
@@ -18,7 +19,7 @@ struct TeamView: View {
 
                     // Team overview bar
                     HStack(spacing: 0) {
-                        ForEach(GameData.team) { member in
+                        ForEach(bridge.team) { member in
                             Text(member.emoji)
                                 .font(.title)
                                 .frame(maxWidth: .infinity)
@@ -34,7 +35,7 @@ struct TeamView: View {
                     }
                     .padding(.vertical, 12)
 
-                    ForEach(GameData.team) { member in
+                    ForEach(bridge.team) { member in
                         pokemonCard(member)
                             .padding(.horizontal)
                     }
@@ -47,7 +48,7 @@ struct TeamView: View {
         .toolbarBackground(.automatic, for: .navigationBar)
     }
 
-    private func pokemonCard(_ member: TeamMember) -> some View {
+    private func pokemonCard(_ member: TeamMemberDTO) -> some View {
         let isExpanded = expandedId == member.id
 
         return Button {
@@ -174,5 +175,6 @@ struct TeamView: View {
 #Preview {
     NavigationStack {
         TeamView()
+            .environmentObject(GameDataBridge(gameId: "fireRed", starterDex: 7, context: nil))
     }
 }

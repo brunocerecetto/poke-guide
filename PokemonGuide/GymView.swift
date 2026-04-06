@@ -7,10 +7,11 @@ import SwiftUI
 
 struct GymView: View {
     @EnvironmentObject var progress: ProgressManager
+    @EnvironmentObject var bridge: GameDataBridge
     @State private var celebrateAll = false
 
     private var allCompleted: Bool {
-        progress.completedGyms.count == GameData.gyms.count
+        progress.completedGyms.count == bridge.gyms.count
     }
 
     var body: some View {
@@ -21,7 +22,7 @@ struct GymView: View {
                 VStack(spacing: 12) {
                     // Badge counter
                     HStack(spacing: 6) {
-                        ForEach(GameData.gyms) { gym in
+                        ForEach(bridge.gyms) { gym in
                             Text(gym.badge)
                                 .font(.title2)
                                 .opacity(progress.isGymCompleted(gym.name) ? 1 : 0.2)
@@ -51,7 +52,7 @@ struct GymView: View {
                     .padding(.horizontal)
 
                     // Gym cards
-                    ForEach(Array(GameData.gyms.enumerated()), id: \.element.id) { index, gym in
+                    ForEach(Array(bridge.gyms.enumerated()), id: \.element.id) { index, gym in
                         gymCard(gym, index: index)
                             .padding(.horizontal)
                     }
@@ -74,14 +75,14 @@ struct GymView: View {
         }
     }
 
-    private func gymCard(_ gym: Gym, index: Int) -> some View {
+    private func gymCard(_ gym: GymDTO, index: Int) -> some View {
         let completed = progress.isGymCompleted(gym.name)
 
         return Button {
             withAnimation(.spring(response: 0.4, dampingFraction: 0.6)) {
                 progress.toggleGym(gym.name)
             }
-            if progress.completedGyms.count == GameData.gyms.count {
+            if progress.completedGyms.count == bridge.gyms.count {
                 celebrateAll = true
             }
         } label: {
@@ -149,5 +150,6 @@ struct GymView: View {
     NavigationStack {
         GymView()
             .environmentObject(ProgressManager())
+            .environmentObject(GameDataBridge(gameId: "fireRed", starterDex: 7, context: nil))
     }
 }

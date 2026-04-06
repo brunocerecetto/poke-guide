@@ -7,6 +7,7 @@ import SwiftUI
 
 struct LeagueView: View {
     @EnvironmentObject var progress: ProgressManager
+    @EnvironmentObject var bridge: GameDataBridge
     @Environment(\.themeColors) private var theme
     @State private var celebrateLeague = false
 
@@ -22,7 +23,7 @@ struct LeagueView: View {
                     sectionHeader(title: "CHECKLIST PRE-LIGA", icon: "checklist")
 
                     VStack(spacing: 6) {
-                        ForEach(GameData.preLeagueChecklist) { step in
+                        ForEach(bridge.preLeagueChecklist) { step in
                             checkRow(
                                 text: step.text,
                                 isCompleted: progress.isPreLeagueCompleted(step.id),
@@ -41,7 +42,7 @@ struct LeagueView: View {
                     sectionHeader(title: "ELITE FOUR — PLAN EXACTO", icon: "trophy.fill")
 
                     VStack(spacing: 10) {
-                        ForEach(GameData.eliteFour) { member in
+                        ForEach(bridge.eliteFour) { member in
                             eliteMemberCard(member)
                         }
                     }
@@ -56,7 +57,7 @@ struct LeagueView: View {
                     sectionHeader(title: "POSTGAME OPCIONAL", icon: "star.circle")
 
                     VStack(spacing: 6) {
-                        ForEach(GameData.postgame) { step in
+                        ForEach(bridge.postgameChecklist) { step in
                             checkRow(
                                 text: step.text,
                                 isCompleted: progress.isPostgameCompleted(step.id),
@@ -110,14 +111,14 @@ struct LeagueView: View {
         .padding(.horizontal)
     }
 
-    private func eliteMemberCard(_ member: EliteMember) -> some View {
+    private func eliteMemberCard(_ member: EliteFourMemberDTO) -> some View {
         let completed = progress.isLeagueCompleted(member.name)
 
         return Button {
             withAnimation(.spring(response: 0.4, dampingFraction: 0.6)) {
                 progress.toggleLeague(member.name)
             }
-            if progress.completedLeague.count == GameData.eliteFour.count {
+            if progress.completedLeague.count == bridge.eliteFour.count {
                 celebrateLeague = true
             }
         } label: {
@@ -202,5 +203,6 @@ struct LeagueView: View {
     NavigationStack {
         LeagueView()
             .environmentObject(ProgressManager())
+            .environmentObject(GameDataBridge(gameId: "fireRed", starterDex: 7, context: nil))
     }
 }

@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		AA000001AAAA000000000001 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = AA000002AAAA000000000001 /* Resources */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		68579C012F83B811007C0026 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -23,12 +27,9 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXBuildFile section */
-		AA000001AAAA000000000001 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = AA000002AAAA000000000001 /* Resources */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
 		681FBC5A2F842B6600E8025A /* pokemon guide.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "pokemon guide.xcodeproj"; sourceTree = "<group>"; };
+		681FC0BB2F843E6400E8025A /* pokemon guide.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "pokemon guide.xcodeproj"; sourceTree = "<group>"; };
 		68579BF12F83B810007C0026 /* PokemonGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68579C002F83B811007C0026 /* PokemonGuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokemonGuideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68579C0A2F83B811007C0026 /* PokemonGuideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokemonGuideUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +80,11 @@
 
 /* Begin PBXGroup section */
 		681FBC612F842B6600E8025A /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		681FC0C82F843E6400E8025A /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
 			sourceTree = "<group>";
@@ -211,6 +217,10 @@
 			productRefGroup = 68579BF22F83B810007C0026 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = 681FC0C82F843E6400E8025A /* Products */;
+					ProjectRef = 681FC0BB2F843E6400E8025A /* pokemon guide.xcodeproj */;
+				},
 				{
 					ProductGroup = 681FBC612F842B6600E8025A /* Products */;
 					ProjectRef = 681FBC5A2F842B6600E8025A /* pokemon guide.xcodeproj */;

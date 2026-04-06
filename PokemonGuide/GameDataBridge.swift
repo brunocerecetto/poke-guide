@@ -1,0 +1,191 @@
+//
+//  GameDataBridge.swift
+//  PokemonGuide
+//
+//  Bridge layer that loads guide data from GuideRepository (Core Data)
+//  when available, falling back to legacy static GameData/RivalData.
+//
+
+import Foundation
+import CoreData
+import Combine
+
+class GameDataBridge: ObservableObject {
+    // No @Published properties needed — data is currently static per session.
+    // This dummy property satisfies ObservableObject synthesis under @MainActor isolation.
+    @Published private var _version: Int = 0
+
+    private let guideRepo: GuideRepository?
+    private let gameId: String
+    private let starterDex: Int
+
+    init(gameId: String, starterDex: Int, context: NSManagedObjectContext?) {
+        self.gameId = gameId
+        self.starterDex = starterDex
+        if let context {
+            self.guideRepo = GuideRepository(context: context)
+        } else {
+            self.guideRepo = nil
+        }
+    }
+
+    // MARK: - Gyms
+
+    var gyms: [GymDTO] {
+        if let repoGyms = guideRepo?.gyms(gameId: gameId), !repoGyms.isEmpty {
+            return repoGyms
+        }
+        return GameData.gyms.enumerated().map { i, g in
+            GymDTO(id: i, name: g.name, leader: g.leader, levelRange: g.levelRange, note: g.note, badge: g.badge)
+        }
+    }
+
+    // MARK: - Team
+
+    func teamRecommendation(starter: String) -> TeamRecommendationDTO? {
+        if let rec = guideRepo?.teamRecommendation(gameId: gameId, starter: starter) {
+            return rec
+        }
+        let members = GameData.team.enumerated().map { i, m in
+            TeamMemberDTO(id: i, name: m.name, moves: m.moves, notes: m.notes, emoji: m.emoji)
+        }
+        return TeamRecommendationDTO(starterCondition: starter, members: members)
+    }
+
+    /// Convenience: team members for the current starter
+    var team: [TeamMemberDTO] {
+        let starterName = Starter.allCases.first { $0.dexNumber == starterDex }?.rawValue ?? "squirtle"
+        return teamRecommendation(starter: starterName)?.members ?? []
+    }
+
+    // MARK: - Route Sections
+
+    var routeSections: [RouteSectionDTO] {
+        if let repoSections = guideRepo?.routeSections(gameId: gameId), !repoSections.isEmpty {
+            return repoSections
+        }
+        return GameData.routeSections.enumerated().map { i, s in
+            RouteSectionDTO(
+                id: i,
+                title: s.title,
+                steps: s.steps.map { RouteStepDTO(id: $0.id, text: $0.text) }
+            )
+        }
+    }
+
+    // MARK: - Elite Four
+
+    var eliteFour: [EliteFourMemberDTO] {
+        if let repoMembers = guideRepo?.eliteFour(gameId: gameId), !repoMembers.isEmpty {
+            return repoMembers
+        }
+        return GameData.eliteFour.enumerated().map { i, m in
+            EliteFourMemberDTO(id: i, name: m.name, strategy: m.strategy, levels: m.levels)
+        }
+    }
+
+    // MARK: - Pre-League / Postgame Checklists
+
+    var preLeagueChecklist: [ChecklistStepDTO] {
+        if let repoSteps = guideRepo?.preLeagueChecklist(gameId: gameId), !repoSteps.isEmpty {
+            return repoSteps
+        }
+        return GameData.preLeagueChecklist.map { ChecklistStepDTO(id: $0.id, text: $0.text) }
+    }
+
+    var postgameChecklist: [ChecklistStepDTO] {
+        if let repoSteps = guideRepo?.postgameChecklist(gameId: gameId), !repoSteps.isEmpty {
+            return repoSteps
+        }
+        return GameData.postgame.map { ChecklistStepDTO(id: $0.id, text: $0.text) }
+    }
+
+    // MARK: - Captures
+
+    var captures: [KeyCaptureDTO] {
+        if let repoCaptures = guideRepo?.captures(gameId: gameId), !repoCaptures.isEmpty {
+            return repoCaptures
+        }
+        return GameData.captures.enumerated().map { i, c in
+            KeyCaptureDTO(id: i, pokemon: c.pokemon, location: c.location, note: c.note)
+        }
+    }
+
+    // MARK: - HMs & TMs
+
+    var hmEntries: [HMEntryDTO] {
+        if let repoEntries = guideRepo?.hmEntries(gameId: gameId), !repoEntries.isEmpty {
+            return repoEntries
+        }
+        return GameData.hms.enumerated().map { i, h in
+            HMEntryDTO(id: i, hm: h.hm, pokemon: h.pokemon, location: h.location)
+        }
+    }
+
+    var tmEntries: [TMEntryDTO] {
+        if let repoEntries = guideRepo?.tmEntries(gameId: gameId), !repoEntries.isEmpty {
+            return repoEntries
+        }
+        return GameData.tms.enumerated().map { i, t in
+            TMEntryDTO(id: i, tm: t.tm, target: t.target, origin: t.origin)
+        }
+    }
+
+    // MARK: - Tips
+
+    var tips: [TipDTO] {
+        if let repoTips = guideRepo?.tips(gameId: gameId), !repoTips.isEmpty {
+            return repoTips
+        }
+        return GameData.tips.enumerated().map { i, t in
+            TipDTO(id: i, pokemon: t.pokemon, rule: t.rule)
+        }
+    }
+
+    // MARK: - Rival Encounters
+
+    /// Maps RivalEncounterDTO.id to the legacy string ID used for progress tracking.
+    /// Core Data encounters don't need this (they use their own IDs).
+    private var rivalEncounterProgressIds: [Int: String] {
+        var map: [Int: String] = [:]
+        for (i, encounter) in RivalData.encounters.enumerated() {
+            map[i] = encounter.id
+        }
+        return map
+    }
+
+    var rivalEncounters: [RivalEncounterDTO] {
+        if let repoEncounters = guideRepo?.rivalEncounters(gameId: gameId), !repoEncounters.isEmpty {
+            return repoEncounters
+        }
+        let starter = Starter.allCases.first { $0.dexNumber == starterDex } ?? .squirtle
+        return RivalData.encounters.enumerated().map { i, encounter in
+            let team = encounter.team(starter)
+            return RivalEncounterDTO(
+                id: i,
+                location: encounter.location,
+                iconName: encounter.icon,
+                team: team.enumerated().map { j, p in
+                    RivalPokemonDTO(id: j, name: p.name, level: p.level, dexNumber: p.dexNumber, starterCondition: nil)
+                }
+            )
+        }
+    }
+
+    /// Returns the progress-tracking ID for a rival encounter.
+    /// For legacy data this is the original string ID (e.g. "rival_cerulean").
+    /// For Core Data this falls back to the DTO's numeric ID as string.
+    func rivalEncounterProgressId(for encounter: RivalEncounterDTO) -> String {
+        rivalEncounterProgressIds[encounter.id] ?? String(encounter.id)
+    }
+
+    // MARK: - Counts (for ProgressManager)
+
+    var totalCheckable: Int {
+        gyms.count
+        + routeSections.flatMap(\.steps).count
+        + eliteFour.count
+        + preLeagueChecklist.count
+        + postgameChecklist.count
+    }
+}

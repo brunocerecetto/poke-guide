@@ -145,9 +145,7 @@ class GameConfig: ObservableObject {
         didSet { defaults.set(iconName, forKey: Self.iconNameKey) }
     }
 
-    var isConfigured: Bool {
-        defaults.bool(forKey: Self.configuredKey)
-    }
+    @Published var isConfigured: Bool
 
     /// Key prefix for namespacing progress data per config.
     /// For legacy fireRed+squirtle this produces "fireRed_squirtle" (same as before).
@@ -192,6 +190,7 @@ class GameConfig: ObservableObject {
             _accentColorHex = Published(initialValue: UserDefaults.standard.string(forKey: Self.accentColorHexKey) ?? "#E02D1F")
             _secondaryColorHex = Published(initialValue: UserDefaults.standard.string(forKey: Self.secondaryColorHexKey) ?? "#ED801A")
             _iconName = Published(initialValue: UserDefaults.standard.string(forKey: Self.iconNameKey) ?? "flame.fill")
+            _isConfigured = Published(initialValue: UserDefaults.standard.bool(forKey: Self.configuredKey))
         } else if let legacyVersionRaw = UserDefaults.standard.string(forKey: Self.legacyVersionKey),
                   let legacyVersion = GameVersion(rawValue: legacyVersionRaw) {
             // Migrate from legacy format
@@ -204,6 +203,7 @@ class GameConfig: ObservableObject {
             _accentColorHex = Published(initialValue: legacyVersion.accentColorHex)
             _secondaryColorHex = Published(initialValue: legacyVersion.secondaryColorHex)
             _iconName = Published(initialValue: legacyVersion.icon)
+            _isConfigured = Published(initialValue: true)
 
             // Persist in new format
             let ud = UserDefaults.standard
@@ -224,6 +224,7 @@ class GameConfig: ObservableObject {
             _accentColorHex = Published(initialValue: "#E02D1F")
             _secondaryColorHex = Published(initialValue: "#ED801A")
             _iconName = Published(initialValue: "flame.fill")
+            _isConfigured = Published(initialValue: false)
         }
     }
 
@@ -243,6 +244,7 @@ class GameConfig: ObservableObject {
         self.accentColorHex = accentColorHex
         self.secondaryColorHex = secondaryColorHex
         self.iconName = iconName
+        self.isConfigured = true
         defaults.set(true, forKey: Self.configuredKey)
 
         // Also write legacy keys if this is a legacy game, so old code paths work
@@ -274,8 +276,9 @@ class GameConfig: ObservableObject {
         accentColorHex = "#E02D1F"
         secondaryColorHex = "#ED801A"
         iconName = "flame.fill"
+        isConfigured = false
 
-        // Remove all keys so isConfigured returns false
+        // Remove all keys so UserDefaults stays in sync
         defaults.removeObject(forKey: Self.configuredKey)
         defaults.removeObject(forKey: Self.gameIdKey)
         defaults.removeObject(forKey: Self.starterDexKey)

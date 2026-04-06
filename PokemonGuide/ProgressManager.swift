@@ -166,12 +166,18 @@ class ProgressManager: ObservableObject {
 
     // MARK: - Overall progress
 
+    /// Total checkable items. Use `totalCheckable(from:)` with a bridge for accurate counts.
+    /// Falls back to legacy GameData when no bridge is available.
     var totalCheckable: Int {
         GameData.gyms.count
         + GameData.routeSections.flatMap(\.steps).count
         + GameData.eliteFour.count
         + GameData.preLeagueChecklist.count
         + GameData.postgame.count
+    }
+
+    func totalCheckable(from bridge: GameDataBridge) -> Int {
+        bridge.totalCheckable
     }
 
     var totalCompleted: Int {

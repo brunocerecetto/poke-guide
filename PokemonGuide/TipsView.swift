@@ -6,6 +6,8 @@
 import SwiftUI
 
 struct TipsView: View {
+    @EnvironmentObject var bridge: GameDataBridge
+
     var body: some View {
         ZStack {
             Color.fireBg.ignoresSafeArea()
@@ -14,7 +16,7 @@ struct TipsView: View {
                 VStack(spacing: 12) {
                     GuideDisclaimerBanner()
 
-                    ForEach(GameData.tips) { tip in
+                    ForEach(bridge.tips) { tip in
                         VStack(alignment: .leading, spacing: 8) {
                             Text(tip.pokemon)
                                 .font(.system(.headline, design: .rounded))
@@ -49,5 +51,6 @@ struct TipsView: View {
 #Preview {
     NavigationStack {
         TipsView()
+            .environmentObject(GameDataBridge(gameId: "fireRed", starterDex: 7, context: nil))
     }
 }

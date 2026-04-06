@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var progress: ProgressManager
     @EnvironmentObject var gameConfig: GameConfig
+    @EnvironmentObject var bridge: GameDataBridge
     @Environment(\.themeColors) private var theme
     @State private var showResetAlert = false
     @State private var showChangeGameAlert = false
@@ -25,6 +26,12 @@ struct ContentView: View {
     private var displayIconName: String {
         if !gameConfig.iconName.isEmpty { return gameConfig.iconName }
         return gameConfig.version.icon
+    }
+
+    private var bridgeProgressFraction: Double {
+        let total = progress.totalCheckable(from: bridge)
+        guard total > 0 else { return 0 }
+        return Double(progress.totalCompleted) / Double(total)
     }
 
     private var starterName: String {
@@ -134,7 +141,7 @@ struct ContentView: View {
                     .foregroundColor(.fireTextPrimary)
             }
 
-            PokeballProgress(progress: progress.progressFraction)
+            PokeballProgress(progress: bridgeProgressFraction)
 
             HStack(spacing: 5) {
                 Image(systemName: "checkmark.circle.fill")
@@ -145,7 +152,7 @@ struct ContentView: View {
                     .foregroundColor(.fireTextPrimary)
                 Text("/")
                     .foregroundColor(.fireTextSecondary)
-                Text("\(progress.totalCheckable)")
+                Text("\(progress.totalCheckable(from: bridge))")
                     .font(.system(size: 15, weight: .bold, design: .rounded))
                     .foregroundColor(.fireTextSecondary)
                 Text("pasos")
@@ -331,4 +338,5 @@ struct ContentView: View {
     ContentView()
         .environmentObject(ProgressManager())
         .environmentObject(GameConfig())
+        .environmentObject(GameDataBridge(gameId: "fireRed", starterDex: 7, context: nil))
 }
