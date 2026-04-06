@@ -243,6 +243,7 @@ struct ContentView: View {
 
     private enum Destination: Hashable {
         case gyms, team, route, pokedex, captures, hmtm, tips, league
+        case typeChart, rival, evolutions, teamBuilder
     }
 
     private struct MenuItem: Identifiable {
@@ -265,6 +266,10 @@ struct ContentView: View {
         case .hmtm: HMTMView()
         case .tips: TipsView()
         case .league: LeagueView()
+        case .typeChart: TypeChartView()
+        case .rival: RivalView()
+        case .evolutions: EvolutionView()
+        case .teamBuilder: TeamBuilderView()
         }
     }
 
@@ -283,6 +288,10 @@ struct ContentView: View {
             MenuItem(icon: "arrow.triangle.swap", title: "HMs & TMs", subtitle: "Reparto y compras", color: .teal, destination: .hmtm),
             MenuItem(icon: "lightbulb.fill", title: "Tips & Tricks", subtitle: "Reglas de evolución y más", color: .fireYellow, destination: .tips),
             MenuItem(icon: "trophy.fill", title: "Liga Pokémon", subtitle: "Plan + checklist final", color: theme.secondary, destination: .league),
+            MenuItem(icon: "square.grid.3x3.fill", title: "Tabla de Tipos", subtitle: "Efectividad de ataques", color: Color(red: 0.76, green: 0.18, blue: 0.16), destination: .typeChart),
+            MenuItem(icon: "person.fill.questionmark", title: "Rival", subtitle: "Equipo del rival por pelea", color: .fireBlue, destination: .rival),
+            MenuItem(icon: "arrow.triangle.branch", title: "Evoluciones", subtitle: "Cadenas y métodos", color: .fireGreen, destination: .evolutions),
+            MenuItem(icon: "hammer.fill", title: "Team Builder", subtitle: "Armá tu equipo ideal", color: .fireOrange, destination: .teamBuilder),
         ]
     }
 }

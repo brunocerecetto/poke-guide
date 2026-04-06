@@ -2,38 +2,67 @@
 //  Theme.swift
 //  pokemon guide
 //
-//  Paleta de colores + componentes reutilizables. Soporta FireRed y LeafGreen.
+//  Paleta de colores + componentes reutilizables. Soporta FireRed y LeafGreen, light y dark mode.
 //
 
 import SwiftUI
 
-// MARK: - FireRed Color Palette (Light Mode)
+// MARK: - FireRed Color Palette (Adaptive: Light + Dark)
 
 extension Color {
-    // FireRed accent colors
+    // FireRed accent colors (same in both modes)
     static let fireRed = Color(red: 0.88, green: 0.18, blue: 0.12)
     static let fireOrange = Color(red: 0.93, green: 0.50, blue: 0.10)
     static let fireYellow = Color(red: 0.98, green: 0.78, blue: 0.15)
     static let fireBlue = Color(red: 0.22, green: 0.48, blue: 0.85)
     static let fireGreen = Color(red: 0.20, green: 0.72, blue: 0.35)
 
-    // LeafGreen accent colors
+    // LeafGreen accent colors (same in both modes)
     static let leafGreen = Color(red: 0.18, green: 0.65, blue: 0.32)
     static let leafTeal = Color(red: 0.15, green: 0.55, blue: 0.52)
     static let leafYellow = Color(red: 0.70, green: 0.82, blue: 0.20)
 
-    // Surfaces
-    static let fireBg = Color(red: 0.96, green: 0.95, blue: 0.93)       // warm cream bg
-    static let fireCard = Color.white
-    static let fireCardAlt = Color(red: 0.98, green: 0.97, blue: 0.96)  // slightly warm white
+    // Surfaces (adaptive)
+    static let fireBg = Color(UIColor { tc in
+        tc.userInterfaceStyle == .dark
+            ? UIColor(red: 0.10, green: 0.10, blue: 0.12, alpha: 1)
+            : UIColor(red: 0.96, green: 0.95, blue: 0.93, alpha: 1)
+    })
 
-    // Text
-    static let fireTextPrimary = Color(red: 0.13, green: 0.13, blue: 0.15)
-    static let fireTextSecondary = Color(red: 0.45, green: 0.44, blue: 0.48)
+    static let fireCard = Color(UIColor { tc in
+        tc.userInterfaceStyle == .dark
+            ? UIColor(red: 0.16, green: 0.16, blue: 0.18, alpha: 1)
+            : UIColor.white
+    })
 
-    // Legacy aliases (used by sub-views)
+    static let fireCardAlt = Color(UIColor { tc in
+        tc.userInterfaceStyle == .dark
+            ? UIColor(red: 0.18, green: 0.18, blue: 0.20, alpha: 1)
+            : UIColor(red: 0.98, green: 0.97, blue: 0.96, alpha: 1)
+    })
+
+    // Text (adaptive)
+    static let fireTextPrimary = Color(UIColor { tc in
+        tc.userInterfaceStyle == .dark
+            ? UIColor(red: 0.93, green: 0.93, blue: 0.95, alpha: 1)
+            : UIColor(red: 0.13, green: 0.13, blue: 0.15, alpha: 1)
+    })
+
+    static let fireTextSecondary = Color(UIColor { tc in
+        tc.userInterfaceStyle == .dark
+            ? UIColor(red: 0.60, green: 0.60, blue: 0.65, alpha: 1)
+            : UIColor(red: 0.45, green: 0.44, blue: 0.48, alpha: 1)
+    })
+
+    // Legacy aliases (adaptive)
     static let fireDark = fireBg
-    static let fireGray = Color(red: 0.93, green: 0.92, blue: 0.90)
+
+    static let fireGray = Color(UIColor { tc in
+        tc.userInterfaceStyle == .dark
+            ? UIColor(red: 0.20, green: 0.20, blue: 0.22, alpha: 1)
+            : UIColor(red: 0.93, green: 0.92, blue: 0.90, alpha: 1)
+    })
+
     static let fireLightGray = fireTextSecondary
 }
 
@@ -116,16 +145,22 @@ struct SoftCard: ViewModifier {
     var shadowOpacity: Double = 0.08
     var shadowRadius: CGFloat = 10
 
+    @Environment(\.colorScheme) private var colorScheme
+
     func body(content: Content) -> some View {
+        let isDark = colorScheme == .dark
+        let effectiveShadowOpacity = isDark ? shadowOpacity * 0.4 : shadowOpacity
+        let borderOpacity: Double = isDark ? 0.12 : 0.04
+
         content
             .background(
                 RoundedRectangle(cornerRadius: cornerRadius)
                     .fill(Color.fireCard)
-                    .shadow(color: tint != .clear ? tint.opacity(0.10) : .black.opacity(shadowOpacity), radius: shadowRadius, y: 4)
+                    .shadow(color: tint != .clear ? tint.opacity(isDark ? 0.06 : 0.10) : .black.opacity(effectiveShadowOpacity), radius: shadowRadius, y: 4)
             )
             .overlay(
                 RoundedRectangle(cornerRadius: cornerRadius)
-                    .stroke(Color.black.opacity(0.04), lineWidth: 0.5)
+                    .stroke(Color.white.opacity(borderOpacity), lineWidth: 0.5)
             )
             .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
     }
@@ -177,7 +212,7 @@ struct AnimatedCheck: View {
     var body: some View {
         Image(systemName: isCompleted ? "checkmark.circle.fill" : "circle")
             .font(.system(size: size))
-            .foregroundColor(isCompleted ? .fireGreen : Color.black.opacity(0.2))
+            .foregroundColor(isCompleted ? .fireGreen : .fireTextSecondary.opacity(0.4))
             .scaleEffect(scale)
             .onChange(of: isCompleted) { _, newValue in
                 if newValue {
@@ -219,7 +254,7 @@ struct PokeballProgress: View {
         ZStack {
             // Background ring
             Circle()
-                .stroke(Color.black.opacity(0.06), lineWidth: 10)
+                .stroke(Color.fireTextSecondary.opacity(0.15), lineWidth: 10)
                 .frame(width: 130, height: 130)
 
             // Progress ring
