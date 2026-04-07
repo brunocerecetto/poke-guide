@@ -17,8 +17,6 @@ struct LeagueView: View {
 
             ScrollView {
                 VStack(spacing: KASpacing.md) {
-                    GuideDisclaimerBanner()
-
                     sectionHeader(title: "CHECKLIST PRE-LIGA", icon: "checklist")
 
                     VStack(spacing: 6) {
@@ -58,19 +56,7 @@ struct LeagueView: View {
                     }
                     .padding(.horizontal)
 
-                    HStack {
-                        Image(systemName: "info.circle.fill")
-                            .foregroundColor(.kaSecondaryContainer)
-                        Text("Rock Smash y Waterfall son HMs de postgame en Sevii Islands.")
-                            .font(KATypography.labelSm)
-                            .foregroundColor(.kaSecondaryContainer)
-                    }
-                    .padding(10)
-                    .frame(maxWidth: .infinity)
-                    .background(Color.surfaceContainerHighest)
-                    .clipShape(RoundedRectangle(cornerRadius: KARadius.sm))
-                    .padding(.horizontal)
-                    .padding(.bottom, 30)
+                    Spacer().frame(height: KASpacing.md)
                 }
                 .padding(.top, KASpacing.sm)
             }

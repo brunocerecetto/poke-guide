@@ -36,19 +36,6 @@ struct GymView: View {
                         .font(KATypography.bodySmall)
                         .foregroundColor(.onSurfaceVariant)
 
-                    HStack {
-                        Image(systemName: "info.circle.fill")
-                            .foregroundColor(.primaryContainer)
-                        Text("Liga: entrá 52–55 mínimo, 55+ para margen cómodo")
-                            .font(KATypography.labelSm)
-                            .foregroundColor(.primaryContainer)
-                    }
-                    .padding(10)
-                    .frame(maxWidth: .infinity)
-                    .background(Color.surfaceContainerHighest)
-                    .clipShape(RoundedRectangle(cornerRadius: KARadius.sm))
-                    .padding(.horizontal)
-
                     ForEach(Array(bridge.gyms.enumerated()), id: \.element.id) { index, gym in
                         gymCard(gym, index: index)
                             .padding(.horizontal)

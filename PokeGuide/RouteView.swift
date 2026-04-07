@@ -16,11 +16,9 @@ struct RouteView: View {
 
             ScrollView {
                 VStack(spacing: KASpacing.md) {
-                    GuideDisclaimerBanner()
-                        .padding(.top, KASpacing.xs)
-
                     routeProgress
                         .padding(.horizontal)
+                        .padding(.top, KASpacing.xs)
 
                     ForEach(bridge.routeSections) { section in
                         sectionView(section)
