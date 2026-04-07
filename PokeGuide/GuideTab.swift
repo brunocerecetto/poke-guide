@@ -60,6 +60,13 @@ struct GuideTab: View {
                         .opacity(appeared ? 1 : 0)
                         .offset(y: appeared ? 0 : -20)
 
+                    Text("ADVENTURE DASHBOARD")
+                        .font(.system(size: 11, weight: .bold, design: .rounded))
+                        .foregroundColor(.onSurfaceVariant)
+                        .tracking(3)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal)
+
                     guideGrid
                         .padding(.horizontal)
 
@@ -271,9 +278,10 @@ struct GuideTab: View {
                     .foregroundColor(.onSurface)
                     .lineLimit(1)
                 Text(item.subtitle)
-                    .font(KATypography.labelSm)
+                    .font(.system(size: 10, weight: .semibold, design: .rounded))
                     .foregroundColor(.onSurfaceVariant)
-                    .lineLimit(1)
+                    .tracking(1.5)
+                    .lineLimit(2)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -325,10 +333,10 @@ struct GuideTab: View {
 
     private var guideItems: [MenuItem] {
         [
-            MenuItem(icon: "shield.checkered", title: "Gimnasios", subtitle: "\(progress.completedGyms.count)/\(bridge.gyms.count) badges", color: theme.accent, destination: .gyms),
-            MenuItem(icon: "map.fill", title: "Ruta Completa", subtitle: "Paso a paso", color: .success, destination: .route),
-            MenuItem(icon: "trophy.fill", title: "Liga Pokémon", subtitle: "Plan + checklist final", color: theme.secondary, destination: .league),
-            MenuItem(icon: "person.fill.questionmark", title: "Rival", subtitle: "Equipo del rival por pelea", color: .kaSecondaryContainer, destination: .rival),
+            MenuItem(icon: "shield.checkered", title: "Gimnasios", subtitle: "\(progress.completedGyms.count) DE \(bridge.gyms.count) MEDALLAS", color: theme.accent, destination: .gyms),
+            MenuItem(icon: "map.fill", title: "Ruta Completa", subtitle: "VER ITINERARIO", color: .success, destination: .route),
+            MenuItem(icon: "trophy.fill", title: "Liga Pokémon", subtitle: "NIVEL REQUERIDO: 50", color: theme.secondary, destination: .league),
+            MenuItem(icon: "person.fill.questionmark", title: "Rival", subtitle: "ÚLTIMO ENCUENTRO: —", color: .kaSecondaryContainer, destination: .rival),
         ]
     }
 }
