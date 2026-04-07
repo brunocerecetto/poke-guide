@@ -16,8 +16,6 @@ struct ContentView: View {
     @State private var showChangeGameAlert = false
     @State private var appeared = false
 
-    // MARK: - Data-Driven Helpers
-
     private var displayGameName: String {
         if !gameConfig.gameName.isEmpty { return gameConfig.gameName }
         return gameConfig.version.displayName
@@ -57,7 +55,7 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             ScrollView(showsIndicators: false) {
-                VStack(spacing: 22) {
+                VStack(spacing: KASpacing.lg) {
                     heroHeader
                         .opacity(appeared ? 1 : 0)
                         .offset(y: appeared ? 0 : -20)
@@ -101,7 +99,7 @@ struct ContentView: View {
                     } label: {
                         Image(systemName: "ellipsis.circle")
                             .font(.system(size: 15, weight: .semibold))
-                            .foregroundColor(.fireTextSecondary)
+                            .foregroundColor(.onSurfaceVariant)
                     }
                 }
             }
@@ -128,18 +126,18 @@ struct ContentView: View {
     // MARK: - Hero Header
 
     private var heroHeader: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: KASpacing.md) {
             Spacer().frame(height: 6)
 
             VStack(spacing: 5) {
                 Text("GUÍA DEFINITIVA")
-                    .font(.system(size: 10, weight: .heavy, design: .rounded))
+                    .font(KATypography.labelXs)
                     .foregroundColor(theme.secondary)
                     .tracking(4)
 
                 Text("\(starterName) Run")
                     .font(.system(size: 30, weight: .heavy, design: .rounded))
-                    .foregroundColor(.fireTextPrimary)
+                    .foregroundColor(.onSurface)
             }
 
             PokeballProgress(progress: bridgeProgressFraction)
@@ -147,33 +145,33 @@ struct ContentView: View {
             HStack(spacing: 5) {
                 Image(systemName: "checkmark.circle.fill")
                     .font(.system(size: 12))
-                    .foregroundColor(.fireGreen)
+                    .foregroundColor(.success)
                 Text("\(progress.totalCompleted)")
-                    .font(.system(size: 15, weight: .bold, design: .rounded))
-                    .foregroundColor(.fireTextPrimary)
+                    .font(KATypography.titleSm)
+                    .foregroundColor(.onSurface)
                 Text("/")
-                    .foregroundColor(.fireTextSecondary)
+                    .foregroundColor(.onSurfaceVariant)
                 Text("\(progress.totalCheckable(from: bridge))")
-                    .font(.system(size: 15, weight: .bold, design: .rounded))
-                    .foregroundColor(.fireTextSecondary)
+                    .font(KATypography.titleSm)
+                    .foregroundColor(.onSurfaceVariant)
                 Text("pasos")
-                    .font(.system(size: 12, weight: .medium, design: .rounded))
-                    .foregroundColor(.fireTextSecondary)
+                    .font(KATypography.bodySmall)
+                    .foregroundColor(.onSurfaceVariant)
             }
 
-            Spacer().frame(height: 4)
+            Spacer().frame(height: KASpacing.xs)
         }
         .frame(maxWidth: .infinity)
-        .softCard(cornerRadius: 24, tint: theme.accent, shadowRadius: 14)
+        .softCard(cornerRadius: KARadius.xl, tint: theme.accent)
         .padding(.horizontal)
     }
 
     // MARK: - Primary Grid
 
     private var primaryGrid: some View {
-        let columns = [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)]
+        let columns = [GridItem(.flexible(), spacing: KASpacing.sm + KASpacing.xs), GridItem(.flexible(), spacing: KASpacing.sm + KASpacing.xs)]
 
-        return LazyVGrid(columns: columns, spacing: 12) {
+        return LazyVGrid(columns: columns, spacing: KASpacing.sm + KASpacing.xs) {
             ForEach(Array(primaryItems.enumerated()), id: \.element.title) { index, item in
                 NavigationLink {
                     destinationView(for: item.destination)
@@ -190,7 +188,7 @@ struct ContentView: View {
     private func bigCard(item: MenuItem) -> some View {
         VStack(alignment: .leading, spacing: 10) {
             ZStack {
-                RoundedRectangle(cornerRadius: 12)
+                RoundedRectangle(cornerRadius: KARadius.sm)
                     .fill(item.color.opacity(0.10))
                     .frame(width: 44, height: 44)
 
@@ -201,24 +199,24 @@ struct ContentView: View {
 
             VStack(alignment: .leading, spacing: 3) {
                 Text(item.title)
-                    .font(.system(size: 15, weight: .bold, design: .rounded))
-                    .foregroundColor(.fireTextPrimary)
+                    .font(KATypography.titleSm)
+                    .foregroundColor(.onSurface)
                     .lineLimit(1)
                 Text(item.subtitle)
-                    .font(.system(size: 11, weight: .medium, design: .rounded))
-                    .foregroundColor(.fireTextSecondary)
+                    .font(KATypography.labelSm)
+                    .foregroundColor(.onSurfaceVariant)
                     .lineLimit(1)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(16)
-        .softCard(cornerRadius: 18, tint: item.color)
+        .padding(KASpacing.md)
+        .softCard(cornerRadius: KARadius.lg, tint: item.color)
     }
 
     // MARK: - Secondary List
 
     private var secondaryList: some View {
-        VStack(spacing: 8) {
+        VStack(spacing: KASpacing.sm) {
             ForEach(Array(secondaryItems.enumerated()), id: \.element.title) { index, item in
                 NavigationLink {
                     destinationView(for: item.destination)
@@ -233,7 +231,7 @@ struct ContentView: View {
     }
 
     private func slimCard(item: MenuItem) -> some View {
-        HStack(spacing: 14) {
+        HStack(spacing: KASpacing.md) {
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(item.color.opacity(0.10))
@@ -246,22 +244,22 @@ struct ContentView: View {
 
             VStack(alignment: .leading, spacing: 2) {
                 Text(item.title)
-                    .font(.system(size: 14, weight: .semibold, design: .rounded))
-                    .foregroundColor(.fireTextPrimary)
+                    .font(KATypography.titleSm)
+                    .foregroundColor(.onSurface)
                 Text(item.subtitle)
-                    .font(.system(size: 11, design: .rounded))
-                    .foregroundColor(.fireTextSecondary)
+                    .font(KATypography.labelSm)
+                    .foregroundColor(.onSurfaceVariant)
             }
 
             Spacer()
 
             Image(systemName: "chevron.right")
                 .font(.system(size: 11, weight: .bold))
-                .foregroundColor(Color.black.opacity(0.15))
+                .foregroundColor(.outlineVariant)
         }
-        .padding(.horizontal, 14)
-        .padding(.vertical, 12)
-        .softCard(cornerRadius: 16, tint: item.color, shadowRadius: 6)
+        .padding(.horizontal, KASpacing.md)
+        .padding(.vertical, KASpacing.sm + KASpacing.xs)
+        .softCard(cornerRadius: KARadius.lg, tint: item.color)
     }
 
     // MARK: - Footer
@@ -274,9 +272,9 @@ struct ContentView: View {
             Image(systemName: displayIconName)
                 .font(.system(size: 9))
             Text(regionLabel)
-                .font(.system(size: 10, weight: .semibold, design: .rounded))
+                .font(KATypography.labelXs)
         }
-        .foregroundColor(.fireTextSecondary.opacity(0.5))
+        .foregroundColor(.onSurfaceVariant.opacity(0.5))
         .opacity(appeared ? 1 : 0)
         .animation(.easeOut(duration: 0.5).delay(0.6), value: appeared)
     }
@@ -318,9 +316,9 @@ struct ContentView: View {
     private var primaryItems: [MenuItem] {
         [
             MenuItem(icon: "shield.checkered", title: "Gimnasios", subtitle: "\(progress.completedGyms.count)/\(bridge.gyms.count) badges", color: theme.accent, destination: .gyms),
-            MenuItem(icon: "person.3.fill", title: "Equipo Final", subtitle: "6 pokémon + movesets", color: .fireBlue, destination: .team),
-            MenuItem(icon: "map.fill", title: "Ruta Completa", subtitle: "Paso a paso", color: .fireGreen, destination: .route),
-            MenuItem(icon: "book.closed.fill", title: "Pokédex", subtitle: "\(progress.pokemonStatuses.filter { $0.value.rawValue >= 2 }.count)/\(PokemonLoader.entries(forGameId: gameConfig.gameId).count) capturados", color: Color(red: 0.85, green: 0.25, blue: 0.25), destination: .pokedex),
+            MenuItem(icon: "person.3.fill", title: "Equipo Final", subtitle: "6 pokémon + movesets", color: .kaSecondaryContainer, destination: .team),
+            MenuItem(icon: "map.fill", title: "Ruta Completa", subtitle: "Paso a paso", color: .success, destination: .route),
+            MenuItem(icon: "book.closed.fill", title: "Pokédex", subtitle: "\(progress.pokemonStatuses.filter { $0.value.rawValue >= 2 }.count)/\(PokemonLoader.entries(forGameId: gameConfig.gameId).count) capturados", color: .kaPrimary, destination: .pokedex),
         ]
     }
 
@@ -328,12 +326,12 @@ struct ContentView: View {
         [
             MenuItem(icon: "scope", title: "Capturas Clave", subtitle: "5 pokémon esenciales", color: .purple, destination: .captures),
             MenuItem(icon: "arrow.triangle.swap", title: "HMs & TMs", subtitle: "Reparto y compras", color: .teal, destination: .hmtm),
-            MenuItem(icon: "lightbulb.fill", title: "Tips & Tricks", subtitle: "Reglas de evolución y más", color: .fireYellow, destination: .tips),
+            MenuItem(icon: "lightbulb.fill", title: "Tips & Tricks", subtitle: "Reglas de evolución y más", color: .kaYellow, destination: .tips),
             MenuItem(icon: "trophy.fill", title: "Liga Pokémon", subtitle: "Plan + checklist final", color: theme.secondary, destination: .league),
-            MenuItem(icon: "square.grid.3x3.fill", title: "Tabla de Tipos", subtitle: "Efectividad de ataques", color: Color(red: 0.76, green: 0.18, blue: 0.16), destination: .typeChart),
-            MenuItem(icon: "person.fill.questionmark", title: "Rival", subtitle: "Equipo del rival por pelea", color: .fireBlue, destination: .rival),
-            MenuItem(icon: "arrow.triangle.branch", title: "Evoluciones", subtitle: "Cadenas y métodos", color: .fireGreen, destination: .evolutions),
-            MenuItem(icon: "hammer.fill", title: "Team Builder", subtitle: "Armá tu equipo ideal", color: .fireOrange, destination: .teamBuilder),
+            MenuItem(icon: "square.grid.3x3.fill", title: "Tabla de Tipos", subtitle: "Efectividad de ataques", color: .kaPrimary, destination: .typeChart),
+            MenuItem(icon: "person.fill.questionmark", title: "Rival", subtitle: "Equipo del rival por pelea", color: .kaSecondaryContainer, destination: .rival),
+            MenuItem(icon: "arrow.triangle.branch", title: "Evoluciones", subtitle: "Cadenas y métodos", color: .success, destination: .evolutions),
+            MenuItem(icon: "hammer.fill", title: "Team Builder", subtitle: "Armá tu equipo ideal", color: .primaryContainer, destination: .teamBuilder),
         ]
     }
 }

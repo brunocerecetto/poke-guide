@@ -1,6 +1,6 @@
 //
 //  HMTMView.swift
-//  pokemon guide
+//  poke guide
 //
 
 import SwiftUI
@@ -11,10 +11,9 @@ struct HMTMView: View {
 
     var body: some View {
         ZStack {
-            Color.fireBg.ignoresSafeArea()
+            Color.surface.ignoresSafeArea()
 
             VStack(spacing: 0) {
-                // Segmented picker
                 Picker("", selection: $selectedTab) {
                     Text("HMs").tag(0)
                     Text("TMs").tag(1)
@@ -40,83 +39,76 @@ struct HMTMView: View {
     }
 
     private var hmList: some View {
-        VStack(spacing: 8) {
+        VStack(spacing: KASpacing.sm) {
             ForEach(bridge.hmEntries) { entry in
-                HStack(spacing: 12) {
+                HStack(spacing: KASpacing.sm + KASpacing.xs) {
                     Text(entry.hm)
-                        .font(.system(size: 14, weight: .bold, design: .rounded))
-                        .foregroundColor(.fireBlue)
+                        .font(KATypography.titleSm)
+                        .foregroundColor(.kaSecondaryContainer)
                         .frame(width: 80, alignment: .leading)
 
                     VStack(alignment: .leading, spacing: 2) {
                         Text(entry.pokemon)
-                            .font(.system(size: 14, weight: .medium, design: .rounded))
-                            .foregroundColor(.fireTextPrimary)
+                            .font(KATypography.titleSm)
+                            .foregroundColor(.onSurface)
                         Text(entry.location)
-                            .font(.system(size: 12, design: .rounded))
-                            .foregroundColor(.fireTextSecondary)
+                            .font(KATypography.bodySmall)
+                            .foregroundColor(.onSurfaceVariant)
                     }
 
                     Spacer()
                 }
-                .padding(12)
-                .background(
-                    RoundedRectangle(cornerRadius: 12)
-                        .fill(Color.fireCard)
-                )
+                .padding(KASpacing.sm + KASpacing.xs)
+                .softCard(cornerRadius: KARadius.lg)
                 .padding(.horizontal)
             }
 
             Spacer(minLength: 30)
         }
-        .padding(.top, 4)
+        .padding(.top, KASpacing.xs)
     }
 
     private var tmList: some View {
-        VStack(spacing: 8) {
-            // Priority tip
+        VStack(spacing: KASpacing.sm) {
             HStack {
                 Image(systemName: "star.fill")
-                    .foregroundColor(.fireYellow)
+                    .foregroundColor(.kaYellow)
                     .font(.system(size: 12))
                 Text("Prioridad: Thunderbolt > Ice Beam > Flamethrower")
-                    .font(.system(size: 12, weight: .bold, design: .rounded))
-                    .foregroundColor(.fireYellow)
+                    .font(KATypography.labelSm)
+                    .foregroundColor(.kaYellow)
             }
             .padding(10)
             .frame(maxWidth: .infinity)
-            .background(Color.fireYellow.opacity(0.1))
-            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .background(Color.surfaceContainerHighest)
+            .clipShape(RoundedRectangle(cornerRadius: KARadius.sm))
             .padding(.horizontal)
 
             ForEach(bridge.tmEntries) { entry in
-                HStack(spacing: 12) {
-                    VStack(alignment: .leading, spacing: 4) {
+                HStack(spacing: KASpacing.sm + KASpacing.xs) {
+                    VStack(alignment: .leading, spacing: KASpacing.xs) {
                         HStack {
                             Text(entry.tm)
-                                .font(.system(size: 14, weight: .bold, design: .rounded))
-                                .foregroundColor(.purple)
+                                .font(KATypography.titleSm)
+                                .foregroundColor(.kaPrimary)
 
                             Spacer()
 
-                            TypeBadge(text: entry.target, color: .fireBlue)
+                            TypeBadge(text: entry.target, color: .kaSecondaryContainer)
                         }
                         Text(entry.origin)
-                            .font(.system(size: 12, design: .rounded))
-                            .foregroundColor(.fireTextSecondary)
+                            .font(KATypography.bodySmall)
+                            .foregroundColor(.onSurfaceVariant)
                     }
                 }
-                .padding(12)
-                .background(
-                    RoundedRectangle(cornerRadius: 12)
-                        .fill(Color.fireCard)
-                )
+                .padding(KASpacing.sm + KASpacing.xs)
+                .softCard(cornerRadius: KARadius.lg)
                 .padding(.horizontal)
             }
 
             Spacer(minLength: 30)
         }
-        .padding(.top, 4)
+        .padding(.top, KASpacing.xs)
     }
 }
 

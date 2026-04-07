@@ -1,6 +1,6 @@
 //
 //  RivalView.swift
-//  PokemonGuide
+//  PokeGuide
 //
 //  Vista del rastreador de encuentros con el rival.
 //
@@ -17,13 +17,13 @@ struct RivalView: View {
 
     var body: some View {
         ZStack {
-            Color.fireBg.ignoresSafeArea()
+            Color.surface.ignoresSafeArea()
 
             ScrollView {
-                VStack(spacing: 14) {
+                VStack(spacing: KASpacing.md) {
                     rivalHeader
                         .padding(.horizontal)
-                        .padding(.top, 8)
+                        .padding(.top, KASpacing.sm)
 
                     ForEach(encounters) { encounter in
                         RivalEncounterCard(encounter: encounter)
@@ -38,11 +38,9 @@ struct RivalView: View {
         .toolbarBackground(.automatic, for: .navigationBar)
     }
 
-    // MARK: - Header
-
     private var rivalHeader: some View {
         let rivalStarter = RivalData.rivalStarter(for: gameConfig.starter)
-        return HStack(spacing: 12) {
+        return HStack(spacing: KASpacing.sm + KASpacing.xs) {
             AsyncImage(url: rivalStarter.spriteURL) { image in
                 image.interpolation(.none).resizable().scaledToFit()
             } placeholder: {
@@ -52,31 +50,28 @@ struct RivalView: View {
 
             VStack(alignment: .leading, spacing: 2) {
                 Text("Starter del rival")
-                    .font(.system(size: 11, weight: .semibold, design: .rounded))
-                    .foregroundColor(.fireTextSecondary)
+                    .font(KATypography.labelSm)
+                    .foregroundColor(.onSurfaceVariant)
                     .textCase(.uppercase)
                     .tracking(1)
                 Text(rivalStarter.displayName)
                     .font(.system(size: 18, weight: .bold, design: .rounded))
-                    .foregroundColor(.fireTextPrimary)
+                    .foregroundColor(.onSurface)
             }
 
             Spacer()
 
-            // Encounter count
             let completed = encounters.filter {
                 progress.isRouteStepCompleted(bridge.rivalEncounterProgressId(for: $0))
             }.count
             Text("\(completed)/\(encounters.count)")
-                .font(.system(size: 15, weight: .bold, design: .rounded))
+                .font(KATypography.titleSm)
                 .foregroundColor(theme.accent)
         }
-        .padding(14)
-        .softCard(cornerRadius: 16)
+        .padding(KASpacing.md)
+        .softCard(cornerRadius: KARadius.lg)
     }
 }
-
-// MARK: - Encounter Card
 
 private struct RivalEncounterCard: View {
     let encounter: RivalEncounterDTO
@@ -92,7 +87,6 @@ private struct RivalEncounterCard: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            // Header row — always visible
             Button {
                 withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) {
                     isExpanded.toggle()
@@ -107,15 +101,12 @@ private struct RivalEncounterCard: View {
                     .transition(.opacity.combined(with: .move(edge: .top)))
             }
         }
-        .softCard(cornerRadius: 16)
+        .softCard(cornerRadius: KARadius.lg)
     }
-
-    // MARK: - Header
 
     private var headerContent: some View {
         VStack(spacing: 10) {
             HStack(spacing: 10) {
-                // Check toggle
                 Button {
                     withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) {
                         progress.toggleRouteStep(encounterId)
@@ -129,26 +120,25 @@ private struct RivalEncounterCard: View {
                     .foregroundColor(theme.accent)
 
                 Text(encounter.location)
-                    .font(.system(size: 15, weight: .semibold, design: .rounded))
-                    .foregroundColor(isCompleted ? .fireTextSecondary : .fireTextPrimary)
-                    .strikethrough(isCompleted, color: .fireTextSecondary)
+                    .font(KATypography.titleSm)
+                    .foregroundColor(isCompleted ? .onSurfaceVariant : .onSurface)
+                    .strikethrough(isCompleted, color: .onSurfaceVariant)
 
                 Spacer()
 
                 Image(systemName: "chevron.down")
                     .font(.system(size: 12, weight: .semibold))
-                    .foregroundColor(.fireTextSecondary)
+                    .foregroundColor(.onSurfaceVariant)
                     .rotationEffect(.degrees(isExpanded ? 180 : 0))
             }
 
-            // Sprite row (compact preview)
             HStack(spacing: 6) {
                 ForEach(team) { pokemon in
                     AsyncImage(url: Self.spriteURL(dex: pokemon.dexNumber)) { image in
                         image.interpolation(.none).resizable().scaledToFit()
                     } placeholder: {
                         RoundedRectangle(cornerRadius: 4)
-                            .fill(Color.fireCardAlt)
+                            .fill(Color.surfaceContainerHigh)
                             .frame(width: 36, height: 36)
                     }
                     .frame(width: 36, height: 36)
@@ -156,22 +146,19 @@ private struct RivalEncounterCard: View {
                 Spacer()
             }
         }
-        .padding(14)
+        .padding(KASpacing.md)
     }
-
-    // MARK: - Expanded detail
 
     private var expandedContent: some View {
         VStack(spacing: 0) {
-            Divider()
-                .background(Color.fireTextSecondary.opacity(0.15))
+            Spacer().frame(height: KASpacing.sm)
 
-            VStack(spacing: 8) {
+            VStack(spacing: KASpacing.sm) {
                 ForEach(team) { pokemon in
                     pokemonRow(pokemon)
                 }
             }
-            .padding(14)
+            .padding(KASpacing.md)
         }
     }
 
@@ -190,24 +177,22 @@ private struct RivalEncounterCard: View {
 
             VStack(alignment: .leading, spacing: 2) {
                 Text(pokemon.name)
-                    .font(.system(size: 14, weight: .semibold, design: .rounded))
-                    .foregroundColor(.fireTextPrimary)
+                    .font(KATypography.titleSm)
+                    .foregroundColor(.onSurface)
                 Text("Nv. \(pokemon.level)")
-                    .font(.system(size: 12, weight: .medium, design: .rounded))
-                    .foregroundColor(.fireTextSecondary)
+                    .font(KATypography.bodySmall)
+                    .foregroundColor(.onSurfaceVariant)
             }
 
             Spacer()
 
             Text("#\(pokemon.dexNumber)")
                 .font(.system(size: 11, weight: .medium, design: .monospaced))
-                .foregroundColor(.fireTextSecondary.opacity(0.6))
+                .foregroundColor(.onSurfaceVariant.opacity(0.6))
         }
         .padding(.vertical, 2)
     }
 }
-
-// MARK: - Preview
 
 #Preview {
     NavigationStack {

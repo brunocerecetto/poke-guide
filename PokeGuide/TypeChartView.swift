@@ -1,6 +1,6 @@
 //
 //  TypeChartView.swift
-//  PokemonGuide
+//  PokeGuide
 //
 //  Tabla de efectividad de tipos — Gen 6+ (18 tipos).
 //
@@ -9,72 +9,30 @@ import SwiftUI
 
 // MARK: - Type Effectiveness Data (Gen 6+)
 
-/// Multiplier when `attacker` hits `defender`.
-/// Only non-1.0 matchups are stored; missing = 1.0 (neutral).
 private let typeEffectiveness: [PokemonType: [PokemonType: Double]] = {
-    let s: Double = 2.0   // super effective
-    let n: Double = 0.5   // not very effective
-    let z: Double = 0.0   // immune
+    let s: Double = 2.0
+    let n: Double = 0.5
+    let z: Double = 0.0
 
     return [
-        .normal: [
-            .rock: n, .ghost: z, .steel: n
-        ],
-        .fire: [
-            .fire: n, .water: n, .grass: s, .ice: s, .bug: s, .rock: n, .dragon: n, .steel: s
-        ],
-        .water: [
-            .fire: s, .water: n, .grass: n, .ground: s, .rock: s, .dragon: n
-        ],
-        .grass: [
-            .fire: n, .water: s, .grass: n, .poison: n, .ground: s, .flying: n, .bug: n,
-            .rock: s, .dragon: n, .steel: n
-        ],
-        .electric: [
-            .water: s, .grass: n, .electric: n, .ground: z, .flying: s, .dragon: n
-        ],
-        .ice: [
-            .fire: n, .water: n, .grass: s, .ice: n, .ground: s, .flying: s, .dragon: s, .steel: n
-        ],
-        .fighting: [
-            .normal: s, .ice: s, .poison: n, .flying: n, .psychic: n, .bug: n,
-            .rock: s, .ghost: z, .dark: s, .steel: s, .fairy: n
-        ],
-        .poison: [
-            .grass: s, .poison: n, .ground: n, .rock: n, .ghost: n, .steel: z,
-            .fairy: s
-        ],
-        .ground: [
-            .fire: s, .electric: s, .grass: n, .poison: s, .flying: z, .bug: n, .rock: s, .steel: s
-        ],
-        .flying: [
-            .grass: s, .electric: n, .fighting: s, .bug: s, .rock: n, .steel: n
-        ],
-        .psychic: [
-            .fighting: s, .poison: s, .psychic: n, .dark: z, .steel: n
-        ],
-        .bug: [
-            .fire: n, .grass: s, .fighting: n, .poison: n, .flying: n, .psychic: s, .ghost: n,
-            .dark: s, .steel: n, .fairy: n
-        ],
-        .rock: [
-            .fire: s, .ice: s, .fighting: n, .ground: n, .flying: s, .bug: s, .steel: n
-        ],
-        .ghost: [
-            .normal: z, .psychic: s, .ghost: s, .dark: n
-        ],
-        .dragon: [
-            .dragon: s, .steel: n, .fairy: z
-        ],
-        .dark: [
-            .fighting: n, .psychic: s, .ghost: s, .dark: n, .fairy: n
-        ],
-        .steel: [
-            .fire: n, .water: n, .electric: n, .ice: s, .rock: s, .steel: n, .fairy: s
-        ],
-        .fairy: [
-            .fire: n, .fighting: s, .poison: n, .dragon: s, .dark: s, .steel: n
-        ],
+        .normal: [.rock: n, .ghost: z, .steel: n],
+        .fire: [.fire: n, .water: n, .grass: s, .ice: s, .bug: s, .rock: n, .dragon: n, .steel: s],
+        .water: [.fire: s, .water: n, .grass: n, .ground: s, .rock: s, .dragon: n],
+        .grass: [.fire: n, .water: s, .grass: n, .poison: n, .ground: s, .flying: n, .bug: n, .rock: s, .dragon: n, .steel: n],
+        .electric: [.water: s, .grass: n, .electric: n, .ground: z, .flying: s, .dragon: n],
+        .ice: [.fire: n, .water: n, .grass: s, .ice: n, .ground: s, .flying: s, .dragon: s, .steel: n],
+        .fighting: [.normal: s, .ice: s, .poison: n, .flying: n, .psychic: n, .bug: n, .rock: s, .ghost: z, .dark: s, .steel: s, .fairy: n],
+        .poison: [.grass: s, .poison: n, .ground: n, .rock: n, .ghost: n, .steel: z, .fairy: s],
+        .ground: [.fire: s, .electric: s, .grass: n, .poison: s, .flying: z, .bug: n, .rock: s, .steel: s],
+        .flying: [.grass: s, .electric: n, .fighting: s, .bug: s, .rock: n, .steel: n],
+        .psychic: [.fighting: s, .poison: s, .psychic: n, .dark: z, .steel: n],
+        .bug: [.fire: n, .grass: s, .fighting: n, .poison: n, .flying: n, .psychic: s, .ghost: n, .dark: s, .steel: n, .fairy: n],
+        .rock: [.fire: s, .ice: s, .fighting: n, .ground: n, .flying: s, .bug: s, .steel: n],
+        .ghost: [.normal: z, .psychic: s, .ghost: s, .dark: n],
+        .dragon: [.dragon: s, .steel: n, .fairy: z],
+        .dark: [.fighting: n, .psychic: s, .ghost: s, .dark: n, .fairy: n],
+        .steel: [.fire: n, .water: n, .electric: n, .ice: s, .rock: s, .steel: n, .fairy: s],
+        .fairy: [.fire: n, .fighting: s, .poison: n, .dragon: s, .dark: s, .steel: n],
     ]
 }()
 
@@ -104,7 +62,6 @@ extension PokemonType {
         }
     }
 
-    /// Short 3-letter abbreviation for the chart headers.
     var shortLabel: String {
         switch self {
         case .normal:   return "NOR"
@@ -132,10 +89,10 @@ extension PokemonType {
 // MARK: - Effectiveness Enum
 
 private enum Effectiveness {
-    case superEffective  // 2x
-    case notVeryEffective // 0.5x
-    case immune          // 0x
-    case neutral         // 1x
+    case superEffective
+    case notVeryEffective
+    case immune
+    case neutral
 
     init(multiplier: Double) {
         switch multiplier {
@@ -168,7 +125,7 @@ private enum Effectiveness {
         switch self {
         case .superEffective:   return Color(red: 0.25, green: 0.72, blue: 0.35)
         case .notVeryEffective: return Color(red: 0.88, green: 0.30, blue: 0.25)
-        case .immune:           return Color(red: 0.15, green: 0.15, blue: 0.18)
+        case .immune:           return .inverseSurface
         case .neutral:          return Color.clear
         }
     }
@@ -180,8 +137,6 @@ private enum Effectiveness {
         }
     }
 }
-
-// MARK: - Helper
 
 private func effectiveness(attacker: PokemonType, defender: PokemonType) -> Effectiveness {
     let multiplier = typeEffectiveness[attacker]?[defender] ?? 1.0
@@ -201,12 +156,12 @@ struct TypeChartView: View {
 
     var body: some View {
         ScrollView(showsIndicators: false) {
-            VStack(spacing: 16) {
+            VStack(spacing: KASpacing.md) {
                 legend
                     .padding(.horizontal)
 
                 chartContainer
-                    .padding(.horizontal, 4)
+                    .padding(.horizontal, KASpacing.xs)
 
                 if let cell = selectedCell {
                     cellDetail(attacker: cell.attacker, defender: cell.defender)
@@ -216,14 +171,12 @@ struct TypeChartView: View {
 
                 Spacer(minLength: 30)
             }
-            .padding(.top, 8)
+            .padding(.top, KASpacing.sm)
         }
-        .background(Color.fireBg.ignoresSafeArea())
+        .background(Color.surface.ignoresSafeArea())
         .navigationTitle("Tabla de Tipos")
         .navigationBarTitleDisplayMode(.large)
     }
-
-    // MARK: - Legend
 
     private var legend: some View {
         VStack(spacing: 10) {
@@ -232,26 +185,26 @@ struct TypeChartView: View {
                     .font(.system(size: 14))
                     .foregroundColor(theme.accent)
                 Text("Efectividad de tipos")
-                    .font(.system(size: 15, weight: .bold, design: .rounded))
-                    .foregroundColor(.fireTextPrimary)
+                    .font(KATypography.titleSm)
+                    .foregroundColor(.onSurface)
                 Spacer()
             }
 
-            HStack(spacing: 12) {
+            HStack(spacing: KASpacing.sm + KASpacing.xs) {
                 legendItem(color: Effectiveness.superEffective.cellColor, label: "2x")
                 legendItem(color: Effectiveness.notVeryEffective.cellColor, label: "½x")
                 legendItem(color: Effectiveness.immune.cellColor, label: "0x")
-                legendItem(color: Color.fireBg, label: "1x", border: true)
+                legendItem(color: Color.surface, label: "1x", border: true)
                 Spacer()
             }
 
             Text("Fila = tipo atacante  ·  Columna = tipo defensor")
-                .font(.system(size: 11, weight: .medium, design: .rounded))
-                .foregroundColor(.fireTextSecondary)
+                .font(KATypography.labelSm)
+                .foregroundColor(.onSurfaceVariant)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .padding(14)
-        .softCard(cornerRadius: 16, tint: theme.accent, shadowRadius: 6)
+        .padding(KASpacing.md)
+        .softCard(cornerRadius: KARadius.lg, tint: theme.accent)
     }
 
     private func legendItem(color: Color, label: String, border: Bool = false) -> some View {
@@ -263,24 +216,20 @@ struct TypeChartView: View {
                     Group {
                         if border {
                             RoundedRectangle(cornerRadius: 4)
-                                .stroke(Color.black.opacity(0.12), lineWidth: 1)
+                                .stroke(Color.outlineVariant.opacity(0.3), lineWidth: 1)
                         }
                     }
                 )
             Text(label)
-                .font(.system(size: 11, weight: .semibold, design: .rounded))
-                .foregroundColor(.fireTextSecondary)
+                .font(KATypography.labelSm)
+                .foregroundColor(.onSurfaceVariant)
         }
     }
-
-    // MARK: - Chart
 
     private var chartContainer: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             VStack(spacing: 0) {
-                // Column headers row
                 HStack(spacing: 0) {
-                    // Top-left corner: empty cell
                     Color.clear
                         .frame(width: headerWidth, height: cellSize)
 
@@ -289,7 +238,6 @@ struct TypeChartView: View {
                     }
                 }
 
-                // Data rows
                 ForEach(allTypes, id: \.self) { atkType in
                     HStack(spacing: 0) {
                         rowHeader(atkType)
@@ -301,7 +249,7 @@ struct TypeChartView: View {
                 }
             }
             .padding(6)
-            .softCard(cornerRadius: 14, shadowOpacity: 0.06, shadowRadius: 8)
+            .softCard(cornerRadius: KARadius.md)
         }
     }
 
@@ -351,42 +299,38 @@ struct TypeChartView: View {
                 .foregroundColor(eff.textColor)
                 .frame(width: cellSize, height: cellSize)
                 .background(eff.cellColor.opacity(eff == .neutral ? 0 : 0.85))
-                .background(Color.black.opacity(0.02))
+                .background(Color.onSurface.opacity(0.02))
                 .overlay(
                     RoundedRectangle(cornerRadius: 3)
-                        .stroke(isSelected ? theme.accent : Color.black.opacity(0.06), lineWidth: isSelected ? 2 : 0.5)
+                        .stroke(isSelected ? theme.accent : Color.outlineVariant.opacity(0.12), lineWidth: isSelected ? 2 : 0.5)
                 )
                 .cornerRadius(3)
         }
         .buttonStyle(.plain)
     }
 
-    // MARK: - Cell Detail (Tooltip)
-
     private func cellDetail(attacker: PokemonType, defender: PokemonType) -> some View {
         let eff = effectiveness(attacker: attacker, defender: defender)
 
-        return HStack(spacing: 12) {
+        return HStack(spacing: KASpacing.sm + KASpacing.xs) {
             TypeBadge(text: attacker.spanishName, color: attacker.color)
 
             Image(systemName: "arrow.right")
                 .font(.system(size: 12, weight: .bold))
-                .foregroundColor(.fireTextSecondary)
+                .foregroundColor(.onSurfaceVariant)
 
             TypeBadge(text: defender.spanishName, color: defender.color)
 
             Spacer()
 
             Text(eff.label)
-                .font(.system(size: 12, weight: .bold, design: .rounded))
-                .foregroundColor(eff == .neutral ? .fireTextSecondary : eff.cellColor)
+                .font(KATypography.labelSm)
+                .foregroundColor(eff == .neutral ? .onSurfaceVariant : eff.cellColor)
         }
-        .padding(14)
-        .softCard(cornerRadius: 14, tint: attacker.color, shadowRadius: 8)
+        .padding(KASpacing.md)
+        .softCard(cornerRadius: KARadius.lg, tint: attacker.color)
     }
 }
-
-// MARK: - Preview
 
 #Preview {
     NavigationStack {

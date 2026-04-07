@@ -1,6 +1,6 @@
 //
 //  TipsView.swift
-//  pokemon guide
+//  poke guide
 //
 
 import SwiftUI
@@ -10,32 +10,25 @@ struct TipsView: View {
 
     var body: some View {
         ZStack {
-            Color.fireBg.ignoresSafeArea()
+            Color.surface.ignoresSafeArea()
 
             ScrollView {
-                VStack(spacing: 12) {
+                VStack(spacing: KASpacing.md) {
                     GuideDisclaimerBanner()
 
                     ForEach(bridge.tips) { tip in
-                        VStack(alignment: .leading, spacing: 8) {
+                        VStack(alignment: .leading, spacing: KASpacing.sm) {
                             Text(tip.pokemon)
-                                .font(.system(.headline, design: .rounded))
-                                .foregroundColor(.fireTextPrimary)
+                                .font(KATypography.titleMd)
+                                .foregroundColor(.onSurface)
 
                             Text(tip.rule)
-                                .font(.system(size: 14, design: .rounded))
-                                .foregroundColor(.fireTextSecondary)
+                                .font(KATypography.bodySmall)
+                                .foregroundColor(.onSurfaceVariant)
                         }
-                        .padding(14)
+                        .padding(KASpacing.md)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .background(
-                            RoundedRectangle(cornerRadius: 14)
-                                .fill(Color.fireCard)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 14)
-                                        .stroke(Color.fireYellow.opacity(0.15), lineWidth: 1)
-                                )
-                        )
+                        .softCard(cornerRadius: KARadius.lg)
                         .padding(.horizontal)
                     }
                 }

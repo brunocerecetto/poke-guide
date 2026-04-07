@@ -1,42 +1,25 @@
 //
 //  PixelBackground.swift
-//  pokemon guide
+//  poke guide
 //
-//  Fondo adaptivo — gradiente cálido (light) / oscuro (dark) con patrón sutil de Pokéball.
+//  Fondo adaptivo — superficie neutral con patrón sutil de Pokéball.
 //
 
 import SwiftUI
 
 struct PixelBackground: View {
     @Environment(\.themeColors) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
-        let isDark = colorScheme == .dark
-
         ZStack {
-            // Base gradient (adaptive)
-            LinearGradient(
-                colors: isDark
-                    ? [
-                        Color(red: 0.10, green: 0.10, blue: 0.12),
-                        Color(red: 0.09, green: 0.09, blue: 0.11),
-                        Color(red: 0.10, green: 0.10, blue: 0.12),
-                    ]
-                    : [
-                        Color(red: 0.97, green: 0.95, blue: 0.92),
-                        Color(red: 0.95, green: 0.93, blue: 0.90),
-                        Color(red: 0.96, green: 0.94, blue: 0.91),
-                    ],
-                startPoint: .top,
-                endPoint: .bottom
-            )
+            // Base surface
+            Color.surface
 
-            // Subtle warm accent at top
+            // Subtle accent glow at top
             EllipticalGradient(
                 colors: [
-                    theme.accent.opacity(isDark ? 0.08 : 0.06),
-                    theme.secondary.opacity(isDark ? 0.04 : 0.03),
+                    theme.accent.opacity(0.05),
+                    theme.secondary.opacity(0.03),
                     Color.clear
                 ],
                 center: .top,
@@ -45,8 +28,6 @@ struct PixelBackground: View {
             )
 
             // Pokéball watermark pattern
-            let watermarkOpacity: Double = isDark ? 0.4 : 1.0
-
             GeometryReader { geo in
                 Canvas { context, size in
                     let spacing: CGFloat = 80
@@ -58,32 +39,31 @@ struct PixelBackground: View {
                             let cx = col
                             let cy = row
                             let r: CGFloat = 8
-                            let markColor: Color = isDark ? .white : .black
 
                             // Top half (accent tinted)
                             var topPath = Path()
                             topPath.addArc(center: CGPoint(x: cx, y: cy), radius: r, startAngle: .degrees(180), endAngle: .degrees(0), clockwise: false)
                             topPath.closeSubpath()
-                            context.fill(topPath, with: .color(theme.accent.opacity(0.04 * watermarkOpacity)))
+                            context.fill(topPath, with: .color(theme.accent.opacity(0.03)))
 
                             // Bottom half
                             var bottomPath = Path()
                             bottomPath.addArc(center: CGPoint(x: cx, y: cy), radius: r, startAngle: .degrees(0), endAngle: .degrees(180), clockwise: false)
                             bottomPath.closeSubpath()
-                            context.fill(bottomPath, with: .color(markColor.opacity(0.02 * watermarkOpacity)))
+                            context.fill(bottomPath, with: .color(Color.outlineVariant.opacity(0.04)))
 
                             // Center line
                             let linePath = Path(CGRect(x: cx - r, y: cy - 0.5, width: r * 2, height: 1))
-                            context.fill(linePath, with: .color(markColor.opacity(0.03 * watermarkOpacity)))
+                            context.fill(linePath, with: .color(Color.outlineVariant.opacity(0.05)))
 
                             // Center dot
                             let dotRect = CGRect(x: cx - dotSize/2, y: cy - dotSize/2, width: dotSize, height: dotSize)
-                            context.fill(Path(ellipseIn: dotRect), with: .color(markColor.opacity(0.04 * watermarkOpacity)))
+                            context.fill(Path(ellipseIn: dotRect), with: .color(Color.outlineVariant.opacity(0.06)))
 
                             // Circle outline
                             context.stroke(
                                 Path(ellipseIn: CGRect(x: cx - r, y: cy - r, width: r * 2, height: r * 2)),
-                                with: .color(markColor.opacity(0.03 * watermarkOpacity)),
+                                with: .color(Color.outlineVariant.opacity(0.04)),
                                 lineWidth: 0.5
                             )
                         }

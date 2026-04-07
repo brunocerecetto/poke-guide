@@ -1,6 +1,6 @@
 //
-//  PokemonGuideWidget.swift
-//  PokemonGuideWidget
+//  PokeGuideWidget.swift
+//  PokeGuideWidget
 //
 //  Widget extension que muestra el progreso de la guia.
 //
@@ -11,7 +11,7 @@ import SwiftUI
 // MARK: - Shared Constants
 
 private enum SharedKeys {
-    static let appGroup = "group.com.brunocerecetto.PokemonGuide"
+    static let appGroup = "group.com.brunocerecetto.PokeGuide"
     static let versionKey = "gameVersion"
     static let starterKey = "selectedStarter"
 
@@ -141,15 +141,15 @@ struct ProgressProvider: TimelineProvider {
     }
 }
 
-// MARK: - Colors
+// MARK: - Colors (synced with Theme.swift "The Kinetic Archive" design system)
 
 private extension Color {
-    static let widgetFireRed = Color(red: 0.88, green: 0.18, blue: 0.12)
-    static let widgetFireOrange = Color(red: 0.93, green: 0.50, blue: 0.10)
+    static let widgetPrimary = Color(red: 0.737, green: 0.004, blue: 0.0)        // #bc0100
+    static let widgetPrimaryContainer = Color(red: 0.922, green: 0.0, blue: 0.0) // #eb0000
     static let widgetLeafGreen = Color(red: 0.18, green: 0.65, blue: 0.32)
-    static let widgetCream = Color(red: 0.96, green: 0.95, blue: 0.93)
-    static let widgetTextPrimary = Color(red: 0.13, green: 0.13, blue: 0.15)
-    static let widgetTextSecondary = Color(red: 0.45, green: 0.44, blue: 0.48)
+    static let widgetSurface = Color(red: 0.976, green: 0.976, blue: 0.976)       // #f9f9f9
+    static let widgetTextPrimary = Color(red: 0.102, green: 0.110, blue: 0.110)   // #1a1c1c
+    static let widgetTextSecondary = Color(red: 0.247, green: 0.286, blue: 0.282) // #3f4948
 }
 
 // MARK: - Progress Ring
@@ -191,7 +191,7 @@ private struct SmallWidgetView: View {
     let entry: ProgressEntry
 
     private var accent: Color {
-        entry.isFireRed ? .widgetFireRed : .widgetLeafGreen
+        entry.isFireRed ? .widgetPrimary : .widgetLeafGreen
     }
 
     var body: some View {
@@ -200,7 +200,7 @@ private struct SmallWidgetView: View {
                 Image(systemName: entry.isFireRed ? "flame.fill" : "leaf.fill")
                     .font(.caption2)
                     .foregroundColor(accent)
-                Text("PokemonGuide")
+                Text("PokeGuide")
                     .font(.system(size: 10, weight: .semibold, design: .rounded))
                     .foregroundColor(.widgetTextSecondary)
             }
@@ -213,7 +213,7 @@ private struct SmallWidgetView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .containerBackground(for: .widget) {
-            Color.widgetCream
+            Color.widgetSurface
         }
     }
 }
@@ -224,11 +224,11 @@ private struct MediumWidgetView: View {
     let entry: ProgressEntry
 
     private var accent: Color {
-        entry.isFireRed ? .widgetFireRed : .widgetLeafGreen
+        entry.isFireRed ? .widgetPrimary : .widgetLeafGreen
     }
 
     private var secondaryAccent: Color {
-        entry.isFireRed ? .widgetFireOrange : .widgetLeafGreen.opacity(0.7)
+        entry.isFireRed ? .widgetPrimaryContainer : .widgetLeafGreen.opacity(0.7)
     }
 
     var body: some View {
@@ -292,7 +292,7 @@ private struct MediumWidgetView: View {
         .padding(.horizontal, 4)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .containerBackground(for: .widget) {
-            Color.widgetCream
+            Color.widgetSurface
         }
     }
 
@@ -313,20 +313,20 @@ private struct MediumWidgetView: View {
 
 // MARK: - Widget Definition
 
-struct PokemonGuideWidget: Widget {
-    let kind: String = "PokemonGuideWidget"
+struct PokeGuideWidget: Widget {
+    let kind: String = "PokeGuideWidget"
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: ProgressProvider()) { entry in
-            PokemonGuideWidgetEntryView(entry: entry)
+            PokeGuideWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("Progreso PokemonGuide")
+        .configurationDisplayName("Progreso PokeGuide")
         .description("Tu progreso en la guia de Pokemon FireRed / LeafGreen.")
         .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
 
-struct PokemonGuideWidgetEntryView: View {
+struct PokeGuideWidgetEntryView: View {
     @Environment(\.widgetFamily) var family
     let entry: ProgressEntry
 
@@ -343,22 +343,22 @@ struct PokemonGuideWidgetEntryView: View {
 // MARK: - Widget Bundle (entry point)
 
 @main
-struct PokemonGuideWidgetBundle: WidgetBundle {
+struct PokeGuideWidgetBundle: WidgetBundle {
     var body: some Widget {
-        PokemonGuideWidget()
+        PokeGuideWidget()
     }
 }
 
 // MARK: - Previews
 
 #Preview("Small", as: .systemSmall) {
-    PokemonGuideWidget()
+    PokeGuideWidget()
 } timeline: {
     ProgressEntry.placeholder
 }
 
 #Preview("Medium", as: .systemMedium) {
-    PokemonGuideWidget()
+    PokeGuideWidget()
 } timeline: {
     ProgressEntry.placeholder
 }

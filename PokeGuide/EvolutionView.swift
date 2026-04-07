@@ -1,6 +1,6 @@
 //
 //  EvolutionView.swift
-//  PokemonGuide
+//  PokeGuide
 //
 //  Cadenas evolutivas de Kanto — vista visual con sprites y flechas.
 //
@@ -24,7 +24,7 @@ struct EvolutionView: View {
 
     var body: some View {
         ScrollView {
-            LazyVStack(spacing: 12) {
+            LazyVStack(spacing: KASpacing.sm + KASpacing.xs) {
                 ForEach(filteredChains) { chain in
                     chainCard(chain)
                 }
@@ -32,13 +32,11 @@ struct EvolutionView: View {
             .padding(.horizontal)
             .padding(.bottom, 30)
         }
-        .background(Color.fireBg.ignoresSafeArea())
+        .background(Color.surface.ignoresSafeArea())
         .navigationTitle("Evoluciones")
         .navigationBarTitleDisplayMode(.large)
         .searchable(text: $searchText, prompt: "Buscar pokémon...")
     }
-
-    // MARK: - Chain Card
 
     @ViewBuilder
     private func chainCard(_ chain: EvolutionChain) -> some View {
@@ -49,12 +47,10 @@ struct EvolutionView: View {
                 linearChainContent(chain)
             }
         }
-        .padding(.vertical, 14)
-        .padding(.horizontal, 8)
-        .softCard(cornerRadius: 16, shadowRadius: 4)
+        .padding(.vertical, KASpacing.md)
+        .padding(.horizontal, KASpacing.sm)
+        .softCard(cornerRadius: KARadius.lg)
     }
-
-    // MARK: - Linear Chain
 
     private func linearChainContent(_ chain: EvolutionChain) -> some View {
         HStack(spacing: 0) {
@@ -69,23 +65,19 @@ struct EvolutionView: View {
         }
     }
 
-    // MARK: - Branching Chain (Eevee)
-
     private func branchingChainContent(_ chain: EvolutionChain) -> some View {
         VStack(spacing: 10) {
-            // Base form centered
             if let base = chain.stages.first {
                 spriteColumn(dex: base.id, name: base.name)
             }
 
-            // Branches
-            HStack(spacing: 4) {
+            HStack(spacing: KASpacing.xs) {
                 ForEach(chain.branches) { branch in
-                    VStack(spacing: 4) {
+                    VStack(spacing: KASpacing.xs) {
                         methodBadge(branch.method)
                         Image(systemName: "arrow.down")
                             .font(.system(size: 10, weight: .bold))
-                            .foregroundColor(.fireTextSecondary.opacity(0.4))
+                            .foregroundColor(.outlineVariant)
                         spriteColumn(dex: branch.id, name: branch.name)
                     }
                     .frame(maxWidth: .infinity)
@@ -94,10 +86,8 @@ struct EvolutionView: View {
         }
     }
 
-    // MARK: - Sprite Column
-
     private func spriteColumn(dex: Int, name: String) -> some View {
-        VStack(spacing: 4) {
+        VStack(spacing: KASpacing.xs) {
             AsyncImage(url: spriteURL(for: dex)) { phase in
                 switch phase {
                 case .success(let image):
@@ -108,7 +98,7 @@ struct EvolutionView: View {
                 case .failure:
                     Image(systemName: "questionmark.circle")
                         .font(.system(size: 24))
-                        .foregroundColor(.fireTextSecondary)
+                        .foregroundColor(.onSurfaceVariant)
                         .frame(width: 56, height: 56)
                 case .empty:
                     ProgressView()
@@ -121,18 +111,16 @@ struct EvolutionView: View {
 
             Text("#\(String(format: "%03d", dex))")
                 .font(.system(size: 9, weight: .bold, design: .monospaced))
-                .foregroundColor(.fireTextSecondary)
+                .foregroundColor(.onSurfaceVariant)
 
             Text(name)
-                .font(.system(size: 11, weight: .semibold, design: .rounded))
-                .foregroundColor(.fireTextPrimary)
+                .font(KATypography.labelSm)
+                .foregroundColor(.onSurface)
                 .lineLimit(1)
                 .minimumScaleFactor(0.7)
         }
         .frame(minWidth: 68)
     }
-
-    // MARK: - Arrow with Method
 
     private func arrowView(method: EvolutionMethod?) -> some View {
         VStack(spacing: 2) {
@@ -147,8 +135,6 @@ struct EvolutionView: View {
         .padding(.horizontal, 2)
     }
 
-    // MARK: - Method Badge
-
     @ViewBuilder
     private func methodBadge(_ method: EvolutionMethod?) -> some View {
         if let method {
@@ -156,7 +142,7 @@ struct EvolutionView: View {
                 Image(systemName: method.icon)
                     .font(.system(size: 8))
                 Text(method.label)
-                    .font(.system(size: 9, weight: .bold, design: .rounded))
+                    .font(KATypography.labelXs)
             }
             .foregroundColor(methodColor(method))
             .padding(.horizontal, 6)
@@ -167,22 +153,18 @@ struct EvolutionView: View {
         }
     }
 
-    // MARK: - Helpers
-
     private func spriteURL(for dex: Int) -> URL? {
         URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(dex).png")
     }
 
     private func methodColor(_ method: EvolutionMethod) -> Color {
         switch method {
-        case .level:  return .fireBlue
-        case .stone:  return .fireGreen
-        case .trade:  return .fireOrange
+        case .level:  return .kaSecondaryContainer
+        case .stone:  return .success
+        case .trade:  return .primaryContainer
         }
     }
 }
-
-// MARK: - Preview
 
 #Preview {
     NavigationStack {

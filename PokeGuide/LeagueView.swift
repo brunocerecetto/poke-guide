@@ -1,6 +1,6 @@
 //
 //  LeagueView.swift
-//  pokemon guide
+//  poke guide
 //
 
 import SwiftUI
@@ -13,13 +13,12 @@ struct LeagueView: View {
 
     var body: some View {
         ZStack {
-            Color.fireBg.ignoresSafeArea()
+            Color.surface.ignoresSafeArea()
 
             ScrollView {
-                VStack(spacing: 16) {
+                VStack(spacing: KASpacing.md) {
                     GuideDisclaimerBanner()
 
-                    // Pre-league checklist
                     sectionHeader(title: "CHECKLIST PRE-LIGA", icon: "checklist")
 
                     VStack(spacing: 6) {
@@ -33,12 +32,8 @@ struct LeagueView: View {
                     }
                     .padding(.horizontal)
 
-                    Divider()
-                        .background(Color.fireTextSecondary.opacity(0.2))
-                        .padding(.horizontal, 30)
-                        .padding(.vertical, 8)
+                    Spacer().frame(height: KASpacing.sm)
 
-                    // Elite Four
                     sectionHeader(title: "ELITE FOUR — PLAN EXACTO", icon: "trophy.fill")
 
                     VStack(spacing: 10) {
@@ -48,12 +43,8 @@ struct LeagueView: View {
                     }
                     .padding(.horizontal)
 
-                    Divider()
-                        .background(Color.fireTextSecondary.opacity(0.2))
-                        .padding(.horizontal, 30)
-                        .padding(.vertical, 8)
+                    Spacer().frame(height: KASpacing.sm)
 
-                    // Postgame
                     sectionHeader(title: "POSTGAME OPCIONAL", icon: "star.circle")
 
                     VStack(spacing: 6) {
@@ -67,22 +58,21 @@ struct LeagueView: View {
                     }
                     .padding(.horizontal)
 
-                    // Tip
                     HStack {
                         Image(systemName: "info.circle.fill")
-                            .foregroundColor(.fireBlue)
+                            .foregroundColor(.kaSecondaryContainer)
                         Text("Rock Smash y Waterfall son HMs de postgame en Sevii Islands.")
-                            .font(.system(size: 12, weight: .medium, design: .rounded))
-                            .foregroundColor(.fireBlue)
+                            .font(KATypography.labelSm)
+                            .foregroundColor(.kaSecondaryContainer)
                     }
                     .padding(10)
                     .frame(maxWidth: .infinity)
-                    .background(Color.fireBlue.opacity(0.1))
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .background(Color.surfaceContainerHighest)
+                    .clipShape(RoundedRectangle(cornerRadius: KARadius.sm))
                     .padding(.horizontal)
                     .padding(.bottom, 30)
                 }
-                .padding(.top, 8)
+                .padding(.top, KASpacing.sm)
             }
 
             if celebrateLeague {
@@ -100,12 +90,12 @@ struct LeagueView: View {
     }
 
     private func sectionHeader(title: String, icon: String) -> some View {
-        HStack(spacing: 8) {
+        HStack(spacing: KASpacing.sm) {
             Image(systemName: icon)
-                .foregroundColor(.fireOrange)
+                .foregroundColor(theme.accent)
             Text(title)
-                .font(.system(size: 12, weight: .bold, design: .rounded))
-                .foregroundColor(.fireOrange)
+                .font(KATypography.labelSm)
+                .foregroundColor(theme.accent)
                 .tracking(1)
         }
         .padding(.horizontal)
@@ -122,51 +112,48 @@ struct LeagueView: View {
                 celebrateLeague = true
             }
         } label: {
-            HStack(spacing: 14) {
-                // Status circle
+            HStack(spacing: KASpacing.md) {
                 ZStack {
                     Circle()
-                        .fill(completed ? Color.fireGreen.gradient : theme.accent.gradient)
+                        .fill(completed ? Color.success.gradient : theme.accent.gradient)
                         .frame(width: 44, height: 44)
 
                     if completed {
                         Image(systemName: "checkmark")
                             .font(.system(size: 18, weight: .bold))
-                            .foregroundColor(.white)
+                            .foregroundColor(.onPrimary)
                     } else {
                         Image(systemName: "flame.fill")
                             .font(.system(size: 18))
-                            .foregroundColor(.white)
+                            .foregroundColor(.onPrimary)
                     }
                 }
 
-                VStack(alignment: .leading, spacing: 4) {
+                VStack(alignment: .leading, spacing: KASpacing.xs) {
                     HStack {
                         Text(member.name)
-                            .font(.system(.headline, design: .rounded))
-                            .foregroundColor(completed ? .fireTextSecondary : .fireTextPrimary)
+                            .font(KATypography.titleMd)
+                            .foregroundColor(completed ? .onSurfaceVariant : .onSurface)
                             .strikethrough(completed)
 
                         Spacer()
 
-                        TypeBadge(text: "Nv. \(member.levels)", color: completed ? .fireGreen : theme.accent)
+                        TypeBadge(text: "Nv. \(member.levels)", color: completed ? .success : theme.accent)
                     }
 
                     Text(member.strategy)
-                        .font(.system(size: 12, design: .rounded))
-                        .foregroundColor(.fireTextSecondary)
+                        .font(KATypography.bodySmall)
+                        .foregroundColor(.onSurfaceVariant)
                         .lineLimit(3)
                 }
             }
-            .padding(12)
+            .padding(KASpacing.sm + KASpacing.xs)
             .background(
-                RoundedRectangle(cornerRadius: 14)
-                    .fill(completed ? Color.fireGreen.opacity(0.08) : Color.fireCard)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 14)
-                            .stroke(completed ? Color.fireGreen.opacity(0.3) : Color.clear, lineWidth: 1)
-                    )
+                RoundedRectangle(cornerRadius: KARadius.lg)
+                    .fill(completed ? Color.success.opacity(0.06) : Color.surfaceContainerLow)
             )
+            .ghostBorder(cornerRadius: KARadius.lg, opacity: completed ? 0.15 : 0.10)
+            .clipShape(RoundedRectangle(cornerRadius: KARadius.lg))
             .opacity(completed ? 0.7 : 1)
         }
         .buttonStyle(.plain)
@@ -178,20 +165,20 @@ struct LeagueView: View {
                 action()
             }
         } label: {
-            HStack(spacing: 12) {
+            HStack(spacing: KASpacing.sm + KASpacing.xs) {
                 AnimatedCheck(isCompleted: isCompleted, size: 22)
 
                 Text(text)
-                    .font(.system(size: 14, design: .rounded))
-                    .foregroundColor(isCompleted ? .fireTextSecondary : .fireTextPrimary)
-                    .strikethrough(isCompleted, color: .fireTextSecondary)
+                    .font(KATypography.bodySmall)
+                    .foregroundColor(isCompleted ? .onSurfaceVariant : .onSurface)
+                    .strikethrough(isCompleted, color: .onSurfaceVariant)
 
                 Spacer()
             }
             .padding(10)
             .background(
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(isCompleted ? Color.fireGreen.opacity(0.05) : Color.fireCard.opacity(0.5))
+                RoundedRectangle(cornerRadius: KARadius.sm)
+                    .fill(isCompleted ? Color.success.opacity(0.04) : Color.surfaceContainerLow)
             )
             .opacity(isCompleted ? 0.7 : 1)
         }

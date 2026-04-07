@@ -44,7 +44,7 @@ struct PokedexView: View {
             statusFilter
 
             ScrollView {
-                LazyVStack(spacing: 8) {
+                LazyVStack(spacing: KASpacing.sm) {
                     ForEach(filteredPokemon) { entry in
                         pokemonRow(entry)
                     }
@@ -53,40 +53,36 @@ struct PokedexView: View {
                 .padding(.bottom, 30)
             }
         }
-        .background(Color.fireBg.ignoresSafeArea())
+        .background(Color.surface.ignoresSafeArea())
         .navigationTitle("Pokédex")
         .navigationBarTitleDisplayMode(.large)
         .searchable(text: $searchText, prompt: "Buscar pokémon...")
     }
 
-    // MARK: - Stats Bar
-
     private var statsBar: some View {
-        HStack(spacing: 16) {
-            statBubble(value: "\(caughtCount)", label: "Capturados", color: .fireOrange)
-            statBubble(value: "\(evolvedCount)", label: "Evolucionados", color: .fireGreen)
-            statBubble(value: "\(pokedexEntries.count)", label: "Total", color: .fireTextSecondary)
+        HStack(spacing: KASpacing.md) {
+            statBubble(value: "\(caughtCount)", label: "Capturados", color: .primaryContainer)
+            statBubble(value: "\(evolvedCount)", label: "Evolucionados", color: .success)
+            statBubble(value: "\(pokedexEntries.count)", label: "Total", color: .onSurfaceVariant)
         }
         .padding(.vertical, 10)
-        .padding(.horizontal, 16)
-        .softCard(cornerRadius: 16, shadowRadius: 6)
+        .padding(.horizontal, KASpacing.md)
+        .softCard(cornerRadius: KARadius.lg)
         .padding(.horizontal)
         .padding(.vertical, 6)
     }
 
     private func statBubble(value: String, label: String, color: Color) -> some View {
-        VStack(spacing: 4) {
+        VStack(spacing: KASpacing.xs) {
             Text(value)
-                .font(.system(size: 22, weight: .bold, design: .rounded))
+                .font(KATypography.headlineMd)
                 .foregroundColor(color)
             Text(label)
-                .font(.system(size: 10, weight: .medium, design: .rounded))
-                .foregroundColor(.fireTextSecondary)
+                .font(KATypography.labelXs)
+                .foregroundColor(.onSurfaceVariant)
         }
         .frame(maxWidth: .infinity)
     }
-
-    // MARK: - Type Filter
 
     private var typeFilter: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -107,8 +103,6 @@ struct PokedexView: View {
         }
     }
 
-    // MARK: - Status Filter
-
     private var statusFilter: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 6) {
@@ -128,27 +122,23 @@ struct PokedexView: View {
         }
     }
 
-    // MARK: - Chip
-
-    private func chip(label: String, icon: String? = nil, color: Color = .fireTextSecondary, isSelected: Bool, action: @escaping () -> Void) -> some View {
+    private func chip(label: String, icon: String? = nil, color: Color = .onSurfaceVariant, isSelected: Bool, action: @escaping () -> Void) -> some View {
         Button(action: action) {
-            HStack(spacing: 4) {
+            HStack(spacing: KASpacing.xs) {
                 if let icon = icon {
                     Image(systemName: icon).font(.system(size: 10))
                 }
-                Text(label).font(.system(size: 11, weight: .semibold, design: .rounded))
+                Text(label).font(KATypography.labelSm)
             }
             .padding(.horizontal, 10)
             .padding(.vertical, 6)
-            .foregroundColor(isSelected ? .white : color)
+            .foregroundColor(isSelected ? .onPrimary : color)
             .background(
-                Capsule().fill(isSelected ? color : Color.black.opacity(0.05))
+                Capsule().fill(isSelected ? color : Color.surfaceContainerHighest)
             )
         }
         .buttonStyle(.plain)
     }
-
-    // MARK: - Pokemon Row
 
     private func pokemonRow(_ entry: PokemonEntry) -> some View {
         let status = progress.pokemonStatus(for: entry.id)
@@ -157,7 +147,7 @@ struct PokedexView: View {
         return NavigationLink {
             PokedexDetailView(entry: entry)
         } label: {
-            HStack(spacing: 12) {
+            HStack(spacing: KASpacing.sm + KASpacing.xs) {
                 AsyncImage(url: entry.spriteURL) { phase in
                     switch phase {
                     case .success(let image):
@@ -175,30 +165,30 @@ struct PokedexView: View {
 
                 Text(entry.dexString)
                     .font(.system(size: 11, weight: .bold, design: .monospaced))
-                    .foregroundColor(.fireTextSecondary)
+                    .foregroundColor(.onSurfaceVariant)
                     .frame(width: 38, alignment: .leading)
 
                 VStack(alignment: .leading, spacing: 3) {
                     HStack(spacing: 5) {
                         Text(entry.name)
-                            .font(.system(size: 14, weight: .semibold, design: .rounded))
-                            .foregroundColor(status == .notSeen ? .fireTextSecondary : .fireTextPrimary)
+                            .font(KATypography.titleSm)
+                            .foregroundColor(status == .notSeen ? .onSurfaceVariant : .onSurface)
 
                         if !isAvailable, let version = entry.availability {
                             Text(version == .fireRed ? "FR" : "LG")
                                 .font(.system(size: 8, weight: .heavy, design: .rounded))
-                                .foregroundColor(.white)
+                                .foregroundColor(.onPrimary)
                                 .padding(.horizontal, 5)
                                 .padding(.vertical, 2)
                                 .background(Capsule().fill(version.accentColor.opacity(0.7)))
                         }
                     }
 
-                    HStack(spacing: 4) {
+                    HStack(spacing: KASpacing.xs) {
                         ForEach(entry.types, id: \.self) { type in
                             HStack(spacing: 2) {
                                 Image(systemName: type.icon).font(.system(size: 8))
-                                Text(type.rawValue.capitalized).font(.system(size: 9, weight: .medium, design: .rounded))
+                                Text(type.rawValue.capitalized).font(KATypography.labelXs)
                             }
                             .foregroundColor(type.color)
                             .padding(.horizontal, 6)
@@ -211,18 +201,18 @@ struct PokedexView: View {
                 Spacer()
 
                 Text(status.label)
-                    .font(.system(size: 10, weight: .bold, design: .rounded))
+                    .font(KATypography.labelXs)
                     .foregroundColor(status.color)
-                    .padding(.horizontal, 8)
-                    .padding(.vertical, 4)
+                    .padding(.horizontal, KASpacing.sm)
+                    .padding(.vertical, KASpacing.xs)
                     .background(Capsule().fill(status.color.opacity(0.10)))
 
                 Image(systemName: "chevron.right")
                     .font(.system(size: 10, weight: .bold))
-                    .foregroundColor(Color.black.opacity(0.15))
+                    .foregroundColor(.outlineVariant)
             }
             .padding(10)
-            .softCard(cornerRadius: 14, tint: status == .notSeen ? .clear : status.color, shadowRadius: 4)
+            .softCard(cornerRadius: KARadius.lg, tint: status == .notSeen ? .clear : status.color)
             .opacity(isAvailable ? (status == .notSeen ? 0.6 : 1) : 0.45)
         }
         .buttonStyle(.plain)

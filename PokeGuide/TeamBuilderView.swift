@@ -19,7 +19,7 @@ struct TeamBuilderView: View {
 
     var body: some View {
         ScrollView(showsIndicators: false) {
-            VStack(spacing: 20) {
+            VStack(spacing: KASpacing.lg) {
                 teamSlots
                     .padding(.horizontal)
 
@@ -41,9 +41,9 @@ struct TeamBuilderView: View {
 
                 Spacer(minLength: 30)
             }
-            .padding(.top, 12)
+            .padding(.top, KASpacing.sm + KASpacing.xs)
         }
-        .background(Color.fireBg.ignoresSafeArea())
+        .background(Color.surface.ignoresSafeArea())
         .navigationTitle("Team Builder")
         .navigationBarTitleDisplayMode(.large)
         .sheet(isPresented: $showPicker) {
@@ -63,21 +63,18 @@ struct TeamBuilderView: View {
         }
     }
 
-    // MARK: - Team Slots
-
     private var teamSlots: some View {
-        VStack(spacing: 12) {
+        VStack(spacing: KASpacing.sm + KASpacing.xs) {
             HStack(spacing: 6) {
                 Image(systemName: "person.3.fill")
                     .foregroundColor(theme.accent)
                 Text("Tu equipo")
-                    .font(.system(.subheadline, design: .rounded))
-                    .fontWeight(.bold)
+                    .font(KATypography.titleSm)
                     .foregroundColor(theme.accent)
                 Spacer()
                 Text("\(filledTeam.count)/6")
-                    .font(.system(size: 13, weight: .semibold, design: .rounded))
-                    .foregroundColor(.fireTextSecondary)
+                    .font(KATypography.bodySmall)
+                    .foregroundColor(.onSurfaceVariant)
             }
 
             HStack(spacing: 10) {
@@ -87,7 +84,7 @@ struct TeamBuilderView: View {
             }
         }
         .padding()
-        .softCard(cornerRadius: 16)
+        .softCard(cornerRadius: KARadius.lg)
     }
 
     private func slotView(index: Int) -> some View {
@@ -105,7 +102,7 @@ struct TeamBuilderView: View {
                 Circle()
                     .fill(team[index] != nil
                         ? theme.accent.opacity(0.08)
-                        : Color.fireGray.opacity(0.6))
+                        : Color.surfaceContainerHighest)
                     .frame(width: 52, height: 52)
 
                 if let entry = team[index] {
@@ -116,7 +113,7 @@ struct TeamBuilderView: View {
                                 .frame(width: 40, height: 40)
                         case .failure:
                             Image(systemName: "questionmark")
-                                .foregroundColor(.fireTextSecondary)
+                                .foregroundColor(.onSurfaceVariant)
                         default:
                             ProgressView().controlSize(.small)
                         }
@@ -125,18 +122,17 @@ struct TeamBuilderView: View {
                 } else {
                     Image(systemName: "plus")
                         .font(.system(size: 18, weight: .medium))
-                        .foregroundColor(.fireTextSecondary.opacity(0.5))
+                        .foregroundColor(.onSurfaceVariant.opacity(0.5))
                 }
 
-                // Remove badge
                 if team[index] != nil {
                     VStack {
                         HStack {
                             Spacer()
                             Image(systemName: "xmark.circle.fill")
                                 .font(.system(size: 14))
-                                .foregroundColor(.fireRed.opacity(0.7))
-                                .background(Circle().fill(.white).padding(2))
+                                .foregroundColor(.kaPrimary.opacity(0.7))
+                                .background(Circle().fill(Color.surfaceContainerLow).padding(2))
                         }
                         Spacer()
                     }
@@ -147,68 +143,63 @@ struct TeamBuilderView: View {
         .buttonStyle(.plain)
     }
 
-    // MARK: - Empty State
-
     private var emptyState: some View {
-        VStack(spacing: 14) {
+        VStack(spacing: KASpacing.md) {
             Image(systemName: "sparkles")
                 .font(.system(size: 40))
                 .foregroundColor(theme.accent.opacity(0.3))
 
             Text("Armá tu equipo ideal")
-                .font(.system(.title3, design: .rounded))
-                .fontWeight(.bold)
-                .foregroundColor(.fireTextPrimary)
+                .font(KATypography.headlineMd)
+                .foregroundColor(.onSurface)
 
             Text("Tocá los slots de arriba para agregar Pokémon y ver el análisis de cobertura de tipos.")
-                .font(.system(size: 14, design: .rounded))
-                .foregroundColor(.fireTextSecondary)
+                .font(KATypography.bodySmall)
+                .foregroundColor(.onSurfaceVariant)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 40)
         }
     }
 
-    // MARK: - Type Coverage
-
     private var typeCoverageSection: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            FireRedSectionHeader(title: "Cobertura ofensiva", icon: "burst.fill")
+        VStack(alignment: .leading, spacing: KASpacing.sm + KASpacing.xs) {
+            KASectionHeader(title: "Cobertura ofensiva", icon: "burst.fill")
 
             let covered = offensiveCoverage()
             let uncovered = PokemonType.allCases.filter { !covered.contains($0) }
 
             if !covered.isEmpty {
-                coverageRow(label: "Super eficaz contra", types: covered, color: .fireGreen)
+                coverageRow(label: "Super eficaz contra", types: covered, color: .success)
             }
             if !uncovered.isEmpty {
-                coverageRow(label: "Sin cobertura contra", types: uncovered, color: .fireRed.opacity(0.7))
+                coverageRow(label: "Sin cobertura contra", types: uncovered, color: .kaPrimary.opacity(0.7))
             }
 
-            Divider().padding(.vertical, 4)
+            Spacer().frame(height: KASpacing.sm)
 
-            FireRedSectionHeader(title: "Debilidades defensivas", icon: "shield.slash.fill")
+            KASectionHeader(title: "Debilidades defensivas", icon: "shield.slash.fill")
 
             let teamWeaknesses = defensiveWeaknesses()
             let teamResistances = defensiveResistances()
 
             if !teamWeaknesses.isEmpty {
-                coverageRow(label: "Débil a", types: teamWeaknesses, color: .fireOrange)
+                coverageRow(label: "Débil a", types: teamWeaknesses, color: .primaryContainer)
             }
             if !teamResistances.isEmpty {
-                coverageRow(label: "Resiste", types: teamResistances, color: .fireBlue)
+                coverageRow(label: "Resiste", types: teamResistances, color: .kaSecondaryContainer)
             }
         }
         .padding()
-        .softCard(cornerRadius: 16)
+        .softCard(cornerRadius: KARadius.lg)
     }
 
     private func coverageRow(label: String, types: [PokemonType], color: Color) -> some View {
         VStack(alignment: .leading, spacing: 6) {
             Text(label)
-                .font(.system(size: 12, weight: .semibold, design: .rounded))
+                .font(KATypography.bodySmall)
                 .foregroundColor(color)
 
-            FlowLayout(spacing: 4) {
+            FlowLayout(spacing: KASpacing.xs) {
                 ForEach(types, id: \.self) { type in
                     TypeBadge(text: type.rawValue.capitalized, color: type.color)
                 }
@@ -216,49 +207,47 @@ struct TeamBuilderView: View {
         }
     }
 
-    // MARK: - Stat Averages
-
     private var statAveragesSection: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            FireRedSectionHeader(title: "Estadísticas promedio", icon: "chart.bar.fill")
+        VStack(alignment: .leading, spacing: KASpacing.sm + KASpacing.xs) {
+            KASectionHeader(title: "Estadísticas promedio", icon: "chart.bar.fill")
 
             let avg = averageStats()
-            VStack(spacing: 8) {
-                statBar(label: "HP", value: avg.hp, max: 255, color: .fireGreen)
-                statBar(label: "ATK", value: avg.attack, max: 255, color: .fireRed)
-                statBar(label: "DEF", value: avg.defense, max: 255, color: .fireOrange)
-                statBar(label: "SP.A", value: avg.spAttack, max: 255, color: .fireBlue)
-                statBar(label: "SP.D", value: avg.spDefense, max: 255, color: Color.purple.opacity(0.7))
-                statBar(label: "SPD", value: avg.speed, max: 255, color: .fireYellow)
+            VStack(spacing: KASpacing.sm) {
+                statBar(label: "HP", value: avg.hp, max: 255, color: .success)
+                statBar(label: "ATK", value: avg.attack, max: 255, color: theme.accent)
+                statBar(label: "DEF", value: avg.defense, max: 255, color: .primaryContainer)
+                statBar(label: "SP.A", value: avg.spAttack, max: 255, color: .kaSecondaryContainer)
+                statBar(label: "SP.D", value: avg.spDefense, max: 255, color: Color(red: 0.45, green: 0.75, blue: 0.78))
+                statBar(label: "SPD", value: avg.speed, max: 255, color: .kaYellow)
             }
 
             HStack {
                 Spacer()
                 Text("Total promedio: \(avg.total)")
-                    .font(.system(size: 13, weight: .bold, design: .rounded))
+                    .font(KATypography.titleSm)
                     .foregroundColor(theme.accent)
             }
         }
         .padding()
-        .softCard(cornerRadius: 16)
+        .softCard(cornerRadius: KARadius.lg)
     }
 
     private func statBar(label: String, value: Int, max: Int, color: Color) -> some View {
-        HStack(spacing: 8) {
+        HStack(spacing: KASpacing.sm) {
             Text(label)
                 .font(.system(size: 11, weight: .bold, design: .monospaced))
-                .foregroundColor(.fireTextSecondary)
+                .foregroundColor(.onSurfaceVariant)
                 .frame(width: 34, alignment: .trailing)
 
             Text("\(value)")
-                .font(.system(size: 12, weight: .semibold, design: .rounded))
-                .foregroundColor(.fireTextPrimary)
+                .font(KATypography.bodySmall)
+                .foregroundColor(.onSurface)
                 .frame(width: 30, alignment: .trailing)
 
             GeometryReader { geo in
                 ZStack(alignment: .leading) {
                     RoundedRectangle(cornerRadius: 3)
-                        .fill(Color.fireGray)
+                        .fill(Color.surfaceContainerHighest)
                         .frame(height: 8)
 
                     RoundedRectangle(cornerRadius: 3)
@@ -270,31 +259,29 @@ struct TeamBuilderView: View {
         }
     }
 
-    // MARK: - Warnings
-
     private var warningsSection: some View {
         let warnings = generateWarnings()
         return Group {
             if !warnings.isEmpty {
                 VStack(alignment: .leading, spacing: 10) {
-                    FireRedSectionHeader(title: "Advertencias", icon: "exclamationmark.triangle.fill")
+                    KASectionHeader(title: "Advertencias", icon: "exclamationmark.triangle.fill")
 
                     ForEach(warnings, id: \.self) { warning in
-                        HStack(alignment: .top, spacing: 8) {
+                        HStack(alignment: .top, spacing: KASpacing.sm) {
                             Image(systemName: "exclamationmark.triangle.fill")
                                 .font(.system(size: 12))
-                                .foregroundColor(.fireOrange)
+                                .foregroundColor(.primaryContainer)
                                 .padding(.top, 2)
 
                             Text(warning)
-                                .font(.system(size: 13, weight: .medium, design: .rounded))
-                                .foregroundColor(.fireTextPrimary)
+                                .font(KATypography.bodySmall)
+                                .foregroundColor(.onSurface)
                                 .fixedSize(horizontal: false, vertical: true)
                         }
                     }
                 }
                 .padding()
-                .softCard(cornerRadius: 16, tint: .fireOrange)
+                .softCard(cornerRadius: KARadius.lg, tint: .primaryContainer)
             }
         }
     }
@@ -320,7 +307,6 @@ struct TeamBuilderView: View {
                 weakCounts[weakness, default: 0] += 1
             }
         }
-        // Show types that at least half the team is weak to
         let threshold = max(1, filledTeam.count / 2)
         return PokemonType.allCases.filter { (weakCounts[$0] ?? 0) >= threshold }
     }
@@ -354,14 +340,12 @@ struct TeamBuilderView: View {
     private func generateWarnings() -> [String] {
         var warnings: [String] = []
 
-        // Uncovered offensive types
         let covered = Set(offensiveCoverage())
         let uncovered = PokemonType.allCases.filter { !covered.contains($0) }
         for type in uncovered {
             warnings.append("No tenés cobertura ofensiva contra tipo \(type.rawValue.capitalized).")
         }
 
-        // Shared weaknesses (2+ members weak to same type)
         var weakCounts: [PokemonType: Int] = [:]
         for member in filledTeam {
             for weakness in TypeEffectiveness.weaknesses(of: member.types) {
@@ -375,7 +359,6 @@ struct TeamBuilderView: View {
             }
         }
 
-        // Duplicate types
         var typeCounts: [PokemonType: Int] = [:]
         for member in filledTeam {
             for t in member.types {
@@ -389,7 +372,6 @@ struct TeamBuilderView: View {
             }
         }
 
-        // Low average stat total
         let avg = averageStats()
         if avg.total < 350 && filledTeam.count >= 3 {
             warnings.append("El promedio de stats totales es bajo (\(avg.total)). Considerá Pokémon más fuertes.")
@@ -433,7 +415,7 @@ private struct PokemonPickerSheet: View {
                 typeFilterBar
                 pokemonList
             }
-            .background(Color.fireBg.ignoresSafeArea())
+            .background(Color.surface.ignoresSafeArea())
             .navigationTitle("Elegir Pokémon")
             .navigationBarTitleDisplayMode(.inline)
             .searchable(text: $searchText, prompt: "Buscar por nombre o número...")
@@ -455,7 +437,7 @@ private struct PokemonPickerSheet: View {
                 }
             }
             .padding(.horizontal)
-            .padding(.vertical, 8)
+            .padding(.vertical, KASpacing.sm)
         }
     }
 
@@ -464,8 +446,8 @@ private struct PokemonPickerSheet: View {
             withAnimation(.easeInOut(duration: 0.2)) { filterType = type }
         } label: {
             Text(label)
-                .font(.system(size: 12, weight: .semibold, design: .rounded))
-                .foregroundColor(filterType == type ? .white : (type?.color ?? theme.accent))
+                .font(KATypography.bodySmall)
+                .foregroundColor(filterType == type ? .onPrimary : (type?.color ?? theme.accent))
                 .padding(.horizontal, 10)
                 .padding(.vertical, 5)
                 .background(
@@ -500,7 +482,7 @@ private struct PokemonPickerSheet: View {
     }
 
     private func pickerRow(entry: PokemonEntry, isAvailable: Bool, isAlreadyPicked: Bool) -> some View {
-        HStack(spacing: 12) {
+        HStack(spacing: KASpacing.sm + KASpacing.xs) {
             AsyncImage(url: entry.spriteURL) { phase in
                 switch phase {
                 case .success(let image):
@@ -510,7 +492,7 @@ private struct PokemonPickerSheet: View {
                 case .failure:
                     Image(systemName: "questionmark")
                         .frame(width: 40, height: 40)
-                        .foregroundColor(.fireTextSecondary)
+                        .foregroundColor(.onSurfaceVariant)
                 default:
                     ProgressView().controlSize(.small)
                         .frame(width: 40, height: 40)
@@ -518,16 +500,16 @@ private struct PokemonPickerSheet: View {
             }
 
             VStack(alignment: .leading, spacing: 2) {
-                HStack(spacing: 4) {
+                HStack(spacing: KASpacing.xs) {
                     Text(entry.dexString)
                         .font(.system(size: 11, weight: .medium, design: .monospaced))
-                        .foregroundColor(.fireTextSecondary)
+                        .foregroundColor(.onSurfaceVariant)
                     Text(entry.name)
-                        .font(.system(size: 15, weight: .semibold, design: .rounded))
-                        .foregroundColor(isAvailable && !isAlreadyPicked ? .fireTextPrimary : .fireTextSecondary)
+                        .font(KATypography.titleSm)
+                        .foregroundColor(isAvailable && !isAlreadyPicked ? .onSurface : .onSurfaceVariant)
                 }
 
-                HStack(spacing: 4) {
+                HStack(spacing: KASpacing.xs) {
                     ForEach(entry.types, id: \.self) { type in
                         TypeBadge(text: type.rawValue.capitalized, color: type.color)
                     }
@@ -538,28 +520,28 @@ private struct PokemonPickerSheet: View {
 
             if isAlreadyPicked {
                 Text("En equipo")
-                    .font(.system(size: 10, weight: .semibold, design: .rounded))
-                    .foregroundColor(.fireTextSecondary)
-                    .padding(.horizontal, 8)
+                    .font(KATypography.labelXs)
+                    .foregroundColor(.onSurfaceVariant)
+                    .padding(.horizontal, KASpacing.sm)
                     .padding(.vertical, 3)
-                    .background(Capsule().fill(Color.fireGray))
+                    .background(Capsule().fill(Color.surfaceContainerHighest))
             } else if !isAvailable {
                 Text(gameVersion == .fireRed ? "Solo LeafGreen" : "Solo FireRed")
-                    .font(.system(size: 10, weight: .semibold, design: .rounded))
-                    .foregroundColor(.fireTextSecondary)
-                    .padding(.horizontal, 8)
+                    .font(KATypography.labelXs)
+                    .foregroundColor(.onSurfaceVariant)
+                    .padding(.horizontal, KASpacing.sm)
                     .padding(.vertical, 3)
-                    .background(Capsule().fill(Color.fireGray))
+                    .background(Capsule().fill(Color.surfaceContainerHighest))
             }
         }
         .padding(.vertical, 6)
-        .padding(.horizontal, 12)
+        .padding(.horizontal, KASpacing.sm + KASpacing.xs)
         .opacity(isAvailable && !isAlreadyPicked ? 1.0 : 0.5)
-        .softCard(cornerRadius: 12, shadowRadius: 4)
+        .softCard(cornerRadius: KARadius.lg)
     }
 }
 
-// MARK: - FlowLayout (wrapping horizontal layout for type badges)
+// MARK: - FlowLayout
 
 private struct FlowLayout: Layout {
     var spacing: CGFloat = 4
@@ -602,8 +584,6 @@ private struct FlowLayout: Layout {
         return (CGSize(width: maxX, height: currentY + lineHeight), positions)
     }
 }
-
-// MARK: - Preview
 
 #Preview {
     NavigationStack {

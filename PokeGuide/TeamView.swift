@@ -1,6 +1,6 @@
 //
 //  TeamView.swift
-//  pokemon guide
+//  poke guide
 //
 
 import SwiftUI
@@ -11,13 +11,12 @@ struct TeamView: View {
 
     var body: some View {
         ZStack {
-            Color.fireBg.ignoresSafeArea()
+            Color.surface.ignoresSafeArea()
 
             ScrollView {
-                VStack(spacing: 12) {
+                VStack(spacing: KASpacing.sm + KASpacing.xs) {
                     GuideDisclaimerBanner()
 
-                    // Team overview bar
                     HStack(spacing: 0) {
                         ForEach(bridge.team) { member in
                             Text(member.emoji)
@@ -33,7 +32,7 @@ struct TeamView: View {
                                 }
                         }
                     }
-                    .padding(.vertical, 12)
+                    .padding(.vertical, KASpacing.sm + KASpacing.xs)
 
                     ForEach(bridge.team) { member in
                         pokemonCard(member)
@@ -57,32 +56,29 @@ struct TeamView: View {
             }
         } label: {
             VStack(alignment: .leading, spacing: 0) {
-                // Header
-                HStack(spacing: 12) {
+                HStack(spacing: KASpacing.sm + KASpacing.xs) {
                     Text(member.emoji)
                         .font(.system(size: 36))
 
                     VStack(alignment: .leading, spacing: 2) {
                         Text(member.name)
-                            .font(.system(.title3, design: .rounded))
-                            .fontWeight(.bold)
-                            .foregroundColor(.fireTextPrimary)
+                            .font(KATypography.headlineMd)
+                            .foregroundColor(.onSurface)
 
-                        // Moves preview
-                        HStack(spacing: 4) {
+                        HStack(spacing: KASpacing.xs) {
                             ForEach(member.moves.prefix(2), id: \.self) { move in
                                 Text(move.components(separatedBy: " / ").first ?? move)
-                                    .font(.system(size: 10, weight: .semibold, design: .rounded))
-                                    .foregroundColor(.fireTextPrimary.opacity(0.8))
+                                    .font(KATypography.labelXs)
+                                    .foregroundColor(.onSurface.opacity(0.8))
                                     .padding(.horizontal, 6)
                                     .padding(.vertical, 2)
-                                    .background(moveColor(move).opacity(0.5))
+                                    .background(moveColor(move).opacity(0.12))
                                     .clipShape(Capsule())
                             }
                             if !isExpanded {
                                 Text("+\(member.moves.count - 2)")
-                                    .font(.system(size: 10, weight: .bold, design: .rounded))
-                                    .foregroundColor(.fireTextSecondary)
+                                    .font(KATypography.labelXs)
+                                    .foregroundColor(.onSurfaceVariant)
                             }
                         }
                     }
@@ -91,84 +87,79 @@ struct TeamView: View {
 
                     Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
                         .font(.system(size: 12, weight: .bold))
-                        .foregroundColor(.fireTextSecondary)
+                        .foregroundColor(.onSurfaceVariant)
                 }
-                .padding(14)
+                .padding(KASpacing.md)
 
-                // Expanded content
                 if isExpanded {
                     VStack(alignment: .leading, spacing: 10) {
-                        Divider()
-                            .background(Color.fireTextSecondary.opacity(0.3))
+                        Spacer().frame(height: KASpacing.sm)
 
-                        // All moves
                         Text("MOVESET")
-                            .font(.system(size: 10, weight: .bold, design: .rounded))
-                            .foregroundColor(.fireOrange)
+                            .font(KATypography.labelXs)
+                            .foregroundColor(theme.accent)
                             .tracking(1)
 
                         LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 6) {
                             ForEach(Array(member.moves.enumerated()), id: \.offset) { i, move in
                                 HStack(spacing: 6) {
                                     Text("\(i + 1)")
-                                        .font(.system(size: 10, weight: .bold, design: .rounded))
+                                        .font(KATypography.labelXs)
                                         .foregroundColor(moveColor(move))
                                     Text(move)
-                                        .font(.system(size: 13, weight: .medium, design: .rounded))
-                                        .foregroundColor(.fireTextPrimary)
+                                        .font(KATypography.bodySmall)
+                                        .foregroundColor(.onSurface)
                                 }
                                 .frame(maxWidth: .infinity, alignment: .leading)
-                                .padding(8)
-                                .background(moveColor(move).opacity(0.12))
-                                .clipShape(RoundedRectangle(cornerRadius: 8))
+                                .padding(KASpacing.sm)
+                                .background(moveColor(move).opacity(0.10))
+                                .clipShape(RoundedRectangle(cornerRadius: KASpacing.sm))
                             }
                         }
 
-                        // Notes
                         Text("NOTAS")
-                            .font(.system(size: 10, weight: .bold, design: .rounded))
-                            .foregroundColor(.fireOrange)
+                            .font(KATypography.labelXs)
+                            .foregroundColor(theme.accent)
                             .tracking(1)
-                            .padding(.top, 4)
+                            .padding(.top, KASpacing.xs)
 
                         Text(member.notes)
-                            .font(.system(size: 13, design: .rounded))
-                            .foregroundColor(.fireTextSecondary)
+                            .font(KATypography.bodySmall)
+                            .foregroundColor(.onSurfaceVariant)
                     }
-                    .padding(.horizontal, 14)
-                    .padding(.bottom, 14)
+                    .padding(.horizontal, KASpacing.md)
+                    .padding(.bottom, KASpacing.md)
                     .transition(.opacity.combined(with: .move(edge: .top)))
                 }
             }
             .background(
-                RoundedRectangle(cornerRadius: 16)
-                    .fill(isExpanded ? Color.fireCard.opacity(0.9) : Color.fireCard)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 16)
-                            .stroke(isExpanded ? Color.fireOrange.opacity(0.3) : Color.clear, lineWidth: 1)
-                    )
+                RoundedRectangle(cornerRadius: KARadius.lg)
+                    .fill(Color.surfaceContainerLow)
             )
+            .ghostBorder(cornerRadius: KARadius.lg, opacity: isExpanded ? 0.15 : 0.10)
+            .clipShape(RoundedRectangle(cornerRadius: KARadius.lg))
         }
         .buttonStyle(.plain)
     }
 
+    @Environment(\.themeColors) private var theme
+
     private static let moveColors: [String: Color] = [
-        "Surf": .fireBlue, "Ice Beam": .fireBlue,
-        "Thunderbolt": .fireYellow, "Shock Wave": .fireYellow, "Double Kick": .pink,
-        "Flamethrower": .fireOrange, "Bite": .fireOrange, "Flame Wheel": .fireOrange,
+        "Surf": .kaSecondaryContainer, "Ice Beam": .kaSecondaryContainer,
+        "Thunderbolt": .kaYellow, "Shock Wave": .kaYellow, "Double Kick": .pink,
+        "Flamethrower": .primaryContainer, "Bite": .primaryContainer, "Flame Wheel": .primaryContainer,
         "Earthquake": .brown, "Dig": .brown, "Brick Break": .brown,
         "Strength": .brown, "Return": .brown,
         "Psychic": .purple, "Giga Drain": .purple, "Sleep Powder": .purple, "Stun Spore": .purple,
-        "Body Slam": .fireTextSecondary, "Yawn": .fireTextSecondary,
-        "Rest": .fireTextSecondary, "Shadow Ball": .fireTextSecondary,
+        "Body Slam": .onSurfaceVariant, "Yawn": .onSurfaceVariant,
+        "Rest": .onSurfaceVariant, "Shadow Ball": .onSurfaceVariant,
         "Aerial Ace": .pink,
-        "Protect": .fireGreen,
+        "Protect": .success,
     ]
 
     private func moveColor(_ move: String) -> Color {
-        // Handle composite moves like "Protect / Strength" — match on first option
         let primary = move.components(separatedBy: " / ").first ?? move
-        return Self.moveColors[primary] ?? .fireTextPrimary
+        return Self.moveColors[primary] ?? .onSurface
     }
 }
 

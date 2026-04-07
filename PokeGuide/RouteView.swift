@@ -1,6 +1,6 @@
 //
 //  RouteView.swift
-//  pokemon guide
+//  poke guide
 //
 
 import SwiftUI
@@ -12,17 +12,15 @@ struct RouteView: View {
 
     var body: some View {
         ZStack {
-            Color.fireBg.ignoresSafeArea()
+            Color.surface.ignoresSafeArea()
 
             ScrollView {
-                VStack(spacing: 16) {
+                VStack(spacing: KASpacing.md) {
                     GuideDisclaimerBanner()
-                        .padding(.top, 4)
+                        .padding(.top, KASpacing.xs)
 
-                    // Route progress
                     routeProgress
                         .padding(.horizontal)
-                        .padding(.top, 0)
 
                     ForEach(bridge.routeSections) { section in
                         sectionView(section)
@@ -43,23 +41,23 @@ struct RouteView: View {
         return VStack(spacing: 6) {
             HStack {
                 Text("Progreso de ruta")
-                    .font(.system(size: 13, weight: .medium, design: .rounded))
-                    .foregroundColor(.fireTextSecondary)
+                    .font(KATypography.bodySmall)
+                    .foregroundColor(.onSurfaceVariant)
                 Spacer()
                 Text("\(completedSteps)/\(totalSteps)")
-                    .font(.system(size: 13, weight: .bold, design: .rounded))
-                    .foregroundColor(.fireOrange)
+                    .font(KATypography.titleSm)
+                    .foregroundColor(theme.accent)
             }
 
             GeometryReader { geo in
                 ZStack(alignment: .leading) {
                     RoundedRectangle(cornerRadius: 4)
-                        .fill(Color.fireCard)
+                        .fill(Color.surfaceContainerHighest)
                         .frame(height: 8)
 
                     RoundedRectangle(cornerRadius: 4)
                         .fill(
-                            LinearGradient(colors: [theme.accent, theme.secondary], startPoint: .leading, endPoint: .trailing)
+                            LinearGradient(colors: theme.gradientColors, startPoint: .leading, endPoint: .trailing)
                         )
                         .frame(width: totalSteps > 0 ? geo.size.width * CGFloat(completedSteps) / CGFloat(totalSteps) : 0, height: 8)
                         .animation(.spring(response: 0.5), value: completedSteps)
@@ -67,33 +65,27 @@ struct RouteView: View {
             }
             .frame(height: 8)
         }
-        .padding(12)
-        .background(
-            RoundedRectangle(cornerRadius: 12)
-                .fill(Color.fireCard)
-        )
+        .padding(KASpacing.sm + KASpacing.xs)
+        .softCard(cornerRadius: KARadius.lg)
     }
 
     private func sectionView(_ section: RouteSectionDTO) -> some View {
         let sectionCompleted = section.steps.allSatisfy { progress.isRouteStepCompleted($0.id) }
 
         return VStack(alignment: .leading, spacing: 0) {
-            // Section header
-            HStack(spacing: 8) {
+            HStack(spacing: KASpacing.sm) {
                 Image(systemName: sectionCompleted ? "flag.checkered" : "mappin.circle.fill")
-                    .foregroundColor(sectionCompleted ? .fireGreen : .fireOrange)
+                    .foregroundColor(sectionCompleted ? .success : theme.accent)
                     .font(.system(size: 16))
 
                 Text(section.title)
-                    .font(.system(.subheadline, design: .rounded))
-                    .fontWeight(.bold)
-                    .foregroundColor(sectionCompleted ? .fireGreen : .fireTextPrimary)
+                    .font(KATypography.titleSm)
+                    .foregroundColor(sectionCompleted ? .success : .onSurface)
             }
-            .padding(.horizontal, 16)
+            .padding(.horizontal, KASpacing.md)
             .padding(.vertical, 10)
             .animation(.easeInOut, value: sectionCompleted)
 
-            // Steps
             VStack(spacing: 0) {
                 ForEach(Array(section.steps.enumerated()), id: \.element.id) { index, step in
                     stepRow(step, isLast: index == section.steps.count - 1)
@@ -111,49 +103,42 @@ struct RouteView: View {
                 progress.toggleRouteStep(step.id)
             }
         } label: {
-            HStack(alignment: .top, spacing: 12) {
-                // Timeline dot + line
+            HStack(alignment: .top, spacing: KASpacing.sm + KASpacing.xs) {
                 VStack(spacing: 0) {
                     Circle()
-                        .fill(completed ? Color.fireGreen : Color.fireTextSecondary.opacity(0.4))
+                        .fill(completed ? Color.success : Color.outlineVariant.opacity(0.4))
                         .frame(width: 10, height: 10)
-                        .overlay(
-                            Circle()
-                                .fill(completed ? Color.fireGreen : Color.clear)
-                                .frame(width: 4, height: 4)
-                        )
                         .scaleEffect(completed ? 1.2 : 1.0)
                         .animation(.spring(response: 0.3), value: completed)
 
                     if !isLast {
                         Rectangle()
-                            .fill(completed ? Color.fireGreen.opacity(0.3) : Color.fireTextSecondary.opacity(0.15))
+                            .fill(completed ? Color.success.opacity(0.3) : Color.outlineVariant.opacity(0.2))
                             .frame(width: 2)
                             .frame(maxHeight: .infinity)
                     }
                 }
                 .frame(width: 10)
 
-                // Content
                 HStack(spacing: 10) {
                     AnimatedCheck(isCompleted: completed, size: 20)
 
                     Text(step.text)
-                        .font(.system(size: 14, design: .rounded))
-                        .foregroundColor(completed ? .fireTextSecondary : .fireTextPrimary)
-                        .strikethrough(completed, color: .fireTextSecondary)
+                        .font(KATypography.bodySmall)
+                        .foregroundColor(completed ? .onSurfaceVariant : .onSurface)
+                        .strikethrough(completed, color: .onSurfaceVariant)
                         .multilineTextAlignment(.leading)
 
                     Spacer()
                 }
-                .padding(.vertical, 8)
+                .padding(.vertical, KASpacing.sm)
                 .padding(.horizontal, 10)
                 .background(
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(completed ? Color.fireGreen.opacity(0.05) : Color.fireCard.opacity(0.5))
+                    RoundedRectangle(cornerRadius: KARadius.sm)
+                        .fill(completed ? Color.success.opacity(0.04) : Color.surfaceContainerLow)
                 )
             }
-            .padding(.bottom, isLast ? 0 : 4)
+            .padding(.bottom, isLast ? 0 : KASpacing.xs)
         }
         .buttonStyle(.plain)
     }

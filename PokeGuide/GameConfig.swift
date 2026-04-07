@@ -1,6 +1,6 @@
 //
 //  GameConfig.swift
-//  PokemonGuide
+//  PokeGuide
 //
 //  Selección de versión del juego y starter, persistida en UserDefaults.
 //
@@ -47,7 +47,7 @@ enum GameVersion: String, CaseIterable, Codable {
     /// Map legacy enum to hex accent color
     var accentColorHex: String {
         switch self {
-        case .fireRed:   return "#E02D1F"
+        case .fireRed:   return "#BC0100"
         case .leafGreen: return "#2EA652"
         }
     }
@@ -55,7 +55,7 @@ enum GameVersion: String, CaseIterable, Codable {
     /// Map legacy enum to hex secondary color
     var secondaryColorHex: String {
         switch self {
-        case .fireRed:   return "#ED801A"
+        case .fireRed:   return "#EB0000"
         case .leafGreen: return "#268D85"
         }
     }

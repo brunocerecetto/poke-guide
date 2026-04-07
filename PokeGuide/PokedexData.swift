@@ -1,6 +1,6 @@
 //
 //  PokedexData.swift
-//  pokemon guide
+//  poke guide
 //
 //  Los 151 Pokémon de Kanto con tipos, estadísticas y ubicaciones.
 //
@@ -104,10 +104,10 @@ enum PokemonStatus: Int, Codable, CaseIterable {
 
     var color: Color {
         switch self {
-        case .notSeen: return .fireLightGray
-        case .seen:    return .fireBlue
-        case .caught:  return .fireOrange
-        case .evolved: return .fireGreen
+        case .notSeen: return .onSurfaceVariant
+        case .seen:    return .kaSecondaryContainer
+        case .caught:  return .primaryContainer
+        case .evolved: return .success
         }
     }
 

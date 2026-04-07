@@ -1,6 +1,6 @@
 //
 //  GymView.swift
-//  pokemon guide
+//  poke guide
 //
 
 import SwiftUI
@@ -16,11 +16,10 @@ struct GymView: View {
 
     var body: some View {
         ZStack {
-            Color.fireBg.ignoresSafeArea()
+            Color.surface.ignoresSafeArea()
 
             ScrollView {
-                VStack(spacing: 12) {
-                    // Badge counter
+                VStack(spacing: KASpacing.sm + KASpacing.xs) {
                     HStack(spacing: 6) {
                         ForEach(bridge.gyms) { gym in
                             Text(gym.badge)
@@ -30,28 +29,26 @@ struct GymView: View {
                                 .animation(.spring(response: 0.4, dampingFraction: 0.5), value: progress.isGymCompleted(gym.name))
                         }
                     }
-                    .padding(.top, 12)
-                    .padding(.bottom, 4)
+                    .padding(.top, KASpacing.sm + KASpacing.xs)
+                    .padding(.bottom, KASpacing.xs)
 
                     Text("\(progress.completedGyms.count) / \(bridge.gyms.count) badges")
-                        .font(.system(size: 13, weight: .medium, design: .rounded))
-                        .foregroundColor(.fireTextSecondary)
+                        .font(KATypography.bodySmall)
+                        .foregroundColor(.onSurfaceVariant)
 
-                    // Tip
                     HStack {
                         Image(systemName: "info.circle.fill")
-                            .foregroundColor(.fireOrange)
+                            .foregroundColor(.primaryContainer)
                         Text("Liga: entrá 52–55 mínimo, 55+ para margen cómodo")
-                            .font(.system(size: 12, weight: .medium, design: .rounded))
-                            .foregroundColor(.fireOrange)
+                            .font(KATypography.labelSm)
+                            .foregroundColor(.primaryContainer)
                     }
                     .padding(10)
                     .frame(maxWidth: .infinity)
-                    .background(Color.fireOrange.opacity(0.1))
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .background(Color.surfaceContainerHighest)
+                    .clipShape(RoundedRectangle(cornerRadius: KARadius.sm))
                     .padding(.horizontal)
 
-                    // Gym cards
                     ForEach(Array(bridge.gyms.enumerated()), id: \.element.id) { index, gym in
                         gymCard(gym, index: index)
                             .padding(.horizontal)
@@ -60,7 +57,6 @@ struct GymView: View {
                 .padding(.bottom, 30)
             }
 
-            // Confetti
             if celebrateAll {
                 ConfettiView(trigger: celebrateAll)
             }
@@ -86,60 +82,57 @@ struct GymView: View {
                 celebrateAll = true
             }
         } label: {
-            HStack(spacing: 14) {
-                // Badge number
+            HStack(spacing: KASpacing.md) {
                 ZStack {
                     Circle()
-                        .fill(completed ? Color.fireGreen.gradient : Color.fireCard.gradient)
+                        .fill(completed ? Color.success.gradient : Color.surfaceContainerHighest.gradient)
                         .frame(width: 44, height: 44)
 
                     if completed {
                         Image(systemName: "checkmark")
                             .font(.system(size: 18, weight: .bold))
-                            .foregroundColor(.white)
+                            .foregroundColor(.onPrimary)
                             .transition(.scale.combined(with: .opacity))
                     } else {
                         Text("\(index + 1)")
                             .font(.system(size: 18, weight: .bold, design: .rounded))
-                            .foregroundColor(.fireTextSecondary)
+                            .foregroundColor(.onSurfaceVariant)
                     }
                 }
 
-                VStack(alignment: .leading, spacing: 4) {
+                VStack(alignment: .leading, spacing: KASpacing.xs) {
                     HStack(alignment: .firstTextBaseline) {
                         Text(gym.badge)
                             .font(.body)
                         Text(gym.name)
-                            .font(.system(.headline, design: .rounded))
-                            .foregroundColor(completed ? .fireTextSecondary : .fireTextPrimary)
-                            .strikethrough(completed, color: .fireTextSecondary)
+                            .font(KATypography.titleMd)
+                            .foregroundColor(completed ? .onSurfaceVariant : .onSurface)
+                            .strikethrough(completed, color: .onSurfaceVariant)
 
                         Text(gym.leader)
-                            .font(.system(.subheadline, design: .rounded))
-                            .foregroundColor(.fireTextSecondary)
+                            .font(KATypography.titleSm)
+                            .foregroundColor(.onSurfaceVariant)
                     }
 
-                    HStack(spacing: 8) {
-                        TypeBadge(text: "Nv. \(gym.levelRange)", color: .fireOrange)
+                    HStack(spacing: KASpacing.sm) {
+                        TypeBadge(text: "Nv. \(gym.levelRange)", color: .primaryContainer)
 
                         Text(gym.note)
-                            .font(.system(size: 11, design: .rounded))
-                            .foregroundColor(.fireTextSecondary)
+                            .font(KATypography.labelSm)
+                            .foregroundColor(.onSurfaceVariant)
                             .lineLimit(1)
                     }
                 }
 
                 Spacer()
             }
-            .padding(12)
+            .padding(KASpacing.sm + KASpacing.xs)
             .background(
-                RoundedRectangle(cornerRadius: 14)
-                    .fill(completed ? Color.fireGreen.opacity(0.08) : Color.fireCard)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 14)
-                            .stroke(completed ? Color.fireGreen.opacity(0.3) : Color.clear, lineWidth: 1)
-                    )
+                RoundedRectangle(cornerRadius: KARadius.lg)
+                    .fill(completed ? Color.success.opacity(0.06) : Color.surfaceContainerLow)
             )
+            .ghostBorder(cornerRadius: KARadius.lg, opacity: completed ? 0.15 : 0.10)
+            .clipShape(RoundedRectangle(cornerRadius: KARadius.lg))
             .opacity(completed ? 0.7 : 1)
         }
         .buttonStyle(.plain)
