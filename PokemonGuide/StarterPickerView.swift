@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-// MARK: - Mock Starter Data
+// MARK: - Starter Data
 
-struct MockStarter: Identifiable, Equatable {
+struct StarterInfo: Identifiable, Equatable {
     let id: Int // dex number
     let name: String
     let typeName: String
@@ -21,67 +21,67 @@ struct MockStarter: Identifiable, Equatable {
     }
 }
 
-extension MockStarter {
+extension StarterInfo {
     /// Maps dex numbers to starter info. Covers all generations.
-    static func starters(for dexNumbers: [Int]) -> [MockStarter] {
+    static func starters(for dexNumbers: [Int]) -> [StarterInfo] {
         dexNumbers.compactMap { starterLookup[$0] }
     }
 
-    private static let starterLookup: [Int: MockStarter] = [
+    private static let starterLookup: [Int: StarterInfo] = [
         // Gen I
-        1:   MockStarter(id: 1,   name: "Bulbasaur",  typeName: "Planta",    typeColor: PokemonType.grass.color,    typeIcon: PokemonType.grass.icon),
-        4:   MockStarter(id: 4,   name: "Charmander", typeName: "Fuego",     typeColor: PokemonType.fire.color,     typeIcon: PokemonType.fire.icon),
-        7:   MockStarter(id: 7,   name: "Squirtle",   typeName: "Agua",      typeColor: PokemonType.water.color,    typeIcon: PokemonType.water.icon),
-        25:  MockStarter(id: 25,  name: "Pikachu",    typeName: "Eléctrico", typeColor: PokemonType.electric.color, typeIcon: PokemonType.electric.icon),
+        1:   StarterInfo(id: 1,   name: "Bulbasaur",  typeName: "Planta",    typeColor: PokemonType.grass.color,    typeIcon: PokemonType.grass.icon),
+        4:   StarterInfo(id: 4,   name: "Charmander", typeName: "Fuego",     typeColor: PokemonType.fire.color,     typeIcon: PokemonType.fire.icon),
+        7:   StarterInfo(id: 7,   name: "Squirtle",   typeName: "Agua",      typeColor: PokemonType.water.color,    typeIcon: PokemonType.water.icon),
+        25:  StarterInfo(id: 25,  name: "Pikachu",    typeName: "Eléctrico", typeColor: PokemonType.electric.color, typeIcon: PokemonType.electric.icon),
         // Gen II
-        152: MockStarter(id: 152, name: "Chikorita",  typeName: "Planta",    typeColor: PokemonType.grass.color,    typeIcon: PokemonType.grass.icon),
-        155: MockStarter(id: 155, name: "Cyndaquil",  typeName: "Fuego",     typeColor: PokemonType.fire.color,     typeIcon: PokemonType.fire.icon),
-        158: MockStarter(id: 158, name: "Totodile",   typeName: "Agua",      typeColor: PokemonType.water.color,    typeIcon: PokemonType.water.icon),
+        152: StarterInfo(id: 152, name: "Chikorita",  typeName: "Planta",    typeColor: PokemonType.grass.color,    typeIcon: PokemonType.grass.icon),
+        155: StarterInfo(id: 155, name: "Cyndaquil",  typeName: "Fuego",     typeColor: PokemonType.fire.color,     typeIcon: PokemonType.fire.icon),
+        158: StarterInfo(id: 158, name: "Totodile",   typeName: "Agua",      typeColor: PokemonType.water.color,    typeIcon: PokemonType.water.icon),
         // Gen III
-        252: MockStarter(id: 252, name: "Treecko",    typeName: "Planta",    typeColor: PokemonType.grass.color,    typeIcon: PokemonType.grass.icon),
-        255: MockStarter(id: 255, name: "Torchic",    typeName: "Fuego",     typeColor: PokemonType.fire.color,     typeIcon: PokemonType.fire.icon),
-        258: MockStarter(id: 258, name: "Mudkip",     typeName: "Agua",      typeColor: PokemonType.water.color,    typeIcon: PokemonType.water.icon),
+        252: StarterInfo(id: 252, name: "Treecko",    typeName: "Planta",    typeColor: PokemonType.grass.color,    typeIcon: PokemonType.grass.icon),
+        255: StarterInfo(id: 255, name: "Torchic",    typeName: "Fuego",     typeColor: PokemonType.fire.color,     typeIcon: PokemonType.fire.icon),
+        258: StarterInfo(id: 258, name: "Mudkip",     typeName: "Agua",      typeColor: PokemonType.water.color,    typeIcon: PokemonType.water.icon),
         // Gen IV
-        387: MockStarter(id: 387, name: "Turtwig",    typeName: "Planta",    typeColor: PokemonType.grass.color,    typeIcon: PokemonType.grass.icon),
-        390: MockStarter(id: 390, name: "Chimchar",   typeName: "Fuego",     typeColor: PokemonType.fire.color,     typeIcon: PokemonType.fire.icon),
-        393: MockStarter(id: 393, name: "Piplup",     typeName: "Agua",      typeColor: PokemonType.water.color,    typeIcon: PokemonType.water.icon),
+        387: StarterInfo(id: 387, name: "Turtwig",    typeName: "Planta",    typeColor: PokemonType.grass.color,    typeIcon: PokemonType.grass.icon),
+        390: StarterInfo(id: 390, name: "Chimchar",   typeName: "Fuego",     typeColor: PokemonType.fire.color,     typeIcon: PokemonType.fire.icon),
+        393: StarterInfo(id: 393, name: "Piplup",     typeName: "Agua",      typeColor: PokemonType.water.color,    typeIcon: PokemonType.water.icon),
         // Gen V
-        495: MockStarter(id: 495, name: "Snivy",      typeName: "Planta",    typeColor: PokemonType.grass.color,    typeIcon: PokemonType.grass.icon),
-        498: MockStarter(id: 498, name: "Tepig",      typeName: "Fuego",     typeColor: PokemonType.fire.color,     typeIcon: PokemonType.fire.icon),
-        501: MockStarter(id: 501, name: "Oshawott",   typeName: "Agua",      typeColor: PokemonType.water.color,    typeIcon: PokemonType.water.icon),
+        495: StarterInfo(id: 495, name: "Snivy",      typeName: "Planta",    typeColor: PokemonType.grass.color,    typeIcon: PokemonType.grass.icon),
+        498: StarterInfo(id: 498, name: "Tepig",      typeName: "Fuego",     typeColor: PokemonType.fire.color,     typeIcon: PokemonType.fire.icon),
+        501: StarterInfo(id: 501, name: "Oshawott",   typeName: "Agua",      typeColor: PokemonType.water.color,    typeIcon: PokemonType.water.icon),
         // Gen VI
-        650: MockStarter(id: 650, name: "Chespin",    typeName: "Planta",    typeColor: PokemonType.grass.color,    typeIcon: PokemonType.grass.icon),
-        653: MockStarter(id: 653, name: "Fennekin",   typeName: "Fuego",     typeColor: PokemonType.fire.color,     typeIcon: PokemonType.fire.icon),
-        656: MockStarter(id: 656, name: "Froakie",    typeName: "Agua",      typeColor: PokemonType.water.color,    typeIcon: PokemonType.water.icon),
+        650: StarterInfo(id: 650, name: "Chespin",    typeName: "Planta",    typeColor: PokemonType.grass.color,    typeIcon: PokemonType.grass.icon),
+        653: StarterInfo(id: 653, name: "Fennekin",   typeName: "Fuego",     typeColor: PokemonType.fire.color,     typeIcon: PokemonType.fire.icon),
+        656: StarterInfo(id: 656, name: "Froakie",    typeName: "Agua",      typeColor: PokemonType.water.color,    typeIcon: PokemonType.water.icon),
         // Gen VII
-        722: MockStarter(id: 722, name: "Rowlet",     typeName: "Planta",    typeColor: PokemonType.grass.color,    typeIcon: PokemonType.grass.icon),
-        725: MockStarter(id: 725, name: "Litten",     typeName: "Fuego",     typeColor: PokemonType.fire.color,     typeIcon: PokemonType.fire.icon),
-        728: MockStarter(id: 728, name: "Popplio",    typeName: "Agua",      typeColor: PokemonType.water.color,    typeIcon: PokemonType.water.icon),
+        722: StarterInfo(id: 722, name: "Rowlet",     typeName: "Planta",    typeColor: PokemonType.grass.color,    typeIcon: PokemonType.grass.icon),
+        725: StarterInfo(id: 725, name: "Litten",     typeName: "Fuego",     typeColor: PokemonType.fire.color,     typeIcon: PokemonType.fire.icon),
+        728: StarterInfo(id: 728, name: "Popplio",    typeName: "Agua",      typeColor: PokemonType.water.color,    typeIcon: PokemonType.water.icon),
         // Gen VIII
-        810: MockStarter(id: 810, name: "Grookey",    typeName: "Planta",    typeColor: PokemonType.grass.color,    typeIcon: PokemonType.grass.icon),
-        813: MockStarter(id: 813, name: "Scorbunny",  typeName: "Fuego",     typeColor: PokemonType.fire.color,     typeIcon: PokemonType.fire.icon),
-        816: MockStarter(id: 816, name: "Sobble",     typeName: "Agua",      typeColor: PokemonType.water.color,    typeIcon: PokemonType.water.icon),
+        810: StarterInfo(id: 810, name: "Grookey",    typeName: "Planta",    typeColor: PokemonType.grass.color,    typeIcon: PokemonType.grass.icon),
+        813: StarterInfo(id: 813, name: "Scorbunny",  typeName: "Fuego",     typeColor: PokemonType.fire.color,     typeIcon: PokemonType.fire.icon),
+        816: StarterInfo(id: 816, name: "Sobble",     typeName: "Agua",      typeColor: PokemonType.water.color,    typeIcon: PokemonType.water.icon),
         // Gen IX
-        906: MockStarter(id: 906, name: "Sprigatito", typeName: "Planta",    typeColor: PokemonType.grass.color,    typeIcon: PokemonType.grass.icon),
-        909: MockStarter(id: 909, name: "Fuecoco",    typeName: "Fuego",     typeColor: PokemonType.fire.color,     typeIcon: PokemonType.fire.icon),
-        912: MockStarter(id: 912, name: "Quaxly",     typeName: "Agua",      typeColor: PokemonType.water.color,    typeIcon: PokemonType.water.icon),
+        906: StarterInfo(id: 906, name: "Sprigatito", typeName: "Planta",    typeColor: PokemonType.grass.color,    typeIcon: PokemonType.grass.icon),
+        909: StarterInfo(id: 909, name: "Fuecoco",    typeName: "Fuego",     typeColor: PokemonType.fire.color,     typeIcon: PokemonType.fire.icon),
+        912: StarterInfo(id: 912, name: "Quaxly",     typeName: "Agua",      typeColor: PokemonType.water.color,    typeIcon: PokemonType.water.icon),
     ]
 }
 
 // MARK: - Starter Picker View
 
 struct StarterPickerView: View {
-    let game: MockGame
+    let game: GameCatalogEntry
     @Environment(\.dismiss) private var dismiss
     @EnvironmentObject var gameConfig: GameConfig
     @EnvironmentObject var progress: ProgressManager
 
-    @State private var selectedStarter: MockStarter?
+    @State private var selectedStarter: StarterInfo?
     @State private var appeared = false
     @State private var showConfirmation = false
 
-    private var starters: [MockStarter] {
-        MockStarter.starters(for: game.starters)
+    private var starters: [StarterInfo] {
+        StarterInfo.starters(for: game.starters)
     }
 
     var body: some View {
@@ -214,7 +214,7 @@ struct StarterPickerView: View {
         .padding(.horizontal)
     }
 
-    private func starterCard(starter: MockStarter, index: Int) -> some View {
+    private func starterCard(starter: StarterInfo, index: Int) -> some View {
         let isSelected = selectedStarter == starter
 
         return VStack(spacing: 10) {
@@ -316,7 +316,7 @@ struct StarterPickerView: View {
 #Preview {
     NavigationStack {
         StarterPickerView(
-            game: MockGame.mockGames.first { $0.id == "firered" }!
+            game: GameCatalogEntry.allGames.first { $0.id == "firered" }!
         )
     }
     .environmentObject(GameConfig())
