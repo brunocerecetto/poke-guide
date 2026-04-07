@@ -245,32 +245,32 @@ struct GuideTab: View {
     }
 
     private func guideCard(item: MenuItem) -> some View {
-        HStack(spacing: KASpacing.sm) {
+        HStack(spacing: KASpacing.md) {
             ZStack {
                 Circle()
-                    .fill(item.color.opacity(0.10))
-                    .frame(width: 40, height: 40)
+                    .fill(item.color.opacity(0.15))
+                    .frame(width: 48, height: 48)
 
                 if let local = item.localIcon, UIImage(named: local) != nil {
                     Image(local)
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 22, height: 22)
+                        .frame(width: 26, height: 26)
                 } else {
                     Image(systemName: item.icon)
-                        .font(.system(size: 16, weight: .semibold))
+                        .font(.system(size: 18, weight: .semibold))
                         .foregroundColor(item.color)
                 }
             }
 
             VStack(alignment: .leading, spacing: 3) {
                 Text(item.title)
-                    .font(KATypography.titleSm)
+                    .font(.system(size: 16, weight: .bold, design: .rounded))
                     .foregroundColor(.onSurface)
                     .lineLimit(1)
                 Text(item.subtitle)
-                    .font(.system(size: 10, weight: .semibold, design: .rounded))
-                    .foregroundColor(.onSurfaceVariant)
+                    .font(.system(size: 10, weight: .bold, design: .rounded))
+                    .foregroundColor(item.color.opacity(0.7))
                     .tracking(1.5)
                     .lineLimit(1)
             }
@@ -279,21 +279,21 @@ struct GuideTab: View {
 
             if let fraction = item.progressFraction {
                 Capsule()
-                    .fill(item.color.opacity(0.12))
-                    .frame(width: 60, height: 4)
+                    .fill(item.color.opacity(0.15))
+                    .frame(width: 64, height: 5)
                     .overlay(alignment: .leading) {
                         Capsule()
                             .fill(item.color)
-                            .frame(width: max(0, 60 * fraction), height: 4)
+                            .frame(width: max(0, 64 * fraction), height: 5)
                     }
             }
 
             Image(systemName: "chevron.right")
-                .font(.system(size: 11, weight: .semibold))
-                .foregroundColor(.onSurfaceVariant.opacity(0.3))
+                .font(.system(size: 12, weight: .bold))
+                .foregroundColor(item.color.opacity(0.5))
         }
         .padding(.horizontal, KASpacing.md)
-        .padding(.vertical, KASpacing.sm + KASpacing.xs)
+        .padding(.vertical, KASpacing.md)
         .frame(maxWidth: .infinity, alignment: .leading)
         .softCard(cornerRadius: KARadius.lg, tint: item.color)
     }

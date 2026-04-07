@@ -42,31 +42,31 @@ struct ResourcesTab: View {
         HStack(spacing: KASpacing.md) {
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
-                    .fill(item.color.opacity(0.10))
-                    .frame(width: 38, height: 38)
+                    .fill(item.color.opacity(0.15))
+                    .frame(width: 44, height: 44)
 
                 Image(systemName: item.icon)
-                    .font(.system(size: 16, weight: .semibold))
+                    .font(.system(size: 18, weight: .semibold))
                     .foregroundColor(item.color)
             }
 
             VStack(alignment: .leading, spacing: 2) {
                 Text(item.title)
-                    .font(KATypography.titleSm)
+                    .font(.system(size: 16, weight: .bold, design: .rounded))
                     .foregroundColor(.onSurface)
                 Text(item.subtitle)
-                    .font(KATypography.labelSm)
-                    .foregroundColor(.onSurfaceVariant)
+                    .font(.system(size: 12, weight: .medium))
+                    .foregroundColor(item.color.opacity(0.7))
             }
 
             Spacer()
 
             Image(systemName: "chevron.right")
-                .font(.system(size: 11, weight: .bold))
-                .foregroundColor(.outlineVariant)
+                .font(.system(size: 12, weight: .bold))
+                .foregroundColor(item.color.opacity(0.5))
         }
         .padding(.horizontal, KASpacing.md)
-        .padding(.vertical, KASpacing.sm + KASpacing.xs)
+        .padding(.vertical, KASpacing.md)
         .softCard(cornerRadius: KARadius.lg, tint: item.color)
     }
 

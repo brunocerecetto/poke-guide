@@ -16,13 +16,14 @@ struct SoftCard: ViewModifier {
         content
             .background(
                 RoundedRectangle(cornerRadius: cornerRadius)
-                    .fill(Color.surfaceContainerLow)
+                    .fill(.white)
             )
             .overlay(
                 RoundedRectangle(cornerRadius: cornerRadius)
-                    .stroke(Color.outlineVariant.opacity(0.10), lineWidth: 1)
+                    .stroke(Color.outlineVariant.opacity(0.35), lineWidth: 1)
             )
             .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+            .shadow(color: .black.opacity(0.06), radius: 4, x: 0, y: 2)
     }
 }
 

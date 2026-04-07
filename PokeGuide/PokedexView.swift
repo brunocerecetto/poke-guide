@@ -218,8 +218,19 @@ struct PokedexView: View {
             PokedexDetailView(entry: entry)
         } label: {
             HStack(spacing: KASpacing.sm + KASpacing.xs) {
-                CachedSpriteView(url: entry.spriteURL, size: 40)
-                    .saturation(isAvailable ? 1 : 0.3)
+                if status == .notSeen {
+                    ZStack {
+                        Circle()
+                            .fill(Color.surfaceContainerHighest)
+                            .frame(width: 40, height: 40)
+                        Image(systemName: "questionmark")
+                            .font(.system(size: 16, weight: .bold))
+                            .foregroundColor(.onSurfaceVariant.opacity(0.4))
+                    }
+                } else {
+                    CachedSpriteView(url: entry.spriteURL, size: 40)
+                        .saturation(isAvailable ? 1 : 0.3)
+                }
 
                 Text(entry.dexString)
                     .font(.system(size: 11, weight: .bold, design: .monospaced))
@@ -230,7 +241,7 @@ struct PokedexView: View {
                     HStack(spacing: 5) {
                         Text(entry.name)
                             .font(KATypography.titleSm)
-                            .foregroundColor(status == .notSeen ? .onSurfaceVariant : .onSurface)
+                            .foregroundColor(.onSurface)
 
                         if !isAvailable, let version = entry.availability {
                             Text(version == .fireRed ? "FR" : "LG")
@@ -287,7 +298,7 @@ struct PokedexView: View {
             }
             .padding(10)
             .softCard(cornerRadius: KARadius.lg, tint: status == .notSeen ? .clear : status.color)
-            .opacity(isAvailable ? (status == .notSeen ? 0.6 : 1) : 0.45)
+            .opacity(isAvailable ? 1 : 0.45)
         }
         .buttonStyle(.plain)
     }
