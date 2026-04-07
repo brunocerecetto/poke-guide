@@ -13,6 +13,7 @@ struct PokedexDetailView: View {
     let entry: PokemonEntry
     @State private var appeared = false
     @State private var spriteScale: CGFloat = 0.5
+    @State private var showingMap = false
 
     private var status: PokemonStatus { progress.pokemonStatus(for: entry.id) }
     private var primaryColor: Color { entry.types.first?.color ?? theme.accent }
@@ -364,6 +365,42 @@ struct PokedexDetailView: View {
                 .padding(.top, KASpacing.sm)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading, 50)
+            }
+
+            let mapIDs = KantoLocationMapper.mapLocationToIDs(entry.location)
+            if !mapIDs.isEmpty {
+                Button {
+                    showingMap = true
+                } label: {
+                    HStack(spacing: 6) {
+                        Image(systemName: "map.fill")
+                            .font(.system(size: 12))
+                        Text("Ver en mapa")
+                            .font(KATypography.labelSm)
+                    }
+                    .foregroundColor(theme.accent)
+                    .padding(.horizontal, KASpacing.md)
+                    .padding(.vertical, KASpacing.sm)
+                    .frame(maxWidth: .infinity)
+                    .background(
+                        RoundedRectangle(cornerRadius: KARadius.md)
+                            .fill(theme.accent.opacity(0.08))
+                    )
+                }
+                .buttonStyle(.plain)
+                .padding(.top, KASpacing.sm)
+                .sheet(isPresented: $showingMap) {
+                    NavigationStack {
+                        KantoMapView(highlightIDs: mapIDs)
+                            .navigationTitle("Ubicación de \(entry.name)")
+                            .navigationBarTitleDisplayMode(.inline)
+                            .toolbar {
+                                ToolbarItem(placement: .cancellationAction) {
+                                    Button("Cerrar") { showingMap = false }
+                                }
+                            }
+                    }
+                }
             }
         }
         .padding(KASpacing.md)
