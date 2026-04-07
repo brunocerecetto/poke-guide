@@ -60,12 +60,14 @@ class GameDataBridge: ObservableObject {
 
     /// Convenience: team members for the current starter
     var team: [TeamMemberDTO] {
-        let starterName = Starter.allCases.first { $0.dexNumber == starterDex }?.rawValue ?? "squirtle"
+        let starterName = StarterInfo.starters(for: [starterDex]).first?.name.lowercased()
+            ?? Starter.allCases.first { $0.dexNumber == starterDex }?.rawValue
+            ?? "squirtle"
         return teamRecommendation(starter: starterName)?.members ?? []
     }
 
     private func loadTeamFromBundle(starter: String) -> TeamRecommendationDTO? {
-        let fileName = "team-\(starter)"
+        let fileName = "\(gameId.lowercased())-team-\(starter)"
 
         guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {
             return nil

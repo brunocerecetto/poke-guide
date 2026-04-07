@@ -169,58 +169,61 @@ final class DataSeeder {
             return
         }
 
+        let prefix = "\(gameId)-"
+
         // Route
-        let routeURL = directory.appendingPathComponent("route.json")
+        let routeURL = directory.appendingPathComponent("\(prefix)route.json")
         if FileManager.default.fileExists(atPath: routeURL.path) {
             try seedRoute(from: routeURL, game: game, in: context)
         }
 
         // Gyms
-        let gymsURL = directory.appendingPathComponent("gyms.json")
+        let gymsURL = directory.appendingPathComponent("\(prefix)gyms.json")
         if FileManager.default.fileExists(atPath: gymsURL.path) {
             try seedGyms(from: gymsURL, game: game, in: context)
         }
 
-        // Team (one file per starter: team-squirtle.json, team-charmander.json, etc.)
+        // Team (one file per starter: {gameId}-team-squirtle.json, etc.)
+        let teamPrefix = "\(prefix)team-"
         let teamFiles = (try? FileManager.default.contentsOfDirectory(atPath: directory.path)) ?? []
-        for fileName in teamFiles where fileName.hasPrefix("team-") && fileName.hasSuffix(".json") {
-            let starter = fileName.replacingOccurrences(of: "team-", with: "").replacingOccurrences(of: ".json", with: "")
+        for fileName in teamFiles where fileName.hasPrefix(teamPrefix) && fileName.hasSuffix(".json") {
+            let starter = fileName.replacingOccurrences(of: teamPrefix, with: "").replacingOccurrences(of: ".json", with: "")
             let url = directory.appendingPathComponent(fileName)
             try seedTeam(from: url, starter: starter, game: game, in: context)
         }
 
         // Elite Four
-        let eliteFourURL = directory.appendingPathComponent("elite_four.json")
+        let eliteFourURL = directory.appendingPathComponent("\(prefix)elite-four.json")
         if FileManager.default.fileExists(atPath: eliteFourURL.path) {
             try seedEliteFour(from: eliteFourURL, game: game, in: context)
         }
 
         // Tips
-        let tipsURL = directory.appendingPathComponent("tips.json")
+        let tipsURL = directory.appendingPathComponent("\(prefix)tips.json")
         if FileManager.default.fileExists(atPath: tipsURL.path) {
             try seedTips(from: tipsURL, game: game, in: context)
         }
 
         // Captures
-        let capturesURL = directory.appendingPathComponent("captures.json")
+        let capturesURL = directory.appendingPathComponent("\(prefix)captures.json")
         if FileManager.default.fileExists(atPath: capturesURL.path) {
             try seedCaptures(from: capturesURL, game: game, in: context)
         }
 
         // HMs & TMs
-        let hmtmURL = directory.appendingPathComponent("hmtm.json")
+        let hmtmURL = directory.appendingPathComponent("\(prefix)hm-tm.json")
         if FileManager.default.fileExists(atPath: hmtmURL.path) {
             try seedHMTM(from: hmtmURL, game: game, in: context)
         }
 
         // Pre-League
-        let preLeagueURL = directory.appendingPathComponent("pre_league.json")
+        let preLeagueURL = directory.appendingPathComponent("\(prefix)pre_league.json")
         if FileManager.default.fileExists(atPath: preLeagueURL.path) {
             try seedPreLeague(from: preLeagueURL, game: game, in: context)
         }
 
         // Postgame
-        let postgameURL = directory.appendingPathComponent("postgame.json")
+        let postgameURL = directory.appendingPathComponent("\(prefix)postgame.json")
         if FileManager.default.fileExists(atPath: postgameURL.path) {
             try seedPostgame(from: postgameURL, game: game, in: context)
         }
