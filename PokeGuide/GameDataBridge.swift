@@ -47,7 +47,7 @@ class GameDataBridge: ObservableObject {
             return rec
         }
         let members = GameData.team.enumerated().map { i, m in
-            TeamMemberDTO(id: i, name: m.name, moves: m.moves, notes: m.notes, emoji: m.emoji)
+            TeamMemberDTO(id: i, name: m.name, dexNumber: m.dexNumber, moves: m.moves, notes: m.notes, emoji: m.emoji)
         }
         return TeamRecommendationDTO(starterCondition: starter, members: members)
     }

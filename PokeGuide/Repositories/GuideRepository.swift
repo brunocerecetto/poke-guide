@@ -92,9 +92,14 @@ struct TeamRecommendationDTO: Equatable {
 struct TeamMemberDTO: Identifiable, Equatable {
     let id: Int
     let name: String
+    let dexNumber: Int
     let moves: [String]
     let notes: String
     let emoji: String
+
+    var spriteURL: URL? {
+        URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(dexNumber).png")
+    }
 }
 
 struct ChecklistStepDTO: Identifiable, Equatable {
@@ -476,6 +481,7 @@ class GuideRepository: ObservableObject {
                 return TeamMemberDTO(
                     id: orderIndex,
                     name: member.value(forKey: "name") as? String ?? "",
+                    dexNumber: member.value(forKey: "dexNumber") as? Int ?? 0,
                     moves: decodeJSONStringArray(member.value(forKey: "movesJSON") as? Data),
                     notes: member.value(forKey: "notes") as? String ?? "",
                     emoji: member.value(forKey: "emoji") as? String ?? ""
