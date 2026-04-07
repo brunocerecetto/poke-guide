@@ -30,11 +30,34 @@ struct PersistenceController {
             let description = NSPersistentStoreDescription()
             description.type = NSInMemoryStoreType
             container.persistentStoreDescriptions = [description]
+        } else {
+            // Enable lightweight migration for model changes
+            if let description = container.persistentStoreDescriptions.first {
+                description.shouldMigrateStoreAutomatically = true
+                description.shouldInferMappingModelAutomatically = true
+            }
         }
 
-        container.loadPersistentStores { _, error in
+        container.loadPersistentStores { description, error in
             if let error {
                 print("Core Data store failed to load: \(error.localizedDescription)")
+                // If store is incompatible, delete it and retry
+                if let storeURL = description.url {
+                    print("Deleting incompatible store at: \(storeURL.path)")
+                    try? FileManager.default.removeItem(at: storeURL)
+                    // Also remove WAL/SHM files
+                    try? FileManager.default.removeItem(at: storeURL.appendingPathExtension("wal"))
+                    try? FileManager.default.removeItem(at: storeURL.appendingPathExtension("shm"))
+                }
+            }
+        }
+
+        // If store failed and was deleted, retry loading
+        if container.persistentStoreCoordinator.persistentStores.isEmpty {
+            container.loadPersistentStores { _, error in
+                if let error {
+                    print("Core Data store failed on retry: \(error.localizedDescription)")
+                }
             }
         }
 

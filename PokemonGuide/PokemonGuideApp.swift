@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 @main
 struct PokemonGuideApp: App {
@@ -17,10 +18,17 @@ struct PokemonGuideApp: App {
         let config = GameConfig()
         _gameConfig = StateObject(wrappedValue: config)
         _progress = StateObject(wrappedValue: ProgressManager(prefix: config.progressPrefix))
+
+        // Try to initialize Core Data — fall back to nil context if it fails
+        let persistence = PersistenceController.shared
+        let context: NSManagedObjectContext? = persistence.container.persistentStoreCoordinator.persistentStores.isEmpty
+            ? nil
+            : persistence.container.viewContext
+
         _bridge = StateObject(wrappedValue: GameDataBridge(
             gameId: config.gameId,
             starterDex: config.starterDex,
-            context: nil // Core Data disabled — uses legacy GameData fallback
+            context: context
         ))
     }
 
