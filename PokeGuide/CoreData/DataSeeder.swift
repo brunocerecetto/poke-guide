@@ -10,7 +10,7 @@ import CoreData
 import Foundation
 
 final class DataSeeder {
-    private static let seedVersionKey = "dataSeeded_v1"
+    private static let seedVersionKey = "dataSeeded_v2"
 
     private let persistenceController: PersistenceController
 
@@ -180,10 +180,12 @@ final class DataSeeder {
             try seedGyms(from: gymsURL, game: game, in: context)
         }
 
-        // Team
-        let teamURL = directory.appendingPathComponent("team.json")
-        if FileManager.default.fileExists(atPath: teamURL.path) {
-            try seedTeam(from: teamURL, game: game, in: context)
+        // Team (one file per starter: team-squirtle.json, team-charmander.json, etc.)
+        let teamFiles = (try? FileManager.default.contentsOfDirectory(atPath: directory.path)) ?? []
+        for fileName in teamFiles where fileName.hasPrefix("team-") && fileName.hasSuffix(".json") {
+            let starter = fileName.replacingOccurrences(of: "team-", with: "").replacingOccurrences(of: ".json", with: "")
+            let url = directory.appendingPathComponent(fileName)
+            try seedTeam(from: url, starter: starter, game: game, in: context)
         }
 
         // Elite Four
@@ -262,24 +264,23 @@ final class DataSeeder {
         }
     }
 
-    private func seedTeam(from url: URL, game: CDGame, in context: NSManagedObjectContext) throws {
+    private func seedTeam(from url: URL, starter: String, game: CDGame, in context: NSManagedObjectContext) throws {
         let data = try Data(contentsOf: url)
-        let teamJSON = try JSONDecoder().decode(GuideTeamJSON.self, from: data)
+        let teamJSON = try JSONDecoder().decode(GuideTeamMembersJSON.self, from: data)
 
-        for recJSON in teamJSON.recommendations {
-            let rec = CDTeamRecommendation(context: context)
-            rec.starterCondition = recJSON.starterCondition
-            rec.game = game
+        let rec = CDTeamRecommendation(context: context)
+        rec.starterCondition = starter
+        rec.game = game
 
-            for (memberIndex, memberJSON) in recJSON.members.enumerated() {
-                let member = CDTeamMember(context: context)
-                member.orderIndex = Int16(memberIndex)
-                member.name = memberJSON.name
-                member.moves = memberJSON.moves
-                member.notes = memberJSON.notes
-                member.emoji = memberJSON.emoji
-                member.recommendation = rec
-            }
+        for (memberIndex, memberJSON) in teamJSON.members.enumerated() {
+            let member = CDTeamMember(context: context)
+            member.orderIndex = Int16(memberIndex)
+            member.name = memberJSON.name
+            member.dexNumber = Int32(PokedexData.kanto.first { $0.name == memberJSON.name }?.id ?? 0)
+            member.moves = memberJSON.moves
+            member.notes = memberJSON.notes
+            member.emoji = memberJSON.emoji
+            member.recommendation = rec
         }
     }
 

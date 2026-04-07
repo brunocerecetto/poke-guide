@@ -482,7 +482,7 @@ class GuideRepository: ObservableObject {
                     id: orderIndex,
                     name: member.value(forKey: "name") as? String ?? "",
                     dexNumber: member.value(forKey: "dexNumber") as? Int ?? 0,
-                    moves: decodeJSONStringArray(member.value(forKey: "movesJSON") as? Data),
+                    moves: decodeJSONStringArray(member.value(forKey: "movesData") as? Data),
                     notes: member.value(forKey: "notes") as? String ?? "",
                     emoji: member.value(forKey: "emoji") as? String ?? ""
                 )

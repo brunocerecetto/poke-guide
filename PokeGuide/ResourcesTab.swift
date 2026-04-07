@@ -87,6 +87,7 @@ struct ResourcesTab: View {
             ResourceItem(icon: "arrow.triangle.swap", title: "HMs & TMs", subtitle: "Reparto y compras", color: .teal, destination: AnyView(HMTMView())),
             ResourceItem(icon: "lightbulb.fill", title: "Tips & Tricks", subtitle: "Reglas de evolución y más", color: .kaYellow, destination: AnyView(TipsView())),
             ResourceItem(icon: "arrow.triangle.branch", title: "Evoluciones", subtitle: "Cadenas y métodos", color: .success, destination: AnyView(EvolutionView())),
+            ResourceItem(icon: "map.fill", title: "Mapa de Kanto", subtitle: "Ciudades y rutas", color: .blue, destination: AnyView(KantoMapView())),
         ]
     }
 }

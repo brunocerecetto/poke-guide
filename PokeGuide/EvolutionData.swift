@@ -201,6 +201,13 @@ struct EvolutionData {
 
     // MARK: - Convenience Builders
 
+    static func chain(for dexNumber: Int) -> EvolutionChain? {
+        chains.first { chain in
+            let allStages = chain.stages + chain.branches
+            return allStages.contains { $0.id == dexNumber }
+        }
+    }
+
     private static func pair(
         _ id1: Int, _ name1: String,
         _ id2: Int, _ name2: String,
