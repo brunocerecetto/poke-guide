@@ -84,26 +84,7 @@ struct EvolutionView: View {
 
     private func spriteColumn(dex: Int, name: String) -> some View {
         VStack(spacing: KASpacing.xs) {
-            AsyncImage(url: spriteURL(for: dex)) { phase in
-                switch phase {
-                case .success(let image):
-                    image.interpolation(.none)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 56, height: 56)
-                case .failure:
-                    Image(systemName: "questionmark.circle")
-                        .font(.system(size: 24))
-                        .foregroundColor(.onSurfaceVariant)
-                        .frame(width: 56, height: 56)
-                case .empty:
-                    ProgressView()
-                        .frame(width: 56, height: 56)
-                @unknown default:
-                    EmptyView()
-                }
-            }
-            .frame(width: 56, height: 56)
+            PokemonSpriteView(url: spriteURL(for: dex), size: 56)
 
             Text("#\(String(format: "%03d", dex))")
                 .font(.system(size: 9, weight: .bold, design: .monospaced))

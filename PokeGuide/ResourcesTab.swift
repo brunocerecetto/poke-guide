@@ -17,13 +17,13 @@ struct ResourcesTab: View {
                 VStack(spacing: KASpacing.sm) {
                     ForEach(Array(items.enumerated()), id: \.element.title) { index, item in
                         NavigationLink {
-                            item.destination
+                            item.destination.view
                         } label: {
                             resourceCard(item: item)
                         }
                         .opacity(appeared ? 1 : 0)
                         .offset(y: appeared ? 0 : 20)
-                        .animation(.spring(response: 0.5, dampingFraction: 0.8).delay(0.05 + Double(index) * 0.04), value: appeared)
+                        .animation(KAAnimation.appearSpring.delay(0.05 + Double(index) * KAAnimation.staggerDelay), value: appeared)
                     }
                 }
                 .padding(.horizontal)
@@ -33,7 +33,7 @@ struct ResourcesTab: View {
             .navigationTitle("Recursos")
             .navigationBarTitleDisplayMode(.large)
             .onAppear {
-                withAnimation(.spring(response: 0.6, dampingFraction: 0.8)) { appeared = true }
+                withAnimation(KAAnimation.appearSpring) { appeared = true }
             }
         }
     }
@@ -72,22 +72,36 @@ struct ResourcesTab: View {
 
     // MARK: - Data
 
+    private enum ResourceDestination {
+        case typeChart, hmtm, tips, evolution, kantoMap
+
+        @ViewBuilder var view: some View {
+            switch self {
+            case .typeChart:  TypeChartView()
+            case .hmtm:       HMTMView()
+            case .tips:       TipsView()
+            case .evolution:  EvolutionView()
+            case .kantoMap:   KantoMapView()
+            }
+        }
+    }
+
     private struct ResourceItem: Identifiable {
         var id: String { title }
         let icon: String
         let title: String
         let subtitle: String
         let color: Color
-        let destination: AnyView
+        let destination: ResourceDestination
     }
 
     private var items: [ResourceItem] {
         [
-            ResourceItem(icon: "square.grid.3x3.fill", title: "Tabla de Tipos", subtitle: "Efectividad de ataques", color: theme.accent, destination: AnyView(TypeChartView())),
-            ResourceItem(icon: "arrow.triangle.swap", title: "HMs & TMs", subtitle: "Reparto y compras", color: .teal, destination: AnyView(HMTMView())),
-            ResourceItem(icon: "lightbulb.fill", title: "Tips & Tricks", subtitle: "Reglas de evolución y más", color: .kaYellow, destination: AnyView(TipsView())),
-            ResourceItem(icon: "arrow.triangle.branch", title: "Evoluciones", subtitle: "Cadenas y métodos", color: .success, destination: AnyView(EvolutionView())),
-            ResourceItem(icon: "map.fill", title: "Mapa de Kanto", subtitle: "Ciudades y rutas", color: .blue, destination: AnyView(KantoMapView())),
+            ResourceItem(icon: "square.grid.3x3.fill", title: "Tabla de Tipos", subtitle: "Efectividad de ataques", color: theme.accent, destination: .typeChart),
+            ResourceItem(icon: "arrow.triangle.swap", title: "HMs & TMs", subtitle: "Reparto y compras", color: .teal, destination: .hmtm),
+            ResourceItem(icon: "lightbulb.fill", title: "Tips & Tricks", subtitle: "Reglas de evolución y más", color: .kaYellow, destination: .tips),
+            ResourceItem(icon: "arrow.triangle.branch", title: "Evoluciones", subtitle: "Cadenas y métodos", color: .success, destination: .evolution),
+            ResourceItem(icon: "map.fill", title: "Mapa de Kanto", subtitle: "Ciudades y rutas", color: .blue, destination: .kantoMap),
         ]
     }
 }

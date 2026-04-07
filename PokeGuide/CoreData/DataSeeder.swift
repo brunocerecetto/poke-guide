@@ -8,6 +8,7 @@
 
 import CoreData
 import Foundation
+import os
 
 final class DataSeeder {
     private static let seedVersionKey = "dataSeeded_v2"
@@ -36,7 +37,7 @@ final class DataSeeder {
                 UserDefaults.standard.set(true, forKey: Self.seedVersionKey)
                 completion(.success(()))
             } catch {
-                print("[DataSeeder] Seeding failed: \(error)")
+                AppLogger.dataSeeder.error("Seeding failed: \(error)")
                 completion(.failure(error))
             }
         }
@@ -164,7 +165,7 @@ final class DataSeeder {
 
     func seedGuide(gameId: String, from directory: URL, in context: NSManagedObjectContext) throws {
         guard let game = try fetchGame(id: gameId, in: context) else {
-            print("[DataSeeder] Game '\(gameId)' not found, skipping guide seeding")
+            AppLogger.dataSeeder.warning("Game '\(gameId)' not found, skipping guide seeding")
             return
         }
 

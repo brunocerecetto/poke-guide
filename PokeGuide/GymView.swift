@@ -131,6 +131,8 @@ struct GymView: View {
             .opacity(completed ? 0.7 : 1)
         }
         .buttonStyle(.plain)
+        .accessibilityLabel("\(gym.name), líder \(gym.leader)")
+        .accessibilityHint(completed ? "Completado. Tocar para desmarcar" : "No completado. Tocar para marcar")
     }
 }
 

@@ -131,6 +131,8 @@ struct RouteView: View {
             .padding(.bottom, isLast ? 0 : KASpacing.xs)
         }
         .buttonStyle(.plain)
+        .accessibilityLabel(step.text)
+        .accessibilityHint(completed ? "Completado" : "No completado")
     }
 }
 

@@ -39,17 +39,11 @@ extension Color {
 
 extension GameVersion {
     var accentColor: Color {
-        switch self {
-        case .fireRed:   return .kaPrimary
-        case .leafGreen: return .success
-        }
+        ThemeColors.forVersion(self).accent
     }
 
     var secondaryColor: Color {
-        switch self {
-        case .fireRed:   return .primaryContainer
-        case .leafGreen: return Color(red: 0.15, green: 0.55, blue: 0.52)
-        }
+        ThemeColors.forVersion(self).secondary
     }
 }
 

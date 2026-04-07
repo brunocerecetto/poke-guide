@@ -17,6 +17,9 @@ final class SpriteCache {
     private let cacheDir: URL
     private let session: URLSession
 
+    /// Maximum number of cached sprite files before eviction.
+    private let maxEntries = 1500
+
     private init() {
         let caches = fileManager.urls(for: .cachesDirectory, in: .userDomainMask)[0]
         cacheDir = caches.appendingPathComponent("sprites", isDirectory: true)
@@ -41,7 +44,28 @@ final class SpriteCache {
         }
 
         try? data.write(to: fileURL, options: .atomic)
+        evictIfNeeded()
         return img
+    }
+
+    /// Remove oldest cached files when count exceeds maxEntries.
+    private func evictIfNeeded() {
+        guard let files = try? fileManager.contentsOfDirectory(
+            at: cacheDir,
+            includingPropertiesForKeys: [.contentModificationDateKey],
+            options: .skipsHiddenFiles
+        ), files.count > maxEntries else { return }
+
+        let sorted = files.sorted {
+            let d0 = (try? $0.resourceValues(forKeys: [.contentModificationDateKey]).contentModificationDate) ?? .distantPast
+            let d1 = (try? $1.resourceValues(forKeys: [.contentModificationDateKey]).contentModificationDate) ?? .distantPast
+            return d0 < d1
+        }
+
+        let toRemove = sorted.prefix(files.count - maxEntries)
+        for file in toRemove {
+            try? fileManager.removeItem(at: file)
+        }
     }
 }
 

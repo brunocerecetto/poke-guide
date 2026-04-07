@@ -107,6 +107,19 @@ enum KARadius {
     static let xl: CGFloat = 48
 }
 
+// MARK: - Animation Tokens
+
+enum KAAnimation {
+    /// Standard spring for element appearance (cards, list items).
+    static let appearSpring = Animation.spring(response: 0.5, dampingFraction: 0.8)
+    /// Faster spring for interactive feedback (toggles, checks).
+    static let interactiveSpring = Animation.spring(response: 0.3, dampingFraction: 0.7)
+    /// Celebration/confetti duration.
+    static let celebrationDuration: Double = 1.4
+    /// Stagger delay between list items.
+    static let staggerDelay: Double = 0.04
+}
+
 // MARK: - Energy Gradient
 
 extension LinearGradient {

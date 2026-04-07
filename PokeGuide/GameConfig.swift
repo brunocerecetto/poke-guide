@@ -108,6 +108,12 @@ enum Starter: String, CaseIterable, Codable {
 class GameConfig: ObservableObject {
     private let defaults = UserDefaults.standard
 
+    // Default values
+    static let defaultAccentColorHex = "#E02D1F"
+    static let defaultSecondaryColorHex = "#ED801A"
+    static let defaultIconName = "flame.fill"
+    static let defaultGameName = "POKÉMON FIRERED"
+
     // Legacy keys (kept for migration)
     private static let legacyVersionKey = "gameVersion"
     private static let legacyStarterKey = "selectedStarter"
@@ -145,7 +151,9 @@ class GameConfig: ObservableObject {
         didSet { defaults.set(iconName, forKey: Self.iconNameKey) }
     }
 
-    @Published var isConfigured: Bool
+    @Published var isConfigured: Bool {
+        didSet { defaults.set(isConfigured, forKey: Self.configuredKey) }
+    }
 
     /// Key prefix for namespacing progress data per config.
     /// For legacy fireRed+squirtle this produces "fireRed_squirtle" (same as before).
@@ -167,6 +175,7 @@ class GameConfig: ObservableObject {
 
     /// Legacy accessor — returns legacyVersion or defaults to .fireRed.
     /// Used by existing views that read `gameConfig.version`.
+    @available(*, deprecated, message: "Use gameId directly")
     var version: GameVersion {
         get { legacyVersion ?? .fireRed }
         set { configure(from: newValue, starter: legacyStarter ?? .squirtle) }
@@ -174,6 +183,7 @@ class GameConfig: ObservableObject {
 
     /// Legacy accessor — returns legacyStarter or defaults to .squirtle.
     /// Used by existing views that read `gameConfig.starter`.
+    @available(*, deprecated, message: "Use starterDex directly")
     var starter: Starter {
         get { legacyStarter ?? .squirtle }
         set { configure(from: legacyVersion ?? .fireRed, starter: newValue) }
@@ -187,9 +197,9 @@ class GameConfig: ObservableObject {
             _gameId = Published(initialValue: savedGameId)
             _starterDex = Published(initialValue: UserDefaults.standard.integer(forKey: Self.starterDexKey))
             _gameName = Published(initialValue: UserDefaults.standard.string(forKey: Self.gameNameKey) ?? "")
-            _accentColorHex = Published(initialValue: UserDefaults.standard.string(forKey: Self.accentColorHexKey) ?? "#E02D1F")
-            _secondaryColorHex = Published(initialValue: UserDefaults.standard.string(forKey: Self.secondaryColorHexKey) ?? "#ED801A")
-            _iconName = Published(initialValue: UserDefaults.standard.string(forKey: Self.iconNameKey) ?? "flame.fill")
+            _accentColorHex = Published(initialValue: UserDefaults.standard.string(forKey: Self.accentColorHexKey) ?? Self.defaultAccentColorHex)
+            _secondaryColorHex = Published(initialValue: UserDefaults.standard.string(forKey: Self.secondaryColorHexKey) ?? Self.defaultSecondaryColorHex)
+            _iconName = Published(initialValue: UserDefaults.standard.string(forKey: Self.iconNameKey) ?? Self.defaultIconName)
             _isConfigured = Published(initialValue: UserDefaults.standard.bool(forKey: Self.configuredKey))
         } else if let legacyVersionRaw = UserDefaults.standard.string(forKey: Self.legacyVersionKey),
                   let legacyVersion = GameVersion(rawValue: legacyVersionRaw) {
@@ -220,10 +230,10 @@ class GameConfig: ObservableObject {
             // Defaults (not yet configured)
             _gameId = Published(initialValue: "fireRed")
             _starterDex = Published(initialValue: 7)
-            _gameName = Published(initialValue: "POKÉMON FIRERED")
-            _accentColorHex = Published(initialValue: "#E02D1F")
-            _secondaryColorHex = Published(initialValue: "#ED801A")
-            _iconName = Published(initialValue: "flame.fill")
+            _gameName = Published(initialValue: Self.defaultGameName)
+            _accentColorHex = Published(initialValue: Self.defaultAccentColorHex)
+            _secondaryColorHex = Published(initialValue: Self.defaultSecondaryColorHex)
+            _iconName = Published(initialValue: Self.defaultIconName)
             _isConfigured = Published(initialValue: false)
         }
     }
@@ -272,10 +282,10 @@ class GameConfig: ObservableObject {
         // Reset to defaults
         gameId = "fireRed"
         starterDex = 7
-        gameName = "POKÉMON FIRERED"
-        accentColorHex = "#E02D1F"
-        secondaryColorHex = "#ED801A"
-        iconName = "flame.fill"
+        gameName = Self.defaultGameName
+        accentColorHex = Self.defaultAccentColorHex
+        secondaryColorHex = Self.defaultSecondaryColorHex
+        iconName = Self.defaultIconName
         isConfigured = false
 
         // Remove all keys so UserDefaults stays in sync

@@ -8,6 +8,7 @@
 
 import CoreData
 import CloudKit
+import os
 
 struct PersistenceController {
     static let shared = PersistenceController()
@@ -40,14 +41,20 @@ struct PersistenceController {
 
         container.loadPersistentStores { description, error in
             if let error {
-                print("Core Data store failed to load: \(error.localizedDescription)")
+                AppLogger.coreData.error("Store failed to load: \(error.localizedDescription)")
                 // If store is incompatible, delete it and retry
                 if let storeURL = description.url {
-                    print("Deleting incompatible store at: \(storeURL.path)")
+                    AppLogger.coreData.warning("Deleting incompatible store at: \(storeURL.path)")
                     try? FileManager.default.removeItem(at: storeURL)
                     // Also remove WAL/SHM files
                     try? FileManager.default.removeItem(at: storeURL.appendingPathExtension("wal"))
                     try? FileManager.default.removeItem(at: storeURL.appendingPathExtension("shm"))
+
+                    // Audit trail for data loss investigation
+                    UserDefaults.standard.set(
+                        ISO8601DateFormatter().string(from: Date()),
+                        forKey: "coreData.lastStoreReset"
+                    )
                 }
             }
         }
@@ -56,7 +63,7 @@ struct PersistenceController {
         if container.persistentStoreCoordinator.persistentStores.isEmpty {
             container.loadPersistentStores { _, error in
                 if let error {
-                    print("Core Data store failed on retry: \(error.localizedDescription)")
+                    AppLogger.coreData.fault("Store failed on retry: \(error.localizedDescription)")
                 }
             }
         }
@@ -71,7 +78,7 @@ struct PersistenceController {
         do {
             try context.save()
         } catch {
-            print("Core Data save error: \(error.localizedDescription)")
+            AppLogger.coreData.error("Save error: \(error.localizedDescription)")
         }
     }
 

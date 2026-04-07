@@ -5,10 +5,14 @@
 //  Persiste todo el progreso offline usando UserDefaults.
 //  Las keys están namespaceadas por GameVersion + Starter.
 //
+//  NOTE: ProgressRepository (Core Data) coexists for future CloudKit sync.
+//  ProgressManager remains the active source of truth for UserDefaults-based progress.
+//
 
 import Foundation
 import Combine
 
+@MainActor
 class ProgressManager: ObservableObject {
     private let defaults = UserDefaults.standard
     private var prefix: String

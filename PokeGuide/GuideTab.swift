@@ -32,22 +32,10 @@ struct GuideTab: View {
         return Double(progress.totalCompleted) / Double(total)
     }
 
-    private static let starterNames: [Int: String] = [
-        1: "Bulbasaur", 4: "Charmander", 7: "Squirtle", 25: "Pikachu",
-        152: "Chikorita", 155: "Cyndaquil", 158: "Totodile",
-        252: "Treecko", 255: "Torchic", 258: "Mudkip",
-        387: "Turtwig", 390: "Chimchar", 393: "Piplup",
-        495: "Snivy", 498: "Tepig", 501: "Oshawott",
-        650: "Chespin", 653: "Fennekin", 656: "Froakie",
-        722: "Rowlet", 725: "Litten", 728: "Popplio",
-        810: "Grookey", 813: "Scorbunny", 816: "Sobble",
-        906: "Sprigatito", 909: "Fuecoco", 912: "Quaxly",
-        133: "Eevee",
-    ]
-
     private var starterName: String {
-        if gameConfig.starterDex > 0, let name = Self.starterNames[gameConfig.starterDex] {
-            return name
+        if gameConfig.starterDex > 0,
+           let info = StarterInfo.starters(for: [gameConfig.starterDex]).first {
+            return info.name
         }
         return gameConfig.legacyStarter?.displayName ?? "Starter"
     }

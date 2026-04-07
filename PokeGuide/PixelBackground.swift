@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct PixelBackground: View {
+    private static let patternSpacing: CGFloat = 80
+    private static let patternDotSize: CGFloat = 3
+
     @Environment(\.themeColors) private var theme
 
     var body: some View {
@@ -30,8 +33,8 @@ struct PixelBackground: View {
             // Pokéball watermark pattern
             GeometryReader { geo in
                 Canvas { context, size in
-                    let spacing: CGFloat = 80
-                    let dotSize: CGFloat = 3
+                    let spacing: CGFloat = Self.patternSpacing
+                    let dotSize: CGFloat = Self.patternDotSize
 
                     for row in stride(from: CGFloat(-20), to: size.height + 40, by: spacing) {
                         let offset: CGFloat = (Int(row / spacing) % 2 == 0) ? 0 : spacing / 2

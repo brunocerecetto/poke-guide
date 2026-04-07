@@ -180,19 +180,10 @@ struct TeamTab: View {
                 .fill(theme.accent.opacity(0.08))
                 .frame(width: 52, height: 52)
 
-            let url = URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(dexNumber).png")
-            AsyncImage(url: url) { phase in
-                switch phase {
-                case .success(let image):
-                    image.interpolation(.none).resizable().scaledToFit()
-                        .frame(width: 40, height: 40)
-                case .failure:
-                    Image(systemName: "questionmark")
-                        .foregroundColor(.onSurfaceVariant)
-                default:
-                    ProgressView().controlSize(.small)
-                }
-            }
+            PokemonSpriteView(
+                url: URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(dexNumber).png"),
+                size: 40
+            )
         }
     }
 

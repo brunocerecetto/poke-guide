@@ -10,6 +10,7 @@
 import Foundation
 import CoreData
 import Combine
+import os
 
 // MARK: - DTOs
 
@@ -129,7 +130,7 @@ class GuideRepository: ObservableObject {
         do {
             results = try context.fetch(request)
         } catch {
-            print("[GuideRepository] Fetch error (allGames): \(error.localizedDescription)")
+            AppLogger.guideRepo.error("Fetch error (allGames): \(error.localizedDescription)")
             return []
         }
         return results.compactMap { mapToGameDTO($0) }
@@ -144,7 +145,7 @@ class GuideRepository: ObservableObject {
         do {
             results = try context.fetch(request)
         } catch {
-            print("[GuideRepository] Fetch error (allGames by generation): \(error.localizedDescription)")
+            AppLogger.guideRepo.error("Fetch error (allGames by generation): \(error.localizedDescription)")
             return []
         }
         return results.compactMap { mapToGameDTO($0) }
@@ -159,7 +160,7 @@ class GuideRepository: ObservableObject {
         do {
             results = try context.fetch(request)
         } catch {
-            print("[GuideRepository] Fetch error (game by id): \(error.localizedDescription)")
+            AppLogger.guideRepo.error("Fetch error (game by id): \(error.localizedDescription)")
             return nil
         }
         guard let result = results.first else { return nil }
@@ -176,7 +177,7 @@ class GuideRepository: ObservableObject {
         do {
             rawResults = try context.fetch(request)
         } catch {
-            print("[GuideRepository] Fetch error (generations): \(error.localizedDescription)")
+            AppLogger.guideRepo.error("Fetch error (generations): \(error.localizedDescription)")
             return []
         }
         guard let results = rawResults as? [[String: Any]] else { return [] }
@@ -196,7 +197,7 @@ class GuideRepository: ObservableObject {
         do {
             results = try context.fetch(request)
         } catch {
-            print("[GuideRepository] Fetch error (gyms): \(error.localizedDescription)")
+            AppLogger.guideRepo.error("Fetch error (gyms): \(error.localizedDescription)")
             return []
         }
         return results.compactMap { mapToGymDTO($0) }
@@ -213,7 +214,7 @@ class GuideRepository: ObservableObject {
         do {
             results = try context.fetch(request)
         } catch {
-            print("[GuideRepository] Fetch error (routeSections): \(error.localizedDescription)")
+            AppLogger.guideRepo.error("Fetch error (routeSections): \(error.localizedDescription)")
             return []
         }
         return results.compactMap { mapToRouteSectionDTO($0) }
@@ -230,7 +231,7 @@ class GuideRepository: ObservableObject {
         do {
             results = try context.fetch(request)
         } catch {
-            print("[GuideRepository] Fetch error (eliteFour): \(error.localizedDescription)")
+            AppLogger.guideRepo.error("Fetch error (eliteFour): \(error.localizedDescription)")
             return []
         }
         return results.compactMap { mapToEliteFourMemberDTO($0) }
@@ -247,7 +248,7 @@ class GuideRepository: ObservableObject {
         do {
             results = try context.fetch(request)
         } catch {
-            print("[GuideRepository] Fetch error (tips): \(error.localizedDescription)")
+            AppLogger.guideRepo.error("Fetch error (tips): \(error.localizedDescription)")
             return []
         }
         return results.compactMap { mapToTipDTO($0) }
@@ -264,7 +265,7 @@ class GuideRepository: ObservableObject {
         do {
             results = try context.fetch(request)
         } catch {
-            print("[GuideRepository] Fetch error (captures): \(error.localizedDescription)")
+            AppLogger.guideRepo.error("Fetch error (captures): \(error.localizedDescription)")
             return []
         }
         return results.compactMap { mapToKeyCaptureDTO($0) }
@@ -281,7 +282,7 @@ class GuideRepository: ObservableObject {
         do {
             results = try context.fetch(request)
         } catch {
-            print("[GuideRepository] Fetch error (hmEntries): \(error.localizedDescription)")
+            AppLogger.guideRepo.error("Fetch error (hmEntries): \(error.localizedDescription)")
             return []
         }
         return results.compactMap { mapToHMEntryDTO($0) }
@@ -296,7 +297,7 @@ class GuideRepository: ObservableObject {
         do {
             results = try context.fetch(request)
         } catch {
-            print("[GuideRepository] Fetch error (tmEntries): \(error.localizedDescription)")
+            AppLogger.guideRepo.error("Fetch error (tmEntries): \(error.localizedDescription)")
             return []
         }
         return results.compactMap { mapToTMEntryDTO($0) }
@@ -315,7 +316,7 @@ class GuideRepository: ObservableObject {
         do {
             results = try context.fetch(request)
         } catch {
-            print("[GuideRepository] Fetch error (teamRecommendation): \(error.localizedDescription)")
+            AppLogger.guideRepo.error("Fetch error (teamRecommendation): \(error.localizedDescription)")
             return nil
         }
         guard let result = results.first else { return nil }
@@ -333,7 +334,7 @@ class GuideRepository: ObservableObject {
         do {
             results = try context.fetch(request)
         } catch {
-            print("[GuideRepository] Fetch error (preLeagueChecklist): \(error.localizedDescription)")
+            AppLogger.guideRepo.error("Fetch error (preLeagueChecklist): \(error.localizedDescription)")
             return []
         }
         return results.compactMap { mapToChecklistStepDTO($0) }
@@ -348,7 +349,7 @@ class GuideRepository: ObservableObject {
         do {
             results = try context.fetch(request)
         } catch {
-            print("[GuideRepository] Fetch error (postgameChecklist): \(error.localizedDescription)")
+            AppLogger.guideRepo.error("Fetch error (postgameChecklist): \(error.localizedDescription)")
             return []
         }
         return results.compactMap { mapToChecklistStepDTO($0) }
@@ -395,6 +396,7 @@ class GuideRepository: ObservableObject {
     private func mapToRouteSectionDTO(_ object: NSManagedObject) -> RouteSectionDTO? {
         guard let orderIndex = object.value(forKey: "orderIndex") as? Int else { return nil }
 
+        // NSSet relationships are unordered — sort in memory by orderIndex.
         let stepsSet = object.value(forKey: "steps") as? NSSet ?? NSSet()
         let stepsArray = stepsSet.allObjects as? [NSManagedObject] ?? []
 

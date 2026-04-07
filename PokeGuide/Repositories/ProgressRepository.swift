@@ -2,15 +2,16 @@
 //  ProgressRepository.swift
 //  PokeGuide
 //
-//  Core Data-backed replacement for the UserDefaults ProgressManager.
-//  Maintains the same toggle/query API so existing views can migrate
-//  with minimal changes. CloudKit sync is handled automatically by
-//  NSPersistentCloudKitContainer.
+//  Core Data-backed progress storage prepared for future CloudKit sync.
+//  Not yet the active source of truth — ProgressManager (UserDefaults)
+//  is still used by all views. This repository is ready for migration
+//  when CloudKit sync is enabled.
 //
 
 import Foundation
 import CoreData
 import Combine
+import os
 
 // MARK: - DTO
 
@@ -66,7 +67,7 @@ class ProgressRepository: ObservableObject {
             currentProgress = mapToDTO(existing)
         } else {
             guard let entity = NSEntityDescription.entity(forEntityName: "CDProgress", in: context) else {
-                print("CDProgress entity not found")
+                AppLogger.progress.error("CDProgress entity not found")
                 return
             }
             let newProgress = NSManagedObject(entity: entity, insertInto: context)
@@ -225,7 +226,7 @@ class ProgressRepository: ObservableObject {
         do {
             try context.save()
         } catch {
-            print("ProgressRepository save error: \(error.localizedDescription)")
+            AppLogger.progress.error("Save error: \(error.localizedDescription)")
         }
     }
 

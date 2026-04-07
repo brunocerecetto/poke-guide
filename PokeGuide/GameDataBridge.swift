@@ -22,10 +22,6 @@ private struct BundledTeamJSON: Codable {
 }
 
 class GameDataBridge: ObservableObject {
-    // No @Published properties needed — data is currently static per session.
-    // This dummy property satisfies ObservableObject synthesis under @MainActor isolation.
-    @Published private var _version: Int = 0
-
     private let guideRepo: GuideRepository?
     private let gameId: String
     private let starterDex: Int

@@ -8,9 +8,10 @@
 
 import Foundation
 
+@MainActor
 enum PokemonLoader {
     /// All Pokémon loaded from the three national_dex JSON files, cached after first access.
-    nonisolated(unsafe) private static var _cache: [PokemonEntry]?
+    private static var _cache: [PokemonEntry]?
 
     static var allEntries: [PokemonEntry] {
         if let cached = _cache { return cached }

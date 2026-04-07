@@ -136,6 +136,8 @@ struct LeagueView: View {
             .opacity(completed ? 0.7 : 1)
         }
         .buttonStyle(.plain)
+        .accessibilityLabel(member.name)
+        .accessibilityHint(completed ? "Completado" : "No completado. Tocar para marcar")
     }
 
     private func checkRow(text: String, isCompleted: Bool, action: @escaping () -> Void) -> some View {
@@ -162,6 +164,8 @@ struct LeagueView: View {
             .opacity(isCompleted ? 0.7 : 1)
         }
         .buttonStyle(.plain)
+        .accessibilityLabel(text)
+        .accessibilityHint(isCompleted ? "Completado" : "No completado")
     }
 }
 

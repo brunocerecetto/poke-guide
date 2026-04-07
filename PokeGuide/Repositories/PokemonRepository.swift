@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 import Combine
+import os
 
 // MARK: - DTOs
 
@@ -81,7 +82,7 @@ class PokemonRepository: ObservableObject {
         do {
             results = try context.fetch(request)
         } catch {
-            print("[PokemonRepository] Fetch error (allPokemon): \(error.localizedDescription)")
+            AppLogger.pokemonRepo.error("Fetch error (allPokemon): \(error.localizedDescription)")
             return []
         }
         return results.compactMap { mapToPokemonDTO($0) }
@@ -98,7 +99,7 @@ class PokemonRepository: ObservableObject {
         do {
             results = try context.fetch(request)
         } catch {
-            print("[PokemonRepository] Fetch error (pokemon by dex): \(error.localizedDescription)")
+            AppLogger.pokemonRepo.error("Fetch error (pokemon by dex): \(error.localizedDescription)")
             return nil
         }
         guard let result = results.first else { return nil }
@@ -116,7 +117,7 @@ class PokemonRepository: ObservableObject {
         do {
             results = try context.fetch(request)
         } catch {
-            print("[PokemonRepository] Fetch error (regionalDex): \(error.localizedDescription)")
+            AppLogger.pokemonRepo.error("Fetch error (regionalDex): \(error.localizedDescription)")
             return []
         }
         return results.compactMap { mapToRegionalDexEntryDTO($0) }
@@ -135,7 +136,7 @@ class PokemonRepository: ObservableObject {
         do {
             results = try context.fetch(request)
         } catch {
-            print("[PokemonRepository] Fetch error (search): \(error.localizedDescription)")
+            AppLogger.pokemonRepo.error("Fetch error (search): \(error.localizedDescription)")
             return []
         }
         return results.compactMap { mapToPokemonDTO($0) }
@@ -143,6 +144,8 @@ class PokemonRepository: ObservableObject {
 
     // MARK: - Pokemon by type
 
+    // TODO: Normalize types into a separate CDType entity for efficient filtering.
+    // Current approach searches a JSON blob with CONTAINS which is O(n) per record.
     func pokemon(ofType type: String) -> [PokemonDTO] {
         let request = NSFetchRequest<NSManagedObject>(entityName: "CDPokemon")
         request.predicate = NSPredicate(format: "typesJSON CONTAINS[cd] %@", type)
@@ -152,7 +155,7 @@ class PokemonRepository: ObservableObject {
         do {
             results = try context.fetch(request)
         } catch {
-            print("[PokemonRepository] Fetch error (pokemon by type): \(error.localizedDescription)")
+            AppLogger.pokemonRepo.error("Fetch error (pokemon by type): \(error.localizedDescription)")
             return []
         }
         return results.compactMap { mapToPokemonDTO($0) }
@@ -169,7 +172,7 @@ class PokemonRepository: ObservableObject {
         do {
             results = try context.fetch(request)
         } catch {
-            print("[PokemonRepository] Fetch error (pokemon by generation): \(error.localizedDescription)")
+            AppLogger.pokemonRepo.error("Fetch error (pokemon by generation): \(error.localizedDescription)")
             return []
         }
         return results.compactMap { mapToPokemonDTO($0) }
@@ -188,7 +191,7 @@ class PokemonRepository: ObservableObject {
         do {
             results = try context.fetch(request)
         } catch {
-            print("[PokemonRepository] Fetch error (evolutionChain initial): \(error.localizedDescription)")
+            AppLogger.pokemonRepo.error("Fetch error (evolutionChain initial): \(error.localizedDescription)")
             return []
         }
 
@@ -217,7 +220,7 @@ class PokemonRepository: ObservableObject {
         do {
             expanded = try context.fetch(expandedRequest)
         } catch {
-            print("[PokemonRepository] Fetch error (evolutionChain expanded): \(error.localizedDescription)")
+            AppLogger.pokemonRepo.error("Fetch error (evolutionChain expanded): \(error.localizedDescription)")
             return results.compactMap { mapToEvolutionLinkDTO($0) }
         }
         return expanded.compactMap { mapToEvolutionLinkDTO($0) }
@@ -236,7 +239,7 @@ class PokemonRepository: ObservableObject {
         do {
             results = try context.fetch(request)
         } catch {
-            print("[PokemonRepository] Fetch error (allEvolutionChains): \(error.localizedDescription)")
+            AppLogger.pokemonRepo.error("Fetch error (allEvolutionChains): \(error.localizedDescription)")
             return []
         }
         let allLinks = results.compactMap { mapToEvolutionLinkDTO($0) }
@@ -282,7 +285,7 @@ class PokemonRepository: ObservableObject {
         do {
             count = try context.count(for: request)
         } catch {
-            print("[PokemonRepository] Fetch error (isAvailable): \(error.localizedDescription)")
+            AppLogger.pokemonRepo.error("Fetch error (isAvailable): \(error.localizedDescription)")
             return false
         }
         return count > 0

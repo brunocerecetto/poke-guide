@@ -29,9 +29,7 @@ struct SoftCard: ViewModifier {
 extension View {
     func softCard(
         cornerRadius: CGFloat = KARadius.lg,
-        tint: Color = .clear,
-        shadowOpacity: Double = 0,
-        shadowRadius: CGFloat = 0
+        tint: Color = .clear
     ) -> some View {
         modifier(SoftCard(cornerRadius: cornerRadius, tint: tint))
     }

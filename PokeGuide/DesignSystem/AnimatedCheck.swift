@@ -20,9 +20,10 @@ struct AnimatedCheck: View {
             .scaleEffect(scale)
             .onChange(of: isCompleted) { _, newValue in
                 if newValue {
-                    withAnimation(.spring(response: 0.3, dampingFraction: 0.5)) { scale = 1.3 }
-                    withAnimation(.spring(response: 0.3, dampingFraction: 0.7).delay(0.15)) { scale = 1.0 }
+                    withAnimation(KAAnimation.interactiveSpring) { scale = 1.3 }
+                    withAnimation(KAAnimation.interactiveSpring.delay(0.15)) { scale = 1.0 }
                 }
             }
+            .accessibilityLabel(isCompleted ? "Completado" : "No completado")
     }
 }

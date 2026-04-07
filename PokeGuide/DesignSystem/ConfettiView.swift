@@ -28,7 +28,8 @@ struct ConfettiView: View {
         .task(id: trigger) {
             guard trigger else { return }
             spawnParticles()
-            try? await Task.sleep(for: .seconds(1.4))
+            try? await Task.sleep(for: .seconds(KAAnimation.celebrationDuration))
+            guard !Task.isCancelled else { return }
             particles = []
             isAnimating = false
         }

@@ -102,21 +102,11 @@ struct PokemonPickerSheet: View {
 
     private func pickerRow(entry: PokemonEntry, isAvailable: Bool, isAlreadyPicked: Bool) -> some View {
         HStack(spacing: KASpacing.sm + KASpacing.xs) {
-            AsyncImage(url: entry.spriteURL) { phase in
-                switch phase {
-                case .success(let image):
-                    image.interpolation(.none).resizable().scaledToFit()
-                        .frame(width: 40, height: 40)
-                        .saturation(isAvailable && !isAlreadyPicked ? 1 : 0.3)
-                case .failure:
-                    Image(systemName: "questionmark")
-                        .frame(width: 40, height: 40)
-                        .foregroundColor(.onSurfaceVariant)
-                default:
-                    ProgressView().controlSize(.small)
-                        .frame(width: 40, height: 40)
-                }
-            }
+            PokemonSpriteView(
+                url: entry.spriteURL,
+                size: 40,
+                saturation: isAvailable && !isAlreadyPicked ? 1 : 0.3
+            )
 
             VStack(alignment: .leading, spacing: 2) {
                 HStack(spacing: KASpacing.xs) {

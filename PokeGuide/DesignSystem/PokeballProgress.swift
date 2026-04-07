@@ -48,5 +48,8 @@ struct PokeballProgress: View {
         .onChange(of: progress) { _, newValue in
             withAnimation(.easeOut(duration: 0.5)) { animatedProgress = newValue }
         }
+        .onDisappear {
+            animatedProgress = 0
+        }
     }
 }
