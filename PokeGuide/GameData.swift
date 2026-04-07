@@ -18,15 +18,6 @@ struct Gym: Identifiable {
     let badge: String
 }
 
-struct TeamMember: Identifiable {
-    let id = UUID()
-    let name: String
-    let dexNumber: Int
-    let moves: [String]
-    let notes: String
-    let emoji: String
-}
-
 struct Capture: Identifiable {
     let id = UUID()
     let pokemon: String
@@ -85,15 +76,6 @@ struct GameData {
         Gym(name: "Saffron", leader: "Sabrina", levelRange: "43–45", note: "Snorlax absorbe; Exeggutor entra bien", badge: "🔮"),
         Gym(name: "Cinnabar", leader: "Blaine", levelRange: "47–49", note: "Blastoise lo pasa por arriba", badge: "🔥"),
         Gym(name: "Viridian", leader: "Giovanni", levelRange: "46–48", note: "TM26 Earthquake → Nidoking", badge: "🌍"),
-    ]
-
-    static let team: [TeamMember] = [
-        TeamMember(name: "Blastoise", dexNumber: 9, moves: ["Surf", "Ice Beam", "Bite", "Protect / Strength"], notes: "Tu starter y tanque Water/Ice. Squirtle aprende Bubble 7, Water Gun 13, Bite 18, Protect 28. Evoluciona a Wartortle 16, Blastoise 36. Surf reemplaza Water Gun como STAB principal. Ice Beam (TM13, 4.000 monedas) es crítico para Lance. Bite cubre Ghost/Psychic. Usuario fijo de HM Surf.", emoji: "🐢"),
-        TeamMember(name: "Nidoking", dexNumber: 34, moves: ["Earthquake", "Brick Break", "Dig", "Strength / Return"], notes: "Versatilidad total. Nidoran♂ Route 3 → Double Kick 12 → Nidorino 16 → Horn Attack 22 → Moon Stone → Nidoking. Dig (TM28, gratis) sostiene todo el mid game. Earthquake (TM26, premio Giovanni) es tu nuke Ground de endgame. Brick Break (TM31, SS Anne) para Normal/Ice. Coverage insano: Ground/Fighting/Poison.", emoji: "🦏"),
-        TeamMember(name: "Jolteon", dexNumber: 135, moves: ["Thunderbolt", "Double Kick", "Dig", "Strength / Aerial Ace"], notes: "El más rápido del equipo (130 Speed base). Eevee gratis en Celadon Mansion nv 25 → Thunder Stone inmediato → Jolteon. Viene con ThunderShock, Quick Attack. Aprende Double Kick al 30. Thunderbolt (TM24, 4.000 monedas) es PRIORIDAD #1 de compra. Clave contra Lorelei, Gyarados de Lance y Blue.", emoji: "⚡"),
-        TeamMember(name: "Arcanine", dexNumber: 59, moves: ["Flamethrower", "Bite", "Dig", "Strength / Aerial Ace"], notes: "Growlithe Route 7 (FireRed exclusivo). Ya viene con Bite. Aprende Flame Wheel 31, Flamethrower 49. Si comprás TM35 Flamethrower (4.000 monedas): Fire Stone ya y enseñarle TM. Si NO comprás TM35: esperar a nv 31 para Flame Wheel, después Fire Stone. Stats sólidas (110 Atk, 100 SpAtk, 95 Speed).", emoji: "🐕‍🦺"),
-        TeamMember(name: "Snorlax", dexNumber: 143, moves: ["Body Slam", "Yawn", "Rest", "Strength / Shadow Ball"], notes: "Captura en Route 12 o 16 con Poké Flute. Nv 30. Tanque defensivo bruto (160 HP, 110 SpDef). Aprende Yawn, Rest y Body Slam por nivel — no necesita TMs para funcionar. Shadow Ball (TM30, 4.500 monedas) es upgrade de lujo para coverage Ghost. Clave contra Agatha. Rest + Yawn es combo defensivo letal.", emoji: "😴"),
-        TeamMember(name: "Exeggutor", dexNumber: 103, moves: ["Psychic", "Giga Drain", "Sleep Powder", "Stun Spore"], notes: "Exeggcute en Safari Zone. Timeline clave: Confusion 19, Stun Spore 25, Sleep Powder 37. ¡NO evolucionar antes del 37! Después de Sleep Powder: Leaf Stone → Exeggutor. Enseñar TM29 Psychic (gratis Saffron) y TM19 Giga Drain (premio Erika). Sleep Powder + Psychic + Giga Drain es más consistente que Solar Beam.", emoji: "🌴"),
     ]
 
     static let captures: [Capture] = [
