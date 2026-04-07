@@ -20,30 +20,21 @@ struct PersistenceController {
         return controller
     }()
 
-    let container: NSPersistentCloudKitContainer
+    let container: NSPersistentContainer
 
     init(inMemory: Bool = false) {
         let model = Self.buildManagedObjectModel()
-        container = NSPersistentCloudKitContainer(name: "PokemonGuide", managedObjectModel: model)
+        container = NSPersistentContainer(name: "PokemonGuide", managedObjectModel: model)
 
         if inMemory {
             let description = NSPersistentStoreDescription()
             description.type = NSInMemoryStoreType
             container.persistentStoreDescriptions = [description]
-        } else {
-            guard let description = container.persistentStoreDescriptions.first else {
-                fatalError("No persistent store descriptions found")
-            }
-            description.cloudKitContainerOptions = NSPersistentCloudKitContainerOptions(
-                containerIdentifier: "iCloud.com.brunocerecetto.PokemonGuide"
-            )
-            description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
-            description.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
         }
 
         container.loadPersistentStores { _, error in
             if let error {
-                fatalError("Core Data store failed to load: \(error.localizedDescription)")
+                print("Core Data store failed to load: \(error.localizedDescription)")
             }
         }
 
