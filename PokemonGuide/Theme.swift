@@ -384,7 +384,7 @@ struct GuideDisclaimerBanner: View {
     @Environment(\.themeColors) private var theme
 
     var isMatchingGuide: Bool {
-        gameConfig.version == .fireRed && gameConfig.starter == .squirtle
+        gameConfig.gameId == "fireRed" && gameConfig.starterDex == 7
     }
 
     var body: some View {
@@ -457,7 +457,7 @@ struct ConfettiView: View {
         let colors: [Color] = theme.gradientColors + [.fireGreen, .fireBlue]
         particles = (0..<25).map { i in
             (id: i, x: CGFloat.random(in: -120...120), y: CGFloat.random(in: -160 ... -30),
-             color: colors.randomElement()!, rotation: Double.random(in: 180...720))
+             color: colors.randomElement() ?? .fireOrange, rotation: Double.random(in: 180...720))
         }
         isAnimating = false
         withAnimation(.easeOut(duration: 1.2)) { isAnimating = true }

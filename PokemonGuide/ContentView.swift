@@ -34,20 +34,21 @@ struct ContentView: View {
         return Double(progress.totalCompleted) / Double(total)
     }
 
+    private static let starterNames: [Int: String] = [
+        1: "Bulbasaur", 4: "Charmander", 7: "Squirtle", 25: "Pikachu",
+        152: "Chikorita", 155: "Cyndaquil", 158: "Totodile",
+        252: "Treecko", 255: "Torchic", 258: "Mudkip",
+        387: "Turtwig", 390: "Chimchar", 393: "Piplup",
+        495: "Snivy", 498: "Tepig", 501: "Oshawott",
+        650: "Chespin", 653: "Fennekin", 656: "Froakie",
+        722: "Rowlet", 725: "Litten", 728: "Popplio",
+        810: "Grookey", 813: "Scorbunny", 816: "Sobble",
+        906: "Sprigatito", 909: "Fuecoco", 912: "Quaxly",
+        133: "Eevee",
+    ]
+
     private var starterName: String {
-        let starterNames: [Int: String] = [
-            1: "Bulbasaur", 4: "Charmander", 7: "Squirtle", 25: "Pikachu",
-            152: "Chikorita", 155: "Cyndaquil", 158: "Totodile",
-            252: "Treecko", 255: "Torchic", 258: "Mudkip",
-            387: "Turtwig", 390: "Chimchar", 393: "Piplup",
-            495: "Snivy", 498: "Tepig", 501: "Oshawott",
-            650: "Chespin", 653: "Fennekin", 656: "Froakie",
-            722: "Rowlet", 725: "Litten", 728: "Popplio",
-            810: "Grookey", 813: "Scorbunny", 816: "Sobble",
-            906: "Sprigatito", 909: "Fuecoco", 912: "Quaxly",
-            133: "Eevee",
-        ]
-        if gameConfig.starterDex > 0, let name = starterNames[gameConfig.starterDex] {
+        if gameConfig.starterDex > 0, let name = Self.starterNames[gameConfig.starterDex] {
             return name
         }
         return gameConfig.legacyStarter?.displayName ?? "Starter"
@@ -313,7 +314,7 @@ struct ContentView: View {
 
     private var primaryItems: [MenuItem] {
         [
-            MenuItem(icon: "shield.checkered", title: "Gimnasios", subtitle: "\(progress.completedGyms.count)/8 badges", color: theme.accent, destination: .gyms),
+            MenuItem(icon: "shield.checkered", title: "Gimnasios", subtitle: "\(progress.completedGyms.count)/\(bridge.gyms.count) badges", color: theme.accent, destination: .gyms),
             MenuItem(icon: "person.3.fill", title: "Equipo Final", subtitle: "6 pokémon + movesets", color: .fireBlue, destination: .team),
             MenuItem(icon: "map.fill", title: "Ruta Completa", subtitle: "Paso a paso", color: .fireGreen, destination: .route),
             MenuItem(icon: "book.closed.fill", title: "Pokédex", subtitle: "\(progress.pokemonStatuses.filter { $0.value.rawValue >= 2 }.count)/151 capturados", color: Color(red: 0.85, green: 0.25, blue: 0.25), destination: .pokedex),

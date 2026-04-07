@@ -77,7 +77,13 @@ class PokemonRepository: ObservableObject {
         let request = NSFetchRequest<NSManagedObject>(entityName: "CDPokemon")
         request.sortDescriptors = [NSSortDescriptor(key: "dexNumber", ascending: true)]
 
-        guard let results = try? context.fetch(request) else { return [] }
+        let results: [NSManagedObject]
+        do {
+            results = try context.fetch(request)
+        } catch {
+            print("[PokemonRepository] Fetch error (allPokemon): \(error.localizedDescription)")
+            return []
+        }
         return results.compactMap { mapToPokemonDTO($0) }
     }
 
@@ -88,7 +94,14 @@ class PokemonRepository: ObservableObject {
         request.predicate = NSPredicate(format: "dexNumber == %d", dex)
         request.fetchLimit = 1
 
-        guard let result = try? context.fetch(request).first else { return nil }
+        let results: [NSManagedObject]
+        do {
+            results = try context.fetch(request)
+        } catch {
+            print("[PokemonRepository] Fetch error (pokemon by dex): \(error.localizedDescription)")
+            return nil
+        }
+        guard let result = results.first else { return nil }
         return mapToPokemonDTO(result)
     }
 
@@ -99,7 +112,13 @@ class PokemonRepository: ObservableObject {
         request.predicate = NSPredicate(format: "game.id == %@", gameId)
         request.sortDescriptors = [NSSortDescriptor(key: "regionalNumber", ascending: true)]
 
-        guard let results = try? context.fetch(request) else { return [] }
+        let results: [NSManagedObject]
+        do {
+            results = try context.fetch(request)
+        } catch {
+            print("[PokemonRepository] Fetch error (regionalDex): \(error.localizedDescription)")
+            return []
+        }
         return results.compactMap { mapToRegionalDexEntryDTO($0) }
     }
 
@@ -112,7 +131,13 @@ class PokemonRepository: ObservableObject {
         request.predicate = NSPredicate(format: "name CONTAINS[cd] %@", query)
         request.sortDescriptors = [NSSortDescriptor(key: "dexNumber", ascending: true)]
 
-        guard let results = try? context.fetch(request) else { return [] }
+        let results: [NSManagedObject]
+        do {
+            results = try context.fetch(request)
+        } catch {
+            print("[PokemonRepository] Fetch error (search): \(error.localizedDescription)")
+            return []
+        }
         return results.compactMap { mapToPokemonDTO($0) }
     }
 
@@ -123,7 +148,13 @@ class PokemonRepository: ObservableObject {
         request.predicate = NSPredicate(format: "typesJSON CONTAINS[cd] %@", type)
         request.sortDescriptors = [NSSortDescriptor(key: "dexNumber", ascending: true)]
 
-        guard let results = try? context.fetch(request) else { return [] }
+        let results: [NSManagedObject]
+        do {
+            results = try context.fetch(request)
+        } catch {
+            print("[PokemonRepository] Fetch error (pokemon by type): \(error.localizedDescription)")
+            return []
+        }
         return results.compactMap { mapToPokemonDTO($0) }
     }
 
@@ -134,7 +165,13 @@ class PokemonRepository: ObservableObject {
         request.predicate = NSPredicate(format: "generation == %d", generation)
         request.sortDescriptors = [NSSortDescriptor(key: "dexNumber", ascending: true)]
 
-        guard let results = try? context.fetch(request) else { return [] }
+        let results: [NSManagedObject]
+        do {
+            results = try context.fetch(request)
+        } catch {
+            print("[PokemonRepository] Fetch error (pokemon by generation): \(error.localizedDescription)")
+            return []
+        }
         return results.compactMap { mapToPokemonDTO($0) }
     }
 
@@ -147,7 +184,13 @@ class PokemonRepository: ObservableObject {
         )
         request.sortDescriptors = [NSSortDescriptor(key: "fromDex", ascending: true)]
 
-        guard let results = try? context.fetch(request) else { return [] }
+        let results: [NSManagedObject]
+        do {
+            results = try context.fetch(request)
+        } catch {
+            print("[PokemonRepository] Fetch error (evolutionChain initial): \(error.localizedDescription)")
+            return []
+        }
 
         // Collect all linked dex numbers to build the full chain
         var chainDexNumbers = Set<Int>()
@@ -170,7 +213,11 @@ class PokemonRepository: ObservableObject {
             NSSortDescriptor(key: "toDex", ascending: true),
         ]
 
-        guard let expanded = try? context.fetch(expandedRequest) else {
+        let expanded: [NSManagedObject]
+        do {
+            expanded = try context.fetch(expandedRequest)
+        } catch {
+            print("[PokemonRepository] Fetch error (evolutionChain expanded): \(error.localizedDescription)")
             return results.compactMap { mapToEvolutionLinkDTO($0) }
         }
         return expanded.compactMap { mapToEvolutionLinkDTO($0) }
@@ -185,7 +232,13 @@ class PokemonRepository: ObservableObject {
             NSSortDescriptor(key: "toDex", ascending: true),
         ]
 
-        guard let results = try? context.fetch(request) else { return [] }
+        let results: [NSManagedObject]
+        do {
+            results = try context.fetch(request)
+        } catch {
+            print("[PokemonRepository] Fetch error (allEvolutionChains): \(error.localizedDescription)")
+            return []
+        }
         let allLinks = results.compactMap { mapToEvolutionLinkDTO($0) }
 
         // Group links into chains using union-find on dex numbers
@@ -225,7 +278,13 @@ class PokemonRepository: ObservableObject {
         )
         request.fetchLimit = 1
 
-        let count = (try? context.count(for: request)) ?? 0
+        let count: Int
+        do {
+            count = try context.count(for: request)
+        } catch {
+            print("[PokemonRepository] Fetch error (isAvailable): \(error.localizedDescription)")
+            return false
+        }
         return count > 0
     }
 

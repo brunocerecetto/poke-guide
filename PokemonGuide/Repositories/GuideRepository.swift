@@ -134,7 +134,13 @@ class GuideRepository: ObservableObject {
             NSSortDescriptor(key: "releaseYear", ascending: true),
         ]
 
-        guard let results = try? context.fetch(request) else { return [] }
+        let results: [NSManagedObject]
+        do {
+            results = try context.fetch(request)
+        } catch {
+            print("[GuideRepository] Fetch error (allGames): \(error.localizedDescription)")
+            return []
+        }
         return results.compactMap { mapToGameDTO($0) }
     }
 
@@ -143,7 +149,13 @@ class GuideRepository: ObservableObject {
         request.predicate = NSPredicate(format: "generation == %d", generation)
         request.sortDescriptors = [NSSortDescriptor(key: "releaseYear", ascending: true)]
 
-        guard let results = try? context.fetch(request) else { return [] }
+        let results: [NSManagedObject]
+        do {
+            results = try context.fetch(request)
+        } catch {
+            print("[GuideRepository] Fetch error (allGames by generation): \(error.localizedDescription)")
+            return []
+        }
         return results.compactMap { mapToGameDTO($0) }
     }
 
@@ -152,7 +164,14 @@ class GuideRepository: ObservableObject {
         request.predicate = NSPredicate(format: "id == %@", id)
         request.fetchLimit = 1
 
-        guard let result = try? context.fetch(request).first else { return nil }
+        let results: [NSManagedObject]
+        do {
+            results = try context.fetch(request)
+        } catch {
+            print("[GuideRepository] Fetch error (game by id): \(error.localizedDescription)")
+            return nil
+        }
+        guard let result = results.first else { return nil }
         return mapToGameDTO(result)
     }
 
@@ -162,7 +181,14 @@ class GuideRepository: ObservableObject {
         request.returnsDistinctResults = true
         request.resultType = .dictionaryResultType
 
-        guard let results = try? context.fetch(request) as? [[String: Any]] else { return [] }
+        let rawResults: [Any]
+        do {
+            rawResults = try context.fetch(request)
+        } catch {
+            print("[GuideRepository] Fetch error (generations): \(error.localizedDescription)")
+            return []
+        }
+        guard let results = rawResults as? [[String: Any]] else { return [] }
         return results
             .compactMap { $0["generation"] as? Int }
             .sorted()
@@ -175,7 +201,13 @@ class GuideRepository: ObservableObject {
         request.predicate = NSPredicate(format: "game.id == %@", gameId)
         request.sortDescriptors = [NSSortDescriptor(key: "orderIndex", ascending: true)]
 
-        guard let results = try? context.fetch(request) else { return [] }
+        let results: [NSManagedObject]
+        do {
+            results = try context.fetch(request)
+        } catch {
+            print("[GuideRepository] Fetch error (gyms): \(error.localizedDescription)")
+            return []
+        }
         return results.compactMap { mapToGymDTO($0) }
     }
 
@@ -186,7 +218,13 @@ class GuideRepository: ObservableObject {
         request.predicate = NSPredicate(format: "game.id == %@", gameId)
         request.sortDescriptors = [NSSortDescriptor(key: "orderIndex", ascending: true)]
 
-        guard let results = try? context.fetch(request) else { return [] }
+        let results: [NSManagedObject]
+        do {
+            results = try context.fetch(request)
+        } catch {
+            print("[GuideRepository] Fetch error (routeSections): \(error.localizedDescription)")
+            return []
+        }
         return results.compactMap { mapToRouteSectionDTO($0) }
     }
 
@@ -197,7 +235,13 @@ class GuideRepository: ObservableObject {
         request.predicate = NSPredicate(format: "game.id == %@", gameId)
         request.sortDescriptors = [NSSortDescriptor(key: "orderIndex", ascending: true)]
 
-        guard let results = try? context.fetch(request) else { return [] }
+        let results: [NSManagedObject]
+        do {
+            results = try context.fetch(request)
+        } catch {
+            print("[GuideRepository] Fetch error (eliteFour): \(error.localizedDescription)")
+            return []
+        }
         return results.compactMap { mapToEliteFourMemberDTO($0) }
     }
 
@@ -208,7 +252,13 @@ class GuideRepository: ObservableObject {
         request.predicate = NSPredicate(format: "game.id == %@", gameId)
         request.sortDescriptors = [NSSortDescriptor(key: "orderIndex", ascending: true)]
 
-        guard let results = try? context.fetch(request) else { return [] }
+        let results: [NSManagedObject]
+        do {
+            results = try context.fetch(request)
+        } catch {
+            print("[GuideRepository] Fetch error (tips): \(error.localizedDescription)")
+            return []
+        }
         return results.compactMap { mapToTipDTO($0) }
     }
 
@@ -219,7 +269,13 @@ class GuideRepository: ObservableObject {
         request.predicate = NSPredicate(format: "game.id == %@", gameId)
         request.sortDescriptors = [NSSortDescriptor(key: "orderIndex", ascending: true)]
 
-        guard let results = try? context.fetch(request) else { return [] }
+        let results: [NSManagedObject]
+        do {
+            results = try context.fetch(request)
+        } catch {
+            print("[GuideRepository] Fetch error (captures): \(error.localizedDescription)")
+            return []
+        }
         return results.compactMap { mapToKeyCaptureDTO($0) }
     }
 
@@ -230,7 +286,13 @@ class GuideRepository: ObservableObject {
         request.predicate = NSPredicate(format: "game.id == %@", gameId)
         request.sortDescriptors = [NSSortDescriptor(key: "orderIndex", ascending: true)]
 
-        guard let results = try? context.fetch(request) else { return [] }
+        let results: [NSManagedObject]
+        do {
+            results = try context.fetch(request)
+        } catch {
+            print("[GuideRepository] Fetch error (hmEntries): \(error.localizedDescription)")
+            return []
+        }
         return results.compactMap { mapToHMEntryDTO($0) }
     }
 
@@ -239,7 +301,13 @@ class GuideRepository: ObservableObject {
         request.predicate = NSPredicate(format: "game.id == %@", gameId)
         request.sortDescriptors = [NSSortDescriptor(key: "orderIndex", ascending: true)]
 
-        guard let results = try? context.fetch(request) else { return [] }
+        let results: [NSManagedObject]
+        do {
+            results = try context.fetch(request)
+        } catch {
+            print("[GuideRepository] Fetch error (tmEntries): \(error.localizedDescription)")
+            return []
+        }
         return results.compactMap { mapToTMEntryDTO($0) }
     }
 
@@ -252,7 +320,14 @@ class GuideRepository: ObservableObject {
         )
         request.fetchLimit = 1
 
-        guard let result = try? context.fetch(request).first else { return nil }
+        let results: [NSManagedObject]
+        do {
+            results = try context.fetch(request)
+        } catch {
+            print("[GuideRepository] Fetch error (teamRecommendation): \(error.localizedDescription)")
+            return nil
+        }
+        guard let result = results.first else { return nil }
         return mapToTeamRecommendationDTO(result)
     }
 
@@ -263,7 +338,13 @@ class GuideRepository: ObservableObject {
         request.predicate = NSPredicate(format: "game.id == %@", gameId)
         request.sortDescriptors = [NSSortDescriptor(key: "orderIndex", ascending: true)]
 
-        guard let results = try? context.fetch(request) else { return [] }
+        let results: [NSManagedObject]
+        do {
+            results = try context.fetch(request)
+        } catch {
+            print("[GuideRepository] Fetch error (rivalEncounters): \(error.localizedDescription)")
+            return []
+        }
         return results.compactMap { mapToRivalEncounterDTO($0) }
     }
 
@@ -274,7 +355,13 @@ class GuideRepository: ObservableObject {
         request.predicate = NSPredicate(format: "game.id == %@", gameId)
         request.sortDescriptors = [NSSortDescriptor(key: "orderIndex", ascending: true)]
 
-        guard let results = try? context.fetch(request) else { return [] }
+        let results: [NSManagedObject]
+        do {
+            results = try context.fetch(request)
+        } catch {
+            print("[GuideRepository] Fetch error (preLeagueChecklist): \(error.localizedDescription)")
+            return []
+        }
         return results.compactMap { mapToChecklistStepDTO($0) }
     }
 
@@ -283,7 +370,13 @@ class GuideRepository: ObservableObject {
         request.predicate = NSPredicate(format: "game.id == %@", gameId)
         request.sortDescriptors = [NSSortDescriptor(key: "orderIndex", ascending: true)]
 
-        guard let results = try? context.fetch(request) else { return [] }
+        let results: [NSManagedObject]
+        do {
+            results = try context.fetch(request)
+        } catch {
+            print("[GuideRepository] Fetch error (postgameChecklist): \(error.localizedDescription)")
+            return []
+        }
         return results.compactMap { mapToChecklistStepDTO($0) }
     }
 

@@ -316,7 +316,7 @@ struct StarterPickerView: View {
 #Preview {
     NavigationStack {
         StarterPickerView(
-            game: GameCatalogEntry.allGames.first { $0.id == "firered" }!
+            game: GameCatalogEntry.allGames.first { $0.id == "firered" } ?? GameCatalogEntry.allGames[0]
         )
     }
     .environmentObject(GameConfig())

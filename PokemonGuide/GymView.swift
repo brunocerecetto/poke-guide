@@ -33,7 +33,7 @@ struct GymView: View {
                     .padding(.top, 12)
                     .padding(.bottom, 4)
 
-                    Text("\(progress.completedGyms.count) / 8 badges")
+                    Text("\(progress.completedGyms.count) / \(bridge.gyms.count) badges")
                         .font(.system(size: 13, weight: .medium, design: .rounded))
                         .foregroundColor(.fireTextSecondary)
 

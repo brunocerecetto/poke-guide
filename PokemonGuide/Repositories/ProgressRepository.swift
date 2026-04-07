@@ -65,7 +65,10 @@ class ProgressRepository: ObservableObject {
             managedProgress = existing
             currentProgress = mapToDTO(existing)
         } else {
-            let entity = NSEntityDescription.entity(forEntityName: "Progress", in: context)!
+            guard let entity = NSEntityDescription.entity(forEntityName: "CDProgress", in: context) else {
+                print("CDProgress entity not found")
+                return
+            }
             let newProgress = NSManagedObject(entity: entity, insertInto: context)
             newProgress.setValue(gameId, forKey: "gameId")
             newProgress.setValue(starterId, forKey: "starterId")
