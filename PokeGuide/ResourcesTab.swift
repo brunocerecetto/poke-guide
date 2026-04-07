@@ -83,7 +83,7 @@ struct ResourcesTab: View {
 
     private var items: [ResourceItem] {
         [
-            ResourceItem(icon: "square.grid.3x3.fill", title: "Tabla de Tipos", subtitle: "Efectividad de ataques", color: .kaPrimary, destination: AnyView(TypeChartView())),
+            ResourceItem(icon: "square.grid.3x3.fill", title: "Tabla de Tipos", subtitle: "Efectividad de ataques", color: theme.accent, destination: AnyView(TypeChartView())),
             ResourceItem(icon: "arrow.triangle.swap", title: "HMs & TMs", subtitle: "Reparto y compras", color: .teal, destination: AnyView(HMTMView())),
             ResourceItem(icon: "lightbulb.fill", title: "Tips & Tricks", subtitle: "Reglas de evolución y más", color: .kaYellow, destination: AnyView(TipsView())),
             ResourceItem(icon: "arrow.triangle.branch", title: "Evoluciones", subtitle: "Cadenas y métodos", color: .success, destination: AnyView(EvolutionView())),

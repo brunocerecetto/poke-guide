@@ -6,6 +6,7 @@
 import SwiftUI
 
 struct GymView: View {
+    @Environment(\.themeColors) private var theme
     @EnvironmentObject var progress: ProgressManager
     @EnvironmentObject var bridge: GameDataBridge
     @State private var celebrateAll = false
@@ -109,7 +110,7 @@ struct GymView: View {
                     }
 
                     HStack(spacing: KASpacing.sm) {
-                        TypeBadge(text: "Nv. \(gym.levelRange)", color: .primaryContainer)
+                        TypeBadge(text: "Nv. \(gym.levelRange)", color: theme.secondary)
 
                         Text(gym.note)
                             .font(KATypography.labelSm)

@@ -6,6 +6,7 @@
 import SwiftUI
 
 struct HMTMView: View {
+    @Environment(\.themeColors) private var theme
     @EnvironmentObject var bridge: GameDataBridge
     @State private var selectedTab = 0
 
@@ -95,7 +96,7 @@ struct HMTMView: View {
                         HStack {
                             Text(entry.tm)
                                 .font(KATypography.titleSm)
-                                .foregroundColor(.kaPrimary)
+                                .foregroundColor(theme.accent)
 
                             Spacer()
 

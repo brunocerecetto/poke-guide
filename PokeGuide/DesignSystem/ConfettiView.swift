@@ -38,7 +38,7 @@ struct ConfettiView: View {
         let colors: [Color] = theme.gradientColors + [.success, .kaSecondaryContainer]
         particles = (0..<25).map { i in
             (id: i, x: CGFloat.random(in: -120...120), y: CGFloat.random(in: -160 ... -30),
-             color: colors.randomElement() ?? .primaryContainer, rotation: Double.random(in: 180...720))
+             color: colors.randomElement() ?? theme.secondary, rotation: Double.random(in: 180...720))
         }
         isAnimating = false
         withAnimation(.easeOut(duration: 1.2)) { isAnimating = true }

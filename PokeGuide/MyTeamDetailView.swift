@@ -201,7 +201,7 @@ struct MyTeamDetailView: View {
                                 Spacer()
                                 Image(systemName: "xmark.circle.fill")
                                     .font(.system(size: 14))
-                                    .foregroundColor(.kaPrimary.opacity(0.7))
+                                    .foregroundColor(theme.accent.opacity(0.7))
                                     .background(Circle().fill(Color.surfaceContainerLow).padding(2))
                             }
                             Spacer()
@@ -257,7 +257,7 @@ struct MyTeamDetailView: View {
                 coverageRow(label: "Super eficaz contra", types: covered, color: .success)
             }
             if !uncovered.isEmpty {
-                coverageRow(label: "Sin cobertura contra", types: uncovered, color: .kaPrimary.opacity(0.7))
+                coverageRow(label: "Sin cobertura contra", types: uncovered, color: theme.accent.opacity(0.7))
             }
 
             Spacer().frame(height: KASpacing.sm)
@@ -268,7 +268,7 @@ struct MyTeamDetailView: View {
             let resistances = TeamAnalysis.defensiveResistances(for: entries)
 
             if !weaknesses.isEmpty {
-                coverageRow(label: "Débil a", types: weaknesses, color: .primaryContainer)
+                coverageRow(label: "Débil a", types: weaknesses, color: theme.secondary)
             }
             if !resistances.isEmpty {
                 coverageRow(label: "Resiste", types: resistances, color: .kaSecondaryContainer)
@@ -302,7 +302,7 @@ struct MyTeamDetailView: View {
             VStack(spacing: KASpacing.sm) {
                 statBar(label: "HP", value: avg.hp, color: .success)
                 statBar(label: "ATK", value: avg.attack, color: theme.accent)
-                statBar(label: "DEF", value: avg.defense, color: .primaryContainer)
+                statBar(label: "DEF", value: avg.defense, color: theme.secondary)
                 statBar(label: "SP.A", value: avg.spAttack, color: .kaSecondaryContainer)
                 statBar(label: "SP.D", value: avg.spDefense, color: Color(red: 0.45, green: 0.75, blue: 0.78))
                 statBar(label: "SPD", value: avg.speed, color: .kaYellow)
@@ -357,7 +357,7 @@ struct MyTeamDetailView: View {
                         HStack(alignment: .top, spacing: KASpacing.sm) {
                             Image(systemName: "exclamationmark.triangle.fill")
                                 .font(.system(size: 12))
-                                .foregroundColor(.primaryContainer)
+                                .foregroundColor(theme.secondary)
                                 .padding(.top, 2)
                             Text(warning)
                                 .font(KATypography.bodySmall)
@@ -367,7 +367,7 @@ struct MyTeamDetailView: View {
                     }
                 }
                 .padding()
-                .softCard(cornerRadius: KARadius.lg, tint: .primaryContainer)
+                .softCard(cornerRadius: KARadius.lg, tint: theme.secondary)
             }
         }
     }

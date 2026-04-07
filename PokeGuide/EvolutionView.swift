@@ -157,7 +157,7 @@ struct EvolutionView: View {
         switch method {
         case .level:  return .kaSecondaryContainer
         case .stone:  return .success
-        case .trade:  return .primaryContainer
+        case .trade:  return theme.secondary
         }
     }
 }

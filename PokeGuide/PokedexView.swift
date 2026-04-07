@@ -105,7 +105,7 @@ struct PokedexView: View {
 
     private var statsBar: some View {
         HStack(spacing: KASpacing.md) {
-            statBubble(value: "\(caughtCount)", label: "Capturados", color: .primaryContainer)
+            statBubble(value: "\(caughtCount)", label: "Capturados", color: theme.secondary)
             statBubble(value: "\(evolvedCount)", label: "Evolucionados", color: .success)
             statBubble(value: "\(pokedexEntries.count)", label: "Total", color: .onSurfaceVariant)
         }

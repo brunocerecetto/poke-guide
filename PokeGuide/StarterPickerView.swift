@@ -281,7 +281,7 @@ struct StarterPickerView: View {
             .padding(.vertical, 15)
             .background(
                 Capsule()
-                    .fill(LinearGradient.energyGradient)
+                    .fill(LinearGradient(colors: [game.accentColor, game.secondaryColor], startPoint: .bottomLeading, endPoint: .topTrailing))
             )
         }
         .transition(.move(edge: .bottom).combined(with: .opacity))

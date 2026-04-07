@@ -290,7 +290,7 @@ struct PokedexDetailView: View {
 
             statBar(label: "HP", value: entry.stats.hp, color: .success)
             statBar(label: "ATK", value: entry.stats.attack, color: theme.accent)
-            statBar(label: "DEF", value: entry.stats.defense, color: .primaryContainer)
+            statBar(label: "DEF", value: entry.stats.defense, color: theme.secondary)
             statBar(label: "SP.A", value: entry.stats.spAttack, color: .kaSecondaryContainer)
             statBar(label: "SP.D", value: entry.stats.spDefense, color: Color(red: 0.45, green: 0.75, blue: 0.78))
             statBar(label: "VEL", value: entry.stats.speed, color: .kaYellow)
@@ -391,7 +391,7 @@ struct PokedexDetailView: View {
                 HStack(spacing: 3) {
                     Text("FR")
                         .font(KATypography.labelXs)
-                        .foregroundColor(.kaPrimary)
+                        .foregroundColor(theme.accent)
                     Text("·")
                         .foregroundColor(.onSurfaceVariant)
                     Text("LG")
