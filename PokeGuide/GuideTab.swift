@@ -262,17 +262,32 @@ struct GuideTab: View {
 
     private func guideCard(item: MenuItem) -> some View {
         VStack(alignment: .leading, spacing: 10) {
-            ZStack {
-                RoundedRectangle(cornerRadius: KARadius.sm)
-                    .fill(item.color.opacity(0.10))
-                    .frame(width: 44, height: 44)
+            HStack {
+                ZStack {
+                    Circle()
+                        .fill(item.color.opacity(0.10))
+                        .frame(width: 48, height: 48)
 
-                Image(systemName: item.icon)
-                    .font(.system(size: 20, weight: .semibold))
-                    .foregroundColor(item.color)
+                    if let local = item.localIcon, UIImage(named: local) != nil {
+                        Image(local)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 26, height: 26)
+                    } else {
+                        Image(systemName: item.icon)
+                            .font(.system(size: 20, weight: .semibold))
+                            .foregroundColor(item.color)
+                    }
+                }
+
+                Spacer()
+
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 12, weight: .semibold))
+                    .foregroundColor(.onSurfaceVariant.opacity(0.3))
             }
 
-            VStack(alignment: .leading, spacing: 3) {
+            VStack(alignment: .leading, spacing: 6) {
                 Text(item.title)
                     .font(KATypography.titleSm)
                     .foregroundColor(.onSurface)
@@ -282,6 +297,21 @@ struct GuideTab: View {
                     .foregroundColor(.onSurfaceVariant)
                     .tracking(1.5)
                     .lineLimit(2)
+
+                if let fraction = item.progressFraction {
+                    GeometryReader { geo in
+                        ZStack(alignment: .leading) {
+                            Capsule()
+                                .fill(item.color.opacity(0.12))
+                                .frame(height: 4)
+
+                            Capsule()
+                                .fill(item.color)
+                                .frame(width: max(0, geo.size.width * fraction), height: 4)
+                        }
+                    }
+                    .frame(height: 4)
+                }
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -315,10 +345,12 @@ struct GuideTab: View {
     private struct MenuItem: Identifiable {
         var id: String { title }
         let icon: String
+        let localIcon: String?
         let title: String
         let subtitle: String
         let color: Color
         let destination: Destination
+        var progressFraction: Double?
     }
 
     @ViewBuilder
@@ -332,11 +364,35 @@ struct GuideTab: View {
     }
 
     private var guideItems: [MenuItem] {
-        [
-            MenuItem(icon: "shield.checkered", title: "Gimnasios", subtitle: "\(progress.completedGyms.count) DE \(bridge.gyms.count) MEDALLAS", color: theme.accent, destination: .gyms),
-            MenuItem(icon: "map.fill", title: "Ruta Completa", subtitle: "VER ITINERARIO", color: .success, destination: .route),
-            MenuItem(icon: "trophy.fill", title: "Liga Pokémon", subtitle: "NIVEL REQUERIDO: 50", color: theme.secondary, destination: .league),
-            MenuItem(icon: "person.fill.questionmark", title: "Rival", subtitle: "ÚLTIMO ENCUENTRO: —", color: .kaSecondaryContainer, destination: .rival),
+        let gymCount = bridge.gyms.count
+        let gymsDone = progress.completedGyms.count
+        let gymFraction = gymCount > 0 ? Double(gymsDone) / Double(gymCount) : 0
+
+        let totalSteps = bridge.routeSections.flatMap(\.steps).count
+        let stepsDone = progress.completedRouteSteps.count
+        let routeFraction = totalSteps > 0 ? Double(stepsDone) / Double(totalSteps) : 0
+        let routeSubtitle = totalSteps > 0 ? "PASO \(stepsDone) DE \(totalSteps)" : "VER ITINERARIO"
+
+        let eliteCount = bridge.eliteFour.count
+        let leagueDone = progress.completedLeague.count
+        let leagueFraction = eliteCount > 0 ? Double(leagueDone) / Double(eliteCount) : 0
+        let leagueSubtitle: String = {
+            if gymsDone < gymCount {
+                return "FALTAN \(gymCount - gymsDone) GIMNASIOS"
+            }
+            return "\(leagueDone) DE \(eliteCount) MIEMBROS"
+        }()
+
+        let encounters = bridge.rivalEncounters
+        let rivalDone = encounters.filter { progress.isRouteStepCompleted(bridge.rivalEncounterProgressId(for: $0)) }.count
+        let rivalFraction = encounters.count > 0 ? Double(rivalDone) / Double(encounters.count) : 0
+        let rivalSubtitle = encounters.count > 0 ? "\(rivalDone) DE \(encounters.count) ENCUENTROS" : "SIN DATOS"
+
+        return [
+            MenuItem(icon: "shield.checkered", localIcon: "icon-gym", title: "Gimnasios", subtitle: "\(gymsDone) DE \(gymCount) MEDALLAS", color: theme.accent, destination: .gyms, progressFraction: gymFraction),
+            MenuItem(icon: "map.fill", localIcon: "icon-route", title: "Ruta Completa", subtitle: routeSubtitle, color: .success, destination: .route, progressFraction: routeFraction),
+            MenuItem(icon: "trophy.fill", localIcon: "icon-league", title: "Liga Pokémon", subtitle: leagueSubtitle, color: theme.secondary, destination: .league, progressFraction: leagueFraction),
+            MenuItem(icon: "person.fill.questionmark", localIcon: "icon-rival", title: "Rival", subtitle: rivalSubtitle, color: .kaSecondaryContainer, destination: .rival, progressFraction: rivalFraction),
         ]
     }
 }
