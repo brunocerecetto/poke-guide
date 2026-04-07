@@ -65,12 +65,7 @@ extension MockGame {
         MockGame(id: "violet", name: "Pokémon Violet", generation: 9, region: "Paldea", releaseYear: 2022, platform: "Switch", accentHex: "#7722CC", secondaryHex: "#9944EE", icon: "book.closed.fill", starters: [906, 909, 912], gymCount: 8, hasEliteFour: true),
     ]
 
-    /// Mock progress values for a few games (simulates saved progress)
-    static let mockProgress: [String: Double] = [
-        "firered": 0.72,
-        "gold": 0.15,
-        "emerald": 0.45,
-    ]
+    static let mockProgress: [String: Double] = [:]
 
     static var generations: [Int] {
         Array(Set(mockGames.map(\.generation))).sorted()
