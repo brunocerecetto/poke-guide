@@ -128,7 +128,7 @@ class GuideRepository: ObservableObject {
     // MARK: - Games
 
     func allGames() -> [GameDTO] {
-        let request = NSFetchRequest<NSManagedObject>(entityName: "Game")
+        let request = NSFetchRequest<NSManagedObject>(entityName: "CDGame")
         request.sortDescriptors = [
             NSSortDescriptor(key: "generation", ascending: true),
             NSSortDescriptor(key: "releaseYear", ascending: true),
@@ -139,7 +139,7 @@ class GuideRepository: ObservableObject {
     }
 
     func allGames(generation: Int) -> [GameDTO] {
-        let request = NSFetchRequest<NSManagedObject>(entityName: "Game")
+        let request = NSFetchRequest<NSManagedObject>(entityName: "CDGame")
         request.predicate = NSPredicate(format: "generation == %d", generation)
         request.sortDescriptors = [NSSortDescriptor(key: "releaseYear", ascending: true)]
 
@@ -148,7 +148,7 @@ class GuideRepository: ObservableObject {
     }
 
     func game(id: String) -> GameDTO? {
-        let request = NSFetchRequest<NSManagedObject>(entityName: "Game")
+        let request = NSFetchRequest<NSManagedObject>(entityName: "CDGame")
         request.predicate = NSPredicate(format: "id == %@", id)
         request.fetchLimit = 1
 
@@ -157,7 +157,7 @@ class GuideRepository: ObservableObject {
     }
 
     func generations() -> [Int] {
-        let request = NSFetchRequest<NSManagedObject>(entityName: "Game")
+        let request = NSFetchRequest<NSManagedObject>(entityName: "CDGame")
         request.propertiesToFetch = ["generation"]
         request.returnsDistinctResults = true
         request.resultType = .dictionaryResultType
@@ -171,7 +171,7 @@ class GuideRepository: ObservableObject {
     // MARK: - Gyms
 
     func gyms(gameId: String) -> [GymDTO] {
-        let request = NSFetchRequest<NSManagedObject>(entityName: "Gym")
+        let request = NSFetchRequest<NSManagedObject>(entityName: "CDGym")
         request.predicate = NSPredicate(format: "game.id == %@", gameId)
         request.sortDescriptors = [NSSortDescriptor(key: "orderIndex", ascending: true)]
 
@@ -182,7 +182,7 @@ class GuideRepository: ObservableObject {
     // MARK: - Route sections & steps
 
     func routeSections(gameId: String) -> [RouteSectionDTO] {
-        let request = NSFetchRequest<NSManagedObject>(entityName: "RouteSection")
+        let request = NSFetchRequest<NSManagedObject>(entityName: "CDRouteSection")
         request.predicate = NSPredicate(format: "game.id == %@", gameId)
         request.sortDescriptors = [NSSortDescriptor(key: "orderIndex", ascending: true)]
 
@@ -193,7 +193,7 @@ class GuideRepository: ObservableObject {
     // MARK: - Elite Four
 
     func eliteFour(gameId: String) -> [EliteFourMemberDTO] {
-        let request = NSFetchRequest<NSManagedObject>(entityName: "EliteFourMember")
+        let request = NSFetchRequest<NSManagedObject>(entityName: "CDEliteFourMember")
         request.predicate = NSPredicate(format: "game.id == %@", gameId)
         request.sortDescriptors = [NSSortDescriptor(key: "orderIndex", ascending: true)]
 
@@ -204,7 +204,7 @@ class GuideRepository: ObservableObject {
     // MARK: - Tips
 
     func tips(gameId: String) -> [TipDTO] {
-        let request = NSFetchRequest<NSManagedObject>(entityName: "Tip")
+        let request = NSFetchRequest<NSManagedObject>(entityName: "CDTip")
         request.predicate = NSPredicate(format: "game.id == %@", gameId)
         request.sortDescriptors = [NSSortDescriptor(key: "orderIndex", ascending: true)]
 
@@ -215,7 +215,7 @@ class GuideRepository: ObservableObject {
     // MARK: - Key captures
 
     func captures(gameId: String) -> [KeyCaptureDTO] {
-        let request = NSFetchRequest<NSManagedObject>(entityName: "KeyCapture")
+        let request = NSFetchRequest<NSManagedObject>(entityName: "CDKeyCapture")
         request.predicate = NSPredicate(format: "game.id == %@", gameId)
         request.sortDescriptors = [NSSortDescriptor(key: "orderIndex", ascending: true)]
 
@@ -226,7 +226,7 @@ class GuideRepository: ObservableObject {
     // MARK: - HM / TM entries
 
     func hmEntries(gameId: String) -> [HMEntryDTO] {
-        let request = NSFetchRequest<NSManagedObject>(entityName: "HMEntry")
+        let request = NSFetchRequest<NSManagedObject>(entityName: "CDHMEntry")
         request.predicate = NSPredicate(format: "game.id == %@", gameId)
         request.sortDescriptors = [NSSortDescriptor(key: "orderIndex", ascending: true)]
 
@@ -235,7 +235,7 @@ class GuideRepository: ObservableObject {
     }
 
     func tmEntries(gameId: String) -> [TMEntryDTO] {
-        let request = NSFetchRequest<NSManagedObject>(entityName: "TMEntry")
+        let request = NSFetchRequest<NSManagedObject>(entityName: "CDTMEntry")
         request.predicate = NSPredicate(format: "game.id == %@", gameId)
         request.sortDescriptors = [NSSortDescriptor(key: "orderIndex", ascending: true)]
 
@@ -246,7 +246,7 @@ class GuideRepository: ObservableObject {
     // MARK: - Team recommendations
 
     func teamRecommendation(gameId: String, starter: String) -> TeamRecommendationDTO? {
-        let request = NSFetchRequest<NSManagedObject>(entityName: "TeamRecommendation")
+        let request = NSFetchRequest<NSManagedObject>(entityName: "CDTeamRecommendation")
         request.predicate = NSPredicate(
             format: "game.id == %@ AND starterCondition == %@", gameId, starter
         )
@@ -259,7 +259,7 @@ class GuideRepository: ObservableObject {
     // MARK: - Rival encounters
 
     func rivalEncounters(gameId: String) -> [RivalEncounterDTO] {
-        let request = NSFetchRequest<NSManagedObject>(entityName: "RivalEncounter")
+        let request = NSFetchRequest<NSManagedObject>(entityName: "CDRivalEncounter")
         request.predicate = NSPredicate(format: "game.id == %@", gameId)
         request.sortDescriptors = [NSSortDescriptor(key: "orderIndex", ascending: true)]
 
@@ -270,7 +270,7 @@ class GuideRepository: ObservableObject {
     // MARK: - Pre-league / Postgame checklists
 
     func preLeagueChecklist(gameId: String) -> [ChecklistStepDTO] {
-        let request = NSFetchRequest<NSManagedObject>(entityName: "PreLeagueStep")
+        let request = NSFetchRequest<NSManagedObject>(entityName: "CDPreLeagueStep")
         request.predicate = NSPredicate(format: "game.id == %@", gameId)
         request.sortDescriptors = [NSSortDescriptor(key: "orderIndex", ascending: true)]
 
@@ -279,7 +279,7 @@ class GuideRepository: ObservableObject {
     }
 
     func postgameChecklist(gameId: String) -> [ChecklistStepDTO] {
-        let request = NSFetchRequest<NSManagedObject>(entityName: "PostgameStep")
+        let request = NSFetchRequest<NSManagedObject>(entityName: "CDPostgameStep")
         request.predicate = NSPredicate(format: "game.id == %@", gameId)
         request.sortDescriptors = [NSSortDescriptor(key: "orderIndex", ascending: true)]
 

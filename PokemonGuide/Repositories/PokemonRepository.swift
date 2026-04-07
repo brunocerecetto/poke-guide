@@ -74,7 +74,7 @@ class PokemonRepository: ObservableObject {
     // MARK: - All Pokemon (national dex order)
 
     func allPokemon() -> [PokemonDTO] {
-        let request = NSFetchRequest<NSManagedObject>(entityName: "Pokemon")
+        let request = NSFetchRequest<NSManagedObject>(entityName: "CDPokemon")
         request.sortDescriptors = [NSSortDescriptor(key: "dexNumber", ascending: true)]
 
         guard let results = try? context.fetch(request) else { return [] }
@@ -84,7 +84,7 @@ class PokemonRepository: ObservableObject {
     // MARK: - Single Pokemon by dex number
 
     func pokemon(dex: Int) -> PokemonDTO? {
-        let request = NSFetchRequest<NSManagedObject>(entityName: "Pokemon")
+        let request = NSFetchRequest<NSManagedObject>(entityName: "CDPokemon")
         request.predicate = NSPredicate(format: "dexNumber == %d", dex)
         request.fetchLimit = 1
 
@@ -95,7 +95,7 @@ class PokemonRepository: ObservableObject {
     // MARK: - Regional dex for a specific game
 
     func regionalDex(gameId: String) -> [RegionalDexEntryDTO] {
-        let request = NSFetchRequest<NSManagedObject>(entityName: "RegionalDexEntry")
+        let request = NSFetchRequest<NSManagedObject>(entityName: "CDRegionalDexEntry")
         request.predicate = NSPredicate(format: "game.id == %@", gameId)
         request.sortDescriptors = [NSSortDescriptor(key: "regionalNumber", ascending: true)]
 
@@ -108,7 +108,7 @@ class PokemonRepository: ObservableObject {
     func search(query: String) -> [PokemonDTO] {
         guard !query.isEmpty else { return allPokemon() }
 
-        let request = NSFetchRequest<NSManagedObject>(entityName: "Pokemon")
+        let request = NSFetchRequest<NSManagedObject>(entityName: "CDPokemon")
         request.predicate = NSPredicate(format: "name CONTAINS[cd] %@", query)
         request.sortDescriptors = [NSSortDescriptor(key: "dexNumber", ascending: true)]
 
@@ -119,7 +119,7 @@ class PokemonRepository: ObservableObject {
     // MARK: - Pokemon by type
 
     func pokemon(ofType type: String) -> [PokemonDTO] {
-        let request = NSFetchRequest<NSManagedObject>(entityName: "Pokemon")
+        let request = NSFetchRequest<NSManagedObject>(entityName: "CDPokemon")
         request.predicate = NSPredicate(format: "typesJSON CONTAINS[cd] %@", type)
         request.sortDescriptors = [NSSortDescriptor(key: "dexNumber", ascending: true)]
 
@@ -130,7 +130,7 @@ class PokemonRepository: ObservableObject {
     // MARK: - Pokemon by generation
 
     func pokemon(generation: Int) -> [PokemonDTO] {
-        let request = NSFetchRequest<NSManagedObject>(entityName: "Pokemon")
+        let request = NSFetchRequest<NSManagedObject>(entityName: "CDPokemon")
         request.predicate = NSPredicate(format: "generation == %d", generation)
         request.sortDescriptors = [NSSortDescriptor(key: "dexNumber", ascending: true)]
 
@@ -141,7 +141,7 @@ class PokemonRepository: ObservableObject {
     // MARK: - Evolution chain for a single Pokemon
 
     func evolutionChain(forDex dex: Int) -> [EvolutionLinkDTO] {
-        let request = NSFetchRequest<NSManagedObject>(entityName: "EvolutionLink")
+        let request = NSFetchRequest<NSManagedObject>(entityName: "CDEvolutionLink")
         request.predicate = NSPredicate(
             format: "fromDex == %d OR toDex == %d", dex, dex
         )
@@ -157,7 +157,7 @@ class PokemonRepository: ObservableObject {
         }
 
         // Re-fetch all links involving any member of the chain
-        let expandedRequest = NSFetchRequest<NSManagedObject>(entityName: "EvolutionLink")
+        let expandedRequest = NSFetchRequest<NSManagedObject>(entityName: "CDEvolutionLink")
         let predicates = chainDexNumbers.flatMap { num in
             [
                 NSPredicate(format: "fromDex == %d", num),
@@ -179,7 +179,7 @@ class PokemonRepository: ObservableObject {
     // MARK: - All evolution chains (grouped)
 
     func allEvolutionChains() -> [[EvolutionLinkDTO]] {
-        let request = NSFetchRequest<NSManagedObject>(entityName: "EvolutionLink")
+        let request = NSFetchRequest<NSManagedObject>(entityName: "CDEvolutionLink")
         request.sortDescriptors = [
             NSSortDescriptor(key: "fromDex", ascending: true),
             NSSortDescriptor(key: "toDex", ascending: true),
@@ -219,7 +219,7 @@ class PokemonRepository: ObservableObject {
     // MARK: - Version availability check
 
     func isAvailable(dex: Int, inGame gameId: String) -> Bool {
-        let request = NSFetchRequest<NSManagedObject>(entityName: "RegionalDexEntry")
+        let request = NSFetchRequest<NSManagedObject>(entityName: "CDRegionalDexEntry")
         request.predicate = NSPredicate(
             format: "pokemon.dexNumber == %d AND game.id == %@", dex, gameId
         )

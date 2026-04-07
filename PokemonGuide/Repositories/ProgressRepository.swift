@@ -55,7 +55,7 @@ class ProgressRepository: ObservableObject {
     // MARK: - Load / create
 
     func loadProgress(gameId: String, starterId: String) {
-        let request = NSFetchRequest<NSManagedObject>(entityName: "Progress")
+        let request = NSFetchRequest<NSManagedObject>(entityName: "CDProgress")
         request.predicate = NSPredicate(
             format: "gameId == %@ AND starterId == %@", gameId, starterId
         )
