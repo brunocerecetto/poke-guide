@@ -28,8 +28,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		681FBC5A2F842B6600E8025A /* pokemon guide.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "pokemon guide.xcodeproj"; sourceTree = "<group>"; };
-		681FC0BB2F843E6400E8025A /* pokemon guide.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "pokemon guide.xcodeproj"; sourceTree = "<group>"; };
 		68579BF12F83B810007C0026 /* PokemonGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68579C002F83B811007C0026 /* PokemonGuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokemonGuideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68579C0A2F83B811007C0026 /* PokemonGuideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokemonGuideUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,16 +77,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		681FBC612F842B6600E8025A /* Products */ = {
-			isa = PBXGroup;
-			name = Products;
-			sourceTree = "<group>";
-		};
-		681FC0C82F843E6400E8025A /* Products */ = {
-			isa = PBXGroup;
-			name = Products;
-			sourceTree = "<group>";
-		};
 		68579BE82F83B810007C0026 = {
 			isa = PBXGroup;
 			children = (
@@ -216,16 +204,6 @@
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 68579BF22F83B810007C0026 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 681FC0C82F843E6400E8025A /* Products */;
-					ProjectRef = 681FC0BB2F843E6400E8025A /* pokemon guide.xcodeproj */;
-				},
-				{
-					ProductGroup = 681FBC612F842B6600E8025A /* Products */;
-					ProjectRef = 681FBC5A2F842B6600E8025A /* pokemon guide.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				68579BF02F83B810007C0026 /* PokemonGuide */,
@@ -333,7 +311,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = XAB276KL5Q;
+				DEVELOPMENT_TEAM = 7LBQ559JS3;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -397,7 +375,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = XAB276KL5Q;
+				DEVELOPMENT_TEAM = 7LBQ559JS3;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -489,7 +467,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XAB276KL5Q;
+				DEVELOPMENT_TEAM = 7LBQ559JS3;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
 				MARKETING_VERSION = 1.0;
@@ -511,7 +489,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XAB276KL5Q;
+				DEVELOPMENT_TEAM = 7LBQ559JS3;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
 				MARKETING_VERSION = 1.0;
@@ -532,7 +510,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XAB276KL5Q;
+				DEVELOPMENT_TEAM = 7LBQ559JS3;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bruno.pokemon-guideUITests";
@@ -552,7 +530,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XAB276KL5Q;
+				DEVELOPMENT_TEAM = 7LBQ559JS3;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bruno.pokemon-guideUITests";
