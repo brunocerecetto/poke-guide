@@ -12,8 +12,6 @@ struct CapturesView: View {
     var body: some View {
         PageLayout("Capturas Clave") {
             VStack(spacing: KASpacing.md) {
-                GuideDisclaimerBanner()
-
                 ForEach(bridge.captures) { capture in
                     HStack(spacing: KASpacing.md) {
                         ZStack {

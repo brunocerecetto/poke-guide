@@ -43,13 +43,7 @@ class GameDataBridge: ObservableObject {
     // MARK: - Team
 
     func teamRecommendation(starter: String) -> TeamRecommendationDTO? {
-        if let rec = guideRepo?.teamRecommendation(gameId: gameId, starter: starter) {
-            return rec
-        }
-        let members = GameData.team.enumerated().map { i, m in
-            TeamMemberDTO(id: i, name: m.name, moves: m.moves, notes: m.notes, emoji: m.emoji)
-        }
-        return TeamRecommendationDTO(starterCondition: starter, members: members)
+        guideRepo?.teamRecommendation(gameId: gameId, starter: starter)
     }
 
     /// Convenience: team members for the current starter
