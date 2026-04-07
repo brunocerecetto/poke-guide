@@ -36,7 +36,7 @@ struct PokeGuideApp: App {
         WindowGroup {
             Group {
                 if gameConfig.isConfigured {
-                    ContentView()
+                    MainTabView()
                 } else {
                     GameListView()
                 }
