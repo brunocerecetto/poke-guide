@@ -6,25 +6,44 @@
 //
 
 import SwiftUI
+import UIKit
 
-// MARK: - Color Tokens (Light-mode)
+// MARK: - Adaptive Color Helper
+
+private func adaptiveColor(light: String, dark: String) -> Color {
+    Color(UIColor { traitCollection in
+        let hex = traitCollection.userInterfaceStyle == .dark ? dark : light
+        let cleaned = hex.trimmingCharacters(in: .whitespacesAndNewlines)
+            .replacingOccurrences(of: "#", with: "")
+        var rgb: UInt64 = 0
+        Scanner(string: cleaned).scanHexInt64(&rgb)
+        return UIColor(
+            red: CGFloat((rgb >> 16) & 0xFF) / 255.0,
+            green: CGFloat((rgb >> 8) & 0xFF) / 255.0,
+            blue: CGFloat(rgb & 0xFF) / 255.0,
+            alpha: 1.0
+        )
+    })
+}
+
+// MARK: - Color Tokens (Adaptive Light/Dark)
 
 extension Color {
     // Surfaces (Nested Depth)
-    static let surface = Color(hex: "#f9f9f9")
-    static let surfaceContainerLow = Color(hex: "#f3f3f3")
-    static let surfaceContainerHigh = Color(hex: "#e6e6e6")
-    static let surfaceContainerHighest = Color(hex: "#e2e2e2")
-    static let surfaceBright = Color(hex: "#f5f5f5")
+    static let surface = adaptiveColor(light: "#f9f9f9", dark: "#121414")
+    static let surfaceContainerLow = adaptiveColor(light: "#f3f3f3", dark: "#1e2020")
+    static let surfaceContainerHigh = adaptiveColor(light: "#e6e6e6", dark: "#2a2c2c")
+    static let surfaceContainerHighest = adaptiveColor(light: "#e2e2e2", dark: "#353737")
+    static let surfaceBright = adaptiveColor(light: "#f5f5f5", dark: "#383a3a")
 
     // Text & Icons
-    static let onSurface = Color(hex: "#1a1c1c")
-    static let onSurfaceVariant = Color(hex: "#3f4948")
-    static let outlineVariant = Color(hex: "#bfc9c8")
+    static let onSurface = adaptiveColor(light: "#1a1c1c", dark: "#e2e3e3")
+    static let onSurfaceVariant = adaptiveColor(light: "#3f4948", dark: "#bfc9c8")
+    static let outlineVariant = adaptiveColor(light: "#bfc9c8", dark: "#3f4948")
 
     // Primary (Energy)
     static let kaPrimary = Color(hex: "#bc0100")
-    static let primaryContainer = Color(hex: "#eb0000")
+    static let primaryContainer = adaptiveColor(light: "#eb0000", dark: "#d40000")
     static let onPrimary = Color.white
 
     // Secondary
@@ -32,7 +51,7 @@ extension Color {
 
     // Semantic
     static let success = Color(red: 0.20, green: 0.72, blue: 0.35)
-    static let inverseSurface = Color(hex: "#2f3131")
+    static let inverseSurface = adaptiveColor(light: "#2f3131", dark: "#e2e3e3")
     static let kaYellow = Color(red: 0.98, green: 0.78, blue: 0.15)
 
     // MARK: Deprecated Aliases

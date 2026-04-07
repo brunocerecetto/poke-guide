@@ -16,7 +16,7 @@ struct SoftCard: ViewModifier {
         content
             .background(
                 RoundedRectangle(cornerRadius: cornerRadius)
-                    .fill(.white)
+                    .fill(Color.surfaceContainerLow)
             )
             .overlay(
                 RoundedRectangle(cornerRadius: cornerRadius)
