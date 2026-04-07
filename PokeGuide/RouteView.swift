@@ -11,25 +11,17 @@ struct RouteView: View {
     @Environment(\.themeColors) private var theme
 
     var body: some View {
-        ZStack {
-            Color.surface.ignoresSafeArea()
+        PageLayout("Ruta Completa") {
+            VStack(spacing: KASpacing.md) {
+                routeProgress
+                    .padding(.horizontal)
+                    .padding(.top, KASpacing.xs)
 
-            ScrollView {
-                VStack(spacing: KASpacing.md) {
-                    routeProgress
-                        .padding(.horizontal)
-                        .padding(.top, KASpacing.xs)
-
-                    ForEach(bridge.routeSections) { section in
-                        sectionView(section)
-                    }
+                ForEach(bridge.routeSections) { section in
+                    sectionView(section)
                 }
-                .padding(.bottom, 30)
             }
         }
-        .navigationTitle("Ruta Completa")
-        .navigationBarTitleDisplayMode(.large)
-        .toolbarBackground(.automatic, for: .navigationBar)
     }
 
     private var routeProgress: some View {

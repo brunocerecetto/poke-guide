@@ -13,7 +13,7 @@ struct ResourcesTab: View {
 
     var body: some View {
         NavigationStack {
-            ScrollView(showsIndicators: false) {
+            PageLayout(background: .clear) {
                 VStack(spacing: KASpacing.sm) {
                     ForEach(Array(items.enumerated()), id: \.element.title) { index, item in
                         NavigationLink {

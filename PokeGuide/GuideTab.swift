@@ -54,7 +54,7 @@ struct GuideTab: View {
 
     var body: some View {
         NavigationStack {
-            ScrollView(showsIndicators: false) {
+            PageLayout(background: .clear) {
                 VStack(spacing: KASpacing.lg) {
                     heroHeader
                         .opacity(appeared ? 1 : 0)
@@ -70,8 +70,6 @@ struct GuideTab: View {
                     guideGrid
                         .padding(.horizontal)
 
-                    footerBadge
-                        .padding(.bottom, 30)
                 }
             }
             .background(PixelBackground())
@@ -310,23 +308,6 @@ struct GuideTab: View {
         .padding(.vertical, KASpacing.sm + KASpacing.xs)
         .frame(maxWidth: .infinity, alignment: .leading)
         .softCard(cornerRadius: KARadius.lg, tint: item.color)
-    }
-
-    // MARK: - Footer
-
-    private var footerBadge: some View {
-        let game = GameCatalogEntry.allGames.first { $0.id == gameConfig.gameId }
-        let regionLabel = game.map { "Gen \($0.generation) — \($0.region)" } ?? "Gen I — Kanto"
-
-        return HStack(spacing: 5) {
-            Image(systemName: displayIconName)
-                .font(.system(size: 9))
-            Text(regionLabel)
-                .font(KATypography.labelXs)
-        }
-        .foregroundColor(.onSurfaceVariant.opacity(0.5))
-        .opacity(appeared ? 1 : 0)
-        .animation(.easeOut(duration: 0.5).delay(0.6), value: appeared)
     }
 
     // MARK: - Data

@@ -10,41 +10,33 @@ struct TeamView: View {
     @State private var expandedId: Int?
 
     var body: some View {
-        ZStack {
-            Color.surface.ignoresSafeArea()
+        PageLayout("Equipo Final") {
+            VStack(spacing: KASpacing.sm + KASpacing.xs) {
+                GuideDisclaimerBanner()
 
-            ScrollView {
-                VStack(spacing: KASpacing.sm + KASpacing.xs) {
-                    GuideDisclaimerBanner()
-
-                    HStack(spacing: 0) {
-                        ForEach(bridge.team) { member in
-                            Text(member.emoji)
-                                .font(.title)
-                                .frame(maxWidth: .infinity)
-                                .opacity(expandedId == member.id ? 1.0 : 0.5)
-                                .scaleEffect(expandedId == member.id ? 1.2 : 1.0)
-                                .animation(.spring(response: 0.3), value: expandedId)
-                                .onTapGesture {
-                                    withAnimation(.spring(response: 0.4, dampingFraction: 0.7)) {
-                                        expandedId = expandedId == member.id ? nil : member.id
-                                    }
-                                }
-                        }
-                    }
-                    .padding(.vertical, KASpacing.sm + KASpacing.xs)
-
+                HStack(spacing: 0) {
                     ForEach(bridge.team) { member in
-                        pokemonCard(member)
-                            .padding(.horizontal)
+                        Text(member.emoji)
+                            .font(.title)
+                            .frame(maxWidth: .infinity)
+                            .opacity(expandedId == member.id ? 1.0 : 0.5)
+                            .scaleEffect(expandedId == member.id ? 1.2 : 1.0)
+                            .animation(.spring(response: 0.3), value: expandedId)
+                            .onTapGesture {
+                                withAnimation(.spring(response: 0.4, dampingFraction: 0.7)) {
+                                    expandedId = expandedId == member.id ? nil : member.id
+                                }
+                            }
                     }
                 }
-                .padding(.bottom, 30)
+                .padding(.vertical, KASpacing.sm + KASpacing.xs)
+
+                ForEach(bridge.team) { member in
+                    pokemonCard(member)
+                        .padding(.horizontal)
+                }
             }
         }
-        .navigationTitle("Equipo Final")
-        .navigationBarTitleDisplayMode(.large)
-        .toolbarBackground(.automatic, for: .navigationBar)
     }
 
     private func pokemonCard(_ member: TeamMemberDTO) -> some View {

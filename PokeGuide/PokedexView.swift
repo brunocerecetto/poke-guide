@@ -43,14 +43,22 @@ struct PokedexView: View {
             typeFilter
             statusFilter
 
-            ScrollView {
-                LazyVStack(spacing: KASpacing.sm) {
-                    ForEach(filteredPokemon) { entry in
-                        pokemonRow(entry)
+            GeometryReader { geo in
+                ScrollView {
+                    VStack(spacing: 0) {
+                        LazyVStack(spacing: KASpacing.sm) {
+                            ForEach(filteredPokemon) { entry in
+                                pokemonRow(entry)
+                            }
+                        }
+                        .padding(.horizontal)
+
+                        Spacer(minLength: 0)
+
+                        FanDisclaimer()
                     }
+                    .frame(minHeight: geo.size.height)
                 }
-                .padding(.horizontal)
-                .padding(.bottom, 30)
             }
         }
         .background(Color.surface.ignoresSafeArea())

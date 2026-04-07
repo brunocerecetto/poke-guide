@@ -16,9 +16,7 @@ struct GymView: View {
 
     var body: some View {
         ZStack {
-            Color.surface.ignoresSafeArea()
-
-            ScrollView {
+            PageLayout("Gimnasios") {
                 VStack(spacing: KASpacing.sm + KASpacing.xs) {
                     HStack(spacing: 6) {
                         ForEach(bridge.gyms) { gym in
@@ -41,16 +39,12 @@ struct GymView: View {
                             .padding(.horizontal)
                     }
                 }
-                .padding(.bottom, 30)
             }
 
             if celebrateAll {
                 ConfettiView(trigger: celebrateAll)
             }
         }
-        .navigationTitle("Gimnasios")
-        .navigationBarTitleDisplayMode(.large)
-        .toolbarBackground(.automatic, for: .navigationBar)
         .task(id: celebrateAll) {
             guard celebrateAll else { return }
             try? await Task.sleep(for: .seconds(2))

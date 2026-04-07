@@ -30,7 +30,7 @@ struct TeamTab: View {
 
     var body: some View {
         NavigationStack {
-            ScrollView(showsIndicators: false) {
+            PageLayout(background: .clear) {
                 VStack(spacing: KASpacing.lg) {
                     // Equipo Recomendado
                     NavigationLink {
@@ -63,8 +63,6 @@ struct TeamTab: View {
                         capturesCard
                     }
                     .padding(.horizontal)
-
-                    Spacer(minLength: 30)
                 }
                 .padding(.top, KASpacing.sm + KASpacing.xs)
             }

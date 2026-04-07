@@ -155,7 +155,7 @@ struct TypeChartView: View {
     @State private var selectedCell: (attacker: PokemonType, defender: PokemonType)?
 
     var body: some View {
-        ScrollView(showsIndicators: false) {
+        PageLayout("Tabla de Tipos") {
             VStack(spacing: KASpacing.md) {
                 legend
                     .padding(.horizontal)
@@ -168,14 +168,9 @@ struct TypeChartView: View {
                         .padding(.horizontal)
                         .transition(.opacity.combined(with: .move(edge: .bottom)))
                 }
-
-                Spacer(minLength: 30)
             }
             .padding(.top, KASpacing.sm)
         }
-        .background(Color.surface.ignoresSafeArea())
-        .navigationTitle("Tabla de Tipos")
-        .navigationBarTitleDisplayMode(.large)
     }
 
     private var legend: some View {

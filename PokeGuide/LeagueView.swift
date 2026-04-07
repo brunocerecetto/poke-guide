@@ -13,9 +13,7 @@ struct LeagueView: View {
 
     var body: some View {
         ZStack {
-            Color.surface.ignoresSafeArea()
-
-            ScrollView {
+            PageLayout("Liga Pokémon") {
                 VStack(spacing: KASpacing.md) {
                     sectionHeader(title: "CHECKLIST PRE-LIGA", icon: "checklist")
 
@@ -55,8 +53,6 @@ struct LeagueView: View {
                         }
                     }
                     .padding(.horizontal)
-
-                    Spacer().frame(height: KASpacing.md)
                 }
                 .padding(.top, KASpacing.sm)
             }
@@ -65,9 +61,6 @@ struct LeagueView: View {
                 ConfettiView(trigger: celebrateLeague)
             }
         }
-        .navigationTitle("Liga Pokémon")
-        .navigationBarTitleDisplayMode(.large)
-        .toolbarBackground(.automatic, for: .navigationBar)
         .task(id: celebrateLeague) {
             guard celebrateLeague else { return }
             try? await Task.sleep(for: .seconds(2))

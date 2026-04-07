@@ -23,18 +23,14 @@ struct EvolutionView: View {
     }
 
     var body: some View {
-        ScrollView {
+        PageLayout("Evoluciones") {
             LazyVStack(spacing: KASpacing.sm + KASpacing.xs) {
                 ForEach(filteredChains) { chain in
                     chainCard(chain)
                 }
             }
             .padding(.horizontal)
-            .padding(.bottom, 30)
         }
-        .background(Color.surface.ignoresSafeArea())
-        .navigationTitle("Evoluciones")
-        .navigationBarTitleDisplayMode(.large)
         .searchable(text: $searchText, prompt: "Buscar pokémon...")
     }
 

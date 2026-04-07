@@ -96,7 +96,7 @@ struct GameListView: View {
 
     var body: some View {
         NavigationStack {
-            ScrollView(showsIndicators: false) {
+            PageLayout(background: .clear) {
                 VStack(spacing: KASpacing.lg) {
                     titleHeader
                         .padding(.top, KASpacing.md)
@@ -107,8 +107,6 @@ struct GameListView: View {
                     ForEach(Array(filteredGenerations.enumerated()), id: \.element) { index, gen in
                         generationSection(gen: gen, index: index)
                     }
-
-                    Spacer().frame(height: 30)
                 }
             }
             .background(PixelBackground())

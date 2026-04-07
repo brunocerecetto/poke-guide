@@ -18,7 +18,7 @@ struct PokedexDetailView: View {
     private var primaryColor: Color { entry.types.first?.color ?? theme.accent }
 
     var body: some View {
-        ScrollView(showsIndicators: false) {
+        PageLayout {
             VStack(spacing: KASpacing.md) {
                 heroCard
                     .opacity(appeared ? 1 : 0)
@@ -41,12 +41,9 @@ struct PokedexDetailView: View {
                         .opacity(appeared ? 1 : 0)
                         .offset(y: appeared ? 0 : 15)
                 }
-
-                Spacer(minLength: 40)
             }
             .padding(.horizontal)
         }
-        .background(Color.surface.ignoresSafeArea())
         .navigationTitle(entry.name)
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {

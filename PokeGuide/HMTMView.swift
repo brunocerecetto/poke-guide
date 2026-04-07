@@ -10,29 +10,35 @@ struct HMTMView: View {
     @State private var selectedTab = 0
 
     var body: some View {
-        ZStack {
-            Color.surface.ignoresSafeArea()
+        VStack(spacing: 0) {
+            Picker("", selection: $selectedTab) {
+                Text("HMs").tag(0)
+                Text("TMs").tag(1)
+            }
+            .pickerStyle(.segmented)
+            .padding()
 
-            VStack(spacing: 0) {
-                Picker("", selection: $selectedTab) {
-                    Text("HMs").tag(0)
-                    Text("TMs").tag(1)
-                }
-                .pickerStyle(.segmented)
-                .padding()
+            GuideDisclaimerBanner()
+                .padding(.horizontal)
 
-                GuideDisclaimerBanner()
-                    .padding(.horizontal)
-
+            GeometryReader { geo in
                 ScrollView {
-                    if selectedTab == 0 {
-                        hmList
-                    } else {
-                        tmList
+                    VStack(spacing: 0) {
+                        if selectedTab == 0 {
+                            hmList
+                        } else {
+                            tmList
+                        }
+
+                        Spacer(minLength: 0)
+
+                        FanDisclaimer()
                     }
+                    .frame(minHeight: geo.size.height)
                 }
             }
         }
+        .background(Color.surface.ignoresSafeArea())
         .navigationTitle("HMs & TMs")
         .navigationBarTitleDisplayMode(.large)
         .toolbarBackground(.automatic, for: .navigationBar)
@@ -63,7 +69,6 @@ struct HMTMView: View {
                 .padding(.horizontal)
             }
 
-            Spacer(minLength: 30)
         }
         .padding(.top, KASpacing.xs)
     }
@@ -106,7 +111,6 @@ struct HMTMView: View {
                 .padding(.horizontal)
             }
 
-            Spacer(minLength: 30)
         }
         .padding(.top, KASpacing.xs)
     }
