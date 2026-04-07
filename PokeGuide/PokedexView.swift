@@ -77,9 +77,7 @@ struct PokedexView: View {
     var body: some View {
         VStack(spacing: 0) {
             statsBar
-            typeFilter
-            statusFilter
-            sortFilter
+            filterBar
 
             GeometryReader { geo in
                 ScrollView {
@@ -130,76 +128,86 @@ struct PokedexView: View {
         .frame(maxWidth: .infinity)
     }
 
-    private var typeFilter: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 6) {
-                chip(label: "Todos", isSelected: selectedType == nil) {
+    private var filterBar: some View {
+        HStack(spacing: KASpacing.sm) {
+            // Type menu
+            Menu {
+                Button {
                     withAnimation(.easeInOut(duration: 0.2)) { typeRaw = "" }
+                } label: {
+                    Label("Todos", systemImage: selectedType == nil ? "checkmark" : "circle")
                 }
                 ForEach(PokemonType.allCases, id: \.self) { type in
-                    chip(label: type.rawValue.capitalized, icon: type.icon, color: type.color, isSelected: selectedType == type) {
+                    Button {
                         withAnimation(.easeInOut(duration: 0.2)) {
                             typeRaw = selectedType == type ? "" : type.rawValue
                         }
+                    } label: {
+                        Label(type.rawValue.capitalized, systemImage: selectedType == type ? "checkmark" : type.icon)
                     }
                 }
+            } label: {
+                filterButton(
+                    icon: selectedType?.icon ?? "circle.grid.2x2",
+                    label: selectedType?.rawValue.capitalized ?? "Tipo",
+                    isActive: selectedType != nil,
+                    color: selectedType?.color ?? .onSurfaceVariant
+                )
             }
-            .padding(.horizontal)
-            .padding(.vertical, 5)
-        }
-    }
 
-    private var statusFilter: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 6) {
-                chip(label: "Todos", isSelected: selectedStatus == nil) {
-                    withAnimation(.easeInOut(duration: 0.2)) { statusRaw = -1 }
-                }
-                ForEach(PokemonStatus.allCases, id: \.self) { status in
-                    chip(label: status.label, icon: status.icon, color: status.color, isSelected: selectedStatus == status) {
-                        withAnimation(.easeInOut(duration: 0.2)) {
-                            statusRaw = selectedStatus == status ? -1 : status.rawValue
-                        }
+            // Status chips
+            ForEach(PokemonStatus.allCases, id: \.self) { status in
+                Button {
+                    withAnimation(.easeInOut(duration: 0.2)) {
+                        statusRaw = selectedStatus == status ? -1 : status.rawValue
                     }
+                } label: {
+                    let isSelected = selectedStatus == status
+                    Image(systemName: status.icon)
+                        .font(.system(size: 12, weight: .semibold))
+                        .foregroundColor(isSelected ? .onPrimary : status.color)
+                        .frame(width: 32, height: 32)
+                        .background(Circle().fill(isSelected ? status.color : status.color.opacity(0.10)))
                 }
+                .buttonStyle(.plain)
             }
-            .padding(.horizontal)
-            .padding(.bottom, 6)
-        }
-    }
 
-    private var sortFilter: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 6) {
+            Spacer()
+
+            // Sort menu
+            Menu {
                 ForEach(PokedexSort.allCases, id: \.self) { sort in
-                    chip(label: sort.rawValue, icon: sort.icon, isSelected: selectedSort == sort) {
-                        withAnimation(.easeInOut(duration: 0.2)) {
-                            sortRaw = sort.rawValue
-                        }
+                    Button {
+                        withAnimation(.easeInOut(duration: 0.2)) { sortRaw = sort.rawValue }
+                    } label: {
+                        Label(sort.rawValue, systemImage: selectedSort == sort ? "checkmark" : sort.icon)
                     }
                 }
+            } label: {
+                filterButton(
+                    icon: selectedSort.icon,
+                    label: selectedSort.rawValue,
+                    isActive: true,
+                    color: .onSurfaceVariant
+                )
             }
-            .padding(.horizontal)
-            .padding(.bottom, 6)
         }
+        .padding(.horizontal)
+        .padding(.vertical, 8)
     }
 
-    private func chip(label: String, icon: String? = nil, color: Color = .onSurfaceVariant, isSelected: Bool, action: @escaping () -> Void) -> some View {
-        Button(action: action) {
-            HStack(spacing: KASpacing.xs) {
-                if let icon = icon {
-                    Image(systemName: icon).font(.system(size: 10))
-                }
-                Text(label).font(KATypography.labelSm)
-            }
-            .padding(.horizontal, 10)
-            .padding(.vertical, 6)
-            .foregroundColor(isSelected ? .onPrimary : color)
-            .background(
-                Capsule().fill(isSelected ? color : Color.surfaceContainerHighest)
-            )
+    private func filterButton(icon: String, label: String, isActive: Bool, color: Color) -> some View {
+        HStack(spacing: KASpacing.xs) {
+            Image(systemName: icon).font(.system(size: 10))
+            Text(label).font(KATypography.labelSm)
+            Image(systemName: "chevron.down").font(.system(size: 8, weight: .bold))
         }
-        .buttonStyle(.plain)
+        .padding(.horizontal, 10)
+        .padding(.vertical, 7)
+        .foregroundColor(isActive ? color : .onSurfaceVariant)
+        .background(
+            Capsule().fill(isActive ? color.opacity(0.10) : Color.surfaceContainerHighest)
+        )
     }
 
     private func pokemonRow(_ entry: PokemonEntry) -> some View {

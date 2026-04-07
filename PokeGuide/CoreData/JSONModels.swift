@@ -121,6 +121,10 @@ struct GuideTeamMemberJSON: Codable {
     let emoji: String
 }
 
+struct GuideTeamMembersJSON: Codable {
+    let members: [GuideTeamMemberJSON]
+}
+
 // MARK: - Guide: Elite Four
 
 struct GuideEliteFourJSON: Codable {

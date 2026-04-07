@@ -302,6 +302,7 @@ struct PersistenceController {
         teamMemberEntity.properties = [
             makeInt16Attribute("orderIndex"),
             makeStringAttribute("name"),
+            makeInt32Attribute("dexNumber"),
             makeBinaryAttribute("movesData"),
             makeStringAttribute("notes"),
             makeStringAttribute("emoji"),
@@ -763,6 +764,7 @@ public class CDTeamRecommendation: NSManagedObject {
 public class CDTeamMember: NSManagedObject {
     @NSManaged var orderIndex: Int16
     @NSManaged var name: String
+    @NSManaged var dexNumber: Int32
     @NSManaged var movesData: Data?
     @NSManaged var notes: String
     @NSManaged var emoji: String

@@ -10,6 +10,17 @@ import Foundation
 import CoreData
 import Combine
 
+private struct BundledTeamMemberJSON: Codable {
+    let name: String
+    let moves: [String]
+    let notes: String
+    let emoji: String
+}
+
+private struct BundledTeamJSON: Codable {
+    let members: [BundledTeamMemberJSON]
+}
+
 class GameDataBridge: ObservableObject {
     // No @Published properties needed — data is currently static per session.
     // This dummy property satisfies ObservableObject synthesis under @MainActor isolation.
@@ -43,13 +54,40 @@ class GameDataBridge: ObservableObject {
     // MARK: - Team
 
     func teamRecommendation(starter: String) -> TeamRecommendationDTO? {
-        guideRepo?.teamRecommendation(gameId: gameId, starter: starter)
+        if let repoRec = guideRepo?.teamRecommendation(gameId: gameId, starter: starter), !repoRec.members.isEmpty {
+            return repoRec
+        }
+        return loadTeamFromBundle(starter: starter)
     }
 
     /// Convenience: team members for the current starter
     var team: [TeamMemberDTO] {
         let starterName = Starter.allCases.first { $0.dexNumber == starterDex }?.rawValue ?? "squirtle"
         return teamRecommendation(starter: starterName)?.members ?? []
+    }
+
+    private func loadTeamFromBundle(starter: String) -> TeamRecommendationDTO? {
+        let fileName = "team-\(starter)"
+
+        guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {
+            return nil
+        }
+        guard let data = try? Data(contentsOf: url),
+              let json = try? JSONDecoder().decode(BundledTeamJSON.self, from: data) else {
+            return nil
+        }
+
+        let members = json.members.enumerated().map { index, m in
+            TeamMemberDTO(
+                id: index,
+                name: m.name,
+                dexNumber: PokedexData.kanto.first { $0.name == m.name }?.id ?? 0,
+                moves: m.moves,
+                notes: m.notes,
+                emoji: m.emoji
+            )
+        }
+        return TeamRecommendationDTO(starterCondition: starter, members: members)
     }
 
     // MARK: - Route Sections
