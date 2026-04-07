@@ -6,9 +6,6 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		AA000001AAAA000000000001 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = AA000002AAAA000000000001 /* Resources */; };
-/* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		68579C012F83B811007C0026 /* PBXContainerItemProxy */ = {
@@ -31,7 +28,6 @@
 		68579BF12F83B810007C0026 /* PokemonGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68579C002F83B811007C0026 /* PokemonGuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokemonGuideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68579C0A2F83B811007C0026 /* PokemonGuideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokemonGuideUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA000002AAAA000000000001 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -81,7 +77,6 @@
 			isa = PBXGroup;
 			children = (
 				68579BF32F83B810007C0026 /* PokemonGuide */,
-				AA000002AAAA000000000001 /* Resources */,
 				68579C032F83B811007C0026 /* PokemonGuideTests */,
 				68579C0D2F83B811007C0026 /* PokemonGuideUITests */,
 				68579BF22F83B810007C0026 /* Products */,
@@ -218,7 +213,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA000001AAAA000000000001 /* Resources in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
