@@ -60,6 +60,13 @@ struct GuideTab: View {
                         .opacity(appeared ? 1 : 0)
                         .offset(y: appeared ? 0 : -20)
 
+                    Text("ADVENTURE DASHBOARD")
+                        .font(.system(size: 11, weight: .bold, design: .rounded))
+                        .foregroundColor(.onSurfaceVariant)
+                        .tracking(3)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal)
+
                     guideGrid
                         .padding(.horizontal)
 
@@ -122,44 +129,115 @@ struct GuideTab: View {
 
     // MARK: - Hero Header
 
+    private var regionName: String {
+        let game = GameCatalogEntry.allGames.first { $0.id == gameConfig.gameId }
+        return game?.region ?? "Kanto"
+    }
+
+    private var starterSpriteURL: URL? {
+        let dex = gameConfig.starterDex
+        guard dex > 0 else { return nil }
+        return URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/\(dex).png")
+    }
+
     private var heroHeader: some View {
-        VStack(spacing: KASpacing.md) {
-            Spacer().frame(height: 6)
+        let totalSteps = progress.totalCheckable(from: bridge)
+        let completed = progress.totalCompleted
+        let percent = Int(bridgeProgressFraction * 100)
 
-            VStack(spacing: 5) {
-                Text("GUÍA DEFINITIVA")
-                    .font(KATypography.labelXs)
-                    .foregroundColor(theme.secondary)
-                    .tracking(4)
+        return VStack(spacing: 8) {
+            // Top row: badge + progress ring
+            HStack(alignment: .top) {
+                Text("ACTIVE GUIDE")
+                    .font(.system(size: 9, weight: .heavy, design: .rounded))
+                    .foregroundColor(.white)
+                    .tracking(1)
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 5)
+                    .background(
+                        Capsule().fill(Color.white.opacity(0.22))
+                    )
 
-                Text("\(starterName) Run")
-                    .font(.system(size: 30, weight: .heavy, design: .rounded))
-                    .foregroundColor(.onSurface)
+                Spacer()
+
+                ZStack {
+                    Circle()
+                        .stroke(Color.white.opacity(0.2), lineWidth: 5)
+                        .frame(width: 56, height: 56)
+
+                    Circle()
+                        .trim(from: 0, to: bridgeProgressFraction)
+                        .stroke(Color.white, style: StrokeStyle(lineWidth: 5, lineCap: .round))
+                        .frame(width: 56, height: 56)
+                        .rotationEffect(.degrees(-90))
+
+                    Text("\(percent)%")
+                        .font(.system(size: 16, weight: .heavy, design: .rounded))
+                        .foregroundColor(.white)
+                }
             }
 
-            PokeballProgress(progress: bridgeProgressFraction)
-
-            HStack(spacing: 5) {
-                Image(systemName: "checkmark.circle.fill")
-                    .font(.system(size: 12))
-                    .foregroundColor(.success)
-                Text("\(progress.totalCompleted)")
-                    .font(KATypography.titleSm)
-                    .foregroundColor(.onSurface)
-                Text("/")
-                    .foregroundColor(.onSurfaceVariant)
-                Text("\(progress.totalCheckable(from: bridge))")
-                    .font(KATypography.titleSm)
-                    .foregroundColor(.onSurfaceVariant)
-                Text("pasos")
-                    .font(KATypography.bodySmall)
-                    .foregroundColor(.onSurfaceVariant)
+            // Region Journey title
+            VStack(alignment: .leading, spacing: 2) {
+                Text(regionName)
+                    .font(.system(size: 28, weight: .heavy, design: .rounded))
+                    .foregroundColor(.white)
+                Text("Journey")
+                    .font(.system(size: 28, weight: .heavy, design: .rounded))
+                    .foregroundColor(.white)
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
 
-            Spacer().frame(height: KASpacing.xs)
+            // Bottom row: progress count + starter image
+            HStack(alignment: .bottom) {
+                VStack(alignment: .leading, spacing: 3) {
+                    Text("PROGRESS")
+                        .font(.system(size: 9, weight: .bold, design: .rounded))
+                        .foregroundColor(.white.opacity(0.6))
+                        .tracking(2)
+
+                    Text("\(completed)/\(totalSteps) PASOS")
+                        .font(.system(size: 16, weight: .semibold, design: .rounded))
+                        .foregroundColor(.white)
+                }
+
+                Spacer()
+
+                AsyncImage(url: starterSpriteURL) { phase in
+                    switch phase {
+                    case .success(let image):
+                        image
+                            .resizable()
+                            .scaledToFit()
+                    default:
+                        Image(systemName: displayIconName)
+                            .font(.system(size: 32))
+                            .foregroundColor(.white.opacity(0.5))
+                    }
+                }
+                .frame(width: 130, height: 130)
+                .frame(height: 80)
+                .offset(y: -25)
+            }
         }
+        .padding(24)
         .frame(maxWidth: .infinity)
-        .softCard(cornerRadius: KARadius.xl, tint: theme.accent)
+        .background(
+            ZStack {
+                RoundedRectangle(cornerRadius: KARadius.xl)
+                    .fill(theme.accent)
+
+                RoundedRectangle(cornerRadius: KARadius.xl)
+                    .fill(
+                        LinearGradient(
+                            colors: [Color.black.opacity(0.2), Color.clear],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        )
+                    )
+            }
+        )
+        .clipShape(RoundedRectangle(cornerRadius: KARadius.xl))
         .padding(.horizontal)
     }
 
@@ -184,25 +262,56 @@ struct GuideTab: View {
 
     private func guideCard(item: MenuItem) -> some View {
         VStack(alignment: .leading, spacing: 10) {
-            ZStack {
-                RoundedRectangle(cornerRadius: KARadius.sm)
-                    .fill(item.color.opacity(0.10))
-                    .frame(width: 44, height: 44)
+            HStack {
+                ZStack {
+                    Circle()
+                        .fill(item.color.opacity(0.10))
+                        .frame(width: 48, height: 48)
 
-                Image(systemName: item.icon)
-                    .font(.system(size: 20, weight: .semibold))
-                    .foregroundColor(item.color)
+                    if let local = item.localIcon, UIImage(named: local) != nil {
+                        Image(local)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 26, height: 26)
+                    } else {
+                        Image(systemName: item.icon)
+                            .font(.system(size: 20, weight: .semibold))
+                            .foregroundColor(item.color)
+                    }
+                }
+
+                Spacer()
+
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 12, weight: .semibold))
+                    .foregroundColor(.onSurfaceVariant.opacity(0.3))
             }
 
-            VStack(alignment: .leading, spacing: 3) {
+            VStack(alignment: .leading, spacing: 6) {
                 Text(item.title)
                     .font(KATypography.titleSm)
                     .foregroundColor(.onSurface)
                     .lineLimit(1)
                 Text(item.subtitle)
-                    .font(KATypography.labelSm)
+                    .font(.system(size: 10, weight: .semibold, design: .rounded))
                     .foregroundColor(.onSurfaceVariant)
-                    .lineLimit(1)
+                    .tracking(1.5)
+                    .lineLimit(2)
+
+                if let fraction = item.progressFraction {
+                    GeometryReader { geo in
+                        ZStack(alignment: .leading) {
+                            Capsule()
+                                .fill(item.color.opacity(0.12))
+                                .frame(height: 4)
+
+                            Capsule()
+                                .fill(item.color)
+                                .frame(width: max(0, geo.size.width * fraction), height: 4)
+                        }
+                    }
+                    .frame(height: 4)
+                }
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -236,10 +345,12 @@ struct GuideTab: View {
     private struct MenuItem: Identifiable {
         var id: String { title }
         let icon: String
+        let localIcon: String?
         let title: String
         let subtitle: String
         let color: Color
         let destination: Destination
+        var progressFraction: Double?
     }
 
     @ViewBuilder
@@ -253,11 +364,35 @@ struct GuideTab: View {
     }
 
     private var guideItems: [MenuItem] {
-        [
-            MenuItem(icon: "shield.checkered", title: "Gimnasios", subtitle: "\(progress.completedGyms.count)/\(bridge.gyms.count) badges", color: theme.accent, destination: .gyms),
-            MenuItem(icon: "map.fill", title: "Ruta Completa", subtitle: "Paso a paso", color: .success, destination: .route),
-            MenuItem(icon: "trophy.fill", title: "Liga Pokémon", subtitle: "Plan + checklist final", color: theme.secondary, destination: .league),
-            MenuItem(icon: "person.fill.questionmark", title: "Rival", subtitle: "Equipo del rival por pelea", color: .kaSecondaryContainer, destination: .rival),
+        let gymCount = bridge.gyms.count
+        let gymsDone = progress.completedGyms.count
+        let gymFraction = gymCount > 0 ? Double(gymsDone) / Double(gymCount) : 0
+
+        let totalSteps = bridge.routeSections.flatMap(\.steps).count
+        let stepsDone = progress.completedRouteSteps.count
+        let routeFraction = totalSteps > 0 ? Double(stepsDone) / Double(totalSteps) : 0
+        let routeSubtitle = totalSteps > 0 ? "PASO \(stepsDone) DE \(totalSteps)" : "VER ITINERARIO"
+
+        let eliteCount = bridge.eliteFour.count
+        let leagueDone = progress.completedLeague.count
+        let leagueFraction = eliteCount > 0 ? Double(leagueDone) / Double(eliteCount) : 0
+        let leagueSubtitle: String = {
+            if gymsDone < gymCount {
+                return "FALTAN \(gymCount - gymsDone) GIMNASIOS"
+            }
+            return "\(leagueDone) DE \(eliteCount) MIEMBROS"
+        }()
+
+        let encounters = bridge.rivalEncounters
+        let rivalDone = encounters.filter { progress.isRouteStepCompleted(bridge.rivalEncounterProgressId(for: $0)) }.count
+        let rivalFraction = encounters.count > 0 ? Double(rivalDone) / Double(encounters.count) : 0
+        let rivalSubtitle = encounters.count > 0 ? "\(rivalDone) DE \(encounters.count) ENCUENTROS" : "SIN DATOS"
+
+        return [
+            MenuItem(icon: "shield.checkered", localIcon: "icon-gym", title: "Gimnasios", subtitle: "\(gymsDone) DE \(gymCount) MEDALLAS", color: theme.accent, destination: .gyms, progressFraction: gymFraction),
+            MenuItem(icon: "map.fill", localIcon: "icon-route", title: "Ruta Completa", subtitle: routeSubtitle, color: .success, destination: .route, progressFraction: routeFraction),
+            MenuItem(icon: "trophy.fill", localIcon: "icon-league", title: "Liga Pokémon", subtitle: leagueSubtitle, color: theme.secondary, destination: .league, progressFraction: leagueFraction),
+            MenuItem(icon: "person.fill.questionmark", localIcon: "icon-rival", title: "Rival", subtitle: rivalSubtitle, color: .kaSecondaryContainer, destination: .rival, progressFraction: rivalFraction),
         ]
     }
 }
