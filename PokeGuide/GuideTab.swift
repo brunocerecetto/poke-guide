@@ -122,44 +122,115 @@ struct GuideTab: View {
 
     // MARK: - Hero Header
 
+    private var regionName: String {
+        let game = GameCatalogEntry.allGames.first { $0.id == gameConfig.gameId }
+        return game?.region ?? "Kanto"
+    }
+
+    private var starterSpriteURL: URL? {
+        let dex = gameConfig.starterDex
+        guard dex > 0 else { return nil }
+        return URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/\(dex).png")
+    }
+
     private var heroHeader: some View {
-        VStack(spacing: KASpacing.md) {
-            Spacer().frame(height: 6)
+        let totalSteps = progress.totalCheckable(from: bridge)
+        let completed = progress.totalCompleted
+        let percent = Int(bridgeProgressFraction * 100)
 
-            VStack(spacing: 5) {
-                Text("GUÍA DEFINITIVA")
-                    .font(KATypography.labelXs)
-                    .foregroundColor(theme.secondary)
-                    .tracking(4)
+        return VStack(spacing: 8) {
+            // Top row: badge + progress ring
+            HStack(alignment: .top) {
+                Text("ACTIVE GUIDE")
+                    .font(.system(size: 9, weight: .heavy, design: .rounded))
+                    .foregroundColor(.white)
+                    .tracking(1)
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 5)
+                    .background(
+                        Capsule().fill(Color.white.opacity(0.22))
+                    )
 
-                Text("\(starterName) Run")
-                    .font(.system(size: 30, weight: .heavy, design: .rounded))
-                    .foregroundColor(.onSurface)
+                Spacer()
+
+                ZStack {
+                    Circle()
+                        .stroke(Color.white.opacity(0.2), lineWidth: 5)
+                        .frame(width: 56, height: 56)
+
+                    Circle()
+                        .trim(from: 0, to: bridgeProgressFraction)
+                        .stroke(Color.white, style: StrokeStyle(lineWidth: 5, lineCap: .round))
+                        .frame(width: 56, height: 56)
+                        .rotationEffect(.degrees(-90))
+
+                    Text("\(percent)%")
+                        .font(.system(size: 16, weight: .heavy, design: .rounded))
+                        .foregroundColor(.white)
+                }
             }
 
-            PokeballProgress(progress: bridgeProgressFraction)
-
-            HStack(spacing: 5) {
-                Image(systemName: "checkmark.circle.fill")
-                    .font(.system(size: 12))
-                    .foregroundColor(.success)
-                Text("\(progress.totalCompleted)")
-                    .font(KATypography.titleSm)
-                    .foregroundColor(.onSurface)
-                Text("/")
-                    .foregroundColor(.onSurfaceVariant)
-                Text("\(progress.totalCheckable(from: bridge))")
-                    .font(KATypography.titleSm)
-                    .foregroundColor(.onSurfaceVariant)
-                Text("pasos")
-                    .font(KATypography.bodySmall)
-                    .foregroundColor(.onSurfaceVariant)
+            // Region Journey title
+            VStack(alignment: .leading, spacing: 2) {
+                Text(regionName)
+                    .font(.system(size: 28, weight: .heavy, design: .rounded))
+                    .foregroundColor(.white)
+                Text("Journey")
+                    .font(.system(size: 28, weight: .heavy, design: .rounded))
+                    .foregroundColor(.white)
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
 
-            Spacer().frame(height: KASpacing.xs)
+            // Bottom row: progress count + starter image
+            HStack(alignment: .bottom) {
+                VStack(alignment: .leading, spacing: 3) {
+                    Text("PROGRESS")
+                        .font(.system(size: 9, weight: .bold, design: .rounded))
+                        .foregroundColor(.white.opacity(0.6))
+                        .tracking(2)
+
+                    Text("\(completed)/\(totalSteps) PASOS")
+                        .font(.system(size: 16, weight: .semibold, design: .rounded))
+                        .foregroundColor(.white)
+                }
+
+                Spacer()
+
+                AsyncImage(url: starterSpriteURL) { phase in
+                    switch phase {
+                    case .success(let image):
+                        image
+                            .resizable()
+                            .scaledToFit()
+                    default:
+                        Image(systemName: displayIconName)
+                            .font(.system(size: 32))
+                            .foregroundColor(.white.opacity(0.5))
+                    }
+                }
+                .frame(width: 130, height: 130)
+                .frame(height: 80)
+                .offset(y: -25)
+            }
         }
+        .padding(24)
         .frame(maxWidth: .infinity)
-        .softCard(cornerRadius: KARadius.xl, tint: theme.accent)
+        .background(
+            ZStack {
+                RoundedRectangle(cornerRadius: KARadius.xl)
+                    .fill(theme.accent)
+
+                RoundedRectangle(cornerRadius: KARadius.xl)
+                    .fill(
+                        LinearGradient(
+                            colors: [Color.black.opacity(0.2), Color.clear],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        )
+                    )
+            }
+        )
+        .clipShape(RoundedRectangle(cornerRadius: KARadius.xl))
         .padding(.horizontal)
     }
 
