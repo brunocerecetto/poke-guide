@@ -116,25 +116,6 @@ struct GuideTeamMemberJSON: Codable {
     let emoji: String
 }
 
-// MARK: - Guide: Rival Encounters
-
-struct GuideRivalJSON: Codable {
-    let encounters: [GuideRivalEncounterJSON]
-}
-
-struct GuideRivalEncounterJSON: Codable {
-    let location: String
-    let iconName: String
-    let team: [GuideRivalPokemonJSON]
-}
-
-struct GuideRivalPokemonJSON: Codable {
-    let name: String
-    let level: Int
-    let dexNumber: Int
-    let starterCondition: String?
-}
-
 // MARK: - Guide: Elite Four
 
 struct GuideEliteFourJSON: Codable {

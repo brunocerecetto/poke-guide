@@ -120,14 +120,6 @@ struct PersistenceController {
         progressEntity.name = "CDProgress"
         progressEntity.managedObjectClassName = "CDProgress"
 
-        let rivalEncounterEntity = NSEntityDescription()
-        rivalEncounterEntity.name = "CDRivalEncounter"
-        rivalEncounterEntity.managedObjectClassName = "CDRivalEncounter"
-
-        let rivalPokemonEntity = NSEntityDescription()
-        rivalPokemonEntity.name = "CDRivalPokemon"
-        rivalPokemonEntity.managedObjectClassName = "CDRivalPokemon"
-
         let eliteFourEntity = NSEntityDescription()
         eliteFourEntity.name = "CDEliteFourMember"
         eliteFourEntity.managedObjectClassName = "CDEliteFourMember"
@@ -254,23 +246,6 @@ struct PersistenceController {
             makeDateAttribute("lastModified"),
         ]
 
-        // MARK: RivalEncounter Attributes
-
-        rivalEncounterEntity.properties = [
-            makeInt16Attribute("orderIndex"),
-            makeStringAttribute("location"),
-            makeStringAttribute("iconName"),
-        ]
-
-        // MARK: RivalPokemon Attributes
-
-        rivalPokemonEntity.properties = [
-            makeStringAttribute("name"),
-            makeInt16Attribute("level"),
-            makeInt32Attribute("dexNumber"),
-            makeOptionalStringAttribute("starterCondition"),
-        ]
-
         // MARK: EliteFourMember Attributes
 
         eliteFourEntity.properties = [
@@ -367,18 +342,6 @@ struct PersistenceController {
         sectionStepsRel.inverseRelationship = stepSectionRel
         stepSectionRel.inverseRelationship = sectionStepsRel
 
-        // Game -> RivalEncounters (one-to-many)
-        let gameRivalEncountersRel = makeToManyRelation("rivalEncounters", destination: rivalEncounterEntity)
-        let rivalEncounterGameRel = makeToOneRelation("game", destination: gameEntity)
-        gameRivalEncountersRel.inverseRelationship = rivalEncounterGameRel
-        rivalEncounterGameRel.inverseRelationship = gameRivalEncountersRel
-
-        // RivalEncounter -> RivalPokemon (one-to-many)
-        let encounterTeamRel = makeToManyRelation("team", destination: rivalPokemonEntity)
-        let rivalPokemonEncounterRel = makeToOneRelation("encounter", destination: rivalEncounterEntity)
-        encounterTeamRel.inverseRelationship = rivalPokemonEncounterRel
-        rivalPokemonEncounterRel.inverseRelationship = encounterTeamRel
-
         // Game -> EliteFourMembers (one-to-many)
         let gameEliteFourRel = makeToManyRelation("eliteFourMembers", destination: eliteFourEntity)
         let eliteFourGameRel = makeToOneRelation("game", destination: gameEntity)
@@ -459,7 +422,7 @@ struct PersistenceController {
         // MARK: Attach Relationships to Entities
 
         gameEntity.properties.append(contentsOf: [
-            gameGymsRel, gameRouteSectionsRel, gameRivalEncountersRel,
+            gameGymsRel, gameRouteSectionsRel,
             gameEliteFourRel, gameTipsRel, gameCapturesRel,
             gameHMEntriesRel, gameTMEntriesRel, gameTeamRecsRel,
             gamePreLeagueRel, gamePostgameRel, gameRegionalRel,
@@ -474,8 +437,6 @@ struct PersistenceController {
         gymEntity.properties.append(gymGameRel)
         routeSectionEntity.properties.append(contentsOf: [routeSectionGameRel, sectionStepsRel])
         routeStepEntity.properties.append(stepSectionRel)
-        rivalEncounterEntity.properties.append(contentsOf: [rivalEncounterGameRel, encounterTeamRel])
-        rivalPokemonEntity.properties.append(rivalPokemonEncounterRel)
         eliteFourEntity.properties.append(eliteFourGameRel)
         tipEntity.properties.append(tipGameRel)
         keyCaptureEntity.properties.append(captureGameRel)
@@ -496,7 +457,7 @@ struct PersistenceController {
         model.entities = [
             gameEntity, pokemonEntity, regionalDexEntry, evolutionLink,
             gymEntity, routeSectionEntity, routeStepEntity, progressEntity,
-            rivalEncounterEntity, rivalPokemonEntity, eliteFourEntity,
+            eliteFourEntity,
             tipEntity, keyCaptureEntity, hmEntryEntity, tmEntryEntity,
             teamRecommendationEntity, teamMemberEntity,
             preLeagueStepEntity, postgameStepEntity,
@@ -617,7 +578,6 @@ public class CDGame: NSManagedObject {
 
     @NSManaged var gyms: NSSet?
     @NSManaged var routeSections: NSSet?
-    @NSManaged var rivalEncounters: NSSet?
     @NSManaged var eliteFourMembers: NSSet?
     @NSManaged var tips: NSSet?
     @NSManaged var captures: NSSet?
@@ -744,24 +704,6 @@ public class CDProgress: NSManagedObject {
         get { decodeJSON(pokemonStatusesData) ?? [:] }
         set { pokemonStatusesData = encodeJSON(newValue) }
     }
-}
-
-@objc(CDRivalEncounter)
-public class CDRivalEncounter: NSManagedObject {
-    @NSManaged var orderIndex: Int16
-    @NSManaged var location: String
-    @NSManaged var iconName: String
-    @NSManaged var game: CDGame?
-    @NSManaged var team: NSSet?
-}
-
-@objc(CDRivalPokemon)
-public class CDRivalPokemon: NSManagedObject {
-    @NSManaged var name: String
-    @NSManaged var level: Int16
-    @NSManaged var dexNumber: Int32
-    @NSManaged var starterCondition: String?
-    @NSManaged var encounter: CDRivalEncounter?
 }
 
 @objc(CDEliteFourMember)

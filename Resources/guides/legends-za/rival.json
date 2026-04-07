@@ -1,7 +1,0 @@
-{
-  "encounters": [
-    { "location": "Contenido pendiente de confirmación", "icon": "questionmark.circle", "team": [
-      { "name": "Por confirmar", "level": 0, "dexNumber": 0, "starterCondition": "Detalles del rival por revelar" }
-    ]}
-  ]
-}

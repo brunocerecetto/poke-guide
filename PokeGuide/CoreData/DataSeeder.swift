@@ -186,12 +186,6 @@ final class DataSeeder {
             try seedTeam(from: teamURL, game: game, in: context)
         }
 
-        // Rival
-        let rivalURL = directory.appendingPathComponent("rival.json")
-        if FileManager.default.fileExists(atPath: rivalURL.path) {
-            try seedRival(from: rivalURL, game: game, in: context)
-        }
-
         // Elite Four
         let eliteFourURL = directory.appendingPathComponent("elite_four.json")
         if FileManager.default.fileExists(atPath: eliteFourURL.path) {
@@ -284,28 +278,6 @@ final class DataSeeder {
                 member.notes = memberJSON.notes
                 member.emoji = memberJSON.emoji
                 member.recommendation = rec
-            }
-        }
-    }
-
-    private func seedRival(from url: URL, game: CDGame, in context: NSManagedObjectContext) throws {
-        let data = try Data(contentsOf: url)
-        let rivalJSON = try JSONDecoder().decode(GuideRivalJSON.self, from: data)
-
-        for (encounterIndex, encounterJSON) in rivalJSON.encounters.enumerated() {
-            let encounter = CDRivalEncounter(context: context)
-            encounter.orderIndex = Int16(encounterIndex)
-            encounter.location = encounterJSON.location
-            encounter.iconName = encounterJSON.iconName
-            encounter.game = game
-
-            for pokemonJSON in encounterJSON.team {
-                let rivalPokemon = CDRivalPokemon(context: context)
-                rivalPokemon.name = pokemonJSON.name
-                rivalPokemon.level = Int16(pokemonJSON.level)
-                rivalPokemon.dexNumber = Int32(pokemonJSON.dexNumber)
-                rivalPokemon.starterCondition = pokemonJSON.starterCondition
-                rivalPokemon.encounter = encounter
             }
         }
     }

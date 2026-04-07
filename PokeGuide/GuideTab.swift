@@ -2,7 +2,7 @@
 //  GuideTab.swift
 //  PokeGuide
 //
-//  Dashboard + guide navigation: Gimnasios, Ruta, Liga, Rival.
+//  Dashboard + guide navigation: Gimnasios, Ruta, Liga.
 //
 
 import SwiftUI
@@ -244,9 +244,7 @@ struct GuideTab: View {
     // MARK: - Guide Grid
 
     private var guideGrid: some View {
-        let columns = [GridItem(.flexible(), spacing: KASpacing.sm + KASpacing.xs), GridItem(.flexible(), spacing: KASpacing.sm + KASpacing.xs)]
-
-        return LazyVGrid(columns: columns, spacing: KASpacing.sm + KASpacing.xs) {
+        VStack(spacing: KASpacing.sm) {
             ForEach(Array(guideItems.enumerated()), id: \.element.title) { index, item in
                 NavigationLink {
                     destinationView(for: item.destination)
@@ -254,40 +252,32 @@ struct GuideTab: View {
                     guideCard(item: item)
                 }
                 .opacity(appeared ? 1 : 0)
-                .offset(y: appeared ? 0 : 30)
+                .offset(y: appeared ? 0 : 20)
                 .animation(.spring(response: 0.5, dampingFraction: 0.8).delay(0.08 + Double(index) * 0.05), value: appeared)
             }
         }
     }
 
     private func guideCard(item: MenuItem) -> some View {
-        VStack(alignment: .leading, spacing: 10) {
-            HStack {
-                ZStack {
-                    Circle()
-                        .fill(item.color.opacity(0.10))
-                        .frame(width: 48, height: 48)
+        HStack(spacing: KASpacing.sm) {
+            ZStack {
+                Circle()
+                    .fill(item.color.opacity(0.10))
+                    .frame(width: 40, height: 40)
 
-                    if let local = item.localIcon, UIImage(named: local) != nil {
-                        Image(local)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 26, height: 26)
-                    } else {
-                        Image(systemName: item.icon)
-                            .font(.system(size: 20, weight: .semibold))
-                            .foregroundColor(item.color)
-                    }
+                if let local = item.localIcon, UIImage(named: local) != nil {
+                    Image(local)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 22, height: 22)
+                } else {
+                    Image(systemName: item.icon)
+                        .font(.system(size: 16, weight: .semibold))
+                        .foregroundColor(item.color)
                 }
-
-                Spacer()
-
-                Image(systemName: "chevron.right")
-                    .font(.system(size: 12, weight: .semibold))
-                    .foregroundColor(.onSurfaceVariant.opacity(0.3))
             }
 
-            VStack(alignment: .leading, spacing: 6) {
+            VStack(alignment: .leading, spacing: 3) {
                 Text(item.title)
                     .font(KATypography.titleSm)
                     .foregroundColor(.onSurface)
@@ -296,26 +286,29 @@ struct GuideTab: View {
                     .font(.system(size: 10, weight: .semibold, design: .rounded))
                     .foregroundColor(.onSurfaceVariant)
                     .tracking(1.5)
-                    .lineLimit(2)
-
-                if let fraction = item.progressFraction {
-                    GeometryReader { geo in
-                        ZStack(alignment: .leading) {
-                            Capsule()
-                                .fill(item.color.opacity(0.12))
-                                .frame(height: 4)
-
-                            Capsule()
-                                .fill(item.color)
-                                .frame(width: max(0, geo.size.width * fraction), height: 4)
-                        }
-                    }
-                    .frame(height: 4)
-                }
+                    .lineLimit(1)
             }
+
+            Spacer()
+
+            if let fraction = item.progressFraction {
+                Capsule()
+                    .fill(item.color.opacity(0.12))
+                    .frame(width: 60, height: 4)
+                    .overlay(alignment: .leading) {
+                        Capsule()
+                            .fill(item.color)
+                            .frame(width: max(0, 60 * fraction), height: 4)
+                    }
+            }
+
+            Image(systemName: "chevron.right")
+                .font(.system(size: 11, weight: .semibold))
+                .foregroundColor(.onSurfaceVariant.opacity(0.3))
         }
+        .padding(.horizontal, KASpacing.md)
+        .padding(.vertical, KASpacing.sm + KASpacing.xs)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(KASpacing.md)
         .softCard(cornerRadius: KARadius.lg, tint: item.color)
     }
 
@@ -339,7 +332,7 @@ struct GuideTab: View {
     // MARK: - Data
 
     private enum Destination: Hashable {
-        case gyms, route, league, rival
+        case gyms, route, league
     }
 
     private struct MenuItem: Identifiable {
@@ -359,7 +352,7 @@ struct GuideTab: View {
         case .gyms: GymView()
         case .route: RouteView()
         case .league: LeagueView()
-        case .rival: RivalView()
+
         }
     }
 
@@ -383,16 +376,10 @@ struct GuideTab: View {
             return "\(leagueDone) DE \(eliteCount) MIEMBROS"
         }()
 
-        let encounters = bridge.rivalEncounters
-        let rivalDone = encounters.filter { progress.isRouteStepCompleted(bridge.rivalEncounterProgressId(for: $0)) }.count
-        let rivalFraction = encounters.count > 0 ? Double(rivalDone) / Double(encounters.count) : 0
-        let rivalSubtitle = encounters.count > 0 ? "\(rivalDone) DE \(encounters.count) ENCUENTROS" : "SIN DATOS"
-
         return [
             MenuItem(icon: "shield.checkered", localIcon: "icon-gym", title: "Gimnasios", subtitle: "\(gymsDone) DE \(gymCount) MEDALLAS", color: theme.accent, destination: .gyms, progressFraction: gymFraction),
             MenuItem(icon: "map.fill", localIcon: "icon-route", title: "Ruta Completa", subtitle: routeSubtitle, color: .success, destination: .route, progressFraction: routeFraction),
             MenuItem(icon: "trophy.fill", localIcon: "icon-league", title: "Liga Pokémon", subtitle: leagueSubtitle, color: theme.secondary, destination: .league, progressFraction: leagueFraction),
-            MenuItem(icon: "person.fill.questionmark", localIcon: "icon-rival", title: "Rival", subtitle: rivalSubtitle, color: .kaSecondaryContainer, destination: .rival, progressFraction: rivalFraction),
         ]
     }
 }

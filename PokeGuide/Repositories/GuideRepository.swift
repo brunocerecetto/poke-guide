@@ -4,7 +4,7 @@
 //
 //  Repository layer for querying game guide content from Core Data.
 //  Covers games, gyms, routes, elite four, tips, captures, HM/TM,
-//  team recommendations, rival encounters, and checklists.
+//  team recommendations, and checklists.
 //
 
 import Foundation
@@ -94,21 +94,6 @@ struct TeamMemberDTO: Identifiable, Equatable {
     let moves: [String]
     let notes: String
     let emoji: String
-}
-
-struct RivalEncounterDTO: Identifiable, Equatable {
-    let id: Int
-    let location: String
-    let iconName: String
-    let team: [RivalPokemonDTO]
-}
-
-struct RivalPokemonDTO: Identifiable, Equatable {
-    let id: Int
-    let name: String
-    let level: Int
-    let dexNumber: Int
-    let starterCondition: String?
 }
 
 struct ChecklistStepDTO: Identifiable, Equatable {
@@ -331,23 +316,6 @@ class GuideRepository: ObservableObject {
         return mapToTeamRecommendationDTO(result)
     }
 
-    // MARK: - Rival encounters
-
-    func rivalEncounters(gameId: String) -> [RivalEncounterDTO] {
-        let request = NSFetchRequest<NSManagedObject>(entityName: "CDRivalEncounter")
-        request.predicate = NSPredicate(format: "game.id == %@", gameId)
-        request.sortDescriptors = [NSSortDescriptor(key: "orderIndex", ascending: true)]
-
-        let results: [NSManagedObject]
-        do {
-            results = try context.fetch(request)
-        } catch {
-            print("[GuideRepository] Fetch error (rivalEncounters): \(error.localizedDescription)")
-            return []
-        }
-        return results.compactMap { mapToRivalEncounterDTO($0) }
-    }
-
     // MARK: - Pre-league / Postgame checklists
 
     func preLeagueChecklist(gameId: String) -> [ChecklistStepDTO] {
@@ -515,33 +483,6 @@ class GuideRepository: ObservableObject {
         return TeamRecommendationDTO(
             starterCondition: starterCondition,
             members: members
-        )
-    }
-
-    private func mapToRivalEncounterDTO(_ object: NSManagedObject) -> RivalEncounterDTO? {
-        guard let orderIndex = object.value(forKey: "orderIndex") as? Int else { return nil }
-
-        let pokemonSet = object.value(forKey: "team") as? NSSet ?? NSSet()
-        let pokemonArray = pokemonSet.allObjects as? [NSManagedObject] ?? []
-
-        let team = pokemonArray
-            .sorted { ($0.value(forKey: "orderIndex") as? Int ?? 0) < ($1.value(forKey: "orderIndex") as? Int ?? 0) }
-            .compactMap { pkmn -> RivalPokemonDTO? in
-                guard let dexNumber = pkmn.value(forKey: "dexNumber") as? Int else { return nil }
-                return RivalPokemonDTO(
-                    id: dexNumber,
-                    name: pkmn.value(forKey: "name") as? String ?? "",
-                    level: pkmn.value(forKey: "level") as? Int ?? 0,
-                    dexNumber: dexNumber,
-                    starterCondition: pkmn.value(forKey: "starterCondition") as? String
-                )
-            }
-
-        return RivalEncounterDTO(
-            id: orderIndex,
-            location: object.value(forKey: "location") as? String ?? "",
-            iconName: object.value(forKey: "iconName") as? String ?? "",
-            team: team
         )
     }
 

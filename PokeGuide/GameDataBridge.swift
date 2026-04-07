@@ -142,43 +142,6 @@ class GameDataBridge: ObservableObject {
         }
     }
 
-    // MARK: - Rival Encounters
-
-    /// Maps RivalEncounterDTO.id to the legacy string ID used for progress tracking.
-    /// Core Data encounters don't need this (they use their own IDs).
-    private var rivalEncounterProgressIds: [Int: String] {
-        var map: [Int: String] = [:]
-        for (i, encounter) in RivalData.encounters.enumerated() {
-            map[i] = encounter.id
-        }
-        return map
-    }
-
-    var rivalEncounters: [RivalEncounterDTO] {
-        if let repoEncounters = guideRepo?.rivalEncounters(gameId: gameId), !repoEncounters.isEmpty {
-            return repoEncounters
-        }
-        let starter = Starter.allCases.first { $0.dexNumber == starterDex } ?? .squirtle
-        return RivalData.encounters.enumerated().map { i, encounter in
-            let team = encounter.team(starter)
-            return RivalEncounterDTO(
-                id: i,
-                location: encounter.location,
-                iconName: encounter.icon,
-                team: team.enumerated().map { j, p in
-                    RivalPokemonDTO(id: j, name: p.name, level: p.level, dexNumber: p.dexNumber, starterCondition: nil)
-                }
-            )
-        }
-    }
-
-    /// Returns the progress-tracking ID for a rival encounter.
-    /// For legacy data this is the original string ID (e.g. "rival_cerulean").
-    /// For Core Data this falls back to the DTO's numeric ID as string.
-    func rivalEncounterProgressId(for encounter: RivalEncounterDTO) -> String {
-        rivalEncounterProgressIds[encounter.id] ?? String(encounter.id)
-    }
-
     // MARK: - Counts (for ProgressManager)
 
     var totalCheckable: Int {
