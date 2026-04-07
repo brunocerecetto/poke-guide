@@ -1,6 +1,6 @@
 //
 //  TeamBuilderView.swift
-//  PokemonGuide
+//  PokeGuide
 //
 //  Constructor de equipo con análisis de cobertura de tipos.
 //
@@ -51,6 +51,7 @@ struct TeamBuilderView: View {
                 team: $team,
                 slotIndex: selectedSlot ?? 0,
                 gameVersion: gameConfig.version,
+                gameId: gameConfig.gameId,
                 onSelect: { entry in
                     guard let slot = selectedSlot else { return }
                     withAnimation(.spring(response: 0.35, dampingFraction: 0.7)) {
@@ -404,6 +405,7 @@ private struct PokemonPickerSheet: View {
     @Binding var team: [PokemonEntry?]
     let slotIndex: Int
     let gameVersion: GameVersion
+    let gameId: String
     let onSelect: (PokemonEntry) -> Void
 
     @Environment(\.dismiss) private var dismiss
@@ -416,7 +418,7 @@ private struct PokemonPickerSheet: View {
     }
 
     private var filteredPokemon: [PokemonEntry] {
-        PokedexData.kanto.filter { entry in
+        PokemonLoader.entries(forGameId: gameId).filter { entry in
             let matchesSearch = searchText.isEmpty
                 || entry.name.localizedCaseInsensitiveContains(searchText)
                 || entry.dexString.contains(searchText)

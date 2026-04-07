@@ -1,6 +1,6 @@
 //
 //  GameListView.swift
-//  PokemonGuide
+//  PokeGuide
 //
 //  Catálogo de juegos Pokémon agrupados por generación.
 //
@@ -22,6 +22,7 @@ struct GameCatalogEntry: Identifiable, Equatable, Hashable {
     let starters: [Int]
     let gymCount: Int
     let hasEliteFour: Bool
+    let nationalDexMax: Int
 
     var accentColor: Color { Color(hex: accentHex) }
     var secondaryColor: Color { Color(hex: secondaryHex) }
@@ -31,38 +32,38 @@ struct GameCatalogEntry: Identifiable, Equatable, Hashable {
 
 extension GameCatalogEntry {
     static let allGames: [GameCatalogEntry] = [
-        // Gen I
-        GameCatalogEntry(id: "red", name: "Pokémon Red", generation: 1, region: "Kanto", releaseYear: 1996, platform: "GB", accentHex: "#E02D28", secondaryHex: "#F06040", icon: "flame.fill", starters: [1, 4, 7], gymCount: 8, hasEliteFour: true),
-        GameCatalogEntry(id: "blue", name: "Pokémon Blue", generation: 1, region: "Kanto", releaseYear: 1996, platform: "GB", accentHex: "#2266CC", secondaryHex: "#4488EE", icon: "drop.fill", starters: [1, 4, 7], gymCount: 8, hasEliteFour: true),
-        GameCatalogEntry(id: "yellow", name: "Pokémon Yellow", generation: 1, region: "Kanto", releaseYear: 1998, platform: "GB", accentHex: "#DAA520", secondaryHex: "#F0C040", icon: "bolt.fill", starters: [25], gymCount: 8, hasEliteFour: true),
-        GameCatalogEntry(id: "firered", name: "Pokémon FireRed", generation: 1, region: "Kanto", releaseYear: 2004, platform: "GBA", accentHex: "#E02D28", secondaryHex: "#F06040", icon: "flame.fill", starters: [1, 4, 7], gymCount: 8, hasEliteFour: true),
-        GameCatalogEntry(id: "leafgreen", name: "Pokémon LeafGreen", generation: 1, region: "Kanto", releaseYear: 2004, platform: "GBA", accentHex: "#2EAA52", secondaryHex: "#40CC70", icon: "leaf.fill", starters: [1, 4, 7], gymCount: 8, hasEliteFour: true),
-        // Gen II
-        GameCatalogEntry(id: "gold", name: "Pokémon Gold", generation: 2, region: "Johto", releaseYear: 1999, platform: "GBC", accentHex: "#DAA520", secondaryHex: "#F0C040", icon: "sun.max.fill", starters: [152, 155, 158], gymCount: 16, hasEliteFour: true),
-        GameCatalogEntry(id: "silver", name: "Pokémon Silver", generation: 2, region: "Johto", releaseYear: 1999, platform: "GBC", accentHex: "#AAAACC", secondaryHex: "#C0C0E0", icon: "moon.fill", starters: [152, 155, 158], gymCount: 16, hasEliteFour: true),
-        GameCatalogEntry(id: "crystal", name: "Pokémon Crystal", generation: 2, region: "Johto", releaseYear: 2000, platform: "GBC", accentHex: "#5B9BD5", secondaryHex: "#80C0F0", icon: "diamond.fill", starters: [152, 155, 158], gymCount: 16, hasEliteFour: true),
-        // Gen III
-        GameCatalogEntry(id: "ruby", name: "Pokémon Ruby", generation: 3, region: "Hoenn", releaseYear: 2002, platform: "GBA", accentHex: "#A80000", secondaryHex: "#D03030", icon: "diamond.fill", starters: [252, 255, 258], gymCount: 8, hasEliteFour: true),
-        GameCatalogEntry(id: "sapphire", name: "Pokémon Sapphire", generation: 3, region: "Hoenn", releaseYear: 2002, platform: "GBA", accentHex: "#0044AA", secondaryHex: "#2266CC", icon: "drop.fill", starters: [252, 255, 258], gymCount: 8, hasEliteFour: true),
-        GameCatalogEntry(id: "emerald", name: "Pokémon Emerald", generation: 3, region: "Hoenn", releaseYear: 2004, platform: "GBA", accentHex: "#009955", secondaryHex: "#30BB70", icon: "sparkles", starters: [252, 255, 258], gymCount: 8, hasEliteFour: true),
-        // Gen IV
-        GameCatalogEntry(id: "diamond", name: "Pokémon Diamond", generation: 4, region: "Sinnoh", releaseYear: 2006, platform: "DS", accentHex: "#6688CC", secondaryHex: "#88AAEE", icon: "diamond.fill", starters: [387, 390, 393], gymCount: 8, hasEliteFour: true),
-        GameCatalogEntry(id: "pearl", name: "Pokémon Pearl", generation: 4, region: "Sinnoh", releaseYear: 2006, platform: "DS", accentHex: "#CC6688", secondaryHex: "#EE88AA", icon: "circle.fill", starters: [387, 390, 393], gymCount: 8, hasEliteFour: true),
-        // Gen V
-        GameCatalogEntry(id: "black", name: "Pokémon Black", generation: 5, region: "Unova", releaseYear: 2010, platform: "DS", accentHex: "#333333", secondaryHex: "#555555", icon: "circle.lefthalf.filled", starters: [495, 498, 501], gymCount: 8, hasEliteFour: true),
-        GameCatalogEntry(id: "white", name: "Pokémon White", generation: 5, region: "Unova", releaseYear: 2010, platform: "DS", accentHex: "#E8E8E8", secondaryHex: "#CCCCCC", icon: "circle.righthalf.filled", starters: [495, 498, 501], gymCount: 8, hasEliteFour: true),
-        // Gen VI
-        GameCatalogEntry(id: "x", name: "Pokémon X", generation: 6, region: "Kalos", releaseYear: 2013, platform: "3DS", accentHex: "#0055AA", secondaryHex: "#2277CC", icon: "xmark", starters: [650, 653, 656], gymCount: 8, hasEliteFour: true),
-        GameCatalogEntry(id: "y", name: "Pokémon Y", generation: 6, region: "Kalos", releaseYear: 2013, platform: "3DS", accentHex: "#CC0033", secondaryHex: "#EE2255", icon: "yensign", starters: [650, 653, 656], gymCount: 8, hasEliteFour: true),
-        // Gen VII
-        GameCatalogEntry(id: "sun", name: "Pokémon Sun", generation: 7, region: "Alola", releaseYear: 2016, platform: "3DS", accentHex: "#FF8800", secondaryHex: "#FFAA30", icon: "sun.max.fill", starters: [722, 725, 728], gymCount: 0, hasEliteFour: true),
-        GameCatalogEntry(id: "moon", name: "Pokémon Moon", generation: 7, region: "Alola", releaseYear: 2016, platform: "3DS", accentHex: "#5544AA", secondaryHex: "#7766CC", icon: "moon.fill", starters: [722, 725, 728], gymCount: 0, hasEliteFour: true),
-        // Gen VIII
-        GameCatalogEntry(id: "sword", name: "Pokémon Sword", generation: 8, region: "Galar", releaseYear: 2019, platform: "Switch", accentHex: "#0077BB", secondaryHex: "#2299DD", icon: "shield.lefthalf.filled", starters: [810, 813, 816], gymCount: 8, hasEliteFour: true),
-        GameCatalogEntry(id: "shield", name: "Pokémon Shield", generation: 8, region: "Galar", releaseYear: 2019, platform: "Switch", accentHex: "#BB0044", secondaryHex: "#DD2266", icon: "shield.righthalf.filled", starters: [810, 813, 816], gymCount: 8, hasEliteFour: true),
-        // Gen IX
-        GameCatalogEntry(id: "scarlet", name: "Pokémon Scarlet", generation: 9, region: "Paldea", releaseYear: 2022, platform: "Switch", accentHex: "#CC2200", secondaryHex: "#EE4422", icon: "book.fill", starters: [906, 909, 912], gymCount: 8, hasEliteFour: true),
-        GameCatalogEntry(id: "violet", name: "Pokémon Violet", generation: 9, region: "Paldea", releaseYear: 2022, platform: "Switch", accentHex: "#7722CC", secondaryHex: "#9944EE", icon: "book.closed.fill", starters: [906, 909, 912], gymCount: 8, hasEliteFour: true),
+        // Gen I — Kanto (151)
+        GameCatalogEntry(id: "red", name: "Pokémon Red", generation: 1, region: "Kanto", releaseYear: 1996, platform: "GB", accentHex: "#E02D28", secondaryHex: "#F06040", icon: "flame.fill", starters: [1, 4, 7], gymCount: 8, hasEliteFour: true, nationalDexMax: 151),
+        GameCatalogEntry(id: "blue", name: "Pokémon Blue", generation: 1, region: "Kanto", releaseYear: 1996, platform: "GB", accentHex: "#2266CC", secondaryHex: "#4488EE", icon: "drop.fill", starters: [1, 4, 7], gymCount: 8, hasEliteFour: true, nationalDexMax: 151),
+        GameCatalogEntry(id: "yellow", name: "Pokémon Yellow", generation: 1, region: "Kanto", releaseYear: 1998, platform: "GB", accentHex: "#DAA520", secondaryHex: "#F0C040", icon: "bolt.fill", starters: [25], gymCount: 8, hasEliteFour: true, nationalDexMax: 151),
+        GameCatalogEntry(id: "firered", name: "Pokémon FireRed", generation: 1, region: "Kanto", releaseYear: 2004, platform: "GBA", accentHex: "#E02D28", secondaryHex: "#F06040", icon: "flame.fill", starters: [1, 4, 7], gymCount: 8, hasEliteFour: true, nationalDexMax: 151),
+        GameCatalogEntry(id: "leafgreen", name: "Pokémon LeafGreen", generation: 1, region: "Kanto", releaseYear: 2004, platform: "GBA", accentHex: "#2EAA52", secondaryHex: "#40CC70", icon: "leaf.fill", starters: [1, 4, 7], gymCount: 8, hasEliteFour: true, nationalDexMax: 151),
+        // Gen II — Johto (251)
+        GameCatalogEntry(id: "gold", name: "Pokémon Gold", generation: 2, region: "Johto", releaseYear: 1999, platform: "GBC", accentHex: "#DAA520", secondaryHex: "#F0C040", icon: "sun.max.fill", starters: [152, 155, 158], gymCount: 16, hasEliteFour: true, nationalDexMax: 251),
+        GameCatalogEntry(id: "silver", name: "Pokémon Silver", generation: 2, region: "Johto", releaseYear: 1999, platform: "GBC", accentHex: "#AAAACC", secondaryHex: "#C0C0E0", icon: "moon.fill", starters: [152, 155, 158], gymCount: 16, hasEliteFour: true, nationalDexMax: 251),
+        GameCatalogEntry(id: "crystal", name: "Pokémon Crystal", generation: 2, region: "Johto", releaseYear: 2000, platform: "GBC", accentHex: "#5B9BD5", secondaryHex: "#80C0F0", icon: "diamond.fill", starters: [152, 155, 158], gymCount: 16, hasEliteFour: true, nationalDexMax: 251),
+        // Gen III — Hoenn (386)
+        GameCatalogEntry(id: "ruby", name: "Pokémon Ruby", generation: 3, region: "Hoenn", releaseYear: 2002, platform: "GBA", accentHex: "#A80000", secondaryHex: "#D03030", icon: "diamond.fill", starters: [252, 255, 258], gymCount: 8, hasEliteFour: true, nationalDexMax: 386),
+        GameCatalogEntry(id: "sapphire", name: "Pokémon Sapphire", generation: 3, region: "Hoenn", releaseYear: 2002, platform: "GBA", accentHex: "#0044AA", secondaryHex: "#2266CC", icon: "drop.fill", starters: [252, 255, 258], gymCount: 8, hasEliteFour: true, nationalDexMax: 386),
+        GameCatalogEntry(id: "emerald", name: "Pokémon Emerald", generation: 3, region: "Hoenn", releaseYear: 2004, platform: "GBA", accentHex: "#009955", secondaryHex: "#30BB70", icon: "sparkles", starters: [252, 255, 258], gymCount: 8, hasEliteFour: true, nationalDexMax: 386),
+        // Gen IV — Sinnoh (493)
+        GameCatalogEntry(id: "diamond", name: "Pokémon Diamond", generation: 4, region: "Sinnoh", releaseYear: 2006, platform: "DS", accentHex: "#6688CC", secondaryHex: "#88AAEE", icon: "diamond.fill", starters: [387, 390, 393], gymCount: 8, hasEliteFour: true, nationalDexMax: 493),
+        GameCatalogEntry(id: "pearl", name: "Pokémon Pearl", generation: 4, region: "Sinnoh", releaseYear: 2006, platform: "DS", accentHex: "#CC6688", secondaryHex: "#EE88AA", icon: "circle.fill", starters: [387, 390, 393], gymCount: 8, hasEliteFour: true, nationalDexMax: 493),
+        // Gen V — Unova (649)
+        GameCatalogEntry(id: "black", name: "Pokémon Black", generation: 5, region: "Unova", releaseYear: 2010, platform: "DS", accentHex: "#333333", secondaryHex: "#555555", icon: "circle.lefthalf.filled", starters: [495, 498, 501], gymCount: 8, hasEliteFour: true, nationalDexMax: 649),
+        GameCatalogEntry(id: "white", name: "Pokémon White", generation: 5, region: "Unova", releaseYear: 2010, platform: "DS", accentHex: "#E8E8E8", secondaryHex: "#CCCCCC", icon: "circle.righthalf.filled", starters: [495, 498, 501], gymCount: 8, hasEliteFour: true, nationalDexMax: 649),
+        // Gen VI — Kalos (721)
+        GameCatalogEntry(id: "x", name: "Pokémon X", generation: 6, region: "Kalos", releaseYear: 2013, platform: "3DS", accentHex: "#0055AA", secondaryHex: "#2277CC", icon: "xmark", starters: [650, 653, 656], gymCount: 8, hasEliteFour: true, nationalDexMax: 721),
+        GameCatalogEntry(id: "y", name: "Pokémon Y", generation: 6, region: "Kalos", releaseYear: 2013, platform: "3DS", accentHex: "#CC0033", secondaryHex: "#EE2255", icon: "yensign", starters: [650, 653, 656], gymCount: 8, hasEliteFour: true, nationalDexMax: 721),
+        // Gen VII — Alola (809)
+        GameCatalogEntry(id: "sun", name: "Pokémon Sun", generation: 7, region: "Alola", releaseYear: 2016, platform: "3DS", accentHex: "#FF8800", secondaryHex: "#FFAA30", icon: "sun.max.fill", starters: [722, 725, 728], gymCount: 0, hasEliteFour: true, nationalDexMax: 809),
+        GameCatalogEntry(id: "moon", name: "Pokémon Moon", generation: 7, region: "Alola", releaseYear: 2016, platform: "3DS", accentHex: "#5544AA", secondaryHex: "#7766CC", icon: "moon.fill", starters: [722, 725, 728], gymCount: 0, hasEliteFour: true, nationalDexMax: 809),
+        // Gen VIII — Galar (905)
+        GameCatalogEntry(id: "sword", name: "Pokémon Sword", generation: 8, region: "Galar", releaseYear: 2019, platform: "Switch", accentHex: "#0077BB", secondaryHex: "#2299DD", icon: "shield.lefthalf.filled", starters: [810, 813, 816], gymCount: 8, hasEliteFour: true, nationalDexMax: 905),
+        GameCatalogEntry(id: "shield", name: "Pokémon Shield", generation: 8, region: "Galar", releaseYear: 2019, platform: "Switch", accentHex: "#BB0044", secondaryHex: "#DD2266", icon: "shield.righthalf.filled", starters: [810, 813, 816], gymCount: 8, hasEliteFour: true, nationalDexMax: 905),
+        // Gen IX — Paldea (1025)
+        GameCatalogEntry(id: "scarlet", name: "Pokémon Scarlet", generation: 9, region: "Paldea", releaseYear: 2022, platform: "Switch", accentHex: "#CC2200", secondaryHex: "#EE4422", icon: "book.fill", starters: [906, 909, 912], gymCount: 8, hasEliteFour: true, nationalDexMax: 1025),
+        GameCatalogEntry(id: "violet", name: "Pokémon Violet", generation: 9, region: "Paldea", releaseYear: 2022, platform: "Switch", accentHex: "#7722CC", secondaryHex: "#9944EE", icon: "book.closed.fill", starters: [906, 909, 912], gymCount: 8, hasEliteFour: true, nationalDexMax: 1025),
     ]
 
     static let savedProgress: [String: Double] = [:]

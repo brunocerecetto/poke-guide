@@ -1,6 +1,6 @@
 //
 //  PokedexView.swift
-//  pokemon guide
+//  poke guide
 //
 //  Pokédex interactivo — light mode.
 //
@@ -15,8 +15,12 @@ struct PokedexView: View {
     @State private var selectedType: PokemonType? = nil
     @State private var selectedStatus: PokemonStatus? = nil
 
+    private var pokedexEntries: [PokemonEntry] {
+        PokemonLoader.entries(forGameId: gameConfig.gameId)
+    }
+
     private var filteredPokemon: [PokemonEntry] {
-        PokedexData.kanto.filter { entry in
+        pokedexEntries.filter { entry in
             let matchesSearch = searchText.isEmpty
                 || entry.name.localizedCaseInsensitiveContains(searchText)
                 || entry.dexString.contains(searchText)
@@ -27,10 +31,10 @@ struct PokedexView: View {
     }
 
     private var caughtCount: Int {
-        PokedexData.kanto.filter { progress.pokemonStatus(for: $0.id).rawValue >= PokemonStatus.caught.rawValue }.count
+        pokedexEntries.filter { progress.pokemonStatus(for: $0.id).rawValue >= PokemonStatus.caught.rawValue }.count
     }
     private var evolvedCount: Int {
-        PokedexData.kanto.filter { progress.pokemonStatus(for: $0.id) == .evolved }.count
+        pokedexEntries.filter { progress.pokemonStatus(for: $0.id) == .evolved }.count
     }
 
     var body: some View {
@@ -61,7 +65,7 @@ struct PokedexView: View {
         HStack(spacing: 16) {
             statBubble(value: "\(caughtCount)", label: "Capturados", color: .fireOrange)
             statBubble(value: "\(evolvedCount)", label: "Evolucionados", color: .fireGreen)
-            statBubble(value: "\(PokedexData.kanto.count)", label: "Total", color: .fireTextSecondary)
+            statBubble(value: "\(pokedexEntries.count)", label: "Total", color: .fireTextSecondary)
         }
         .padding(.vertical, 10)
         .padding(.horizontal, 16)

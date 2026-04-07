@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  pokemon guide
+//  poke guide
 //
 //  Created by Bruno Cerecetto on 6/4/26.
 //
@@ -267,10 +267,13 @@ struct ContentView: View {
     // MARK: - Footer
 
     private var footerBadge: some View {
-        HStack(spacing: 5) {
+        let game = GameCatalogEntry.allGames.first { $0.id == gameConfig.gameId }
+        let regionLabel = game.map { "Gen \($0.generation) — \($0.region)" } ?? "Gen I — Kanto"
+
+        return HStack(spacing: 5) {
             Image(systemName: displayIconName)
                 .font(.system(size: 9))
-            Text("Gen I — Kanto")
+            Text(regionLabel)
                 .font(.system(size: 10, weight: .semibold, design: .rounded))
         }
         .foregroundColor(.fireTextSecondary.opacity(0.5))
@@ -317,7 +320,7 @@ struct ContentView: View {
             MenuItem(icon: "shield.checkered", title: "Gimnasios", subtitle: "\(progress.completedGyms.count)/\(bridge.gyms.count) badges", color: theme.accent, destination: .gyms),
             MenuItem(icon: "person.3.fill", title: "Equipo Final", subtitle: "6 pokémon + movesets", color: .fireBlue, destination: .team),
             MenuItem(icon: "map.fill", title: "Ruta Completa", subtitle: "Paso a paso", color: .fireGreen, destination: .route),
-            MenuItem(icon: "book.closed.fill", title: "Pokédex", subtitle: "\(progress.pokemonStatuses.filter { $0.value.rawValue >= 2 }.count)/151 capturados", color: Color(red: 0.85, green: 0.25, blue: 0.25), destination: .pokedex),
+            MenuItem(icon: "book.closed.fill", title: "Pokédex", subtitle: "\(progress.pokemonStatuses.filter { $0.value.rawValue >= 2 }.count)/\(PokemonLoader.entries(forGameId: gameConfig.gameId).count) capturados", color: Color(red: 0.85, green: 0.25, blue: 0.25), destination: .pokedex),
         ]
     }
 

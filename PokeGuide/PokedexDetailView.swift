@@ -1,6 +1,6 @@
 //
 //  PokedexDetailView.swift
-//  pokemon guide
+//  poke guide
 //
 //  Vista de detalle — light mode.
 //
@@ -27,16 +27,20 @@ struct PokedexDetailView: View {
                 statusSection
                     .opacity(appeared ? 1 : 0)
 
-                descriptionSection
-                    .opacity(appeared ? 1 : 0)
+                if !entry.description.isEmpty {
+                    descriptionSection
+                        .opacity(appeared ? 1 : 0)
+                }
 
                 statsSection
                     .opacity(appeared ? 1 : 0)
                     .offset(y: appeared ? 0 : 15)
 
-                locationSection
-                    .opacity(appeared ? 1 : 0)
-                    .offset(y: appeared ? 0 : 15)
+                if !entry.location.isEmpty {
+                    locationSection
+                        .opacity(appeared ? 1 : 0)
+                        .offset(y: appeared ? 0 : 15)
+                }
 
                 Spacer(minLength: 40)
             }
