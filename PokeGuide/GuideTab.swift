@@ -1,13 +1,13 @@
 //
-//  ContentView.swift
-//  poke guide
+//  GuideTab.swift
+//  PokeGuide
 //
-//  Created by Bruno Cerecetto on 6/4/26.
+//  Dashboard + guide navigation: Gimnasios, Ruta, Liga, Rival.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct GuideTab: View {
     @EnvironmentObject var progress: ProgressManager
     @EnvironmentObject var gameConfig: GameConfig
     @EnvironmentObject var bridge: GameDataBridge
@@ -60,10 +60,7 @@ struct ContentView: View {
                         .opacity(appeared ? 1 : 0)
                         .offset(y: appeared ? 0 : -20)
 
-                    primaryGrid
-                        .padding(.horizontal)
-
-                    secondaryList
+                    guideGrid
                         .padding(.horizontal)
 
                     footerBadge
@@ -166,17 +163,17 @@ struct ContentView: View {
         .padding(.horizontal)
     }
 
-    // MARK: - Primary Grid
+    // MARK: - Guide Grid
 
-    private var primaryGrid: some View {
+    private var guideGrid: some View {
         let columns = [GridItem(.flexible(), spacing: KASpacing.sm + KASpacing.xs), GridItem(.flexible(), spacing: KASpacing.sm + KASpacing.xs)]
 
         return LazyVGrid(columns: columns, spacing: KASpacing.sm + KASpacing.xs) {
-            ForEach(Array(primaryItems.enumerated()), id: \.element.title) { index, item in
+            ForEach(Array(guideItems.enumerated()), id: \.element.title) { index, item in
                 NavigationLink {
                     destinationView(for: item.destination)
                 } label: {
-                    bigCard(item: item)
+                    guideCard(item: item)
                 }
                 .opacity(appeared ? 1 : 0)
                 .offset(y: appeared ? 0 : 30)
@@ -185,7 +182,7 @@ struct ContentView: View {
         }
     }
 
-    private func bigCard(item: MenuItem) -> some View {
+    private func guideCard(item: MenuItem) -> some View {
         VStack(alignment: .leading, spacing: 10) {
             ZStack {
                 RoundedRectangle(cornerRadius: KARadius.sm)
@@ -213,55 +210,6 @@ struct ContentView: View {
         .softCard(cornerRadius: KARadius.lg, tint: item.color)
     }
 
-    // MARK: - Secondary List
-
-    private var secondaryList: some View {
-        VStack(spacing: KASpacing.sm) {
-            ForEach(Array(secondaryItems.enumerated()), id: \.element.title) { index, item in
-                NavigationLink {
-                    destinationView(for: item.destination)
-                } label: {
-                    slimCard(item: item)
-                }
-                .opacity(appeared ? 1 : 0)
-                .offset(y: appeared ? 0 : 20)
-                .animation(.spring(response: 0.5, dampingFraction: 0.8).delay(0.3 + Double(index) * 0.04), value: appeared)
-            }
-        }
-    }
-
-    private func slimCard(item: MenuItem) -> some View {
-        HStack(spacing: KASpacing.md) {
-            ZStack {
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(item.color.opacity(0.10))
-                    .frame(width: 38, height: 38)
-
-                Image(systemName: item.icon)
-                    .font(.system(size: 16, weight: .semibold))
-                    .foregroundColor(item.color)
-            }
-
-            VStack(alignment: .leading, spacing: 2) {
-                Text(item.title)
-                    .font(KATypography.titleSm)
-                    .foregroundColor(.onSurface)
-                Text(item.subtitle)
-                    .font(KATypography.labelSm)
-                    .foregroundColor(.onSurfaceVariant)
-            }
-
-            Spacer()
-
-            Image(systemName: "chevron.right")
-                .font(.system(size: 11, weight: .bold))
-                .foregroundColor(.outlineVariant)
-        }
-        .padding(.horizontal, KASpacing.md)
-        .padding(.vertical, KASpacing.sm + KASpacing.xs)
-        .softCard(cornerRadius: KARadius.lg, tint: item.color)
-    }
-
     // MARK: - Footer
 
     private var footerBadge: some View {
@@ -282,8 +230,7 @@ struct ContentView: View {
     // MARK: - Data
 
     private enum Destination: Hashable {
-        case gyms, team, route, pokedex, captures, hmtm, tips, league
-        case typeChart, rival, evolutions, teamBuilder
+        case gyms, route, league, rival
     }
 
     private struct MenuItem: Identifiable {
@@ -299,46 +246,18 @@ struct ContentView: View {
     private func destinationView(for destination: Destination) -> some View {
         switch destination {
         case .gyms: GymView()
-        case .team: TeamView()
         case .route: RouteView()
-        case .pokedex: PokedexView()
-        case .captures: CapturesView()
-        case .hmtm: HMTMView()
-        case .tips: TipsView()
         case .league: LeagueView()
-        case .typeChart: TypeChartView()
         case .rival: RivalView()
-        case .evolutions: EvolutionView()
-        case .teamBuilder: TeamBuilderView()
         }
     }
 
-    private var primaryItems: [MenuItem] {
+    private var guideItems: [MenuItem] {
         [
             MenuItem(icon: "shield.checkered", title: "Gimnasios", subtitle: "\(progress.completedGyms.count)/\(bridge.gyms.count) badges", color: theme.accent, destination: .gyms),
-            MenuItem(icon: "person.3.fill", title: "Equipo Final", subtitle: "6 pokémon + movesets", color: .kaSecondaryContainer, destination: .team),
             MenuItem(icon: "map.fill", title: "Ruta Completa", subtitle: "Paso a paso", color: .success, destination: .route),
-            MenuItem(icon: "book.closed.fill", title: "Pokédex", subtitle: "\(progress.pokemonStatuses.filter { $0.value.rawValue >= 2 }.count)/\(PokemonLoader.entries(forGameId: gameConfig.gameId).count) capturados", color: .kaPrimary, destination: .pokedex),
-        ]
-    }
-
-    private var secondaryItems: [MenuItem] {
-        [
-            MenuItem(icon: "scope", title: "Capturas Clave", subtitle: "5 pokémon esenciales", color: .purple, destination: .captures),
-            MenuItem(icon: "arrow.triangle.swap", title: "HMs & TMs", subtitle: "Reparto y compras", color: .teal, destination: .hmtm),
-            MenuItem(icon: "lightbulb.fill", title: "Tips & Tricks", subtitle: "Reglas de evolución y más", color: .kaYellow, destination: .tips),
             MenuItem(icon: "trophy.fill", title: "Liga Pokémon", subtitle: "Plan + checklist final", color: theme.secondary, destination: .league),
-            MenuItem(icon: "square.grid.3x3.fill", title: "Tabla de Tipos", subtitle: "Efectividad de ataques", color: .kaPrimary, destination: .typeChart),
             MenuItem(icon: "person.fill.questionmark", title: "Rival", subtitle: "Equipo del rival por pelea", color: .kaSecondaryContainer, destination: .rival),
-            MenuItem(icon: "arrow.triangle.branch", title: "Evoluciones", subtitle: "Cadenas y métodos", color: .success, destination: .evolutions),
-            MenuItem(icon: "hammer.fill", title: "Team Builder", subtitle: "Armá tu equipo ideal", color: .primaryContainer, destination: .teamBuilder),
         ]
     }
-}
-
-#Preview {
-    ContentView()
-        .environmentObject(ProgressManager())
-        .environmentObject(GameConfig())
-        .environmentObject(GameDataBridge(gameId: "fireRed", starterDex: 7, context: nil))
 }

@@ -19,6 +19,7 @@ class ProgressManager: ObservableObject {
     private var preLeagueKey: String { "\(prefix)_completedPreLeague" }
     private var postgameKey: String { "\(prefix)_completedPostgame" }
     private var pokedexKey: String { "\(prefix)_pokemonStatuses" }
+    private var customTeamKey: String { "\(prefix)_customTeam" }
 
     @Published var completedGyms: Set<String> {
         didSet { save(completedGyms, forKey: gymKey) }
@@ -38,6 +39,10 @@ class ProgressManager: ObservableObject {
 
     @Published var pokemonStatuses: [Int: PokemonStatus] {
         didSet { savePokedex() }
+    }
+
+    @Published var customTeamDexNumbers: [Int] {
+        didSet { defaults.set(customTeamDexNumbers, forKey: customTeamKey) }
     }
 
     init(prefix: String = "fireRed_squirtle") {
@@ -66,6 +71,9 @@ class ProgressManager: ObservableObject {
         _completedPreLeague = Published(initialValue: Self.load(forKey: preLeagueK))
         _completedPostgame = Published(initialValue: Self.load(forKey: postgameK))
         _pokemonStatuses = Published(initialValue: Self.loadPokedex(forKey: pokedexK))
+
+        let teamK = "\(prefix)_customTeam"
+        _customTeamDexNumbers = Published(initialValue: UserDefaults.standard.array(forKey: teamK) as? [Int] ?? [])
     }
 
     /// Reload progress for a different game config
@@ -77,6 +85,7 @@ class ProgressManager: ObservableObject {
         completedPreLeague = Self.load(forKey: preLeagueKey)
         completedPostgame = Self.load(forKey: postgameKey)
         pokemonStatuses = Self.loadPokedex(forKey: pokedexKey)
+        customTeamDexNumbers = UserDefaults.standard.array(forKey: customTeamKey) as? [Int] ?? []
     }
 
     // MARK: - Gym toggles
@@ -164,6 +173,26 @@ class ProgressManager: ObservableObject {
         pokemonStatuses[dexNumber] = status
     }
 
+    // MARK: - Custom Team
+
+    func setCustomTeamSlot(_ slot: Int, dexNumber: Int?) {
+        var team = customTeamDexNumbers
+        // Ensure array has 6 slots
+        while team.count < 6 { team.append(0) }
+        guard slot >= 0 && slot < 6 else { return }
+        team[slot] = dexNumber ?? 0
+        customTeamDexNumbers = team
+    }
+
+    func customTeamEntries(gameId: String) -> [PokemonEntry?] {
+        let all = PokemonLoader.entries(forGameId: gameId)
+        var team = customTeamDexNumbers
+        while team.count < 6 { team.append(0) }
+        return team.prefix(6).map { dex in
+            dex > 0 ? all.first(where: { $0.id == dex }) : nil
+        }
+    }
+
     // MARK: - Overall progress
 
     /// Total checkable items. Use `totalCheckable(from:)` with a bridge for accurate counts.
@@ -202,6 +231,7 @@ class ProgressManager: ObservableObject {
         completedPreLeague.removeAll()
         completedPostgame.removeAll()
         pokemonStatuses.removeAll()
+        customTeamDexNumbers.removeAll()
     }
 
     // MARK: - Persistence helpers
