@@ -20,9 +20,9 @@ struct GymView: View {
                 VStack(spacing: KASpacing.sm + KASpacing.xs) {
                     HStack(spacing: 6) {
                         ForEach(bridge.gyms) { gym in
-                            Text(gym.badge)
-                                .font(.title2)
-                                .opacity(progress.isGymCompleted(gym.name) ? 1 : 0.2)
+                            badgeSprite(gym)
+                                .frame(width: 32, height: 32)
+                                .opacity(progress.isGymCompleted(gym.name) ? 1 : 0.25)
                                 .scaleEffect(progress.isGymCompleted(gym.name) ? 1.0 : 0.8)
                                 .animation(.spring(response: 0.4, dampingFraction: 0.5), value: progress.isGymCompleted(gym.name))
                         }
@@ -49,6 +49,19 @@ struct GymView: View {
             guard celebrateAll else { return }
             try? await Task.sleep(for: .seconds(2))
             celebrateAll = false
+        }
+    }
+
+    @ViewBuilder
+    private func badgeSprite(_ gym: GymDTO) -> some View {
+        if let spriteId = gym.badgeSpriteId, spriteId > 0 {
+            AsyncImage(url: URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/badges/\(spriteId).png")) { image in
+                image.interpolation(.none).resizable().scaledToFit()
+            } placeholder: {
+                Text(gym.badge)
+            }
+        } else {
+            Text(gym.badge)
         }
     }
 
@@ -83,8 +96,8 @@ struct GymView: View {
 
                 VStack(alignment: .leading, spacing: KASpacing.xs) {
                     HStack(alignment: .firstTextBaseline) {
-                        Text(gym.badge)
-                            .font(.body)
+                        badgeSprite(gym)
+                            .frame(width: 20, height: 20)
                         Text(gym.name)
                             .font(KATypography.titleMd)
                             .foregroundColor(completed ? .onSurfaceVariant : .onSurface)

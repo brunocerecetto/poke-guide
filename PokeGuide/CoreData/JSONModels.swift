@@ -90,12 +90,17 @@ struct GuideRouteStepJSON: Codable {
 
 // MARK: - Guide: Gyms
 
+struct GuideGymsJSON: Codable {
+    let gyms: [GuideGymJSON]
+}
+
 struct GuideGymJSON: Codable {
     let name: String
     let leader: String
     let levelRange: String
     let note: String
     let badge: String
+    let badgeSpriteId: Int?
 }
 
 // MARK: - Guide: Team Recommendations

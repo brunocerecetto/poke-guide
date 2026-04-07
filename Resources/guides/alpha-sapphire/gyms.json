@@ -1,12 +1,68 @@
 {
   "gyms": [
-    { "name": "Gimnasio de Ciudad Férrica", "leader": "Roxanne", "levelRange": "12-15", "note": "Tipo Roca. Su Nosepass usa Trampa Rocas. Usa Agua, Planta o Lucha.", "badge": "Medalla Piedra" },
-    { "name": "Gimnasio de Isla Dewford", "leader": "Brawly", "levelRange": "14-17", "note": "Tipo Lucha. Usa Volador o Psíquico. Su Makuhita tiene Agallas.", "badge": "Medalla Puño" },
-    { "name": "Gimnasio de Ciudad Malvalona", "leader": "Wattson", "levelRange": "19-23", "note": "Tipo Eléctrico. Usa Tierra. Su Magneton es fuerte.", "badge": "Medalla Dinamo" },
-    { "name": "Gimnasio de Pueblo Lavacalda", "leader": "Flannery", "levelRange": "26-29", "note": "Tipo Fuego. Usa Agua o Roca. Su Torkoal tiene Pantalla de Luz.", "badge": "Medalla Calor" },
-    { "name": "Gimnasio de Ciudad Petalia", "leader": "Norman", "levelRange": "28-30", "note": "Tipo Normal. Usa Lucha. Sus Slaking con Represalia son letales.", "badge": "Medalla Balance" },
-    { "name": "Gimnasio de Ciudad Arborada", "leader": "Winona", "levelRange": "33-35", "note": "Tipo Volador. Mega Altaria es la nueva amenaza. Usa Hielo o Hada.", "badge": "Medalla Pluma" },
-    { "name": "Gimnasio de Ciudad Algaria", "leader": "Tate y Liza", "levelRange": "41-45", "note": "Combate doble Psíquico. Usa Siniestro, Fantasma o Bicho.", "badge": "Medalla Mente" },
-    { "name": "Gimnasio de Ciudad Arrecípolis", "leader": "Wallace", "levelRange": "44-46", "note": "Tipo Agua. Milotic con Recuperación. Usa Eléctrico o Planta.", "badge": "Medalla Lluvia" }
+    {
+      "name": "Gimnasio de Ciudad Férrica",
+      "leader": "Roxanne",
+      "levelRange": "12-15",
+      "note": "Tipo Roca. Su Nosepass usa Trampa Rocas. Usa Agua, Planta o Lucha.",
+      "badge": "Medalla Piedra",
+      "badgeSpriteId": 17
+    },
+    {
+      "name": "Gimnasio de Isla Dewford",
+      "leader": "Brawly",
+      "levelRange": "14-17",
+      "note": "Tipo Lucha. Usa Volador o Psíquico. Su Makuhita tiene Agallas.",
+      "badge": "Medalla Puño",
+      "badgeSpriteId": 18
+    },
+    {
+      "name": "Gimnasio de Ciudad Malvalona",
+      "leader": "Wattson",
+      "levelRange": "19-23",
+      "note": "Tipo Eléctrico. Usa Tierra. Su Magneton es fuerte.",
+      "badge": "Medalla Dinamo",
+      "badgeSpriteId": 19
+    },
+    {
+      "name": "Gimnasio de Pueblo Lavacalda",
+      "leader": "Flannery",
+      "levelRange": "26-29",
+      "note": "Tipo Fuego. Usa Agua o Roca. Su Torkoal tiene Pantalla de Luz.",
+      "badge": "Medalla Calor",
+      "badgeSpriteId": 20
+    },
+    {
+      "name": "Gimnasio de Ciudad Petalia",
+      "leader": "Norman",
+      "levelRange": "28-30",
+      "note": "Tipo Normal. Usa Lucha. Sus Slaking con Represalia son letales.",
+      "badge": "Medalla Balance",
+      "badgeSpriteId": 21
+    },
+    {
+      "name": "Gimnasio de Ciudad Arborada",
+      "leader": "Winona",
+      "levelRange": "33-35",
+      "note": "Tipo Volador. Mega Altaria es la nueva amenaza. Usa Hielo o Hada.",
+      "badge": "Medalla Pluma",
+      "badgeSpriteId": 22
+    },
+    {
+      "name": "Gimnasio de Ciudad Algaria",
+      "leader": "Tate y Liza",
+      "levelRange": "41-45",
+      "note": "Combate doble Psíquico. Usa Siniestro, Fantasma o Bicho.",
+      "badge": "Medalla Mente",
+      "badgeSpriteId": 23
+    },
+    {
+      "name": "Gimnasio de Ciudad Arrecípolis",
+      "leader": "Wallace",
+      "levelRange": "44-46",
+      "note": "Tipo Agua. Milotic con Recuperación. Usa Eléctrico o Planta.",
+      "badge": "Medalla Lluvia",
+      "badgeSpriteId": 24
+    }
   ]
 }

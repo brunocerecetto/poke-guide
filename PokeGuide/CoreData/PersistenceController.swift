@@ -215,6 +215,7 @@ struct PersistenceController {
             makeStringAttribute("levelRange"),
             makeStringAttribute("note"),
             makeStringAttribute("badge"),
+            makeInt16Attribute("badgeSpriteId"),
         ]
 
         // MARK: RouteSection Attributes
@@ -644,6 +645,7 @@ public class CDGym: NSManagedObject {
     @NSManaged var levelRange: String
     @NSManaged var note: String
     @NSManaged var badge: String
+    @NSManaged var badgeSpriteId: Int16
     @NSManaged var game: CDGame?
 }
 

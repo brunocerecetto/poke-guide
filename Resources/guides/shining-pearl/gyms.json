@@ -1,12 +1,68 @@
 {
   "gyms": [
-    { "name": "Gimnasio de Ciudad Pirita", "leader": "Roco", "levelRange": "12-14", "note": "Tipo Roca. Usa Agua, Planta o Lucha. Cranidos pega fuerte.", "badge": "Medalla Lignito" },
-    { "name": "Gimnasio de Ciudad Vetusta", "leader": "Gardenia", "levelRange": "19-22", "note": "Tipo Planta. Usa Fuego o Volador. MOs automáticas.", "badge": "Medalla Bosque" },
-    { "name": "Gimnasio de Ciudad Rocavelo", "leader": "Brega", "levelRange": "27-30", "note": "Tipo Lucha. Usa Volador o Psíquico. Lucario es rápido.", "badge": "Medalla Adoquín" },
-    { "name": "Gimnasio de Ciudad Pradera", "leader": "Mananti", "levelRange": "27-30", "note": "Tipo Agua. Usa Eléctrico o Planta. Gyarados con Intimidación.", "badge": "Medalla Pantano" },
-    { "name": "Gimnasio de Ciudad Corazón", "leader": "Fantina", "levelRange": "32-36", "note": "Tipo Fantasma. Usa Siniestro. Mismagius tiene Hipnosis.", "badge": "Medalla Relicto" },
-    { "name": "Gimnasio de Ciudad Canal", "leader": "Acerón", "levelRange": "36-39", "note": "Tipo Acero. Usa Fuego o Tierra. Bastiodon es un muro.", "badge": "Medalla Mina" },
-    { "name": "Gimnasio de Ciudad Puntaneva", "leader": "Inverna", "levelRange": "38-42", "note": "Tipo Hielo. Usa Fuego o Lucha. Abomasnow activa Granizo.", "badge": "Medalla Témpano" },
-    { "name": "Gimnasio de Ciudad Marina", "leader": "Lectro", "levelRange": "46-49", "note": "Tipo Eléctrico. Usa Tierra. Luxray con Colmillo Rayo.", "badge": "Medalla Faro" }
+    {
+      "name": "Gimnasio de Ciudad Pirita",
+      "leader": "Roco",
+      "levelRange": "12-14",
+      "note": "Tipo Roca. Usa Agua, Planta o Lucha. Cranidos pega fuerte.",
+      "badge": "Medalla Lignito",
+      "badgeSpriteId": 25
+    },
+    {
+      "name": "Gimnasio de Ciudad Vetusta",
+      "leader": "Gardenia",
+      "levelRange": "19-22",
+      "note": "Tipo Planta. Usa Fuego o Volador. MOs automáticas.",
+      "badge": "Medalla Bosque",
+      "badgeSpriteId": 26
+    },
+    {
+      "name": "Gimnasio de Ciudad Rocavelo",
+      "leader": "Brega",
+      "levelRange": "27-30",
+      "note": "Tipo Lucha. Usa Volador o Psíquico. Lucario es rápido.",
+      "badge": "Medalla Adoquín",
+      "badgeSpriteId": 27
+    },
+    {
+      "name": "Gimnasio de Ciudad Pradera",
+      "leader": "Mananti",
+      "levelRange": "27-30",
+      "note": "Tipo Agua. Usa Eléctrico o Planta. Gyarados con Intimidación.",
+      "badge": "Medalla Pantano",
+      "badgeSpriteId": 28
+    },
+    {
+      "name": "Gimnasio de Ciudad Corazón",
+      "leader": "Fantina",
+      "levelRange": "32-36",
+      "note": "Tipo Fantasma. Usa Siniestro. Mismagius tiene Hipnosis.",
+      "badge": "Medalla Relicto",
+      "badgeSpriteId": 29
+    },
+    {
+      "name": "Gimnasio de Ciudad Canal",
+      "leader": "Acerón",
+      "levelRange": "36-39",
+      "note": "Tipo Acero. Usa Fuego o Tierra. Bastiodon es un muro.",
+      "badge": "Medalla Mina",
+      "badgeSpriteId": 30
+    },
+    {
+      "name": "Gimnasio de Ciudad Puntaneva",
+      "leader": "Inverna",
+      "levelRange": "38-42",
+      "note": "Tipo Hielo. Usa Fuego o Lucha. Abomasnow activa Granizo.",
+      "badge": "Medalla Témpano",
+      "badgeSpriteId": 31
+    },
+    {
+      "name": "Gimnasio de Ciudad Marina",
+      "leader": "Lectro",
+      "levelRange": "46-49",
+      "note": "Tipo Eléctrico. Usa Tierra. Luxray con Colmillo Rayo.",
+      "badge": "Medalla Faro",
+      "badgeSpriteId": 32
+    }
   ]
 }

@@ -36,6 +36,7 @@ struct GymDTO: Identifiable, Equatable {
     let levelRange: String
     let note: String
     let badge: String
+    let badgeSpriteId: Int?
 }
 
 struct RouteSectionDTO: Identifiable, Equatable {
@@ -381,7 +382,8 @@ class GuideRepository: ObservableObject {
             leader: object.value(forKey: "leader") as? String ?? "",
             levelRange: object.value(forKey: "levelRange") as? String ?? "",
             note: object.value(forKey: "note") as? String ?? "",
-            badge: object.value(forKey: "badge") as? String ?? ""
+            badge: object.value(forKey: "badge") as? String ?? "",
+            badgeSpriteId: object.value(forKey: "badgeSpriteId") as? Int
         )
     }
 

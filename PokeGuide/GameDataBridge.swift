@@ -36,7 +36,7 @@ class GameDataBridge: ObservableObject {
             return repoGyms
         }
         return GameData.gyms.enumerated().map { i, g in
-            GymDTO(id: i, name: g.name, leader: g.leader, levelRange: g.levelRange, note: g.note, badge: g.badge)
+            GymDTO(id: i, name: g.name, leader: g.leader, levelRange: g.levelRange, note: g.note, badge: g.badge, badgeSpriteId: i + 1)
         }
     }
 

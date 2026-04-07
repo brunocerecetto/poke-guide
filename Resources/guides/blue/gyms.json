@@ -1,12 +1,68 @@
 {
   "gyms": [
-    { "name": "Pewter", "leader": "Brock", "levelRange": "12-14", "note": "Tipo Roca. Water o Grass lo destruyen. Con Charmander subir a nv 13+.", "badge": "🪨" },
-    { "name": "Cerulean", "leader": "Misty", "levelRange": "18-21", "note": "Starmie es peligrosa. Grass o Electric types recomendados.", "badge": "💧" },
-    { "name": "Vermilion", "leader": "Lt. Surge", "levelRange": "21-24", "note": "Tipo Electric. Dig lo tumba solo. Puzzle de basuras.", "badge": "⚡" },
-    { "name": "Celadon", "leader": "Erika", "levelRange": "24-29", "note": "Tipo Grass. Fire, Ice o Flying barren. Premio TM21 Mega Drain.", "badge": "🌿" },
-    { "name": "Fuchsia", "leader": "Koga", "levelRange": "37-43", "note": "Tipo Poison. Ground y Psychic son clave. Cuidado con Self-Destruct.", "badge": "☠️" },
-    { "name": "Saffron", "leader": "Sabrina", "levelRange": "38-43", "note": "Tipo Psychic. Bug y Ghost super efectivos (pero pocos buenos en Gen 1).", "badge": "🔮" },
-    { "name": "Cinnabar", "leader": "Blaine", "levelRange": "40-47", "note": "Tipo Fire. Water y Ground lo destruyen fácilmente.", "badge": "🔥" },
-    { "name": "Viridian", "leader": "Giovanni", "levelRange": "45-50", "note": "Tipo Ground. Water y Grass son ideales. Ice también pega bien.", "badge": "🌍" }
+    {
+      "name": "Pewter",
+      "leader": "Brock",
+      "levelRange": "12-14",
+      "note": "Tipo Roca. Water o Grass lo destruyen. Con Charmander subir a nv 13+.",
+      "badge": "🪨",
+      "badgeSpriteId": 1
+    },
+    {
+      "name": "Cerulean",
+      "leader": "Misty",
+      "levelRange": "18-21",
+      "note": "Starmie es peligrosa. Grass o Electric types recomendados.",
+      "badge": "💧",
+      "badgeSpriteId": 2
+    },
+    {
+      "name": "Vermilion",
+      "leader": "Lt. Surge",
+      "levelRange": "21-24",
+      "note": "Tipo Electric. Dig lo tumba solo. Puzzle de basuras.",
+      "badge": "⚡",
+      "badgeSpriteId": 3
+    },
+    {
+      "name": "Celadon",
+      "leader": "Erika",
+      "levelRange": "24-29",
+      "note": "Tipo Grass. Fire, Ice o Flying barren. Premio TM21 Mega Drain.",
+      "badge": "🌿",
+      "badgeSpriteId": 4
+    },
+    {
+      "name": "Fuchsia",
+      "leader": "Koga",
+      "levelRange": "37-43",
+      "note": "Tipo Poison. Ground y Psychic son clave. Cuidado con Self-Destruct.",
+      "badge": "☠️",
+      "badgeSpriteId": 5
+    },
+    {
+      "name": "Saffron",
+      "leader": "Sabrina",
+      "levelRange": "38-43",
+      "note": "Tipo Psychic. Bug y Ghost super efectivos (pero pocos buenos en Gen 1).",
+      "badge": "🔮",
+      "badgeSpriteId": 6
+    },
+    {
+      "name": "Cinnabar",
+      "leader": "Blaine",
+      "levelRange": "40-47",
+      "note": "Tipo Fire. Water y Ground lo destruyen fácilmente.",
+      "badge": "🔥",
+      "badgeSpriteId": 7
+    },
+    {
+      "name": "Viridian",
+      "leader": "Giovanni",
+      "levelRange": "45-50",
+      "note": "Tipo Ground. Water y Grass son ideales. Ice también pega bien.",
+      "badge": "🌍",
+      "badgeSpriteId": 8
+    }
   ]
 }

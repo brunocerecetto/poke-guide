@@ -1,14 +1,84 @@
 {
   "gyms": [
-    { "name": "Prueba de Ilima", "leader": "Ilima", "levelRange": "11-12", "note": "Tipo Normal en Cueva Verdant. Dominante: Gumshoos (US) o Raticate Alola (UM).", "badge": "Cristal Z Normal" },
-    { "name": "Gran Prueba de Hala", "leader": "Kahuna Hala", "levelRange": "14-15", "note": "Tipo Lucha. Crabrawler es su as. Volador o Psíquico.", "badge": "Cristal Z Lucha" },
-    { "name": "Prueba de Lana", "leader": "Lana", "levelRange": "18-20", "note": "Tipo Agua en Estanque Brooklet. Dominante: Araquanid (nuevo en USUM). Eléctrico ideal.", "badge": "Cristal Z Agua" },
-    { "name": "Prueba de Kiawe", "leader": "Kiawe", "levelRange": "22-22", "note": "Tipo Fuego en Volcán Wela. Dominante: Alolan Marowak (nuevo). Agua o Tierra.", "badge": "Cristal Z Fuego" },
-    { "name": "Prueba de Mallow", "leader": "Mallow", "levelRange": "24-24", "note": "Tipo Planta en Jungla Lush. Dominante: Lurantis. Fuego o Volador.", "badge": "Cristal Z Planta" },
-    { "name": "Gran Prueba de Olivia", "leader": "Kahuna Olivia", "levelRange": "26-27", "note": "Tipo Roca. Lycanroc Mediodía. Agua, Planta o Lucha.", "badge": "Cristal Z Roca" },
-    { "name": "Prueba de Sophocles", "leader": "Sophocles", "levelRange": "29-29", "note": "Tipo Eléctrico en Observatorio Hokulani. Dominante: Togedemaru. Tierra.", "badge": "Cristal Z Eléctrico" },
-    { "name": "Prueba de Acerola", "leader": "Acerola", "levelRange": "33-33", "note": "Tipo Fantasma en Supermercado Abandonado. Dominante: Mimikyu. Fantasma o Siniestro.", "badge": "Cristal Z Fantasma" },
-    { "name": "Gran Prueba de Nanu", "leader": "Kahuna Nanu", "levelRange": "38-39", "note": "Tipo Siniestro. Alolan Persian. Lucha, Bicho o Hada.", "badge": "Cristal Z Siniestro" },
-    { "name": "Gran Prueba de Hapu", "leader": "Kahuna Hapu", "levelRange": "47-48", "note": "Tipo Tierra. Mudsdale y Flygon. Agua, Planta o Hielo.", "badge": "Cristal Z Tierra" }
+    {
+      "name": "Prueba de Ilima",
+      "leader": "Ilima",
+      "levelRange": "11-12",
+      "note": "Tipo Normal en Cueva Verdant. Dominante: Gumshoos (US) o Raticate Alola (UM).",
+      "badge": "Cristal Z Normal",
+      "badgeSpriteId": 49
+    },
+    {
+      "name": "Gran Prueba de Hala",
+      "leader": "Kahuna Hala",
+      "levelRange": "14-15",
+      "note": "Tipo Lucha. Crabrawler es su as. Volador o Psíquico.",
+      "badge": "Cristal Z Lucha",
+      "badgeSpriteId": 50
+    },
+    {
+      "name": "Prueba de Lana",
+      "leader": "Lana",
+      "levelRange": "18-20",
+      "note": "Tipo Agua en Estanque Brooklet. Dominante: Araquanid (nuevo en USUM). Eléctrico ideal.",
+      "badge": "Cristal Z Agua",
+      "badgeSpriteId": 51
+    },
+    {
+      "name": "Prueba de Kiawe",
+      "leader": "Kiawe",
+      "levelRange": "22-22",
+      "note": "Tipo Fuego en Volcán Wela. Dominante: Alolan Marowak (nuevo). Agua o Tierra.",
+      "badge": "Cristal Z Fuego",
+      "badgeSpriteId": 52
+    },
+    {
+      "name": "Prueba de Mallow",
+      "leader": "Mallow",
+      "levelRange": "24-24",
+      "note": "Tipo Planta en Jungla Lush. Dominante: Lurantis. Fuego o Volador.",
+      "badge": "Cristal Z Planta",
+      "badgeSpriteId": 53
+    },
+    {
+      "name": "Gran Prueba de Olivia",
+      "leader": "Kahuna Olivia",
+      "levelRange": "26-27",
+      "note": "Tipo Roca. Lycanroc Mediodía. Agua, Planta o Lucha.",
+      "badge": "Cristal Z Roca",
+      "badgeSpriteId": 54
+    },
+    {
+      "name": "Prueba de Sophocles",
+      "leader": "Sophocles",
+      "levelRange": "29-29",
+      "note": "Tipo Eléctrico en Observatorio Hokulani. Dominante: Togedemaru. Tierra.",
+      "badge": "Cristal Z Eléctrico",
+      "badgeSpriteId": 55
+    },
+    {
+      "name": "Prueba de Acerola",
+      "leader": "Acerola",
+      "levelRange": "33-33",
+      "note": "Tipo Fantasma en Supermercado Abandonado. Dominante: Mimikyu. Fantasma o Siniestro.",
+      "badge": "Cristal Z Fantasma",
+      "badgeSpriteId": 56
+    },
+    {
+      "name": "Gran Prueba de Nanu",
+      "leader": "Kahuna Nanu",
+      "levelRange": "38-39",
+      "note": "Tipo Siniestro. Alolan Persian. Lucha, Bicho o Hada.",
+      "badge": "Cristal Z Siniestro",
+      "badgeSpriteId": 57
+    },
+    {
+      "name": "Gran Prueba de Hapu",
+      "leader": "Kahuna Hapu",
+      "levelRange": "47-48",
+      "note": "Tipo Tierra. Mudsdale y Flygon. Agua, Planta o Hielo.",
+      "badge": "Cristal Z Tierra",
+      "badgeSpriteId": 58
+    }
   ]
 }

@@ -247,9 +247,9 @@ final class DataSeeder {
 
     private func seedGyms(from url: URL, game: CDGame, in context: NSManagedObjectContext) throws {
         let data = try Data(contentsOf: url)
-        let gyms = try JSONDecoder().decode([GuideGymJSON].self, from: data)
+        let wrapper = try JSONDecoder().decode(GuideGymsJSON.self, from: data)
 
-        for (index, gymJSON) in gyms.enumerated() {
+        for (index, gymJSON) in wrapper.gyms.enumerated() {
             let gym = CDGym(context: context)
             gym.orderIndex = Int16(index)
             gym.name = gymJSON.name
@@ -257,6 +257,7 @@ final class DataSeeder {
             gym.levelRange = gymJSON.levelRange
             gym.note = gymJSON.note
             gym.badge = gymJSON.badge
+            gym.badgeSpriteId = Int16(gymJSON.badgeSpriteId ?? 0)
             gym.game = game
         }
     }
