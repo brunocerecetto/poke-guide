@@ -76,16 +76,18 @@ struct PokedexDetailView: View {
                     .scaleEffect(spriteScale)
             }
 
-            // Dramatic scale shift: oversized dex number
-            Text(entry.dexString)
-                .font(KATypography.displayLg)
-                .foregroundColor(.onSurface.opacity(0.08))
-                .tightTracking(56)
-                .overlay(alignment: .center) {
-                    Text(entry.name)
-                        .font(.system(size: 28, weight: .heavy, design: .rounded))
-                        .foregroundColor(.onSurface)
-                }
+            VStack(spacing: 4) {
+                Text(entry.dexString)
+                    .font(KATypography.labelSm)
+                    .foregroundColor(.onSurfaceVariant)
+                    .padding(.horizontal, KASpacing.sm)
+                    .padding(.vertical, 3)
+                    .background(Capsule().fill(Color.surfaceContainerHighest))
+
+                Text(entry.name)
+                    .font(.system(size: 28, weight: .heavy, design: .rounded))
+                    .foregroundColor(.onSurface)
+            }
 
             // Type badges (10% opacity style)
             HStack(spacing: KASpacing.sm) {
