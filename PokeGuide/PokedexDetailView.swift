@@ -32,6 +32,12 @@ struct PokedexDetailView: View {
                         .opacity(appeared ? 1 : 0)
                 }
 
+                if let chain = EvolutionData.chain(for: entry.id) {
+                    evolutionSection(chain: chain)
+                        .opacity(appeared ? 1 : 0)
+                        .offset(y: appeared ? 0 : 15)
+                }
+
                 statsSection
                     .opacity(appeared ? 1 : 0)
                     .offset(y: appeared ? 0 : 15)
@@ -66,19 +72,8 @@ struct PokedexDetailView: View {
                     .fill(primaryColor.opacity(0.04))
                     .frame(width: 220, height: 220)
 
-                AsyncImage(url: entry.spriteURL) { phase in
-                    switch phase {
-                    case .success(let image):
-                        image.interpolation(.none).resizable().scaledToFit()
-                            .frame(width: 130, height: 130)
-                    case .failure:
-                        Image(systemName: "questionmark.circle.fill").font(.system(size: 50)).foregroundColor(.onSurfaceVariant)
-                    case .empty:
-                        ProgressView().tint(theme.accent)
-                    @unknown default: EmptyView()
-                    }
-                }
-                .scaleEffect(spriteScale)
+                CachedSpriteView(url: entry.spriteURL, size: 130)
+                    .scaleEffect(spriteScale)
             }
 
             // Dramatic scale shift: oversized dex number
@@ -160,6 +155,117 @@ struct PokedexDetailView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(KASpacing.md)
         .softCard(cornerRadius: KARadius.lg)
+    }
+
+    // MARK: - Evolution Chain
+
+    private func evolutionSection(chain: EvolutionChain) -> some View {
+        VStack(alignment: .leading, spacing: KASpacing.md) {
+            HStack(spacing: 6) {
+                Image(systemName: "arrow.triangle.branch")
+                    .foregroundColor(theme.accent)
+                Text("Cadena Evolutiva")
+                    .font(KATypography.titleSm)
+                    .foregroundColor(.onSurface)
+            }
+
+            if chain.isBranching {
+                branchingChainView(chain: chain)
+            } else {
+                linearChainView(chain: chain)
+            }
+        }
+        .padding(KASpacing.md)
+        .softCard(cornerRadius: KARadius.lg, tint: theme.accent)
+    }
+
+    private func linearChainView(chain: EvolutionChain) -> some View {
+        HStack(spacing: 0) {
+            ForEach(Array(chain.stages.enumerated()), id: \.element.id) { index, stage in
+                if index > 0 {
+                    VStack(spacing: 2) {
+                        Image(systemName: "arrow.right")
+                            .font(.system(size: 10, weight: .bold))
+                            .foregroundColor(.onSurfaceVariant)
+                        if let method = stage.method {
+                            methodLabel(method)
+                        }
+                    }
+                }
+                evolutionStageView(dex: stage.id, name: stage.name)
+            }
+        }
+        .frame(maxWidth: .infinity)
+    }
+
+    private func branchingChainView(chain: EvolutionChain) -> some View {
+        VStack(spacing: KASpacing.sm) {
+            if let base = chain.stages.first {
+                evolutionStageView(dex: base.id, name: base.name)
+            }
+
+            Image(systemName: "arrow.down")
+                .font(.system(size: 10, weight: .bold))
+                .foregroundColor(.onSurfaceVariant)
+
+            HStack(spacing: KASpacing.sm) {
+                ForEach(chain.branches) { branch in
+                    VStack(spacing: 2) {
+                        evolutionStageView(dex: branch.id, name: branch.name)
+                        if let method = branch.method {
+                            methodLabel(method)
+                        }
+                    }
+                }
+            }
+        }
+        .frame(maxWidth: .infinity)
+    }
+
+    private func methodLabel(_ method: EvolutionMethod) -> some View {
+        HStack(spacing: 2) {
+            Image(systemName: method.icon)
+                .font(.system(size: 7))
+            Text(method.label)
+                .font(.system(size: 8, weight: .medium))
+        }
+        .foregroundColor(.onSurfaceVariant)
+        .multilineTextAlignment(.center)
+        .lineLimit(2)
+        .frame(maxWidth: 60)
+    }
+
+    @ViewBuilder
+    private func evolutionStageView(dex: Int, name: String) -> some View {
+        let isCurrent = dex == entry.id
+        let targetEntry = PokedexData.kanto.first { $0.id == dex }
+
+        let label = VStack(spacing: KASpacing.xs) {
+            CachedSpriteView(url: URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(dex).png"), size: 32)
+            .padding(KASpacing.xs)
+            .background(
+                Circle()
+                    .fill(isCurrent ? primaryColor.opacity(0.12) : Color.surfaceContainerHighest.opacity(0.5))
+            )
+
+            Text(name)
+                .font(.system(size: 10, weight: isCurrent ? .bold : .medium))
+                .foregroundColor(isCurrent ? .onSurface : .onSurfaceVariant)
+                .lineLimit(1)
+                .minimumScaleFactor(0.7)
+        }
+        .frame(maxWidth: .infinity)
+
+        if let target = targetEntry, target.id != entry.id {
+            NavigationLink {
+                PokedexDetailView(entry: target)
+            } label: {
+                label
+            }
+            .buttonStyle(.plain)
+        } else {
+            label
+        }
     }
 
     // MARK: - Stats

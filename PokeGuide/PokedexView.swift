@@ -7,26 +7,63 @@
 
 import SwiftUI
 
+enum PokedexSort: String, CaseIterable {
+    case dexNumber = "Número"
+    case name = "Nombre"
+    case statTotal = "Stats"
+
+    var icon: String {
+        switch self {
+        case .dexNumber: return "number"
+        case .name: return "textformat.abc"
+        case .statTotal: return "chart.bar.fill"
+        }
+    }
+}
+
 struct PokedexView: View {
     @EnvironmentObject var progress: ProgressManager
     @EnvironmentObject var gameConfig: GameConfig
     @Environment(\.themeColors) private var theme
     @State private var searchText = ""
-    @State private var selectedType: PokemonType? = nil
-    @State private var selectedStatus: PokemonStatus? = nil
+
+    @AppStorage("pokedex_sort") private var sortRaw: String = PokedexSort.dexNumber.rawValue
+    @AppStorage("pokedex_type") private var typeRaw: String = ""
+    @AppStorage("pokedex_status") private var statusRaw: Int = -1
+
+    private var selectedSort: PokedexSort {
+        PokedexSort(rawValue: sortRaw) ?? .dexNumber
+    }
+
+    private var selectedType: PokemonType? {
+        typeRaw.isEmpty ? nil : PokemonType(rawValue: typeRaw)
+    }
+
+    private var selectedStatus: PokemonStatus? {
+        statusRaw < 0 ? nil : PokemonStatus(rawValue: statusRaw)
+    }
 
     private var pokedexEntries: [PokemonEntry] {
         PokemonLoader.entries(forGameId: gameConfig.gameId)
     }
 
     private var filteredPokemon: [PokemonEntry] {
-        pokedexEntries.filter { entry in
+        let filtered = pokedexEntries.filter { entry in
             let matchesSearch = searchText.isEmpty
                 || entry.name.localizedCaseInsensitiveContains(searchText)
                 || entry.dexString.contains(searchText)
             let matchesType = selectedType == nil || entry.types.contains(selectedType!)
             let matchesStatus = selectedStatus == nil || progress.pokemonStatus(for: entry.id) == selectedStatus!
             return matchesSearch && matchesType && matchesStatus
+        }
+
+        switch selectedSort {
+        case .dexNumber:
+            return filtered.sorted { $0.id < $1.id }
+        case .name:
+            return filtered.sorted { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
+        case .statTotal:
+            return filtered.sorted { $0.stats.total > $1.stats.total }
         }
     }
 
@@ -42,6 +79,7 @@ struct PokedexView: View {
             statsBar
             typeFilter
             statusFilter
+            sortFilter
 
             GeometryReader { geo in
                 ScrollView {
@@ -96,12 +134,12 @@ struct PokedexView: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 6) {
                 chip(label: "Todos", isSelected: selectedType == nil) {
-                    withAnimation(.easeInOut(duration: 0.2)) { selectedType = nil }
+                    withAnimation(.easeInOut(duration: 0.2)) { typeRaw = "" }
                 }
                 ForEach(PokemonType.allCases, id: \.self) { type in
                     chip(label: type.rawValue.capitalized, icon: type.icon, color: type.color, isSelected: selectedType == type) {
                         withAnimation(.easeInOut(duration: 0.2)) {
-                            selectedType = selectedType == type ? nil : type
+                            typeRaw = selectedType == type ? "" : type.rawValue
                         }
                     }
                 }
@@ -115,12 +153,28 @@ struct PokedexView: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 6) {
                 chip(label: "Todos", isSelected: selectedStatus == nil) {
-                    withAnimation(.easeInOut(duration: 0.2)) { selectedStatus = nil }
+                    withAnimation(.easeInOut(duration: 0.2)) { statusRaw = -1 }
                 }
                 ForEach(PokemonStatus.allCases, id: \.self) { status in
                     chip(label: status.label, icon: status.icon, color: status.color, isSelected: selectedStatus == status) {
                         withAnimation(.easeInOut(duration: 0.2)) {
-                            selectedStatus = selectedStatus == status ? nil : status
+                            statusRaw = selectedStatus == status ? -1 : status.rawValue
+                        }
+                    }
+                }
+            }
+            .padding(.horizontal)
+            .padding(.bottom, 6)
+        }
+    }
+
+    private var sortFilter: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 6) {
+                ForEach(PokedexSort.allCases, id: \.self) { sort in
+                    chip(label: sort.rawValue, icon: sort.icon, isSelected: selectedSort == sort) {
+                        withAnimation(.easeInOut(duration: 0.2)) {
+                            sortRaw = sort.rawValue
                         }
                     }
                 }
@@ -156,20 +210,8 @@ struct PokedexView: View {
             PokedexDetailView(entry: entry)
         } label: {
             HStack(spacing: KASpacing.sm + KASpacing.xs) {
-                AsyncImage(url: entry.spriteURL) { phase in
-                    switch phase {
-                    case .success(let image):
-                        image.interpolation(.none).resizable().scaledToFit().frame(width: 40, height: 40)
-                            .saturation(isAvailable ? 1 : 0.3)
-                    case .failure:
-                        Image(systemName: status.icon).font(.system(size: 18)).foregroundColor(status.color)
-                            .frame(width: 40, height: 40)
-                    case .empty:
-                        ProgressView().frame(width: 40, height: 40)
-                    @unknown default: EmptyView()
-                    }
-                }
-                .frame(width: 40, height: 40)
+                CachedSpriteView(url: entry.spriteURL, size: 40)
+                    .saturation(isAvailable ? 1 : 0.3)
 
                 Text(entry.dexString)
                     .font(.system(size: 11, weight: .bold, design: .monospaced))
