@@ -41,7 +41,7 @@ struct TeamTab: View {
             }
             .background(PixelBackground())
             .navigationTitle("Equipo")
-            .navigationBarTitleDisplayMode(.large)
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 

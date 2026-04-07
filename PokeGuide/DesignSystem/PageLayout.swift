@@ -51,7 +51,7 @@ private struct NavigationTitleModifier: ViewModifier {
         if let title {
             content
                 .navigationTitle(title)
-                .navigationBarTitleDisplayMode(.large)
+                .navigationBarTitleDisplayMode(.inline)
                 .toolbarBackground(.automatic, for: .navigationBar)
         } else {
             content

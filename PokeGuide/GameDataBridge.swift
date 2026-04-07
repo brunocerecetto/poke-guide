@@ -22,6 +22,8 @@ private struct BundledTeamJSON: Codable {
 }
 
 class GameDataBridge: ObservableObject {
+    @Published private var _version: Int = 0
+
     private let guideRepo: GuideRepository?
     private let gameId: String
     private let starterDex: Int
@@ -65,7 +67,7 @@ class GameDataBridge: ObservableObject {
     private func loadTeamFromBundle(starter: String) -> TeamRecommendationDTO? {
         let fileName = "team-\(starter)"
 
-        guard let url = Bundle.main.url(forResource: fileName, withExtension: "json", subdirectory: "guides/\(gameId)") else {
+        guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {
             return nil
         }
         guard let data = try? Data(contentsOf: url),

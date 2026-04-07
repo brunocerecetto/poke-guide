@@ -41,7 +41,7 @@ struct HMTMView: View {
         }
         .background(Color.surface.ignoresSafeArea())
         .navigationTitle("HMs & TMs")
-        .navigationBarTitleDisplayMode(.large)
+        .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(.automatic, for: .navigationBar)
     }
 

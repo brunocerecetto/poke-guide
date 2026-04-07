@@ -31,7 +31,7 @@ struct ResourcesTab: View {
             }
             .background(PixelBackground())
             .navigationTitle("Recursos")
-            .navigationBarTitleDisplayMode(.large)
+            .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 withAnimation(KAAnimation.appearSpring) { appeared = true }
             }

@@ -99,7 +99,7 @@ struct PokedexView: View {
         }
         .background(Color.surface.ignoresSafeArea())
         .navigationTitle("Pokédex")
-        .navigationBarTitleDisplayMode(.large)
+        .navigationBarTitleDisplayMode(.inline)
         .searchable(text: $searchText, prompt: "Buscar pokémon...")
     }
 
@@ -258,12 +258,28 @@ struct PokedexView: View {
 
                 Spacer()
 
-                Text(status.label)
-                    .font(KATypography.labelXs)
+                Menu {
+                    ForEach(PokemonStatus.allCases, id: \.self) { option in
+                        Button {
+                            withAnimation(.easeInOut(duration: 0.2)) {
+                                progress.setPokemonStatus(for: entry.id, to: option)
+                            }
+                        } label: {
+                            Label(option.label, systemImage: option.icon)
+                        }
+                    }
+                } label: {
+                    HStack(spacing: 4) {
+                        Image(systemName: status.icon)
+                            .font(.system(size: 10))
+                        Text(status.label)
+                            .font(KATypography.labelXs)
+                    }
                     .foregroundColor(status.color)
                     .padding(.horizontal, KASpacing.sm)
                     .padding(.vertical, KASpacing.xs)
                     .background(Capsule().fill(status.color.opacity(0.10)))
+                }
 
                 Image(systemName: "chevron.right")
                     .font(.system(size: 10, weight: .bold))
