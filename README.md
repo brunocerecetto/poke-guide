@@ -24,19 +24,19 @@ Built with the FireRed color palette — warm cream backgrounds, soft cards, and
 
 ## Build & Run
 
-Open `PokemonGuide.xcodeproj` in Xcode and press Cmd+R.
+Open `PokeGuide.xcodeproj` in Xcode and press Cmd+R.
 
 ```bash
 # CLI build
-xcodebuild -project "PokemonGuide.xcodeproj" \
-  -scheme "PokemonGuide" \
+xcodebuild -project "PokeGuide.xcodeproj" \
+  -scheme "PokeGuide" \
   -destination 'platform=iOS Simulator,name=iPhone 17 Pro' \
   build
 ```
 
 ## Architecture
 
-- **Entry point**: `pokemon_guideApp.swift` — injects `ProgressManager` as `@EnvironmentObject`
+- **Entry point**: `PokeGuideApp.swift` — injects `ProgressManager` as `@EnvironmentObject`
 - **ProgressManager** — persists all checklist progress to `UserDefaults`
 - **GameData** — static game data (gyms, team, routes, tips, Elite Four)
 - **PokedexData** — 151 Kanto Pokemon with types, stats, and locations

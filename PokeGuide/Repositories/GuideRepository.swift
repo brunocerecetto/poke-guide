@@ -1,6 +1,6 @@
 //
 //  GuideRepository.swift
-//  PokemonGuide
+//  PokeGuide
 //
 //  Repository layer for querying game guide content from Core Data.
 //  Covers games, gyms, routes, elite four, tips, captures, HM/TM,

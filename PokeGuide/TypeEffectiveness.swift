@@ -1,6 +1,6 @@
 //
 //  TypeEffectiveness.swift
-//  PokemonGuide
+//  PokeGuide
 //
 //  Datos de efectividad de tipos Gen 6+ (18 tipos incluyendo Dark y Fairy).
 //  Fuente canónica para TeamBuilderView y TypeChartView.

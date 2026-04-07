@@ -1,6 +1,6 @@
 //
 //  ProgressRepository.swift
-//  PokemonGuide
+//  PokeGuide
 //
 //  Core Data-backed replacement for the UserDefaults ProgressManager.
 //  Maintains the same toggle/query API so existing views can migrate

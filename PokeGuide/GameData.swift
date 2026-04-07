@@ -1,6 +1,6 @@
 //
 //  GameData.swift
-//  pokemon guide
+//  poke guide
 //
 //  Todos los datos estáticos de la guía.
 //

@@ -1,6 +1,6 @@
 //
 //  PokemonRepository.swift
-//  PokemonGuide
+//  PokeGuide
 //
 //  Repository layer for querying Pokemon data from Core Data.
 //  Returns lightweight DTO structs decoupled from NSManagedObject.

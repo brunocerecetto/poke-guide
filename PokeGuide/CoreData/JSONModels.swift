@@ -1,6 +1,6 @@
 //
 //  JSONModels.swift
-//  PokemonGuide
+//  PokeGuide
 //
 //  Codable structs matching the JSON file schemas used for seeding.
 //

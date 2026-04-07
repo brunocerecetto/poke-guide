@@ -1,6 +1,6 @@
 //
 //  ProgressManager.swift
-//  pokemon guide
+//  poke guide
 //
 //  Persiste todo el progreso offline usando UserDefaults.
 //  Las keys están namespaceadas por GameVersion + Starter.

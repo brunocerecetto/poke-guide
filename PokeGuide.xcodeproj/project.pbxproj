@@ -12,37 +12,37 @@
 			containerPortal = 68579BE92F83B810007C0026 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 68579BF02F83B810007C0026;
-			remoteInfo = PokemonGuide;
+			remoteInfo = PokeGuide;
 		};
 		68579C0B2F83B811007C0026 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 68579BE92F83B810007C0026 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 68579BF02F83B810007C0026;
-			remoteInfo = PokemonGuide;
+			remoteInfo = PokeGuide;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		68579BF12F83B810007C0026 /* PokemonGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		68579C002F83B811007C0026 /* PokemonGuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokemonGuideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		68579C0A2F83B811007C0026 /* PokemonGuideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokemonGuideUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		68579BF12F83B810007C0026 /* PokeGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		68579C002F83B811007C0026 /* PokeGuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokeGuideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		68579C0A2F83B811007C0026 /* PokeGuideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokeGuideUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		68579BF32F83B810007C0026 /* PokemonGuide */ = {
+		68579BF32F83B810007C0026 /* PokeGuide */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = PokemonGuide;
+			path = PokeGuide;
 			sourceTree = "<group>";
 		};
-		68579C032F83B811007C0026 /* PokemonGuideTests */ = {
+		68579C032F83B811007C0026 /* PokeGuideTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = PokemonGuideTests;
+			path = PokeGuideTests;
 			sourceTree = "<group>";
 		};
-		68579C0D2F83B811007C0026 /* PokemonGuideUITests */ = {
+		68579C0D2F83B811007C0026 /* PokeGuideUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = PokemonGuideUITests;
+			path = PokeGuideUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,9 +75,9 @@
 		68579BE82F83B810007C0026 = {
 			isa = PBXGroup;
 			children = (
-				68579BF32F83B810007C0026 /* PokemonGuide */,
-				68579C032F83B811007C0026 /* PokemonGuideTests */,
-				68579C0D2F83B811007C0026 /* PokemonGuideUITests */,
+				68579BF32F83B810007C0026 /* PokeGuide */,
+				68579C032F83B811007C0026 /* PokeGuideTests */,
+				68579C0D2F83B811007C0026 /* PokeGuideUITests */,
 				68579BF22F83B810007C0026 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,9 +85,9 @@
 		68579BF22F83B810007C0026 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				68579BF12F83B810007C0026 /* PokemonGuide.app */,
-				68579C002F83B811007C0026 /* PokemonGuideTests.xctest */,
-				68579C0A2F83B811007C0026 /* PokemonGuideUITests.xctest */,
+				68579BF12F83B810007C0026 /* PokeGuide.app */,
+				68579C002F83B811007C0026 /* PokeGuideTests.xctest */,
+				68579C0A2F83B811007C0026 /* PokeGuideUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,9 +95,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		68579BF02F83B810007C0026 /* PokemonGuide */ = {
+		68579BF02F83B810007C0026 /* PokeGuide */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 68579C142F83B811007C0026 /* Build configuration list for PBXNativeTarget "PokemonGuide" */;
+			buildConfigurationList = 68579C142F83B811007C0026 /* Build configuration list for PBXNativeTarget "PokeGuide" */;
 			buildPhases = (
 				68579BED2F83B810007C0026 /* Sources */,
 				68579BEE2F83B810007C0026 /* Frameworks */,
@@ -108,18 +108,18 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				68579BF32F83B810007C0026 /* PokemonGuide */,
+				68579BF32F83B810007C0026 /* PokeGuide */,
 			);
-			name = PokemonGuide;
+			name = PokeGuide;
 			packageProductDependencies = (
 			);
-			productName = PokemonGuide;
-			productReference = 68579BF12F83B810007C0026 /* PokemonGuide.app */;
+			productName = PokeGuide;
+			productReference = 68579BF12F83B810007C0026 /* PokeGuide.app */;
 			productType = "com.apple.product-type.application";
 		};
-		68579BFF2F83B811007C0026 /* PokemonGuideTests */ = {
+		68579BFF2F83B811007C0026 /* PokeGuideTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 68579C172F83B811007C0026 /* Build configuration list for PBXNativeTarget "PokemonGuideTests" */;
+			buildConfigurationList = 68579C172F83B811007C0026 /* Build configuration list for PBXNativeTarget "PokeGuideTests" */;
 			buildPhases = (
 				68579BFC2F83B811007C0026 /* Sources */,
 				68579BFD2F83B811007C0026 /* Frameworks */,
@@ -131,18 +131,18 @@
 				68579C022F83B811007C0026 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				68579C032F83B811007C0026 /* PokemonGuideTests */,
+				68579C032F83B811007C0026 /* PokeGuideTests */,
 			);
-			name = PokemonGuideTests;
+			name = PokeGuideTests;
 			packageProductDependencies = (
 			);
-			productName = PokemonGuideTests;
-			productReference = 68579C002F83B811007C0026 /* PokemonGuideTests.xctest */;
+			productName = PokeGuideTests;
+			productReference = 68579C002F83B811007C0026 /* PokeGuideTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		68579C092F83B811007C0026 /* PokemonGuideUITests */ = {
+		68579C092F83B811007C0026 /* PokeGuideUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 68579C1A2F83B811007C0026 /* Build configuration list for PBXNativeTarget "PokemonGuideUITests" */;
+			buildConfigurationList = 68579C1A2F83B811007C0026 /* Build configuration list for PBXNativeTarget "PokeGuideUITests" */;
 			buildPhases = (
 				68579C062F83B811007C0026 /* Sources */,
 				68579C072F83B811007C0026 /* Frameworks */,
@@ -154,13 +154,13 @@
 				68579C0C2F83B811007C0026 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				68579C0D2F83B811007C0026 /* PokemonGuideUITests */,
+				68579C0D2F83B811007C0026 /* PokeGuideUITests */,
 			);
-			name = PokemonGuideUITests;
+			name = PokeGuideUITests;
 			packageProductDependencies = (
 			);
-			productName = PokemonGuideUITests;
-			productReference = 68579C0A2F83B811007C0026 /* PokemonGuideUITests.xctest */;
+			productName = PokeGuideUITests;
+			productReference = 68579C0A2F83B811007C0026 /* PokeGuideUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -186,7 +186,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 68579BEC2F83B810007C0026 /* Build configuration list for PBXProject "PokemonGuide" */;
+			buildConfigurationList = 68579BEC2F83B810007C0026 /* Build configuration list for PBXProject "PokeGuide" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -200,9 +200,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				68579BF02F83B810007C0026 /* PokemonGuide */,
-				68579BFF2F83B811007C0026 /* PokemonGuideTests */,
-				68579C092F83B811007C0026 /* PokemonGuideUITests */,
+				68579BF02F83B810007C0026 /* PokeGuide */,
+				68579BFF2F83B811007C0026 /* PokeGuideTests */,
+				68579C092F83B811007C0026 /* PokeGuideUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -258,12 +258,12 @@
 /* Begin PBXTargetDependency section */
 		68579C022F83B811007C0026 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 68579BF02F83B810007C0026 /* PokemonGuide */;
+			target = 68579BF02F83B810007C0026 /* PokeGuide */;
 			targetProxy = 68579C012F83B811007C0026 /* PBXContainerItemProxy */;
 		};
 		68579C0C2F83B811007C0026 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 68579BF02F83B810007C0026 /* PokemonGuide */;
+			target = 68579BF02F83B810007C0026 /* PokeGuide */;
 			targetProxy = 68579C0B2F83B811007C0026 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -464,7 +464,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bruno.pokemon-guideTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bruno.poke-guideTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -472,7 +472,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PokemonGuide.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PokemonGuide";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PokeGuide.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PokeGuide";
 			};
 			name = Debug;
 		};
@@ -486,7 +486,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bruno.pokemon-guideTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bruno.poke-guideTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -494,7 +494,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PokemonGuide.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PokemonGuide";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PokeGuide.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PokeGuide";
 			};
 			name = Release;
 		};
@@ -506,7 +506,7 @@
 				DEVELOPMENT_TEAM = 7LBQ559JS3;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bruno.pokemon-guideUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bruno.poke-guideUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -514,7 +514,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = PokemonGuide;
+				TEST_TARGET_NAME = PokeGuide;
 			};
 			name = Debug;
 		};
@@ -526,7 +526,7 @@
 				DEVELOPMENT_TEAM = 7LBQ559JS3;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bruno.pokemon-guideUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bruno.poke-guideUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -534,14 +534,14 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = PokemonGuide;
+				TEST_TARGET_NAME = PokeGuide;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		68579BEC2F83B810007C0026 /* Build configuration list for PBXProject "PokemonGuide" */ = {
+		68579BEC2F83B810007C0026 /* Build configuration list for PBXProject "PokeGuide" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				68579C122F83B811007C0026 /* Debug */,
@@ -550,7 +550,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		68579C142F83B811007C0026 /* Build configuration list for PBXNativeTarget "PokemonGuide" */ = {
+		68579C142F83B811007C0026 /* Build configuration list for PBXNativeTarget "PokeGuide" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				68579C152F83B811007C0026 /* Debug */,
@@ -559,7 +559,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		68579C172F83B811007C0026 /* Build configuration list for PBXNativeTarget "PokemonGuideTests" */ = {
+		68579C172F83B811007C0026 /* Build configuration list for PBXNativeTarget "PokeGuideTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				68579C182F83B811007C0026 /* Debug */,
@@ -568,7 +568,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		68579C1A2F83B811007C0026 /* Build configuration list for PBXNativeTarget "PokemonGuideUITests" */ = {
+		68579C1A2F83B811007C0026 /* Build configuration list for PBXNativeTarget "PokeGuideUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				68579C1B2F83B811007C0026 /* Debug */,

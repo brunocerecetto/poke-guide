@@ -1,6 +1,6 @@
 //
 //  PersistenceController.swift
-//  PokemonGuide
+//  PokeGuide
 //
 //  Core Data stack with CloudKit sync.
 //  Model is built programmatically — no .xcdatamodeld file required.
@@ -24,7 +24,7 @@ struct PersistenceController {
 
     init(inMemory: Bool = false) {
         let model = Self.buildManagedObjectModel()
-        container = NSPersistentContainer(name: "PokemonGuide", managedObjectModel: model)
+        container = NSPersistentContainer(name: "PokeGuide", managedObjectModel: model)
 
         if inMemory {
             let description = NSPersistentStoreDescription()

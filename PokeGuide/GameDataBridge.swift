@@ -1,6 +1,6 @@
 //
 //  GameDataBridge.swift
-//  PokemonGuide
+//  PokeGuide
 //
 //  Bridge layer that loads guide data from GuideRepository (Core Data)
 //  when available, falling back to legacy static GameData/RivalData.

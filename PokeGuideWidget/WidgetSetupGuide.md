@@ -1,18 +1,18 @@
-# PokemonGuideWidget - Setup Guide
+# PokeGuideWidget - Setup Guide
 
 ## 1. Add the Widget Extension Target in Xcode
 
-1. Open `PokemonGuide.xcodeproj` in Xcode.
+1. Open `PokeGuide.xcodeproj` in Xcode.
 2. Go to **File > New > Target...**
 3. Select **Widget Extension** under the iOS tab.
 4. Configure:
-   - **Product Name**: `PokemonGuideWidget`
+   - **Product Name**: `PokeGuideWidget`
    - **Team**: your signing team
    - **Include Configuration App Intent**: leave **unchecked** (we use `StaticConfiguration`)
    - **Include Live Activity**: leave unchecked
 5. Click **Finish**. Xcode creates a new group and scheme.
-6. **Delete** the auto-generated Swift files in the new `PokemonGuideWidget/` group.
-7. **Add** the `PokemonGuideWidget.swift` file from this directory into the target (drag it into the Xcode group, or File > Add Files, making sure the `PokemonGuideWidget` target is checked).
+6. **Delete** the auto-generated Swift files in the new `PokeGuideWidget/` group.
+7. **Add** the `PokeGuideWidget.swift` file from this directory into the target (drag it into the Xcode group, or File > Add Files, making sure the `PokeGuideWidget` target is checked).
 
 ## 2. Configure the App Group
 
@@ -20,21 +20,21 @@ Both the main app and the widget need to share data through a common App Group c
 
 ### Create the App Group
 
-1. Select the **PokemonGuide** project in the navigator.
-2. Select the **PokemonGuide** (main app) target.
+1. Select the **PokeGuide** project in the navigator.
+2. Select the **PokeGuide** (main app) target.
 3. Go to **Signing & Capabilities**.
 4. Click **+ Capability** > **App Groups**.
-5. Add the group: `group.com.brunocerecetto.PokemonGuide`
-6. Repeat for the **PokemonGuideWidget** target:
+5. Add the group: `group.com.brunocerecetto.PokeGuide`
+6. Repeat for the **PokeGuideWidget** target:
    - Select the widget target > Signing & Capabilities > + Capability > App Groups.
-   - Add the same group: `group.com.brunocerecetto.PokemonGuide`
+   - Add the same group: `group.com.brunocerecetto.PokeGuide`
 
 ### Verify in Apple Developer Portal
 
 If Xcode doesn't auto-register the App Group:
 
 1. Go to [developer.apple.com/account](https://developer.apple.com/account).
-2. Under **Certificates, Identifiers & Profiles** > **Identifiers** > **App Groups**, make sure `group.com.brunocerecetto.PokemonGuide` exists.
+2. Under **Certificates, Identifiers & Profiles** > **Identifiers** > **App Groups**, make sure `group.com.brunocerecetto.PokeGuide` exists.
 3. Under both app identifiers (main app and widget extension), enable the **App Groups** capability and select this group.
 
 ## 3. Update ProgressManager to Write to the Shared Container
@@ -53,7 +53,7 @@ private let defaults = UserDefaults.standard
 private let defaults: UserDefaults
 
 // In init(), before any other code:
-self.defaults = UserDefaults(suiteName: "group.com.brunocerecetto.PokemonGuide") ?? .standard
+self.defaults = UserDefaults(suiteName: "group.com.brunocerecetto.PokeGuide") ?? .standard
 ```
 
 Also update the static helper methods that reference `UserDefaults.standard`:
@@ -61,14 +61,14 @@ Also update the static helper methods that reference `UserDefaults.standard`:
 ```swift
 // In load(forKey:) — replace UserDefaults.standard:
 private static func load(forKey key: String) -> Set<String> {
-    let defaults = UserDefaults(suiteName: "group.com.brunocerecetto.PokemonGuide") ?? .standard
+    let defaults = UserDefaults(suiteName: "group.com.brunocerecetto.PokeGuide") ?? .standard
     let array = defaults.stringArray(forKey: key) ?? []
     return Set(array)
 }
 
 // In loadPokedex(forKey:) — same change:
 private static func loadPokedex(forKey key: String) -> [Int: PokemonStatus] {
-    let defaults = UserDefaults(suiteName: "group.com.brunocerecetto.PokemonGuide") ?? .standard
+    let defaults = UserDefaults(suiteName: "group.com.brunocerecetto.PokeGuide") ?? .standard
     guard let dict = defaults.dictionary(forKey: key) as? [String: Int] else {
         return [:]
     }
@@ -77,7 +77,7 @@ private static func loadPokedex(forKey key: String) -> [Int: PokemonStatus] {
 
 // In migrateIfNeeded — same change:
 private static func migrateIfNeeded(from oldKey: String, to newKey: String) {
-    let shared = UserDefaults(suiteName: "group.com.brunocerecetto.PokemonGuide") ?? .standard
+    let shared = UserDefaults(suiteName: "group.com.brunocerecetto.PokeGuide") ?? .standard
     let standard = UserDefaults.standard
 
     // Migrate from standard to shared if needed
@@ -105,7 +105,7 @@ private let defaults = UserDefaults.standard
 private let defaults: UserDefaults
 
 // In init():
-let defaults = UserDefaults(suiteName: "group.com.brunocerecetto.PokemonGuide") ?? .standard
+let defaults = UserDefaults(suiteName: "group.com.brunocerecetto.PokeGuide") ?? .standard
 self.defaults = defaults
 // ... rest of init uses `defaults` already
 ```
@@ -114,7 +114,7 @@ Also update the static references in init:
 
 ```swift
 init() {
-    let defaults = UserDefaults(suiteName: "group.com.brunocerecetto.PokemonGuide") ?? .standard
+    let defaults = UserDefaults(suiteName: "group.com.brunocerecetto.PokeGuide") ?? .standard
     self.defaults = defaults
 
     let savedVersion = defaults.string(forKey: Self.versionKey)
@@ -186,12 +186,12 @@ Make sure the widget extension's deployment target matches the main app's. Check
 
 ## 5. Build & Test
 
-1. Select the **PokemonGuideWidget** scheme in Xcode.
+1. Select the **PokeGuideWidget** scheme in Xcode.
 2. Build (Cmd+B) to verify compilation.
-3. To preview the widget, use the `#Preview` macros at the bottom of `PokemonGuideWidget.swift`.
+3. To preview the widget, use the `#Preview` macros at the bottom of `PokeGuideWidget.swift`.
 4. To test on simulator:
    - Run the main app first (to populate shared UserDefaults).
-   - Add the widget to the home screen (long press > Edit Home Screen > + button > search "PokemonGuide").
+   - Add the widget to the home screen (long press > Edit Home Screen > + button > search "PokeGuide").
 5. Verify data flows by toggling progress in the app and checking that the widget updates.
 
 ## Summary of All Required Changes
@@ -201,4 +201,4 @@ Make sure the widget extension's deployment target matches the main app's. Check
 | `ProgressManager.swift` | Switch `UserDefaults.standard` to shared suite; add `notifyWidget()`; add `syncNextRouteStepsForWidget()` |
 | `GameConfig.swift` | Switch `UserDefaults.standard` to shared suite |
 | Xcode project | Add Widget Extension target; add App Group to both targets |
-| `PokemonGuideWidget.swift` | New file (provided) |
+| `PokeGuideWidget.swift` | New file (provided) |

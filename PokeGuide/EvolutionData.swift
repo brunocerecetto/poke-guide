@@ -1,6 +1,6 @@
 //
 //  EvolutionData.swift
-//  PokemonGuide
+//  PokeGuide
 //
 //  Cadenas evolutivas de los 151 Pokémon de Kanto.
 //

@@ -1,6 +1,6 @@
 //
 //  RivalData.swift
-//  PokemonGuide
+//  PokeGuide
 //
 //  Datos estáticos del equipo del rival en cada encuentro.
 //  El starter del rival depende de la elección del jugador.

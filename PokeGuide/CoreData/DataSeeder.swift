@@ -1,6 +1,6 @@
 //
 //  DataSeeder.swift
-//  PokemonGuide
+//  PokeGuide
 //
 //  Seeds Core Data from bundled JSON files on first launch.
 //  All seeding runs on a background context for performance.

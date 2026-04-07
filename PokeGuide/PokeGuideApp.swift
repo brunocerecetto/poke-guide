@@ -1,6 +1,6 @@
 //
-//  PokemonGuideApp.swift
-//  PokemonGuide
+//  PokeGuideApp.swift
+//  PokeGuide
 //
 //  Created by Bruno Cerecetto on 6/4/26.
 //
@@ -9,7 +9,7 @@ import SwiftUI
 import CoreData
 
 @main
-struct PokemonGuideApp: App {
+struct PokeGuideApp: App {
     @StateObject private var gameConfig: GameConfig
     @StateObject private var progress: ProgressManager
     @StateObject private var bridge: GameDataBridge
