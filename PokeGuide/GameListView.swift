@@ -80,6 +80,7 @@ struct GameListView: View {
     @State private var searchText = ""
     @State private var appeared = false
     @State private var selectedGame: GameCatalogEntry?
+    @State private var expandedGeneration: Int? = 1
 
     private var filteredGames: [GameCatalogEntry] {
         guard !searchText.isEmpty else { return GameCatalogEntry.allGames }
@@ -181,22 +182,50 @@ struct GameListView: View {
 
     private func generationSection(gen: Int, index: Int) -> some View {
         let games = filteredGames.filter { $0.generation == gen }
+        let isExpanded = expandedGeneration == gen
 
         return VStack(alignment: .leading, spacing: KASpacing.sm + KASpacing.xs) {
-            HStack(spacing: KASpacing.sm) {
-                Text(GameCatalogEntry.generationNames[gen] ?? "Gen \(gen)")
-                    .font(KATypography.titleMd)
-                    .foregroundColor(.onSurface)
+            Button {
+                withAnimation(.spring(response: 0.35, dampingFraction: 0.85)) {
+                    expandedGeneration = isExpanded ? nil : gen
+                }
+            } label: {
+                HStack(spacing: KASpacing.sm) {
+                    Text(GameCatalogEntry.generationNames[gen] ?? "Gen \(gen)")
+                        .font(KATypography.titleMd)
+                        .foregroundColor(.onSurface)
 
-                Spacer()
+                    if !isExpanded {
+                        HStack(spacing: 6) {
+                            ForEach(games) { game in
+                                Image(systemName: game.icon)
+                                    .font(.system(size: 13, weight: .semibold))
+                                    .foregroundColor(game.accentColor.opacity(gen == 1 ? 1 : 0.5))
+                            }
+                        }
+                    }
+
+                    Spacer()
+
+                    Image(systemName: "chevron.right")
+                        .font(.system(size: 13, weight: .semibold))
+                        .foregroundColor(.onSurfaceVariant)
+                        .rotationEffect(.degrees(isExpanded ? 90 : 0))
+                }
             }
             .padding(.horizontal)
 
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: KASpacing.md) {
+            if isExpanded {
+                let columns = [
+                    GridItem(.flexible(), spacing: KASpacing.md),
+                    GridItem(.flexible(), spacing: KASpacing.md),
+                ]
+
+                LazyVGrid(columns: columns, spacing: KASpacing.md) {
                     ForEach(games) { game in
                         gameCard(game: game)
                             .onTapGesture {
+                                guard game.generation == 1 else { return }
                                 selectedGame = game
                             }
                     }
@@ -247,7 +276,15 @@ struct GameListView: View {
                     .foregroundColor(game.accentColor.opacity(0.8))
             }
 
-            if let progress {
+            if game.generation != 1 {
+                HStack(spacing: KASpacing.xs) {
+                    Image(systemName: "clock.fill")
+                        .font(.system(size: 11))
+                    Text("Próximamente")
+                        .font(KATypography.labelSm)
+                }
+                .foregroundColor(.onSurfaceVariant.opacity(0.6))
+            } else if let progress {
                 HStack(spacing: 5) {
                     ProgressView(value: progress)
                         .tint(game.accentColor)
@@ -267,9 +304,10 @@ struct GameListView: View {
                 .foregroundColor(.onSurfaceVariant.opacity(0.6))
             }
         }
-        .frame(width: 150)
+        .frame(maxWidth: .infinity, alignment: .leading)
         .padding(KASpacing.md)
-        .softCard(cornerRadius: KARadius.lg, tint: game.accentColor)
+        .softCard(cornerRadius: KARadius.lg, tint: game.generation == 1 ? game.accentColor : .gray)
+        .opacity(game.generation == 1 ? 1.0 : 0.55)
     }
 }
 
