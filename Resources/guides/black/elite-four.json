@@ -1,9 +1,0 @@
-{
-  "members": [
-    { "name": "Shauntal", "strategy": "Tipo Fantasma. Usa Siniestro o Fantasma. Chandelure es su Pokémon más fuerte — cuidado con su alto Ataque Especial.", "levels": "48-50" },
-    { "name": "Grimsley", "strategy": "Tipo Siniestro. Lleva un tipo Lucha. Biskuit tiene Buena Baza que pega más si usa segundo.", "levels": "48-50" },
-    { "name": "Caitlin", "strategy": "Tipo Psíquico. Siniestro, Fantasma o Bicho son ideales. Reuniclus es muy resistente.", "levels": "48-50" },
-    { "name": "Marshal", "strategy": "Tipo Lucha. Volador o Psíquico recomendado. Mienshao es rápido y peligroso.", "levels": "48-50" },
-    { "name": "Alder (Campeón)", "strategy": "Equipo variado. Volcarona es su as — débil a Roca (x4). Lleva buena cobertura de tipos.", "levels": "75-77" }
-  ]
-}

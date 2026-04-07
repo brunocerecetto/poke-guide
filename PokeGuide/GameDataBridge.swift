@@ -69,7 +69,7 @@ class GameDataBridge: ObservableObject {
     private func loadTeamFromBundle(starter: String) -> TeamRecommendationDTO? {
         let fileName = "team-\(starter)"
 
-        guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {
+        guard let url = Bundle.main.url(forResource: fileName, withExtension: "json", subdirectory: "guides/\(gameId)") else {
             return nil
         }
         guard let data = try? Data(contentsOf: url),

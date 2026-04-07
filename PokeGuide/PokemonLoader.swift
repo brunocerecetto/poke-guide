@@ -42,8 +42,6 @@ enum PokemonLoader {
     private static func loadFromBundle() -> [PokemonEntry] {
         let fileNames = [
             "national_dex_gen1-3",
-            "national_dex_gen4-6",
-            "national_dex_gen7-9",
         ]
         let decoder = JSONDecoder()
         var entries: [PokemonEntry] = []

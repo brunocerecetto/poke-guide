@@ -1,9 +1,0 @@
-{
-  "members": [
-    { "name": "Aarón", "strategy": "Tipo Fuego o Volador. Cuidado con Drapion — Veneno/Siniestro. En rematch tiene equipo nivel 75+.", "levels": "53-57" },
-    { "name": "Bertha", "strategy": "Tipo Agua y Planta. Hippowdon con Tormenta de Arena. Surf o Gigadrenado.", "levels": "55-59" },
-    { "name": "Fausto", "strategy": "Solo 2 tipo Fuego reales. Tiene Drifblim y Lopunny. Usa Agua o Tierra.", "levels": "57-61" },
-    { "name": "Delos", "strategy": "Tipo Siniestro. Bronzong resiste todo excepto Fuego. Usa Fuego contra él.", "levels": "59-63" },
-    { "name": "Cinthia (Campeona)", "strategy": "MUY difícil en BDSP — sus Pokémon tienen EV y objetos competitivos. Garchomp nivel 66 es legendario — Rayo Hielo x4. Spiritomb sin debilidades. Milotic con Resto + Habla Dormida.", "levels": "61-66" }
-  ]
-}

@@ -1,8 +1,0 @@
-{
-  "members": [
-    { "name": "Dialga Origen", "strategy": "Forma Origen de Dialga. Acero/Dragón. Combate de acción — esquiva sus ataques y lanza bálsamos. En combate Pokémon usa Tierra o Lucha.", "levels": "65" },
-    { "name": "Palkia Origen", "strategy": "Forma Origen de Palkia. Agua/Dragón. Similar a Dialga — esquiva y calma. Usa Dragón o Hada en combate.", "levels": "65" },
-    { "name": "Volo (postgame)", "strategy": "Combate épico. Equipo completo de 6 incluyendo Togekiss, Garchomp, Spiritomb. Después enfrenta a Giratina (dos formas). Sin opciones de curación entre fases.", "levels": "68" },
-    { "name": "Arceus (final)", "strategy": "Combate de acción puro. Esquiva los ataques de Arceus y lanza bálsamos. No hay combate Pokémon. Requiere reflejos y paciencia.", "levels": "75" }
-  ]
-}

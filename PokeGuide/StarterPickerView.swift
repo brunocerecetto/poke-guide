@@ -118,6 +118,7 @@ struct StarterPickerView: View {
             Button("Cancelar", role: .cancel) { }
             Button("Empezar") {
                 guard let starter = selectedStarter else { return }
+                progress.resetAll()
                 gameConfig.configure(
                     gameId: game.id,
                     starterDex: starter.id,

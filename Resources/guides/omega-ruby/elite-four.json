@@ -1,9 +1,0 @@
-{
-  "members": [
-    { "name": "Sidney", "strategy": "Tipo Lucha y Hada. Sus Pokémon son más fuertes que en los originales. Mega Absol es peligroso.", "levels": "50-52" },
-    { "name": "Phoebe", "strategy": "Tipo Siniestro y Fantasma. Tiene Dusknoir ahora. Usa ataques especiales Siniestro.", "levels": "51-54" },
-    { "name": "Glacia", "strategy": "Tipo Fuego o Lucha. Mega Glalie es nueva amenaza. Cuidado con Ventisca.", "levels": "52-54" },
-    { "name": "Drake", "strategy": "Tipo Hielo y Hada. Su Salamence es nivel 55. Rayo Hielo o Fuerza Lunar.", "levels": "53-55" },
-    { "name": "Steven (Campeón)", "strategy": "Mega Metagross es su as. Usa Fuego, Tierra o Fantasma. Su equipo incluye Skarmory, Claydol y Armaldo. Nivel muy alto.", "levels": "55-59" }
-  ]
-}

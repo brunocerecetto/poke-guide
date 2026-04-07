@@ -1,9 +1,0 @@
-{
-  "members": [
-    { "name": "Shauntal", "strategy": "Tipo Fantasma. Usa Siniestro o Fantasma. Chandelure sigue siendo su as con alto Ataque Especial.", "levels": "56-58" },
-    { "name": "Grimsley", "strategy": "Tipo Siniestro. Tipo Lucha o Hada es ideal. Liepard usa Encanto para bajar Ataque.", "levels": "56-58" },
-    { "name": "Caitlin", "strategy": "Tipo Psíquico. Siniestro, Fantasma o Bicho. Metagross es Acero/Psíquico — usa Fuego.", "levels": "56-58" },
-    { "name": "Marshal", "strategy": "Tipo Lucha. Volador o Psíquico. Conkeldurr es lento pero muy resistente.", "levels": "56-58" },
-    { "name": "Iris (Campeona)", "strategy": "Equipo variado de Dragones. Haxorus, Hydreigon, Druddigon. Hielo es clave. Lapras o Weavile recomendados.", "levels": "57-59" }
-  ]
-}

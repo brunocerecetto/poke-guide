@@ -1,9 +1,0 @@
-{
-  "members": [
-    { "name": "Aarón", "strategy": "Tipo Fuego o Volador. Sus bichos son débiles al Fuego. Cuidado con Drapion que es Veneno/Siniestro, no Bicho.", "levels": "53-57" },
-    { "name": "Bertha", "strategy": "Tipo Agua y Planta. Su Hippowdon activa Tormenta de Arena. Surf o Gigadrenado barren.", "levels": "55-59" },
-    { "name": "Fausto", "strategy": "Tipo Agua o Tierra. Solo tiene 2 tipo Fuego reales. Cuidado con Drifblim (Fantasma) y Lopunny.", "levels": "57-61" },
-    { "name": "Delos", "strategy": "Tipo Siniestro o Fantasma. Su Bronzong resiste casi todo. Usa Fuego contra Bronzong.", "levels": "59-63" },
-    { "name": "Cinthia (Campeona)", "strategy": "La campeona más difícil. Su Garchomp nivel 66 es legendario. Usa Rayo Hielo. Spiritomb no tiene debilidades en Gen 4. Lucario cae con Terremoto. Milotic con Eléctrico.", "levels": "61-66" }
-  ]
-}
