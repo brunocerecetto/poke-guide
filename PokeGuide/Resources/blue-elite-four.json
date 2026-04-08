@@ -1,9 +1,0 @@
-{
-  "members": [
-    { "name": "Lorelei", "strategy": "Dewgong, Cloyster, Slowbro, Jynx y Lapras. Electric types barren a los Water/Ice. Jolteon con Thunderbolt es ideal. Jynx es rápida — cuidado con Ice Punch.", "levels": "54-56" },
-    { "name": "Bruno", "strategy": "Onix x2, Hitmonchan, Hitmonlee, Machamp. Water para Onix, Psychic para los Fighting. Exeggutor o Alakazam brillan acá.", "levels": "53-58" },
-    { "name": "Agatha", "strategy": "Gengar x2, Haunter, Arbok, Golbat. Ground para los Poison types. Snorlax tanquea Ghost moves. Tené Awakenings para Hypnosis.", "levels": "56-60" },
-    { "name": "Lance", "strategy": "Gyarados, Dragonair x2, Aerodactyl, Dragonite. Ice Beam/Blizzard es la clave — destruye a los Dragon. Thunderbolt para Gyarados.", "levels": "58-62" },
-    { "name": "Blue (Campeón)", "strategy": "Pidgeot, Alakazam, Rhydon, Arcanine/Exeggutor/Gyarados (depende de tu starter). Equipo variado — necesitás coverage diverso.", "levels": "61-65" }
-  ]
-}

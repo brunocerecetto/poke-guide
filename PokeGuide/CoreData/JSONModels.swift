@@ -57,6 +57,7 @@ struct GameJSON: Codable {
     let hasChampion: Bool
     let regionalDex: [RegionalDexEntryJSON]
     let versionExclusives: [VersionExclusiveJSON]?
+    let guideBase: String?
 }
 
 struct RegionalDexEntryJSON: Codable {

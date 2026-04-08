@@ -11,7 +11,7 @@ import Foundation
 import os
 
 final class DataSeeder {
-    private static let seedVersionKey = "dataSeeded_v3"
+    private static let seedVersionKey = "dataSeeded_v4"
 
     private let persistenceController: PersistenceController
 
@@ -105,9 +105,10 @@ final class DataSeeder {
             let gameData = try Data(contentsOf: gameURL)
             let gameJSON = try JSONDecoder().decode(GameJSON.self, from: gameData)
             let gameId = gameJSON.id
-            print("[DataSeeder] Seeding game \(gameId) (file: \(filePrefix))...")
+            let guideBase = gameJSON.guideBase
+            print("[DataSeeder] Seeding game \(gameId) (file: \(filePrefix), base: \(guideBase ?? "none"))...")
             try seedGame(from: gameURL, in: context)
-            try seedGuideFlat(gameId: gameId, filePrefix: filePrefix, in: context)
+            try seedGuideFlat(gameId: gameId, filePrefix: filePrefix, guideBase: guideBase, in: context)
         }
     }
 
@@ -218,29 +219,47 @@ final class DataSeeder {
 
     // MARK: - Guide Seeding (flat bundle layout)
 
-    private func seedGuideFlat(gameId: String, filePrefix: String, in context: NSManagedObjectContext) throws {
+    private func seedGuideFlat(gameId: String, filePrefix: String, guideBase: String?, in context: NSManagedObjectContext) throws {
         guard let game = try fetchGame(id: gameId, in: context) else {
             print("[DataSeeder] Game '\(gameId)' not found in Core Data, skipping guide")
             return
         }
 
-        let prefix = "\(filePrefix)-"
+        // Resolve a guide resource URL: try game-specific file first, then guideBase fallback
+        func resolve(_ suffix: String) -> URL? {
+            if let url = Bundle.main.url(forResource: "\(filePrefix)-\(suffix)", withExtension: "json") {
+                return url
+            }
+            if let base = guideBase,
+               let url = Bundle.main.url(forResource: "\(base)-\(suffix)", withExtension: "json") {
+                return url
+            }
+            return nil
+        }
 
         // Route
-        if let url = Bundle.main.url(forResource: "\(prefix)route", withExtension: "json") {
+        if let url = resolve("route") {
             try seedRoute(from: url, game: game, in: context)
         }
 
         // Gyms
-        if let url = Bundle.main.url(forResource: "\(prefix)gyms", withExtension: "json") {
+        if let url = resolve("gyms") {
             try seedGyms(from: url, game: game, in: context)
         }
 
         // Team (one file per starter: {gameId}-team-squirtle.json, etc.)
         if let resourcePath = Bundle.main.resourcePath {
-            let teamPrefix = "\(prefix)team-"
+            var teamPrefix = "\(filePrefix)-team-"
             let allFiles = (try? FileManager.default.contentsOfDirectory(atPath: resourcePath)) ?? []
-            for fileName in allFiles where fileName.hasPrefix(teamPrefix) && fileName.hasSuffix(".json") {
+            var teamFiles = allFiles.filter { $0.hasPrefix(teamPrefix) && $0.hasSuffix(".json") }
+
+            // Fallback to base game's team files
+            if teamFiles.isEmpty, let base = guideBase {
+                teamPrefix = "\(base)-team-"
+                teamFiles = allFiles.filter { $0.hasPrefix(teamPrefix) && $0.hasSuffix(".json") }
+            }
+
+            for fileName in teamFiles {
                 let starter = fileName.replacingOccurrences(of: teamPrefix, with: "").replacingOccurrences(of: ".json", with: "")
                 let url = URL(fileURLWithPath: resourcePath).appendingPathComponent(fileName)
                 try seedTeam(from: url, starter: starter, game: game, in: context)
@@ -248,32 +267,32 @@ final class DataSeeder {
         }
 
         // Elite Four
-        if let url = Bundle.main.url(forResource: "\(prefix)elite-four", withExtension: "json") {
+        if let url = resolve("elite-four") {
             try seedEliteFour(from: url, game: game, in: context)
         }
 
         // Tips
-        if let url = Bundle.main.url(forResource: "\(prefix)tips", withExtension: "json") {
+        if let url = resolve("tips") {
             try seedTips(from: url, game: game, in: context)
         }
 
         // Captures
-        if let url = Bundle.main.url(forResource: "\(prefix)captures", withExtension: "json") {
+        if let url = resolve("captures") {
             try seedCaptures(from: url, game: game, in: context)
         }
 
         // HMs & TMs
-        if let url = Bundle.main.url(forResource: "\(prefix)hm-tm", withExtension: "json") {
+        if let url = resolve("hm-tm") {
             try seedHMTM(from: url, game: game, in: context)
         }
 
         // Pre-League
-        if let url = Bundle.main.url(forResource: "\(prefix)pre_league", withExtension: "json") {
+        if let url = resolve("pre_league") {
             try seedPreLeague(from: url, game: game, in: context)
         }
 
         // Postgame
-        if let url = Bundle.main.url(forResource: "\(prefix)postgame", withExtension: "json") {
+        if let url = resolve("postgame") {
             try seedPostgame(from: url, game: game, in: context)
         }
     }

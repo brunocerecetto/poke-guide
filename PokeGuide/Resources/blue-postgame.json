@@ -1,9 +1,0 @@
-{
-  "steps": [
-    { "stepId": "pg1", "text": "Capturar Zapdos (nv 50) en Power Plant" },
-    { "stepId": "pg2", "text": "Capturar Articuno (nv 50) en Seafoam Islands" },
-    { "stepId": "pg3", "text": "Capturar Moltres (nv 50) en Victory Road" },
-    { "stepId": "pg4", "text": "Capturar Mewtwo (nv 70) en Cerulean Cave" },
-    { "stepId": "pg5", "text": "Completar Pokédex (151 pokémon)" }
-  ]
-}
