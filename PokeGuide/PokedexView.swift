@@ -26,10 +26,12 @@ struct PokedexView: View {
     @EnvironmentObject var gameConfig: GameConfig
     @Environment(\.themeColors) private var theme
     @State private var searchText = ""
+    @State private var showFilterSheet = false
 
     @AppStorage("pokedex_sort") private var sortRaw: String = PokedexSort.dexNumber.rawValue
     @AppStorage("pokedex_type") private var typeRaw: String = ""
     @AppStorage("pokedex_status") private var statusRaw: Int = -1
+    @AppStorage("pokedex_grid") private var showGrid: Bool = false
 
     private var selectedSort: PokedexSort {
         PokedexSort(rawValue: sortRaw) ?? .dexNumber
@@ -82,12 +84,24 @@ struct PokedexView: View {
             GeometryReader { geo in
                 ScrollView {
                     VStack(spacing: 0) {
-                        LazyVStack(spacing: KASpacing.sm) {
-                            ForEach(filteredPokemon) { entry in
-                                pokemonRow(entry)
+                        if showGrid {
+                            LazyVGrid(
+                                columns: [GridItem(.adaptive(minimum: 100), spacing: KASpacing.sm)],
+                                spacing: KASpacing.sm
+                            ) {
+                                ForEach(filteredPokemon) { entry in
+                                    pokemonGridCell(entry)
+                                }
                             }
+                            .padding(.horizontal)
+                        } else {
+                            LazyVStack(spacing: KASpacing.sm) {
+                                ForEach(filteredPokemon) { entry in
+                                    pokemonRow(entry)
+                                }
+                            }
+                            .padding(.horizontal)
                         }
-                        .padding(.horizontal)
 
                         Spacer(minLength: 0)
 
@@ -101,6 +115,11 @@ struct PokedexView: View {
         .navigationTitle("Pokédex")
         .navigationBarTitleDisplayMode(.inline)
         .searchable(text: $searchText, prompt: "Buscar pokémon...")
+        .sheet(isPresented: $showFilterSheet) {
+            PokedexFilterSheet(typeRaw: $typeRaw, statusRaw: $statusRaw)
+                .presentationDetents([.medium])
+                .presentationDragIndicator(.visible)
+        }
     }
 
     private var statsBar: some View {
@@ -128,51 +147,34 @@ struct PokedexView: View {
         .frame(maxWidth: .infinity)
     }
 
+    private var hasActiveFilters: Bool {
+        selectedType != nil || selectedStatus != nil
+    }
+
     private var filterBar: some View {
         HStack(spacing: KASpacing.sm) {
-            // Type menu
-            Menu {
-                Button {
-                    withAnimation(.easeInOut(duration: 0.2)) { typeRaw = "" }
-                } label: {
-                    Label("Todos", systemImage: selectedType == nil ? "checkmark" : "circle")
-                }
-                ForEach(PokemonType.allCases, id: \.self) { type in
-                    Button {
-                        withAnimation(.easeInOut(duration: 0.2)) {
-                            typeRaw = selectedType == type ? "" : type.rawValue
-                        }
-                    } label: {
-                        Label(type.rawValue.capitalized, systemImage: selectedType == type ? "checkmark" : type.icon)
-                    }
-                }
-            } label: {
-                filterButton(
-                    icon: selectedType?.icon ?? "circle.grid.2x2",
-                    label: selectedType?.rawValue.capitalized ?? "Tipo",
-                    isActive: selectedType != nil,
-                    color: selectedType?.color ?? .onSurfaceVariant
+            // Filter button
+            Button { showFilterSheet = true } label: {
+                toolbarCapsule(
+                    icon: "line.3.horizontal.decrease",
+                    label: "Filtro",
+                    accent: hasActiveFilters ? theme.secondary : nil
                 )
             }
-
-            // Status chips
-            ForEach(PokemonStatus.allCases, id: \.self) { status in
-                Button {
-                    withAnimation(.easeInOut(duration: 0.2)) {
-                        statusRaw = selectedStatus == status ? -1 : status.rawValue
-                    }
-                } label: {
-                    let isSelected = selectedStatus == status
-                    Image(systemName: status.icon)
-                        .font(.system(size: 12, weight: .semibold))
-                        .foregroundColor(isSelected ? .onPrimary : status.color)
-                        .frame(width: 32, height: 32)
-                        .background(Circle().fill(isSelected ? status.color : status.color.opacity(0.10)))
-                }
-                .buttonStyle(.plain)
-            }
+            .buttonStyle(.plain)
 
             Spacer()
+
+            // View toggle
+            Button {
+                withAnimation(.easeInOut(duration: 0.2)) { showGrid.toggle() }
+            } label: {
+                toolbarCapsule(
+                    icon: showGrid ? "square.grid.2x2.fill" : "list.bullet",
+                    label: showGrid ? "Grilla" : "Lista"
+                )
+            }
+            .buttonStyle(.plain)
 
             // Sort menu
             Menu {
@@ -184,11 +186,10 @@ struct PokedexView: View {
                     }
                 }
             } label: {
-                filterButton(
+                toolbarCapsule(
                     icon: selectedSort.icon,
                     label: selectedSort.rawValue,
-                    isActive: true,
-                    color: .onSurfaceVariant
+                    showChevron: true
                 )
             }
         }
@@ -196,17 +197,24 @@ struct PokedexView: View {
         .padding(.vertical, 8)
     }
 
-    private func filterButton(icon: String, label: String, isActive: Bool, color: Color) -> some View {
+    private func toolbarCapsule(
+        icon: String,
+        label: String,
+        accent: Color? = nil,
+        showChevron: Bool = false
+    ) -> some View {
         HStack(spacing: KASpacing.xs) {
             Image(systemName: icon).font(.system(size: 10))
             Text(label).font(KATypography.labelSm)
-            Image(systemName: "chevron.down").font(.system(size: 8, weight: .bold))
+            if showChevron {
+                Image(systemName: "chevron.down").font(.system(size: 8, weight: .bold))
+            }
         }
         .padding(.horizontal, 10)
         .padding(.vertical, 7)
-        .foregroundColor(isActive ? color : .onSurfaceVariant)
+        .foregroundColor(accent ?? .onSurfaceVariant)
         .background(
-            Capsule().fill(isActive ? color.opacity(0.10) : Color.surfaceContainerHighest)
+            Capsule().fill(accent != nil ? accent!.opacity(0.10) : Color.surfaceContainerHighest)
         )
     }
 
@@ -301,6 +309,185 @@ struct PokedexView: View {
             .opacity(isAvailable ? 1 : 0.45)
         }
         .buttonStyle(.plain)
+    }
+
+    private func pokemonGridCell(_ entry: PokemonEntry) -> some View {
+        let status = progress.pokemonStatus(for: entry.id)
+        let isAvailable = entry.isAvailable(in: gameConfig.version)
+
+        return NavigationLink {
+            PokedexDetailView(entry: entry)
+        } label: {
+            VStack(spacing: KASpacing.xs) {
+                if status == .notSeen {
+                    ZStack {
+                        Circle()
+                            .fill(Color.surfaceContainerHighest)
+                            .frame(width: 56, height: 56)
+                        Image(systemName: "questionmark")
+                            .font(.system(size: 22, weight: .bold))
+                            .foregroundColor(.onSurfaceVariant.opacity(0.4))
+                    }
+                } else {
+                    CachedSpriteView(url: entry.spriteURL, size: 56)
+                        .saturation(isAvailable ? 1 : 0.3)
+                }
+
+                Text(entry.dexString)
+                    .font(.system(size: 9, weight: .bold, design: .monospaced))
+                    .foregroundColor(.onSurfaceVariant)
+
+                Text(entry.name)
+                    .font(KATypography.labelSm)
+                    .foregroundColor(.onSurface)
+                    .lineLimit(1)
+
+                Menu {
+                    ForEach(PokemonStatus.allCases, id: \.self) { option in
+                        Button {
+                            withAnimation(.easeInOut(duration: 0.2)) {
+                                progress.setPokemonStatus(for: entry.id, to: option)
+                            }
+                        } label: {
+                            Label(option.label, systemImage: option.icon)
+                        }
+                    }
+                } label: {
+                    HStack(spacing: 3) {
+                        Image(systemName: status.icon)
+                            .font(.system(size: 9))
+                        Text(status.label)
+                            .font(KATypography.labelXs)
+                    }
+                    .foregroundColor(status.color)
+                    .padding(.horizontal, 6)
+                    .padding(.vertical, 3)
+                    .background(Capsule().fill(status.color.opacity(0.10)))
+                }
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, KASpacing.sm)
+            .padding(.horizontal, KASpacing.xs)
+            .softCard(cornerRadius: KARadius.lg, tint: status == .notSeen ? .clear : status.color)
+            .opacity(isAvailable ? 1 : 0.45)
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+// MARK: - Filter Sheet
+
+struct PokedexFilterSheet: View {
+    @Binding var typeRaw: String
+    @Binding var statusRaw: Int
+    @Environment(\.dismiss) private var dismiss
+
+    private var selectedType: PokemonType? {
+        typeRaw.isEmpty ? nil : PokemonType(rawValue: typeRaw)
+    }
+
+    private var selectedStatus: PokemonStatus? {
+        statusRaw < 0 ? nil : PokemonStatus(rawValue: statusRaw)
+    }
+
+    private var hasFilters: Bool {
+        selectedType != nil || selectedStatus != nil
+    }
+
+    var body: some View {
+        NavigationStack {
+            ScrollView {
+                VStack(alignment: .leading, spacing: KASpacing.lg) {
+                    // Type section
+                    VStack(alignment: .leading, spacing: KASpacing.sm) {
+                        Text("Tipo")
+                            .font(KATypography.titleSm)
+                            .foregroundColor(.onSurface)
+
+                        LazyVGrid(
+                            columns: [GridItem(.adaptive(minimum: 90), spacing: KASpacing.sm)],
+                            spacing: KASpacing.sm
+                        ) {
+                            ForEach(PokemonType.allCases, id: \.self) { type in
+                                let isSelected = selectedType == type
+                                Button {
+                                    withAnimation(.easeInOut(duration: 0.2)) {
+                                        typeRaw = isSelected ? "" : type.rawValue
+                                    }
+                                } label: {
+                                    HStack(spacing: KASpacing.xs) {
+                                        Image(systemName: type.icon)
+                                            .font(.system(size: 10))
+                                        Text(type.rawValue.capitalized)
+                                            .font(KATypography.labelSm)
+                                    }
+                                    .frame(maxWidth: .infinity)
+                                    .padding(.vertical, 8)
+                                    .foregroundColor(isSelected ? .onPrimary : type.color)
+                                    .background(
+                                        RoundedRectangle(cornerRadius: KARadius.sm)
+                                            .fill(isSelected ? type.color : type.color.opacity(0.10))
+                                    )
+                                }
+                                .buttonStyle(.plain)
+                            }
+                        }
+                    }
+
+                    // Status section
+                    VStack(alignment: .leading, spacing: KASpacing.sm) {
+                        Text("Estado")
+                            .font(KATypography.titleSm)
+                            .foregroundColor(.onSurface)
+
+                        HStack(spacing: KASpacing.sm) {
+                            ForEach(PokemonStatus.allCases, id: \.self) { status in
+                                let isSelected = selectedStatus == status
+                                Button {
+                                    withAnimation(.easeInOut(duration: 0.2)) {
+                                        statusRaw = isSelected ? -1 : status.rawValue
+                                    }
+                                } label: {
+                                    VStack(spacing: KASpacing.xs) {
+                                        Image(systemName: status.icon)
+                                            .font(.system(size: 16, weight: .semibold))
+                                        Text(status.label)
+                                            .font(KATypography.labelXs)
+                                    }
+                                    .frame(maxWidth: .infinity)
+                                    .padding(.vertical, KASpacing.sm)
+                                    .foregroundColor(isSelected ? .onPrimary : status.color)
+                                    .background(
+                                        RoundedRectangle(cornerRadius: KARadius.sm)
+                                            .fill(isSelected ? status.color : status.color.opacity(0.10))
+                                    )
+                                }
+                                .buttonStyle(.plain)
+                            }
+                        }
+                    }
+                }
+                .padding()
+            }
+            .background(Color.surface.ignoresSafeArea())
+            .navigationTitle("Filtros")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    if hasFilters {
+                        Button("Limpiar") {
+                            withAnimation(.easeInOut(duration: 0.2)) {
+                                typeRaw = ""
+                                statusRaw = -1
+                            }
+                        }
+                    }
+                }
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Listo") { dismiss() }
+                }
+            }
+        }
     }
 }
 
