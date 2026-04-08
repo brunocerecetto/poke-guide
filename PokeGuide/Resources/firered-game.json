@@ -1,0 +1,254 @@
+{
+  "id": "firered",
+  "name": "Pokémon Fire Red",
+  "generation": 1,
+  "region": "Kanto",
+  "releaseYear": 2004,
+  "platform": "GBA",
+  "accentColorHex": "#E02D28",
+  "secondaryColorHex": "#ED7D0E",
+  "iconName": "flame.fill",
+  "starterDexNumbers": [
+    1,
+    4,
+    7
+  ],
+  "gymCount": 8,
+  "hasEliteFour": true,
+  "hasChampion": true,
+  "regionalDex": [
+    {
+      "regionalDexNumber": 1,
+      "nationalDexNumber": 1,
+      "location": "Pueblo Paleta (inicial)"
+    },
+    {
+      "regionalDexNumber": 2,
+      "nationalDexNumber": 2,
+      "location": "Evolucionar Bulbasaur"
+    },
+    {
+      "regionalDexNumber": 3,
+      "nationalDexNumber": 3,
+      "location": "Evolucionar Ivysaur"
+    },
+    {
+      "regionalDexNumber": 4,
+      "nationalDexNumber": 4,
+      "location": "Pueblo Paleta (inicial)"
+    },
+    {
+      "regionalDexNumber": 5,
+      "nationalDexNumber": 5,
+      "location": "Evolucionar Charmander"
+    },
+    {
+      "regionalDexNumber": 6,
+      "nationalDexNumber": 6,
+      "location": "Evolucionar Charmeleon"
+    },
+    {
+      "regionalDexNumber": 7,
+      "nationalDexNumber": 7,
+      "location": "Pueblo Paleta (inicial)"
+    },
+    {
+      "regionalDexNumber": 8,
+      "nationalDexNumber": 8,
+      "location": "Evolucionar Squirtle"
+    },
+    {
+      "regionalDexNumber": 9,
+      "nationalDexNumber": 9,
+      "location": "Evolucionar Wartortle"
+    },
+    {
+      "regionalDexNumber": 10,
+      "nationalDexNumber": 10,
+      "location": "Bosque Verde"
+    },
+    {
+      "regionalDexNumber": 11,
+      "nationalDexNumber": 11,
+      "location": "Evolucionar Caterpie"
+    },
+    {
+      "regionalDexNumber": 12,
+      "nationalDexNumber": 12,
+      "location": "Evolucionar Metapod"
+    },
+    {
+      "regionalDexNumber": 13,
+      "nationalDexNumber": 13,
+      "location": "Bosque Verde"
+    },
+    {
+      "regionalDexNumber": 14,
+      "nationalDexNumber": 14,
+      "location": "Evolucionar Weedle"
+    },
+    {
+      "regionalDexNumber": 15,
+      "nationalDexNumber": 15,
+      "location": "Evolucionar Kakuna"
+    }
+  ],
+  "versionExclusives": [
+    {
+      "nationalDexNumber": 23,
+      "availability": "fire-red",
+      "location": "Exclusivo de versión",
+      "regionalDexNumber": 23
+    },
+    {
+      "nationalDexNumber": 24,
+      "availability": "fire-red",
+      "location": "Exclusivo de versión",
+      "regionalDexNumber": 24
+    },
+    {
+      "nationalDexNumber": 43,
+      "availability": "fire-red",
+      "location": "Exclusivo de versión",
+      "regionalDexNumber": 43
+    },
+    {
+      "nationalDexNumber": 44,
+      "availability": "fire-red",
+      "location": "Exclusivo de versión",
+      "regionalDexNumber": 44
+    },
+    {
+      "nationalDexNumber": 45,
+      "availability": "fire-red",
+      "location": "Exclusivo de versión",
+      "regionalDexNumber": 45
+    },
+    {
+      "nationalDexNumber": 54,
+      "availability": "fire-red",
+      "location": "Exclusivo de versión",
+      "regionalDexNumber": 54
+    },
+    {
+      "nationalDexNumber": 55,
+      "availability": "fire-red",
+      "location": "Exclusivo de versión",
+      "regionalDexNumber": 55
+    },
+    {
+      "nationalDexNumber": 58,
+      "availability": "fire-red",
+      "location": "Exclusivo de versión",
+      "regionalDexNumber": 58
+    },
+    {
+      "nationalDexNumber": 59,
+      "availability": "fire-red",
+      "location": "Exclusivo de versión",
+      "regionalDexNumber": 59
+    },
+    {
+      "nationalDexNumber": 90,
+      "availability": "fire-red",
+      "location": "Exclusivo de versión",
+      "regionalDexNumber": 90
+    },
+    {
+      "nationalDexNumber": 91,
+      "availability": "fire-red",
+      "location": "Exclusivo de versión",
+      "regionalDexNumber": 91
+    },
+    {
+      "nationalDexNumber": 123,
+      "availability": "fire-red",
+      "location": "Exclusivo de versión",
+      "regionalDexNumber": 123
+    },
+    {
+      "nationalDexNumber": 125,
+      "availability": "fire-red",
+      "location": "Exclusivo de versión",
+      "regionalDexNumber": 125
+    },
+    {
+      "nationalDexNumber": 27,
+      "availability": "leaf-green",
+      "location": "Exclusivo de versión",
+      "regionalDexNumber": 27
+    },
+    {
+      "nationalDexNumber": 28,
+      "availability": "leaf-green",
+      "location": "Exclusivo de versión",
+      "regionalDexNumber": 28
+    },
+    {
+      "nationalDexNumber": 37,
+      "availability": "leaf-green",
+      "location": "Exclusivo de versión",
+      "regionalDexNumber": 37
+    },
+    {
+      "nationalDexNumber": 38,
+      "availability": "leaf-green",
+      "location": "Exclusivo de versión",
+      "regionalDexNumber": 38
+    },
+    {
+      "nationalDexNumber": 69,
+      "availability": "leaf-green",
+      "location": "Exclusivo de versión",
+      "regionalDexNumber": 69
+    },
+    {
+      "nationalDexNumber": 70,
+      "availability": "leaf-green",
+      "location": "Exclusivo de versión",
+      "regionalDexNumber": 70
+    },
+    {
+      "nationalDexNumber": 71,
+      "availability": "leaf-green",
+      "location": "Exclusivo de versión",
+      "regionalDexNumber": 71
+    },
+    {
+      "nationalDexNumber": 79,
+      "availability": "leaf-green",
+      "location": "Exclusivo de versión",
+      "regionalDexNumber": 79
+    },
+    {
+      "nationalDexNumber": 80,
+      "availability": "leaf-green",
+      "location": "Exclusivo de versión",
+      "regionalDexNumber": 80
+    },
+    {
+      "nationalDexNumber": 120,
+      "availability": "leaf-green",
+      "location": "Exclusivo de versión",
+      "regionalDexNumber": 120
+    },
+    {
+      "nationalDexNumber": 121,
+      "availability": "leaf-green",
+      "location": "Exclusivo de versión",
+      "regionalDexNumber": 121
+    },
+    {
+      "nationalDexNumber": 126,
+      "availability": "leaf-green",
+      "location": "Exclusivo de versión",
+      "regionalDexNumber": 126
+    },
+    {
+      "nationalDexNumber": 127,
+      "availability": "leaf-green",
+      "location": "Exclusivo de versión",
+      "regionalDexNumber": 127
+    }
+  ]
+}

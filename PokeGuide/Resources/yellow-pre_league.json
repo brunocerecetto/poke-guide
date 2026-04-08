@@ -1,0 +1,11 @@
+{
+  "steps": [
+    { "stepId": "pl1", "text": "8 badges obtenidas" },
+    { "stepId": "pl2", "text": "Equipo nv 50+ (idealmente 55+)" },
+    { "stepId": "pl3", "text": "Tener pokémon con Surf y Strength" },
+    { "stepId": "pl4", "text": "15-20 Hyper Potions o Full Restores" },
+    { "stepId": "pl5", "text": "10+ Revives" },
+    { "stepId": "pl6", "text": "Full Heals o Awakenings (para Agatha)" },
+    { "stepId": "pl7", "text": "Victory Road: puzzles de rocas completados" }
+  ]
+}

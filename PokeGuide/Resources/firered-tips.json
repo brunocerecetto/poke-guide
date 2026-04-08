@@ -1,0 +1,42 @@
+[
+  {
+    "pokemon": "⚡ Jolteon",
+    "rule": "No gastes TM24 Thunderbolt fuera de Jolteon. Con 130 Speed outspeeds casi todo. Thunderbolt es la compra #1 del Game Corner."
+  },
+  {
+    "pokemon": "🐢 Blastoise",
+    "rule": "No gastes TM13 Ice Beam fuera de Blastoise. Ice Beam es CRÍTICO para Lance: one-shotea Dragonairs y Dragonite."
+  },
+  {
+    "pokemon": "🐕 Growlithe",
+    "rule": "FireRed exclusivo. Si NO comprás TM35: no evolucionar antes de nv 31 (Flame Wheel). Si SÍ: Fire Stone ya."
+  },
+  {
+    "pokemon": "🦏 Nidorino",
+    "rule": "No uses Moon Stone antes de Horn Attack (nv 22). Nidoking no aprende moves por nivel."
+  },
+  {
+    "pokemon": "🌴 Exeggcute",
+    "rule": "No uses Leaf Stone antes de Sleep Powder (nv 37). Sleep Powder es el move que lo hace viable en la Liga."
+  },
+  {
+    "pokemon": "⚡ Eevee → Jolteon",
+    "rule": "Evolucioná con Thunder Stone en cuanto lo recibís. Enseñale TM34 Shock Wave como STAB temporal."
+  },
+  {
+    "pokemon": "💰 Dinero",
+    "rule": "~$250,000 para las 3 TMs del Game Corner. VS Seeker (post-Vermilion) te deja repelear trainers."
+  },
+  {
+    "pokemon": "🎒 Items clave",
+    "rule": "No vendas: Moon Stone, Fire/Thunder/Leaf Stone, Poké Flute, Master Ball (Mewtwo postgame)."
+  },
+  {
+    "pokemon": "🏝️ Sevii Islands",
+    "rule": "Postgame: Rock Smash, Waterfall, quest Ruby/Sapphire, Pokédex Nacional. Mucho contenido extra."
+  },
+  {
+    "pokemon": "🔄 Abilities",
+    "rule": "FireRed tiene Abilities (Gen 3). Intimidate de Arcanine baja Attack del oponente. Muy útil."
+  }
+]

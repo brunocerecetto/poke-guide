@@ -1,0 +1,15 @@
+{
+  "steps": [
+    { "stepId": "pl1", "text": "8 badges obtenidas" },
+    { "stepId": "pl2", "text": "Equipo nv 52+ (idealmente 55+)" },
+    { "stepId": "pl3", "text": "Blastoise con Surf + Ice Beam" },
+    { "stepId": "pl4", "text": "Nidoking con Earthquake" },
+    { "stepId": "pl5", "text": "Jolteon con Thunderbolt" },
+    { "stepId": "pl6", "text": "Arcanine con Flamethrower o Flame Wheel" },
+    { "stepId": "pl7", "text": "Snorlax con Body Slam + Shadow Ball" },
+    { "stepId": "pl8", "text": "Exeggutor con Psychic + Sleep Powder" },
+    { "stepId": "pl9", "text": "15-20 Hyper Potions o Full Restores" },
+    { "stepId": "pl10", "text": "10+ Revives" },
+    { "stepId": "pl11", "text": "Full Heals o Awakenings (para Agatha)" }
+  ]
+}

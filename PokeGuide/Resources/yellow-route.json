@@ -1,0 +1,356 @@
+{
+  "sections": [
+    {
+      "title": "1) Pueblo Paleta → Ciudad Plateada",
+      "steps": [
+        {
+          "text": "Pikachu es tu único starter — Oak te lo da después de que el rival elige Eevee",
+          "stepId": "r1a"
+        },
+        {
+          "text": "Rival fight 1: rival tiene Eevee nv 5. ThunderShock debería bastar.",
+          "stepId": "r1b"
+        },
+        {
+          "text": "Pikachu te sigue afuera de la Poké Ball — hablale para ver su felicidad",
+          "stepId": "r1c"
+        },
+        {
+          "text": "Levelear en Route 1 hasta nv 9-10. Pikachu es frágil pero rápido.",
+          "stepId": "r1d"
+        },
+        {
+          "text": "Comprar Poké Balls en Viridian (al menos 10)",
+          "stepId": "r1e"
+        },
+        {
+          "text": "Entregar el paquete de Oak, recibir la Pokédex",
+          "stepId": "r1f"
+        },
+        {
+          "text": "CAPTURA: Nidoran♂ en Route 22. CLAVE para Brock ya que Pikachu no le hace nada.",
+          "stepId": "r1g"
+        },
+        {
+          "text": "Subir Nidoran♂ a nv 12 para Double Kick — es tu única chance contra Brock",
+          "stepId": "r1h"
+        },
+        {
+          "text": "Alternativa: capturar Mankey en Route 22 (aprende Low Kick)",
+          "stepId": "r1i"
+        },
+        {
+          "text": "BROCK: Geodude 10 / Onix 12. Pikachu es INÚTIL acá. Nidoran♂ Double Kick o Mankey Low Kick.",
+          "stepId": "r1j"
+        }
+      ]
+    },
+    {
+      "title": "2) Pewter → Mt. Moon → Cerulean",
+      "steps": [
+        {
+          "text": "Route 3: pelear contra todos los trainers. Pikachu gana XP rápido.",
+          "stepId": "r2a"
+        },
+        {
+          "text": "Mt. Moon: levantar Moon Stone, Rare Candy, TMs",
+          "stepId": "r2b"
+        },
+        {
+          "text": "Jessie & James aparecen en Mt. Moon en lugar del Rocket Grunt normal",
+          "stepId": "r2c"
+        },
+        {
+          "text": "Jessie & James tienen Ekans 12 / Meowth 12 / Koffing 12. Pikachu los barre.",
+          "stepId": "r2d"
+        },
+        {
+          "text": "Derrotar al Super Nerd y elegir fósil",
+          "stepId": "r2e"
+        },
+        {
+          "text": "Salir de Mt. Moon. Curar en Cerulean City",
+          "stepId": "r2f"
+        },
+        {
+          "text": "Rival fight 2 en Nugget Bridge: rival ahora tiene Spearow + Eevee evolucionado",
+          "stepId": "r2g"
+        },
+        {
+          "text": "En Yellow, el Eevee del rival evoluciona según tus resultados contra él",
+          "stepId": "r2h"
+        },
+        {
+          "text": "REGALO: Bulbasaur en una casa de Cerulean (necesitás Pikachu feliz)",
+          "stepId": "r2i"
+        },
+        {
+          "text": "MISTY: Staryu 18 / Starmie 21. Pikachu Thunderbolt los destruye. Bulbasaur con Vine Whip también sirve.",
+          "stepId": "r2j"
+        }
+      ]
+    },
+    {
+      "title": "3) Cerulean → Vermilion City",
+      "steps": [
+        {
+          "text": "Derrotar al Rocket Grunt en la casa robada → TM28 Dig",
+          "stepId": "r3a"
+        },
+        {
+          "text": "Nidoran♂ → Nidorino → Moon Stone → Nidoking (después de Horn Attack 22)",
+          "stepId": "r3b"
+        },
+        {
+          "text": "Route 5 → Underground Path → Route 6 → Vermilion City",
+          "stepId": "r3c"
+        },
+        {
+          "text": "S.S. Anne: pelear contra todos los trainers",
+          "stepId": "r3d"
+        },
+        {
+          "text": "Rival fight 3 en el S.S. Anne",
+          "stepId": "r3e"
+        },
+        {
+          "text": "Recibir HM01 Cut del capitán",
+          "stepId": "r3f"
+        },
+        {
+          "text": "REGALO: Squirtle del Oficial Jenny en Vermilion City (después de ganar badge de Surge)",
+          "stepId": "r3g"
+        },
+        {
+          "text": "LT. SURGE: Raichu nv 28 SOLAMENTE. Nidoking con Dig lo destruye.",
+          "stepId": "r3h"
+        },
+        {
+          "text": "NOTA: Pikachu se NIEGA a evolucionar con Thunder Stone en Yellow",
+          "stepId": "r3i"
+        },
+        {
+          "text": "Después de ganar, hablar con la Oficial Jenny para recibir Squirtle",
+          "stepId": "r3j"
+        }
+      ]
+    },
+    {
+      "title": "4) Rock Tunnel → Lavender → Celadon",
+      "steps": [
+        {
+          "text": "Opcional: HM05 Flash del aide de Oak",
+          "stepId": "r4a"
+        },
+        {
+          "text": "Rock Tunnel: Pikachu Thunderbolt limpia los Zubat",
+          "stepId": "r4b"
+        },
+        {
+          "text": "Salir a Lavender Town",
+          "stepId": "r4c"
+        },
+        {
+          "text": "Route 8 → Route 7 → Celadon City",
+          "stepId": "r4d"
+        },
+        {
+          "text": "En Yellow, Growlithe Y Vulpix aparecen en Route 7-8 (no son exclusivos)",
+          "stepId": "r4e"
+        },
+        {
+          "text": "Celadon Mansion: NO hay Eevee en Yellow (ya lo tiene tu rival)",
+          "stepId": "r4f"
+        },
+        {
+          "text": "REGALO: Charmander en Route 24 (un chico te lo da)",
+          "stepId": "r4g"
+        },
+        {
+          "text": "Game Corner: comprar TMs (Thunderbolt para Pikachu es redundante — ya aprende por nivel)",
+          "stepId": "r4h"
+        },
+        {
+          "text": "Rocket Hideout: Jessie & James aparecen de nuevo",
+          "stepId": "r4i"
+        },
+        {
+          "text": "Derrotar a Giovanni → Silph Scope",
+          "stepId": "r4j"
+        },
+        {
+          "text": "ERIKA: Tangela 30 / Weepinbell 32 / Gloom 32. Fire types barren.",
+          "stepId": "r4k"
+        },
+        {
+          "text": "Charmander/Charmeleon con Ember o Slash es ideal acá",
+          "stepId": "r4l"
+        }
+      ]
+    },
+    {
+      "title": "5) Pokémon Tower → Fuchsia City",
+      "steps": [
+        {
+          "text": "Pokémon Tower con Silph Scope",
+          "stepId": "r5a"
+        },
+        {
+          "text": "Rival fight 4 en Pokémon Tower",
+          "stepId": "r5b"
+        },
+        {
+          "text": "Jessie & James aparecen en Pokémon Tower también",
+          "stepId": "r5c"
+        },
+        {
+          "text": "Derrotar al fantasma Marowak (nv 30)",
+          "stepId": "r5d"
+        },
+        {
+          "text": "Rescatar a Mr. Fuji → Poké Flute",
+          "stepId": "r5e"
+        },
+        {
+          "text": "CAPTURA: Snorlax en Route 12 o 16. GUARDAR ANTES.",
+          "stepId": "r5f"
+        },
+        {
+          "text": "HM02 Fly en Route 16",
+          "stepId": "r5g"
+        },
+        {
+          "text": "Llegar a Fuchsia City",
+          "stepId": "r5h"
+        },
+        {
+          "text": "Safari Zone: HM03 Surf, Gold Teeth, capturar Exeggcute",
+          "stepId": "r5i"
+        },
+        {
+          "text": "Warden → HM04 Strength",
+          "stepId": "r5j"
+        },
+        {
+          "text": "KOGA: Venonat 44 / Venonat 46 / Venonat 48 / Venomoth 50. En Yellow es más difícil — niveles más altos.",
+          "stepId": "r5k"
+        }
+      ]
+    },
+    {
+      "title": "6) Saffron City (Silph Co + Sabrina)",
+      "steps": [
+        {
+          "text": "En Yellow, no necesitás bebida — la guard te deja pasar después de cierto punto",
+          "stepId": "r6a"
+        },
+        {
+          "text": "Silph Co: Jessie & James aparecen en piso 5",
+          "stepId": "r6b"
+        },
+        {
+          "text": "Card Key en piso 5",
+          "stepId": "r6c"
+        },
+        {
+          "text": "Lapras gratis en piso 7",
+          "stepId": "r6d"
+        },
+        {
+          "text": "Rival fight 5 en Silph Co",
+          "stepId": "r6e"
+        },
+        {
+          "text": "Giovanni en piso 11 → Master Ball",
+          "stepId": "r6f"
+        },
+        {
+          "text": "Mr. Psychic: TM29 Psychic gratis",
+          "stepId": "r6g"
+        },
+        {
+          "text": "SABRINA: Abra 50 / Kadabra 50 / Alakazam 50. Niveles muy altos en Yellow.",
+          "stepId": "r6h"
+        },
+        {
+          "text": "Snorlax con Body Slam o Nidoking con Earthquake son tus mejores opciones",
+          "stepId": "r6i"
+        }
+      ]
+    },
+    {
+      "title": "7) Cinnabar Island + Viridian Gym",
+      "steps": [
+        {
+          "text": "Surfear hacia Cinnabar Island",
+          "stepId": "r7a"
+        },
+        {
+          "text": "Pokémon Mansion: Secret Key para el gym",
+          "stepId": "r7b"
+        },
+        {
+          "text": "BLAINE: Ninetales 48 / Rapidash 50 / Arcanine 54. Blastoise Surf arrasa.",
+          "stepId": "r7c"
+        },
+        {
+          "text": "Volar a Viridian City",
+          "stepId": "r7d"
+        },
+        {
+          "text": "GIOVANNI: Persian 53 / Dugtrio 53 / Nidoqueen 53 / Nidoking 55 / Rhydon 55. Niveles altos en Yellow.",
+          "stepId": "r7e"
+        },
+        {
+          "text": "Water y Grass son clave. Blastoise/Venusaur brillan.",
+          "stepId": "r7f"
+        },
+        {
+          "text": "Premio: TM27 Fissure",
+          "stepId": "r7g"
+        },
+        {
+          "text": "Equipo final debería estar listo: Pikachu, Venusaur, Charizard, Blastoise, Nidoking, Snorlax",
+          "stepId": "r7h"
+        }
+      ]
+    },
+    {
+      "title": "8) Victory Road → Liga Pokémon",
+      "steps": [
+        {
+          "text": "Rival fight 6 en Route 22",
+          "stepId": "r8a"
+        },
+        {
+          "text": "Victory Road: Surf y Strength necesarios",
+          "stepId": "r8b"
+        },
+        {
+          "text": "Grindear si el equipo está bajo nv 55 (Yellow tiene niveles más altos)",
+          "stepId": "r8c"
+        },
+        {
+          "text": "Indigo Plateau: comprar 25+ Full Restores, 15+ Revives",
+          "stepId": "r8d"
+        },
+        {
+          "text": "GUARDAR antes de entrar",
+          "stepId": "r8e"
+        },
+        {
+          "text": "Lorelei → Bruno → Agatha → Lance → Champion (tu rival)",
+          "stepId": "r8f"
+        },
+        {
+          "text": "En Yellow, los Elite Four tienen niveles más altos que en Red/Blue",
+          "stepId": "r8g"
+        },
+        {
+          "text": "¡Felicidades, sos el nuevo Campeón de Kanto!",
+          "stepId": "r8h"
+        }
+      ]
+    }
+  ]
+}

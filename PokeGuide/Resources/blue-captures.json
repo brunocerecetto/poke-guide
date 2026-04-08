@@ -1,0 +1,42 @@
+[
+  {
+    "pokemon": "Nidoran♂",
+    "location": "Route 3",
+    "note": "Core desde temprano. Evoluciona con Moon Stone a Nidoking."
+  },
+  {
+    "pokemon": "Vulpix",
+    "location": "Route 7-8",
+    "note": "Exclusivo de Blue. Evoluciona con Fire Stone a Ninetales."
+  },
+  {
+    "pokemon": "Sandshrew",
+    "location": "Route 4, 11, 23",
+    "note": "Exclusivo de Blue. Sandslash es buen Ground type alternativo."
+  },
+  {
+    "pokemon": "Eevee",
+    "location": "Celadon Mansion",
+    "note": "Regalo nv 25. Evolucionar según necesidad del equipo."
+  },
+  {
+    "pokemon": "Exeggcute",
+    "location": "Safari Zone",
+    "note": "Esperar a Sleep Powder (nv 37) antes de Leaf Stone."
+  },
+  {
+    "pokemon": "Snorlax",
+    "location": "Route 12 o 16",
+    "note": "Guardar antes. Poké Flute para despertarlo."
+  },
+  {
+    "pokemon": "Lapras",
+    "location": "Silph Co. (piso 7)",
+    "note": "Regalo. Excelente Water/Ice type para la Liga."
+  },
+  {
+    "pokemon": "Magmar",
+    "location": "Pokémon Mansion",
+    "note": "Exclusivo de Blue. Fire type alternativo a Ninetales."
+  }
+]

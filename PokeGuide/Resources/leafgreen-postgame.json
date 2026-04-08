@@ -1,0 +1,13 @@
+{
+  "steps": [
+    { "stepId": "pg1", "text": "Pokédex Nacional de Oak (60+ especies)" },
+    { "stepId": "pg2", "text": "Rainbow Pass → acceso a Sevii Islands" },
+    { "stepId": "pg3", "text": "Capturar Zapdos (nv 50) en Power Plant" },
+    { "stepId": "pg4", "text": "Capturar Articuno (nv 50) en Seafoam Islands" },
+    { "stepId": "pg5", "text": "Capturar Moltres (nv 50) en Mt. Ember" },
+    { "stepId": "pg6", "text": "Completar quest Ruby/Sapphire para Celio" },
+    { "stepId": "pg7", "text": "Capturar Mewtwo (nv 70) en Cerulean Cave" },
+    { "stepId": "pg8", "text": "Revancha Elite Four (equipos nv 60+)" },
+    { "stepId": "pg9", "text": "Completar Pokédex Nacional" }
+  ]
+}

@@ -11,7 +11,7 @@ import Foundation
 import os
 
 final class DataSeeder {
-    private static let seedVersionKey = "dataSeeded_v2"
+    private static let seedVersionKey = "dataSeeded_v3"
 
     private let persistenceController: PersistenceController
 
@@ -20,6 +20,27 @@ final class DataSeeder {
     }
 
     // MARK: - Public API
+
+    /// Seeds all data synchronously on the viewContext. Safe to call from app init.
+    func seedIfNeededSync() {
+        guard !UserDefaults.standard.bool(forKey: Self.seedVersionKey) else {
+            print("[DataSeeder] Already seeded v3, skipping")
+            return
+        }
+
+        print("[DataSeeder] Starting seed v3...")
+        let context = persistenceController.container.viewContext
+        context.performAndWait {
+            do {
+                try seedAll(in: context)
+                try context.save()
+                UserDefaults.standard.set(true, forKey: Self.seedVersionKey)
+                print("[DataSeeder] Seed v3 completed successfully")
+            } catch {
+                print("[DataSeeder] Seeding FAILED: \(error)")
+            }
+        }
+    }
 
     /// Seeds all data if this version hasn't been seeded yet.
     /// Call from app launch. Runs on a background context.
@@ -46,30 +67,47 @@ final class DataSeeder {
     // MARK: - Internal Seeding Pipeline
 
     private func seedAll(in context: NSManagedObjectContext) throws {
-        // 1. Seed national dex
+        // 0. Clear existing data to avoid duplicates on re-seed
+        print("[DataSeeder] Clearing old data...")
+        try clearAllData(in: context)
+
+        // 1. Seed national dex (supports single file or split-by-generation files)
         if let url = Bundle.main.url(forResource: "national_dex", withExtension: "json") {
+            print("[DataSeeder] Seeding national dex (combined)...")
             try seedPokemon(from: url, in: context)
+        } else {
+            let genFiles = ["national_dex_gen1-3", "national_dex_gen4-6", "national_dex_gen7-9"]
+            for name in genFiles {
+                if let url = Bundle.main.url(forResource: name, withExtension: "json") {
+                    print("[DataSeeder] Seeding \(name)...")
+                    try seedPokemon(from: url, in: context)
+                }
+            }
         }
 
         // 2. Seed evolutions
         if let url = Bundle.main.url(forResource: "evolutions", withExtension: "json") {
+            print("[DataSeeder] Seeding evolutions...")
             try seedEvolutions(from: url, in: context)
         }
 
         // 3. Seed all game bundles
-        //    Each game is a directory named by game ID containing game.json + guide files
-        if let gamesURL = Bundle.main.url(forResource: "Games", withExtension: nil) {
-            let gameDirectories = try FileManager.default.contentsOfDirectory(
-                at: gamesURL, includingPropertiesForKeys: nil
-            )
-            for dir in gameDirectories where dir.hasDirectoryPath {
-                let gameId = dir.lastPathComponent
-                if let gameURL = dir.appendingPathComponent("game.json") as URL?,
-                   FileManager.default.fileExists(atPath: gameURL.path) {
-                    try seedGame(from: gameURL, in: context)
-                    try seedGuide(gameId: gameId, from: dir, in: context)
-                }
+        //    Game files follow the flat naming convention: {gameId}-game.json
+        //    Guide files: {gameId}-route.json, {gameId}-gyms.json, etc.
+        let filePrefixes = discoverGameIds()
+        print("[DataSeeder] Discovered games: \(filePrefixes)")
+        for filePrefix in filePrefixes {
+            guard let gameURL = Bundle.main.url(forResource: "\(filePrefix)-game", withExtension: "json") else {
+                print("[DataSeeder] No game.json for \(filePrefix), skipping")
+                continue
             }
+            // Read the actual game ID from the JSON (may differ from filename)
+            let gameData = try Data(contentsOf: gameURL)
+            let gameJSON = try JSONDecoder().decode(GameJSON.self, from: gameData)
+            let gameId = gameJSON.id
+            print("[DataSeeder] Seeding game \(gameId) (file: \(filePrefix))...")
+            try seedGame(from: gameURL, in: context)
+            try seedGuideFlat(gameId: gameId, filePrefix: filePrefix, in: context)
         }
     }
 
@@ -103,15 +141,20 @@ final class DataSeeder {
         // Build a dexNumber -> CDPokemon lookup for linking relationships
         let pokemonLookup = try buildPokemonLookup(in: context)
 
+        // Stages are sequential: [base, stage1, stage2, ...]
+        // Create links from consecutive pairs
         for chain in chains {
-            for stage in chain.stages {
+            let stages = chain.stages
+            for i in 1..<stages.count {
+                let from = stages[i - 1]
+                let to = stages[i]
                 let link = CDEvolutionLink(context: context)
-                link.fromDexNumber = Int32(stage.fromDexNumber)
-                link.toDexNumber = Int32(stage.toDexNumber)
-                link.method = stage.method
-                link.detail = stage.detail
-                link.fromPokemon = pokemonLookup[Int32(stage.fromDexNumber)]
-                link.toPokemon = pokemonLookup[Int32(stage.toDexNumber)]
+                link.fromDexNumber = Int32(from.dexNumber)
+                link.toDexNumber = Int32(to.dexNumber)
+                link.method = to.method ?? ""
+                link.detail = to.detail ?? ""
+                link.fromPokemon = pokemonLookup[Int32(from.dexNumber)]
+                link.toPokemon = pokemonLookup[Int32(to.dexNumber)]
             }
         }
     }
@@ -161,71 +204,77 @@ final class DataSeeder {
         }
     }
 
-    // MARK: - Guide Seeding
+    // MARK: - Game Discovery
 
-    func seedGuide(gameId: String, from directory: URL, in context: NSManagedObjectContext) throws {
+    /// Discovers game IDs by scanning the bundle for files matching `{gameId}-game.json`.
+    private func discoverGameIds() -> [String] {
+        guard let resourcePath = Bundle.main.resourcePath else { return [] }
+        let allFiles = (try? FileManager.default.contentsOfDirectory(atPath: resourcePath)) ?? []
+        return allFiles
+            .filter { $0.hasSuffix("-game.json") }
+            .map { $0.replacingOccurrences(of: "-game.json", with: "") }
+            .sorted()
+    }
+
+    // MARK: - Guide Seeding (flat bundle layout)
+
+    private func seedGuideFlat(gameId: String, filePrefix: String, in context: NSManagedObjectContext) throws {
         guard let game = try fetchGame(id: gameId, in: context) else {
-            AppLogger.dataSeeder.warning("Game '\(gameId)' not found, skipping guide seeding")
+            print("[DataSeeder] Game '\(gameId)' not found in Core Data, skipping guide")
             return
         }
 
-        let prefix = "\(gameId)-"
+        let prefix = "\(filePrefix)-"
 
         // Route
-        let routeURL = directory.appendingPathComponent("\(prefix)route.json")
-        if FileManager.default.fileExists(atPath: routeURL.path) {
-            try seedRoute(from: routeURL, game: game, in: context)
+        if let url = Bundle.main.url(forResource: "\(prefix)route", withExtension: "json") {
+            try seedRoute(from: url, game: game, in: context)
         }
 
         // Gyms
-        let gymsURL = directory.appendingPathComponent("\(prefix)gyms.json")
-        if FileManager.default.fileExists(atPath: gymsURL.path) {
-            try seedGyms(from: gymsURL, game: game, in: context)
+        if let url = Bundle.main.url(forResource: "\(prefix)gyms", withExtension: "json") {
+            try seedGyms(from: url, game: game, in: context)
         }
 
         // Team (one file per starter: {gameId}-team-squirtle.json, etc.)
-        let teamPrefix = "\(prefix)team-"
-        let teamFiles = (try? FileManager.default.contentsOfDirectory(atPath: directory.path)) ?? []
-        for fileName in teamFiles where fileName.hasPrefix(teamPrefix) && fileName.hasSuffix(".json") {
-            let starter = fileName.replacingOccurrences(of: teamPrefix, with: "").replacingOccurrences(of: ".json", with: "")
-            let url = directory.appendingPathComponent(fileName)
-            try seedTeam(from: url, starter: starter, game: game, in: context)
+        if let resourcePath = Bundle.main.resourcePath {
+            let teamPrefix = "\(prefix)team-"
+            let allFiles = (try? FileManager.default.contentsOfDirectory(atPath: resourcePath)) ?? []
+            for fileName in allFiles where fileName.hasPrefix(teamPrefix) && fileName.hasSuffix(".json") {
+                let starter = fileName.replacingOccurrences(of: teamPrefix, with: "").replacingOccurrences(of: ".json", with: "")
+                let url = URL(fileURLWithPath: resourcePath).appendingPathComponent(fileName)
+                try seedTeam(from: url, starter: starter, game: game, in: context)
+            }
         }
 
         // Elite Four
-        let eliteFourURL = directory.appendingPathComponent("\(prefix)elite-four.json")
-        if FileManager.default.fileExists(atPath: eliteFourURL.path) {
-            try seedEliteFour(from: eliteFourURL, game: game, in: context)
+        if let url = Bundle.main.url(forResource: "\(prefix)elite-four", withExtension: "json") {
+            try seedEliteFour(from: url, game: game, in: context)
         }
 
         // Tips
-        let tipsURL = directory.appendingPathComponent("\(prefix)tips.json")
-        if FileManager.default.fileExists(atPath: tipsURL.path) {
-            try seedTips(from: tipsURL, game: game, in: context)
+        if let url = Bundle.main.url(forResource: "\(prefix)tips", withExtension: "json") {
+            try seedTips(from: url, game: game, in: context)
         }
 
         // Captures
-        let capturesURL = directory.appendingPathComponent("\(prefix)captures.json")
-        if FileManager.default.fileExists(atPath: capturesURL.path) {
-            try seedCaptures(from: capturesURL, game: game, in: context)
+        if let url = Bundle.main.url(forResource: "\(prefix)captures", withExtension: "json") {
+            try seedCaptures(from: url, game: game, in: context)
         }
 
         // HMs & TMs
-        let hmtmURL = directory.appendingPathComponent("\(prefix)hm-tm.json")
-        if FileManager.default.fileExists(atPath: hmtmURL.path) {
-            try seedHMTM(from: hmtmURL, game: game, in: context)
+        if let url = Bundle.main.url(forResource: "\(prefix)hm-tm", withExtension: "json") {
+            try seedHMTM(from: url, game: game, in: context)
         }
 
         // Pre-League
-        let preLeagueURL = directory.appendingPathComponent("\(prefix)pre_league.json")
-        if FileManager.default.fileExists(atPath: preLeagueURL.path) {
-            try seedPreLeague(from: preLeagueURL, game: game, in: context)
+        if let url = Bundle.main.url(forResource: "\(prefix)pre_league", withExtension: "json") {
+            try seedPreLeague(from: url, game: game, in: context)
         }
 
         // Postgame
-        let postgameURL = directory.appendingPathComponent("\(prefix)postgame.json")
-        if FileManager.default.fileExists(atPath: postgameURL.path) {
-            try seedPostgame(from: postgameURL, game: game, in: context)
+        if let url = Bundle.main.url(forResource: "\(prefix)postgame", withExtension: "json") {
+            try seedPostgame(from: url, game: game, in: context)
         }
     }
 
@@ -376,6 +425,25 @@ final class DataSeeder {
             step.orderIndex = Int16(index)
             step.game = game
         }
+    }
+
+    // MARK: - Data Cleanup
+
+    private func clearAllData(in context: NSManagedObjectContext) throws {
+        let entityNames = [
+            "CDRouteStep", "CDRouteSection",
+            "CDGym", "CDEliteFourMember", "CDTip", "CDKeyCapture",
+            "CDHMEntry", "CDTMEntry", "CDTeamMember", "CDTeamRecommendation",
+            "CDPreLeagueStep", "CDPostgameStep",
+            "CDRegionalDexEntry", "CDEvolutionLink",
+            "CDGame", "CDPokemon",
+        ]
+        for name in entityNames {
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: name)
+            let deleteRequest = NSBatchDeleteRequest(fetchRequest: request)
+            try context.execute(deleteRequest)
+        }
+        context.reset()
     }
 
     // MARK: - Helpers

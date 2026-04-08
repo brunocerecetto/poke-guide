@@ -15,8 +15,8 @@ import Combine
 // MARK: - Legacy Enums (kept for backward compat with existing views)
 
 enum GameVersion: String, CaseIterable, Codable {
-    case fireRed
-    case leafGreen
+    case fireRed = "firered"
+    case leafGreen = "leafgreen"
 
     var displayName: String {
         switch self {
@@ -228,7 +228,7 @@ class GameConfig: ObservableObject {
             // Keep legacy keys so isConfigured logic stays consistent during transition
         } else {
             // Defaults (not yet configured)
-            _gameId = Published(initialValue: "fireRed")
+            _gameId = Published(initialValue: "firered")
             _starterDex = Published(initialValue: 7)
             _gameName = Published(initialValue: Self.defaultGameName)
             _accentColorHex = Published(initialValue: Self.defaultAccentColorHex)
@@ -280,7 +280,7 @@ class GameConfig: ObservableObject {
 
     func unconfigure() {
         // Reset to defaults
-        gameId = "fireRed"
+        gameId = "firered"
         starterDex = 7
         gameName = Self.defaultGameName
         accentColorHex = Self.defaultAccentColorHex

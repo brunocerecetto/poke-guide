@@ -19,8 +19,11 @@ struct PokeGuideApp: App {
         _gameConfig = StateObject(wrappedValue: config)
         _progress = StateObject(wrappedValue: ProgressManager(prefix: config.progressPrefix))
 
-        // Try to initialize Core Data — fall back to nil context if it fails
+        // Seed Core Data from bundled JSON on first launch (or version bump)
         let persistence = PersistenceController.shared
+        DataSeeder(persistenceController: persistence).seedIfNeededSync()
+
+        // Try to initialize Core Data — fall back to nil context if it fails
         let context: NSManagedObjectContext? = persistence.container.persistentStoreCoordinator.persistentStores.isEmpty
             ? nil
             : persistence.container.viewContext

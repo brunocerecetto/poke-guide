@@ -1,0 +1,94 @@
+{
+  "id": "yellow",
+  "name": "Pokémon Yellow",
+  "generation": 1,
+  "region": "Kanto",
+  "releaseYear": 1998,
+  "platform": "GB",
+  "accentColorHex": "#FFD733",
+  "secondaryColorHex": "#C6A600",
+  "iconName": "bolt.fill",
+  "starterDexNumbers": [
+    25
+  ],
+  "gymCount": 8,
+  "hasEliteFour": true,
+  "hasChampion": true,
+  "regionalDex": [
+    {
+      "regionalDexNumber": 1,
+      "nationalDexNumber": 1,
+      "location": "Pueblo Paleta (regalo)"
+    },
+    {
+      "regionalDexNumber": 2,
+      "nationalDexNumber": 2,
+      "location": "Evolucionar Bulbasaur"
+    },
+    {
+      "regionalDexNumber": 3,
+      "nationalDexNumber": 3,
+      "location": "Evolucionar Ivysaur"
+    },
+    {
+      "regionalDexNumber": 4,
+      "nationalDexNumber": 4,
+      "location": "Ruta 24 (regalo)"
+    },
+    {
+      "regionalDexNumber": 5,
+      "nationalDexNumber": 5,
+      "location": "Evolucionar Charmander"
+    },
+    {
+      "regionalDexNumber": 6,
+      "nationalDexNumber": 6,
+      "location": "Evolucionar Charmeleon"
+    },
+    {
+      "regionalDexNumber": 7,
+      "nationalDexNumber": 7,
+      "location": "Ciudad Vermillion (regalo)"
+    },
+    {
+      "regionalDexNumber": 8,
+      "nationalDexNumber": 8,
+      "location": "Evolucionar Squirtle"
+    },
+    {
+      "regionalDexNumber": 9,
+      "nationalDexNumber": 9,
+      "location": "Evolucionar Wartortle"
+    },
+    {
+      "regionalDexNumber": 10,
+      "nationalDexNumber": 10,
+      "location": "Bosque Verde"
+    },
+    {
+      "regionalDexNumber": 11,
+      "nationalDexNumber": 11,
+      "location": "Evolucionar Caterpie"
+    },
+    {
+      "regionalDexNumber": 12,
+      "nationalDexNumber": 12,
+      "location": "Evolucionar Metapod"
+    },
+    {
+      "regionalDexNumber": 13,
+      "nationalDexNumber": 13,
+      "location": "Bosque Verde"
+    },
+    {
+      "regionalDexNumber": 14,
+      "nationalDexNumber": 14,
+      "location": "Evolucionar Weedle"
+    },
+    {
+      "regionalDexNumber": 15,
+      "nationalDexNumber": 15,
+      "location": "Evolucionar Kakuna"
+    }
+  ]
+}

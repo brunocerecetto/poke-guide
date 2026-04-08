@@ -33,10 +33,10 @@ struct EvolutionChainJSON: Codable {
 }
 
 struct EvolutionStageJSON: Codable {
-    let fromDexNumber: Int
-    let toDexNumber: Int
-    let method: String
-    let detail: String
+    let dexNumber: Int
+    let name: String
+    let method: String?
+    let detail: String?
 }
 
 // MARK: - Game Definition

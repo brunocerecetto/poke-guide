@@ -1,0 +1,42 @@
+[
+  {
+    "pokemon": "Nidoran♂",
+    "location": "Route 3",
+    "note": "Core desde temprano. Moon Stone → Nidoking."
+  },
+  {
+    "pokemon": "Vulpix",
+    "location": "Route 7-8",
+    "note": "Exclusivo LeafGreen. Fire Stone → Ninetales."
+  },
+  {
+    "pokemon": "Sandshrew",
+    "location": "Route 4, 8, 11, 23",
+    "note": "Exclusivo LeafGreen. Sandslash es buen Ground type alternativo."
+  },
+  {
+    "pokemon": "Eevee",
+    "location": "Celadon Mansion",
+    "note": "Regalo nv 25 → Jolteon (Thunder Stone)."
+  },
+  {
+    "pokemon": "Exeggcute",
+    "location": "Safari Zone",
+    "note": "Entrenar sin piedra hasta nv 37 (Sleep Powder)."
+  },
+  {
+    "pokemon": "Snorlax",
+    "location": "Route 12 o 16",
+    "note": "Guardar antes. Poké Flute para despertarlo."
+  },
+  {
+    "pokemon": "Magmar",
+    "location": "Pokémon Mansion",
+    "note": "Exclusivo LeafGreen. Fire type alternativo a Ninetales."
+  },
+  {
+    "pokemon": "Pinsir",
+    "location": "Safari Zone",
+    "note": "Exclusivo LeafGreen. Bug type decente con high Attack."
+  }
+]

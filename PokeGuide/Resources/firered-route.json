@@ -1,0 +1,710 @@
+{
+  "sections": [
+    {
+      "title": "1) Pueblo Paleta → Ciudad Plateada",
+      "steps": [
+        {
+          "text": "Elegir tu starter en el laboratorio del Prof. Oak",
+          "stepId": "r1a"
+        },
+        {
+          "text": "Rival fight 1: solo tiene su starter. Tackle spam.",
+          "stepId": "r1b"
+        },
+        {
+          "text": "Agarrar la Potion que tenés en la PC de tu cuarto",
+          "stepId": "r1c"
+        },
+        {
+          "text": "Entregar el paquete de Oak (Viridian Mart), recibir la Pokédex y 5 Poké Balls",
+          "stepId": "r1d"
+        },
+        {
+          "text": "🗺️ Town Map: ir a la casa de tu rival, hablar con Daisy (su hermana)",
+          "stepId": "r1e"
+        },
+        {
+          "text": "Levelear en Route 1 hasta nv 7-8 antes de ir a Viridian",
+          "stepId": "r1f"
+        },
+        {
+          "text": "Comprar Poké Balls en Viridian (al menos 10)",
+          "stepId": "r1g"
+        },
+        {
+          "text": "Route 2 → Viridian Forest: grindear hasta nv 12-13",
+          "stepId": "r1h"
+        },
+        {
+          "text": "Viridian Forest: levantar Potion x3, Antidote x2, Poké Ball",
+          "stepId": "r1i"
+        },
+        {
+          "text": "Pikachu aparece en Viridian Forest (~5%), pero no es necesario",
+          "stepId": "r1j"
+        },
+        {
+          "text": "Squirtle aprende Bubble al 7 y Water Gun al 13",
+          "stepId": "r1k"
+        },
+        {
+          "text": "BROCK: Geodude 12 / Onix 14. Water Gun o Bubble destroza todo.",
+          "stepId": "r1l"
+        },
+        {
+          "text": "Recibir TM39 Rock Tomb (no la necesitás)",
+          "stepId": "r1m"
+        },
+        {
+          "text": "👟 Running Shoes: las da el aide de Oak al salir de Pewter hacia Route 3",
+          "stepId": "r1n"
+        },
+        {
+          "text": "Pewter Museum ($50): en la parte trasera (necesitás Cut después) hay Old Amber → Aerodactyl",
+          "stepId": "r1o"
+        }
+      ]
+    },
+    {
+      "title": "2) Pewter → Mt. Moon → Cerulean",
+      "steps": [
+        {
+          "text": "Route 3: pelear contra todos los trainers para XP",
+          "stepId": "r2a"
+        },
+        {
+          "text": "CAPTURA: Nidoran♂ en Route 3 (~15%). Futuro Nidoking.",
+          "stepId": "r2b"
+        },
+        {
+          "text": "Entrenar Nidoran♂ contra los trainers de Route 3",
+          "stepId": "r2c"
+        },
+        {
+          "text": "Pokémon Center de Route 4: comprar Magikarp por $500 al vendedor (opcional)",
+          "stepId": "r2d"
+        },
+        {
+          "text": "Mt. Moon: levantar Rare Candy, TM09 Bullet Seed, Star Piece, Moon Stone, Escape Rope",
+          "stepId": "r2e"
+        },
+        {
+          "text": "IMPORTANTE: Agarrar al menos una Moon Stone (piso B2). Guardarla para Nidorino.",
+          "stepId": "r2f"
+        },
+        {
+          "text": "Derrotar al Super Nerd del fósil — elegir Helix (→Omanyte) o Dome (→Kabuto)",
+          "stepId": "r2g"
+        },
+        {
+          "text": "Nidoran♂ aprende Double Kick al 12 — ya empieza a ser útil",
+          "stepId": "r2h"
+        },
+        {
+          "text": "Salir de Mt. Moon. Route 4: levantar TM05 Roar, Great Ball",
+          "stepId": "r2i"
+        },
+        {
+          "text": "Curar en Cerulean City",
+          "stepId": "r2j"
+        },
+        {
+          "text": "Rival fight 2 en Nugget Bridge. Recibís el Fame Checker.",
+          "stepId": "r2k"
+        },
+        {
+          "text": "Nugget Bridge: 5 trainers + Rocket Grunt. Buena XP y $$$. Recibís Nugget ($5,000)",
+          "stepId": "r2l"
+        },
+        {
+          "text": "Route 25: levantar TM43 Secret Power",
+          "stepId": "r2m"
+        },
+        {
+          "text": "Ir a casa de Bill (Route 25). Ayudarlo con el teletransportador → S.S. Ticket",
+          "stepId": "r2n"
+        },
+        {
+          "text": "MISTY: Staryu 18 / Starmie 21. Wartortle con Bite (nv 18) es clave. TM03 Water Pulse de premio.",
+          "stepId": "r2o"
+        }
+      ]
+    },
+    {
+      "title": "3) Cerulean → Vermilion City",
+      "steps": [
+        {
+          "text": "Derrotar al Rocket Grunt en la casa robada al norte de Cerulean",
+          "stepId": "r3a"
+        },
+        {
+          "text": "Recompensa: TM28 Dig — moveazo para mid game",
+          "stepId": "r3b"
+        },
+        {
+          "text": "Nidoran♂ → Nidorino (nv 16). Esperar a Horn Attack (22) antes de Moon Stone",
+          "stepId": "r3c"
+        },
+        {
+          "text": "Una vez que Nidorino aprende Horn Attack 22: Moon Stone → Nidoking",
+          "stepId": "r3d"
+        },
+        {
+          "text": "Enseñarle Dig a Nidoking inmediatamente",
+          "stepId": "r3e"
+        },
+        {
+          "text": "Route 5: Pokémon Day Care (deja un pokémon para que suba de nivel solo, $100 + $100/nv)",
+          "stepId": "r3f"
+        },
+        {
+          "text": "Route 5 → Underground Path → Route 6 → Vermilion City",
+          "stepId": "r3g"
+        },
+        {
+          "text": "Underground Path: levantar items ocultos (Antidote, Potion, Ether, Ice Heal, Burn Heal)",
+          "stepId": "r3h"
+        },
+        {
+          "text": "🎣 Old Rod: del Fishing Guru en la casa al noroeste de Vermilion",
+          "stepId": "r3i"
+        },
+        {
+          "text": "🚲 Bike Voucher: hablar con el presidente del Fan Club en Vermilion (escuchar su historia)",
+          "stepId": "r3j"
+        },
+        {
+          "text": "Volver a Cerulean y canjear el Bike Voucher en la Bike Shop → Bicycle gratis",
+          "stepId": "r3k"
+        },
+        {
+          "text": "📟 VS Seeker: de la Ace Trainer en el Pokémon Center de Vermilion (repelear trainers)",
+          "stepId": "r3l"
+        },
+        {
+          "text": "S.S. Anne: pelear contra todos los trainers (mucha XP)",
+          "stepId": "r3m"
+        },
+        {
+          "text": "S.S. Anne items: TM31 Brick Break, TM44 Rest, Stardust, X Attack, Hyper Potion",
+          "stepId": "r3n"
+        },
+        {
+          "text": "Rival fight 3 en el S.S. Anne",
+          "stepId": "r3o"
+        },
+        {
+          "text": "Recibir HM01 Cut del capitán",
+          "stepId": "r3p"
+        },
+        {
+          "text": "Enseñar Cut a un pokémon temporal (NO a tu core)",
+          "stepId": "r3q"
+        },
+        {
+          "text": "Volver a Pewter Museum: Old Amber del científico en la parte trasera (necesitás Cut)",
+          "stepId": "r3r"
+        },
+        {
+          "text": "Route 2 (puerta este): HM05 Flash del aide de Oak (10 pokémon registrados)",
+          "stepId": "r3s"
+        },
+        {
+          "text": "LT. SURGE: Voltorb 21 / Pikachu 18 / Raichu 24. Nidoking con Dig los destroza.",
+          "stepId": "r3t"
+        },
+        {
+          "text": "Puzzle del gym: encontrar 2 switches adyacentes en los tachos de basura",
+          "stepId": "r3u"
+        },
+        {
+          "text": "Premio: TM34 Shock Wave. Guardarla para Jolteon.",
+          "stepId": "r3v"
+        }
+      ]
+    },
+    {
+      "title": "4) Rock Tunnel → Lavender → Celadon",
+      "steps": [
+        {
+          "text": "Route 9: levantar TM40 Aerial Ace. Pelear trainers en el camino",
+          "stepId": "r4a"
+        },
+        {
+          "text": "Route 10: aide de Oak en la puerta (20 pokémon registrados) → Everstone",
+          "stepId": "r4b"
+        },
+        {
+          "text": "Rock Tunnel: si usaste Flash, se ve todo. Nidoking con Dig limpia casi todo",
+          "stepId": "r4c"
+        },
+        {
+          "text": "Rock Tunnel items: Repel, Escape Rope, Pearl, Revive, Max Ether",
+          "stepId": "r4d"
+        },
+        {
+          "text": "Salir a Lavender Town. No podés subir Pokémon Tower sin Silph Scope.",
+          "stepId": "r4e"
+        },
+        {
+          "text": "📝 Name Rater: al sur de Lavender, cambiá el apodo de tus pokémon gratis",
+          "stepId": "r4f"
+        },
+        {
+          "text": "Route 8 → Underground Path → Route 7 → Celadon City",
+          "stepId": "r4g"
+        },
+        {
+          "text": "CAPTURA: Growlithe en Route 7-8 (exclusivo de FireRed)",
+          "stepId": "r4h"
+        },
+        {
+          "text": "Celadon Dept. Store: comprar lo que necesites (Poké Balls, pociones, status heals)",
+          "stepId": "r4i"
+        },
+        {
+          "text": "Dept. Store 4F: Evolution Stones ($2,100 c/u). Fire Stone, Thunder Stone, Water Stone, Leaf Stone",
+          "stepId": "r4j"
+        },
+        {
+          "text": "Dept. Store 5F: Vitaminas ($9,800 c/u) — HP Up, Protein, Iron, Calcium, Carbos",
+          "stepId": "r4k"
+        },
+        {
+          "text": "Dept. Store terraza: comprar bebidas en la máquina, darle a la chica → TM16, TM20, TM33",
+          "stepId": "r4l"
+        },
+        {
+          "text": "🎰 Coin Case: del tipo en el restaurante de Celadon (entrada trasera del edificio)",
+          "stepId": "r4m"
+        },
+        {
+          "text": "Celadon Mansion (entrada trasera, último piso): recibir Eevee nv 25",
+          "stepId": "r4n"
+        },
+        {
+          "text": "🍵 Tea: de la señora en Celadon Mansion planta baja (abre las 4 puertas de Saffron)",
+          "stepId": "r4o"
+        },
+        {
+          "text": "Fire Stone ($2,100) para Growlithe. Thunder Stone ($2,100) para Eevee → Jolteon.",
+          "stepId": "r4p"
+        },
+        {
+          "text": "Game Corner: 12.000+ monedas para las 3 TMs clave",
+          "stepId": "r4q"
+        },
+        {
+          "text": "Rocket Hideout bajo el Game Corner: limpiar 4 pisos. Lift Key en B4F",
+          "stepId": "r4r"
+        },
+        {
+          "text": "Rocket Hideout items: TM12, TM21, TM49, Moon Stone, Rare Candy",
+          "stepId": "r4s"
+        },
+        {
+          "text": "Derrotar a Giovanni → Silph Scope",
+          "stepId": "r4t"
+        },
+        {
+          "text": "ERIKA: Victreebel 29 / Tangela 24 / Vileplume 29. Arcanine o Growlithe barre.",
+          "stepId": "r4u"
+        },
+        {
+          "text": "Premio: TM19 Giga Drain → guardar para Exeggutor",
+          "stepId": "r4v"
+        }
+      ]
+    },
+    {
+      "title": "5) Evoluciones y Game Corner",
+      "steps": [
+        {
+          "text": "Eevee → Jolteon con Thunder Stone. Enseñarle Shock Wave (TM34).",
+          "stepId": "r5a"
+        },
+        {
+          "text": "Jolteon aprende Double Kick al nv 30 — entrenalo para llegar",
+          "stepId": "r5b"
+        },
+        {
+          "text": "DECISIÓN Growlithe: ¿vas a comprar TM35 Flamethrower?",
+          "stepId": "r5c"
+        },
+        {
+          "text": "SÍ TM35: Fire Stone ahora → Arcanine, después Flamethrower",
+          "stepId": "r5d"
+        },
+        {
+          "text": "NO TM35: esperar Flame Wheel (nv 31), DESPUÉS Fire Stone",
+          "stepId": "r5e"
+        },
+        {
+          "text": "COMPRAS Game Corner (Prize Exchange):",
+          "stepId": "r5f"
+        },
+        {
+          "text": "  1ro: TM24 Thunderbolt (4.000 monedas) → Jolteon [PRIORIDAD MÁXIMA]",
+          "stepId": "r5g"
+        },
+        {
+          "text": "  2do: TM13 Ice Beam (4.000 monedas) → Blastoise",
+          "stepId": "r5h"
+        },
+        {
+          "text": "  3ro: TM35 Flamethrower (4.000 monedas) → Arcanine [si te sobra]",
+          "stepId": "r5i"
+        },
+        {
+          "text": "No comprar Shadow Ball todavía — es lujo, no necesidad",
+          "stepId": "r5j"
+        }
+      ]
+    },
+    {
+      "title": "6) Pokémon Tower → Fuchsia City",
+      "steps": [
+        {
+          "text": "Volver a Lavender Town con el Silph Scope",
+          "stepId": "r6a"
+        },
+        {
+          "text": "Pokémon Tower: el Silph Scope revela los fantasmas (Gastly, Haunter, Cubone)",
+          "stepId": "r6b"
+        },
+        {
+          "text": "Rival fight 4 en el segundo piso",
+          "stepId": "r6c"
+        },
+        {
+          "text": "Tower items: Escape Rope, Awakening, Elixir, HP Up, Rare Candy, X Accuracy",
+          "stepId": "r6d"
+        },
+        {
+          "text": "Piso 6: fantasma Marowak (nv 30) bloquea el paso — NO se puede capturar",
+          "stepId": "r6e"
+        },
+        {
+          "text": "Piso 7: rescatar a Mr. Fuji de los Rockets → recibir Poké Flute",
+          "stepId": "r6f"
+        },
+        {
+          "text": "CAPTURA: Snorlax (nv 30) en Route 12 o 16. Usar Poké Flute para despertarlo. GUARDAR ANTES.",
+          "stepId": "r6g"
+        },
+        {
+          "text": "Route 16 (oeste de Celadon): casa escondida (necesitás Cut) → HM02 Fly",
+          "stepId": "r6h"
+        },
+        {
+          "text": "🎣 Super Rod: del Fishing Guru en la casa sobre Route 12 (Silence Bridge)",
+          "stepId": "r6i"
+        },
+        {
+          "text": "Route 11 (este de Vermilion): aide de Oak en la puerta 2F → 🔍 Itemfinder (30 pokémon registrados)",
+          "stepId": "r6j"
+        },
+        {
+          "text": "Bajar por Routes 12-13-14-15 hacia Fuchsia City",
+          "stepId": "r6k"
+        },
+        {
+          "text": "Route 15: aide de Oak en la puerta 2F → Exp. Share (50 pokémon registrados)",
+          "stepId": "r6l"
+        },
+        {
+          "text": "🎣 Good Rod: del Fishing Guru en la casa al sureste de Fuchsia City",
+          "stepId": "r6m"
+        },
+        {
+          "text": "Safari Zone ($500, 500 pasos, 30 Safari Balls):",
+          "stepId": "r6n"
+        },
+        {
+          "text": "  Zona Oeste (Area 3): HM03 Surf en la Secret House + Gold Teeth en el sureste",
+          "stepId": "r6o"
+        },
+        {
+          "text": "  Zona Norte (Area 2): Quick Claw, TM47 Steel Wing, Protein",
+          "stepId": "r6p"
+        },
+        {
+          "text": "  Zona Este (Area 1): Leaf Stone, TM11 Sunny Day",
+          "stepId": "r6q"
+        },
+        {
+          "text": "  Pokémon raros: Chansey, Kangaskhan, Scyther (exclusivo FireRed), Tauros",
+          "stepId": "r6r"
+        },
+        {
+          "text": "Devolver Gold Teeth al Warden → HM04 Strength",
+          "stepId": "r6s"
+        },
+        {
+          "text": "CAPTURA en Safari Zone: Exeggcute (para futuro Exeggutor)",
+          "stepId": "r6t"
+        },
+        {
+          "text": "Enseñar Surf a Blastoise. Strength a Snorlax o Nidoking.",
+          "stepId": "r6u"
+        },
+        {
+          "text": "Exeggcute: NO Leaf Stone antes de Sleep Powder (nv 37)",
+          "stepId": "r6v"
+        },
+        {
+          "text": "KOGA: Koffing 37 / Muk 39 / Koffing 37 / Weezing 43. Earthquake barre.",
+          "stepId": "r6w"
+        },
+        {
+          "text": "Premio: TM06 Toxic. Gym tiene paredes invisibles — paciencia.",
+          "stepId": "r6x"
+        }
+      ]
+    },
+    {
+      "title": "7) Saffron City (Silph Co + Sabrina)",
+      "steps": [
+        {
+          "text": "Con la Tea, entrar a Saffron City por cualquiera de las 4 puertas",
+          "stepId": "r7a"
+        },
+        {
+          "text": "🥊 Fighting Dojo: derrotar a todos → elegir Hitmonlee O Hitmonchan (nv 25) gratis",
+          "stepId": "r7b"
+        },
+        {
+          "text": "Mr. Psychic (casa al sur): TM29 Psychic GRATIS → guardar para Exeggutor",
+          "stepId": "r7c"
+        },
+        {
+          "text": "Silph Co: 11 pisos con paneles de teletransportación",
+          "stepId": "r7d"
+        },
+        {
+          "text": "Piso 5: Card Key en el pasillo sur — abre TODAS las puertas del edificio",
+          "stepId": "r7e"
+        },
+        {
+          "text": "Piso 7: Lapras nv 25 gratis del científico",
+          "stepId": "r7f"
+        },
+        {
+          "text": "Silph Co items: TM01 Focus Punch, Protein, Iron, Calcium, HP Up, Carbos, Rare Candy",
+          "stepId": "r7g"
+        },
+        {
+          "text": "Rival fight 5 en Silph Co. Equipo ~nv 35-40.",
+          "stepId": "r7h"
+        },
+        {
+          "text": "Piso 11: Giovanni → derrotarlo",
+          "stepId": "r7i"
+        },
+        {
+          "text": "Presidente de Silph te da la Master Ball",
+          "stepId": "r7j"
+        },
+        {
+          "text": "MASTER BALL: guardarla para Mewtwo postgame",
+          "stepId": "r7k"
+        },
+        {
+          "text": "SABRINA: Kadabra 38 / Mr. Mime 37 / Venomoth 38 / Alakazam 43. Snorlax tanquea.",
+          "stepId": "r7l"
+        },
+        {
+          "text": "Puzzle del gym: paneles de teletransportación — probar hasta llegar a Sabrina",
+          "stepId": "r7m"
+        }
+      ]
+    },
+    {
+      "title": "8) Cinnabar Island + Viridian Gym",
+      "steps": [
+        {
+          "text": "Surfear desde Fuchsia o Pallet Town hacia Cinnabar",
+          "stepId": "r8a"
+        },
+        {
+          "text": "Seafoam Islands (entre Fuchsia y Cinnabar): puzzle de rocas con Strength para llegar a Articuno",
+          "stepId": "r8b"
+        },
+        {
+          "text": "🧊 ARTICUNO (nv 50): en el sótano B4F de Seafoam Islands. GUARDAR ANTES. Ice/Flying.",
+          "stepId": "r8c"
+        },
+        {
+          "text": "Seafoam items: Water Stone, Big Pearl, Ultra Ball, Ice Heal, Revive",
+          "stepId": "r8d"
+        },
+        {
+          "text": "Pokémon Mansion: Secret Key para el gym (B1F, mesa del noroeste)",
+          "stepId": "r8e"
+        },
+        {
+          "text": "Mansion: activar switches en las estatuas para abrir puertas",
+          "stepId": "r8f"
+        },
+        {
+          "text": "Mansion items: TM14 Blizzard, TM22 Solar Beam, Protein, Calcium, Iron, Zinc, Rare Candy",
+          "stepId": "r8g"
+        },
+        {
+          "text": "🔬 Laboratorio de fósiles: dar tus fósiles al científico → reviven a Omanyte/Kabuto/Aerodactyl nv 5",
+          "stepId": "r8h"
+        },
+        {
+          "text": "BLAINE: Growlithe 42 / Ponyta 40 / Rapidash 42 / Arcanine 47. Blastoise Surf arrasa.",
+          "stepId": "r8i"
+        },
+        {
+          "text": "Puzzle del gym: responder preguntas correctamente evita pelear contra trainers",
+          "stepId": "r8j"
+        },
+        {
+          "text": "Premio: TM38 Fire Blast",
+          "stepId": "r8k"
+        },
+        {
+          "text": "Volar a Viridian City",
+          "stepId": "r8l"
+        },
+        {
+          "text": "GIOVANNI: Rhyhorn 45 / Dugtrio 42 / Nidoqueen 44 / Nidoking 45 / Rhyhorn 50. Surf/Ice Beam limpia.",
+          "stepId": "r8m"
+        },
+        {
+          "text": "Premio: TM26 Earthquake → Nidoking INMEDIATAMENTE",
+          "stepId": "r8n"
+        },
+        {
+          "text": "Equipo final: Blastoise, Nidoking, Jolteon, Arcanine, Snorlax, Exeggutor",
+          "stepId": "r8o"
+        }
+      ]
+    },
+    {
+      "title": "9) Victory Road → Liga Pokémon",
+      "steps": [
+        {
+          "text": "⚡ Power Plant (Route 10, necesitás Surf): ZAPDOS nv 50. Electric/Flying. GUARDAR ANTES.",
+          "stepId": "r9a"
+        },
+        {
+          "text": "Power Plant items: TM17 Protect, TM25 Thunder, Max Potion, Elixir, Max Elixir, Thunder Stone x2",
+          "stepId": "r9b"
+        },
+        {
+          "text": "Cuidado: algunos items en Power Plant son Voltorb/Electrode disfrazados",
+          "stepId": "r9c"
+        },
+        {
+          "text": "Route 22: Rival fight 6. Equipo completo ~nv 47-53. Último antes de la Liga.",
+          "stepId": "r9d"
+        },
+        {
+          "text": "Route 23: checkpoints de badges (necesitás las 8)",
+          "stepId": "r9e"
+        },
+        {
+          "text": "Route 23 items ocultos: Ultra Ball, Full Restore, Max Ether",
+          "stepId": "r9f"
+        },
+        {
+          "text": "Victory Road: Surf y Strength necesarios. Puzzles de rocas sobre switches de presión.",
+          "stepId": "r9g"
+        },
+        {
+          "text": "Victory Road items: TM02 Dragon Claw, TM37 Sandstorm, TM50 Overheat, Rare Candy, Max Revive",
+          "stepId": "r9h"
+        },
+        {
+          "text": "Si el equipo está bajo de nivel, grindear en Victory Road (nv 40-48)",
+          "stepId": "r9i"
+        },
+        {
+          "text": "Objetivo: todo el equipo nv 52+ antes de entrar",
+          "stepId": "r9j"
+        },
+        {
+          "text": "Indigo Plateau: última chance de items",
+          "stepId": "r9k"
+        },
+        {
+          "text": "Comprar 15-20 Hyper Potions o Full Restores, 10+ Revives",
+          "stepId": "r9l"
+        },
+        {
+          "text": "Full Heals o Awakenings para Agatha",
+          "stepId": "r9m"
+        },
+        {
+          "text": "GUARDAR antes de entrar",
+          "stepId": "r9n"
+        },
+        {
+          "text": "Lorelei → Bruno → Agatha → Lance → Champion. ¡Sos el campeón!",
+          "stepId": "r9o"
+        }
+      ]
+    },
+    {
+      "title": "10) Postgame — Sevii Islands + Legendarios",
+      "steps": [
+        {
+          "text": "Después de ser campeón: Pokédex Nacional de Oak (60+ especies registradas)",
+          "stepId": "r10a"
+        },
+        {
+          "text": "Rainbow Pass de Celio → acceso a las 7 Sevii Islands",
+          "stepId": "r10b"
+        },
+        {
+          "text": "One Island — Kindle Road: HM06 Rock Smash del viejo en Ember Spa",
+          "stepId": "r10c"
+        },
+        {
+          "text": "🔥 MOLTRES (nv 50): cima de Mt. Ember (One Island). Fire/Flying. GUARDAR ANTES.",
+          "stepId": "r10d"
+        },
+        {
+          "text": "Mt. Ember: Ruby en la cueva custodiada por Rockets (necesitás Strength)",
+          "stepId": "r10e"
+        },
+        {
+          "text": "Four Island — Icefall Cave: HM07 Waterfall (necesitás Surf)",
+          "stepId": "r10f"
+        },
+        {
+          "text": "Five Island: quest del Rocket Warehouse → conseguir el Sapphire",
+          "stepId": "r10g"
+        },
+        {
+          "text": "Entregar Ruby y Sapphire a Celio → Network Machine reparada (trade con Ruby/Sapphire)",
+          "stepId": "r10h"
+        },
+        {
+          "text": "Desbloquear Cerulean Cave (después de arreglar Network Machine)",
+          "stepId": "r10i"
+        },
+        {
+          "text": "🧬 MEWTWO (nv 70): fondo de Cerulean Cave. Psychic. Usar Master Ball o guardar antes.",
+          "stepId": "r10j"
+        },
+        {
+          "text": "Cerulean Cave items: Nugget, Ultra Ball x3, Max Elixir, Full Restore x2, PP Up, Max Revive",
+          "stepId": "r10k"
+        },
+        {
+          "text": "Revancha Elite Four (equipos mejorados, nv 60+)",
+          "stepId": "r10l"
+        },
+        {
+          "text": "Completar Pokédex Nacional",
+          "stepId": "r10m"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,364 @@
+{
+  "sections": [
+    {
+      "title": "1) Pueblo Paleta → Ciudad Plateada",
+      "steps": [
+        {
+          "text": "Elegir tu starter en el laboratorio del Prof. Oak",
+          "stepId": "r1a"
+        },
+        {
+          "text": "Rival fight 1: solo tiene su starter",
+          "stepId": "r1b"
+        },
+        {
+          "text": "Levelear en Route 1 hasta nv 7-8 antes de ir a Viridian",
+          "stepId": "r1c"
+        },
+        {
+          "text": "Comprar Poké Balls en Viridian (al menos 10)",
+          "stepId": "r1d"
+        },
+        {
+          "text": "Entregar el paquete de Oak, recibir la Pokédex",
+          "stepId": "r1e"
+        },
+        {
+          "text": "Route 2 → Viridian Forest: grindear hasta nv 12-13",
+          "stepId": "r1f"
+        },
+        {
+          "text": "No perder tiempo capturando pokémon extra en este punto",
+          "stepId": "r1g"
+        },
+        {
+          "text": "BROCK: Geodude 12 / Onix 14. Water o Grass lo destrozan.",
+          "stepId": "r1h"
+        },
+        {
+          "text": "Con Charmander: subir a nv 13+ y usar Ember. Difícil sin Water/Grass.",
+          "stepId": "r1i"
+        }
+      ]
+    },
+    {
+      "title": "2) Pewter → Mt. Moon → Cerulean",
+      "steps": [
+        {
+          "text": "Route 3: pelear contra todos los trainers para XP",
+          "stepId": "r2a"
+        },
+        {
+          "text": "CAPTURA: Nidoran♂ en Route 3 (~15%). Futuro Nidoking.",
+          "stepId": "r2b"
+        },
+        {
+          "text": "Mt. Moon: levantar Moon Stone (guardarla para Nidorino), Rare Candy, TMs",
+          "stepId": "r2c"
+        },
+        {
+          "text": "Derrotar al Super Nerd y elegir fósil (Helix → Omanyte, Dome → Kabuto)",
+          "stepId": "r2d"
+        },
+        {
+          "text": "Salir de Mt. Moon y curar en Cerulean City",
+          "stepId": "r2e"
+        },
+        {
+          "text": "Rival fight 2 en Nugget Bridge",
+          "stepId": "r2f"
+        },
+        {
+          "text": "Nugget Bridge: 5 trainers + Rocket Grunt. Buena XP y $$$",
+          "stepId": "r2g"
+        },
+        {
+          "text": "Ir a casa de Bill (Route 25). Ayudarlo → S.S. Ticket",
+          "stepId": "r2h"
+        },
+        {
+          "text": "MISTY: Staryu 18 / Starmie 21. Grass o Electric types son clave.",
+          "stepId": "r2i"
+        },
+        {
+          "text": "Starmie es peligrosa — BubbleBeam pega fuerte. Paralizar o dormir ayuda.",
+          "stepId": "r2j"
+        }
+      ]
+    },
+    {
+      "title": "3) Cerulean → Vermilion City",
+      "steps": [
+        {
+          "text": "Derrotar al Rocket Grunt en la casa robada al norte de Cerulean",
+          "stepId": "r3a"
+        },
+        {
+          "text": "Recompensa: TM28 Dig — moveazo para mid game",
+          "stepId": "r3b"
+        },
+        {
+          "text": "Nidoran♂ → Nidorino (nv 16). Esperar a Horn Attack (22) antes de Moon Stone",
+          "stepId": "r3c"
+        },
+        {
+          "text": "Route 5 → Underground Path → Route 6 → Vermilion City",
+          "stepId": "r3d"
+        },
+        {
+          "text": "S.S. Anne: pelear contra todos los trainers del barco",
+          "stepId": "r3e"
+        },
+        {
+          "text": "Rival fight 3 en el S.S. Anne",
+          "stepId": "r3f"
+        },
+        {
+          "text": "Recibir HM01 Cut del capitán",
+          "stepId": "r3g"
+        },
+        {
+          "text": "Enseñar Cut a un pokémon temporal (NO a tu equipo core)",
+          "stepId": "r3h"
+        },
+        {
+          "text": "LT. SURGE: Voltorb 21 / Pikachu 18 / Raichu 24. Dig lo tumba solo.",
+          "stepId": "r3i"
+        },
+        {
+          "text": "Puzzle de las basuras: las llaves siempre están en basuras adyacentes",
+          "stepId": "r3j"
+        }
+      ]
+    },
+    {
+      "title": "4) Rock Tunnel → Lavender → Celadon",
+      "steps": [
+        {
+          "text": "Opcional: hablar con aide de Oak (10 pokémon registrados) → HM05 Flash",
+          "stepId": "r4a"
+        },
+        {
+          "text": "Rock Tunnel: Flash ayuda pero no es obligatorio",
+          "stepId": "r4b"
+        },
+        {
+          "text": "Salir a Lavender Town. No podés subir Pokémon Tower sin Silph Scope.",
+          "stepId": "r4c"
+        },
+        {
+          "text": "Route 8 → Underground Path → Route 7 → Celadon City",
+          "stepId": "r4d"
+        },
+        {
+          "text": "CAPTURA: Growlithe en Route 7-8 (exclusivo de Red)",
+          "stepId": "r4e"
+        },
+        {
+          "text": "Celadon Mansion (entrada trasera, último piso): recibir Eevee nv 25",
+          "stepId": "r4f"
+        },
+        {
+          "text": "Celadon Dept. Store: comprar piedras evolutivas según tu plan",
+          "stepId": "r4g"
+        },
+        {
+          "text": "Game Corner: comprar TMs con monedas (Thunderbolt, Ice Beam, etc.)",
+          "stepId": "r4h"
+        },
+        {
+          "text": "Rocket Hideout bajo el Game Corner: limpiar 4 pisos",
+          "stepId": "r4i"
+        },
+        {
+          "text": "Derrotar a Giovanni → Silph Scope",
+          "stepId": "r4j"
+        },
+        {
+          "text": "ERIKA: Victreebel 29 / Tangela 24 / Vileplume 29. Fire o Ice barren.",
+          "stepId": "r4k"
+        },
+        {
+          "text": "Premio: TM21 Mega Drain",
+          "stepId": "r4l"
+        }
+      ]
+    },
+    {
+      "title": "5) Pokémon Tower → Fuchsia City",
+      "steps": [
+        {
+          "text": "Volver a Lavender Town con el Silph Scope",
+          "stepId": "r5a"
+        },
+        {
+          "text": "Pokémon Tower: ahora podés identificar a los Gastly/Haunter",
+          "stepId": "r5b"
+        },
+        {
+          "text": "Rival fight 4 en el segundo piso de Pokémon Tower",
+          "stepId": "r5c"
+        },
+        {
+          "text": "Piso 7: derrotar el fantasma Marowak (nv 30). No se puede capturar.",
+          "stepId": "r5d"
+        },
+        {
+          "text": "Rescatar a Mr. Fuji → recibir Poké Flute",
+          "stepId": "r5e"
+        },
+        {
+          "text": "CAPTURA: Snorlax (nv 30) en Route 12 o 16. GUARDAR ANTES.",
+          "stepId": "r5f"
+        },
+        {
+          "text": "Route 16: levantar HM02 Fly en la casa escondida",
+          "stepId": "r5g"
+        },
+        {
+          "text": "Llegar a Fuchsia City via Route 12-15 o Route 16-18",
+          "stepId": "r5h"
+        },
+        {
+          "text": "Safari Zone: conseguir HM03 Surf, Gold Teeth, y capturar Exeggcute/Kangaskhan",
+          "stepId": "r5i"
+        },
+        {
+          "text": "Devolver Gold Teeth al Warden → HM04 Strength",
+          "stepId": "r5j"
+        },
+        {
+          "text": "KOGA: Koffing 37 / Muk 39 / Koffing 37 / Weezing 43. Ground y Psychic barren.",
+          "stepId": "r5k"
+        }
+      ]
+    },
+    {
+      "title": "6) Saffron City (Silph Co + Sabrina)",
+      "steps": [
+        {
+          "text": "Necesitás darle una bebida al guard para entrar a Saffron (comprar en Celadon roof)",
+          "stepId": "r6a"
+        },
+        {
+          "text": "Silph Co: 11 pisos llenos de trainers y buena XP",
+          "stepId": "r6b"
+        },
+        {
+          "text": "Piso 5: levantar la Card Key (abre puertas cerradas)",
+          "stepId": "r6c"
+        },
+        {
+          "text": "Piso 7: recibir Lapras gratis del científico",
+          "stepId": "r6d"
+        },
+        {
+          "text": "Rival fight 5 en Silph Co",
+          "stepId": "r6e"
+        },
+        {
+          "text": "Piso 11: derrotar a Giovanni → recibir Master Ball",
+          "stepId": "r6f"
+        },
+        {
+          "text": "MASTER BALL: guardarla para Mewtwo postgame",
+          "stepId": "r6g"
+        },
+        {
+          "text": "Mr. Psychic (casa al sur de Saffron): TM29 Psychic GRATIS",
+          "stepId": "r6h"
+        },
+        {
+          "text": "SABRINA: Kadabra 38 / Mr. Mime 37 / Venomoth 38 / Alakazam 43. Bug y Ghost son super efectivos.",
+          "stepId": "r6i"
+        },
+        {
+          "text": "Snorlax tanquea bien contra Psychic types si no tenés otro counter",
+          "stepId": "r6j"
+        }
+      ]
+    },
+    {
+      "title": "7) Cinnabar Island + Viridian Gym",
+      "steps": [
+        {
+          "text": "Surfear desde Fuchsia o Pallet Town hacia Cinnabar Island",
+          "stepId": "r7a"
+        },
+        {
+          "text": "Pokémon Mansion: conseguir la Secret Key para el gym",
+          "stepId": "r7b"
+        },
+        {
+          "text": "Pokémon Mansion: levantar TM14 Blizzard y TM22 Solar Beam",
+          "stepId": "r7c"
+        },
+        {
+          "text": "BLAINE: Growlithe 42 / Ponyta 40 / Rapidash 42 / Arcanine 47. Water y Ground barren.",
+          "stepId": "r7d"
+        },
+        {
+          "text": "Volar a Viridian City. El gym de Giovanni está abierto.",
+          "stepId": "r7e"
+        },
+        {
+          "text": "GIOVANNI: Rhyhorn 45 / Dugtrio 42 / Nidoqueen 44 / Nidoking 45 / Rhydon 50. Water y Grass lo destruyen.",
+          "stepId": "r7f"
+        },
+        {
+          "text": "Premio: TM27 Fissure (One-hit KO, poco fiable)",
+          "stepId": "r7g"
+        },
+        {
+          "text": "Asegurarte de que tu equipo final esté armado y con buenos moves",
+          "stepId": "r7h"
+        }
+      ]
+    },
+    {
+      "title": "8) Victory Road → Liga Pokémon",
+      "steps": [
+        {
+          "text": "Route 22 (oeste de Viridian) → Rival fight 6",
+          "stepId": "r8a"
+        },
+        {
+          "text": "Route 23: necesitás las 8 badges",
+          "stepId": "r8b"
+        },
+        {
+          "text": "Victory Road: necesitás Surf y Strength para los puzzles de boulders",
+          "stepId": "r8c"
+        },
+        {
+          "text": "Grindear en Victory Road si tu equipo está bajo nv 50",
+          "stepId": "r8d"
+        },
+        {
+          "text": "Objetivo: todo el equipo nv 50+ antes de entrar",
+          "stepId": "r8e"
+        },
+        {
+          "text": "Indigo Plateau: última chance de comprar items y curar",
+          "stepId": "r8f"
+        },
+        {
+          "text": "Comprar 20+ Full Restores, 10+ Revives",
+          "stepId": "r8g"
+        },
+        {
+          "text": "GUARDAR antes de entrar. Si perdés, perdés la mitad de tu plata.",
+          "stepId": "r8h"
+        },
+        {
+          "text": "Lorelei → Bruno → Agatha → Lance → Champion (tu rival)",
+          "stepId": "r8i"
+        },
+        {
+          "text": "¡Felicidades, sos el nuevo Campeón de Kanto!",
+          "stepId": "r8j"
+        }
+      ]
+    }
+  ]
+}

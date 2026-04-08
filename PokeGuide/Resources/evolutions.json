@@ -1,0 +1,5686 @@
+[
+  {
+    "stages": [
+      {
+        "dexNumber": 1,
+        "name": "Bulbasaur"
+      },
+      {
+        "dexNumber": 2,
+        "name": "Ivysaur",
+        "method": "level",
+        "detail": "16"
+      },
+      {
+        "dexNumber": 3,
+        "name": "Venusaur",
+        "method": "level",
+        "detail": "32"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 4,
+        "name": "Charmander"
+      },
+      {
+        "dexNumber": 5,
+        "name": "Charmeleon",
+        "method": "level",
+        "detail": "16"
+      },
+      {
+        "dexNumber": 6,
+        "name": "Charizard",
+        "method": "level",
+        "detail": "36"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 7,
+        "name": "Squirtle"
+      },
+      {
+        "dexNumber": 8,
+        "name": "Wartortle",
+        "method": "level",
+        "detail": "16"
+      },
+      {
+        "dexNumber": 9,
+        "name": "Blastoise",
+        "method": "level",
+        "detail": "36"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 10,
+        "name": "Caterpie"
+      },
+      {
+        "dexNumber": 11,
+        "name": "Metapod",
+        "method": "level",
+        "detail": "7"
+      },
+      {
+        "dexNumber": 12,
+        "name": "Butterfree",
+        "method": "level",
+        "detail": "10"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 13,
+        "name": "Weedle"
+      },
+      {
+        "dexNumber": 14,
+        "name": "Kakuna",
+        "method": "level",
+        "detail": "7"
+      },
+      {
+        "dexNumber": 15,
+        "name": "Beedrill",
+        "method": "level",
+        "detail": "10"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 16,
+        "name": "Pidgey"
+      },
+      {
+        "dexNumber": 17,
+        "name": "Pidgeotto",
+        "method": "level",
+        "detail": "18"
+      },
+      {
+        "dexNumber": 18,
+        "name": "Pidgeot",
+        "method": "level",
+        "detail": "36"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 19,
+        "name": "Rattata"
+      },
+      {
+        "dexNumber": 20,
+        "name": "Raticate",
+        "method": "level",
+        "detail": "20"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 21,
+        "name": "Spearow"
+      },
+      {
+        "dexNumber": 22,
+        "name": "Fearow",
+        "method": "level",
+        "detail": "20"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 23,
+        "name": "Ekans"
+      },
+      {
+        "dexNumber": 24,
+        "name": "Arbok",
+        "method": "level",
+        "detail": "22"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 172,
+        "name": "Pichu"
+      },
+      {
+        "dexNumber": 25,
+        "name": "Pikachu",
+        "method": "friendship",
+        "detail": "Amistad"
+      },
+      {
+        "dexNumber": 26,
+        "name": "Raichu",
+        "method": "stone",
+        "detail": "Piedra Trueno"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 27,
+        "name": "Sandshrew"
+      },
+      {
+        "dexNumber": 28,
+        "name": "Sandslash",
+        "method": "level",
+        "detail": "22"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 29,
+        "name": "Nidoran♀"
+      },
+      {
+        "dexNumber": 30,
+        "name": "Nidorina",
+        "method": "level",
+        "detail": "16"
+      },
+      {
+        "dexNumber": 31,
+        "name": "Nidoqueen",
+        "method": "stone",
+        "detail": "Piedra Lunar"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 32,
+        "name": "Nidoran♂"
+      },
+      {
+        "dexNumber": 33,
+        "name": "Nidorino",
+        "method": "level",
+        "detail": "16"
+      },
+      {
+        "dexNumber": 34,
+        "name": "Nidoking",
+        "method": "stone",
+        "detail": "Piedra Lunar"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 173,
+        "name": "Cleffa"
+      },
+      {
+        "dexNumber": 35,
+        "name": "Clefairy",
+        "method": "friendship",
+        "detail": "Amistad"
+      },
+      {
+        "dexNumber": 36,
+        "name": "Clefable",
+        "method": "stone",
+        "detail": "Piedra Lunar"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 37,
+        "name": "Vulpix"
+      },
+      {
+        "dexNumber": 38,
+        "name": "Ninetales",
+        "method": "stone",
+        "detail": "Piedra Fuego"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 174,
+        "name": "Igglybuff"
+      },
+      {
+        "dexNumber": 39,
+        "name": "Jigglypuff",
+        "method": "friendship",
+        "detail": "Amistad"
+      },
+      {
+        "dexNumber": 40,
+        "name": "Wigglytuff",
+        "method": "stone",
+        "detail": "Piedra Lunar"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 41,
+        "name": "Zubat"
+      },
+      {
+        "dexNumber": 42,
+        "name": "Golbat",
+        "method": "level",
+        "detail": "22"
+      },
+      {
+        "dexNumber": 169,
+        "name": "Crobat",
+        "method": "friendship",
+        "detail": "Amistad"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 43,
+        "name": "Oddish"
+      },
+      {
+        "dexNumber": 44,
+        "name": "Gloom",
+        "method": "level",
+        "detail": "21"
+      }
+    ],
+    "branches": [
+      {
+        "dexNumber": 45,
+        "name": "Vileplume",
+        "method": "stone",
+        "detail": "Piedra Hoja"
+      },
+      {
+        "dexNumber": 182,
+        "name": "Bellossom",
+        "method": "stone",
+        "detail": "Piedra Solar"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 46,
+        "name": "Paras"
+      },
+      {
+        "dexNumber": 47,
+        "name": "Parasect",
+        "method": "level",
+        "detail": "24"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 48,
+        "name": "Venonat"
+      },
+      {
+        "dexNumber": 49,
+        "name": "Venomoth",
+        "method": "level",
+        "detail": "31"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 50,
+        "name": "Diglett"
+      },
+      {
+        "dexNumber": 51,
+        "name": "Dugtrio",
+        "method": "level",
+        "detail": "26"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 52,
+        "name": "Meowth"
+      },
+      {
+        "dexNumber": 53,
+        "name": "Persian",
+        "method": "level",
+        "detail": "28"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 54,
+        "name": "Psyduck"
+      },
+      {
+        "dexNumber": 55,
+        "name": "Golduck",
+        "method": "level",
+        "detail": "33"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 56,
+        "name": "Mankey"
+      },
+      {
+        "dexNumber": 57,
+        "name": "Primeape",
+        "method": "level",
+        "detail": "28"
+      },
+      {
+        "dexNumber": 979,
+        "name": "Annihilape",
+        "method": "move",
+        "detail": "Usar Puño Furia 20 veces"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 58,
+        "name": "Growlithe"
+      },
+      {
+        "dexNumber": 59,
+        "name": "Arcanine",
+        "method": "stone",
+        "detail": "Piedra Fuego"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 60,
+        "name": "Poliwag"
+      },
+      {
+        "dexNumber": 61,
+        "name": "Poliwhirl",
+        "method": "level",
+        "detail": "25"
+      }
+    ],
+    "branches": [
+      {
+        "dexNumber": 62,
+        "name": "Poliwrath",
+        "method": "stone",
+        "detail": "Piedra Agua"
+      },
+      {
+        "dexNumber": 186,
+        "name": "Politoed",
+        "method": "trade",
+        "detail": "Intercambio con Roca del Rey"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 63,
+        "name": "Abra"
+      },
+      {
+        "dexNumber": 64,
+        "name": "Kadabra",
+        "method": "level",
+        "detail": "16"
+      },
+      {
+        "dexNumber": 65,
+        "name": "Alakazam",
+        "method": "trade",
+        "detail": "Intercambio"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 66,
+        "name": "Machop"
+      },
+      {
+        "dexNumber": 67,
+        "name": "Machoke",
+        "method": "level",
+        "detail": "28"
+      },
+      {
+        "dexNumber": 68,
+        "name": "Machamp",
+        "method": "trade",
+        "detail": "Intercambio"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 69,
+        "name": "Bellsprout"
+      },
+      {
+        "dexNumber": 70,
+        "name": "Weepinbell",
+        "method": "level",
+        "detail": "21"
+      },
+      {
+        "dexNumber": 71,
+        "name": "Victreebel",
+        "method": "stone",
+        "detail": "Piedra Hoja"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 72,
+        "name": "Tentacool"
+      },
+      {
+        "dexNumber": 73,
+        "name": "Tentacruel",
+        "method": "level",
+        "detail": "30"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 74,
+        "name": "Geodude"
+      },
+      {
+        "dexNumber": 75,
+        "name": "Graveler",
+        "method": "level",
+        "detail": "25"
+      },
+      {
+        "dexNumber": 76,
+        "name": "Golem",
+        "method": "trade",
+        "detail": "Intercambio"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 77,
+        "name": "Ponyta"
+      },
+      {
+        "dexNumber": 78,
+        "name": "Rapidash",
+        "method": "level",
+        "detail": "40"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 79,
+        "name": "Slowpoke"
+      }
+    ],
+    "branches": [
+      {
+        "dexNumber": 80,
+        "name": "Slowbro",
+        "method": "level",
+        "detail": "37"
+      },
+      {
+        "dexNumber": 199,
+        "name": "Slowking",
+        "method": "trade",
+        "detail": "Intercambio con Roca del Rey"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 81,
+        "name": "Magnemite"
+      },
+      {
+        "dexNumber": 82,
+        "name": "Magneton",
+        "method": "level",
+        "detail": "30"
+      },
+      {
+        "dexNumber": 462,
+        "name": "Magnezone",
+        "method": "location",
+        "detail": "Subir nivel en campo magnético"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 83,
+        "name": "Farfetch'd"
+      },
+      {
+        "dexNumber": 865,
+        "name": "Sirfetch'd",
+        "method": "other",
+        "detail": "3 golpes críticos en un combate (Galar)"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 84,
+        "name": "Doduo"
+      },
+      {
+        "dexNumber": 85,
+        "name": "Dodrio",
+        "method": "level",
+        "detail": "31"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 86,
+        "name": "Seel"
+      },
+      {
+        "dexNumber": 87,
+        "name": "Dewgong",
+        "method": "level",
+        "detail": "34"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 88,
+        "name": "Grimer"
+      },
+      {
+        "dexNumber": 89,
+        "name": "Muk",
+        "method": "level",
+        "detail": "38"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 90,
+        "name": "Shellder"
+      },
+      {
+        "dexNumber": 91,
+        "name": "Cloyster",
+        "method": "stone",
+        "detail": "Piedra Agua"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 92,
+        "name": "Gastly"
+      },
+      {
+        "dexNumber": 93,
+        "name": "Haunter",
+        "method": "level",
+        "detail": "25"
+      },
+      {
+        "dexNumber": 94,
+        "name": "Gengar",
+        "method": "trade",
+        "detail": "Intercambio"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 95,
+        "name": "Onix"
+      },
+      {
+        "dexNumber": 208,
+        "name": "Steelix",
+        "method": "trade",
+        "detail": "Intercambio con Revestimiento Metálico"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 96,
+        "name": "Drowzee"
+      },
+      {
+        "dexNumber": 97,
+        "name": "Hypno",
+        "method": "level",
+        "detail": "26"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 98,
+        "name": "Krabby"
+      },
+      {
+        "dexNumber": 99,
+        "name": "Kingler",
+        "method": "level",
+        "detail": "28"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 100,
+        "name": "Voltorb"
+      },
+      {
+        "dexNumber": 101,
+        "name": "Electrode",
+        "method": "level",
+        "detail": "30"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 102,
+        "name": "Exeggcute"
+      },
+      {
+        "dexNumber": 103,
+        "name": "Exeggutor",
+        "method": "stone",
+        "detail": "Piedra Hoja"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 104,
+        "name": "Cubone"
+      },
+      {
+        "dexNumber": 105,
+        "name": "Marowak",
+        "method": "level",
+        "detail": "28"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 236,
+        "name": "Tyrogue"
+      }
+    ],
+    "branches": [
+      {
+        "dexNumber": 106,
+        "name": "Hitmonlee",
+        "method": "level",
+        "detail": "20 (Ataque > Defensa)"
+      },
+      {
+        "dexNumber": 107,
+        "name": "Hitmonchan",
+        "method": "level",
+        "detail": "20 (Defensa > Ataque)"
+      },
+      {
+        "dexNumber": 237,
+        "name": "Hitmontop",
+        "method": "level",
+        "detail": "20 (Ataque = Defensa)"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 108,
+        "name": "Lickitung"
+      },
+      {
+        "dexNumber": 463,
+        "name": "Lickilicky",
+        "method": "move",
+        "detail": "Subir nivel con Desenrollar"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 109,
+        "name": "Koffing"
+      },
+      {
+        "dexNumber": 110,
+        "name": "Weezing",
+        "method": "level",
+        "detail": "35"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 111,
+        "name": "Rhyhorn"
+      },
+      {
+        "dexNumber": 112,
+        "name": "Rhydon",
+        "method": "level",
+        "detail": "42"
+      },
+      {
+        "dexNumber": 464,
+        "name": "Rhyperior",
+        "method": "trade",
+        "detail": "Intercambio con Protector"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 440,
+        "name": "Happiny"
+      },
+      {
+        "dexNumber": 113,
+        "name": "Chansey",
+        "method": "item",
+        "detail": "Subir nivel con Piedra Oval (día)"
+      },
+      {
+        "dexNumber": 242,
+        "name": "Blissey",
+        "method": "friendship",
+        "detail": "Amistad"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 114,
+        "name": "Tangela"
+      },
+      {
+        "dexNumber": 465,
+        "name": "Tangrowth",
+        "method": "move",
+        "detail": "Subir nivel con Poder Pasado"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 116,
+        "name": "Horsea"
+      },
+      {
+        "dexNumber": 117,
+        "name": "Seadra",
+        "method": "level",
+        "detail": "32"
+      },
+      {
+        "dexNumber": 230,
+        "name": "Kingdra",
+        "method": "trade",
+        "detail": "Intercambio con Escama Dragón"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 118,
+        "name": "Goldeen"
+      },
+      {
+        "dexNumber": 119,
+        "name": "Seaking",
+        "method": "level",
+        "detail": "33"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 120,
+        "name": "Staryu"
+      },
+      {
+        "dexNumber": 121,
+        "name": "Starmie",
+        "method": "stone",
+        "detail": "Piedra Agua"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 439,
+        "name": "Mime Jr."
+      },
+      {
+        "dexNumber": 122,
+        "name": "Mr. Mime",
+        "method": "move",
+        "detail": "Subir nivel con Imitación"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 123,
+        "name": "Scyther"
+      }
+    ],
+    "branches": [
+      {
+        "dexNumber": 212,
+        "name": "Scizor",
+        "method": "trade",
+        "detail": "Intercambio con Revestimiento Metálico"
+      },
+      {
+        "dexNumber": 900,
+        "name": "Kleavor",
+        "method": "item",
+        "detail": "Piedra Negra (Hisui)"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 238,
+        "name": "Smoochum"
+      },
+      {
+        "dexNumber": 124,
+        "name": "Jynx",
+        "method": "level",
+        "detail": "30"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 239,
+        "name": "Elekid"
+      },
+      {
+        "dexNumber": 125,
+        "name": "Electabuzz",
+        "method": "level",
+        "detail": "30"
+      },
+      {
+        "dexNumber": 466,
+        "name": "Electivire",
+        "method": "trade",
+        "detail": "Intercambio con Electrizador"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 240,
+        "name": "Magby"
+      },
+      {
+        "dexNumber": 126,
+        "name": "Magmar",
+        "method": "level",
+        "detail": "30"
+      },
+      {
+        "dexNumber": 467,
+        "name": "Magmortar",
+        "method": "trade",
+        "detail": "Intercambio con Magmatizador"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 129,
+        "name": "Magikarp"
+      },
+      {
+        "dexNumber": 130,
+        "name": "Gyarados",
+        "method": "level",
+        "detail": "20"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 133,
+        "name": "Eevee"
+      }
+    ],
+    "branches": [
+      {
+        "dexNumber": 134,
+        "name": "Vaporeon",
+        "method": "stone",
+        "detail": "Piedra Agua"
+      },
+      {
+        "dexNumber": 135,
+        "name": "Jolteon",
+        "method": "stone",
+        "detail": "Piedra Trueno"
+      },
+      {
+        "dexNumber": 136,
+        "name": "Flareon",
+        "method": "stone",
+        "detail": "Piedra Fuego"
+      },
+      {
+        "dexNumber": 196,
+        "name": "Espeon",
+        "method": "friendship",
+        "detail": "Amistad (día)"
+      },
+      {
+        "dexNumber": 197,
+        "name": "Umbreon",
+        "method": "friendship",
+        "detail": "Amistad (noche)"
+      },
+      {
+        "dexNumber": 470,
+        "name": "Leafeon",
+        "method": "stone",
+        "detail": "Piedra Hoja"
+      },
+      {
+        "dexNumber": 471,
+        "name": "Glaceon",
+        "method": "stone",
+        "detail": "Piedra Hielo"
+      },
+      {
+        "dexNumber": 700,
+        "name": "Sylveon",
+        "method": "friendship",
+        "detail": "Amistad + mov. Hada"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 137,
+        "name": "Porygon"
+      },
+      {
+        "dexNumber": 233,
+        "name": "Porygon2",
+        "method": "trade",
+        "detail": "Intercambio con Mejora"
+      },
+      {
+        "dexNumber": 474,
+        "name": "Porygon-Z",
+        "method": "trade",
+        "detail": "Intercambio con Disco Extraño"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 138,
+        "name": "Omanyte"
+      },
+      {
+        "dexNumber": 139,
+        "name": "Omastar",
+        "method": "level",
+        "detail": "40"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 140,
+        "name": "Kabuto"
+      },
+      {
+        "dexNumber": 141,
+        "name": "Kabutops",
+        "method": "level",
+        "detail": "40"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 147,
+        "name": "Dratini"
+      },
+      {
+        "dexNumber": 148,
+        "name": "Dragonair",
+        "method": "level",
+        "detail": "30"
+      },
+      {
+        "dexNumber": 149,
+        "name": "Dragonite",
+        "method": "level",
+        "detail": "55"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 152,
+        "name": "Chikorita"
+      },
+      {
+        "dexNumber": 153,
+        "name": "Bayleef",
+        "method": "level",
+        "detail": "16"
+      },
+      {
+        "dexNumber": 154,
+        "name": "Meganium",
+        "method": "level",
+        "detail": "32"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 155,
+        "name": "Cyndaquil"
+      },
+      {
+        "dexNumber": 156,
+        "name": "Quilava",
+        "method": "level",
+        "detail": "14"
+      },
+      {
+        "dexNumber": 157,
+        "name": "Typhlosion",
+        "method": "level",
+        "detail": "36"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 158,
+        "name": "Totodile"
+      },
+      {
+        "dexNumber": 159,
+        "name": "Croconaw",
+        "method": "level",
+        "detail": "18"
+      },
+      {
+        "dexNumber": 160,
+        "name": "Feraligatr",
+        "method": "level",
+        "detail": "30"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 161,
+        "name": "Sentret"
+      },
+      {
+        "dexNumber": 162,
+        "name": "Furret",
+        "method": "level",
+        "detail": "15"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 163,
+        "name": "Hoothoot"
+      },
+      {
+        "dexNumber": 164,
+        "name": "Noctowl",
+        "method": "level",
+        "detail": "20"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 165,
+        "name": "Ledyba"
+      },
+      {
+        "dexNumber": 166,
+        "name": "Ledian",
+        "method": "level",
+        "detail": "18"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 167,
+        "name": "Spinarak"
+      },
+      {
+        "dexNumber": 168,
+        "name": "Ariados",
+        "method": "level",
+        "detail": "22"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 170,
+        "name": "Chinchou"
+      },
+      {
+        "dexNumber": 171,
+        "name": "Lanturn",
+        "method": "level",
+        "detail": "27"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 175,
+        "name": "Togepi"
+      },
+      {
+        "dexNumber": 176,
+        "name": "Togetic",
+        "method": "friendship",
+        "detail": "Amistad"
+      },
+      {
+        "dexNumber": 468,
+        "name": "Togekiss",
+        "method": "stone",
+        "detail": "Piedra Día"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 177,
+        "name": "Natu"
+      },
+      {
+        "dexNumber": 178,
+        "name": "Xatu",
+        "method": "level",
+        "detail": "25"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 179,
+        "name": "Mareep"
+      },
+      {
+        "dexNumber": 180,
+        "name": "Flaaffy",
+        "method": "level",
+        "detail": "15"
+      },
+      {
+        "dexNumber": 181,
+        "name": "Ampharos",
+        "method": "level",
+        "detail": "30"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 183,
+        "name": "Marill"
+      },
+      {
+        "dexNumber": 184,
+        "name": "Azumarill",
+        "method": "level",
+        "detail": "18"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 298,
+        "name": "Azurill"
+      },
+      {
+        "dexNumber": 183,
+        "name": "Marill",
+        "method": "friendship",
+        "detail": "Amistad"
+      },
+      {
+        "dexNumber": 184,
+        "name": "Azumarill",
+        "method": "level",
+        "detail": "18"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 438,
+        "name": "Bonsly"
+      },
+      {
+        "dexNumber": 185,
+        "name": "Sudowoodo",
+        "method": "move",
+        "detail": "Subir nivel con Imitación"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 187,
+        "name": "Hoppip"
+      },
+      {
+        "dexNumber": 188,
+        "name": "Skiploom",
+        "method": "level",
+        "detail": "18"
+      },
+      {
+        "dexNumber": 189,
+        "name": "Jumpluff",
+        "method": "level",
+        "detail": "27"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 190,
+        "name": "Aipom"
+      },
+      {
+        "dexNumber": 424,
+        "name": "Ambipom",
+        "method": "move",
+        "detail": "Subir nivel con Doble Golpe"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 191,
+        "name": "Sunkern"
+      },
+      {
+        "dexNumber": 192,
+        "name": "Sunflora",
+        "method": "stone",
+        "detail": "Piedra Solar"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 193,
+        "name": "Yanma"
+      },
+      {
+        "dexNumber": 469,
+        "name": "Yanmega",
+        "method": "move",
+        "detail": "Subir nivel con Poder Pasado"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 194,
+        "name": "Wooper"
+      },
+      {
+        "dexNumber": 195,
+        "name": "Quagsire",
+        "method": "level",
+        "detail": "20"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 198,
+        "name": "Murkrow"
+      },
+      {
+        "dexNumber": 430,
+        "name": "Honchkrow",
+        "method": "stone",
+        "detail": "Piedra Oscura"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 200,
+        "name": "Misdreavus"
+      },
+      {
+        "dexNumber": 429,
+        "name": "Mismagius",
+        "method": "stone",
+        "detail": "Piedra Oscura"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 204,
+        "name": "Pineco"
+      },
+      {
+        "dexNumber": 205,
+        "name": "Forretress",
+        "method": "level",
+        "detail": "31"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 206,
+        "name": "Dunsparce"
+      },
+      {
+        "dexNumber": 982,
+        "name": "Dudunsparce",
+        "method": "move",
+        "detail": "Subir nivel con Hipertaladro"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 207,
+        "name": "Gligar"
+      },
+      {
+        "dexNumber": 472,
+        "name": "Gliscor",
+        "method": "item",
+        "detail": "Subir nivel con Colmillo Afilado (noche)"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 209,
+        "name": "Snubbull"
+      },
+      {
+        "dexNumber": 210,
+        "name": "Granbull",
+        "method": "level",
+        "detail": "23"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 215,
+        "name": "Sneasel"
+      },
+      {
+        "dexNumber": 461,
+        "name": "Weavile",
+        "method": "item",
+        "detail": "Subir nivel con Garra Afilada (noche)"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 216,
+        "name": "Teddiursa"
+      },
+      {
+        "dexNumber": 217,
+        "name": "Ursaring",
+        "method": "level",
+        "detail": "30"
+      },
+      {
+        "dexNumber": 901,
+        "name": "Ursaluna",
+        "method": "item",
+        "detail": "Bloque de Turba en luna llena (Hisui)"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 218,
+        "name": "Slugma"
+      },
+      {
+        "dexNumber": 219,
+        "name": "Magcargo",
+        "method": "level",
+        "detail": "38"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 220,
+        "name": "Swinub"
+      },
+      {
+        "dexNumber": 221,
+        "name": "Piloswine",
+        "method": "level",
+        "detail": "33"
+      },
+      {
+        "dexNumber": 473,
+        "name": "Mamoswine",
+        "method": "move",
+        "detail": "Subir nivel con Poder Pasado"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 223,
+        "name": "Remoraid"
+      },
+      {
+        "dexNumber": 224,
+        "name": "Octillery",
+        "method": "level",
+        "detail": "25"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 458,
+        "name": "Mantyke"
+      },
+      {
+        "dexNumber": 226,
+        "name": "Mantine",
+        "method": "other",
+        "detail": "Subir nivel con Remoraid en el equipo"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 228,
+        "name": "Houndour"
+      },
+      {
+        "dexNumber": 229,
+        "name": "Houndoom",
+        "method": "level",
+        "detail": "24"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 231,
+        "name": "Phanpy"
+      },
+      {
+        "dexNumber": 232,
+        "name": "Donphan",
+        "method": "level",
+        "detail": "25"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 246,
+        "name": "Larvitar"
+      },
+      {
+        "dexNumber": 247,
+        "name": "Pupitar",
+        "method": "level",
+        "detail": "30"
+      },
+      {
+        "dexNumber": 248,
+        "name": "Tyranitar",
+        "method": "level",
+        "detail": "55"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 252,
+        "name": "Treecko"
+      },
+      {
+        "dexNumber": 253,
+        "name": "Grovyle",
+        "method": "level",
+        "detail": "16"
+      },
+      {
+        "dexNumber": 254,
+        "name": "Sceptile",
+        "method": "level",
+        "detail": "36"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 255,
+        "name": "Torchic"
+      },
+      {
+        "dexNumber": 256,
+        "name": "Combusken",
+        "method": "level",
+        "detail": "16"
+      },
+      {
+        "dexNumber": 257,
+        "name": "Blaziken",
+        "method": "level",
+        "detail": "36"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 258,
+        "name": "Mudkip"
+      },
+      {
+        "dexNumber": 259,
+        "name": "Marshtomp",
+        "method": "level",
+        "detail": "16"
+      },
+      {
+        "dexNumber": 260,
+        "name": "Swampert",
+        "method": "level",
+        "detail": "36"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 261,
+        "name": "Poochyena"
+      },
+      {
+        "dexNumber": 262,
+        "name": "Mightyena",
+        "method": "level",
+        "detail": "18"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 263,
+        "name": "Zigzagoon"
+      },
+      {
+        "dexNumber": 264,
+        "name": "Linoone",
+        "method": "level",
+        "detail": "20"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 265,
+        "name": "Wurmple"
+      }
+    ],
+    "branches": [
+      {
+        "dexNumber": 266,
+        "name": "Silcoon",
+        "method": "level",
+        "detail": "7 (aleatorio)"
+      },
+      {
+        "dexNumber": 268,
+        "name": "Cascoon",
+        "method": "level",
+        "detail": "7 (aleatorio)"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 266,
+        "name": "Silcoon"
+      },
+      {
+        "dexNumber": 267,
+        "name": "Beautifly",
+        "method": "level",
+        "detail": "10"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 268,
+        "name": "Cascoon"
+      },
+      {
+        "dexNumber": 269,
+        "name": "Dustox",
+        "method": "level",
+        "detail": "10"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 270,
+        "name": "Lotad"
+      },
+      {
+        "dexNumber": 271,
+        "name": "Lombre",
+        "method": "level",
+        "detail": "14"
+      },
+      {
+        "dexNumber": 272,
+        "name": "Ludicolo",
+        "method": "stone",
+        "detail": "Piedra Agua"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 273,
+        "name": "Seedot"
+      },
+      {
+        "dexNumber": 274,
+        "name": "Nuzleaf",
+        "method": "level",
+        "detail": "14"
+      },
+      {
+        "dexNumber": 275,
+        "name": "Shiftry",
+        "method": "stone",
+        "detail": "Piedra Hoja"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 276,
+        "name": "Taillow"
+      },
+      {
+        "dexNumber": 277,
+        "name": "Swellow",
+        "method": "level",
+        "detail": "22"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 278,
+        "name": "Wingull"
+      },
+      {
+        "dexNumber": 279,
+        "name": "Pelipper",
+        "method": "level",
+        "detail": "25"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 280,
+        "name": "Ralts"
+      },
+      {
+        "dexNumber": 281,
+        "name": "Kirlia",
+        "method": "level",
+        "detail": "20"
+      }
+    ],
+    "branches": [
+      {
+        "dexNumber": 282,
+        "name": "Gardevoir",
+        "method": "level",
+        "detail": "30"
+      },
+      {
+        "dexNumber": 475,
+        "name": "Gallade",
+        "method": "stone",
+        "detail": "Piedra Alba (♂)"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 283,
+        "name": "Surskit"
+      },
+      {
+        "dexNumber": 284,
+        "name": "Masquerain",
+        "method": "level",
+        "detail": "22"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 285,
+        "name": "Shroomish"
+      },
+      {
+        "dexNumber": 286,
+        "name": "Breloom",
+        "method": "level",
+        "detail": "23"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 287,
+        "name": "Slakoth"
+      },
+      {
+        "dexNumber": 288,
+        "name": "Vigoroth",
+        "method": "level",
+        "detail": "18"
+      },
+      {
+        "dexNumber": 289,
+        "name": "Slaking",
+        "method": "level",
+        "detail": "36"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 290,
+        "name": "Nincada"
+      },
+      {
+        "dexNumber": 291,
+        "name": "Ninjask",
+        "method": "level",
+        "detail": "20"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 293,
+        "name": "Whismur"
+      },
+      {
+        "dexNumber": 294,
+        "name": "Loudred",
+        "method": "level",
+        "detail": "20"
+      },
+      {
+        "dexNumber": 295,
+        "name": "Exploud",
+        "method": "level",
+        "detail": "40"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 296,
+        "name": "Makuhita"
+      },
+      {
+        "dexNumber": 297,
+        "name": "Hariyama",
+        "method": "level",
+        "detail": "24"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 299,
+        "name": "Nosepass"
+      },
+      {
+        "dexNumber": 476,
+        "name": "Probopass",
+        "method": "location",
+        "detail": "Subir nivel en campo magnético"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 300,
+        "name": "Skitty"
+      },
+      {
+        "dexNumber": 301,
+        "name": "Delcatty",
+        "method": "stone",
+        "detail": "Piedra Lunar"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 304,
+        "name": "Aron"
+      },
+      {
+        "dexNumber": 305,
+        "name": "Lairon",
+        "method": "level",
+        "detail": "32"
+      },
+      {
+        "dexNumber": 306,
+        "name": "Aggron",
+        "method": "level",
+        "detail": "42"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 307,
+        "name": "Meditite"
+      },
+      {
+        "dexNumber": 308,
+        "name": "Medicham",
+        "method": "level",
+        "detail": "37"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 309,
+        "name": "Electrike"
+      },
+      {
+        "dexNumber": 310,
+        "name": "Manectric",
+        "method": "level",
+        "detail": "26"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 315,
+        "name": "Roselia"
+      },
+      {
+        "dexNumber": 407,
+        "name": "Roserade",
+        "method": "stone",
+        "detail": "Piedra Día"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 406,
+        "name": "Budew"
+      },
+      {
+        "dexNumber": 315,
+        "name": "Roselia",
+        "method": "friendship",
+        "detail": "Amistad (día)"
+      },
+      {
+        "dexNumber": 407,
+        "name": "Roserade",
+        "method": "stone",
+        "detail": "Piedra Día"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 316,
+        "name": "Gulpin"
+      },
+      {
+        "dexNumber": 317,
+        "name": "Swalot",
+        "method": "level",
+        "detail": "26"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 318,
+        "name": "Carvanha"
+      },
+      {
+        "dexNumber": 319,
+        "name": "Sharpedo",
+        "method": "level",
+        "detail": "30"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 320,
+        "name": "Wailmer"
+      },
+      {
+        "dexNumber": 321,
+        "name": "Wailord",
+        "method": "level",
+        "detail": "40"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 322,
+        "name": "Numel"
+      },
+      {
+        "dexNumber": 323,
+        "name": "Camerupt",
+        "method": "level",
+        "detail": "33"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 325,
+        "name": "Spoink"
+      },
+      {
+        "dexNumber": 326,
+        "name": "Grumpig",
+        "method": "level",
+        "detail": "32"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 328,
+        "name": "Trapinch"
+      },
+      {
+        "dexNumber": 329,
+        "name": "Vibrava",
+        "method": "level",
+        "detail": "35"
+      },
+      {
+        "dexNumber": 330,
+        "name": "Flygon",
+        "method": "level",
+        "detail": "45"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 331,
+        "name": "Cacnea"
+      },
+      {
+        "dexNumber": 332,
+        "name": "Cacturne",
+        "method": "level",
+        "detail": "32"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 333,
+        "name": "Swablu"
+      },
+      {
+        "dexNumber": 334,
+        "name": "Altaria",
+        "method": "level",
+        "detail": "35"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 339,
+        "name": "Barboach"
+      },
+      {
+        "dexNumber": 340,
+        "name": "Whiscash",
+        "method": "level",
+        "detail": "30"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 341,
+        "name": "Corphish"
+      },
+      {
+        "dexNumber": 342,
+        "name": "Crawdaunt",
+        "method": "level",
+        "detail": "30"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 343,
+        "name": "Baltoy"
+      },
+      {
+        "dexNumber": 344,
+        "name": "Claydol",
+        "method": "level",
+        "detail": "36"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 345,
+        "name": "Lileep"
+      },
+      {
+        "dexNumber": 346,
+        "name": "Cradily",
+        "method": "level",
+        "detail": "40"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 347,
+        "name": "Anorith"
+      },
+      {
+        "dexNumber": 348,
+        "name": "Armaldo",
+        "method": "level",
+        "detail": "40"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 349,
+        "name": "Feebas"
+      },
+      {
+        "dexNumber": 350,
+        "name": "Milotic",
+        "method": "other",
+        "detail": "Belleza máxima / Intercambio con Escama Bella"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 353,
+        "name": "Shuppet"
+      },
+      {
+        "dexNumber": 354,
+        "name": "Banette",
+        "method": "level",
+        "detail": "37"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 355,
+        "name": "Duskull"
+      },
+      {
+        "dexNumber": 356,
+        "name": "Dusclops",
+        "method": "level",
+        "detail": "37"
+      },
+      {
+        "dexNumber": 477,
+        "name": "Dusknoir",
+        "method": "trade",
+        "detail": "Intercambio con Tela Terrible"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 360,
+        "name": "Wynaut"
+      },
+      {
+        "dexNumber": 202,
+        "name": "Wobbuffet",
+        "method": "level",
+        "detail": "15"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 361,
+        "name": "Snorunt"
+      }
+    ],
+    "branches": [
+      {
+        "dexNumber": 362,
+        "name": "Glalie",
+        "method": "level",
+        "detail": "42"
+      },
+      {
+        "dexNumber": 478,
+        "name": "Froslass",
+        "method": "stone",
+        "detail": "Piedra Alba (♀)"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 363,
+        "name": "Spheal"
+      },
+      {
+        "dexNumber": 364,
+        "name": "Sealeo",
+        "method": "level",
+        "detail": "32"
+      },
+      {
+        "dexNumber": 365,
+        "name": "Walrein",
+        "method": "level",
+        "detail": "44"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 366,
+        "name": "Clamperl"
+      }
+    ],
+    "branches": [
+      {
+        "dexNumber": 367,
+        "name": "Huntail",
+        "method": "trade",
+        "detail": "Intercambio con Diente Marino"
+      },
+      {
+        "dexNumber": 368,
+        "name": "Gorebyss",
+        "method": "trade",
+        "detail": "Intercambio con Escama Marina"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 371,
+        "name": "Bagon"
+      },
+      {
+        "dexNumber": 372,
+        "name": "Shelgon",
+        "method": "level",
+        "detail": "30"
+      },
+      {
+        "dexNumber": 373,
+        "name": "Salamence",
+        "method": "level",
+        "detail": "50"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 374,
+        "name": "Beldum"
+      },
+      {
+        "dexNumber": 375,
+        "name": "Metang",
+        "method": "level",
+        "detail": "20"
+      },
+      {
+        "dexNumber": 376,
+        "name": "Metagross",
+        "method": "level",
+        "detail": "45"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 387,
+        "name": "Turtwig"
+      },
+      {
+        "dexNumber": 388,
+        "name": "Grotle",
+        "method": "level",
+        "detail": "18"
+      },
+      {
+        "dexNumber": 389,
+        "name": "Torterra",
+        "method": "level",
+        "detail": "32"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 390,
+        "name": "Chimchar"
+      },
+      {
+        "dexNumber": 391,
+        "name": "Monferno",
+        "method": "level",
+        "detail": "14"
+      },
+      {
+        "dexNumber": 392,
+        "name": "Infernape",
+        "method": "level",
+        "detail": "36"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 393,
+        "name": "Piplup"
+      },
+      {
+        "dexNumber": 394,
+        "name": "Prinplup",
+        "method": "level",
+        "detail": "16"
+      },
+      {
+        "dexNumber": 395,
+        "name": "Empoleon",
+        "method": "level",
+        "detail": "36"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 396,
+        "name": "Starly"
+      },
+      {
+        "dexNumber": 397,
+        "name": "Staravia",
+        "method": "level",
+        "detail": "14"
+      },
+      {
+        "dexNumber": 398,
+        "name": "Staraptor",
+        "method": "level",
+        "detail": "34"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 399,
+        "name": "Bidoof"
+      },
+      {
+        "dexNumber": 400,
+        "name": "Bibarel",
+        "method": "level",
+        "detail": "15"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 401,
+        "name": "Kricketot"
+      },
+      {
+        "dexNumber": 402,
+        "name": "Kricketune",
+        "method": "level",
+        "detail": "10"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 403,
+        "name": "Shinx"
+      },
+      {
+        "dexNumber": 404,
+        "name": "Luxio",
+        "method": "level",
+        "detail": "15"
+      },
+      {
+        "dexNumber": 405,
+        "name": "Luxray",
+        "method": "level",
+        "detail": "30"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 408,
+        "name": "Cranidos"
+      },
+      {
+        "dexNumber": 409,
+        "name": "Rampardos",
+        "method": "level",
+        "detail": "30"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 410,
+        "name": "Shieldon"
+      },
+      {
+        "dexNumber": 411,
+        "name": "Bastiodon",
+        "method": "level",
+        "detail": "30"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 412,
+        "name": "Burmy"
+      }
+    ],
+    "branches": [
+      {
+        "dexNumber": 413,
+        "name": "Wormadam",
+        "method": "level",
+        "detail": "20 (♀)"
+      },
+      {
+        "dexNumber": 414,
+        "name": "Mothim",
+        "method": "level",
+        "detail": "20 (♂)"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 415,
+        "name": "Combee"
+      },
+      {
+        "dexNumber": 416,
+        "name": "Vespiquen",
+        "method": "level",
+        "detail": "21 (♀)"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 418,
+        "name": "Buizel"
+      },
+      {
+        "dexNumber": 419,
+        "name": "Floatzel",
+        "method": "level",
+        "detail": "26"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 420,
+        "name": "Cherubi"
+      },
+      {
+        "dexNumber": 421,
+        "name": "Cherrim",
+        "method": "level",
+        "detail": "25"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 422,
+        "name": "Shellos"
+      },
+      {
+        "dexNumber": 423,
+        "name": "Gastrodon",
+        "method": "level",
+        "detail": "30"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 425,
+        "name": "Drifloon"
+      },
+      {
+        "dexNumber": 426,
+        "name": "Drifblim",
+        "method": "level",
+        "detail": "28"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 427,
+        "name": "Buneary"
+      },
+      {
+        "dexNumber": 428,
+        "name": "Lopunny",
+        "method": "friendship",
+        "detail": "Amistad"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 431,
+        "name": "Glameow"
+      },
+      {
+        "dexNumber": 432,
+        "name": "Purugly",
+        "method": "level",
+        "detail": "38"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 433,
+        "name": "Chingling"
+      },
+      {
+        "dexNumber": 358,
+        "name": "Chimecho",
+        "method": "friendship",
+        "detail": "Amistad (noche)"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 434,
+        "name": "Stunky"
+      },
+      {
+        "dexNumber": 435,
+        "name": "Skuntank",
+        "method": "level",
+        "detail": "34"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 436,
+        "name": "Bronzor"
+      },
+      {
+        "dexNumber": 437,
+        "name": "Bronzong",
+        "method": "level",
+        "detail": "33"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 443,
+        "name": "Gible"
+      },
+      {
+        "dexNumber": 444,
+        "name": "Gabite",
+        "method": "level",
+        "detail": "24"
+      },
+      {
+        "dexNumber": 445,
+        "name": "Garchomp",
+        "method": "level",
+        "detail": "48"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 446,
+        "name": "Munchlax"
+      },
+      {
+        "dexNumber": 143,
+        "name": "Snorlax",
+        "method": "friendship",
+        "detail": "Amistad"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 447,
+        "name": "Riolu"
+      },
+      {
+        "dexNumber": 448,
+        "name": "Lucario",
+        "method": "friendship",
+        "detail": "Amistad (día)"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 449,
+        "name": "Hippopotas"
+      },
+      {
+        "dexNumber": 450,
+        "name": "Hippowdon",
+        "method": "level",
+        "detail": "34"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 451,
+        "name": "Skorupi"
+      },
+      {
+        "dexNumber": 452,
+        "name": "Drapion",
+        "method": "level",
+        "detail": "40"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 453,
+        "name": "Croagunk"
+      },
+      {
+        "dexNumber": 454,
+        "name": "Toxicroak",
+        "method": "level",
+        "detail": "37"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 456,
+        "name": "Finneon"
+      },
+      {
+        "dexNumber": 457,
+        "name": "Lumineon",
+        "method": "level",
+        "detail": "31"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 459,
+        "name": "Snover"
+      },
+      {
+        "dexNumber": 460,
+        "name": "Abomasnow",
+        "method": "level",
+        "detail": "40"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 495,
+        "name": "Snivy"
+      },
+      {
+        "dexNumber": 496,
+        "name": "Servine",
+        "method": "level",
+        "detail": "17"
+      },
+      {
+        "dexNumber": 497,
+        "name": "Serperior",
+        "method": "level",
+        "detail": "36"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 498,
+        "name": "Tepig"
+      },
+      {
+        "dexNumber": 499,
+        "name": "Pignite",
+        "method": "level",
+        "detail": "17"
+      },
+      {
+        "dexNumber": 500,
+        "name": "Emboar",
+        "method": "level",
+        "detail": "36"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 501,
+        "name": "Oshawott"
+      },
+      {
+        "dexNumber": 502,
+        "name": "Dewott",
+        "method": "level",
+        "detail": "17"
+      },
+      {
+        "dexNumber": 503,
+        "name": "Samurott",
+        "method": "level",
+        "detail": "36"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 504,
+        "name": "Patrat"
+      },
+      {
+        "dexNumber": 505,
+        "name": "Watchog",
+        "method": "level",
+        "detail": "20"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 506,
+        "name": "Lillipup"
+      },
+      {
+        "dexNumber": 507,
+        "name": "Herdier",
+        "method": "level",
+        "detail": "16"
+      },
+      {
+        "dexNumber": 508,
+        "name": "Stoutland",
+        "method": "level",
+        "detail": "32"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 509,
+        "name": "Purrloin"
+      },
+      {
+        "dexNumber": 510,
+        "name": "Liepard",
+        "method": "level",
+        "detail": "20"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 511,
+        "name": "Pansage"
+      },
+      {
+        "dexNumber": 512,
+        "name": "Simisage",
+        "method": "stone",
+        "detail": "Piedra Hoja"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 513,
+        "name": "Pansear"
+      },
+      {
+        "dexNumber": 514,
+        "name": "Simisear",
+        "method": "stone",
+        "detail": "Piedra Fuego"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 515,
+        "name": "Panpour"
+      },
+      {
+        "dexNumber": 516,
+        "name": "Simipour",
+        "method": "stone",
+        "detail": "Piedra Agua"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 517,
+        "name": "Munna"
+      },
+      {
+        "dexNumber": 518,
+        "name": "Musharna",
+        "method": "stone",
+        "detail": "Piedra Lunar"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 519,
+        "name": "Pidove"
+      },
+      {
+        "dexNumber": 520,
+        "name": "Tranquill",
+        "method": "level",
+        "detail": "21"
+      },
+      {
+        "dexNumber": 521,
+        "name": "Unfezant",
+        "method": "level",
+        "detail": "32"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 522,
+        "name": "Blitzle"
+      },
+      {
+        "dexNumber": 523,
+        "name": "Zebstrika",
+        "method": "level",
+        "detail": "27"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 524,
+        "name": "Roggenrola"
+      },
+      {
+        "dexNumber": 525,
+        "name": "Boldore",
+        "method": "level",
+        "detail": "25"
+      },
+      {
+        "dexNumber": 526,
+        "name": "Gigalith",
+        "method": "trade",
+        "detail": "Intercambio"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 527,
+        "name": "Woobat"
+      },
+      {
+        "dexNumber": 528,
+        "name": "Swoobat",
+        "method": "friendship",
+        "detail": "Amistad"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 529,
+        "name": "Drilbur"
+      },
+      {
+        "dexNumber": 530,
+        "name": "Excadrill",
+        "method": "level",
+        "detail": "31"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 532,
+        "name": "Timburr"
+      },
+      {
+        "dexNumber": 533,
+        "name": "Gurdurr",
+        "method": "level",
+        "detail": "25"
+      },
+      {
+        "dexNumber": 534,
+        "name": "Conkeldurr",
+        "method": "trade",
+        "detail": "Intercambio"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 535,
+        "name": "Tympole"
+      },
+      {
+        "dexNumber": 536,
+        "name": "Palpitoad",
+        "method": "level",
+        "detail": "25"
+      },
+      {
+        "dexNumber": 537,
+        "name": "Seismitoad",
+        "method": "level",
+        "detail": "36"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 540,
+        "name": "Sewaddle"
+      },
+      {
+        "dexNumber": 541,
+        "name": "Swadloon",
+        "method": "level",
+        "detail": "20"
+      },
+      {
+        "dexNumber": 542,
+        "name": "Leavanny",
+        "method": "friendship",
+        "detail": "Amistad"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 543,
+        "name": "Venipede"
+      },
+      {
+        "dexNumber": 544,
+        "name": "Whirlipede",
+        "method": "level",
+        "detail": "22"
+      },
+      {
+        "dexNumber": 545,
+        "name": "Scolipede",
+        "method": "level",
+        "detail": "30"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 546,
+        "name": "Cottonee"
+      },
+      {
+        "dexNumber": 547,
+        "name": "Whimsicott",
+        "method": "stone",
+        "detail": "Piedra Solar"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 548,
+        "name": "Petilil"
+      },
+      {
+        "dexNumber": 549,
+        "name": "Lilligant",
+        "method": "stone",
+        "detail": "Piedra Solar"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 551,
+        "name": "Sandile"
+      },
+      {
+        "dexNumber": 552,
+        "name": "Krokorok",
+        "method": "level",
+        "detail": "29"
+      },
+      {
+        "dexNumber": 553,
+        "name": "Krookodile",
+        "method": "level",
+        "detail": "40"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 554,
+        "name": "Darumaka"
+      },
+      {
+        "dexNumber": 555,
+        "name": "Darmanitan",
+        "method": "level",
+        "detail": "35"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 557,
+        "name": "Dwebble"
+      },
+      {
+        "dexNumber": 558,
+        "name": "Crustle",
+        "method": "level",
+        "detail": "34"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 559,
+        "name": "Scraggy"
+      },
+      {
+        "dexNumber": 560,
+        "name": "Scrafty",
+        "method": "level",
+        "detail": "39"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 562,
+        "name": "Yamask"
+      },
+      {
+        "dexNumber": 563,
+        "name": "Cofagrigus",
+        "method": "level",
+        "detail": "34"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 564,
+        "name": "Tirtouga"
+      },
+      {
+        "dexNumber": 565,
+        "name": "Carracosta",
+        "method": "level",
+        "detail": "37"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 566,
+        "name": "Archen"
+      },
+      {
+        "dexNumber": 567,
+        "name": "Archeops",
+        "method": "level",
+        "detail": "37"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 568,
+        "name": "Trubbish"
+      },
+      {
+        "dexNumber": 569,
+        "name": "Garbodor",
+        "method": "level",
+        "detail": "36"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 570,
+        "name": "Zorua"
+      },
+      {
+        "dexNumber": 571,
+        "name": "Zoroark",
+        "method": "level",
+        "detail": "30"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 572,
+        "name": "Minccino"
+      },
+      {
+        "dexNumber": 573,
+        "name": "Cinccino",
+        "method": "stone",
+        "detail": "Piedra Día"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 574,
+        "name": "Gothita"
+      },
+      {
+        "dexNumber": 575,
+        "name": "Gothorita",
+        "method": "level",
+        "detail": "32"
+      },
+      {
+        "dexNumber": 576,
+        "name": "Gothitelle",
+        "method": "level",
+        "detail": "41"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 577,
+        "name": "Solosis"
+      },
+      {
+        "dexNumber": 578,
+        "name": "Duosion",
+        "method": "level",
+        "detail": "32"
+      },
+      {
+        "dexNumber": 579,
+        "name": "Reuniclus",
+        "method": "level",
+        "detail": "41"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 580,
+        "name": "Ducklett"
+      },
+      {
+        "dexNumber": 581,
+        "name": "Swanna",
+        "method": "level",
+        "detail": "35"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 582,
+        "name": "Vanillite"
+      },
+      {
+        "dexNumber": 583,
+        "name": "Vanillish",
+        "method": "level",
+        "detail": "35"
+      },
+      {
+        "dexNumber": 584,
+        "name": "Vanilluxe",
+        "method": "level",
+        "detail": "47"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 585,
+        "name": "Deerling"
+      },
+      {
+        "dexNumber": 586,
+        "name": "Sawsbuck",
+        "method": "level",
+        "detail": "34"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 588,
+        "name": "Karrablast"
+      },
+      {
+        "dexNumber": 589,
+        "name": "Escavalier",
+        "method": "trade",
+        "detail": "Intercambio con Shelmet"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 590,
+        "name": "Foongus"
+      },
+      {
+        "dexNumber": 591,
+        "name": "Amoonguss",
+        "method": "level",
+        "detail": "39"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 592,
+        "name": "Frillish"
+      },
+      {
+        "dexNumber": 593,
+        "name": "Jellicent",
+        "method": "level",
+        "detail": "40"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 595,
+        "name": "Joltik"
+      },
+      {
+        "dexNumber": 596,
+        "name": "Galvantula",
+        "method": "level",
+        "detail": "36"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 597,
+        "name": "Ferroseed"
+      },
+      {
+        "dexNumber": 598,
+        "name": "Ferrothorn",
+        "method": "level",
+        "detail": "40"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 599,
+        "name": "Klink"
+      },
+      {
+        "dexNumber": 600,
+        "name": "Klang",
+        "method": "level",
+        "detail": "38"
+      },
+      {
+        "dexNumber": 601,
+        "name": "Klinklang",
+        "method": "level",
+        "detail": "49"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 602,
+        "name": "Tynamo"
+      },
+      {
+        "dexNumber": 603,
+        "name": "Eelektrik",
+        "method": "level",
+        "detail": "39"
+      },
+      {
+        "dexNumber": 604,
+        "name": "Eelektross",
+        "method": "stone",
+        "detail": "Piedra Trueno"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 605,
+        "name": "Elgyem"
+      },
+      {
+        "dexNumber": 606,
+        "name": "Beheeyem",
+        "method": "level",
+        "detail": "42"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 607,
+        "name": "Litwick"
+      },
+      {
+        "dexNumber": 608,
+        "name": "Lampent",
+        "method": "level",
+        "detail": "41"
+      },
+      {
+        "dexNumber": 609,
+        "name": "Chandelure",
+        "method": "stone",
+        "detail": "Piedra Oscura"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 610,
+        "name": "Axew"
+      },
+      {
+        "dexNumber": 611,
+        "name": "Fraxure",
+        "method": "level",
+        "detail": "38"
+      },
+      {
+        "dexNumber": 612,
+        "name": "Haxorus",
+        "method": "level",
+        "detail": "48"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 613,
+        "name": "Cubchoo"
+      },
+      {
+        "dexNumber": 614,
+        "name": "Beartic",
+        "method": "level",
+        "detail": "37"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 616,
+        "name": "Shelmet"
+      },
+      {
+        "dexNumber": 617,
+        "name": "Accelgor",
+        "method": "trade",
+        "detail": "Intercambio con Karrablast"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 619,
+        "name": "Mienfoo"
+      },
+      {
+        "dexNumber": 620,
+        "name": "Mienshao",
+        "method": "level",
+        "detail": "50"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 622,
+        "name": "Golett"
+      },
+      {
+        "dexNumber": 623,
+        "name": "Golurk",
+        "method": "level",
+        "detail": "43"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 624,
+        "name": "Pawniard"
+      },
+      {
+        "dexNumber": 625,
+        "name": "Bisharp",
+        "method": "level",
+        "detail": "52"
+      },
+      {
+        "dexNumber": 983,
+        "name": "Kingambit",
+        "method": "other",
+        "detail": "Subir nivel tras derrotar 3 Bisharp líder"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 627,
+        "name": "Rufflet"
+      },
+      {
+        "dexNumber": 628,
+        "name": "Braviary",
+        "method": "level",
+        "detail": "54"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 629,
+        "name": "Vullaby"
+      },
+      {
+        "dexNumber": 630,
+        "name": "Mandibuzz",
+        "method": "level",
+        "detail": "54"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 633,
+        "name": "Deino"
+      },
+      {
+        "dexNumber": 634,
+        "name": "Zweilous",
+        "method": "level",
+        "detail": "50"
+      },
+      {
+        "dexNumber": 635,
+        "name": "Hydreigon",
+        "method": "level",
+        "detail": "64"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 636,
+        "name": "Larvesta"
+      },
+      {
+        "dexNumber": 637,
+        "name": "Volcarona",
+        "method": "level",
+        "detail": "59"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 650,
+        "name": "Chespin"
+      },
+      {
+        "dexNumber": 651,
+        "name": "Quilladin",
+        "method": "level",
+        "detail": "16"
+      },
+      {
+        "dexNumber": 652,
+        "name": "Chesnaught",
+        "method": "level",
+        "detail": "36"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 653,
+        "name": "Fennekin"
+      },
+      {
+        "dexNumber": 654,
+        "name": "Braixen",
+        "method": "level",
+        "detail": "16"
+      },
+      {
+        "dexNumber": 655,
+        "name": "Delphox",
+        "method": "level",
+        "detail": "36"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 656,
+        "name": "Froakie"
+      },
+      {
+        "dexNumber": 657,
+        "name": "Frogadier",
+        "method": "level",
+        "detail": "16"
+      },
+      {
+        "dexNumber": 658,
+        "name": "Greninja",
+        "method": "level",
+        "detail": "36"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 659,
+        "name": "Bunnelby"
+      },
+      {
+        "dexNumber": 660,
+        "name": "Diggersby",
+        "method": "level",
+        "detail": "20"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 661,
+        "name": "Fletchling"
+      },
+      {
+        "dexNumber": 662,
+        "name": "Fletchinder",
+        "method": "level",
+        "detail": "17"
+      },
+      {
+        "dexNumber": 663,
+        "name": "Talonflame",
+        "method": "level",
+        "detail": "35"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 664,
+        "name": "Scatterbug"
+      },
+      {
+        "dexNumber": 665,
+        "name": "Spewpa",
+        "method": "level",
+        "detail": "9"
+      },
+      {
+        "dexNumber": 666,
+        "name": "Vivillon",
+        "method": "level",
+        "detail": "12"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 667,
+        "name": "Litleo"
+      },
+      {
+        "dexNumber": 668,
+        "name": "Pyroar",
+        "method": "level",
+        "detail": "35"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 669,
+        "name": "Flabébé"
+      },
+      {
+        "dexNumber": 670,
+        "name": "Floette",
+        "method": "level",
+        "detail": "19"
+      },
+      {
+        "dexNumber": 671,
+        "name": "Florges",
+        "method": "stone",
+        "detail": "Piedra Día"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 672,
+        "name": "Skiddo"
+      },
+      {
+        "dexNumber": 673,
+        "name": "Gogoat",
+        "method": "level",
+        "detail": "32"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 674,
+        "name": "Pancham"
+      },
+      {
+        "dexNumber": 675,
+        "name": "Pangoro",
+        "method": "other",
+        "detail": "Nivel 32 con Siniestro en el equipo"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 677,
+        "name": "Espurr"
+      },
+      {
+        "dexNumber": 678,
+        "name": "Meowstic",
+        "method": "level",
+        "detail": "25"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 679,
+        "name": "Honedge"
+      },
+      {
+        "dexNumber": 680,
+        "name": "Doublade",
+        "method": "level",
+        "detail": "35"
+      },
+      {
+        "dexNumber": 681,
+        "name": "Aegislash",
+        "method": "stone",
+        "detail": "Piedra Oscura"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 682,
+        "name": "Spritzee"
+      },
+      {
+        "dexNumber": 683,
+        "name": "Aromatisse",
+        "method": "trade",
+        "detail": "Intercambio con Sachet"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 684,
+        "name": "Swirlix"
+      },
+      {
+        "dexNumber": 685,
+        "name": "Slurpuff",
+        "method": "trade",
+        "detail": "Intercambio con Dulce de Nata"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 686,
+        "name": "Inkay"
+      },
+      {
+        "dexNumber": 687,
+        "name": "Malamar",
+        "method": "other",
+        "detail": "Nivel 30 con consola al revés"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 688,
+        "name": "Binacle"
+      },
+      {
+        "dexNumber": 689,
+        "name": "Barbaracle",
+        "method": "level",
+        "detail": "39"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 690,
+        "name": "Skrelp"
+      },
+      {
+        "dexNumber": 691,
+        "name": "Dragalge",
+        "method": "level",
+        "detail": "48"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 692,
+        "name": "Clauncher"
+      },
+      {
+        "dexNumber": 693,
+        "name": "Clawitzer",
+        "method": "level",
+        "detail": "37"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 694,
+        "name": "Helioptile"
+      },
+      {
+        "dexNumber": 695,
+        "name": "Heliolisk",
+        "method": "stone",
+        "detail": "Piedra Solar"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 696,
+        "name": "Tyrunt"
+      },
+      {
+        "dexNumber": 697,
+        "name": "Tyrantrum",
+        "method": "level",
+        "detail": "39 (día)"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 698,
+        "name": "Amaura"
+      },
+      {
+        "dexNumber": 699,
+        "name": "Aurorus",
+        "method": "level",
+        "detail": "39 (noche)"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 704,
+        "name": "Goomy"
+      },
+      {
+        "dexNumber": 705,
+        "name": "Sliggoo",
+        "method": "level",
+        "detail": "40"
+      },
+      {
+        "dexNumber": 706,
+        "name": "Goodra",
+        "method": "level",
+        "detail": "50 (lloviendo)"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 708,
+        "name": "Phantump"
+      },
+      {
+        "dexNumber": 709,
+        "name": "Trevenant",
+        "method": "trade",
+        "detail": "Intercambio"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 710,
+        "name": "Pumpkaboo"
+      },
+      {
+        "dexNumber": 711,
+        "name": "Gourgeist",
+        "method": "trade",
+        "detail": "Intercambio"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 712,
+        "name": "Bergmite"
+      },
+      {
+        "dexNumber": 713,
+        "name": "Avalugg",
+        "method": "level",
+        "detail": "37"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 714,
+        "name": "Noibat"
+      },
+      {
+        "dexNumber": 715,
+        "name": "Noivern",
+        "method": "level",
+        "detail": "48"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 722,
+        "name": "Rowlet"
+      },
+      {
+        "dexNumber": 723,
+        "name": "Dartrix",
+        "method": "level",
+        "detail": "17"
+      },
+      {
+        "dexNumber": 724,
+        "name": "Decidueye",
+        "method": "level",
+        "detail": "34"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 725,
+        "name": "Litten"
+      },
+      {
+        "dexNumber": 726,
+        "name": "Torracat",
+        "method": "level",
+        "detail": "17"
+      },
+      {
+        "dexNumber": 727,
+        "name": "Incineroar",
+        "method": "level",
+        "detail": "34"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 728,
+        "name": "Popplio"
+      },
+      {
+        "dexNumber": 729,
+        "name": "Brionne",
+        "method": "level",
+        "detail": "17"
+      },
+      {
+        "dexNumber": 730,
+        "name": "Primarina",
+        "method": "level",
+        "detail": "34"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 731,
+        "name": "Pikipek"
+      },
+      {
+        "dexNumber": 732,
+        "name": "Trumbeak",
+        "method": "level",
+        "detail": "14"
+      },
+      {
+        "dexNumber": 733,
+        "name": "Toucannon",
+        "method": "level",
+        "detail": "28"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 734,
+        "name": "Yungoos"
+      },
+      {
+        "dexNumber": 735,
+        "name": "Gumshoos",
+        "method": "level",
+        "detail": "20 (día)"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 736,
+        "name": "Grubbin"
+      },
+      {
+        "dexNumber": 737,
+        "name": "Charjabug",
+        "method": "level",
+        "detail": "20"
+      },
+      {
+        "dexNumber": 738,
+        "name": "Vikavolt",
+        "method": "location",
+        "detail": "Subir nivel en campo magnético"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 739,
+        "name": "Crabrawler"
+      },
+      {
+        "dexNumber": 740,
+        "name": "Crabominable",
+        "method": "location",
+        "detail": "Subir nivel en Monte Lanakila"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 742,
+        "name": "Cutiefly"
+      },
+      {
+        "dexNumber": 743,
+        "name": "Ribombee",
+        "method": "level",
+        "detail": "25"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 744,
+        "name": "Rockruff"
+      }
+    ],
+    "branches": [
+      {
+        "dexNumber": 745,
+        "name": "Lycanroc (Diurno)",
+        "method": "level",
+        "detail": "25 (día)"
+      },
+      {
+        "dexNumber": 745,
+        "name": "Lycanroc (Nocturno)",
+        "method": "level",
+        "detail": "25 (noche)"
+      },
+      {
+        "dexNumber": 745,
+        "name": "Lycanroc (Crepuscular)",
+        "method": "level",
+        "detail": "25 (crepúsculo, habilidad Ritmo Propio)"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 747,
+        "name": "Mareanie"
+      },
+      {
+        "dexNumber": 748,
+        "name": "Toxapex",
+        "method": "level",
+        "detail": "38"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 749,
+        "name": "Mudbray"
+      },
+      {
+        "dexNumber": 750,
+        "name": "Mudsdale",
+        "method": "level",
+        "detail": "30"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 751,
+        "name": "Dewpider"
+      },
+      {
+        "dexNumber": 752,
+        "name": "Araquanid",
+        "method": "level",
+        "detail": "22"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 753,
+        "name": "Fomantis"
+      },
+      {
+        "dexNumber": 754,
+        "name": "Lurantis",
+        "method": "level",
+        "detail": "34 (día)"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 755,
+        "name": "Morelull"
+      },
+      {
+        "dexNumber": 756,
+        "name": "Shiinotic",
+        "method": "level",
+        "detail": "24"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 757,
+        "name": "Salandit"
+      },
+      {
+        "dexNumber": 758,
+        "name": "Salazzle",
+        "method": "level",
+        "detail": "33 (♀)"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 759,
+        "name": "Stufful"
+      },
+      {
+        "dexNumber": 760,
+        "name": "Bewear",
+        "method": "level",
+        "detail": "27"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 761,
+        "name": "Bounsweet"
+      },
+      {
+        "dexNumber": 762,
+        "name": "Steenee",
+        "method": "level",
+        "detail": "18"
+      },
+      {
+        "dexNumber": 763,
+        "name": "Tsareena",
+        "method": "move",
+        "detail": "Subir nivel con Pisotón"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 767,
+        "name": "Wimpod"
+      },
+      {
+        "dexNumber": 768,
+        "name": "Golisopod",
+        "method": "level",
+        "detail": "30"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 769,
+        "name": "Sandygast"
+      },
+      {
+        "dexNumber": 770,
+        "name": "Palossand",
+        "method": "level",
+        "detail": "42"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 772,
+        "name": "Type: Null"
+      },
+      {
+        "dexNumber": 773,
+        "name": "Silvally",
+        "method": "friendship",
+        "detail": "Amistad"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 782,
+        "name": "Jangmo-o"
+      },
+      {
+        "dexNumber": 783,
+        "name": "Hakamo-o",
+        "method": "level",
+        "detail": "35"
+      },
+      {
+        "dexNumber": 784,
+        "name": "Kommo-o",
+        "method": "level",
+        "detail": "45"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 789,
+        "name": "Cosmog"
+      },
+      {
+        "dexNumber": 790,
+        "name": "Cosmoem",
+        "method": "level",
+        "detail": "43"
+      }
+    ],
+    "branches": [
+      {
+        "dexNumber": 791,
+        "name": "Solgaleo",
+        "method": "level",
+        "detail": "53 (Sol)"
+      },
+      {
+        "dexNumber": 792,
+        "name": "Lunala",
+        "method": "level",
+        "detail": "53 (Luna)"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 803,
+        "name": "Poipole"
+      },
+      {
+        "dexNumber": 804,
+        "name": "Naganadel",
+        "method": "move",
+        "detail": "Subir nivel con Pulso Dragón"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 808,
+        "name": "Meltan"
+      },
+      {
+        "dexNumber": 809,
+        "name": "Melmetal",
+        "method": "other",
+        "detail": "400 caramelos (Pokémon GO)"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 810,
+        "name": "Grookey"
+      },
+      {
+        "dexNumber": 811,
+        "name": "Thwackey",
+        "method": "level",
+        "detail": "16"
+      },
+      {
+        "dexNumber": 812,
+        "name": "Rillaboom",
+        "method": "level",
+        "detail": "35"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 813,
+        "name": "Scorbunny"
+      },
+      {
+        "dexNumber": 814,
+        "name": "Raboot",
+        "method": "level",
+        "detail": "16"
+      },
+      {
+        "dexNumber": 815,
+        "name": "Cinderace",
+        "method": "level",
+        "detail": "35"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 816,
+        "name": "Sobble"
+      },
+      {
+        "dexNumber": 817,
+        "name": "Drizzile",
+        "method": "level",
+        "detail": "16"
+      },
+      {
+        "dexNumber": 818,
+        "name": "Inteleon",
+        "method": "level",
+        "detail": "35"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 819,
+        "name": "Skwovet"
+      },
+      {
+        "dexNumber": 820,
+        "name": "Greedent",
+        "method": "level",
+        "detail": "24"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 821,
+        "name": "Rookidee"
+      },
+      {
+        "dexNumber": 822,
+        "name": "Corvisquire",
+        "method": "level",
+        "detail": "18"
+      },
+      {
+        "dexNumber": 823,
+        "name": "Corviknight",
+        "method": "level",
+        "detail": "38"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 824,
+        "name": "Blipbug"
+      },
+      {
+        "dexNumber": 825,
+        "name": "Dottler",
+        "method": "level",
+        "detail": "10"
+      },
+      {
+        "dexNumber": 826,
+        "name": "Orbeetle",
+        "method": "level",
+        "detail": "30"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 827,
+        "name": "Nickit"
+      },
+      {
+        "dexNumber": 828,
+        "name": "Thievul",
+        "method": "level",
+        "detail": "18"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 829,
+        "name": "Gossifleur"
+      },
+      {
+        "dexNumber": 830,
+        "name": "Eldegoss",
+        "method": "level",
+        "detail": "20"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 831,
+        "name": "Wooloo"
+      },
+      {
+        "dexNumber": 832,
+        "name": "Dubwool",
+        "method": "level",
+        "detail": "24"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 833,
+        "name": "Chewtle"
+      },
+      {
+        "dexNumber": 834,
+        "name": "Drednaw",
+        "method": "level",
+        "detail": "22"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 835,
+        "name": "Yamper"
+      },
+      {
+        "dexNumber": 836,
+        "name": "Boltund",
+        "method": "level",
+        "detail": "25"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 837,
+        "name": "Rolycoly"
+      },
+      {
+        "dexNumber": 838,
+        "name": "Carkol",
+        "method": "level",
+        "detail": "18"
+      },
+      {
+        "dexNumber": 839,
+        "name": "Coalossal",
+        "method": "level",
+        "detail": "34"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 840,
+        "name": "Applin"
+      }
+    ],
+    "branches": [
+      {
+        "dexNumber": 841,
+        "name": "Flapple",
+        "method": "item",
+        "detail": "Manzana Ácida"
+      },
+      {
+        "dexNumber": 842,
+        "name": "Appletun",
+        "method": "item",
+        "detail": "Manzana Dulce"
+      },
+      {
+        "dexNumber": 1011,
+        "name": "Dipplin",
+        "method": "item",
+        "detail": "Manzana Melosa"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 1011,
+        "name": "Dipplin"
+      },
+      {
+        "dexNumber": 1019,
+        "name": "Hydrapple",
+        "method": "move",
+        "detail": "Subir nivel con Salto del Dragón"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 843,
+        "name": "Silicobra"
+      },
+      {
+        "dexNumber": 844,
+        "name": "Sandaconda",
+        "method": "level",
+        "detail": "36"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 846,
+        "name": "Arrokuda"
+      },
+      {
+        "dexNumber": 847,
+        "name": "Barraskewda",
+        "method": "level",
+        "detail": "26"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 848,
+        "name": "Toxel"
+      }
+    ],
+    "branches": [
+      {
+        "dexNumber": 849,
+        "name": "Toxtricity (Agudo)",
+        "method": "level",
+        "detail": "30 (naturaleza activa)"
+      },
+      {
+        "dexNumber": 849,
+        "name": "Toxtricity (Grave)",
+        "method": "level",
+        "detail": "30 (naturaleza pasiva)"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 850,
+        "name": "Sizzlipede"
+      },
+      {
+        "dexNumber": 851,
+        "name": "Centiskorch",
+        "method": "level",
+        "detail": "28"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 852,
+        "name": "Clobbopus"
+      },
+      {
+        "dexNumber": 853,
+        "name": "Grapploct",
+        "method": "move",
+        "detail": "Subir nivel con Burla"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 854,
+        "name": "Sinistea"
+      },
+      {
+        "dexNumber": 855,
+        "name": "Polteageist",
+        "method": "item",
+        "detail": "Tetera Rota / Tetera Agrietada"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 856,
+        "name": "Hatenna"
+      },
+      {
+        "dexNumber": 857,
+        "name": "Hattrem",
+        "method": "level",
+        "detail": "32"
+      },
+      {
+        "dexNumber": 858,
+        "name": "Hatterene",
+        "method": "level",
+        "detail": "42"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 859,
+        "name": "Impidimp"
+      },
+      {
+        "dexNumber": 860,
+        "name": "Morgrem",
+        "method": "level",
+        "detail": "32"
+      },
+      {
+        "dexNumber": 861,
+        "name": "Grimmsnarl",
+        "method": "level",
+        "detail": "42"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 263,
+        "name": "Zigzagoon (Galar)"
+      },
+      {
+        "dexNumber": 264,
+        "name": "Linoone (Galar)",
+        "method": "level",
+        "detail": "20"
+      },
+      {
+        "dexNumber": 862,
+        "name": "Obstagoon",
+        "method": "level",
+        "detail": "35 (noche)"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 222,
+        "name": "Corsola (Galar)"
+      },
+      {
+        "dexNumber": 864,
+        "name": "Cursola",
+        "method": "level",
+        "detail": "38"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 868,
+        "name": "Milcery"
+      },
+      {
+        "dexNumber": 869,
+        "name": "Alcremie",
+        "method": "other",
+        "detail": "Girar con dulce equipado"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 872,
+        "name": "Snom"
+      },
+      {
+        "dexNumber": 873,
+        "name": "Frosmoth",
+        "method": "friendship",
+        "detail": "Amistad (noche)"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 878,
+        "name": "Cufant"
+      },
+      {
+        "dexNumber": 879,
+        "name": "Copperajah",
+        "method": "level",
+        "detail": "34"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 884,
+        "name": "Duraludon"
+      },
+      {
+        "dexNumber": 1018,
+        "name": "Archaludon",
+        "method": "item",
+        "detail": "Aleación Metálica"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 885,
+        "name": "Dreepy"
+      },
+      {
+        "dexNumber": 886,
+        "name": "Drakloak",
+        "method": "level",
+        "detail": "50"
+      },
+      {
+        "dexNumber": 887,
+        "name": "Dragapult",
+        "method": "level",
+        "detail": "60"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 891,
+        "name": "Kubfu"
+      }
+    ],
+    "branches": [
+      {
+        "dexNumber": 892,
+        "name": "Urshifu (Brusco)",
+        "method": "other",
+        "detail": "Torre de las Aguas Oscuras"
+      },
+      {
+        "dexNumber": 892,
+        "name": "Urshifu (Fluido)",
+        "method": "other",
+        "detail": "Torre de las Aguas Claras"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 906,
+        "name": "Sprigatito"
+      },
+      {
+        "dexNumber": 907,
+        "name": "Floragato",
+        "method": "level",
+        "detail": "16"
+      },
+      {
+        "dexNumber": 908,
+        "name": "Meowscarada",
+        "method": "level",
+        "detail": "36"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 909,
+        "name": "Fuecoco"
+      },
+      {
+        "dexNumber": 910,
+        "name": "Crocalor",
+        "method": "level",
+        "detail": "16"
+      },
+      {
+        "dexNumber": 911,
+        "name": "Skeledirge",
+        "method": "level",
+        "detail": "36"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 912,
+        "name": "Quaxly"
+      },
+      {
+        "dexNumber": 913,
+        "name": "Quaxwell",
+        "method": "level",
+        "detail": "16"
+      },
+      {
+        "dexNumber": 914,
+        "name": "Quaquaval",
+        "method": "level",
+        "detail": "36"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 915,
+        "name": "Lechonk"
+      },
+      {
+        "dexNumber": 916,
+        "name": "Oinkologne",
+        "method": "level",
+        "detail": "18"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 917,
+        "name": "Tarountula"
+      },
+      {
+        "dexNumber": 918,
+        "name": "Spidops",
+        "method": "level",
+        "detail": "15"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 919,
+        "name": "Nymble"
+      },
+      {
+        "dexNumber": 920,
+        "name": "Lokix",
+        "method": "level",
+        "detail": "24"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 921,
+        "name": "Pawmi"
+      },
+      {
+        "dexNumber": 922,
+        "name": "Pawmo",
+        "method": "level",
+        "detail": "18"
+      },
+      {
+        "dexNumber": 923,
+        "name": "Pawmot",
+        "method": "other",
+        "detail": "Caminar 1000 pasos en Let's Go"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 924,
+        "name": "Tandemaus"
+      },
+      {
+        "dexNumber": 925,
+        "name": "Maushold",
+        "method": "level",
+        "detail": "25"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 926,
+        "name": "Fidough"
+      },
+      {
+        "dexNumber": 927,
+        "name": "Dachsbun",
+        "method": "level",
+        "detail": "26"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 928,
+        "name": "Smoliv"
+      },
+      {
+        "dexNumber": 929,
+        "name": "Dolliv",
+        "method": "level",
+        "detail": "25"
+      },
+      {
+        "dexNumber": 930,
+        "name": "Arboliva",
+        "method": "level",
+        "detail": "35"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 932,
+        "name": "Nacli"
+      },
+      {
+        "dexNumber": 933,
+        "name": "Naclstack",
+        "method": "level",
+        "detail": "24"
+      },
+      {
+        "dexNumber": 934,
+        "name": "Garganacl",
+        "method": "level",
+        "detail": "38"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 935,
+        "name": "Charcadet"
+      }
+    ],
+    "branches": [
+      {
+        "dexNumber": 936,
+        "name": "Armarouge",
+        "method": "item",
+        "detail": "Armadura de Fuego"
+      },
+      {
+        "dexNumber": 937,
+        "name": "Ceruledge",
+        "method": "item",
+        "detail": "Armadura Maldita"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 938,
+        "name": "Tadbulb"
+      },
+      {
+        "dexNumber": 939,
+        "name": "Bellibolt",
+        "method": "stone",
+        "detail": "Piedra Trueno"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 940,
+        "name": "Wattrel"
+      },
+      {
+        "dexNumber": 941,
+        "name": "Kilowattrel",
+        "method": "level",
+        "detail": "25"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 942,
+        "name": "Maschiff"
+      },
+      {
+        "dexNumber": 943,
+        "name": "Mabosstiff",
+        "method": "level",
+        "detail": "30"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 944,
+        "name": "Shroodle"
+      },
+      {
+        "dexNumber": 945,
+        "name": "Grafaiai",
+        "method": "level",
+        "detail": "28"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 946,
+        "name": "Bramblin"
+      },
+      {
+        "dexNumber": 947,
+        "name": "Brambleghast",
+        "method": "other",
+        "detail": "Caminar 1000 pasos en Let's Go"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 948,
+        "name": "Toedscool"
+      },
+      {
+        "dexNumber": 949,
+        "name": "Toedscruel",
+        "method": "level",
+        "detail": "30"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 951,
+        "name": "Capsakid"
+      },
+      {
+        "dexNumber": 952,
+        "name": "Scovillain",
+        "method": "stone",
+        "detail": "Piedra Fuego"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 953,
+        "name": "Rellor"
+      },
+      {
+        "dexNumber": 954,
+        "name": "Rabsca",
+        "method": "other",
+        "detail": "Caminar 1000 pasos en Let's Go"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 955,
+        "name": "Flittle"
+      },
+      {
+        "dexNumber": 956,
+        "name": "Espathra",
+        "method": "level",
+        "detail": "35"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 957,
+        "name": "Tinkatink"
+      },
+      {
+        "dexNumber": 958,
+        "name": "Tinkatuff",
+        "method": "level",
+        "detail": "24"
+      },
+      {
+        "dexNumber": 959,
+        "name": "Tinkaton",
+        "method": "level",
+        "detail": "38"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 960,
+        "name": "Wiglett"
+      },
+      {
+        "dexNumber": 961,
+        "name": "Wugtrio",
+        "method": "level",
+        "detail": "26"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 963,
+        "name": "Finizen"
+      },
+      {
+        "dexNumber": 964,
+        "name": "Palafin",
+        "method": "other",
+        "detail": "Nivel 38 en modo multijugador"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 965,
+        "name": "Varoom"
+      },
+      {
+        "dexNumber": 966,
+        "name": "Revavroom",
+        "method": "level",
+        "detail": "40"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 969,
+        "name": "Glimmet"
+      },
+      {
+        "dexNumber": 970,
+        "name": "Glimmora",
+        "method": "level",
+        "detail": "35"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 971,
+        "name": "Greavard"
+      },
+      {
+        "dexNumber": 972,
+        "name": "Houndstone",
+        "method": "level",
+        "detail": "30 (noche)"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 974,
+        "name": "Cetoddle"
+      },
+      {
+        "dexNumber": 975,
+        "name": "Cetitan",
+        "method": "stone",
+        "detail": "Piedra Hielo"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 194,
+        "name": "Wooper (Paldea)"
+      },
+      {
+        "dexNumber": 980,
+        "name": "Clodsire",
+        "method": "level",
+        "detail": "20"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 203,
+        "name": "Girafarig"
+      },
+      {
+        "dexNumber": 981,
+        "name": "Farigiraf",
+        "method": "move",
+        "detail": "Subir nivel con Poder Doble"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 996,
+        "name": "Frigibax"
+      },
+      {
+        "dexNumber": 997,
+        "name": "Arctibax",
+        "method": "level",
+        "detail": "35"
+      },
+      {
+        "dexNumber": 998,
+        "name": "Baxcalibur",
+        "method": "level",
+        "detail": "54"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 1012,
+        "name": "Poltchageist"
+      },
+      {
+        "dexNumber": 1013,
+        "name": "Sinistcha",
+        "method": "item",
+        "detail": "Cuenco Excepcional / Cuenco Mediocre"
+      }
+    ]
+  },
+  {
+    "stages": [
+      {
+        "dexNumber": 550,
+        "name": "Basculin (Raya Blanca)"
+      },
+      {
+        "dexNumber": 902,
+        "name": "Basculegion",
+        "method": "other",
+        "detail": "Recibir 294+ de daño de retroceso (Hisui)"
+      }
+    ]
+  }
+]
