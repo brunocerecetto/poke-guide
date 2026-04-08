@@ -329,7 +329,11 @@ final class DataSeeder {
             let member = CDTeamMember(context: context)
             member.orderIndex = Int16(memberIndex)
             member.name = memberJSON.name
-            member.dexNumber = Int32(PokedexData.kanto.first { $0.name == memberJSON.name }?.id ?? 0)
+            let resolvedDex = PokedexData.kanto.first { $0.name == memberJSON.name }?.id ?? 0
+            member.dexNumber = Int32(resolvedDex)
+            if resolvedDex == 0 {
+                print("[DataSeeder] WARNING: Could not resolve dexNumber for team member '\(memberJSON.name)'")
+            }
             member.moves = memberJSON.moves
             member.notes = memberJSON.notes
             member.emoji = memberJSON.emoji

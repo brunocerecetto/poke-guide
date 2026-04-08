@@ -105,10 +105,20 @@ struct TeamTab: View {
 
                 let captureDexNumbers = bridge.captures.compactMap { captureDexNumber($0.pokemon) }
                 if !captureDexNumbers.isEmpty {
-                    HStack(spacing: 10) {
-                        ForEach(captureDexNumbers, id: \.self) { dex in
-                            spriteCircle(dexNumber: dex)
-                                .frame(maxWidth: .infinity)
+                    let rows = stride(from: 0, to: captureDexNumbers.count, by: 4).map {
+                        Array(captureDexNumbers[$0..<min($0 + 4, captureDexNumbers.count)])
+                    }
+                    ForEach(Array(rows.enumerated()), id: \.offset) { _, row in
+                        HStack(spacing: 10) {
+                            ForEach(row, id: \.self) { dex in
+                                spriteCircle(dexNumber: dex)
+                                    .frame(maxWidth: .infinity)
+                            }
+                            // Fill remaining slots to keep alignment
+                            ForEach(0..<(4 - row.count), id: \.self) { _ in
+                                Color.clear.frame(width: 52, height: 52)
+                                    .frame(maxWidth: .infinity)
+                            }
                         }
                     }
                 }
